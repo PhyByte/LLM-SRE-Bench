@@ -1,0 +1,157 @@
+[
+  {
+    "id": "pc-001-redis-cascade",
+    "source": "curated: cache eviction -> db overload -> api latency, with distractors",
+    "logs": [
+      "INFO deploy: search-indexer v1.8.2 rollout completed on 6 replicas",
+      "WARN redis-01: used_memory 3.9GB of 4.0GB maxmemory, eviction policy allkeys-lru active",
+      "INFO backup: nightly snapshot of users-db completed in 214s",
+      "WARN redis-01: evicted 18443 keys in last 60s",
+      "INFO product-api: cache hit ratio dropped to 31% (baseline 94%)",
+      "WARN users-db: active connections 178/200, slow query log growing",
+      "WARN redis-01: evicted 22871 keys in last 60s",
+      "ERROR users-db: query exceeded 5s: SELECT * FROM products WHERE category_id = $1",
+      "WARN product-api: p99 latency 4200ms (SLO 800ms)",
+      "INFO autoscaler: product-api scaled from 8 to 12 replicas",
+      "ERROR users-db: query exceeded 5s: SELECT * FROM products WHERE category_id = $1",
+      "WARN product-api: p99 latency 5100ms (SLO 800ms)",
+      "INFO cron: expired-session cleanup removed 12k rows",
+      "WARN redis-01: evicted 19983 keys in last 60s",
+      "WARN users-db: active connections 195/200",
+      "WARN product-api: p99 latency 4800ms (SLO 800ms)",
+      "INFO search-indexer: reindex batch 12/40 complete"
+    ],
+    "expected_patterns": [
+      { "name": "redis_memory_evictions", "keywords": ["redis", "evicted", "memory", "maxmemory"] },
+      { "name": "db_overload", "keywords": ["db", "query", "exceeded", "connections", "slow"] },
+      { "name": "api_latency_degradation", "keywords": ["p99", "latency", "SLO", "api"] }
+    ],
+    "expected_correlations": [
+      { "cause": "redis_memory_evictions", "effect": "db_overload" },
+      { "cause": "db_overload", "effect": "api_latency_degradation" }
+    ]
+  },
+  {
+    "id": "pc-002-dns-retry-storm",
+    "source": "curated: DNS failures -> discovery errors -> retry storm amplification",
+    "logs": [
+      "INFO node-12: kubelet image garbage collection freed 2.1GB",
+      "ERROR coredns: read udp 10.96.0.10:53: i/o timeout querying upstream 169.254.20.10",
+      "WARN payments-svc: service discovery lookup for ledger-svc failed: no such host",
+      "ERROR coredns: read udp 10.96.0.10:53: i/o timeout querying upstream 169.254.20.10",
+      "WARN payments-svc: service discovery lookup for ledger-svc failed: no such host",
+      "WARN checkout-svc: service discovery lookup for payments-svc failed: no such host",
+      "INFO cert-manager: renewed certificate ingress-tls (next renewal in 60 days)",
+      "WARN payments-svc: retrying ledger-svc call, attempt 3, backoff 400ms",
+      "WARN payments-svc: retrying ledger-svc call, attempt 4, backoff 800ms",
+      "WARN checkout-svc: retrying payments-svc call, attempt 3, backoff 400ms",
+      "WARN ledger-svc: inbound request rate 4.1x baseline (retry amplification suspected)",
+      "ERROR coredns: read udp 10.96.0.10:53: i/o timeout querying upstream 169.254.20.10",
+      "WARN checkout-svc: retrying payments-svc call, attempt 5, backoff 1600ms",
+      "WARN ledger-svc: inbound request rate 5.3x baseline",
+      "INFO hpa: ledger-svc scaled from 4 to 9 replicas",
+      "WARN payments-svc: retrying ledger-svc call, attempt 6, backoff 3200ms"
+    ],
+    "expected_patterns": [
+      { "name": "dns_resolution_failures", "keywords": ["coredns", "dns", "timeout", "upstream", "udp"] },
+      { "name": "service_discovery_failures", "keywords": ["discovery", "lookup", "no such host"] },
+      { "name": "retry_storm", "keywords": ["retrying", "backoff", "amplification", "rate", "baseline"] }
+    ],
+    "expected_correlations": [
+      { "cause": "dns_resolution_failures", "effect": "service_discovery_failures" },
+      { "cause": "service_discovery_failures", "effect": "retry_storm" }
+    ]
+  },
+  {
+    "id": "pc-003-migration-locks",
+    "source": "curated: schema migration locks -> query timeouts -> worker backlog",
+    "logs": [
+      "INFO migrations: applying 20260710_add_index_orders_customer_id (CREATE INDEX without CONCURRENTLY)",
+      "INFO registry: mirror sync completed, 42 images updated",
+      "WARN orders-db: lock wait on relation 'orders' exceeded 10s (blocked by pid 8812, ALTER TABLE)",
+      "ERROR orders-api: statement timeout after 30s: UPDATE orders SET status=$1 WHERE id=$2",
+      "WARN orders-db: 14 backends waiting on AccessExclusiveLock on relation 'orders'",
+      "ERROR orders-api: statement timeout after 30s: INSERT INTO orders ...",
+      "WARN worker-fleet: job queue depth 1200 (baseline 40), oldest job 9m",
+      "INFO cdn: cache purge for /assets/* completed",
+      "ERROR orders-api: statement timeout after 30s: UPDATE orders SET status=$1 WHERE id=$2",
+      "WARN worker-fleet: job queue depth 3400, oldest job 22m",
+      "WARN orders-db: lock wait on relation 'orders' exceeded 10s (blocked by pid 8812, ALTER TABLE)",
+      "WARN worker-fleet: 3 workers restarted after exceeding max job runtime",
+      "INFO migrations: 20260710_add_index_orders_customer_id finished after 41m",
+      "INFO orders-db: lock queue drained, 0 backends waiting",
+      "INFO worker-fleet: queue depth back to 55 after 18m of catch-up"
+    ],
+    "expected_patterns": [
+      { "name": "migration_lock_contention", "keywords": ["lock", "migration", "ALTER", "blocked", "AccessExclusiveLock"] },
+      { "name": "query_timeouts", "keywords": ["statement", "timeout", "orders-api"] },
+      { "name": "worker_queue_backlog", "keywords": ["queue", "depth", "worker", "backlog", "oldest"] }
+    ],
+    "expected_correlations": [
+      { "cause": "migration_lock_contention", "effect": "query_timeouts" },
+      { "cause": "query_timeouts", "effect": "worker_queue_backlog" }
+    ]
+  },
+  {
+    "id": "pc-004-mtls-cert",
+    "source": "curated: expired internal mTLS cert -> gRPC failures -> checkout errors",
+    "logs": [
+      "INFO fluentd: log shipping lag 2s, within budget",
+      "ERROR inventory-svc: gRPC handshake to pricing-svc failed: x509: certificate has expired or is not yet valid",
+      "INFO hpa: frontend scaled from 10 to 11 replicas (CPU 72%)",
+      "ERROR inventory-svc: gRPC handshake to pricing-svc failed: x509: certificate has expired or is not yet valid",
+      "ERROR checkout-svc: price lookup failed: rpc error UNAVAILABLE from inventory-svc",
+      "WARN frontend: checkout error rate 18% (baseline 0.2%)",
+      "ERROR inventory-svc: gRPC handshake to pricing-svc failed: x509: certificate has expired or is not yet valid",
+      "ERROR checkout-svc: price lookup failed: rpc error UNAVAILABLE from inventory-svc",
+      "WARN frontend: checkout error rate 41%",
+      "INFO cert-manager: certificate pricing-svc-mtls in namespace prod is in state Expired, last renewal attempt failed: approval plugin timeout",
+      "INFO chaos-monkey: scheduled experiment skipped (change freeze)",
+      "ERROR checkout-svc: price lookup failed: rpc error UNAVAILABLE from inventory-svc",
+      "WARN frontend: checkout error rate 44%",
+      "INFO cert-manager: certificate pricing-svc-mtls renewed manually by oncall",
+      "INFO inventory-svc: gRPC channel to pricing-svc READY",
+      "INFO frontend: checkout error rate back to 0.3%"
+    ],
+    "expected_patterns": [
+      { "name": "expired_mtls_certificate", "keywords": ["certificate", "expired", "x509", "renewal"] },
+      { "name": "grpc_handshake_failures", "keywords": ["gRPC", "handshake", "UNAVAILABLE", "rpc"] },
+      { "name": "checkout_error_spike", "keywords": ["checkout", "error rate", "frontend"] }
+    ],
+    "expected_correlations": [
+      { "cause": "expired_mtls_certificate", "effect": "grpc_handshake_failures" },
+      { "cause": "grpc_handshake_failures", "effect": "checkout_error_spike" }
+    ]
+  },
+  {
+    "id": "pc-005-noisy-neighbor",
+    "source": "curated: batch job saturates node -> kubelet degradation -> pod restarts",
+    "logs": [
+      "INFO scheduler: batch job spark-etl-2260 placed on node worker-9 (requests: cpu 2, no limits)",
+      "INFO worker-9: node CPU 71%",
+      "WARN worker-9: node CPU 97%, load average 64.2 on 16 cores",
+      "INFO registry: image prune removed 31 unused images on worker-2",
+      "WARN kubelet worker-9: PLEG is not healthy: pleg was last seen active 3m2s ago",
+      "WARN worker-9: node CPU 99%, spark-etl-2260 using 14.6 cores",
+      "WARN kubelet worker-9: liveness probe for pod session-store-3 timed out (context deadline exceeded)",
+      "INFO session-store-3: container killed and restarted by kubelet (liveness failure)",
+      "WARN kubelet worker-9: PLEG is not healthy: pleg was last seen active 4m11s ago",
+      "WARN kubelet worker-9: liveness probe for pod rate-limiter-1 timed out (context deadline exceeded)",
+      "INFO rate-limiter-1: container killed and restarted by kubelet (liveness failure)",
+      "INFO hpa: session-store scaled from 3 to 4 replicas",
+      "INFO worker-4: routine kernel update staged for next maintenance window",
+      "INFO scheduler: spark-etl-2260 completed on worker-9 after 34m",
+      "INFO worker-9: node CPU 38%, load average 4.1",
+      "INFO kubelet worker-9: PLEG healthy again"
+    ],
+    "expected_patterns": [
+      { "name": "node_cpu_saturation", "keywords": ["CPU", "load", "spark", "batch", "cores"] },
+      { "name": "kubelet_degradation", "keywords": ["kubelet", "PLEG", "probe", "timed out"] },
+      { "name": "pod_restarts", "keywords": ["killed", "restarted", "liveness"] }
+    ],
+    "expected_correlations": [
+      { "cause": "node_cpu_saturation", "effect": "kubelet_degradation" },
+      { "cause": "kubelet_degradation", "effect": "pod_restarts" }
+    ]
+  }
+]

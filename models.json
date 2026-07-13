@@ -1,0 +1,41 @@
+{
+  "runs_per_test": 3,
+  "temperature": 0.0,
+  "max_tokens": 4096,
+  "request_timeout": 120,
+  "judge_model": null,
+  "models": [
+    {
+      "name": "grok-4",
+      "provider": "xai",
+      "base_url": "https://api.x.ai/v1",
+      "api_key": "${XAI_API_KEY}",
+      "model_id": "grok-4"
+    },
+    {
+      "name": "claude-opus-4-8",
+      "provider": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model_id": "claude-opus-4-8"
+    },
+    {
+      "name": "gpt-4o",
+      "provider": "openai",
+      "base_url": "https://api.openai.com/v1",
+      "api_key": "${OPENAI_API_KEY}",
+      "model_id": "gpt-4o"
+    },
+    {
+      "name": "llama-3.3-70b",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "meta/llama-3.3-70b"
+    },
+    {
+      "name": "gemma",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "google/gemma-3-12b"
+    }
+  ]
+}

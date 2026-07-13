@@ -1,0 +1,24 @@
+# Secrets — never commit API keys
+.env
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Benchmark artifacts (regenerated on every run)
+.cache/
+results/
+
+# Raw Loghub downloads (re-fetched by scripts/build_datasets.py)
+datasets/raw/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

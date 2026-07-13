@@ -1,0 +1,18 @@
+{
+  "runs_per_test": 2,
+  "temperature": 0.0,
+  "max_tokens": 4096,
+  "judge_model": null,
+  "models": [
+    {
+      "name": "mock-heuristic",
+      "provider": "mock",
+      "model_id": "heuristic"
+    },
+    {
+      "name": "mock-naive",
+      "provider": "mock",
+      "model_id": "naive"
+    }
+  ]
+}

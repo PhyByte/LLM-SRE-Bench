@@ -1,0 +1,362 @@
+[
+  {
+    "id": "lp-hdfs-01",
+    "source": "Loghub HDFS 2k (logpai/logparser)",
+    "logs": [
+      "BLOCK* ask 10.250.14.38:50010 to replicate blk_-7571492020523929240 to datanode(s) 10.251.122.38:50010",
+      "Received block blk_-5785220384376578831 of size 67108864 from /10.251.203.80",
+      "Deleting block blk_449049393237281194 file /mnt/hadoop/dfs/data/current/subdir18/blk_449049393237281194",
+      "Verification succeeded for blk_-7803343374223161433",
+      "BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.199.159:50010 is added to blk_7705518309270121951 size 67108864",
+      "10.250.15.198:50010 Starting thread to transfer block blk_4292382298896622412 to 10.250.15.240:50010",
+      "BLOCK* NameSystem.allocateBlock: /user/root/randtxt/_temporary/_task_200811092030_0003_m_000382_0/part-00382. blk_8935202950442998446",
+      "10.250.9.207:50010:Got exception while serving blk_-3140754468249228022 to /10.250.9.207:"
+    ],
+    "templates": [
+      "BLOCK* ask <*>:<*> to replicate blk_<*> to datanode(s) <*>:<*>",
+      "Received block blk_<*> of size <*> from /<*>",
+      "Deleting block blk_<*> file /<*>/blk_<*>",
+      "Verification succeeded for blk_<*>",
+      "BLOCK* NameSystem.addStoredBlock: blockMap updated: <*>:<*> is added to blk_<*> size <*>",
+      "<*>:<*> Starting thread to transfer block blk_<*> to <*>:<*>",
+      "BLOCK* NameSystem.allocateBlock: /<*>/part-<*>. blk_<*>",
+      "<*>:<*>:Got exception while serving blk_<*> to /<*>:"
+    ]
+  },
+  {
+    "id": "lp-hdfs-02",
+    "source": "Loghub HDFS 2k (logpai/logparser)",
+    "logs": [
+      "Deleting block blk_773599351835388127 file /mnt/hadoop/dfs/data/current/subdir60/blk_773599351835388127",
+      "BLOCK* NameSystem.delete: blk_5572208681898881669 is added to invalidSet of 10.251.38.197:50010",
+      "BLOCK* NameSystem.allocateBlock: /user/root/sortrand2/_temporary/_task_200811101024_0003_r_000116_0/part-00116. blk_6749232449432458524",
+      "10.251.202.134:50010:Got exception while serving blk_3441699978641526775 to /10.251.126.5:",
+      "BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.251.215.192:50010 is added to blk_2015610615789582788 size 67108864",
+      "PacketResponder 0 for block blk_-7937864120968665564 terminating",
+      "Receiving block blk_-8915123233040672605 src: /10.250.10.176:58294 dest: /10.250.10.176:50010",
+      "Received block blk_5915244038969911075 of size 67108864 from /10.250.11.53"
+    ],
+    "templates": [
+      "Deleting block blk_<*> file /<*>/blk_<*>",
+      "BLOCK* NameSystem.delete: blk_<*> is added to invalidSet of <*>:<*>",
+      "BLOCK* NameSystem.allocateBlock: /<*>/part-<*>. blk_<*>",
+      "<*>:<*>:Got exception while serving blk_<*> to /<*>:",
+      "BLOCK* NameSystem.addStoredBlock: blockMap updated: <*>:<*> is added to blk_<*> size <*>",
+      "PacketResponder <*> for block blk_<*> terminating",
+      "Receiving block blk_<*> src: /<*>:<*> dest: /<*>:<*>",
+      "Received block blk_<*> of size <*> from /<*>"
+    ]
+  },
+  {
+    "id": "lp-hdfs-03",
+    "source": "Loghub HDFS 2k (logpai/logparser)",
+    "logs": [
+      "10.251.126.83:50010 Served block blk_-3860894070657427592 to /10.251.126.83",
+      "PacketResponder 0 for block blk_391813102554451063 terminating",
+      "BLOCK* ask 10.250.14.38:50010 to replicate blk_-7571492020523929240 to datanode(s) 10.251.122.38:50010",
+      "10.250.15.198:50010 Starting thread to transfer block blk_4292382298896622412 to 10.250.15.240:50010",
+      "Received block blk_-1485109068671160157 of size 67108864 from /10.251.71.68",
+      "Deleting block blk_-7446091384471755694 file /mnt/hadoop/dfs/data/current/subdir30/blk_-7446091384471755694",
+      "Received block blk_-4411589101766563890 src: /10.250.14.38:37362 dest: /10.250.14.38:50010 of size 67108864",
+      "10.251.202.134:50010:Got exception while serving blk_3441699978641526775 to /10.251.126.5:"
+    ],
+    "templates": [
+      "<*>:<*> Served block blk_<*> to /<*>",
+      "PacketResponder <*> for block blk_<*> terminating",
+      "BLOCK* ask <*>:<*> to replicate blk_<*> to datanode(s) <*>:<*>",
+      "<*>:<*> Starting thread to transfer block blk_<*> to <*>:<*>",
+      "Received block blk_<*> of size <*> from /<*>",
+      "Deleting block blk_<*> file /<*>/blk_<*>",
+      "Received block blk_<*> src: /<*>:<*> dest: /<*>:<*> of size <*>",
+      "<*>:<*>:Got exception while serving blk_<*> to /<*>:"
+    ]
+  },
+  {
+    "id": "lp-bgl-01",
+    "source": "Loghub BGL 2k (logpai/logparser)",
+    "logs": [
+      "rts: bad message header: expecting type 57 instead of type 3 (softheader=00131db8 81aa0003 00000002 00000000) PSR0=00001f01 PSR1=00000000 PRXF=00000002 PIXF=00000007",
+      "1 torus receiver x+ input pipe error(s) (dcr 0x02ec) detected and corrected",
+      "ciod: Error loading /g/g24/buber/Yunsic/BlueGene/partad.develf/taddriver.32.exe: program image too big, 361544528 > 266076160",
+      "shutdown complete",
+      "ciod: LOGIN chdir(pwd) failed: No such file or directory",
+      "guaranteed data cache block touch........1",
+      "program interrupt",
+      "total of 1 ddr error(s) detected and corrected"
+    ],
+    "templates": [
+      "rts: bad message header: expecting type <*> instead of type <*> (softheader=<*> <*> <*> <*>) PSR0=<*> PSR1=<*> PRXF=<*> PIXF=<*>",
+      "<*> torus receiver x+ input pipe error(s) (dcr <*>) detected and corrected",
+      "ciod: Error loading /<*>: program image too big, <*> > <*>",
+      "shutdown complete",
+      "ciod: LOGIN chdir(<*>) failed: No such file or directory",
+      "guaranteed data cache block touch........<*>",
+      "program interrupt",
+      "total of <*> ddr error(s) detected and corrected"
+    ]
+  },
+  {
+    "id": "lp-bgl-02",
+    "source": "Loghub BGL 2k (logpai/logparser)",
+    "logs": [
+      "NodeCard is not fully functional",
+      "ciod: generated 58 core files for program /home/spelce1/HPCC_IBM/Urgent/COP/64K/opt_co_dc.rts",
+      "ciod: Missing or invalid fields on line 1 of node map file /home/auselton/bgl/mapfiles/bgl.128mps.f64.map",
+      "program interrupt: trap instruction.........0",
+      "Error receiving packet on tree network, expecting type 57 instead of type 3 (softheader=0064588e 8aff0003 00000002 00000000) PSR0=00001f01 PSR1=00000000 PRXF=00000002 PIXF=00000007",
+      "CE sym 2, at 0x0d09f1c0, mask 0x80",
+      "disable store gathering..................0",
+      "data TLB error interrupt"
+    ],
+    "templates": [
+      "NodeCard is not fully functional",
+      "ciod: generated <*> core files for program <*>",
+      "ciod: Missing or invalid fields on line <*> of node map file /<*>",
+      "program interrupt: trap instruction.........<*>",
+      "Error receiving packet on tree network, expecting type <*> instead of type <*> (softheader=<*> <*> <*> <*>) PSR0=<*> PSR1=<*> PRXF=<*> PIXF=<*>",
+      "CE sym <*>, at <*>, mask <*>",
+      "disable store gathering..................<*>",
+      "data TLB error interrupt"
+    ]
+  },
+  {
+    "id": "lp-bgl-03",
+    "source": "Loghub BGL 2k (logpai/logparser)",
+    "logs": [
+      "Node card status: ALERT 0, ALERT 1, ALERT 2, ALERT 3 is (are) active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is not asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD is asserted. PGOOD error latch is clear. MPGOOD is OK. MPGOOD error latch is clear. The 2.5 volt rail is OK. The 1.5 volt rail is OK.",
+      "Node card is not fully functional",
+      "instruction address: 0x0062fe04",
+      "1146800 double-hummer alignment exceptions",
+      "ciod: failed to read message prefix on control stream (CioStream socket to 172.16.96.116:51706",
+      "guaranteed instruction cache block touch.0",
+      "program interrupt",
+      "ciod: Error reading message prefix on CioStream socket to 172.16.96.116:41534, Link has been severed"
+    ],
+    "templates": [
+      "Node card status: ALERT <*>, ALERT <*>, ALERT <*>, ALERT <*> is (are) active. Clock Mode is Low. Clock Select is Midplane. Phy JTAG Reset is asserted. ASIC JTAG Reset is not asserted. Temperature Mask is not active. No temperature error. Temperature Limit Error Latch is clear. PGOOD is asserted. PGOOD error latch is clear. MPGOOD is OK. MPGOOD error latch is clear. The <*>.<*> volt rail is OK. The <*>.<*> volt rail is OK.",
+      "Node card is not fully functional",
+      "instruction address: <*>",
+      "<*> double-hummer alignment exceptions",
+      "ciod: failed to read message prefix on control stream (CioStream socket to <*>:<*>",
+      "guaranteed instruction cache block touch.<*>",
+      "program interrupt",
+      "ciod: Error reading message prefix on CioStream socket to <*>:<*>, Link has been severed"
+    ]
+  },
+  {
+    "id": "lp-openssh-01",
+    "source": "Loghub OpenSSH 2k (logpai/logparser)",
+    "logs": [
+      "input_userauth_request: invalid user butter [preauth]",
+      "Received disconnect from 183.62.140.253: 11: Bye Bye [preauth]",
+      "pam_unix(sshd:session): session closed for user fztu",
+      "Disconnecting: Too many authentication failures for root [preauth]",
+      "fatal: Write failed: Connection reset by peer [preauth]",
+      "Accepted password for fztu from 119.137.62.142 port 49116 ssh2",
+      "error: Received disconnect from 103.99.0.122: 14: No more user authentication methods available. [preauth]",
+      "message repeated 5 times: [ Failed password for root from 5.36.59.76 port 42393 ssh2]"
+    ],
+    "templates": [
+      "input_userauth_request: invalid user <*> [preauth]",
+      "Received disconnect from <*>: <*>: Bye Bye [preauth]",
+      "pam_unix(sshd:session): session closed for user <*>",
+      "Disconnecting: Too many authentication failures for root [preauth]",
+      "fatal: Write failed: Connection reset by peer [preauth]",
+      "Accepted password for <*> from <*> port <*> ssh2",
+      "error: Received disconnect from <*>: <*>: No more user authentication methods available. [preauth]",
+      "message repeated <*> times: [ Failed password for root from <*> port <*>]"
+    ]
+  },
+  {
+    "id": "lp-openssh-02",
+    "source": "Loghub OpenSSH 2k (logpai/logparser)",
+    "logs": [
+      "fatal: Write failed: Connection reset by peer [preauth]",
+      "Received disconnect from 103.207.39.16: 11: Closed due to user request. [preauth]",
+      "PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.190.58.151",
+      "Did not receive identification string from 188.132.244.89",
+      "pam_unix(sshd:auth): check pass; user unknown",
+      "message repeated 5 times: [ Failed password for root from 106.5.5.195 port 50719 ssh2]",
+      "pam_unix(sshd:session): session opened for user fztu by (uid=0)",
+      "PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.5.5.195  user=root"
+    ],
+    "templates": [
+      "fatal: Write failed: Connection reset by peer [preauth]",
+      "Received disconnect from <*>: <*>: Closed due to user request. [preauth]",
+      "PAM <*> more authentication failures; logname= uid=<*> euid=<*> tty=ssh ruser= rhost=<*>",
+      "Did not receive identification string from <*>",
+      "pam_unix(sshd:auth): check pass; user unknown",
+      "message repeated <*> times: [ Failed password for root from <*> port <*>]",
+      "pam_unix(sshd:session): session opened for user <*> by (uid=<*>)",
+      "PAM <*> more authentication failures; logname= uid=<*> euid=<*> tty=ssh ruser= rhost=<*>  user=root"
+    ]
+  },
+  {
+    "id": "lp-openssh-03",
+    "source": "Loghub OpenSSH 2k (logpai/logparser)",
+    "logs": [
+      "reverse mapping checking getaddrinfo for customer-187-141-143-180-sta.uninet-ide.com.mx [187.141.143.180] failed - POSSIBLE BREAK-IN ATTEMPT!",
+      "Disconnecting: Too many authentication failures for admin [preauth]",
+      "Disconnecting: Too many authentication failures for root [preauth]",
+      "pam_unix(sshd:session): session opened for user fztu by (uid=0)",
+      "message repeated 5 times: [ Failed password for root from 5.36.59.76 port 42393 ssh2]",
+      "PAM 1 more authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.190.58.151",
+      "PAM 5 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=106.5.5.195  user=root",
+      "Did not receive identification string from 103.207.39.212"
+    ],
+    "templates": [
+      "reverse mapping checking getaddrinfo for <*> [<*>] failed - POSSIBLE BREAK-IN ATTEMPT!",
+      "Disconnecting: Too many authentication failures for admin [preauth]",
+      "Disconnecting: Too many authentication failures for root [preauth]",
+      "pam_unix(sshd:session): session opened for user <*> by (uid=<*>)",
+      "message repeated <*> times: [ Failed password for root from <*> port <*>]",
+      "PAM <*> more authentication failure; logname= uid=<*> euid=<*> tty=ssh ruser= rhost=<*>",
+      "PAM <*> more authentication failures; logname= uid=<*> euid=<*> tty=ssh ruser= rhost=<*>  user=root",
+      "Did not receive identification string from <*>"
+    ]
+  },
+  {
+    "id": "lp-zookeeper-01",
+    "source": "Loghub Zookeeper 2k (logpai/logparser)",
+    "logs": [
+      "Notification time out: 60000",
+      "Unexpected Exception:",
+      "Have quorum of supporters; starting up and setting last processed zxid: 0xb00000000",
+      "caught end of stream exception",
+      "Connection request from old client /10.10.34.30:55417; will be dropped if server is in r-o mode",
+      "Processed session termination for sessionid: 0x34f4a63146b000f",
+      "Notification: 3 (n.leader), 0x100001564 (n.zxid), 0x3 (n.round), FOLLOWING (n.state), 3 (n.sid), 0x2 (n.peerEPoch), FOLLOWING (my state)",
+      "Have smaller server identifier, so dropping the connection: (2, 1)"
+    ],
+    "templates": [
+      "Notification time out: <*>",
+      "Unexpected Exception:",
+      "Have quorum of supporters; starting up and setting last processed zxid: <*>",
+      "caught end of stream exception",
+      "Connection request from old client /<*>:<*>; will be dropped if server is in r-o mode",
+      "Processed session termination for sessionid: <*>",
+      "Notification: <*> (n.leader), <*> (n.zxid), <*> (n.round), FOLLOWING (n.state), <*> (n.sid), <*> (n.peerEPoch), FOLLOWING (my state)",
+      "Have smaller server identifier, so dropping the connection: (<*>, <*>)"
+    ]
+  },
+  {
+    "id": "lp-zookeeper-02",
+    "source": "Loghub Zookeeper 2k (logpai/logparser)",
+    "logs": [
+      "Closed socket connection for client /10.10.34.13:54265 (no session established for client)",
+      "Interrupted while waiting for message on queue",
+      "Follower sid: 3 : info : org.apache.zookeeper.server.quorum.QuorumPeer$QuorumServer@33557fe4",
+      "Got user-level KeeperException when processing sessionid:0x34ed93485090001 type:create cxid:0x55b8bb0f zxid:0x100000010 txntype:-1 reqpath:n/a Error Path:/home/curi/.zookeeper Error:KeeperErrorCode = NodeExists for /home/curi/.zookeeper",
+      "Snapshotting: 0x300000dcd to /var/lib/zookeeper/version-2/snapshot.300000dcd",
+      "FOLLOWING",
+      "Server environment:java.class.path=/etc/zookeeper/conf:/usr/share/java/jline.jar:/usr/share/java/log4j-1.2.jar:/usr/share/java/xercesImpl.jar:/usr/share/java/xmlParserAPIs.jar:/usr/share/java/netty.jar:/usr/share/java/slf4j-api.jar:/usr/share/java/slf4j-log4j12.jar:/usr/share/java/zookeeper.jar",
+      "******* GOODBYE /10.10.34.11:52844 ********"
+    ],
+    "templates": [
+      "Closed socket connection for client /<*>:<*> (no session established for client)",
+      "Interrupted while waiting for message on queue",
+      "Follower sid: <*> : info : org.apache.zookeeper.server.quorum.QuorumPeer$QuorumServer@<*>",
+      "Got user-level KeeperException when processing sessionid:<*> type:create cxid:<*> zxid:<*> txntype:<*> reqpath:<*> Error Path:<*> Error:KeeperErrorCode = NodeExists for <*>",
+      "Snapshotting: <*> to <*>",
+      "FOLLOWING",
+      "Server environment:<*>",
+      "******* GOODBYE /<*>:<*> ********"
+    ]
+  },
+  {
+    "id": "lp-zookeeper-03",
+    "source": "Loghub Zookeeper 2k (logpai/logparser)",
+    "logs": [
+      "Interrupted while waiting for message on queue",
+      "Closed socket connection for client /10.10.34.18:42772 which had sessionid 0x14ed93111f20005",
+      "Starting quorum peer",
+      "Notification time out: 60000",
+      "Connection request from old client /10.10.34.33:39730; will be dropped if server is in r-o mode",
+      "Received connection request /10.10.34.13:47464",
+      "Follower sid: 3 : info : org.apache.zookeeper.server.quorum.QuorumPeer$QuorumServer@33557fe4",
+      "autopurge.purgeInterval set to 0"
+    ],
+    "templates": [
+      "Interrupted while waiting for message on queue",
+      "Closed socket connection for client /<*>:<*> which had sessionid <*>",
+      "Starting quorum peer",
+      "Notification time out: <*>",
+      "Connection request from old client /<*>:<*>; will be dropped if server is in r-o mode",
+      "Received connection request /<*>:<*>",
+      "Follower sid: <*> : info : org.apache.zookeeper.server.quorum.QuorumPeer$QuorumServer@<*>",
+      "autopurge.purgeInterval set to <*>"
+    ]
+  },
+  {
+    "id": "lp-linux-01",
+    "source": "Loghub Linux 2k (logpai/logparser)",
+    "logs": [
+      "SELinux:  Initializing.",
+      "Mount-cache hash table entries: 512 (order: 0, 4096 bytes)",
+      "klogd 1.4.1, log source = /proc/kmsg started.",
+      "audit(1122475266.4294965305:0): initialized",
+      "There is already a security framework initialized, register_security failed.",
+      "sdpd v1.5 started",
+      "mapped 4G/4G trampoline to ffff3000.",
+      "On node 0 totalpages: 32430"
+    ],
+    "templates": [
+      "SELinux:  Initializing.",
+      "Mount-cache hash table entries: <*> (order: <*>, <*> bytes)",
+      "klogd <*>.<*>.<*>, log source = /proc/kmsg started.",
+      "audit(<*>.<*>:<*>): initialized",
+      "There is already a security framework initialized, register_security failed.",
+      "sdpd v<*>.<*> started",
+      "mapped 4G/4G trampoline to <*>.",
+      "On node <*> totalpages: <*>"
+    ]
+  },
+  {
+    "id": "lp-linux-02",
+    "source": "Loghub Linux 2k (logpai/logparser)",
+    "logs": [
+      "Authentication failed from 163.27.187.39 (163.27.187.39): Permission denied in replay cache code",
+      "connection from 206.196.21.129 (host129.206.196.21.maximumasp.com) at Sat Jul  9 22:53:19 2005",
+      "authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=212.0.132.20  user=test",
+      "authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=n219076184117.netvigator.com  user=root",
+      "SELinux:  Initializing.",
+      "usbcore: registered new driver usbfs",
+      "klogd 1.4.1, log source = /proc/kmsg started.",
+      "Linux version 2.6.5-1.358 (bhcompile@bugs.build.redhat.com) (gcc version 3.3.3 20040412 (Red Hat Linux 3.3.3-7)) #1 Sat May 8 09:04:50 EDT 2004"
+    ],
+    "templates": [
+      "Authentication failed from <*> (<*>): Permission denied in replay cache code",
+      "connection from <*> (<*>) at <*>:<*>:<*>",
+      "authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=<*>  user=test",
+      "authentication failure; logname= uid=0 euid=0 tty=NODEVssh ruser= rhost=<*>  user=root",
+      "SELinux:  Initializing.",
+      "usbcore: registered new driver usbfs",
+      "klogd <*>.<*>.<*>, log source = /proc/kmsg started.",
+      "Linux version <*>.<*>.<*><*>.<*> (bhcompile@bugs.build.redhat.com) (gcc version <*>.<*>.<*> (Red Hat Linux <*>.<*>.<*><*>)) #<*> <*>:<*>:<*> EDT <*>"
+    ]
+  },
+  {
+    "id": "lp-linux-03",
+    "source": "Loghub Linux 2k (logpai/logparser)",
+    "logs": [
+      "VFS: Disk quotas dquot_6.5.1",
+      "Received SNMP packet(s) from 67.170.148.126",
+      "Checking 'hlt' instruction... OK.",
+      "PCI: Probing PCI hardware (bus 00)",
+      "syslogd startup succeeded",
+      "klogd 1.4.1, log source = /proc/kmsg started.",
+      "Detected 731.219 MHz processor.",
+      "Security Scaffold v1.0.0 initialized"
+    ],
+    "templates": [
+      "VFS: Disk quotas dquot_<*>.<*>.<*>",
+      "Received SNMP packet(s) from <*>",
+      "Checking 'hlt' instruction... OK.",
+      "PCI: Probing PCI hardware (bus <*>)",
+      "syslogd startup succeeded",
+      "klogd <*>.<*>.<*>, log source = /proc/kmsg started.",
+      "Detected <*>.<*> MHz processor.",
+      "Security Scaffold v<*>.<*>.<*> initialized"
+    ]
+  }
+]
