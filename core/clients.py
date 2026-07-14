@@ -45,6 +45,9 @@ class BaseClient:
     def __init__(self, model: ModelConfig, config: BenchmarkConfig) -> None:
         self.model = model
         self.config = config
+        # Effective settings: per-model override falls back to the global value.
+        self.timeout = model.request_timeout or config.request_timeout
+        self.max_tokens = model.max_tokens or config.max_tokens
 
     def complete(self, system: str, user: str) -> LLMResponse:
         raise NotImplementedError
@@ -82,6 +85,14 @@ def _retrying_post(client: httpx.Client, url: str, **kwargs) -> httpx.Response:
     raise ClientError(f"request failed after {_MAX_RETRIES + 1} attempts: {last_error}")
 
 
+def _openai_reasoning_model(model_id: str) -> bool:
+    """OpenAI o-series and GPT-5+ models reject max_tokens and often temperature."""
+    mid = model_id.lower()
+    if mid.startswith("o") and len(mid) > 1 and mid[1].isdigit():
+        return True
+    return mid.startswith("gpt-5")
+
+
 class OpenAICompatibleClient(BaseClient):
     """OpenAI, xAI Grok, and any other /chat/completions-compatible endpoint."""
 
@@ -101,27 +112,53 @@ class OpenAICompatibleClient(BaseClient):
         self._http = httpx.Client(
             base_url=base_url.rstrip("/"),
             headers=headers,
-            timeout=config.request_timeout,
+            timeout=self.timeout,
         )
 
-    def complete(self, system: str, user: str) -> LLMResponse:
-        payload = {
+    def _chat_payload(self, system: str, user: str) -> dict:
+        payload: dict = {
             "model": self.model.model_id,
-            "temperature": self.config.temperature,
-            "max_tokens": self.config.max_tokens,
             "messages": [
                 {"role": "system", "content": system},
                 {"role": "user", "content": user},
             ],
         }
+        reasoning = self.model.provider == "openai" and _openai_reasoning_model(
+            self.model.model_id
+        )
+        if not reasoning:
+            payload["temperature"] = self.config.temperature
+            payload["max_tokens"] = self.max_tokens
+        else:
+            payload["max_completion_tokens"] = self.max_tokens
+        if self.model.json_mode:
+            # The system prompt already instructs "single valid JSON object",
+            # which satisfies servers that require the word "json" for this mode.
+            payload["response_format"] = {"type": "json_object"}
+        return payload
+
+    def complete(self, system: str, user: str) -> LLMResponse:
+        payload = self._chat_payload(system, user)
         start = time.perf_counter()
         response = _retrying_post(self._http, "/chat/completions", json=payload)
         latency = time.perf_counter() - start
         data = response.json()
         try:
-            text = data["choices"][0]["message"]["content"] or ""
+            choice = data["choices"][0]
+            text = choice["message"]["content"] or ""
         except (KeyError, IndexError) as exc:
             raise ClientError(f"malformed completion response: {data}") from exc
+        if not text.strip():
+            # Reasoning models (o-series, GPT-5+) can spend the whole token
+            # budget on hidden reasoning and return empty content. Surface a
+            # clear, retryable error instead of a downstream "no JSON" failure.
+            finish = choice.get("finish_reason")
+            hint = (
+                " — raise this model's max_tokens (reasoning consumed the budget)"
+                if finish == "length"
+                else ""
+            )
+            raise ClientError(f"empty response (finish_reason={finish}){hint}")
         usage = data.get("usage") or {}
         return LLMResponse(
             text=text,
@@ -139,7 +176,7 @@ class AnthropicClient(BaseClient):
         self._anthropic = anthropic
         self._client = anthropic.Anthropic(
             api_key=model.api_key or None,
-            timeout=config.request_timeout,
+            timeout=self.timeout,
             max_retries=_MAX_RETRIES,
         )
 
@@ -150,7 +187,7 @@ class AnthropicClient(BaseClient):
         try:
             response = self._client.messages.create(
                 model=self.model.model_id,
-                max_tokens=self.config.max_tokens,
+                max_tokens=self.max_tokens,
                 system=system,
                 messages=[{"role": "user", "content": user}],
             )
@@ -172,7 +209,7 @@ class OllamaClient(BaseClient):
     def __init__(self, model: ModelConfig, config: BenchmarkConfig) -> None:
         super().__init__(model, config)
         base_url = (model.base_url or "http://localhost:11434").rstrip("/")
-        self._http = httpx.Client(base_url=base_url, timeout=config.request_timeout)
+        self._http = httpx.Client(base_url=base_url, timeout=self.timeout)
 
     def complete(self, system: str, user: str) -> LLMResponse:
         payload = {
@@ -180,13 +217,15 @@ class OllamaClient(BaseClient):
             "stream": False,
             "options": {
                 "temperature": self.config.temperature,
-                "num_predict": self.config.max_tokens,
+                "num_predict": self.max_tokens,
             },
             "messages": [
                 {"role": "system", "content": system},
                 {"role": "user", "content": user},
             ],
         }
+        if self.model.json_mode:
+            payload["format"] = "json"  # Ollama's JSON-constraining flag
         start = time.perf_counter()
         response = _retrying_post(self._http, "/api/chat", json=payload)
         latency = time.perf_counter() - start

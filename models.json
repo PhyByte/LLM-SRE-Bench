@@ -11,12 +11,41 @@
       "base_url": "https://api.x.ai/v1",
       "api_key": "${XAI_API_KEY}",
       "model_id": "grok-4"
+    }, 
+    {
+      "name": "grok-4.5",
+      "provider": "xai",
+      "base_url": "https://api.x.ai/v1",
+      "api_key": "${XAI_API_KEY}",
+      "model_id": "grok-4.5"
     },
     {
       "name": "claude-opus-4-8",
       "provider": "anthropic",
       "api_key": "${ANTHROPIC_API_KEY}",
       "model_id": "claude-opus-4-8"
+    },    
+    {
+      "name": "gpt-5.6-terra",
+      "provider": "openai",
+      "base_url": "https://api.openai.com/v1",
+      "api_key": "${OPENAI_API_KEY}",
+      "model_id": "gpt-5.6-terra"
+    },      
+    {
+      "name": "gpt-5.6-luna",
+      "provider": "openai",
+      "base_url": "https://api.openai.com/v1",
+      "api_key": "${OPENAI_API_KEY}",
+      "model_id": "gpt-5.6-luna",
+      "max_tokens": 8192
+    },  
+    {
+      "name": "gpt-5.6-sol",
+      "provider": "openai",
+      "base_url": "https://api.openai.com/v1",
+      "api_key": "${OPENAI_API_KEY}",
+      "model_id": "gpt-5.6-sol"
     },
     {
       "name": "gpt-4o",
@@ -29,13 +58,28 @@
       "name": "llama-3.3-70b",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
-      "model_id": "meta/llama-3.3-70b"
+      "model_id": "meta/llama-3.3-70b",
+      "request_timeout": 600
     },
     {
-      "name": "gemma",
+      "name": "gemma-3-12B",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "google/gemma-3-12b"
+    },
+    {
+      "name": "gemma-4-26B-a4b",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "google/gemma-4-26b-a4b"
+    },
+    {
+      "name": "gemma-4-31b",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "google/gemma-4-31b",
+      "max_tokens": 16384,
+      "request_timeout": 600
     }
   ]
 }

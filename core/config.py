@@ -37,6 +37,14 @@ class ModelConfig(BaseModel):
     model_id: str
     base_url: Optional[str] = None
     api_key: Optional[str] = None
+    # Per-model overrides of the global settings. Handy for slow local models
+    # (e.g. a 70B in LM Studio needs a much longer timeout than a cloud API).
+    request_timeout: Optional[float] = None
+    max_tokens: Optional[int] = None
+    # Force JSON output via response_format (OpenAI-compatible + Ollama). Helps
+    # weaker models that otherwise reply with prose. Off by default so the
+    # benchmark measures unprompted JSON discipline unless you opt in.
+    json_mode: bool = False
 
     @field_validator("api_key")
     @classmethod

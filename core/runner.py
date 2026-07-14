@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass, field
 from typing import Any, Callable, Optional
 
@@ -35,6 +36,37 @@ class RunRecord:
         if self.input_tokens is None and self.output_tokens is None:
             return None
         return (self.input_tokens or 0) + (self.output_tokens or 0)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "model": self.model,
+            "category": self.category,
+            "case_id": self.case_id,
+            "run_index": self.run_index,
+            "score": self.score,
+            "metrics": self.metrics,
+            "latency_s": self.latency_s,
+            "input_tokens": self.input_tokens,
+            "output_tokens": self.output_tokens,
+            "cached": self.cached,
+            "error": self.error,
+        }
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any]) -> "RunRecord":
+        return cls(
+            model=data["model"],
+            category=data["category"],
+            case_id=data["case_id"],
+            run_index=data["run_index"],
+            score=float(data["score"]),
+            metrics=dict(data.get("metrics", {})),
+            latency_s=float(data.get("latency_s", 0.0)),
+            input_tokens=data.get("input_tokens"),
+            output_tokens=data.get("output_tokens"),
+            cached=bool(data.get("cached", False)),
+            error=data.get("error"),
+        )
 
 
 class BenchmarkRunner:
@@ -94,6 +126,11 @@ class BenchmarkRunner:
                     "input_tokens": response.input_tokens,
                     "output_tokens": response.output_tokens,
                 },
+                meta={
+                    "model": model.name,
+                    "model_id": model.model_id,
+                    "provider": model.provider,
+                },
             )
         return response
 
@@ -138,17 +175,59 @@ class BenchmarkRunner:
             record.error = f"{type(exc).__name__}: {exc}"
         return record
 
+    # Errors worth re-attempting on a retry pass: transient conditions that may
+    # succeed next time (intermittent 401, rate limits/5xx that outlasted the
+    # per-call backoff, timeouts, malformed JSON). Clearly-permanent errors
+    # (403 no-access, 404, connection refused) and circuit-breaker skips are
+    # NOT retried — that would just burn calls against a dead model.
+    _PERMANENT_ERROR_MARKERS = (
+        "skipped:",
+        "http 403",
+        "http 404",
+        "permission-denied",
+        "cannot connect",
+        "is not available",
+        "unsupported provider",
+    )
+
+    @classmethod
+    def _is_retryable_error(cls, error: Optional[str]) -> bool:
+        if not error:
+            return False
+        lowered = error.lower()
+        return not any(marker in lowered for marker in cls._PERMANENT_ERROR_MARKERS)
+
     def run(
         self,
         datasets: dict[str, list[dict[str, Any]]],
         model_names: Optional[list[str]] = None,
         on_record: Optional[Callable[[RunRecord], None]] = None,
-    ) -> list[RunRecord]:
+        retry_failed: int = 0,
+    ) -> tuple[list[RunRecord], dict[str, float]]:
+        """Run the benchmark.
+
+        Args:
+            retry_failed: after the initial pass over a model, re-attempt runs
+                that failed with a transient error, up to this many extra passes.
+
+        Returns:
+            (records, model_durations)
+            model_durations maps model name -> wall-clock seconds spent on that model's full set.
+        """
         models = [
             m for m in self.config.models if model_names is None or m.name in model_names
         ]
         records: list[RunRecord] = []
+        model_durations: dict[str, float] = {}
+        case_index = {
+            (category, case["id"]): case
+            for category, cases in datasets.items()
+            for case in cases
+        }
+
         for model in models:
+            model_start = time.perf_counter()
+            model_records: list[RunRecord] = []
             consecutive_failures = 0
             circuit_open = False
             for category, cases in datasets.items():
@@ -176,10 +255,40 @@ class BenchmarkRunner:
                                     circuit_open = True
                             else:
                                 consecutive_failures = 0
-                        records.append(record)
+                        model_records.append(record)
                         if on_record is not None:
                             on_record(record)
-        return records
+
+            # Retry passes: re-attempt only transient failures for this model.
+            for _attempt in range(retry_failed):
+                retryable = [
+                    r for r in model_records if self._is_retryable_error(r.error)
+                ]
+                if not retryable:
+                    break
+                for record in retryable:
+                    case = case_index[(record.category, record.case_id)]
+                    judge = (
+                        self._make_judge(case) if record.category == "root_cause" else None
+                    )
+                    fresh = self._run_one(
+                        model, record.category, case, record.run_index, judge
+                    )
+                    # Replace the failed record in place with the new attempt.
+                    record.score = fresh.score
+                    record.metrics = fresh.metrics
+                    record.latency_s = fresh.latency_s
+                    record.input_tokens = fresh.input_tokens
+                    record.output_tokens = fresh.output_tokens
+                    record.cached = fresh.cached
+                    record.error = fresh.error
+                    if on_record is not None:
+                        on_record(record)
+
+            records.extend(model_records)
+            model_durations[model.name] = time.perf_counter() - model_start
+
+        return records, model_durations
 
     @staticmethod
     def total_tasks(

@@ -7,13 +7,25 @@ import re
 from typing import Any
 
 _FENCE = re.compile(r"```(?:json)?\s*(.*?)```", re.DOTALL)
+# Trailing comma before a closing } or ] — a very common LLM serialization
+# quirk that strict json.loads rejects. Stripping it measures SRE skill, not
+# JSON pedantry. Only matches commas followed by optional whitespace + a close.
+_TRAILING_COMMA = re.compile(r",(\s*[}\]])")
+
+
+def _loads_lenient(text: str) -> Any:
+    """json.loads, retried once with trailing commas removed."""
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        return json.loads(_TRAILING_COMMA.sub(r"\1", text))
 
 
 def extract_json(text: str) -> dict[str, Any]:
     """Pull the first JSON object out of an LLM response.
 
-    Handles markdown fences and leading/trailing prose around the object.
-    Raises ValueError if no parseable object is found.
+    Handles markdown fences, leading/trailing prose around the object, and
+    trailing commas. Raises ValueError if no parseable object is found.
     """
     candidate = text.strip()
     fenced = _FENCE.search(candidate)
@@ -21,7 +33,7 @@ def extract_json(text: str) -> dict[str, Any]:
         candidate = fenced.group(1).strip()
 
     try:
-        obj = json.loads(candidate)
+        obj = _loads_lenient(candidate)
         if isinstance(obj, dict):
             return obj
     except json.JSONDecodeError:
@@ -50,7 +62,7 @@ def extract_json(text: str) -> dict[str, Any]:
         elif ch == "}":
             depth -= 1
             if depth == 0:
-                obj = json.loads(candidate[start : i + 1])
+                obj = _loads_lenient(candidate[start : i + 1])
                 if isinstance(obj, dict):
                     return obj
                 raise ValueError("top-level JSON value is not an object")
