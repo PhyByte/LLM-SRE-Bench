@@ -1,0 +1,19 @@
+{
+  "model": "mock-naive",
+  "global_score": 39.56,
+  "category_scores": {
+    "metrics_timeseries": 20.0,
+    "efficiency": 98.23
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 0.3387,
+    "avg_total_tokens": 146.0,
+    "score_stddev": 0.0,
+    "latency_score": 0.9831,
+    "token_score": 0.9635,
+    "consistency_score": 1.0
+  },
+  "error_count": 0,
+  "total_runs": 20,
+  "total_duration_s": 0.0
+}

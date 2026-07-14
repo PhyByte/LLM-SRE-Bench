@@ -1,0 +1,19 @@
+{
+  "model": "mock-heuristic",
+  "global_score": 75.97,
+  "category_scores": {
+    "metrics_timeseries": 68.4,
+    "efficiency": 98.68
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 0.1066,
+    "avg_total_tokens": 147.0,
+    "score_stddev": 0.0,
+    "latency_score": 0.9947,
+    "token_score": 0.9633,
+    "consistency_score": 1.0
+  },
+  "error_count": 0,
+  "total_runs": 20,
+  "total_duration_s": 0.72
+}

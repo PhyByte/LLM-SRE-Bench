@@ -1,0 +1,2284 @@
+[
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-01",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.1874193340190686,
+    "input_tokens": 439,
+    "output_tokens": 296,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-01",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.5440974999801256,
+    "input_tokens": 439,
+    "output_tokens": 384,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-01",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.484399582957849,
+    "input_tokens": 439,
+    "output_tokens": 399,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-02",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 2.4839112909976393,
+    "input_tokens": 434,
+    "output_tokens": 276,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-02",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.3583964580320753,
+    "input_tokens": 434,
+    "output_tokens": 328,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-02",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.2707657500286587,
+    "input_tokens": 434,
+    "output_tokens": 350,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-03",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.1553914159885608,
+    "input_tokens": 432,
+    "output_tokens": 378,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-03",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.636063791986089,
+    "input_tokens": 432,
+    "output_tokens": 403,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-03",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.8593941669678316,
+    "input_tokens": 432,
+    "output_tokens": 314,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-01",
+    "run_index": 0,
+    "score": 0.9305555555555556,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.9861111111111112
+    },
+    "latency_s": 2.6360887920018286,
+    "input_tokens": 341,
+    "output_tokens": 332,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-01",
+    "run_index": 1,
+    "score": 0.9305555555555556,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.9861111111111112
+    },
+    "latency_s": 2.9685172919998877,
+    "input_tokens": 341,
+    "output_tokens": 399,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-01",
+    "run_index": 2,
+    "score": 0.8623737373737373,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9747474747474747
+    },
+    "latency_s": 3.439077167015057,
+    "input_tokens": 341,
+    "output_tokens": 442,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-02",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.1319502500118688,
+    "input_tokens": 350,
+    "output_tokens": 385,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-02",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 2.6007988339988515,
+    "input_tokens": 350,
+    "output_tokens": 285,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-02",
+    "run_index": 2,
+    "score": 0.8591269841269842,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9682539682539683
+    },
+    "latency_s": 3.5374618750065565,
+    "input_tokens": 350,
+    "output_tokens": 434,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-03",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 2.8501088339835405,
+    "input_tokens": 375,
+    "output_tokens": 362,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-03",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 4.489261417009402,
+    "input_tokens": 375,
+    "output_tokens": 389,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-03",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.887155750009697,
+    "input_tokens": 375,
+    "output_tokens": 475,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-01",
+    "run_index": 0,
+    "score": 0.8602430555555556,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9704861111111112
+    },
+    "latency_s": 2.3571605830220506,
+    "input_tokens": 314,
+    "output_tokens": 323,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-01",
+    "run_index": 1,
+    "score": 0.8602430555555556,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9704861111111112
+    },
+    "latency_s": 3.0773902910295874,
+    "input_tokens": 314,
+    "output_tokens": 367,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-01",
+    "run_index": 2,
+    "score": 0.8602430555555556,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9704861111111112
+    },
+    "latency_s": 2.4767709160223603,
+    "input_tokens": 314,
+    "output_tokens": 338,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-02",
+    "run_index": 0,
+    "score": 0.8628472222222222,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9756944444444444
+    },
+    "latency_s": 4.498076250019949,
+    "input_tokens": 348,
+    "output_tokens": 524,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-02",
+    "run_index": 1,
+    "score": 0.8628472222222222,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9756944444444444
+    },
+    "latency_s": 6.216719332966022,
+    "input_tokens": 348,
+    "output_tokens": 677,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-02",
+    "run_index": 2,
+    "score": 0.8628472222222222,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9756944444444444
+    },
+    "latency_s": 4.703864834038541,
+    "input_tokens": 348,
+    "output_tokens": 572,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-03",
+    "run_index": 0,
+    "score": 0.7222222222222222,
+    "metrics": {
+      "template_accuracy": 0.5,
+      "token_f1": 0.9444444444444444
+    },
+    "latency_s": 4.127064667001832,
+    "input_tokens": 365,
+    "output_tokens": 467,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-03",
+    "run_index": 1,
+    "score": 0.7222222222222222,
+    "metrics": {
+      "template_accuracy": 0.5,
+      "token_f1": 0.9444444444444444
+    },
+    "latency_s": 5.263369875028729,
+    "input_tokens": 365,
+    "output_tokens": 482,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-openssh-03",
+    "run_index": 2,
+    "score": 0.7222222222222222,
+    "metrics": {
+      "template_accuracy": 0.5,
+      "token_f1": 0.9444444444444444
+    },
+    "latency_s": 4.038847582996823,
+    "input_tokens": 365,
+    "output_tokens": 452,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-01",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 2.8466585829737596,
+    "input_tokens": 322,
+    "output_tokens": 350,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-01",
+    "run_index": 1,
+    "score": 0.9296875,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.984375
+    },
+    "latency_s": 3.3787660829839297,
+    "input_tokens": 322,
+    "output_tokens": 383,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-01",
+    "run_index": 2,
+    "score": 0.8638980263157895,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.977796052631579
+    },
+    "latency_s": 2.6271609170362353,
+    "input_tokens": 322,
+    "output_tokens": 352,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-02",
+    "run_index": 0,
+    "score": 0.9340277777777778,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.9930555555555556
+    },
+    "latency_s": 3.6159100000513718,
+    "input_tokens": 432,
+    "output_tokens": 387,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-02",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.954037541989237,
+    "input_tokens": 432,
+    "output_tokens": 504,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-02",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 3.2937230830430053,
+    "input_tokens": 432,
+    "output_tokens": 415,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-03",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 2.5685442499816418,
+    "input_tokens": 295,
+    "output_tokens": 263,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-03",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 2.7659632089780644,
+    "input_tokens": 295,
+    "output_tokens": 310,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-zookeeper-03",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "template_accuracy": 1.0,
+      "token_f1": 1.0
+    },
+    "latency_s": 2.4610463330172934,
+    "input_tokens": 295,
+    "output_tokens": 204,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-01",
+    "run_index": 0,
+    "score": 0.8535714285714286,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9571428571428572
+    },
+    "latency_s": 3.3192665409878828,
+    "input_tokens": 269,
+    "output_tokens": 365,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-01",
+    "run_index": 1,
+    "score": 0.8535714285714286,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9571428571428572
+    },
+    "latency_s": 5.077365499979351,
+    "input_tokens": 269,
+    "output_tokens": 605,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-01",
+    "run_index": 2,
+    "score": 0.8535714285714286,
+    "metrics": {
+      "template_accuracy": 0.75,
+      "token_f1": 0.9571428571428572
+    },
+    "latency_s": 3.5774681249749847,
+    "input_tokens": 269,
+    "output_tokens": 390,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-02",
+    "run_index": 0,
+    "score": 0.6949404761904762,
+    "metrics": {
+      "template_accuracy": 0.5,
+      "token_f1": 0.8898809523809523
+    },
+    "latency_s": 5.833380582975224,
+    "input_tokens": 399,
+    "output_tokens": 659,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-02",
+    "run_index": 1,
+    "score": 0.6929392446633826,
+    "metrics": {
+      "template_accuracy": 0.5,
+      "token_f1": 0.8858784893267652
+    },
+    "latency_s": 8.598168249998707,
+    "input_tokens": 399,
+    "output_tokens": 1107,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-02",
+    "run_index": 2,
+    "score": 0.6929392446633826,
+    "metrics": {
+      "template_accuracy": 0.5,
+      "token_f1": 0.8858784893267652
+    },
+    "latency_s": 8.908300874987617,
+    "input_tokens": 399,
+    "output_tokens": 1172,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-03",
+    "run_index": 0,
+    "score": 0.9285714285714286,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.9821428571428571
+    },
+    "latency_s": 2.548784624959808,
+    "input_tokens": 255,
+    "output_tokens": 271,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-03",
+    "run_index": 1,
+    "score": 0.9285714285714286,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.9821428571428571
+    },
+    "latency_s": 2.5214309580042027,
+    "input_tokens": 255,
+    "output_tokens": 283,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "log_parsing",
+    "case_id": "lp-linux-03",
+    "run_index": 2,
+    "score": 0.9285714285714286,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.9821428571428571
+    },
+    "latency_s": 3.7268354590050876,
+    "input_tokens": 255,
+    "output_tokens": 459,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-01",
+    "run_index": 0,
+    "score": 0.5294117647058824,
+    "metrics": {
+      "precision": 0.36,
+      "recall": 1.0,
+      "f1": 0.5294117647058824
+    },
+    "latency_s": 1.6098741249879822,
+    "input_tokens": 375,
+    "output_tokens": 150,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-01",
+    "run_index": 1,
+    "score": 0.5294117647058824,
+    "metrics": {
+      "precision": 0.36,
+      "recall": 1.0,
+      "f1": 0.5294117647058824
+    },
+    "latency_s": 1.716213500010781,
+    "input_tokens": 375,
+    "output_tokens": 135,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-01",
+    "run_index": 2,
+    "score": 0.5294117647058824,
+    "metrics": {
+      "precision": 0.36,
+      "recall": 1.0,
+      "f1": 0.5294117647058824
+    },
+    "latency_s": 2.4115580420475453,
+    "input_tokens": 375,
+    "output_tokens": 148,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-02",
+    "run_index": 0,
+    "score": 0.5454545454545454,
+    "metrics": {
+      "precision": 0.375,
+      "recall": 1.0,
+      "f1": 0.5454545454545454
+    },
+    "latency_s": 5.07418187498115,
+    "input_tokens": 958,
+    "output_tokens": 417,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-02",
+    "run_index": 1,
+    "score": 0.5454545454545454,
+    "metrics": {
+      "precision": 0.375,
+      "recall": 1.0,
+      "f1": 0.5454545454545454
+    },
+    "latency_s": 3.5150062500033528,
+    "input_tokens": 958,
+    "output_tokens": 343,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-02",
+    "run_index": 2,
+    "score": 0.5454545454545454,
+    "metrics": {
+      "precision": 0.375,
+      "recall": 1.0,
+      "f1": 0.5454545454545454
+    },
+    "latency_s": 4.799591999966651,
+    "input_tokens": 958,
+    "output_tokens": 448,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-03",
+    "run_index": 0,
+    "score": 0.6153846153846154,
+    "metrics": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6153846153846154
+    },
+    "latency_s": 2.790038208011538,
+    "input_tokens": 760,
+    "output_tokens": 235,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-03",
+    "run_index": 1,
+    "score": 0.6153846153846154,
+    "metrics": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6153846153846154
+    },
+    "latency_s": 2.054655333980918,
+    "input_tokens": 760,
+    "output_tokens": 185,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-03",
+    "run_index": 2,
+    "score": 0.36363636363636365,
+    "metrics": {
+      "precision": 0.2222222222222222,
+      "recall": 1.0,
+      "f1": 0.36363636363636365
+    },
+    "latency_s": 5.046841708011925,
+    "input_tokens": 760,
+    "output_tokens": 563,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-04",
+    "run_index": 0,
+    "score": 0.26666666666666666,
+    "metrics": {
+      "precision": 0.15384615384615385,
+      "recall": 1.0,
+      "f1": 0.26666666666666666
+    },
+    "latency_s": 2.992465249961242,
+    "input_tokens": 847,
+    "output_tokens": 251,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-04",
+    "run_index": 1,
+    "score": 0.26666666666666666,
+    "metrics": {
+      "precision": 0.15384615384615385,
+      "recall": 1.0,
+      "f1": 0.26666666666666666
+    },
+    "latency_s": 2.4562706249998882,
+    "input_tokens": 847,
+    "output_tokens": 206,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-04",
+    "run_index": 2,
+    "score": 0.26666666666666666,
+    "metrics": {
+      "precision": 0.15384615384615385,
+      "recall": 1.0,
+      "f1": 0.26666666666666666
+    },
+    "latency_s": 1.7366458749747835,
+    "input_tokens": 847,
+    "output_tokens": 149,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-05",
+    "run_index": 0,
+    "score": 0.2727272727272727,
+    "metrics": {
+      "precision": 0.15789473684210525,
+      "recall": 1.0,
+      "f1": 0.2727272727272727
+    },
+    "latency_s": 3.588115749997087,
+    "input_tokens": 955,
+    "output_tokens": 348,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-05",
+    "run_index": 1,
+    "score": 0.2727272727272727,
+    "metrics": {
+      "precision": 0.15789473684210525,
+      "recall": 1.0,
+      "f1": 0.2727272727272727
+    },
+    "latency_s": 3.0308392500155605,
+    "input_tokens": 955,
+    "output_tokens": 295,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-05",
+    "run_index": 2,
+    "score": 0.2608695652173913,
+    "metrics": {
+      "precision": 0.15,
+      "recall": 1.0,
+      "f1": 0.2608695652173913
+    },
+    "latency_s": 5.562975292035844,
+    "input_tokens": 955,
+    "output_tokens": 368,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-06",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 4.30241299996851,
+    "input_tokens": 610,
+    "output_tokens": 461,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-06",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 2.2411234590108506,
+    "input_tokens": 610,
+    "output_tokens": 181,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-bgl-06",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 5.308005624974612,
+    "input_tokens": 610,
+    "output_tokens": 522,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-jvm",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.1807595000136644,
+    "input_tokens": 552,
+    "output_tokens": 60,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-jvm",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.1255309580010362,
+    "input_tokens": 552,
+    "output_tokens": 70,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-jvm",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3198713749879971,
+    "input_tokens": 552,
+    "output_tokens": 69,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-auth",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.349151458009146,
+    "input_tokens": 596,
+    "output_tokens": 146,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-auth",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.986494083015714,
+    "input_tokens": 596,
+    "output_tokens": 311,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-auth",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.06678524997551,
+    "input_tokens": 596,
+    "output_tokens": 183,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-deploy",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "latency_s": 1.7650869589997455,
+    "input_tokens": 588,
+    "output_tokens": 66,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-deploy",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "latency_s": 1.188881499983836,
+    "input_tokens": 588,
+    "output_tokens": 69,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-deploy",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "latency_s": 1.4050626659882255,
+    "input_tokens": 588,
+    "output_tokens": 85,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.2195217499975115,
+    "input_tokens": 493,
+    "output_tokens": 56,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3366826249985024,
+    "input_tokens": 493,
+    "output_tokens": 57,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.1621391659718938,
+    "input_tokens": 493,
+    "output_tokens": 59,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-silent",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.7159587500500493,
+    "input_tokens": 451,
+    "output_tokens": 105,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-silent",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 0.8009811249794438,
+    "input_tokens": 451,
+    "output_tokens": 15,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "anomaly_detection",
+    "case_id": "ad-syn-silent",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3097716249758378,
+    "input_tokens": 451,
+    "output_tokens": 100,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 4.836389874981251,
+    "input_tokens": 485,
+    "output_tokens": 614,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.8838790839654393,
+    "input_tokens": 485,
+    "output_tokens": 395,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 4.601406667032279,
+    "input_tokens": 485,
+    "output_tokens": 470,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.341577499988489,
+    "input_tokens": 535,
+    "output_tokens": 451,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.696813749964349,
+    "input_tokens": 535,
+    "output_tokens": 407,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.537570415996015,
+    "input_tokens": 535,
+    "output_tokens": 395,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 4.578192458953708,
+    "input_tokens": 467,
+    "output_tokens": 499,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 5.014308042009361,
+    "input_tokens": 467,
+    "output_tokens": 554,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 3.6124815000221133,
+    "input_tokens": 467,
+    "output_tokens": 460,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 3.6527342079789378,
+    "input_tokens": 470,
+    "output_tokens": 439,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 5.038897208985873,
+    "input_tokens": 470,
+    "output_tokens": 663,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 5.292998125019949,
+    "input_tokens": 470,
+    "output_tokens": 660,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 5.32878012501169,
+    "input_tokens": 496,
+    "output_tokens": 612,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 3.601844791963231,
+    "input_tokens": 496,
+    "output_tokens": 456,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 6.021802167000715,
+    "input_tokens": 496,
+    "output_tokens": 824,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.697478750022128,
+    "input_tokens": 618,
+    "output_tokens": 413,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.4230749999987893,
+    "input_tokens": 618,
+    "output_tokens": 178,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.9330726249609143,
+    "input_tokens": 618,
+    "output_tokens": 172,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.7667764170328155,
+    "input_tokens": 620,
+    "output_tokens": 267,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.4130926249781623,
+    "input_tokens": 620,
+    "output_tokens": 261,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 2,
+    "score": 0.9523809523809523,
+    "metrics": {
+      "precision": 0.9090909090909091,
+      "recall": 1.0,
+      "f1": 0.9523809523809523
+    },
+    "latency_s": 2.3062025840044953,
+    "input_tokens": 620,
+    "output_tokens": 137,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 3.3651975840330124,
+    "input_tokens": 655,
+    "output_tokens": 585,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 3.6222759159863926,
+    "input_tokens": 655,
+    "output_tokens": 616,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 3.880168000003323,
+    "input_tokens": 655,
+    "output_tokens": 713,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.17450808302965,
+    "input_tokens": 618,
+    "output_tokens": 494,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 1,
+    "score": 0.9655172413793104,
+    "metrics": {
+      "precision": 0.9333333333333333,
+      "recall": 1.0,
+      "f1": 0.9655172413793104
+    },
+    "latency_s": 4.22255479200976,
+    "input_tokens": 618,
+    "output_tokens": 393,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.631836083019152,
+    "input_tokens": 618,
+    "output_tokens": 807,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.9593630409799516,
+    "input_tokens": 619,
+    "output_tokens": 92,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.762253332999535,
+    "input_tokens": 619,
+    "output_tokens": 93,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.6506459590164013,
+    "input_tokens": 619,
+    "output_tokens": 77,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 35.70354604104068,
+    "input_tokens": 619,
+    "output_tokens": 4096,
+    "cached": true,
+    "error": "ValueError: no JSON object found in response"
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 12.925742208957672,
+    "input_tokens": 619,
+    "output_tokens": 1898,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 20.17109558300581,
+    "input_tokens": 619,
+    "output_tokens": 2603,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.5321303749806248,
+    "input_tokens": 618,
+    "output_tokens": 79,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3178271670476533,
+    "input_tokens": 618,
+    "output_tokens": 80,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.2309046250302345,
+    "input_tokens": 618,
+    "output_tokens": 53,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3924815420177765,
+    "input_tokens": 711,
+    "output_tokens": 78,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.2755755410180427,
+    "input_tokens": 711,
+    "output_tokens": 74,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3247673329897225,
+    "input_tokens": 711,
+    "output_tokens": 88,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 3.059359959035646,
+    "input_tokens": 620,
+    "output_tokens": 289,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 5.741864959010854,
+    "input_tokens": 620,
+    "output_tokens": 915,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 8.798149749985896,
+    "input_tokens": 620,
+    "output_tokens": 1448,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 0,
+    "score": 0.9600000000000001,
+    "metrics": {
+      "precision": 0.9230769230769231,
+      "recall": 1.0,
+      "f1": 0.9600000000000001
+    },
+    "latency_s": 6.449164333986118,
+    "input_tokens": 620,
+    "output_tokens": 1057,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.7574790000217035,
+    "input_tokens": 620,
+    "output_tokens": 927,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 7.743575582979247,
+    "input_tokens": 620,
+    "output_tokens": 1205,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 0,
+    "score": 0.5669691058385882,
+    "metrics": {
+      "rouge_l_summary": 0.40298507462686567,
+      "rouge_1_root_cause": 0.6382978723404256,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.389910332974978,
+    "input_tokens": 577,
+    "output_tokens": 185,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 1,
+    "score": 0.5833074534161491,
+    "metrics": {
+      "rouge_l_summary": 0.391304347826087,
+      "rouge_1_root_cause": 0.7083333333333334,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.1052224159939215,
+    "input_tokens": 577,
+    "output_tokens": 182,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 2,
+    "score": 0.5995793737342265,
+    "metrics": {
+      "rouge_l_summary": 0.4122137404580153,
+      "rouge_1_root_cause": 0.7346938775510203,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.088310332968831,
+    "input_tokens": 577,
+    "output_tokens": 183,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 0,
+    "score": 0.5301792943898207,
+    "metrics": {
+      "rouge_l_summary": 0.26153846153846155,
+      "rouge_1_root_cause": 0.5614035087719298,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 1.845698542019818,
+    "input_tokens": 522,
+    "output_tokens": 184,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 1,
+    "score": 0.4364278401136672,
+    "metrics": {
+      "rouge_l_summary": 0.29457364341085274,
+      "rouge_1_root_cause": 0.4905660377358491,
+      "keyword_recall": 0.5714285714285714
+    },
+    "latency_s": 2.2162429169984534,
+    "input_tokens": 522,
+    "output_tokens": 176,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 2,
+    "score": 0.5307695522263315,
+    "metrics": {
+      "rouge_l_summary": 0.310077519379845,
+      "rouge_1_root_cause": 0.6415094339622641,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.8649633339955471,
+    "input_tokens": 522,
+    "output_tokens": 175,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 0,
+    "score": 0.5298723855492176,
+    "metrics": {
+      "rouge_l_summary": 0.4031007751937985,
+      "rouge_1_root_cause": 0.6037735849056605,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 1.8185209169751033,
+    "input_tokens": 622,
+    "output_tokens": 165,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 1,
+    "score": 0.47687528499772003,
+    "metrics": {
+      "rouge_l_summary": 0.34108527131782945,
+      "rouge_1_root_cause": 0.5098039215686274,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 1.8512099159997888,
+    "input_tokens": 622,
+    "output_tokens": 164,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 2,
+    "score": 0.5225793650793651,
+    "metrics": {
+      "rouge_l_summary": 0.41269841269841273,
+      "rouge_1_root_cause": 0.5666666666666667,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 1.8098571249865927,
+    "input_tokens": 622,
+    "output_tokens": 164,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 0,
+    "score": 0.46114285714285713,
+    "metrics": {
+      "rouge_l_summary": 0.4285714285714286,
+      "rouge_1_root_cause": 0.68,
+      "keyword_recall": 0.2857142857142857
+    },
+    "latency_s": 1.4484603330492973,
+    "input_tokens": 519,
+    "output_tokens": 97,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 1,
+    "score": 0.5724053724053724,
+    "metrics": {
+      "rouge_l_summary": 0.3472222222222222,
+      "rouge_1_root_cause": 0.7307692307692307,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.9995757919969037,
+    "input_tokens": 519,
+    "output_tokens": 177,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 2,
+    "score": 0.5959246892223519,
+    "metrics": {
+      "rouge_l_summary": 0.3880597014925373,
+      "rouge_1_root_cause": 0.7547169811320754,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.184143708960619,
+    "input_tokens": 519,
+    "output_tokens": 172,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 0,
+    "score": 0.4545138888888889,
+    "metrics": {
+      "rouge_l_summary": 0.2222222222222222,
+      "rouge_1_root_cause": 0.46875000000000006,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.043380542017985,
+    "input_tokens": 561,
+    "output_tokens": 187,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 1,
+    "score": 0.4464511729405346,
+    "metrics": {
+      "rouge_l_summary": 0.18439716312056736,
+      "rouge_1_root_cause": 0.4923076923076923,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.116175583039876,
+    "input_tokens": 561,
+    "output_tokens": 196,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 2,
+    "score": 0.4705267558528428,
+    "metrics": {
+      "rouge_l_summary": 0.17391304347826086,
+      "rouge_1_root_cause": 0.46153846153846156,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 2.1971057500340976,
+    "input_tokens": 561,
+    "output_tokens": 183,
+    "cached": true,
+    "error": null
+  }
+]

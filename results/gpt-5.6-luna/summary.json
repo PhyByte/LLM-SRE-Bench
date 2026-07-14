@@ -1,0 +1,23 @@
+{
+  "model": "gpt-5.6-luna",
+  "global_score": 75.57,
+  "category_scores": {
+    "log_parsing": 91.27,
+    "anomaly_detection": 63.11,
+    "pattern_correlation": 85.33,
+    "metrics_timeseries": 79.59,
+    "root_cause": 51.85,
+    "efficiency": 83.93
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 3.4571,
+    "avg_total_tokens": 908.8394,
+    "score_stddev": 1.9457,
+    "latency_score": 0.8271,
+    "token_score": 0.7728,
+    "consistency_score": 0.9222
+  },
+  "error_count": 1,
+  "total_runs": 138,
+  "total_duration_s": 0.79
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "model": "gemma-3-12b",
+    "category": "log_parsing",
+    "case_id": "lp-hdfs-01",
+    "run_index": 0,
+    "score": 0.9342,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.993421052631579
+    },
+    "latency_s": 96.91,
+    "input_tokens": 662,
+    "output_tokens": 230,
+    "cached": false,
+    "error": null
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "model": "grok-4.5",
+  "global_score": 0.0,
+  "category_scores": {
+    "log_parsing": 0.0,
+    "anomaly_detection": 0.0,
+    "pattern_correlation": 0.0,
+    "metrics_timeseries": 0.0,
+    "root_cause": 0.0,
+    "efficiency": 0.0
+  },
+  "efficiency_metrics": {},
+  "error_count": 138,
+  "total_runs": 138,
+  "total_duration_s": 1.07
+}

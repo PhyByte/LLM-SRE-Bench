@@ -1,0 +1,22 @@
+{
+  "model": "claude-opus-4-8",
+  "global_score": 82.24,
+  "category_scores": {
+    "log_parsing": 91.86,
+    "anomaly_detection": 68.81,
+    "pattern_correlation": 90.67,
+    "metrics_timeseries": 100.0,
+    "root_cause": 57.85,
+    "efficiency": 86.1
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 3.1129,
+    "avg_total_tokens": 891.8261,
+    "score_stddev": 0.8211,
+    "latency_score": 0.8444,
+    "token_score": 0.777,
+    "consistency_score": 0.9672
+  },
+  "error_count": 0,
+  "total_runs": 138
+}

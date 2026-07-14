@@ -1,0 +1,19 @@
+{
+  "model": "gemma-3-12b",
+  "global_score": 85.4,
+  "category_scores": {
+    "log_parsing": 93.42,
+    "efficiency": 53.31
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 96.91,
+    "avg_total_tokens": 892.0,
+    "score_stddev": 0.0,
+    "latency_score": 0.0,
+    "token_score": 0.777,
+    "consistency_score": 1.0
+  },
+  "error_count": 0,
+  "total_runs": 1,
+  "total_duration_s": 96.91
+}

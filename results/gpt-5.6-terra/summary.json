@@ -1,0 +1,23 @@
+{
+  "model": "gpt-5.6-terra",
+  "global_score": 76.16,
+  "category_scores": {
+    "log_parsing": 91.91,
+    "anomaly_detection": 62.14,
+    "pattern_correlation": 82.67,
+    "metrics_timeseries": 86.27,
+    "root_cause": 54.15,
+    "efficiency": 84.92
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 2.9073,
+    "avg_total_tokens": 752.5435,
+    "score_stddev": 3.021,
+    "latency_score": 0.8546,
+    "token_score": 0.8119,
+    "consistency_score": 0.8792
+  },
+  "error_count": 0,
+  "total_runs": 138,
+  "total_duration_s": 3.28
+}

@@ -1,0 +1,23 @@
+{
+  "model": "gpt-4o",
+  "global_score": 65.63,
+  "category_scores": {
+    "log_parsing": 90.62,
+    "anomaly_detection": 62.4,
+    "pattern_correlation": 60.0,
+    "metrics_timeseries": 53.27,
+    "root_cause": 42.27,
+    "efficiency": 91.36
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 1.7379,
+    "avg_total_tokens": 630.7029,
+    "score_stddev": 0.3603,
+    "latency_score": 0.9131,
+    "token_score": 0.8423,
+    "consistency_score": 0.9856
+  },
+  "error_count": 0,
+  "total_runs": 138,
+  "total_duration_s": 221.16
+}

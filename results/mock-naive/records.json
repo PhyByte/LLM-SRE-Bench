@@ -1,0 +1,342 @@
+[
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.27086847592382585,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.24592341841548807,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.42203521110907205,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.48603147550160597,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.4829081956085219,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.22851694866537406,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.21619147873115263,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.3114154111345624,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.25058074139570585,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.4399010774380339,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 0.37707265213934094,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 0.4942432636984058,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.265634585638736,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.4276955689270667,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.3954897705552278,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.258269885958452,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 0.3851319113444188,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 0.21678010056664884,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.21145108024308223,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "mock-naive",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.38814121777545896,
+    "input_tokens": 144,
+    "output_tokens": 2,
+    "cached": true,
+    "error": null
+  }
+]
