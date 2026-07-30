@@ -1,7 +1,7 @@
 # LLM Observability Benchmark — Comparison
 
-Generated: 2026-07-27 21:52:57 UTC  
-Runs per test: 3 · Models: 12 · Test cases: 46
+Generated: 2026-07-30 15:45:33 UTC  
+Runs per test: 3 · Models: 13 · Test cases: 46
 
 All scores are 0-100. The global score is the weighted average of the category scores. Only models that ran the full category set are ranked.
 
@@ -16,9 +16,10 @@ All scores are 0-100. The global score is the weighted average of the category s
 | 7 | **gpt-5.6-luna** | **75.6** | 91.3 | 63.1 | 85.3 | 79.6 | 51.9 | 83.9 | 8m 29s | $0.41 |
 | 8 | **gpt-5.6-sol** | **73.5** | 91.7 | 61.1 | 74.7 | 83.3 | 54.3 | 79.4 | 13m 31s | $1.46 |
 | 9 | **grok-4** | **72.0** | 89.5 | 62.8 | 73.3 | 80.0 | 51.8 | 69.0 | 24m 59s | $0.47 |
-| 10 | **gemma-4-31b** | **68.5** | 90.3 | 61.4 | 58.7 | 86.7 | 50.8 | 44.1 | 54m 39s | $0.00 |
-| 11 | **gpt-4o** | **65.6** | 90.6 | 62.4 | 60.0 | 53.3 | 42.3 | 91.4 | 3m 59s | $0.00 |
-| 12 | **qwen3-32b** | **59.5** | 80.3 | 48.3 | 85.3 | 29.7 | 47.5 | 52.6 | 34m 43s | $0.00 |
+| 10 | **haiku-4-5** | **70.6** | 91.6 | 52.7 | 80.0 | 71.4 | 53.3 | 87.8 | 4m 9s | $0.18 |
+| 11 | **gemma-4-31b** | **68.5** | 90.3 | 61.4 | 58.7 | 86.7 | 50.8 | 44.1 | 54m 39s | $0.00 |
+| 12 | **gpt-4o** | **65.6** | 90.6 | 62.4 | 60.0 | 53.3 | 42.3 | 91.4 | 3m 59s | $0.00 |
+| 13 | **qwen3-32b** | **59.5** | 80.3 | 48.3 | 85.3 | 29.7 | 47.5 | 52.6 | 34m 43s | $0.00 |
 
 ## What each column measures
 
