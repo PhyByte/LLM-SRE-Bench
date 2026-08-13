@@ -102,6 +102,7 @@ class BenchmarkRunner:
                     "user": user,
                     "temperature": self.config.temperature,
                     "max_tokens": self.config.max_tokens,
+                    "reasoning_effort": model.reasoning_effort,
                     "run_index": run_index,
                 }
             )

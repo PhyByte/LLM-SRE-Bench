@@ -34,9 +34,14 @@ class ModelSummary:
     error_count: int = 0
     total_runs: int = 0
     total_duration_s: float | None = None   # Wall-clock time to complete the full set for this model
+    total_cost_usd: float | None = None     # Sum of per-call cost; None when the model has no pricing
 
 
-def aggregate(records: list[RunRecord]) -> list[ModelSummary]:
+# model name -> (input price, output price) in USD per 1,000,000 tokens.
+Pricing = dict[str, tuple[float, float]]
+
+
+def aggregate(records: list[RunRecord], pricing: Pricing | None = None) -> list[ModelSummary]:
     """Roll run records up into per-model category scores and a global score.
 
     Weights are renormalized over the categories actually run (plus
@@ -72,8 +77,21 @@ def aggregate(records: list[RunRecord]) -> list[ModelSummary]:
             for category, weight in active_weights.items()
         )
 
-        # Compute total observed LLM time as fallback when no wall-clock duration is stored
+        # Duration = sum of per-call model latencies. Cached records keep the
+        # latency originally measured, so this stays correct across partial
+        # re-runs and retries — unlike last-run wall-clock, which collapses to
+        # seconds when a re-run mostly hits the cache.
         total_latency = sum(r.latency_s for r in model_records)
+
+        # Total cost = sum over calls of (in_tokens * in_price + out_tokens *
+        # out_price) / 1e6. Only computed when this model has pricing configured.
+        total_cost: float | None = None
+        if pricing and model in pricing:
+            price_in, price_out = pricing[model]
+            total_cost = sum(
+                (r.input_tokens or 0) * price_in + (r.output_tokens or 0) * price_out
+                for r in model_records
+            ) / 1_000_000
 
         summaries.append(
             ModelSummary(
@@ -83,7 +101,8 @@ def aggregate(records: list[RunRecord]) -> list[ModelSummary]:
                 efficiency_metrics=efficiency.metrics,
                 error_count=sum(1 for r in model_records if r.error is not None),
                 total_runs=len(model_records),
-                total_duration_s=total_latency,  # will be overridden by stored wall time if available
+                total_duration_s=total_latency,
+                total_cost_usd=total_cost,
             )
         )
 
@@ -109,15 +128,30 @@ def save_model_results(
     records: list[RunRecord],
     run_info: dict[str, Any] | None = None,
     total_duration_s: float | None = None,
+    merge: bool = True,
 ) -> Path:
     """Persist results for a single model into its own folder.
 
     Creates: <base_dir>/<model>/records.json
     Also writes a small summary.json for convenience.
+
+    By default (``merge=True``) the new records are merged into whatever is
+    already stored for this model: new records replace existing ones for the
+    same ``(category, case_id)``, while cases the new run didn't touch are kept.
+    This means re-running a single category (or re-testing a few cases) refreshes
+    just those cases instead of discarding the model's other results — so each
+    model keeps full coverage across sessions, its Duration reflects the whole
+    benchmark, and its scores always use the most recent measurement of each
+    case. Pass ``merge=False`` to overwrite the folder with only ``records``.
     """
     base = Path(base_dir)
     model_dir = base / model
     model_dir.mkdir(parents=True, exist_ok=True)
+
+    if merge:
+        existing = load_model_records(base, model)
+        refreshed = {(r.category, r.case_id) for r in records}
+        records = [r for r in existing if (r.category, r.case_id) not in refreshed] + list(records)
 
     # Save raw records (source of truth)
     records_payload = [r.to_dict() for r in records]
@@ -130,8 +164,6 @@ def save_model_results(
         model_summaries = aggregate(records)  # will only contain this model
         if model_summaries:
             s = model_summaries[0]
-            # Prefer explicitly measured wall-clock duration over sum of latencies
-            duration = total_duration_s if total_duration_s is not None else s.total_duration_s
             summary_payload = {
                 "model": s.model,
                 "global_score": round(s.global_score, 2),
@@ -139,7 +171,10 @@ def save_model_results(
                 "efficiency_metrics": {k: round(v, 4) for k, v in s.efficiency_metrics.items()},
                 "error_count": s.error_count,
                 "total_runs": s.total_runs,
-                "total_duration_s": round(duration, 2) if duration is not None else None,
+                # Stable across cached re-runs (sum of per-call latencies).
+                "total_duration_s": round(s.total_duration_s, 2) if s.total_duration_s is not None else None,
+                # Wall-clock of the most recent run only — informational.
+                "last_run_wall_clock_s": round(total_duration_s, 2) if total_duration_s is not None else None,
             }
             (model_dir / "summary.json").write_text(
                 json.dumps(summary_payload, indent=2, ensure_ascii=False), encoding="utf-8"
@@ -164,20 +199,6 @@ def load_model_records(base_dir: str | Path, model: str) -> list[RunRecord]:
     return [RunRecord.from_dict(item) for item in raw]
 
 
-def load_model_duration(base_dir: str | Path, model: str) -> float | None:
-    """Load the stored total wall-clock duration for a model, if available."""
-    base = Path(base_dir)
-    summary_path = base / model / "summary.json"
-    if summary_path.exists():
-        try:
-            with open(summary_path, encoding="utf-8") as f:
-                data = json.load(f)
-            dur = data.get("total_duration_s")
-            if dur is not None:
-                return float(dur)
-        except Exception:
-            pass
-    return None
 
 
 def discover_model_dirs(base_dir: str | Path) -> list[str]:
@@ -229,6 +250,7 @@ def load_all_model_records(base_dir: str | Path) -> list[RunRecord]:
 def write_aggregated_reports(
     base_dir: str | Path,
     extra_run_info: dict[str, Any] | None = None,
+    pricing: Pricing | None = None,
 ) -> Path:
     """Load records from all per-model folders, aggregate, and write the
     top-level comparison reports (comparison_table.md, etc.).
@@ -253,13 +275,7 @@ def write_aggregated_reports(
             model_recs = [r for r in all_records if r.model == model]
             save_model_results(base, model, model_recs)
 
-    summaries = aggregate(all_records)
-
-    # Override with stored wall-clock durations (more accurate than sum of per-call latencies)
-    for s in summaries:
-        stored = load_model_duration(base, s.model)
-        if stored is not None:
-            s.total_duration_s = stored
+    summaries = aggregate(all_records, pricing)
 
     # Build a reasonable run_info
     n_models = len({r.model for r in all_records})
@@ -297,6 +313,59 @@ _CATEGORY_LABELS = {
     "root_cause": "Root Cause & Summary",
     "efficiency": "Efficiency & Consistency",
 }
+
+# One line per task category: what capability it probes and how it's scored.
+_CATEGORY_DESCRIPTIONS = {
+    "log_parsing": "Turning raw log lines into templates (variables masked). "
+    "Score = 0.5 exact-template accuracy + 0.5 token-level F1 vs ground-truth templates.",
+    "anomaly_detection": "Flagging which log lines are anomalous. "
+    "Precision/recall/F1 over per-line labels vs the ground truth.",
+    "pattern_correlation": "Identifying recurring event patterns and cause→effect "
+    "links between them.",
+    "metrics_timeseries": "Spotting anomalies in a numeric metric series. "
+    "Point-wise precision/recall/F1 with a ±1-index tolerance.",
+    "root_cause": "Explaining the incident. 0.4 ROUGE-L on the summary + 0.3 ROUGE-1 "
+    "on the root cause + 0.3 keyword recall of the key entities.",
+    "efficiency": "Derived from the runs above, not a dataset. 0.4 speed (vs a 20s "
+    "budget) + 0.3 token thrift (vs 4000 tokens) + 0.3 run-to-run score stability.",
+}
+
+
+def _column_legend(categories: list[str], show_cost: bool) -> str:
+    """Markdown section explaining every column in the comparison table."""
+    lines = [
+        "## What each column measures",
+        "",
+        "Scores are 0–100, higher is better. **Duration** and **Cost** are lower-is-better.",
+        "",
+        "- **Rank** — position among models that ran the full category set, best Global Score first "
+        "(🥇🥈🥉 mark the top three). Partial or all-failed models are listed separately below and not ranked.",
+        "- **Model** — the model's name as configured in `models.json`.",
+        "- **Global Score** — the headline quality number: the weighted average of the category "
+        "columns, using the weights shown in each header. Only categories the model actually ran count "
+        "(weights renormalize), so a partial run still yields a 0–100 value — which is why partial runs "
+        "aren't ranked against full ones.",
+    ]
+    for category in categories:
+        label = _CATEGORY_LABELS.get(category, category)
+        weight = CATEGORY_WEIGHTS.get(category)
+        weight_str = f" ({weight:.0%} of Global Score)" if weight is not None else ""
+        desc = _CATEGORY_DESCRIPTIONS.get(category, "")
+        lines.append(f"- **{label}**{weight_str} — {desc}")
+    lines.append(
+        "- **Duration** — total model time to run this model's whole set: the sum of every call's "
+        "measured latency across all cases and runs. It is *not* wall-clock — cached calls keep their "
+        "originally measured latency, so it stays stable across re-runs."
+    )
+    if show_cost:
+        lines.append(
+            "- **Cost** — total USD to run this model's whole set at provider list price: "
+            "Σ(input_tokens × input_price + output_tokens × output_price) ÷ 1,000,000. It counts every "
+            "call (including cached ones) — it's the cost of *running the benchmark*, not your actual "
+            "billed amount. Self-hosted/local models show `$0.00`; models with no price configured show `—`."
+        )
+    lines.append("")
+    return "\n".join(lines)
 
 
 def _ordered_categories(summaries: list[ModelSummary]) -> list[str]:
@@ -354,6 +423,29 @@ def _fmt_duration(dur: Any) -> str:
     return "<0.1s"
 
 
+def _fmt_cost(cost: Any) -> str:
+    if cost is None:
+        return "—"
+    if cost == 0:
+        return "$0.00"
+    if cost < 0.01:
+        return "<$0.01"
+    return f"${cost:,.2f}"
+
+
+def build_pricing(models: Any) -> Pricing:
+    """Build a name -> (input, output) price map from configured models.
+
+    Only models with both prices set are included; everything else is left out
+    and will show "—" (uncosted) in the reports.
+    """
+    pricing: Pricing = {}
+    for m in models:
+        if m.price_input is not None and m.price_output is not None:
+            pricing[m.name] = (m.price_input, m.price_output)
+    return pricing
+
+
 def _task_categories(summary: ModelSummary) -> set[str]:
     return {
         c for c in summary.category_scores if c in CATEGORY_WEIGHTS and c != "efficiency"
@@ -390,9 +482,10 @@ def _write_comparison_table(path: Path, summaries: list[ModelSummary], run_info:
     categories = _ordered_categories(summaries)
     ranked, partial, failed, expected = classify_summaries(summaries)
 
+    show_cost = any(s.total_cost_usd is not None for s in ranked)
     headers = ["Rank", "Model", "Global Score"] + [
         f"{_CATEGORY_LABELS[c]} ({CATEGORY_WEIGHTS[c]:.0%})" for c in categories
-    ] + ["Duration"]
+    ] + ["Duration"] + (["Cost"] if show_cost else [])
     rows = []
     for rank, summary in enumerate(ranked, start=1):
         medal = {1: " 🥇", 2: " 🥈", 3: " 🥉"}.get(rank, "")
@@ -400,6 +493,7 @@ def _write_comparison_table(path: Path, summaries: list[ModelSummary], run_info:
             [str(rank), f"**{summary.model}**{medal}", f"**{summary.global_score:.1f}**"]
             + [f"{summary.category_scores.get(c, 0):.1f}" for c in categories]
             + [_fmt_duration(summary.total_duration_s)]
+            + ([_fmt_cost(summary.total_cost_usd)] if show_cost else [])
         )
     content = (
         f"# LLM Observability Benchmark — Comparison\n\n"
@@ -423,6 +517,7 @@ def _write_comparison_table(path: Path, summaries: list[ModelSummary], run_info:
         content += "\n**Did not complete** (every call failed — bad key, no model access, or unreachable endpoint):\n\n"
         content += "\n".join(f"- {s.model} ({s.total_runs} calls failed)" for s in failed)
         content += "\n"
+    content += "\n" + _column_legend(categories, show_cost)
     path.write_text(content, encoding="utf-8")
 
 
@@ -574,6 +669,7 @@ def _write_results_json(
                 "error_count": s.error_count,
                 "total_runs": s.total_runs,
                 "total_duration_s": round(s.total_duration_s, 2) if s.total_duration_s is not None else None,
+                "total_cost_usd": round(s.total_cost_usd, 4) if s.total_cost_usd is not None else None,
             }
             for s in summaries
         ],

@@ -40,9 +40,9 @@ from core.runner import BenchmarkRunner, RunRecord
 from datasets.loaders import load_datasets
 from reports.generator import (
     aggregate,
+    build_pricing,
     classify_summaries,
     load_all_model_records,
-    load_model_duration,
     make_run_info,
     save_model_results,
     write_aggregated_reports,
@@ -73,6 +73,14 @@ def run(
         min=0,
     ),
     no_cache: bool = typer.Option(False, "--no-cache", help="Bypass the response cache."),
+    replace: bool = typer.Option(
+        False,
+        "--replace",
+        help="Overwrite each model's stored results instead of merging. By default a "
+        "run merges into existing per-model results (refreshing only the cases it ran), "
+        "so re-running a subset of categories keeps the model's other results and full "
+        "Duration. Use --replace to discard prior results for the models being run.",
+    ),
     output_dir: Path = typer.Option("results", "--output-dir", "-o", help="Report directory."),
     data_dir: Optional[Path] = typer.Option(
         None, "--data-dir", help="Alternative dataset directory (same file names)."
@@ -174,25 +182,22 @@ def run(
     for model_name in sorted({r.model for r in records}):
         model_recs = [r for r in records if r.model == model_name]
         duration = model_durations.get(model_name)
-        save_model_results(output_dir, model_name, model_recs, total_duration_s=duration)
+        save_model_results(
+            output_dir, model_name, model_recs, total_duration_s=duration, merge=not replace
+        )
 
     # 2. Rebuild the cross-model comparison from *all* available per-model folders
     #    (merges newly run models with any previously saved ones)
     all_records = load_all_model_records(output_dir) or records
-    summaries = aggregate(all_records)
-
-    # Enrich with stored wall-clock durations (more accurate than sum of per-call latencies)
-    for s in summaries:
-        stored = load_model_duration(output_dir, s.model)
-        if stored is not None:
-            s.total_duration_s = stored
+    pricing = build_pricing(config.models)
+    summaries = aggregate(all_records, pricing)
 
     # Use the actual number of distinct models we have data for
     actual_models = len({r.model for r in all_records})
     actual_cases = len({(r.category, r.case_id) for r in all_records})
     run_info = make_run_info(config.runs_per_test, actual_models, actual_cases)
 
-    output = write_aggregated_reports(output_dir)
+    output = write_aggregated_reports(output_dir, pricing=pricing)
 
     _print_summary_table(summaries)
 
@@ -207,6 +212,7 @@ def run(
 
 @app.command("aggregate")
 def aggregate_cmd(
+    config_path: Path = typer.Option("models.json", "--config", help="Config file (for model pricing)."),
     output_dir: Path = typer.Option("results", "--output-dir", "-o", help="Results directory containing per-model folders."),
 ) -> None:
     """Rebuild comparison_table.md, summary_report.md, etc. from all per-model result folders.
@@ -221,19 +227,17 @@ def aggregate_cmd(
         console.print(f"[red]No per-model results found under {output_dir}/<model>/records.json[/red]")
         raise typer.Exit(code=1)
 
-    summaries = aggregate(all_records)
+    pricing = {}
+    if config_path.exists():
+        pricing = build_pricing(BenchmarkConfig.load(config_path).models)
 
-    # Enrich with any stored wall-clock durations
-    for s in summaries:
-        stored = load_model_duration(output_dir, s.model)
-        if stored is not None:
-            s.total_duration_s = stored
+    summaries = aggregate(all_records, pricing)
 
     n_models = len({r.model for r in all_records})
     n_cases = len({(r.category, r.case_id) for r in all_records})
 
     run_info = make_run_info(3, n_models, n_cases)
-    output = write_aggregated_reports(output_dir)
+    output = write_aggregated_reports(output_dir, pricing=pricing)
 
     _print_summary_table(summaries)
 
@@ -252,6 +256,16 @@ def _fmt_duration(dur) -> str:
     return "<0.1s"
 
 
+def _fmt_cost(cost) -> str:
+    if cost is None:
+        return "—"
+    if cost == 0:
+        return "$0.00"
+    if cost < 0.01:
+        return "<$0.01"
+    return f"${cost:,.2f}"
+
+
 def _print_summary_table(summaries) -> None:
     if not summaries:
         console.print("[red]No results.[/red]")
@@ -268,7 +282,10 @@ def _print_summary_table(summaries) -> None:
     table.add_column("Global", justify="right", style="bold cyan")
     for category in categories:
         table.add_column(f"{category}\n({CATEGORY_WEIGHTS[category]:.0%})", justify="right")
-    table.add_column("Duration", justify="right")  # full set wall-clock time
+    table.add_column("Duration", justify="right")  # total model time = sum of per-call latencies
+    show_cost = any(s.total_cost_usd is not None for s in ranked)
+    if show_cost:
+        table.add_column("Cost", justify="right")
 
     for rank, summary in enumerate(ranked, start=1):
         table.add_row(
@@ -277,6 +294,7 @@ def _print_summary_table(summaries) -> None:
             f"{summary.global_score:.1f}",
             *[f"{summary.category_scores.get(c, 0):.1f}" for c in categories],
             _fmt_duration(summary.total_duration_s),
+            *([_fmt_cost(summary.total_cost_usd)] if show_cost else []),
         )
     console.print(table)
 

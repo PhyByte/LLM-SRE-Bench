@@ -45,6 +45,36 @@ class ModelConfig(BaseModel):
     # weaker models that otherwise reply with prose. Off by default so the
     # benchmark measures unprompted JSON discipline unless you opt in.
     json_mode: bool = False
+    # Internal-reasoning effort for models that support it. Omit to use the
+    # provider's default. Define two entries with the same model_id but different
+    # names/efforts to A/B "with vs. without" heavy reasoning. Wiring per provider:
+    #   - openai / xai: sent as `reasoning_effort` on /chat/completions
+    #     (OpenAI GPT-5/o-series, xAI Grok models that accept it).
+    #   - anthropic: sent as `output_config.effort` (Claude models — Fable 5,
+    #     Opus 5/4.8, Sonnet 5, etc. — where thinking is always on and effort is
+    #     the depth control). "minimal" is not valid here; use "low".
+    #   - ollama: ignored.
+    reasoning_effort: Optional[str] = None
+    # Price in USD per 1,000,000 tokens, used to compute a total cost column in
+    # the reports. Both must be set for a model to be costed; leave unset for
+    # models you don't want priced (they show "—"). Self-hosted/local models can
+    # be set to 0 to appear as free.
+    price_input: Optional[float] = Field(default=None, ge=0)
+    price_output: Optional[float] = Field(default=None, ge=0)
+
+    @field_validator("reasoning_effort")
+    @classmethod
+    def _check_effort(cls, value: Optional[str]) -> Optional[str]:
+        if value is None:
+            return None
+        # Union across providers: minimal (OpenAI) + low/medium/high (all) +
+        # xhigh/max (Anthropic, newer). Provider rejects anything it doesn't take.
+        allowed = {"minimal", "low", "medium", "high", "xhigh", "max"}
+        if value not in allowed:
+            raise ValueError(
+                f"reasoning_effort must be one of {sorted(allowed)} or null, got {value!r}"
+            )
+        return value
 
     @field_validator("api_key")
     @classmethod

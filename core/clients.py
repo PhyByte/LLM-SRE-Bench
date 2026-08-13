@@ -135,6 +135,11 @@ class OpenAICompatibleClient(BaseClient):
             # The system prompt already instructs "single valid JSON object",
             # which satisfies servers that require the word "json" for this mode.
             payload["response_format"] = {"type": "json_object"}
+        if self.model.reasoning_effort:
+            # OpenAI GPT-5/o-series and xAI Grok expose this knob; endpoints that
+            # don't understand it will 400, which surfaces as a failed run for
+            # this model only (others are unaffected).
+            payload["reasoning_effort"] = self.model.reasoning_effort
         return payload
 
     def complete(self, system: str, user: str) -> LLMResponse:
@@ -183,20 +188,40 @@ class AnthropicClient(BaseClient):
     def complete(self, system: str, user: str) -> LLMResponse:
         # Sampling params are deliberately omitted: Opus 4.7+ models reject
         # temperature/top_p/top_k with a 400.
+        create_kwargs: dict = {
+            "model": self.model.model_id,
+            "max_tokens": self.max_tokens,
+            "system": system,
+            "messages": [{"role": "user", "content": user}],
+        }
+        if self.model.reasoning_effort:
+            # `output_config.effort` controls reasoning depth on current Claude
+            # models (thinking is always on; effort is the knob). Passed via
+            # extra_body so it works regardless of the installed SDK's typings.
+            create_kwargs["extra_body"] = {
+                "output_config": {"effort": self.model.reasoning_effort}
+            }
         start = time.perf_counter()
         try:
-            response = self._client.messages.create(
-                model=self.model.model_id,
-                max_tokens=self.max_tokens,
-                system=system,
-                messages=[{"role": "user", "content": user}],
-            )
+            response = self._client.messages.create(**create_kwargs)
         except self._anthropic.APIError as exc:
             raise ClientError(f"Anthropic API error: {exc}") from exc
         latency = time.perf_counter() - start
         if response.stop_reason == "refusal":
             raise ClientError("Anthropic model refused the request")
         text = "".join(b.text for b in response.content if b.type == "text")
+        if not text.strip():
+            # Current Claude models (Sonnet 5, Opus 5, Fable 5) run thinking by
+            # default, and max_tokens caps thinking + answer together. Long
+            # deliberation can hit the cap before any answer text is emitted,
+            # leaving an empty response. Surface a clear, retryable error instead
+            # of a downstream "no JSON" failure.
+            hint = (
+                " — raise this model's max_tokens (thinking consumed the budget)"
+                if response.stop_reason == "max_tokens"
+                else ""
+            )
+            raise ClientError(f"empty response (stop_reason={response.stop_reason}){hint}")
         return LLMResponse(
             text=text,
             latency_s=latency,

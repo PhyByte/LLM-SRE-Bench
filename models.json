@@ -10,27 +10,100 @@
       "provider": "xai",
       "base_url": "https://api.x.ai/v1",
       "api_key": "${XAI_API_KEY}",
-      "model_id": "grok-4"
+      "model_id": "grok-4",
+      "price_input": 3.0,
+      "price_output": 15.0
     }, 
     {
       "name": "grok-4.5",
       "provider": "xai",
       "base_url": "https://api.x.ai/v1",
       "api_key": "${XAI_API_KEY}",
-      "model_id": "grok-4.5"
+      "model_id": "grok-4.5",
+      "price_input": 2.0,
+      "price_output": 6.0
+    },
+    {
+      "name": "grok-4.5-low",
+      "provider": "xai",
+      "base_url": "https://api.x.ai/v1",
+      "api_key": "${XAI_API_KEY}",
+      "model_id": "grok-4.5",
+      "reasoning_effort": "low",
+      "price_input": 2.0,
+      "price_output": 6.0
+    },
+    {
+      "name": "grok-4.6",
+      "provider": "xai",
+      "base_url": "https://api.x.ai/v1",
+      "api_key": "${XAI_API_KEY}",
+      "model_id": "grok-4.6",
+      "price_input": 2.0,
+      "price_output": 6.0
+    },
+    {
+      "name": "grok-4.6-low",
+      "provider": "xai",
+      "base_url": "https://api.x.ai/v1",
+      "api_key": "${XAI_API_KEY}",
+      "model_id": "grok-4.6",
+      "reasoning_effort": "low",
+      "price_input": 2.0,
+      "price_output": 6.0
     },
     {
       "name": "claude-opus-4-8",
       "provider": "anthropic",
       "api_key": "${ANTHROPIC_API_KEY}",
-      "model_id": "claude-opus-4-8"
+      "model_id": "claude-opus-4-8",
+      "price_input": 5.0,
+      "price_output": 25.0
+    },
+    {
+      "name": "fable-5",
+      "provider": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model_id": "claude-fable-5",
+      "max_tokens": 16000,
+      "price_input": 10.0,
+      "price_output": 50.0
+    },
+    {
+      "name": "fable-5-low",
+      "provider": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model_id": "claude-fable-5",
+      "reasoning_effort": "low",
+      "max_tokens": 16000,
+      "price_input": 10.0,
+      "price_output": 50.0
+    },
+    {
+      "name": "sonnet-5",
+      "provider": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model_id": "claude-sonnet-5",
+      "max_tokens": 16000,
+      "price_input": 3.0,
+      "price_output": 15.0
+    },
+    {
+      "name": "haiku-4-5",
+      "provider": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model_id": "claude-haiku-4-5",
+      "price_input": 1.0,
+      "price_output": 5.0
     },    
     {
       "name": "gpt-5.6-terra",
       "provider": "openai",
       "base_url": "https://api.openai.com/v1",
       "api_key": "${OPENAI_API_KEY}",
-      "model_id": "gpt-5.6-terra"
+      "model_id": "gpt-5.6-terra",
+      "price_input": 2.5,
+      "price_output": 15.0
     },      
     {
       "name": "gpt-5.6-luna",
@@ -38,40 +111,54 @@
       "base_url": "https://api.openai.com/v1",
       "api_key": "${OPENAI_API_KEY}",
       "model_id": "gpt-5.6-luna",
-      "max_tokens": 8192
+      "max_tokens": 8192,
+      "price_input": 1.0,
+      "price_output": 6.0
     },  
     {
       "name": "gpt-5.6-sol",
       "provider": "openai",
       "base_url": "https://api.openai.com/v1",
       "api_key": "${OPENAI_API_KEY}",
-      "model_id": "gpt-5.6-sol"
+      "model_id": "gpt-5.6-sol",
+      "price_input": 5.0,
+      "price_output": 30.0
     },
     {
       "name": "gpt-4o",
       "provider": "openai",
       "base_url": "https://api.openai.com/v1",
       "api_key": "${OPENAI_API_KEY}",
-      "model_id": "gpt-4o"
+      "model_id": "gpt-4o",
+      "price_input": 0,
+      "price_output": 0
     },
     {
       "name": "llama-3.3-70b",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "meta/llama-3.3-70b",
-      "request_timeout": 600
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
     },
     {
       "name": "gemma-3-12B",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
-      "model_id": "google/gemma-3-12b"
+      "model_id": "google/gemma-3-12b",
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
     },
     {
       "name": "gemma-4-26B-a4b",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
-      "model_id": "google/gemma-4-26b-a4b"
+      "model_id": "google/gemma-4-26b-a4b",
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
     },
     {
       "name": "gemma-4-31b",
@@ -79,7 +166,27 @@
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "google/gemma-4-31b",
       "max_tokens": 16384,
-      "request_timeout": 600
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
+    },
+    {
+      "name": "qwen3-32b",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "qwen/qwen3-32b",
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
+    },
+    {
+      "name": "qwen3-coder-30b",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "qwen/qwen3-coder-30b",
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
     }
   ]
 }
