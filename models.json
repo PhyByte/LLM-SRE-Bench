@@ -2,7 +2,7 @@
   "runs_per_test": 3,
   "temperature": 0.0,
   "max_tokens": 4096,
-  "request_timeout": 120,
+  "request_timeout": 300,
   "judge_model": null,
   "models": [
     {
@@ -13,7 +13,7 @@
       "model_id": "grok-4",
       "price_input": 3.0,
       "price_output": 15.0
-    }, 
+    },
     {
       "name": "grok-4.5",
       "provider": "xai",
@@ -95,7 +95,7 @@
       "model_id": "claude-haiku-4-5",
       "price_input": 1.0,
       "price_output": 5.0
-    },    
+    },
     {
       "name": "gpt-5.6-terra",
       "provider": "openai",
@@ -104,7 +104,7 @@
       "model_id": "gpt-5.6-terra",
       "price_input": 2.5,
       "price_output": 15.0
-    },      
+    },
     {
       "name": "gpt-5.6-luna",
       "provider": "openai",
@@ -114,7 +114,7 @@
       "max_tokens": 8192,
       "price_input": 1.0,
       "price_output": 6.0
-    },  
+    },
     {
       "name": "gpt-5.6-sol",
       "provider": "openai",

@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -37,6 +39,25 @@ class RootCauseResult(BaseModel):
     summary: str
 
 
+class Evidence(BaseModel):
+    """One observation, tied to the modality it was read from.
+
+    The modality is constrained so a model can't dodge the grounding score by
+    inventing a source; anything outside the three bundled modalities is a
+    validation failure, same as any other malformed answer.
+    """
+
+    modality: Literal["metrics", "logs", "traces"]
+    observation: str
+
+
+class MultiModalRCAResult(BaseModel):
+    culprit_service: str
+    fault_type: str  # closed vocabulary, listed in the prompt
+    evidence: list[Evidence] = Field(default_factory=list)
+    summary: str = ""
+
+
 class JudgeResult(BaseModel):
     score: float = Field(ge=0, le=10)
     reasoning: str = ""
@@ -48,4 +69,5 @@ RESULT_SCHEMAS: dict[str, type[BaseModel]] = {
     "pattern_correlation": PatternCorrelationResult,
     "metrics_timeseries": TimeSeriesResult,
     "root_cause": RootCauseResult,
+    "multimodal_rca": MultiModalRCAResult,
 }

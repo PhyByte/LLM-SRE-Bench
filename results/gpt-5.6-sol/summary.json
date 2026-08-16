@@ -1,23 +1,25 @@
 {
   "model": "gpt-5.6-sol",
-  "global_score": 73.5,
+  "global_score": 71.51,
   "category_scores": {
     "log_parsing": 91.73,
     "anomaly_detection": 61.07,
     "pattern_correlation": 74.67,
     "metrics_timeseries": 83.33,
     "root_cause": 54.33,
-    "efficiency": 79.45
+    "multimodal_rca": 69.57,
+    "efficiency": 72.09
   },
   "efficiency_metrics": {
-    "avg_latency_s": 5.8806,
-    "avg_total_tokens": 790.6087,
-    "score_stddev": 2.3854,
-    "latency_score": 0.706,
-    "token_score": 0.8023,
-    "consistency_score": 0.9046
+    "avg_latency_s": 5.8277,
+    "avg_total_tokens": 1778.0282,
+    "score_stddev": 2.4324,
+    "latency_score": 0.7086,
+    "token_score": 0.5555,
+    "consistency_score": 0.9027
   },
   "error_count": 0,
-  "total_runs": 138,
-  "total_duration_s": 7.13
+  "total_runs": 177,
+  "total_duration_s": 1031.5,
+  "last_run_wall_clock_s": 221.03
 }

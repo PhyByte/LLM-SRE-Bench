@@ -17,11 +17,12 @@ Provider = Literal["openai", "xai", "anthropic", "ollama", "mock"]
 
 # Category name -> weight in the global score. Must sum to 1.0.
 CATEGORY_WEIGHTS: dict[str, float] = {
-    "log_parsing": 0.20,
-    "anomaly_detection": 0.30,
-    "pattern_correlation": 0.20,
-    "metrics_timeseries": 0.15,
+    "log_parsing": 0.15,
+    "anomaly_detection": 0.25,
+    "pattern_correlation": 0.15,
+    "metrics_timeseries": 0.10,
     "root_cause": 0.10,
+    "multimodal_rca": 0.20,
     "efficiency": 0.05,
 }
 

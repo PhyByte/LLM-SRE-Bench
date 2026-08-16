@@ -2284,5 +2284,707 @@
     "output_tokens": 345,
     "cached": false,
     "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-exceptio-frontend-01",
+    "run_index": 0,
+    "score": 0.225,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.423912917263806,
+    "input_tokens": 4273,
+    "output_tokens": 430,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-exceptio-frontend-01",
+    "run_index": 1,
+    "score": 0.475,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.032995624933392,
+    "input_tokens": 4273,
+    "output_tokens": 447,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-exceptio-frontend-01",
+    "run_index": 2,
+    "score": 0.26666666666666666,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.821366709191352,
+    "input_tokens": 4273,
+    "output_tokens": 424,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-ad-02",
+    "run_index": 0,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.049393292050809,
+    "input_tokens": 4269,
+    "output_tokens": 406,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-ad-02",
+    "run_index": 1,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.02230591699481,
+    "input_tokens": 4269,
+    "output_tokens": 403,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-ad-02",
+    "run_index": 2,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.437811917159706,
+    "input_tokens": 4269,
+    "output_tokens": 398,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-currency-03",
+    "run_index": 0,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.4496783330105245,
+    "input_tokens": 4531,
+    "output_tokens": 409,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-currency-03",
+    "run_index": 1,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.551299458835274,
+    "input_tokens": 4531,
+    "output_tokens": 438,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-currency-03",
+    "run_index": 2,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.324525666888803,
+    "input_tokens": 4531,
+    "output_tokens": 454,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-email-04",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.316394499968737,
+    "input_tokens": 4691,
+    "output_tokens": 426,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-email-04",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 8.02942749997601,
+    "input_tokens": 4691,
+    "output_tokens": 476,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-email-04",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.041821042075753,
+    "input_tokens": 4691,
+    "output_tokens": 425,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-frontend-05",
+    "run_index": 0,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 7.231360542122275,
+    "input_tokens": 4452,
+    "output_tokens": 481,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-frontend-05",
+    "run_index": 1,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 7.149126459378749,
+    "input_tokens": 4452,
+    "output_tokens": 438,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-frontend-05",
+    "run_index": 2,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 6.778287792112678,
+    "input_tokens": 4452,
+    "output_tokens": 445,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "run_index": 0,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.661795666906983,
+    "input_tokens": 4550,
+    "output_tokens": 438,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "run_index": 1,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.645809582900256,
+    "input_tokens": 4550,
+    "output_tokens": 510,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "run_index": 2,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.657721084076911,
+    "input_tokens": 4550,
+    "output_tokens": 480,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-shipping-07",
+    "run_index": 0,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 7.054112167097628,
+    "input_tokens": 4557,
+    "output_tokens": 423,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-shipping-07",
+    "run_index": 1,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 6.824463208205998,
+    "input_tokens": 4557,
+    "output_tokens": 419,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-shipping-07",
+    "run_index": 2,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 6.724968665745109,
+    "input_tokens": 4557,
+    "output_tokens": 450,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-networkd-shipping-08",
+    "run_index": 0,
+    "score": 0.3,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.5
+    },
+    "latency_s": 7.045877832919359,
+    "input_tokens": 4436,
+    "output_tokens": 487,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-networkd-shipping-08",
+    "run_index": 1,
+    "score": 0.3,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.5
+    },
+    "latency_s": 6.544020417146385,
+    "input_tokens": 4436,
+    "output_tokens": 415,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-networkd-shipping-08",
+    "run_index": 2,
+    "score": 0.25,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.0
+    },
+    "latency_s": 6.139533000066876,
+    "input_tokens": 4436,
+    "output_tokens": 411,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-food-09",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.639778332784772,
+    "input_tokens": 10779,
+    "output_tokens": 386,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-food-09",
+    "run_index": 1,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.312422374729067,
+    "input_tokens": 10779,
+    "output_tokens": 485,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-food-09",
+    "run_index": 2,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.054536417126656,
+    "input_tokens": 10779,
+    "output_tokens": 480,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-verification-code-10",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.0
+    },
+    "latency_s": 6.015525666996837,
+    "input_tokens": 10523,
+    "output_tokens": 396,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-verification-code-10",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.0
+    },
+    "latency_s": 7.303374166600406,
+    "input_tokens": 10523,
+    "output_tokens": 505,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-verification-code-10",
+    "run_index": 2,
+    "score": 0.05,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.5
+    },
+    "latency_s": 7.179902541916817,
+    "input_tokens": 10523,
+    "output_tokens": 492,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
+    "run_index": 0,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.379997374955565,
+    "input_tokens": 10604,
+    "output_tokens": 407,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
+    "run_index": 1,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.258733333088458,
+    "input_tokens": 10604,
+    "output_tokens": 498,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
+    "run_index": 2,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.576198750175536,
+    "input_tokens": 10604,
+    "output_tokens": 495,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-preserve-12",
+    "run_index": 0,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.368872625287622,
+    "input_tokens": 10526,
+    "output_tokens": 491,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-preserve-12",
+    "run_index": 1,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.690164207946509,
+    "input_tokens": 10526,
+    "output_tokens": 496,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-preserve-12",
+    "run_index": 2,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 8.173636000137776,
+    "input_tokens": 10526,
+    "output_tokens": 506,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.062721041962504,
+    "input_tokens": 4787,
+    "output_tokens": 445,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.627186333294958,
+    "input_tokens": 4787,
+    "output_tokens": 356,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "claude-opus-4-8",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 2,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.108977959025651,
+    "input_tokens": 4787,
+    "output_tokens": 331,
+    "cached": false,
+    "error": null
   }
 ]

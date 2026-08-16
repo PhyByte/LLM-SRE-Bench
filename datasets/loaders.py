@@ -15,6 +15,14 @@ own directory with the same file names). Expected shapes:
   metrics_timeseries.json  {"id", "metric", "values": [...], "anomalous_indices": [...]}
   root_cause.json          {"id", "logs": [...], "reference_root_cause",
                             "reference_summary", "keywords": [...]}
+  multimodal_rca.json      {"id", "system", "services": [...], "incident_window",
+                            "modalities": {"metrics": {svc: [lines]},
+                                           "logs": [...],
+                                           "traces": {svc: summary}},
+                            "ground_truth": {"culprit_service", "fault_type",
+                                             "informative_modalities": [...],
+                                             "decoy_modalities": [...],
+                                             "evidence_keywords": [...]}}
 """
 
 from __future__ import annotations

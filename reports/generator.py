@@ -311,6 +311,7 @@ _CATEGORY_LABELS = {
     "pattern_correlation": "Pattern & Correlation",
     "metrics_timeseries": "Metrics Time-Series",
     "root_cause": "Root Cause & Summary",
+    "multimodal_rca": "Multi-modal RCA",
     "efficiency": "Efficiency & Consistency",
 }
 
@@ -326,6 +327,9 @@ _CATEGORY_DESCRIPTIONS = {
     "Point-wise precision/recall/F1 with a ±1-index tolerance.",
     "root_cause": "Explaining the incident. 0.4 ROUGE-L on the summary + 0.3 ROUGE-1 "
     "on the root cause + 0.3 keyword recall of the key entities.",
+    "multimodal_rca": "Localizing the culprit service across metrics, logs and traces "
+    "on real microservice incidents. 0.4 culprit + 0.25 fault type + 0.25 modality "
+    "grounding (citing the modalities that actually carry signal) + 0.1 evidence recall.",
     "efficiency": "Derived from the runs above, not a dataset. 0.4 speed (vs a 20s "
     "budget) + 0.3 token thrift (vs 4000 tokens) + 0.3 run-to-run score stability.",
 }

@@ -114,6 +114,74 @@ Return JSON exactly in this shape:
 {{"root_cause": "<one sentence root cause>", "summary": "<2-4 sentence incident summary>"}}"""
 
 
+FAULT_VOCABULARY = [
+    "cpu_saturation",
+    "network_delay",
+    "code_return_value",
+    "code_exception",
+    "none",
+]
+
+
+def _multimodal_rca(case: dict[str, Any]) -> str:
+    modalities = case["modalities"]
+
+    metric_lines = []
+    for service, series in modalities.get("metrics", {}).items():
+        metric_lines.append(f"{service}")
+        metric_lines.extend(f"  {line}" for line in series)
+    trace_lines = [f"{service}: {stats}" for service, stats in modalities.get("traces", {}).items()]
+
+    # Empty modalities are omitted rather than shown as blank sections, so the
+    # model is never invited to cite evidence that isn't in front of it.
+    sections = []
+    if metric_lines:
+        sections.append(
+            "<metrics>\nPer-service time series over the window, one sample per minute.\n"
+            + "\n".join(metric_lines)
+            + "\n</metrics>"
+        )
+    if modalities.get("logs"):
+        sections.append("<logs>\n" + "\n".join(modalities["logs"]) + "\n</logs>")
+    if trace_lines:
+        sections.append(
+            "<traces>\nPer-service span aggregates over the window.\n"
+            + "\n".join(trace_lines)
+            + "\n</traces>"
+        )
+
+    return f"""Task: multimodal_rca
+
+You are on call for the "{case["system"]}" microservice system. An incident was
+reported during {case["incident_window"]}. Below is the observability data
+collected across three modalities for that window.
+
+Exactly one service is the root cause, or none of them is (the system may be
+healthy). Not every modality is informative: some contain only normal
+background activity for this incident. Cite evidence only from the modalities
+that actually support your conclusion — citing a modality that shows nothing
+unusual counts against you.
+
+Candidate services (the culprit is one of these, or "none"):
+{", ".join(case["services"])}
+
+Fault types (choose exactly one):
+{", ".join(FAULT_VOCABULARY)}
+
+{chr(10).join(sections)}
+
+Return JSON exactly in this shape:
+{{
+  "culprit_service": "<service name, or \\"none\\">",
+  "fault_type": "<one of the fault types above>",
+  "evidence": [{{"modality": "<metrics|logs|traces>", "observation": "<what you saw>"}}, ...],
+  "summary": "<2-4 sentence incident summary>"
+}}
+
+If the system is healthy, return "none" for both culprit_service and fault_type
+with an empty evidence list."""
+
+
 def build_judge_prompt(case: dict[str, Any], candidate_root_cause: str, candidate_summary: str) -> str:
     return f"""Grade a candidate root-cause analysis against the reference answer.
 
@@ -139,4 +207,5 @@ _BUILDERS = {
     "pattern_correlation": _pattern_correlation,
     "metrics_timeseries": _metrics_timeseries,
     "root_cause": _root_cause,
+    "multimodal_rca": _multimodal_rca,
 }

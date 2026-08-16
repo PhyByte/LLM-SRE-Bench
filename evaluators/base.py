@@ -25,6 +25,7 @@ def get_evaluator(category: str) -> Callable[[dict[str, Any], BaseModel], EvalRe
         anomaly_detection,
         log_parsing,
         metrics_timeseries,
+        multimodal_rca,
         pattern_correlation,
         root_cause,
     )
@@ -35,5 +36,6 @@ def get_evaluator(category: str) -> Callable[[dict[str, Any], BaseModel], EvalRe
         "pattern_correlation": pattern_correlation.evaluate,
         "metrics_timeseries": metrics_timeseries.evaluate,
         "root_cause": root_cause.evaluate,
+        "multimodal_rca": multimodal_rca.evaluate,
     }
     return evaluators[category]

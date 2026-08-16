@@ -348,8 +348,62 @@ class MockClient(BaseClient):
                     f"{len(error_lines)} error events were recorded before recovery."
                 ),
             }
+        if category == "multimodal_rca":
+            return self._multimodal_rca(user, heuristic)
         # Judge prompts (no Task: tag) — return a neutral grade.
         return {"score": 5, "reasoning": "mock judge"}
+
+    _METRICS = re.compile(r"<metrics>\n(.*?)\n</metrics>", re.DOTALL)
+    _CANDIDATES = re.compile(r"Candidate services \(the culprit is one of these.*?\):\n(.*?)\n", re.DOTALL)
+
+    def _multimodal_rca(self, user: str, heuristic: bool) -> dict:
+        """Rule-based baseline: pick the service with the highest peak CPU.
+
+        A deliberately shallow strategy — it reads one modality and always cites
+        it — so it lands the CPU cases, misses the log-only ones, and takes a
+        grounding penalty whenever metrics aren't what carried the signal.
+        """
+        services = []
+        match = self._CANDIDATES.search(user)
+        if match:
+            services = [s.strip() for s in match.group(1).split(",") if s.strip()]
+        if not heuristic:
+            return {
+                "culprit_service": services[0] if services else "none",
+                "fault_type": "cpu_saturation",
+                "evidence": [],
+                "summary": "A service degraded during the window.",
+            }
+
+        best_service, best_cpu = "none", 0.0
+        block = self._METRICS.search(user)
+        if block:
+            current = ""
+            for line in block.group(1).splitlines():
+                if not line.startswith("  "):
+                    current = line.strip()
+                elif line.strip().startswith("cpu%:"):
+                    values = []
+                    for token in line.split(":", 1)[1].split():
+                        try:
+                            values.append(float(token))
+                        except ValueError:
+                            continue
+                    peak = max(values, default=0.0)
+                    if peak > best_cpu:
+                        best_service, best_cpu = current, peak
+
+        return {
+            "culprit_service": best_service,
+            "fault_type": "cpu_saturation",
+            "evidence": [
+                {"modality": "metrics", "observation": f"{best_service} peaked at {best_cpu:.1f}% CPU"}
+            ],
+            "summary": (
+                f"{best_service} showed the highest CPU utilization during the window, "
+                f"peaking at {best_cpu:.1f}%."
+            ),
+        }
 
 
 def build_client(model: ModelConfig, config: BenchmarkConfig) -> BaseClient:

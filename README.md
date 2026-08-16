@@ -10,11 +10,11 @@ ignoring the red herrings. It runs the same standardized tests against any set o
 weighted scorecard.
 
 ```
-┏━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━┓
-┃ Rank ┃ Model  ┃ Global ┃ parsing ┃ anomaly ┃ pattern ┃ metrics ┃ root   ┃ effic. ┃
-┡━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━╇━━━━━━━━┩
-│    1 │ grok-4 │   73.7 │    90.0 │    66.0 │    76.0 │    80.0 │   49.0 │   76.9 │
-└──────┴────────┴────────┴─────────┴─────────┴─────────┴─────────┴────────┴────────┘
+┏━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓
+┃ Rank ┃ Model  ┃ Global ┃ parsing ┃ anomaly ┃ pattern ┃ metrics ┃ root   ┃ mm-rca  ┃ effic. ┃
+┡━━━━━━╇━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━╇━━━━━━━━┩
+│    1 │ grok-4 │   73.7 │    90.0 │    66.0 │    76.0 │    80.0 │   49.0 │     —   │   76.9 │
+└──────┴────────┴────────┴─────────┴─────────┴─────────┴─────────┴────────┴─────────┴────────┘
 ```
 
 *A frontier model scoring ~74 is by design — the suite is built to leave headroom, not to
@@ -34,6 +34,9 @@ hand out perfect scores.*
   misses off-peak spikes and level shifts that a competent analysis catches.
 - **Red herrings in incidents.** Root-cause cases include unrelated deploys, failing crons, and
   network blips that happened during the window and must be ruled out — just like real postmortems.
+- **Multi-modal incidents where the useful signal moves.** Real microservice faults are presented
+  as metrics + logs + traces together. CPU faults show up only in the metrics; code-level faults
+  only in the logs. A model that always reads the same modality scores 0 on half the cases.
 - **Rule-based baseline included.** A keyword/z-score mock scores ~55 overall; the gap between
   that and a frontier model is the signal.
 
@@ -41,16 +44,69 @@ hand out perfect scores.*
 
 | Category | Weight | What's measured |
 |---|---|---|
-| Log Parsing | 20% | Template extraction accuracy + token F1 vs Loghub ground truth |
-| Anomaly Detection | 30% | Precision / Recall / F1 on per-line labels |
-| Pattern & Correlation | 20% | Pattern coverage + causal chain accuracy (A→B→C cascades) |
-| Metrics Time-Series | 15% | Point-wise F1 (±1 tolerance) on injected anomalies |
+| Log Parsing | 15% | Template extraction accuracy + token F1 vs Loghub ground truth |
+| Anomaly Detection | 25% | Precision / Recall / F1 on per-line labels |
+| Pattern & Correlation | 15% | Pattern coverage + causal chain accuracy (A→B→C cascades) |
+| Metrics Time-Series | 10% | Point-wise F1 (±1 tolerance) on injected anomalies |
 | Root Cause & Summary | 10% | ROUGE-1/L + keyword recall vs reference (optional LLM-as-judge) |
+| **Multi-modal RCA** | **20%** | Culprit localization across metrics + logs + traces on real microservice incidents |
 | Efficiency & Consistency | 5% | Latency, token usage, run-to-run score variance |
 
 **Global score** = weighted average, 0–100. Every case runs `runs_per_test` times (default 3);
 scores are averaged per case, then per category. Answers must be strict JSON validated against
 pydantic schemas — unparseable output scores 0 for that run.
+
+## Multi-modal RCA
+
+The other categories hand the model one kind of data. This one hands it three — per-service
+**metrics**, **logs**, and **trace** aggregates from a real microservice incident — and asks
+which service caused it, from a closed candidate list.
+
+Cases are built from [Nezha](https://github.com/IntelligentDDS/Nezha) (FSE'23), which ships 101
+fault injections into OnlineBoutique and TrainTicket with ground truth naming the injected pod
+and fault type.
+
+**What makes it hard: the informative modality changes case to case.**
+
+- CPU faults (`cpu_saturation`) are visible in the metric series and leave the logs completely
+  ordinary.
+- Code-level faults (`code_return_value`, `code_exception`) surface only in the logs and barely
+  move CPU at all.
+- One case has no fault at all — the correct answer is `none`, and inventing a culprit scores 0
+  on localization.
+
+So a model has to work out *which* signal to trust, not just read the one it was given. The
+scoring makes that explicit:
+
+```
+0.40  culprit localization  exact service match, else 0
+0.25  fault-type accuracy   exact match against a closed vocabulary
+0.25  modality grounding    F1 of cited modalities vs the ones that carry signal
+0.10  evidence quality      keyword recall over the ground-truth markers
+```
+
+**Modality grounding is not a formality.** Every case records which modalities actually localize
+its fault — *measured* by the dataset builder, never hand-asserted: it ranks services by CPU
+through the metric channel and by error-log rate through the log channel, and a modality only
+counts as informative if it puts the injected pod first. Citing a modality that shows nothing
+costs precision, so "cite all three" caps the component well below 1.0.
+
+The bundled rule-based baseline demonstrates the point: a heuristic that always picks the
+highest-CPU service scores **100 on every CPU case and 0 on every log-only case**, landing at
+~59 overall. Single-modality strategies cannot win this category.
+
+Only 40 of Nezha's 101 faults survive the signal gate — the rest are dropped because the culprit
+is not recoverable from the bundled evidence, and a case nobody can solve measures nothing. The
+same principle applies to the labels: Nezha separates `cpu_contention` from `cpu_consumed`, but
+the two are indistinguishable in the observability data (the same service under either fault
+shows the same pod *and* node CPU), so they collapse to one `cpu_saturation` label rather than
+scoring models on a coin flip.
+Rebuild or re-sample the set with:
+
+```bash
+python scripts/build_multimodal_rca.py --report   # print the signal screen, build nothing
+python scripts/build_multimodal_rca.py            # rebuild (clones Nezha on first run)
+```
 
 ## Quick start
 
@@ -99,9 +155,10 @@ python benchmark.py aggregate
 This command scans `results/<model>/records.json` for every model and regenerates
 `comparison_table.md`, `summary_report.md`, `detailed_results.csv`, and `results.json`.
 
-**Cost:** a full 3-run pass is ~63k input + ~17k output tokens per model — roughly **$0.15–$1.50
-per frontier model** at current list prices. Responses are cached in `.cache/`, so interrupted
-or repeated runs never re-pay for the same call.
+**Cost:** a full 3-run pass is ~155k input + ~20k output tokens per model — roughly **$0.30–$3.00
+per frontier model** at current list prices. (Multi-modal RCA is about 90k of that input on its
+own: its bundles are far larger than the single-modality cases.) Responses are cached in
+`.cache/`, so interrupted or repeated runs never re-pay for the same call.
 
 You can selectively clear the cache for one model (useful when you want to re-run fresh):
 
@@ -193,7 +250,7 @@ retried. Because the cache only stores successes, retries and re-runs cost only 
 root-cause answers get graded 0–10 by that model against the reference
 (score = 0.7 × judge + 0.3 × reference metrics).
 
-## The datasets (46 cases)
+## The datasets (59 cases)
 
 | File | Cases | Source |
 |---|---|---|
@@ -202,12 +259,17 @@ root-cause answers get graded 0–10 by that model against the reference
 | `metrics_timeseries.json` | 10 | Seasonal series (96 pts, daily cycle): off-peak spikes, level shifts, dips, 2 clean |
 | `pattern_correlation.json` | 5 | Curated multi-service cascades with distractors and 2-hop causal chains |
 | `root_cause.json` | 5 | Curated incidents with red herrings and reference answers |
+| `multimodal_rca.json` | 13 | Real [Nezha](https://github.com/IntelligentDDS/Nezha) microservice incidents (metrics + logs + traces), signal-screened, + 1 healthy baseline |
 
 Regenerate or scale up the generated portions deterministically:
 
 ```bash
-python scripts/build_datasets.py [--seed N]   # re-downloads Loghub CSVs to datasets/raw/
+python scripts/build_datasets.py [--seed N]          # re-downloads Loghub CSVs to datasets/raw/
+python scripts/build_multimodal_rca.py [--seed N]    # clones Nezha to datasets/raw/nezha/
 ```
+
+The Nezha clone is ~343 MB (≈3.2 GB unpacked) and lands in the gitignored `datasets/raw/`;
+`multimodal_rca.json` itself is committed, so you only need the clone to rebuild.
 
 `pattern_correlation.json` and `root_cause.json` are curated by hand — edit them directly.
 You can also point `--data-dir` at your own directory with the same file names (great for
@@ -221,7 +283,8 @@ models.json              model/provider configuration
 core/                    config, provider clients, prompts, schemas, runner, cache
 evaluators/              one scorer per category + efficiency
 datasets/data/           bundled test cases (JSON)
-scripts/build_datasets.py  deterministic dataset builder (Loghub + synthetic)
+scripts/build_datasets.py         deterministic dataset builder (Loghub + synthetic)
+scripts/build_multimodal_rca.py   Nezha builder: signal screen + modality bundling
 reports/                 aggregation + report generation
 ```
 
@@ -238,3 +301,8 @@ reports/                 aggregation + report generation
 
 Log data from [Loghub](https://github.com/logpai/loghub) / [logparser](https://github.com/logpai/logparser)
 (LogPAI team) — please cite their work if you publish results based on these datasets.
+
+Multi-modal RCA cases are derived from [Nezha](https://github.com/IntelligentDDS/Nezha)
+(IntelligentDDS, FSE 2023) — *Nezha: Interpretable Fine-Grained Root Causes Analysis for
+Microservices on Multi-Modal Observability Data*. Please cite their paper if you publish results
+based on this category.

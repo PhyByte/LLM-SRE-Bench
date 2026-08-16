@@ -1,12 +1,13 @@
 {
   "model": "sonnet-5",
-  "global_score": 76.18,
+  "global_score": 60.02,
   "category_scores": {
     "log_parsing": 89.34,
     "anomaly_detection": 63.09,
     "pattern_correlation": 84.0,
     "metrics_timeseries": 86.86,
     "root_cause": 55.33,
+    "multimodal_rca": 0.0,
     "efficiency": 80.49
   },
   "efficiency_metrics": {
@@ -17,8 +18,8 @@
     "token_score": 0.7424,
     "consistency_score": 0.8756
   },
-  "error_count": 3,
-  "total_runs": 138,
+  "error_count": 42,
+  "total_runs": 177,
   "total_duration_s": 653.15,
-  "last_run_wall_clock_s": 0.75
+  "last_run_wall_clock_s": 2.55
 }
