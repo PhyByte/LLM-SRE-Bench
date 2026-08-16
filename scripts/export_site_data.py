@@ -84,15 +84,21 @@ CATEGORIES = {
         "blurb": "Localize the culprit service across metrics, logs and traces at once.",
         "measures": "Given per-service metrics, logs and trace aggregates from a real "
         "microservice incident, name the culprit service from a closed candidate list, classify "
-        "the fault, and cite the evidence that supports it.",
+        "the fault, and cite the evidence that supports it. Three verdicts are possible and "
+        "choosing between them is most of the task: a service, \"none\" (the system is healthy), "
+        "or \"unknown\" (something is wrong but this evidence does not show what).",
         "scoring": "0.40 culprit localization + 0.25 fault type + 0.25 modality grounding "
         "+ 0.10 evidence recall.",
         "source": "Real incidents from the Nezha dataset (FSE 2023) on OnlineBoutique and "
-        "TrainTicket, plus one healthy baseline.",
+        "TrainTicket, plus five faults whose culprit is unrecoverable from the evidence and one "
+        "healthy baseline.",
         "hard": "The informative modality changes case to case. CPU faults show up in the "
         "metrics and leave the logs ordinary; code-level faults surface only in the logs. Citing "
         "a modality that shows nothing costs precision, so 'cite everything' cannot win. A "
-        "metrics-only heuristic scores 100 on the CPU cases and 0 on the log-only ones.",
+        "metrics-only heuristic scores 100 on the CPU cases and 0 on the log-only ones. Five "
+        "cases go further: a fault really was injected, but it is buried in every channel, and "
+        "the calibrated answer is 'unknown'. Naming a plausible-looking service there scores 10 "
+        "out of 100 — the rule-based baseline does exactly that on all five.",
     },
     "efficiency": {
         "label": "Efficiency & Consistency",
@@ -105,14 +111,44 @@ CATEGORIES = {
     },
 }
 
-DATASETS = [
-    ("log_parsing", 15, "Loghub 2k + official templates"),
-    ("anomaly_detection", 11, "6 labelled BGL windows + 5 hard synthetics"),
-    ("metrics_timeseries", 10, "Seasonal series, 96 points each"),
-    ("pattern_correlation", 5, "Curated multi-service cascades"),
-    ("root_cause", 5, "Curated incidents with red herrings"),
-    ("multimodal_rca", 13, "Nezha microservice incidents (metrics + logs + traces)"),
+# Only the prose lives here. Case counts are read from datasets/data/ and the
+# scored counts from the records, because a hand-maintained number drifts the
+# moment a dataset grows — and a suite that claims cases nobody ran is worse
+# than one that admits the gap.
+DATASET_SOURCES = [
+    ("log_parsing", "Loghub 2k + official templates"),
+    ("anomaly_detection", "6 labelled BGL windows + 5 hard synthetics"),
+    ("metrics_timeseries", "Seasonal series, 96 points each"),
+    ("pattern_correlation", "Curated multi-service cascades"),
+    ("root_cause", "Curated incidents with red herrings"),
+    ("multimodal_rca", "Nezha microservice incidents (metrics + logs + traces): "
+     "12 solvable, 5 where the culprit is unrecoverable, 1 healthy baseline"),
 ]
+
+
+def build_datasets(results: dict) -> list[dict]:
+    """Per-category case counts, split into what exists and what has been run.
+
+    A case only counts as scored once it appears in the records. New cases are
+    therefore visible on the site as pending from the moment they are built,
+    rather than silently inflating a total that the published scores do not
+    cover.
+    """
+    scored_pairs = {(r["category"], r["case_id"]) for r in results["records"]}
+    rows = []
+    for category, source in DATASET_SOURCES:
+        case_ids = [c["id"] for c in json.loads(
+            (ROOT / "datasets" / "data" / f"{category}.json").read_text()
+        )]
+        rows.append(
+            {
+                "category": category,
+                "cases": len(case_ids),
+                "scored": sum(1 for cid in case_ids if (category, cid) in scored_pairs),
+                "source": source,
+            }
+        )
+    return rows
 
 
 def main() -> None:
@@ -184,17 +220,21 @@ def main() -> None:
         "efficiency": 0.05,
     }
 
+    datasets = build_datasets(results)
+
     payload = {
         "generated": results["run_info"]["timestamp"],
         "runs_per_test": results["run_info"]["runs_per_test"],
+        # n_cases is what the published scores actually cover; n_cases_total is
+        # the suite as built. They differ whenever cases exist that no model has
+        # run yet, and the site says so rather than picking whichever is nicer.
         "n_cases": results["run_info"]["n_cases"],
+        "n_cases_total": sum(d["cases"] for d in datasets),
         "price_blend": {"input": INPUT_SHARE, "output": OUTPUT_SHARE},
         "categories": {
             key: {**value, "weight": weights[key]} for key, value in CATEGORIES.items()
         },
-        "datasets": [
-            {"category": c, "cases": n, "source": s} for c, n, s in DATASETS
-        ],
+        "datasets": datasets,
         "models": models,
     }
 
@@ -206,6 +246,12 @@ def main() -> None:
     )
     complete = [m for m in models if m["complete"]]
     print(f"wrote {out.relative_to(ROOT)}")
+    pending = [d for d in datasets if d["scored"] < d["cases"]]
+    for row in pending:
+        print(
+            f"  ! {row['category']}: {row['cases'] - row['scored']} of {row['cases']} cases "
+            "have no runs yet — the site will show them as pending"
+        )
     print(f"  {len(complete)} fully-covered models, {len(models) - len(complete)} partial")
     for m in complete:
         print(f"    {m['name']:18s} {m['global_score']:5.1f}  ${m['price_blended']}/1M blended")

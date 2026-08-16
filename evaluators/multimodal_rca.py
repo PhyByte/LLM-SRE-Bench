@@ -18,6 +18,15 @@ the CPU series for a CPU fault beats one that name-drops every source.
 Localization is deliberately all-or-nothing: naming the wrong service is the
 failure that matters in an incident, and partial credit for "close" would reward
 plausible-sounding misdirection.
+
+Three verdicts are possible, and telling them apart is most of the task:
+a service name, "none" (the system is healthy), and "unknown" (something is
+wrong but this evidence does not show what). The last of these is scored on
+cases drawn from the faults the dataset builder's signal gate rejected — real
+injected faults whose culprit is buried in every channel. They measure whether a
+model knows when it cannot tell, which is the failure mode that makes RCA
+tooling dangerous: an "all clear" or a confident wrong service both read as
+answers, and both send someone to the wrong place at 3am.
 """
 
 from __future__ import annotations
@@ -65,12 +74,36 @@ def _f1(predicted: set[str], expected: set[str]) -> float:
 
 def evaluate(case: dict[str, Any], result: MultiModalRCAResult) -> EvalResult:
     truth = case["ground_truth"]
+    answered = _normalize(result.culprit_service)
 
-    culprit_ok = _normalize(result.culprit_service) == _normalize(truth["culprit_service"])
-    fault_ok = result.fault_type.strip().lower() == truth["fault_type"].strip().lower()
+    # "Insufficient evidence" cases: a fault was injected, but the screen found
+    # it buried in every channel. Two answers are acceptable — "unknown", which
+    # is the calibrated response, and the true culprit, because the screen is a
+    # crude ranking and a model that genuinely localizes the fault has not made
+    # a mistake. What is penalized is the third option: confidently naming some
+    # other service, which is the behaviour that makes RCA tooling dangerous.
+    abstention = "true_culprit" in truth
+    if abstention:
+        culprit_ok = answered in {
+            _normalize(truth["culprit_service"]),
+            _normalize(truth["true_culprit"]),
+        }
+        # Fault type follows whichever verdict was given, so a correct
+        # localization isn't docked for naming the fault it just identified.
+        acceptable_types = {truth["fault_type"].strip().lower()}
+        if answered == _normalize(truth["true_culprit"]):
+            acceptable_types.add(truth["true_fault_type"].strip().lower())
+        fault_ok = result.fault_type.strip().lower() in acceptable_types
+    else:
+        culprit_ok = answered == _normalize(truth["culprit_service"])
+        fault_ok = result.fault_type.strip().lower() == truth["fault_type"].strip().lower()
 
     cited = {e.modality for e in result.evidence}
     grounding = _f1(cited, set(truth["informative_modalities"]))
+    if abstention and answered == _normalize(truth["true_culprit"]):
+        # It found the culprit the screen could not, so its citations are
+        # evidence of that, not false positives against an empty expectation.
+        grounding = 1.0 if cited else 0.0
 
     keywords = truth.get("evidence_keywords", [])
     haystack = " ".join(
@@ -88,12 +121,16 @@ def evaluate(case: dict[str, Any], result: MultiModalRCAResult) -> EvalResult:
         + WEIGHT_EVIDENCE * evidence_recall
     )
 
-    return EvalResult(
-        score=clamp01(score),
-        metrics={
-            "culprit_correct": float(culprit_ok),
-            "fault_type_correct": float(fault_ok),
-            "modality_grounding_f1": grounding,
-            "evidence_recall": evidence_recall,
-        },
-    )
+    metrics = {
+        "culprit_correct": float(culprit_ok),
+        "fault_type_correct": float(fault_ok),
+        "modality_grounding_f1": grounding,
+        "evidence_recall": evidence_recall,
+    }
+    if abstention:
+        # Tracked separately so the reports can show how often a model invented
+        # a culprit rather than admitting the evidence was insufficient.
+        metrics["abstention_case"] = 1.0
+        metrics["confidently_wrong"] = float(not culprit_ok)
+
+    return EvalResult(score=clamp01(score), metrics=metrics)

@@ -69,7 +69,14 @@ FAULT_TYPES = {
     "return": "code_return_value",
     "exception": "code_exception",
 }
-FAULT_VOCABULARY = sorted(set(FAULT_TYPES.values())) + ["none"]
+FAULT_VOCABULARY = sorted(set(FAULT_TYPES.values())) + ["none", "unknown"]
+
+# How many "insufficient evidence" cases to include, and how deeply the culprit
+# must be buried to qualify as one. Five against thirteen solvable cases keeps a
+# blanket "always answer unknown" strategy well below the rule-based baseline,
+# while still making confident misattribution expensive.
+N_ABSTENTION = 5
+ABSTENTION_MIN_RANK = 5
 
 # Metrics carried into the bundle. Deliberately the panel an on-call engineer
 # would actually open, not every column Nezha ships.
@@ -434,7 +441,22 @@ def evidence_keywords(screened: dict[str, Any]) -> list[str]:
 
 # ------------------------------------------------------------------------ case build
 
-def build_case(screened: dict[str, Any], metrics, rng: random.Random, case_id: str) -> dict[str, Any]:
+def build_case(
+    screened: dict[str, Any],
+    metrics,
+    rng: random.Random,
+    case_id: str,
+    abstain: bool = False,
+) -> dict[str, Any]:
+    """Build one case bundle.
+
+    With `abstain=True` the same construction is used, but the expected answer
+    becomes "unknown": a fault really was injected and the evidence does not
+    reveal which service it hit. That is deliberately distinct from the
+    fault-free case, whose answer is "none" — an on-call tool that reports "all
+    clear" when it actually cannot tell is the dangerous failure, not a
+    conservative one, so the two must not collapse into the same answer.
+    """
     day, inject_ts = screened["day"], screened["inject_timestamp"]
     log_rows = read_rows(minute_files(day, "log", screened["inject_time"]))
     trace_rows = read_rows(minute_files(day, "trace", screened["inject_time"]))
@@ -463,12 +485,43 @@ def build_case(screened: dict[str, Any], metrics, rng: random.Random, case_id: s
         inject_ts + WINDOW_AFTER, datetime.timezone.utc
     ).strftime("%H:%M")
 
+    if abstain:
+        ground_truth = {
+            "culprit_service": "unknown",
+            "fault_type": "unknown",
+            # Nothing localizes this fault, so any citation is a false positive.
+            "informative_modalities": [],
+            "decoy_modalities": present,
+            "evidence_keywords": [],
+            # Recorded so the evaluator can also accept a correct localization:
+            # the screen is a crude ranking, and a model that genuinely finds the
+            # culprit anyway must not be punished for out-reasoning it.
+            "true_culprit": screened["service"],
+            "true_fault_type": screened["fault_type"],
+            "screen_ranks": {
+                "metrics": screened["metric_rank"],
+                "logs": screened["log_rank"],
+            },
+        }
+    else:
+        ground_truth = {
+            "culprit_service": screened["service"],
+            "fault_type": screened["fault_type"],
+            "informative_modalities": informative,
+            "decoy_modalities": decoys,
+            "evidence_keywords": evidence_keywords(screened),
+        }
+
+    source = (
+        f"Nezha {screened['system']} {screened['inject_time']} UTC "
+        f"({screened['inject_type']} injected on {screened['service']})"
+    )
+    if abstain:
+        source += " — culprit not recoverable from the bundled evidence"
+
     return {
         "id": case_id,
-        "source": (
-            f"Nezha {screened['system']} {screened['inject_time']} UTC "
-            f"({screened['inject_type']} injected on {screened['service']})"
-        ),
+        "source": source,
         "system": screened["system"],
         "services": services,
         "incident_window": f"{start}-{end} UTC",
@@ -477,13 +530,7 @@ def build_case(screened: dict[str, Any], metrics, rng: random.Random, case_id: s
             "logs": logs_block,
             "traces": traces_block,
         },
-        "ground_truth": {
-            "culprit_service": screened["service"],
-            "fault_type": screened["fault_type"],
-            "informative_modalities": informative,
-            "decoy_modalities": decoys,
-            "evidence_keywords": evidence_keywords(screened),
-        },
+        "ground_truth": ground_truth,
     }
 
 
@@ -597,11 +644,64 @@ def select(screened: list[dict[str, Any]], rng: random.Random) -> list[dict[str,
     return chosen
 
 
+def select_abstention(
+    screened: list[dict[str, Any]], rng: random.Random, quota: int = N_ABSTENTION
+) -> list[dict[str, Any]]:
+    """Pick faults whose culprit is deeply buried, for the "unknown" cases.
+
+    The 61 faults the signal gate rejects are not waste — they are the only
+    honest way to test whether a model knows when the evidence does not support
+    a conclusion, which is the failure mode that makes RCA tooling dangerous.
+
+    "Rejected" alone is too weak a bar, though: a fault whose culprit ranks 2nd
+    is arguably still findable by better reasoning than the screen's crude
+    ranking. Only faults buried past ABSTENTION_MIN_RANK in *both* channels
+    qualify, so a model that abstains is agreeing with strong evidence of
+    absence rather than being punished for a near miss.
+    """
+    def buried(rank: Optional[int]) -> bool:
+        # A missing rank means the service never even surfaced in that channel.
+        return rank is None or rank >= ABSTENTION_MIN_RANK
+
+    pool = [
+        s for s in screened
+        if not s["usable"] and buried(s["metric_rank"]) and buried(s["log_rank"])
+    ]
+
+    # Spread across systems and fault types so "unknown" can't be pattern-matched
+    # to one system or one kind of fault.
+    rng.shuffle(pool)
+    chosen: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
+    for candidate in pool:
+        key = (candidate["system"], candidate["fault_type"])
+        if key in seen:
+            continue
+        chosen.append(candidate)
+        seen.add(key)
+        if len(chosen) >= quota:
+            break
+    # Top up from the rest of the pool if the variety pass ran short.
+    for candidate in pool:
+        if len(chosen) >= quota:
+            break
+        if candidate not in chosen:
+            chosen.append(candidate)
+
+    chosen.sort(key=lambda s: (s["system"], s["fault_type"], s["service"]))
+    return chosen
+
+
 def case_id_for(screened: dict[str, Any], index: int) -> str:
     system = "ob" if screened["system"] == "onlineboutique" else "tt"
     fault = screened["fault_type"].replace("code_", "").replace("_", "")[:8]
     service = screened["service"].replace("ts-", "").replace("service", "").strip("-")
     return f"mm-{system}-{fault}-{service or 'svc'}-{index:02d}"
+
+
+def abstention_id_for(screened: dict[str, Any], index: int) -> str:
+    system = "ob" if screened["system"] == "onlineboutique" else "tt"
+    return f"mm-{system}-unknown-{index:02d}"
 
 
 # ----------------------------------------------------------------------------- main
@@ -643,6 +743,19 @@ def main() -> None:
     for index, item in enumerate(selected, start=1):
         metrics = load_metrics(item["day"])
         cases.append(build_case(item, metrics, rng, case_id_for(item, index)))
+
+    # "Insufficient evidence" cases, drawn from the faults the gate rejected.
+    abstentions = select_abstention(screened, rng)
+    for index, item in enumerate(abstentions, start=1):
+        metrics = load_metrics(item["day"])
+        cases.append(
+            build_case(item, metrics, rng, abstention_id_for(item, index), abstain=True)
+        )
+    print(
+        f"abstention pool: {len(abstentions)} of "
+        f"{sum(1 for s in screened if not s['usable'])} rejected faults",
+        file=sys.stderr,
+    )
 
     clean = build_clean_case("2022-08-22", rng, "mm-ob-clean-baseline")
     if clean:

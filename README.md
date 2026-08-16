@@ -74,6 +74,8 @@ and fault type.
   move CPU at all.
 - One case has no fault at all — the correct answer is `none`, and inventing a culprit scores 0
   on localization.
+- **Five cases cannot be solved, and knowing that is the answer.** A fault really was injected,
+  but it is buried in every channel. The calibrated verdict is `unknown`.
 
 So a model has to work out *which* signal to trust, not just read the one it was given. The
 scoring makes that explicit:
@@ -95,12 +97,44 @@ The bundled rule-based baseline demonstrates the point: a heuristic that always 
 highest-CPU service scores **100 on every CPU case and 0 on every log-only case**, landing at
 ~59 overall. Single-modality strategies cannot win this category.
 
-Only 40 of Nezha's 101 faults survive the signal gate — the rest are dropped because the culprit
-is not recoverable from the bundled evidence, and a case nobody can solve measures nothing. The
-same principle applies to the labels: Nezha separates `cpu_contention` from `cpu_consumed`, but
-the two are indistinguishable in the observability data (the same service under either fault
-shows the same pod *and* node CPU), so they collapse to one `cpu_saturation` label rather than
-scoring models on a coin flip.
+### Knowing when you can't tell
+
+An RCA tool that confidently names the wrong service sends someone to the wrong place at 3am. So
+three verdicts are possible, and telling them apart is most of the task:
+
+| Verdict | Means |
+|---|---|
+| a service name | the evidence identifies that service |
+| `none` | the system is healthy — nothing here is a fault |
+| `unknown` | something is wrong, but this evidence doesn't show which service |
+
+`none` and `unknown` are deliberately **not** interchangeable: a false all-clear is a different
+failure from an honest "I can't attribute this", and only one of them is safe.
+
+The five `unknown` cases are drawn from the faults the signal gate **rejected** — real injections
+whose culprit ranks 6th or worse in *both* the metric and log channels. Scoring on an abstention
+case:
+
+| Answer | Score |
+|---|---|
+| `unknown` | 100 |
+| the true culprit (found anyway) | 100 |
+| `none` — false all-clear | 35 |
+| a confident wrong service | 10 |
+
+Naming the true culprit also scores full marks: the screen is a crude ranking, and a model that
+genuinely out-reasons it hasn't made a mistake. What's punished is confident misattribution.
+Nor can a model game this by always abstaining — that strategy scores ~30 overall, well below
+the rule-based baseline. The baseline itself is confidently wrong on **all five**.
+
+### Cases nobody can solve are dropped, and labels nobody can distinguish are merged
+
+Only 40 of Nezha's 101 faults survive the signal gate for the solvable set — the rest are dropped
+because the culprit is not recoverable, and a case nobody can solve measures nothing (five of
+them are reused as the `unknown` cases above). The same principle applies to the labels: Nezha
+separates `cpu_contention` from `cpu_consumed`, but the two are indistinguishable in the
+observability data (the same service under either fault shows the same pod *and* node CPU), so
+they collapse to one `cpu_saturation` label rather than scoring models on a coin flip.
 Rebuild or re-sample the set with:
 
 ```bash
@@ -266,7 +300,7 @@ retried. Because the cache only stores successes, retries and re-runs cost only 
 root-cause answers get graded 0–10 by that model against the reference
 (score = 0.7 × judge + 0.3 × reference metrics).
 
-## The datasets (59 cases)
+## The datasets (64 cases)
 
 | File | Cases | Source |
 |---|---|---|
@@ -275,7 +309,7 @@ root-cause answers get graded 0–10 by that model against the reference
 | `metrics_timeseries.json` | 10 | Seasonal series (96 pts, daily cycle): off-peak spikes, level shifts, dips, 2 clean |
 | `pattern_correlation.json` | 5 | Curated multi-service cascades with distractors and 2-hop causal chains |
 | `root_cause.json` | 5 | Curated incidents with red herrings and reference answers |
-| `multimodal_rca.json` | 13 | Real [Nezha](https://github.com/IntelligentDDS/Nezha) microservice incidents (metrics + logs + traces), signal-screened, + 1 healthy baseline |
+| `multimodal_rca.json` | 18 | Real [Nezha](https://github.com/IntelligentDDS/Nezha) microservice incidents (metrics + logs + traces): 12 signal-screened solvable, 5 unrecoverable (`unknown`), 1 healthy baseline |
 
 Regenerate or scale up the generated portions deterministically:
 

@@ -1,7 +1,7 @@
 # LLM Observability Benchmark — Comparison
 
-Generated: 2026-08-16 21:30:30 UTC  
-Runs per test: 3 · Models: 16 · Test cases: 59
+Generated: 2026-08-16 22:59:45 UTC  
+Runs per test: 3 · Models: 16 · Test cases: 64
 
 All scores are 0-100. The global score is the weighted average of the category scores. Only models that ran the full category set are ranked.
 
@@ -10,16 +10,16 @@ All scores are 0-100. The global score is the weighted average of the category s
 | 1 | **claude-opus-4-8** 🥇 | **77.7** | 91.9 | 68.8 | 90.7 | 100.0 | 57.8 | 68.1 | 74.5 | 11m 35s | $2.77 |
 | 2 | **fable-5-low** 🥈 | **76.3** | 91.0 | 67.4 | 74.7 | 100.0 | 62.3 | 74.1 | 70.7 | 17m 34s | $5.37 |
 | 3 | **grok-4.6-low** 🥉 | **75.2** | 91.4 | 64.1 | 88.0 | 100.0 | 53.9 | 70.3 | 55.6 | 11m 38s | $0.55 |
-| 4 | **grok-4.5-low** | **73.4** | 92.4 | 61.5 | 92.0 | 90.0 | 54.8 | 66.3 | 52.2 | 16m 31s | $0.58 |
-| 5 | **gpt-5.6-sol** | **71.5** | 91.7 | 61.1 | 74.7 | 83.3 | 54.3 | 69.6 | 72.1 | 17m 11s | $2.78 |
-| 6 | **haiku-4-5** | **68.6** | 91.6 | 52.7 | 80.0 | 71.4 | 53.3 | 66.3 | 78.4 | 7m 8s | $0.48 |
+| 4 | **grok-4.5-low** | **72.6** | 92.4 | 61.5 | 92.0 | 90.0 | 54.8 | 64.0 | 45.8 | 18m 53s | $0.83 |
+| 5 | **gpt-5.6-terra** | **72.4** | 91.9 | 62.1 | 82.7 | 86.3 | 54.2 | 63.9 | 76.6 | 9m 34s | $1.35 |
+| 6 | **gpt-5.6-sol** | **71.5** | 91.7 | 61.1 | 74.7 | 83.3 | 54.3 | 69.6 | 72.1 | 17m 11s | $2.78 |
+| 7 | **gpt-5.6-luna** | **71.4** | 91.3 | 63.1 | 85.3 | 79.6 | 51.9 | 60.8 | 76.5 | 11m 13s | $0.71 |
+| 8 | **haiku-4-5** | **68.6** | 91.6 | 52.7 | 80.0 | 71.4 | 53.3 | 66.3 | 78.4 | 7m 8s | $0.48 |
 
 **Incomplete coverage** (ran only some categories — not ranked, because a partial run's global score isn't comparable). Re-run the full suite for these:
 
 - fable-5 — ran only: anomaly_detection, log_parsing, metrics_timeseries, pattern_correlation, root_cause
 - sonnet-5 — ran only: anomaly_detection, log_parsing, metrics_timeseries, pattern_correlation, root_cause
-- gpt-5.6-terra — ran only: anomaly_detection, log_parsing, metrics_timeseries, pattern_correlation, root_cause
-- gpt-5.6-luna — ran only: anomaly_detection, log_parsing, metrics_timeseries, pattern_correlation, root_cause
 - grok-4.5 — ran only: anomaly_detection, log_parsing, metrics_timeseries, pattern_correlation, root_cause
 - grok-4.6 — ran only: anomaly_detection, log_parsing, metrics_timeseries, pattern_correlation, root_cause
 - grok-4 — ran only: anomaly_detection, log_parsing, metrics_timeseries, pattern_correlation, root_cause

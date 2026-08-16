@@ -120,6 +120,7 @@ FAULT_VOCABULARY = [
     "code_return_value",
     "code_exception",
     "none",
+    "unknown",
 ]
 
 
@@ -156,13 +157,24 @@ You are on call for the "{case["system"]}" microservice system. An incident was
 reported during {case["incident_window"]}. Below is the observability data
 collected across three modalities for that window.
 
-Exactly one service is the root cause, or none of them is (the system may be
-healthy). Not every modality is informative: some contain only normal
-background activity for this incident. Cite evidence only from the modalities
-that actually support your conclusion — citing a modality that shows nothing
-unusual counts against you.
+Not every modality is informative: some contain only normal background activity
+for this incident. Cite evidence only from the modalities that actually support
+your conclusion — citing a modality that shows nothing unusual counts against
+you.
 
-Candidate services (the culprit is one of these, or "none"):
+There are three possible verdicts, and choosing between them is the task:
+  - a service name — the evidence identifies that service as the root cause
+  - "none"    — the system is healthy; nothing here is a fault
+  - "unknown" — something is wrong, but this evidence does not show which
+                service is responsible
+
+"none" and "unknown" are not interchangeable. Report "none" only when you
+believe the system is behaving normally. Report "unknown" when there are signs
+of a problem you cannot attribute to a specific service from what you were
+given. Guessing a plausible-looking service when the evidence does not support
+it scores worse than saying "unknown".
+
+Candidate services (the culprit is one of these, or "none", or "unknown"):
 {", ".join(case["services"])}
 
 Fault types (choose exactly one):
@@ -172,14 +184,16 @@ Fault types (choose exactly one):
 
 Return JSON exactly in this shape:
 {{
-  "culprit_service": "<service name, or \\"none\\">",
+  "culprit_service": "<service name, or \\"none\\", or \\"unknown\\">",
   "fault_type": "<one of the fault types above>",
   "evidence": [{{"modality": "<metrics|logs|traces>", "observation": "<what you saw>"}}, ...],
   "summary": "<2-4 sentence incident summary>"
 }}
 
 If the system is healthy, return "none" for both culprit_service and fault_type
-with an empty evidence list."""
+with an empty evidence list. If you cannot attribute the problem to a service,
+return "unknown" for both, and use the summary to say what you observed and why
+it is not enough to localize the fault."""
 
 
 def build_judge_prompt(case: dict[str, Any], candidate_root_cause: str, candidate_summary: str) -> str:

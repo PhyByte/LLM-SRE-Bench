@@ -1,7 +1,8 @@
 {
-  "generated": "2026-08-16 21:30:30 UTC",
+  "generated": "2026-08-16 22:35:46 UTC",
   "runs_per_test": 3,
   "n_cases": 59,
+  "n_cases_total": 64,
   "price_blend": {
     "input": 0.9,
     "output": 0.1
@@ -55,10 +56,10 @@
     "multimodal_rca": {
       "label": "Multi-modal RCA",
       "blurb": "Localize the culprit service across metrics, logs and traces at once.",
-      "measures": "Given per-service metrics, logs and trace aggregates from a real microservice incident, name the culprit service from a closed candidate list, classify the fault, and cite the evidence that supports it.",
+      "measures": "Given per-service metrics, logs and trace aggregates from a real microservice incident, name the culprit service from a closed candidate list, classify the fault, and cite the evidence that supports it. Three verdicts are possible and choosing between them is most of the task: a service, \"none\" (the system is healthy), or \"unknown\" (something is wrong but this evidence does not show what).",
       "scoring": "0.40 culprit localization + 0.25 fault type + 0.25 modality grounding + 0.10 evidence recall.",
-      "source": "Real incidents from the Nezha dataset (FSE 2023) on OnlineBoutique and TrainTicket, plus one healthy baseline.",
-      "hard": "The informative modality changes case to case. CPU faults show up in the metrics and leave the logs ordinary; code-level faults surface only in the logs. Citing a modality that shows nothing costs precision, so 'cite everything' cannot win. A metrics-only heuristic scores 100 on the CPU cases and 0 on the log-only ones.",
+      "source": "Real incidents from the Nezha dataset (FSE 2023) on OnlineBoutique and TrainTicket, plus five faults whose culprit is unrecoverable from the evidence and one healthy baseline.",
+      "hard": "The informative modality changes case to case. CPU faults show up in the metrics and leave the logs ordinary; code-level faults surface only in the logs. Citing a modality that shows nothing costs precision, so 'cite everything' cannot win. A metrics-only heuristic scores 100 on the CPU cases and 0 on the log-only ones. Five cases go further: a fault really was injected, but it is buried in every channel, and the calibrated answer is 'unknown'. Naming a plausible-looking service there scores 10 out of 100 — the rule-based baseline does exactly that on all five.",
       "weight": 0.2
     },
     "efficiency": {
@@ -75,32 +76,38 @@
     {
       "category": "log_parsing",
       "cases": 15,
+      "scored": 15,
       "source": "Loghub 2k + official templates"
     },
     {
       "category": "anomaly_detection",
       "cases": 11,
+      "scored": 11,
       "source": "6 labelled BGL windows + 5 hard synthetics"
     },
     {
       "category": "metrics_timeseries",
       "cases": 10,
+      "scored": 10,
       "source": "Seasonal series, 96 points each"
     },
     {
       "category": "pattern_correlation",
       "cases": 5,
+      "scored": 5,
       "source": "Curated multi-service cascades"
     },
     {
       "category": "root_cause",
       "cases": 5,
+      "scored": 5,
       "source": "Curated incidents with red herrings"
     },
     {
       "category": "multimodal_rca",
-      "cases": 13,
-      "source": "Nezha microservice incidents (metrics + logs + traces)"
+      "cases": 18,
+      "scored": 13,
+      "source": "Nezha microservice incidents (metrics + logs + traces): 12 solvable, 5 where the culprit is unrecoverable, 1 healthy baseline"
     }
   ],
   "models": [
@@ -221,6 +228,35 @@
       "complete": true
     },
     {
+      "name": "gpt-5.6-terra",
+      "provider": "openai",
+      "reasoning_effort": null,
+      "global_score": 72.4,
+      "scores": {
+        "log_parsing": 91.9,
+        "anomaly_detection": 62.1,
+        "pattern_correlation": 82.7,
+        "metrics_timeseries": 86.3,
+        "root_cause": 54.1,
+        "multimodal_rca": 63.9,
+        "efficiency": 76.6
+      },
+      "price_input": 2.5,
+      "price_output": 15.0,
+      "price_blended": 3.75,
+      "measured_cost_usd": 1.3522,
+      "total_runs": 177,
+      "repeats_per_case": 3.0,
+      "errors": 0,
+      "duration_s": 574.14,
+      "avg_latency_s": 3.24,
+      "avg_tokens": 1763,
+      "score_stddev": 3.09,
+      "input_tokens": 266289,
+      "output_tokens": 45764,
+      "complete": true
+    },
+    {
       "name": "gpt-5.6-sol",
       "provider": "openai",
       "reasoning_effort": null,
@@ -247,6 +283,35 @@
       "score_stddev": 2.43,
       "input_tokens": 266289,
       "output_tokens": 48422,
+      "complete": true
+    },
+    {
+      "name": "gpt-5.6-luna",
+      "provider": "openai",
+      "reasoning_effort": null,
+      "global_score": 71.4,
+      "scores": {
+        "log_parsing": 91.3,
+        "anomaly_detection": 63.1,
+        "pattern_correlation": 85.3,
+        "metrics_timeseries": 79.6,
+        "root_cause": 51.9,
+        "multimodal_rca": 60.8,
+        "efficiency": 76.5
+      },
+      "price_input": 1.0,
+      "price_output": 6.0,
+      "price_blended": 1.5,
+      "measured_cost_usd": 0.7064,
+      "total_runs": 177,
+      "repeats_per_case": 3.0,
+      "errors": 1,
+      "duration_s": 673.63,
+      "avg_latency_s": 3.62,
+      "avg_tokens": 1903,
+      "score_stddev": 1.69,
+      "input_tokens": 266289,
+      "output_tokens": 73352,
       "complete": true
     },
     {
@@ -332,62 +397,6 @@
       "score_stddev": 3.11,
       "input_tokens": 99021,
       "output_tokens": 54407,
-      "complete": false
-    },
-    {
-      "name": "gpt-5.6-terra",
-      "provider": "openai",
-      "reasoning_effort": null,
-      "global_score": 75.0,
-      "scores": {
-        "log_parsing": 91.9,
-        "anomaly_detection": 62.1,
-        "pattern_correlation": 82.7,
-        "metrics_timeseries": 86.3,
-        "root_cause": 54.1,
-        "efficiency": 84.9
-      },
-      "price_input": 2.5,
-      "price_output": 15.0,
-      "price_blended": 3.75,
-      "measured_cost_usd": 0.653,
-      "total_runs": 138,
-      "repeats_per_case": 3.0,
-      "errors": 0,
-      "duration_s": 401.21,
-      "avg_latency_s": 2.91,
-      "avg_tokens": 753,
-      "score_stddev": 3.02,
-      "input_tokens": 72381,
-      "output_tokens": 31470,
-      "complete": false
-    },
-    {
-      "name": "gpt-5.6-luna",
-      "provider": "openai",
-      "reasoning_effort": null,
-      "global_score": 74.5,
-      "scores": {
-        "log_parsing": 91.3,
-        "anomaly_detection": 63.1,
-        "pattern_correlation": 85.3,
-        "metrics_timeseries": 79.6,
-        "root_cause": 51.9,
-        "efficiency": 83.9
-      },
-      "price_input": 1.0,
-      "price_output": 6.0,
-      "price_blended": 1.5,
-      "measured_cost_usd": 0.4135,
-      "total_runs": 138,
-      "repeats_per_case": 3.0,
-      "errors": 1,
-      "duration_s": 509.32,
-      "avg_latency_s": 3.46,
-      "avg_tokens": 909,
-      "score_stddev": 1.95,
-      "input_tokens": 72381,
-      "output_tokens": 56845,
       "complete": false
     },
     {

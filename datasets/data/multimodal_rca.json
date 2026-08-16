@@ -2590,6 +2590,1392 @@
     }
   },
   {
+    "id": "mm-ob-unknown-01",
+    "source": "Nezha onlineboutique 2022-08-22 07:53:33 UTC (exception injected on adservice) — culprit not recoverable from the bundled evidence",
+    "system": "onlineboutique",
+    "services": [
+      "adservice",
+      "cartservice",
+      "checkoutservice",
+      "currencyservice",
+      "emailservice",
+      "frontend",
+      "paymentservice",
+      "productcatalogservice",
+      "recommendationservice",
+      "shippingservice"
+    ],
+    "incident_window": "07:51-07:58 UTC",
+    "modalities": {
+      "metrics": {
+        "adservice": [
+          "cpu%: 4.6 4.1 13.5 5.6 5.5 6.5 4.1",
+          "mem%: 90.3 80.3 86.5 86.5 86.5 91.2 91.2",
+          "p90ms: 51 34 862 815 787 36 25",
+          "ops: 5.0 4.9 5.1 4.3 5.3 5.5 5.0"
+        ],
+        "cartservice": [
+          "cpu%: 5.2 5.9 4.7 4.3 6.4 7.7 8.6",
+          "mem%: 26.2 26.2 26.2 26.2 26.2 26.2 26.2",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 7.7 7.5 8.2 9.2 8.0 8.8 9.5"
+        ],
+        "checkoutservice": [
+          "cpu%: 9.0 7.5 8.3 9.0 6.5 7.2 10.6",
+          "mem%: 42.8 42.8 42.8 42.8 42.8 42.8 42.8",
+          "p90ms: 425 2050 650 417 425 325 438",
+          "ops: 0.1 0.1 0.4 0.5 0.2 0.3 0.3"
+        ],
+        "currencyservice": [
+          "cpu%: 59.5 46.1 65.8 69.0 68.6 62.8 72.0",
+          "mem%: 27.8 27.6 27.7 27.4 27.2 27.2 27.3",
+          "p90ms: 98 139 81 105 86 91 92",
+          "ops: 26.7 25.5 23.7 28.5 28.6 27.7 31.1"
+        ],
+        "emailservice": [
+          "cpu%: 0.5 0.4 0.7 0.6 0.5 0.6 0.7",
+          "mem%: 4.7 4.7 4.7 4.7 4.7 4.7 4.7",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 0.1 0.1 0.4 0.5 0.2 0.3 0.3"
+        ],
+        "frontend": [
+          "cpu%: 28.6 25.9 26.8 27.5 24.3 27.4 28.0",
+          "mem%: 16.4 16.4 16.4 16.4 16.4 16.4 16.4",
+          "p90ms: 719 746 683 721 732 540 486",
+          "ops: 8.3 7.9 8.0 9.2 8.8 9.1 9.2"
+        ],
+        "paymentservice": [
+          "cpu%: 0.6 0.6 0.3 0.6 0.4 0.4 0.7",
+          "mem%: 23.5 23.5 23.5 23.5 23.5 23.7 23.7",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 0.3 0.3 0.5 0.5 0.3 0.5 0.7"
+        ],
+        "productcatalogservice": [
+          "cpu%: 35.0 34.7 35.8 48.1 28.9 49.0 33.2",
+          "mem%: 11.3 11.3 11.3 11.3 11.3 11.3 11.3",
+          "p90ms: 19 24 19 18 13 17 19",
+          "ops: 47.2 43.7 49.7 41.5 41.9 47.7 48.3"
+        ],
+        "recommendationservice": [
+          "cpu%: 7.7 7.8 5.8 7.7 5.4 6.5 6.4",
+          "mem%: 5.5 5.5 5.5 5.5 5.5 5.5 5.5",
+          "p90ms: 24 44 25 29 24 25 27",
+          "ops: 5.4 5.9 5.9 5.9 5.9 6.7 6.7"
+        ],
+        "shippingservice": [
+          "cpu%: 2.9 2.9 1.6 3.3 2.7 2.5 3.4",
+          "mem%: 9.8 9.8 9.8 9.8 9.8 9.8 9.8",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 2.0 1.9 2.7 2.7 1.7 2.3 2.5"
+        ]
+      },
+      "logs": [
+        "[currencyservice] INFO: TraceID: f14b8931398a592a81fe52e8a9704856 SpanID: 20d2895d89b3ccff Received conversion request",
+        "[productcatalogservice] INFO: TraceID: 97343bcd0153f086620a54e7ebfb8dbd SpanID: 3e74496804c57006 Query product with name and description successfully",
+        "[frontend] WARNING: TraceID: bc1984268a7429fe6bada277f68b64cc SpanID: ac48ec9e6f5ad2d5 Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: 50ae726397608188a26d1df007698f78 SpanID: 5657578240431c6c Failed to retrieve ads",
+        "[frontend] INFO: TraceID: e7b8c3dde395aea867931a355fe5780f SpanID: 70cc10bdc517cdaa View user cart complete",
+        "[frontend] WARNING: TraceID: 9ef0f73f3a1c1452fba0ec046607f740 SpanID: 0240c255b6f632b6 Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: cb138d28adc08f64b5e3b8268fdd32d9 SpanID: ec864ab98512f396 Failed to retrieve ads",
+        "[frontend] INFO: TraceID: a045766f1d06d650896aace5d8838a5f SpanID: 8eb2ca6fcc603c4e Request complete",
+        "[productcatalogservice] INFO: TraceID: d7bbb915968582d0fde280e17cf55744 SpanID: a339aedde8875148 Query product with name and description OLJCESPC7Z",
+        "[productcatalogservice] INFO: TraceID: f6ea77835a1bd403bc573a2bcf13df3e SpanID: 60346106fbc4e75c List products end",
+        "[frontend] WARNING: TraceID: 1213084192430cee3a3cdbe251226904 SpanID: ef91494b4207f789 Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: 0ca3e532ed0d7b6f51a3600682d1c590 SpanID: 46210b38fb7263e9 Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: dceefc3173799669f14556ee31df9b1e SpanID: aad6d26b05889200 Failed to retrieve ads",
+        "[frontend] INFO: TraceID: db45205eb366e0bd79146dc272b05e16 SpanID: b0df8ae42396c1bb Placing order started",
+        "[frontend] WARNING: TraceID: 03cbcf7797a0672299c6cc3b60f4c96b SpanID: 79be67c77368f9d2 Failed to retrieve ads",
+        "[productcatalogservice] INFO: TraceID: 07eb872ebd582189c88654b382277d3e SpanID: afb5697c66235882 get results: {66VCHSJNUP Antique Camera It probably doesn't work anyway. /static/img/products/camera-lens.jpg currency_code:\"USD\" units:12 nanos:49000...",
+        "[frontend] WARNING: TraceID: 1e25d3842e26dabcd317ee0535374672 SpanID: 0809e1bf0288715c Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: f38004a5531a46e9d1a0890f7fc5824e SpanID: 39cc4b695dac08e5 Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: cf02b9df4938e4b61e23bfd6eb453fc9 SpanID: ecf420f039c89c9d Failed to retrieve ads",
+        "[checkoutservice] INFO: TraceID: 4fdd9091f75b7c6aed6960bb05169ee6 SpanID: 994e70f9aa6dbaf6 Start ship Order to address street_address:\"1600 Amphitheatre Parkway\" city:\"Mountain View\" state:\"CA\" country:\"United States\" zip_code:94043",
+        "[frontend] WARNING: TraceID: 83fd70f1fc6e89bc338cbbfd0fcb1e34 SpanID: eb65d0e36e210c07 Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: ce45e1e6e8c2a78c8c8b94f76dd9edf7 SpanID: a9e413d0bf2b9245 Failed to retrieve ads",
+        "[currencyservice] INFO: TraceID: f3c57c77c72944ae63d56130f363b6b4 SpanID: 0ada24019206285a Handles decimal or fractional carrying",
+        "[frontend] WARNING: TraceID: 26868774b587b3134a55507754a4d9dc SpanID: c6625d539057cb3d Failed to retrieve ads",
+        "[productcatalogservice] INFO: TraceID: b010fd9804189a70b9877a34f056806a SpanID: cf21e5883e45cb85 Query product with name and description successfully",
+        "[frontend] WARNING: TraceID: 91478cd61c2f334d6f5066af44a1464f SpanID: 65cc94ae662a5798 Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: 7d61395f812651b3e6d9953e28d9dbe4 SpanID: 4c74997edcb368a1 Failed to retrieve ads",
+        "[productcatalogservice] INFO: TraceID: b5498f7053123bab28d8da858129cb47 SpanID: c3127c8e573bef49 Start query product catalog",
+        "[frontend] WARNING: TraceID: 218079a699a281da926148d1c2c64b04 SpanID: 80e8b709e2347fae Failed to retrieve ads",
+        "[frontend] WARNING: TraceID: 471325ea0e76328dbab58266f2f0f29a SpanID: b60744e6d2c27ee2 Failed to retrieve ads"
+      ],
+      "traces": {
+        "adservice": "spans=3656 p50=7.3ms p95=44.3ms max=800.0ms",
+        "cartservice": "spans=1465 p50=1.4ms p95=2.5ms max=14.0ms",
+        "checkoutservice": "spans=1312 p50=8.5ms p95=200.8ms max=1598.4ms",
+        "currencyservice": "spans=14690 p50=0.4ms p95=2.2ms max=310.2ms",
+        "emailservice": "spans=64 p50=0.5ms p95=0.7ms max=1.3ms",
+        "frontend": "spans=16342 p50=8.3ms p95=187.5ms max=2154.6ms",
+        "paymentservice": "spans=64 p50=0.3ms p95=0.4ms max=1.5ms",
+        "productcatalogservice": "spans=26802 p50=1.2ms p95=11.1ms max=692.0ms",
+        "recommendationservice": "spans=2142 p50=9.2ms p95=39.6ms max=295.3ms",
+        "shippingservice": "spans=1576 p50=0.1ms p95=0.5ms max=7.3ms"
+      }
+    },
+    "ground_truth": {
+      "culprit_service": "unknown",
+      "fault_type": "unknown",
+      "informative_modalities": [],
+      "decoy_modalities": [
+        "metrics",
+        "logs",
+        "traces"
+      ],
+      "evidence_keywords": [],
+      "true_culprit": "adservice",
+      "true_fault_type": "code_exception",
+      "screen_ranks": {
+        "metrics": 6,
+        "logs": 6
+      }
+    }
+  },
+  {
+    "id": "mm-ob-unknown-02",
+    "source": "Nezha onlineboutique 2022-08-23 14:12:52 UTC (network_delay injected on paymentservice) — culprit not recoverable from the bundled evidence",
+    "system": "onlineboutique",
+    "services": [
+      "adservice",
+      "cartservice",
+      "checkoutservice",
+      "currencyservice",
+      "emailservice",
+      "frontend",
+      "paymentservice",
+      "productcatalogservice",
+      "recommendationservice",
+      "shippingservice"
+    ],
+    "incident_window": "14:10-14:17 UTC",
+    "modalities": {
+      "metrics": {
+        "adservice": [
+          "cpu%: 3.5 4.3 3.8 5.3 4.0 4.2 4.0",
+          "mem%: 87.1 87.1 87.1 87.1 87.1 87.1 87.1",
+          "p90ms: 37 32 25 34 32 33 48",
+          "ops: 5.3 4.5 4.5 4.9 4.9 5.1 5.1"
+        ],
+        "cartservice": [
+          "cpu%: 7.2 9.2 6.3 6.6 4.5 6.9 10.0",
+          "mem%: 26.1 26.1 26.1 26.1 26.1 26.1 26.1",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 7.7 7.6 7.9 8.1 9.3 9.0 7.9"
+        ],
+        "checkoutservice": [
+          "cpu%: 0.0 4.5 5.6 5.6 9.2 6.5 4.5",
+          "mem%: 17.6 17.6 17.6 17.6 17.6 17.6 17.6",
+          "p90ms: 450 235 1600 2050 950 950 1600",
+          "ops: 0.1 0.2 0.5 0.2 0.3 0.3 0.3"
+        ],
+        "currencyservice": [
+          "cpu%: 48.8 65.4 34.9 40.3 44.8 59.1 48.5",
+          "mem%: 28.8 28.9 28.2 28.9 29.7 28.5 29.1",
+          "p90ms: 94 89 143 162 129 153 95",
+          "ops: 25.9 24.1 26.2 26.4 30.2 23.9 25.0"
+        ],
+        "emailservice": [
+          "cpu%: 0.4 0.5 0.6 0.6 0.5 0.6 0.5",
+          "mem%: 4.9 4.9 4.9 4.9 4.9 4.9 4.9",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 0.1 0.2 0.5 0.2 0.3 0.3 0.3"
+        ],
+        "frontend": [
+          "cpu%: 19.7 20.4 27.9 22.1 16.3 17.5 20.4",
+          "mem%: 16.3 16.3 16.3 16.3 16.3 16.3 16.3",
+          "p90ms: 683 423 862 695 629 461 600",
+          "ops: 8.7 7.7 7.8 8.7 9.7 9.3 8.5"
+        ],
+        "paymentservice": [
+          "cpu%: 0.3 0.3 0.5 0.4 0.5 0.5 0.6",
+          "mem%: 26.5 26.5 26.5 26.1 26.1 26.1 26.6",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 0.1 0.3 0.5 0.3 0.6 0.5 0.3"
+        ],
+        "productcatalogservice": [
+          "cpu%: 42.8 32.8 33.8 28.4 42.2 34.9 48.1",
+          "mem%: 10.7 10.7 10.7 10.7 10.7 10.7 10.7",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 39.4 46.9 47.9 39.8 55.5 49.5 45.9"
+        ],
+        "recommendationservice": [
+          "cpu%: 7.2 6.1 5.3 5.2 5.3 5.3 5.1",
+          "mem%: 5.6 5.6 5.6 5.6 5.6 5.6 5.6",
+          "p90ms: 10 10 10 18 29 10 10",
+          "ops: 5.5 5.9 6.3 5.9 6.7 6.5 5.7"
+        ],
+        "shippingservice": [
+          "cpu%: 2.1 2.9 3.4 2.7 3.5 3.2 3.1",
+          "mem%: 9.9 9.9 9.9 9.9 9.9 9.9 9.9",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 1.5 2.1 3.1 2.2 3.5 3.0 2.7"
+        ]
+      },
+      "logs": [
+        "[adservice] INFO: 14:12:52.308 INFO  - TraceID: bd0740d1fda5b8383c928198e6c9eea8 SpanID: d87dcecffaade247 Received ad request (context_words=[cookware])",
+        "[productcatalogservice] INFO: TraceID: cb31fd2ddc6c51befcbdf93e969b29c5 SpanID: 4b399d7967d40857 Start list products",
+        "[currencyservice] INFO: TraceID: 4c3b6b5f6a47fc080b8d3ccc887f0293 SpanID: 03ebaef68524de6c Received conversion request",
+        "[productcatalogservice] INFO: TraceID: d49a41bab36baece159e9c745d64783a SpanID: 6895892a8d41b2eb Query product successfully",
+        "[productcatalogservice] INFO: TraceID: 0a538504d8acc971bb2d66014f23d5b0 SpanID: ef9a48584892a62f get results: {2ZYFJ3GM2N Film Camera This camera looks like it's a film camera, but it's actually digital. /static/img/products/film-camera.jpg curren...",
+        "[productcatalogservice] INFO: TraceID: 6378f638f8aa7be0a98797b8dcec7968 SpanID: 9705c08be3daf38f Query product successfully",
+        "[adservice] INFO: 14:11:54.961 INFO  - TraceID: b7a756da09aa21b642e7f34b41f20912 SpanID: 0a5b335090f5c9ba Get Ads by Category finish",
+        "[shippingservice] INFO: TraceID: 009879a1934403a6f98ffda11e65016f SpanID: 16387e3a00db834e [GetQuote] received request",
+        "[productcatalogservice] INFO: TraceID: ec8a0152a69b8be8241f4bc48e74a3db SpanID: eb5efaede15e7e22 Query product with name and description 1YMWWN1N4O",
+        "[shippingservice] INFO: TraceID: 98391e763b37b3fb43242a8f6f415472 SpanID: 6e3cf82d02866bee [CreateQuoteFromCount] completed request",
+        "[productcatalogservice] INFO: TraceID: c264616ee73e99a47401203f8c4b3b23 SpanID: 46d5340454270e4f Query product successfully",
+        "[productcatalogservice] INFO: TraceID: 32be4a60bddbafd3407e600757ca2709 SpanID: ac1a8e4548fe3954 get results: {LS4PSXUNUM Metal Camping Mug You probably don't go camping that often but this is better than plastic cups. /static/img/products/camp-mu...",
+        "[frontend] INFO: TraceID: 4b91ab7eaa57cc386e70f8ccee949b41 SpanID: 0bc585d019308b80 View user cart start",
+        "[currencyservice] INFO: TraceID: 9cddf7c8ef574ac2fb6882df7f4cfaf8 SpanID: 2e97ab9a3f5eaeeb Conversion request successful",
+        "[productcatalogservice] INFO: TraceID: 128bf592d9223ba8e057ba56ecfe962c SpanID: 867841b40b088c13 Query product with name and description 1YMWWN1N4O",
+        "[currencyservice] INFO: TraceID: 8b9cf6beaa3febc9e511c83a7836f847 SpanID: b888189d93d1f597 Get currency data successful",
+        "[currencyservice] INFO: TraceID: 3a7774ce63da8f508a3277883597d4c7 SpanID: 86f0cf432cad062b Get currency data successful",
+        "[frontend] INFO: TraceID: c7f9efe940f02aa01f12477f1ad00cc5 SpanID: 7c37b3ede7c92a87 View user cart start",
+        "[currencyservice] INFO: TraceID: df50071eec74c484342ebf5dfcb08c90 SpanID: 2f64e69b23a8dd26 Getting supported currencies...",
+        "[productcatalogservice] INFO: TraceID: dd5aa103d06b19d9e09e65e3c051fb85 SpanID: 7f3399f135839467 Query product with name and description 0PUK6V6EV0",
+        "[productcatalogservice] INFO: TraceID: 094f6c980ea5c5b8ed607f2433ce1f77 SpanID: 140fa37e2cc0c47f Query product successfully",
+        "[currencyservice] INFO: TraceID: 59e77c521562d0b191c912d36e5efa26 SpanID: 3f6547acb326fa5e Get currency data successful",
+        "[currencyservice] INFO: TraceID: 2f1b38e844d474bf97e99025d53c70f8 SpanID: 623c3d8d183a87f2 Get currency data successful",
+        "[productcatalogservice] INFO: TraceID: da5353c95fe39ed1779068d2e2ba3857 SpanID: 5c2cbdcfa4e13717 get results: {6E92ZMYYFZ Air Plant Have you ever wondered whether air plants need water? Buy one and figure out. /static/img/products/air-plant.jpg cu...",
+        "[currencyservice] INFO: TraceID: cf4815fc865ca8fbbade3121a76ea29c SpanID: 24e2b64173a07197 Handles decimal or fractional carrying",
+        "[productcatalogservice] INFO: TraceID: 2191ac75f379f1f3b46bcc6f89ba4640 SpanID: 61af435df8715d66 Query product with name and description 2ZYFJ3GM2N",
+        "[productcatalogservice] INFO: TraceID: 35cd8fa1734cb7cc6f0d461b60373430 SpanID: 5ec09f74ba647f44 get results: {2ZYFJ3GM2N Film Camera This camera looks like it's a film camera, but it's actually digital. /static/img/products/film-camera.jpg curren...",
+        "[currencyservice] INFO: TraceID: fb62397632690888706eb39e9ae540fb SpanID: 5b22b7dc12b8a2ad Handles decimal or fractional carrying",
+        "[currencyservice] INFO: TraceID: 3ca368fbd928eddb9f7eb6d9eb055241 SpanID: 04ee07295f122501 Getting currency data",
+        "[currencyservice] INFO: TraceID: 3071ff9f14961bf0a371a49e26a565fe SpanID: 1ddfeb69a39ebf7e Get currency data successful"
+      ],
+      "traces": {
+        "adservice": "spans=3828 p50=6.5ms p95=30.5ms max=546.9ms",
+        "cartservice": "spans=1438 p50=1.4ms p95=2.6ms max=12.8ms",
+        "checkoutservice": "spans=1234 p50=8.4ms p95=534.9ms max=1636.2ms",
+        "currencyservice": "spans=15060 p50=0.4ms p95=2.2ms max=297.2ms",
+        "emailservice": "spans=59 p50=0.5ms p95=0.9ms max=1.3ms",
+        "frontend": "spans=16504 p50=5.8ms p95=185.5ms max=1750.7ms",
+        "paymentservice": "spans=59 p50=0.2ms p95=0.4ms max=0.4ms",
+        "productcatalogservice": "spans=27143 p50=0.5ms p95=3.3ms max=94.6ms",
+        "recommendationservice": "spans=2148 p50=5.1ms p95=28.8ms max=85.2ms",
+        "shippingservice": "spans=1615 p50=0.1ms p95=0.5ms max=2.6ms"
+      }
+    },
+    "ground_truth": {
+      "culprit_service": "unknown",
+      "fault_type": "unknown",
+      "informative_modalities": [],
+      "decoy_modalities": [
+        "metrics",
+        "logs",
+        "traces"
+      ],
+      "evidence_keywords": [],
+      "true_culprit": "paymentservice",
+      "true_fault_type": "network_delay",
+      "screen_ranks": {
+        "metrics": 10,
+        "logs": 8
+      }
+    }
+  },
+  {
+    "id": "mm-tt-unknown-03",
+    "source": "Nezha trainticket 2023-01-29 09:25:39 UTC (exception injected on ts-basic-service) — culprit not recoverable from the bundled evidence",
+    "system": "trainticket",
+    "services": [
+      "ts-admin-basic-info-service",
+      "ts-admin-order-service",
+      "ts-admin-route-service",
+      "ts-admin-travel-service",
+      "ts-admin-user-service",
+      "ts-assurance-service",
+      "ts-auth-service",
+      "ts-avatar-service",
+      "ts-basic-service",
+      "ts-cancel-service",
+      "ts-config-service",
+      "ts-consign-price-service",
+      "ts-consign-service",
+      "ts-contacts-service",
+      "ts-delivery-service",
+      "ts-execute-service",
+      "ts-food-delivery-service",
+      "ts-food-service",
+      "ts-gateway-service",
+      "ts-inside-payment-service",
+      "ts-news-service",
+      "ts-notification-service",
+      "ts-order-other-service",
+      "ts-order-service",
+      "ts-payment-service",
+      "ts-preserve-other-service",
+      "ts-preserve-service",
+      "ts-price-service",
+      "ts-rebook-service",
+      "ts-route-plan-service",
+      "ts-route-service",
+      "ts-seat-service",
+      "ts-security-service",
+      "ts-station-food-service",
+      "ts-station-service",
+      "ts-ticket-office-service",
+      "ts-train-food-service",
+      "ts-train-service",
+      "ts-travel-plan-service",
+      "ts-travel-service",
+      "ts-travel2-service",
+      "ts-ui-dashboard",
+      "ts-user-service",
+      "ts-verification-code-service",
+      "ts-voucher-service",
+      "ts-wait-order-service"
+    ],
+    "incident_window": "09:23-09:30 UTC",
+    "modalities": {
+      "metrics": {
+        "ts-admin-basic-info-service": [
+          "cpu%: 0.3 0.4 0.6 0.3 0.3 0.4 0.5",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-order-service": [
+          "cpu%: 0.8 0.8 0.6 0.9 0.7 0.7 1.1",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-route-service": [
+          "cpu%: 0.9 0.6 0.5 0.9 0.6 0.7 0.9",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-travel-service": [
+          "cpu%: 0.3 0.4 0.9 0.5 0.3 0.3 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-user-service": [
+          "cpu%: 0.8 0.4 0.4 0.7 0.7 0.8 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-assurance-service": [
+          "cpu%: 0.7 0.7 0.2 0.6 0.7 0.3 0.8",
+          "p90ms: 24 24 nan 48 24 24 95",
+          "ops: 0.1 0.1 0.0 0.1 0.1 0.1 0.1"
+        ],
+        "ts-auth-service": [
+          "cpu%: 4.2 1.2 1.2 2.9 1.7 1.4 2.2",
+          "p90ms: 235 nan 235 nan 235 475 235",
+          "ops: 0.1 0.1 0.1 0.0 0.2 0.0 0.2"
+        ],
+        "ts-avatar-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-basic-service": [
+          "cpu%: 1.5 1.6 1.2 1.9 0.7 1.1 1.7",
+          "p90ms: 94 250 92 400 375 481 425",
+          "ops: 0.8 0.5 0.8 0.5 0.6 0.9 0.5"
+        ],
+        "ts-cancel-service": [
+          "cpu%: 1.4 1.4 0.4 0.6 0.9 2.6 1.1",
+          "p90ms: 95 nan 235 nan nan 220 95",
+          "ops: 0.1 0.0 0.1 0.0 0.0 0.1 0.1"
+        ],
+        "ts-config-service": [
+          "cpu%: 7.6 0.6 1.2 0.7 0.5 2.3 1.9",
+          "p90ms: 8 5 5 5 5 5 5",
+          "ops: 1.9 1.3 2.3 1.5 1.3 1.9 2.0"
+        ],
+        "ts-consign-price-service": [
+          "cpu%: 0.9 0.5 0.5 4.4 1.8 1.0 0.7",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-consign-service": [
+          "cpu%: 0.4 0.2 0.5 0.3 0.3 0.3 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-contacts-service": [
+          "cpu%: 2.7 1.3 1.1 1.3 1.5 1.4 1.1",
+          "p90ms: 350 24 24 24 24 24 45",
+          "ops: 0.5 0.3 0.3 0.1 0.3 0.3 0.1"
+        ],
+        "ts-delivery-service": [
+          "cpu%: 0.6 0.6 0.5 0.7 0.8 0.6 0.5",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-execute-service": [
+          "cpu%: 1.3 0.8 0.3 1.0 0.3 0.6 0.2",
+          "p90ms: 45 450 45 45 45 48 nan",
+          "ops: 0.1 0.1 0.1 0.1 0.1 0.1 0.0"
+        ],
+        "ts-food-delivery-service": [
+          "cpu%: 0.4 0.3 0.4 0.3 0.3 0.3 0.2",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-food-service": [
+          "cpu%: 1.2 1.5 0.6 1.2 0.9 1.7 1.5",
+          "p90ms: 90 90 nan 90 90 90 10",
+          "ops: 0.4 0.1 0.0 0.1 0.1 0.1 0.1"
+        ],
+        "ts-gateway-service": [
+          "cpu%: 9.9 7.4 7.5 8.6 9.4 8.2 6.8",
+          "p90ms: 475 450 381 858 440 633 412",
+          "ops: 1.7 1.7 1.3 1.1 1.5 1.5 1.7"
+        ],
+        "ts-inside-payment-service": [
+          "cpu%: 2.8 3.5 0.9 7.5 3.1 0.9 1.9",
+          "p90ms: 48 230 nan nan nan 24 205",
+          "ops: 0.1 0.3 0.1 0.0 0.0 0.1 0.2"
+        ],
+        "ts-news-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-notification-service": [
+          "cpu%: 0.4 0.5 0.3 0.6 0.3 0.4 0.4",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-order-other-service": [
+          "cpu%: 2.4 1.5 2.3 1.8 2.4 1.6 1.4",
+          "p90ms: 10 8 7 9 9 10 9",
+          "ops: 1.2 1.0 0.7 0.4 0.7 1.5 0.7"
+        ],
+        "ts-order-service": [
+          "cpu%: 2.1 1.3 2.4 2.0 1.9 1.7 2.6",
+          "p90ms: 19 229 13 16 16 19 14",
+          "ops: 2.3 1.5 2.2 2.0 2.9 1.4 1.8"
+        ],
+        "ts-payment-service": [
+          "cpu%: 1.1 1.6 0.7 0.8 0.9 0.8 0.8",
+          "p90ms: nan 48 nan 48 24 48 nan",
+          "ops: 0.0 0.1 0.0 0.0 0.1 0.1 0.0"
+        ],
+        "ts-preserve-other-service": [
+          "cpu%: 1.3 0.5 1.0 1.3 0.7 2.1 0.6",
+          "p90ms: nan 950 95 475 nan nan nan",
+          "ops: 0.0 0.1 0.1 0.1 0.0 0.0 0.0"
+        ],
+        "ts-preserve-service": [
+          "cpu%: 1.1 0.8 1.5 1.1 1.1 1.4 0.8",
+          "p90ms: 2050 900 475 nan 925 950 475",
+          "ops: 0.1 0.1 0.1 0.0 0.2 0.1 0.0"
+        ],
+        "ts-price-service": [
+          "cpu%: 7.8 1.8 1.0 1.0 1.5 1.2 1.1",
+          "p90ms: 80 22 10 10 10 9 10",
+          "ops: 0.7 0.7 0.7 0.6 0.7 0.9 0.5"
+        ],
+        "ts-rebook-service": [
+          "cpu%: 0.3 0.4 0.3 0.3 0.2 0.3 1.5",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-route-plan-service": [
+          "cpu%: 0.3 0.5 0.3 0.3 0.3 0.3 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-route-service": [
+          "cpu%: 1.9 1.4 2.7 2.4 1.8 2.8 1.6",
+          "p90ms: 23 25 24 55 24 24 24",
+          "ops: 1.1 0.8 0.7 0.5 1.1 0.9 0.4"
+        ],
+        "ts-seat-service": [
+          "cpu%: 3.6 4.9 3.9 3.8 3.6 3.8 5.1",
+          "p90ms: 68 100 44 170 77 165 27",
+          "ops: 1.9 1.3 2.1 1.7 2.3 1.8 1.3"
+        ],
+        "ts-security-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 48 220 48 48 48 48 48",
+          "ops: 0.2 0.1 0.1 0.1 0.2 0.2 0.1"
+        ],
+        "ts-station-food-service": [
+          "cpu%: 0.9 0.8 0.4 1.5 1.6 0.8 1.2",
+          "p90ms: 24 24 nan nan 24 24 nan",
+          "ops: 0.1 0.1 0.0 0.0 0.1 0.1 0.0"
+        ],
+        "ts-station-service": [
+          "cpu%: 0.8 0.9 1.1 1.0 0.9 1.7 2.3",
+          "p90ms: 7 19 6 5 5 5 7",
+          "ops: 1.3 0.6 1.0 0.7 1.1 1.1 0.8"
+        ],
+        "ts-ticket-office-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-train-food-service": [
+          "cpu%: 0.6 0.9 0.4 0.7 0.7 1.1 0.8",
+          "p90ms: 24 10 nan nan 24 10 nan",
+          "ops: 0.1 0.1 0.0 0.0 0.0 0.1 0.0"
+        ],
+        "ts-train-service": [
+          "cpu%: 2.0 1.8 2.0 2.0 1.5 2.0 1.6",
+          "p90ms: 10 18 10 10 10 9 10",
+          "ops: 0.9 0.5 0.5 0.6 0.7 0.9 0.7"
+        ],
+        "ts-travel-plan-service": [
+          "cpu%: 0.4 0.8 0.4 0.4 0.3 0.4 0.5",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-travel-service": [
+          "cpu%: 3.4 1.9 1.2 0.7 1.4 1.1 1.4",
+          "p90ms: 500 400 467 1900 600 1300 450",
+          "ops: 0.6 0.2 0.3 0.3 0.5 0.6 0.3"
+        ],
+        "ts-travel2-service": [
+          "cpu%: 1.9 1.1 2.0 1.7 1.4 1.1 1.3",
+          "p90ms: 375 800 350 450 475 462 400",
+          "ops: 0.3 0.3 0.3 0.1 0.1 0.4 0.1"
+        ],
+        "ts-ui-dashboard": [
+          "cpu%: 0.1 0.2 0.1 0.1 0.2 0.1 0.1",
+          "p90ms: 460 900 450 450 442 838 440",
+          "ops: 1.9 1.3 1.1 1.3 1.7 1.4 1.3"
+        ],
+        "ts-user-service": [
+          "cpu%: 1.1 1.1 0.6 0.5 0.7 0.5 0.3",
+          "p90ms: 10 nan 24 24 10 10 22",
+          "ops: 0.3 0.0 0.1 0.0 0.1 0.3 0.2"
+        ],
+        "ts-verification-code-service": [
+          "cpu%: 1.6 0.4 0.6 0.5 0.5 1.2 0.9",
+          "p90ms: 5 nan 9 nan 6 9 5",
+          "ops: 0.1 0.1 0.1 0.0 0.4 0.0 0.3"
+        ],
+        "ts-voucher-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-wait-order-service": [
+          "cpu%: 1.2 0.6 0.6 0.7 0.6 1.2 0.9",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ]
+      },
+      "logs": [
+        "[ts-basic-service] ERROR: 17:26:32.869 ERROR  f.m.s.BasicServiceImpl#111 TraceID: 81e893fa78f935a20ca3fb5c69510fd7 SpanID: 26bebff2b66fa8ac [queryForTravel][catch price exception]",
+        "[ts-preserve-service] ERROR: 17:25:00.944 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 62457bf1f1c845ed9f960a943f271fcd SpanID: 6114d8b7bdf62ee3 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-basic-service] INFO: 17:24:21.679 INFO  f.m.s.BasicServiceImpl#320 TraceID: d5a18e064def1442bb277bddb0e698ef SpanID: 8ae5b802d65457e6 [queryForTravels][all done][result map: {D1345=TravelResult(status=true, percent=1.0, trainType=TrainTyp...",
+        "[ts-travel2-service] INFO: 17:24:34.930 INFO  t.s.TravelServiceImpl#459 TraceID: fe89276cdf74c4e2eb7104ec3382e799 SpanID: f64f7902543d90da [getRestTicketNumber][Seat request][request: Seat(travelDate=2023-01-29 15:38:06, trainNumber=Z1234, star...",
+        "[ts-preserve-service] ERROR: 17:27:04.045 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 0aa33f8ac36fcdb08ecef89bd1bfd129 SpanID: 29b506907551a521 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-execute-service] ERROR: 17:24:18.321 ERROR e.s.ExecuteServiceImpl#69 TraceID: 8e127a928d027e196fae03efdee53f48 SpanID: 9f55b1ca5bd2510a [ticketExecute][getOrderByIdFromOrderOther][ticket execute error: Order Status Wrong][orderId: 2d814900-5...",
+        "[ts-basic-service] INFO: 17:24:43.280 INFO  f.m.s.BasicServiceImpl#89 TraceID: eb85592b1d4dc5aa90b70824916e7880 SpanID: be74ee68d175ff7a [queryForTravel][query start index and end index][indexStart: 0 indexEnd: 1]",
+        "[ts-preserve-other-service] ERROR: 17:25:48.531 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 9f76f4488525c6e700baa9e9ea7fe56d SpanID: 222464ae9af98058 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-basic-service] INFO: 17:25:00.945 INFO  f.m.s.BasicServiceImpl#374 TraceID: 8265508660823bd929e11b2bfc8ef825 SpanID: 5bf4e7cac31cad23 [queryTrainTypeByNames][Query Train Type][Train Type names: [DongCheOne, GaoTieOne, GaoTieTwo]]",
+        "[ts-seat-service] INFO: 17:24:24.685 INFO  s.s.SeatServiceImpl#217 TraceID: 93bafc0692ca8d9fbcca40ade8e11e62 SpanID: b795cdc42b113ee4 [getDirectProportion][Configs is : Config(name=DirectTicketAllocationProportion, value=0.5, description=All...",
+        "[ts-basic-service] INFO: 17:27:03.630 INFO  f.m.s.BasicServiceImpl#425 TraceID: 0aa33f8ac36fcdb08ecef89bd1bfd129 SpanID: 00feb8eb872b0a7a [getRouteByRouteId][Get Route By Id][Route ID: f3d4d4ef-693b-4456-8eed-59c0d717dd08]",
+        "[ts-travel-service] INFO: 17:25:00.486 INFO  t.s.TravelServiceImpl#487 TraceID: f6b06de21210178e23fd0b42d6a62611 SpanID: 12b3b28ad16aeec9 [departrue date][y: 2023][m:0][d: 29]",
+        "[ts-basic-service] ERROR: 17:26:03.682 ERROR  f.m.s.BasicServiceImpl#111 TraceID: 0aa33f8ac36fcdb08ecef89bd1bfd129 SpanID: 00feb8eb872b0a7a [queryForTravel][catch price exception]",
+        "[ts-execute-service] ERROR: 17:27:07.114 ERROR e.s.ExecuteServiceImpl#69 TraceID: ce3ddb59e97c3692a28d1fdb3b3c0cbe SpanID: e72cea78b06b202f [ticketExecute][getOrderByIdFromOrderOther][ticket execute error: Order Status Wrong][orderId: e29fcd9a-4...",
+        "[ts-seat-service] INFO: 17:26:19.395 INFO  s.s.SeatServiceImpl#217 TraceID: 037cdf32da2d4cf43584a6504d6bc862 SpanID: 5781d787ec462cdf [getDirectProportion][Configs is : Config(name=DirectTicketAllocationProportion, value=0.5, description=All...",
+        "[ts-station-service] INFO: 17:26:32.710 INFO  f.m.c.StationController#63 TraceID: 81e893fa78f935a20ca3fb5c69510fd7 SpanID: 98d3668c17138560 [queryForId][Query for station id][StationName: shanghai]",
+        "[ts-order-service] WARN: 17:24:18.312 WARN  o.s.OrderServiceImpl#361 TraceID: 8e127a928d027e196fae03efdee53f48 SpanID: 8f4a1773f322a18d [getOrderById][Get Order By ID Fail][Order not found][OrderId: 2d814900-5c5a-4882-bc49-1f587b57a252]",
+        "[ts-execute-service] ERROR: 17:25:37.374 ERROR e.s.ExecuteServiceImpl#51 TraceID: 2bdbe3cc11c00ca3814ad3f335e2f4bb SpanID: e6fc1688413a58e6 [ticketExecute][getOrderByIdFromOrder][ticket execute error: Order Status Wrong][orderId: 0b61e4d5-ee33-4...",
+        "[ts-order-service] WARN: 17:24:18.906 WARN  o.s.OrderServiceImpl#361 TraceID: 255eed87cf5eb02fa9311c93ffda8fd7 SpanID: 9937a2018373c749 [getOrderById][Get Order By ID Fail][Order not found][OrderId: 2d814900-5c5a-4882-bc49-1f587b57a252]",
+        "[ts-basic-service] ERROR: 17:26:30.451 ERROR  f.m.s.BasicServiceImpl#111 TraceID: 9600fe465c00935f57a58c6040289a15 SpanID: fbf04c1f00899f45 [queryForTravel][catch price exception]",
+        "[ts-preserve-other-service] INFO: 17:25:48.528 INFO  p.s.PreserveOtherServiceImpl#78 TraceID: 9f76f4488525c6e700baa9e9ea7fe56d SpanID: 7247ad4471b815f6 [preserve][Step 3][Check tickets num][TripId: Z1234]",
+        "[ts-travel2-service] INFO: 17:25:17.577 INFO  t.s.TravelServiceImpl#469 TraceID: fa49ba34e5babdf714dc37e6b234a75d SpanID: f5f8e589e318d303 [getRestTicketNumber][Get Rest tickets num][num is: Response(status=1, msg=Get Left Ticket of Internal Su...",
+        "[ts-order-service] WARN: 17:26:48.079 WARN  o.s.OrderServiceImpl#361 TraceID: c0adbf0be7377f7e909723dd70512670 SpanID: fa58c5bb51bc7a6c [getOrderById][Get Order By ID Fail][Order not found][OrderId: 81e395e3-e2be-46a4-870d-9c775433c0bd]",
+        "[ts-basic-service] ERROR: 17:26:47.477 ERROR  f.m.s.BasicServiceImpl#111 TraceID: 1e373df9fcee9091d16fae6ea99373c3 SpanID: 419f56eec3f1bce1 [queryForTravel][catch price exception]",
+        "[ts-seat-service] INFO: 17:26:12.425 INFO  s.s.SeatServiceImpl#151 TraceID: 3793f5a9ec267ea4931fe52723c9f2a2 SpanID: 8a20b1f878b8ff00 [getLeftTicketOfInterval][Get Order tickets result][result is <200,Response(status=0, msg=Order is Null., d...",
+        "[ts-preserve-service] ERROR: 17:26:07.440 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 607c52dbb80a27dcf593a6a8ea2d8e55 SpanID: bc6e6323f8879bd3 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-food-service] ERROR: 17:26:32.609 ERROR f.s.FoodServiceImpl#302 TraceID: 3378d100eff49a7b38772e7e7e8c84bb SpanID: d6b932924f15578e [getAllFood][Get the Get Food Request Failed!][foodStoresListResult is null][date: 2021-07-14, tripId: D1345]",
+        "[ts-order-service] WARN: 17:24:11.280 WARN  o.s.OrderServiceImpl#361 TraceID: 04395d95fac5fb4f4fdb57ac5533dc96 SpanID: 591e2dae0be52896 [getOrderById][Get Order By ID Fail][Order not found][OrderId: b8e71dc9-528c-4462-8972-082c68495d89]",
+        "[ts-execute-service] ERROR: 17:24:56.509 ERROR e.s.ExecuteServiceImpl#51 TraceID: cbb90af344dceaae5e6646e375680efe SpanID: 3cf4b10ca9490fb4 [ticketExecute][getOrderByIdFromOrder][ticket execute error: Order Status Wrong][orderId: 6fbb4691-81a8-4...",
+        "[ts-travel2-service] ERROR: 17:27:00.229 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 461b6e5084670e18f3d193e287ee0839 SpanID: 770db23b81c71da5 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [..."
+      ],
+      "traces": {
+        "ts-assurance-service": "spans=50 p50=3.6ms p95=26.4ms max=31.1ms",
+        "ts-auth-service": "spans=90 p50=1.4ms p95=203.4ms max=446.3ms",
+        "ts-basic-service": "spans=662 p50=16.8ms p95=91.6ms max=536.5ms",
+        "ts-cancel-service": "spans=42 p50=22.5ms p95=362.3ms max=518.3ms",
+        "ts-config-service": "spans=1230 p50=0.9ms p95=2.6ms max=92.8ms",
+        "ts-contacts-service": "spans=108 p50=4.9ms p95=12.7ms max=16.1ms",
+        "ts-delivery-service": "spans=28 p50=3.3ms p95=20.9ms max=23.0ms",
+        "ts-execute-service": "spans=86 p50=11.1ms p95=43.7ms max=255.6ms",
+        "ts-food-service": "spans=79 p50=10.0ms p95=73.4ms max=87.6ms",
+        "ts-gateway-service": "spans=495 p50=129.6ms p95=570.5ms max=1287.3ms",
+        "ts-inside-payment-service": "spans=300 p50=8.1ms p95=115.9ms max=423.7ms",
+        "ts-order-other-service": "spans=842 p50=2.1ms p95=6.7ms max=21.9ms",
+        "ts-order-service": "spans=1427 p50=2.4ms p95=19.9ms max=245.3ms",
+        "ts-payment-service": "spans=140 p50=4.3ms p95=29.9ms max=94.6ms",
+        "ts-preserve-other-service": "spans=52 p50=35.5ms p95=533.2ms max=707.9ms",
+        "ts-preserve-service": "spans=91 p50=45.0ms p95=703.1ms max=937.1ms",
+        "ts-price-service": "spans=530 p50=2.8ms p95=7.1ms max=12.6ms",
+        "ts-route-service": "spans=1464 p50=0.9ms p95=15.6ms max=492.0ms",
+        "ts-seat-service": "spans=1011 p50=12.4ms p95=74.7ms max=271.5ms",
+        "ts-security-service": "spans=180 p50=1.6ms p95=139.5ms max=368.1ms",
+        "ts-station-food-service": "spans=35 p50=6.1ms p95=22.2ms max=24.4ms",
+        "ts-station-service": "spans=660 p50=1.8ms p95=7.1ms max=17.7ms",
+        "ts-train-food-service": "spans=42 p50=2.9ms p95=14.3ms max=23.1ms",
+        "ts-train-service": "spans=530 p50=2.7ms p95=7.3ms max=13.9ms",
+        "ts-travel-service": "spans=617 p50=15.2ms p95=298.3ms max=1281.2ms",
+        "ts-travel2-service": "spans=376 p50=15.0ms p95=346.2ms max=600.9ms",
+        "ts-user-service": "spans=65 p50=3.3ms p95=9.5ms max=12.0ms",
+        "ts-verification-code-service": "spans=18 p50=2.6ms p95=3.5ms max=3.5ms"
+      }
+    },
+    "ground_truth": {
+      "culprit_service": "unknown",
+      "fault_type": "unknown",
+      "informative_modalities": [],
+      "decoy_modalities": [
+        "metrics",
+        "logs",
+        "traces"
+      ],
+      "evidence_keywords": [],
+      "true_culprit": "ts-basic-service",
+      "true_fault_type": "code_exception",
+      "screen_ranks": {
+        "metrics": 15,
+        "logs": 6
+      }
+    }
+  },
+  {
+    "id": "mm-tt-unknown-04",
+    "source": "Nezha trainticket 2023-01-29 09:34:19 UTC (return injected on ts-food-service) — culprit not recoverable from the bundled evidence",
+    "system": "trainticket",
+    "services": [
+      "ts-admin-basic-info-service",
+      "ts-admin-order-service",
+      "ts-admin-route-service",
+      "ts-admin-travel-service",
+      "ts-admin-user-service",
+      "ts-assurance-service",
+      "ts-auth-service",
+      "ts-avatar-service",
+      "ts-basic-service",
+      "ts-cancel-service",
+      "ts-config-service",
+      "ts-consign-price-service",
+      "ts-consign-service",
+      "ts-contacts-service",
+      "ts-delivery-service",
+      "ts-execute-service",
+      "ts-food-delivery-service",
+      "ts-food-service",
+      "ts-gateway-service",
+      "ts-inside-payment-service",
+      "ts-news-service",
+      "ts-notification-service",
+      "ts-order-other-service",
+      "ts-order-service",
+      "ts-payment-service",
+      "ts-preserve-other-service",
+      "ts-preserve-service",
+      "ts-price-service",
+      "ts-rebook-service",
+      "ts-route-plan-service",
+      "ts-route-service",
+      "ts-seat-service",
+      "ts-security-service",
+      "ts-station-food-service",
+      "ts-station-service",
+      "ts-ticket-office-service",
+      "ts-train-food-service",
+      "ts-train-service",
+      "ts-travel-plan-service",
+      "ts-travel-service",
+      "ts-travel2-service",
+      "ts-ui-dashboard",
+      "ts-user-service",
+      "ts-verification-code-service",
+      "ts-voucher-service",
+      "ts-wait-order-service"
+    ],
+    "incident_window": "09:32-09:39 UTC",
+    "modalities": {
+      "metrics": {
+        "ts-admin-basic-info-service": [
+          "cpu%: 1.0 1.3 0.7 0.6 0.6 0.8 0.6",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-order-service": [
+          "cpu%: 1.3 2.3 0.8 1.1 0.9 3.8 1.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-route-service": [
+          "cpu%: 0.7 0.5 2.3 2.8 1.0 1.4 1.1",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-travel-service": [
+          "cpu%: 0.3 0.3 0.3 0.4 0.3 0.3 0.4",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-user-service": [
+          "cpu%: 0.6 0.5 0.7 0.4 0.2 0.3 0.5",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-assurance-service": [
+          "cpu%: 0.2 0.3 0.5 0.3 0.8 0.5 0.2",
+          "p90ms: nan nan nan 45 nan 24 nan",
+          "ops: 0.0 0.0 0.0 0.1 0.0 0.1 0.0"
+        ],
+        "ts-auth-service": [
+          "cpu%: 1.8 1.0 2.5 1.0 3.3 1.3 2.8",
+          "p90ms: nan nan nan nan nan 235 235",
+          "ops: 0.0 0.0 0.1 0.0 0.0 0.1 0.1"
+        ],
+        "ts-avatar-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-basic-service": [
+          "cpu%: 1.7 1.3 2.0 1.5 1.9 2.5 1.3",
+          "p90ms: 24 24 950 175 92 90 145",
+          "ops: 0.3 0.1 0.1 0.1 0.2 1.1 0.7"
+        ],
+        "ts-cancel-service": [
+          "cpu%: 1.6 2.4 2.1 1.5 1.8 1.3 1.0",
+          "p90ms: 95 nan nan nan nan nan nan",
+          "ops: 0.1 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-config-service": [
+          "cpu%: 0.9 0.2 0.3 0.9 0.8 3.1 1.0",
+          "p90ms: nan nan 7 5 5 5 5",
+          "ops: 0.0 0.0 0.0 1.2 0.7 2.4 1.9"
+        ],
+        "ts-consign-price-service": [
+          "cpu%: 0.9 0.6 0.7 0.6 0.6 0.8 1.5",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-consign-service": [
+          "cpu%: 0.4 0.5 0.2 0.3 0.3 1.0 0.4",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-contacts-service": [
+          "cpu%: 3.7 0.6 1.7 2.5 2.2 1.5 1.0",
+          "p90ms: nan nan 45 23 24 23 nan",
+          "ops: 0.0 0.0 0.1 0.4 0.3 0.5 0.0"
+        ],
+        "ts-delivery-service": [
+          "cpu%: 0.6 0.5 0.3 0.5 0.5 0.9 0.4",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-execute-service": [
+          "cpu%: 0.4 0.6 0.3 0.7 0.3 1.1 1.0",
+          "p90ms: 48 48 45 48 38 nan 24",
+          "ops: 0.1 0.3 0.1 0.1 0.3 0.0 0.1"
+        ],
+        "ts-food-delivery-service": [
+          "cpu%: 0.3 0.3 0.3 0.3 0.2 0.5 0.6",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-food-service": [
+          "cpu%: 1.1 1.2 0.6 1.3 1.4 1.4 2.2",
+          "p90ms: nan nan nan 92 92 90 42",
+          "ops: 0.0 0.0 0.0 0.3 0.1 0.1 0.1"
+        ],
+        "ts-gateway-service": [
+          "cpu%: 9.4 8.2 7.8 7.7 7.4 8.5 9.2",
+          "p90ms: 152 667 160 100 325 710 435",
+          "ops: 1.6 1.3 1.7 1.9 1.6 1.9 1.5"
+        ],
+        "ts-inside-payment-service": [
+          "cpu%: 1.3 1.4 0.9 0.9 0.9 2.0 1.1",
+          "p90ms: 220 nan nan nan 235 235 235",
+          "ops: 0.1 0.0 0.0 0.0 0.1 0.1 0.1"
+        ],
+        "ts-news-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-notification-service": [
+          "cpu%: 0.4 0.3 0.3 0.4 0.4 0.6 0.5",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-order-other-service": [
+          "cpu%: 1.5 1.1 0.8 1.5 3.0 2.4 1.9",
+          "p90ms: 75 18 175 9 9 10 10",
+          "ops: 0.3 0.3 0.3 0.6 1.0 1.5 1.1"
+        ],
+        "ts-order-service": [
+          "cpu%: 1.9 1.6 1.4 2.4 1.9 1.9 1.3",
+          "p90ms: 21 220 23 18 22 20 18",
+          "ops: 0.5 0.5 0.3 0.8 1.2 2.0 2.3"
+        ],
+        "ts-payment-service": [
+          "cpu%: 1.4 0.5 0.9 0.7 1.4 0.8 2.0",
+          "p90ms: nan 24 48 48 24 48 nan",
+          "ops: 0.0 0.1 0.0 0.1 0.1 0.1 0.0"
+        ],
+        "ts-preserve-other-service": [
+          "cpu%: 0.8 1.0 1.2 0.7 1.3 1.6 0.5",
+          "p90ms: nan nan nan nan 475 850 nan",
+          "ops: 0.0 0.0 0.0 0.0 0.1 0.2 0.0"
+        ],
+        "ts-preserve-service": [
+          "cpu%: 0.3 1.0 0.7 1.2 0.6 0.9 0.5",
+          "p90ms: nan nan 950 850 475 950 nan",
+          "ops: 0.0 0.0 0.0 0.1 0.1 0.1 0.0"
+        ],
+        "ts-price-service": [
+          "cpu%: 1.3 0.8 1.0 1.6 1.7 1.6 1.6",
+          "p90ms: 10 nan 40 10 10 10 13",
+          "ops: 0.0 0.0 0.1 0.5 0.4 0.9 0.5"
+        ],
+        "ts-rebook-service": [
+          "cpu%: 0.3 0.3 0.4 0.3 1.3 0.3 1.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-route-plan-service": [
+          "cpu%: 0.4 0.2 0.3 0.3 0.4 0.3 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-route-service": [
+          "cpu%: 2.6 0.5 1.3 2.6 3.3 6.0 1.6",
+          "p90ms: nan nan 40 24 24 25 24",
+          "ops: 0.0 0.0 0.1 0.4 0.5 1.1 0.5"
+        ],
+        "ts-seat-service": [
+          "cpu%: 4.9 0.6 1.5 4.0 3.0 2.4 2.9",
+          "p90ms: nan nan 45 42 72 49 40",
+          "ops: 0.0 0.0 0.1 0.6 0.7 2.5 2.1"
+        ],
+        "ts-security-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: nan nan 48 46 48 48 nan",
+          "ops: 0.0 0.0 0.0 0.1 0.1 0.2 0.0"
+        ],
+        "ts-station-food-service": [
+          "cpu%: 1.3 0.4 0.9 1.7 1.1 0.8 0.8",
+          "p90ms: nan nan nan 24 nan 24 nan",
+          "ops: 0.0 0.0 0.0 0.1 0.0 0.1 0.0"
+        ],
+        "ts-station-service": [
+          "cpu%: 0.8 0.6 1.0 0.9 1.6 10.8 1.0",
+          "p90ms: 7 19 5 5 8 5 13",
+          "ops: 0.5 0.3 0.5 1.3 0.8 1.5 0.5"
+        ],
+        "ts-ticket-office-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 5.7",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-train-food-service": [
+          "cpu%: 0.7 0.6 0.8 0.8 0.8 0.9 1.0",
+          "p90ms: nan nan nan 24 nan 24 10",
+          "ops: 0.0 0.0 0.0 0.1 0.0 0.1 0.1"
+        ],
+        "ts-train-service": [
+          "cpu%: 3.0 1.6 1.4 2.2 2.2 2.6 1.7",
+          "p90ms: 10 nan 19 10 10 9 10",
+          "ops: 0.0 0.0 0.3 0.8 0.3 0.9 0.5"
+        ],
+        "ts-travel-plan-service": [
+          "cpu%: 0.5 0.4 0.4 0.3 1.1 0.4 0.4",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-travel-service": [
+          "cpu%: 1.6 1.2 1.4 1.4 2.1 1.4 1.3",
+          "p90ms: 425 46 450 550 228 438 2125",
+          "ops: 0.2 0.3 0.1 0.6 0.2 0.1 0.4"
+        ],
+        "ts-travel2-service": [
+          "cpu%: 6.4 0.8 1.5 1.7 1.9 2.7 1.5",
+          "p90ms: 46 90 950 235 235 229 425",
+          "ops: 0.3 0.1 0.1 0.1 0.2 0.4 0.3"
+        ],
+        "ts-ui-dashboard": [
+          "cpu%: 0.1 0.2 0.1 0.1 0.1 0.1 0.2",
+          "p90ms: 425 235 412 479 388 479 1000",
+          "ops: 1.0 0.8 1.0 1.5 1.9 1.2 1.5"
+        ],
+        "ts-user-service": [
+          "cpu%: 1.1 0.4 0.6 0.3 0.8 0.7 0.8",
+          "p90ms: 24 nan nan nan 24 24 nan",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.1"
+        ],
+        "ts-verification-code-service": [
+          "cpu%: 0.5 0.7 0.6 1.0 0.8 0.5 1.7",
+          "p90ms: 235 nan 10 5 nan 10 5",
+          "ops: 0.1 0.1 0.2 0.0 0.0 0.1 0.3"
+        ],
+        "ts-voucher-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-wait-order-service": [
+          "cpu%: 1.4 1.3 1.8 1.8 1.4 1.5 0.9",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ]
+      },
+      "logs": [
+        "[ts-route-service] INFO: 17:35:46.788 INFO  r.c.RouteController#47 TraceID: dc0f0340f58827a61e5d3ac39dc47e91 SpanID: 532f0a5b7fe3d286 [getRouteById][Query route by id][RouteId: f3d4d4ef-693b-4456-8eed-59c0d717dd08]",
+        "[ts-execute-service] ERROR: 17:34:24.244 ERROR e.s.ExecuteServiceImpl#51 TraceID: 6883c01b3a64efbcbcaf7199d42ceea7 SpanID: 786e37d6c8ecb63d [ticketExecute][getOrderByIdFromOrder][ticket execute error: Order Status Wrong][orderId: 9b104b57-b913-4...",
+        "[ts-basic-service] ERROR: 17:33:27.682 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 603ca599e6d76de0df6c92ad1888d9d5 SpanID: 243dda37dd8c1d38 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-basic-service] ERROR: 17:33:32.923 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: b00f18c812e7eb1c3d9b8a1998dea236 SpanID: 8e0aa8851536bea5 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-order-other-service] INFO: 17:35:46.943 INFO  o.c.OrderOtherController#42 TraceID: 6df68d48785852de5b403981a72f9908 SpanID: 93f3b88eef2f1dcf [getSoldTickets][Get Sold Ticket][Travel Date: 2023-01-29 15:38:06]",
+        "[ts-order-service] WARN: 17:33:49.619 WARN  o.s.OrderServiceImpl#361 TraceID: cb8d0837cb6ceae3693f6f03da12293b SpanID: 9b1241ca8b0bdcd7 [getOrderById][Get Order By ID Fail][Order not found][OrderId: 291deb7c-3e50-431c-8e29-eab4f833fc70]",
+        "[ts-travel2-service] ERROR: 17:33:56.164 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: fb9202a2f3fb47f9e2369ba6fdcdf86b SpanID: 435277288a8f7645 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-seat-service] INFO: 17:35:02.987 INFO  s.s.SeatServiceImpl#166 TraceID: 7649acd9c14aec7a6ba13659e61884d7 SpanID: 8e09a874aecd3c15 [getLeftTicketOfInterval][Get Order tickets result][result is <200,Response(status=0, msg=Seat is Null., da...",
+        "[ts-travel2-service] ERROR: 17:34:35.876 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: df3d0ae05b48765f711f635204639eef SpanID: 4c127e6de7e6fc27 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-basic-service] INFO: 17:35:14.441 INFO  f.m.s.BasicServiceImpl#418 TraceID: ed8f54d9c4c9e0e3b60fd6797376d542 SpanID: 71020610f2dff0ed [getRoutesByRouteIds][Get Route By Ids][Success]",
+        "[ts-travel-service] INFO: 17:35:40.542 INFO  t.s.TravelServiceImpl#558 TraceID: 3fd9b0f303c4fce4b3e7c7a8506555d0 SpanID: 64e87db7b5ba8ff8 [getRestTicketNumber][Get Rest tickets num][num is: Response(status=1, msg=Get Left Ticket of Internal Su...",
+        "[ts-order-service] INFO: 17:34:53.656 INFO  o.c.OrderController#100 TraceID: 0db511a1c3b04ab720962c0bd0144ab8 SpanID: e42236a9792057bd [getOrderById][Get Order By Id][OrderId: 7f22b0c4-8c75-49c9-be38-a48ea6e80276]",
+        "[ts-travel-service] ERROR: 17:33:32.927 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: b00f18c812e7eb1c3d9b8a1998dea236 SpanID: 011edb64379887ab Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-execute-service] ERROR: 17:33:24.291 ERROR e.s.ExecuteServiceImpl#51 TraceID: a27eb686d03dfdccbb06e647b04163c9 SpanID: 44bfaf50973a6ccd [ticketExecute][getOrderByIdFromOrder][ticket execute error: Order Status Wrong][orderId: d354c595-1831-4...",
+        "[ts-travel2-service] ERROR: 17:33:38.441 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: b5b6015621a23714ec68dce3cab58ab2 SpanID: 455852aafdbd0703 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-basic-service] INFO: 17:35:14.441 INFO  f.m.s.BasicServiceImpl#459 TraceID: ed8f54d9c4c9e0e3b60fd6797376d542 SpanID: 71020610f2dff0ed [queryPriceConfigByRouteIdsAndTrainTypes][Query For Price Config][RouteId and TrainType: [0b23bd3e-876a-...",
+        "[ts-order-other-service] INFO: 17:35:44.186 INFO  o.c.OrderOtherController#42 TraceID: 248e40544ef1456db1abc44797382313 SpanID: 6df12a1fc4f5d7ba [getSoldTickets][Get Sold Ticket][Travel Date: 2023-01-29 15:38:06]",
+        "[ts-food-service] ERROR: 17:35:46.454 ERROR  f.s.FoodServiceImpl#245 TraceID: 4fd445b5d4cecc0eafc7ea8dfa99cdeb SpanID: e1cf36130b9fedae [getAllFood][reGetTrainFoodListResult][Get the Get Food Request Failed!]",
+        "[ts-travel2-service] INFO: 17:35:24.384 INFO  t.c.Travel2Controller#115 TraceID: c5adc02acc158f3e90bccbfce8a35e94 SpanID: 41868aac6f5bd409 [query][Query TripResponse]",
+        "[ts-travel-service] ERROR: 17:33:17.537 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 044750d07be33da75f34237f22737716 SpanID: 063f8dc065d4aa61 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-travel-service] ERROR: 17:33:57.996 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 67ead74bfb435fd39cf1302ed1b7a708 SpanID: 6cb6f3ebe761359c Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-preserve-other-service] INFO: 17:35:25.431 INFO  p.s.PreserveOtherServiceImpl#145 TraceID: cf9cb76019c7b22081ab56ee7071d4e3 SpanID: b1c314cef66c5159 [preserve][Step 4][Do Order][Travel Date][Date is: 2023-01-29]",
+        "[ts-basic-service] ERROR: 17:34:38.896 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: f0ae58977225b5e013cc56be132ba392 SpanID: 429156a2182bf318 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-travel2-service] ERROR: 17:34:43.604 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 426bd58b59d33f4d6914c31a4759bcf1 SpanID: b00ce3c879096b78 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-travel-service] ERROR: 17:33:31.352 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: e3276f10b9c0dae2ba7c34eba585dfea SpanID: 0a9305d96777e66c Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-travel2-service] ERROR: 17:33:23.644 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 491852f90f5cc9e5513f4012b2bce635 SpanID: 8dd67bab4343742c Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-contacts-service] INFO: 17:35:25.240 INFO  c.s.ContactsServiceImpl#31 TraceID: cf9cb76019c7b22081ab56ee7071d4e3 SpanID: 6968c4c8322eeca0 FIND CONTACTS BY ID: 8c756d0c-b064-4dc6-b705-496a75343ddb",
+        "[ts-preserve-other-service] ERROR: 17:35:38.123 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 15766f7049625ed6bc254ca658b18206 SpanID: 4cd605dde9a5b575 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-travel-service] ERROR: 17:33:15.778 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 2675fe06a702722d1459aa440495c733 SpanID: 109d159302c43434 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-seat-service] INFO: 17:35:24.701 INFO  s.s.SeatServiceImpl#166 TraceID: c5adc02acc158f3e90bccbfce8a35e94 SpanID: 4e6c7a28ad3f5fcc [getLeftTicketOfInterval][Get Order tickets result][result is <200,Response(status=0, msg=Seat is Null., da..."
+      ],
+      "traces": {
+        "ts-assurance-service": "spans=20 p50=2.8ms p95=27.9ms max=27.9ms",
+        "ts-auth-service": "spans=80 p50=1.8ms p95=211.4ms max=220.3ms",
+        "ts-basic-service": "spans=344 p50=9.6ms p95=230.0ms max=500.8ms",
+        "ts-config-service": "spans=360 p50=1.0ms p95=2.7ms max=8.4ms",
+        "ts-contacts-service": "spans=54 p50=5.0ms p95=18.2ms max=27.0ms",
+        "ts-delivery-service": "spans=14 p50=4.0ms p95=19.3ms max=19.3ms",
+        "ts-execute-service": "spans=70 p50=14.1ms p95=41.9ms max=79.4ms",
+        "ts-food-service": "spans=57 p50=16.8ms p95=115.1ms max=178.1ms",
+        "ts-gateway-service": "spans=375 p50=56.8ms p95=423.3ms max=925.5ms",
+        "ts-inside-payment-service": "spans=126 p50=9.7ms p95=100.2ms max=130.5ms",
+        "ts-order-other-service": "spans=315 p50=1.9ms p95=6.4ms max=12.8ms",
+        "ts-order-service": "spans=555 p50=2.9ms p95=13.6ms max=38.6ms",
+        "ts-payment-service": "spans=80 p50=4.2ms p95=26.7ms max=34.1ms",
+        "ts-preserve-other-service": "spans=29 p50=41.4ms p95=249.2ms max=255.0ms",
+        "ts-preserve-service": "spans=40 p50=38.2ms p95=685.5ms max=690.3ms",
+        "ts-price-service": "spans=180 p50=2.7ms p95=6.5ms max=25.7ms",
+        "ts-route-service": "spans=512 p50=0.9ms p95=15.5ms max=24.1ms",
+        "ts-seat-service": "spans=300 p50=12.6ms p95=49.4ms max=369.2ms",
+        "ts-security-service": "spans=90 p50=1.8ms p95=33.8ms max=45.8ms",
+        "ts-station-food-service": "spans=35 p50=5.4ms p95=92.6ms max=108.3ms",
+        "ts-station-service": "spans=385 p50=1.7ms p95=5.0ms max=92.0ms",
+        "ts-train-food-service": "spans=42 p50=2.2ms p95=12.0ms max=19.3ms",
+        "ts-train-service": "spans=180 p50=2.7ms p95=6.1ms max=20.7ms",
+        "ts-travel-service": "spans=379 p50=2.1ms p95=151.4ms max=919.9ms",
+        "ts-travel2-service": "spans=322 p50=3.5ms p95=278.7ms max=562.0ms",
+        "ts-user-service": "spans=20 p50=3.8ms p95=285.1ms max=285.1ms",
+        "ts-verification-code-service": "spans=16 p50=2.7ms p95=4.1ms max=4.1ms"
+      }
+    },
+    "ground_truth": {
+      "culprit_service": "unknown",
+      "fault_type": "unknown",
+      "informative_modalities": [],
+      "decoy_modalities": [
+        "metrics",
+        "logs",
+        "traces"
+      ],
+      "evidence_keywords": [],
+      "true_culprit": "ts-food-service",
+      "true_fault_type": "code_return_value",
+      "screen_ranks": {
+        "metrics": 18,
+        "logs": null
+      }
+    }
+  },
+  {
+    "id": "mm-tt-unknown-05",
+    "source": "Nezha trainticket 2023-01-30 14:00:16 UTC (network_delay injected on ts-security-service) — culprit not recoverable from the bundled evidence",
+    "system": "trainticket",
+    "services": [
+      "ts-admin-basic-info-service",
+      "ts-admin-order-service",
+      "ts-admin-route-service",
+      "ts-admin-travel-service",
+      "ts-admin-user-service",
+      "ts-assurance-service",
+      "ts-auth-service",
+      "ts-avatar-service",
+      "ts-basic-service",
+      "ts-cancel-service",
+      "ts-config-service",
+      "ts-consign-price-service",
+      "ts-consign-service",
+      "ts-contacts-service",
+      "ts-delivery-service",
+      "ts-execute-service",
+      "ts-food-delivery-service",
+      "ts-food-service",
+      "ts-gateway-service",
+      "ts-inside-payment-service",
+      "ts-news-service",
+      "ts-notification-service",
+      "ts-order-other-service",
+      "ts-order-service",
+      "ts-payment-service",
+      "ts-preserve-other-service",
+      "ts-preserve-service",
+      "ts-price-service",
+      "ts-rebook-service",
+      "ts-route-plan-service",
+      "ts-route-service",
+      "ts-seat-service",
+      "ts-security-service",
+      "ts-station-food-service",
+      "ts-station-service",
+      "ts-ticket-office-service",
+      "ts-train-food-service",
+      "ts-train-service",
+      "ts-travel-plan-service",
+      "ts-travel-service",
+      "ts-travel2-service",
+      "ts-ui-dashboard",
+      "ts-user-service",
+      "ts-verification-code-service",
+      "ts-voucher-service",
+      "ts-wait-order-service"
+    ],
+    "incident_window": "13:58-14:05 UTC",
+    "modalities": {
+      "metrics": {
+        "ts-admin-basic-info-service": [
+          "cpu%: 0.3 0.9 0.2 0.3 0.3 0.3 0.2",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-order-service": [
+          "cpu%: 0.5 0.6 0.5 0.4 0.5 0.6 1.9",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-route-service": [
+          "cpu%: 0.6 0.8 1.0 0.9 0.8 0.5 0.7",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-travel-service": [
+          "cpu%: 0.4 0.3 0.3 0.4 0.3 0.2 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-admin-user-service": [
+          "cpu%: 0.3 0.4 0.3 0.3 0.3 0.2 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-assurance-service": [
+          "cpu%: 0.7 0.4 0.4 0.2 0.4 0.6 0.6",
+          "p90ms: nan 24 24 24 48 24 nan",
+          "ops: 0.1 0.0 0.1 0.0 0.0 0.1 0.0"
+        ],
+        "ts-auth-service": [
+          "cpu%: 1.7 2.3 2.2 0.7 1.3 3.5 1.9",
+          "p90ms: 235 425 235 235 235 235 235",
+          "ops: 0.2 0.2 0.1 0.1 0.1 0.1 0.1"
+        ],
+        "ts-avatar-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-basic-service": [
+          "cpu%: 0.9 1.9 1.9 2.6 1.6 1.7 2.2",
+          "p90ms: 1900 325 337 350 94 75 92",
+          "ops: 0.3 0.5 0.8 0.7 0.3 0.5 0.6"
+        ],
+        "ts-cancel-service": [
+          "cpu%: 2.3 2.6 4.9 1.4 2.1 1.5 1.4",
+          "p90ms: nan nan nan nan nan 425 nan",
+          "ops: 0.0 0.0 0.1 0.1 0.0 0.2 0.0"
+        ],
+        "ts-config-service": [
+          "cpu%: 0.7 1.3 1.7 1.1 1.3 0.0 0.8",
+          "p90ms: 5 5 5 5 15 5 15",
+          "ops: 0.5 1.2 2.0 1.5 0.8 2.0 1.5"
+        ],
+        "ts-consign-price-service": [
+          "cpu%: 0.4 0.5 0.8 0.6 0.8 1.7 1.2",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-consign-service": [
+          "cpu%: 0.5 0.2 1.2 0.2 0.3 0.3 0.2",
+          "p90ms: nan nan nan nan nan nan nan",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-contacts-service": [
+          "cpu%: 0.8 0.9 1.5 3.7 1.5 1.1 1.8",
+          "p90ms: nan nan 24 24 40 24 24",
+          "ops: 0.1 0.1 0.4 0.1 0.3 0.4 0.1"
+        ],
+        "ts-delivery-service": [
+          "cpu%: 0.4 0.5 0.4 0.2 0.3 0.3 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-execute-service": [
+          "cpu%: 1.1 1.2 0.5 0.5 0.3 0.2 0.3",
+          "p90ms: nan 24 42 24 nan nan 48",
+          "ops: 0.0 0.1 0.2 0.0 0.0 0.0 0.1"
+        ],
+        "ts-food-delivery-service": [
+          "cpu%: 0.3 0.2 0.3 0.3 0.3 0.3 0.1",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-food-service": [
+          "cpu%: 1.1 0.8 1.5 0.5 5.0 1.1 1.2",
+          "p90ms: 450 nan 850 90 24 nan nan",
+          "ops: 0.1 0.0 0.3 0.3 0.1 0.0 0.1"
+        ],
+        "ts-gateway-service": [
+          "cpu%: 8.4 11.3 6.6 8.8 9.3 8.3 9.1",
+          "p90ms: 690 362 1150 462 650 496 2100",
+          "ops: 2.3 2.2 1.9 1.1 1.1 1.7 1.2"
+        ],
+        "ts-inside-payment-service": [
+          "cpu%: 2.8 1.6 1.5 1.2 1.5 1.2 2.7",
+          "p90ms: 85 235 95 220 475 90 235",
+          "ops: 0.2 0.1 0.0 0.0 0.1 0.1 0.1"
+        ],
+        "ts-news-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-notification-service": [
+          "cpu%: 0.4 0.2 0.2 0.2 0.2 0.3 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-order-other-service": [
+          "cpu%: 1.0 1.2 1.3 2.0 1.9 2.4 2.8",
+          "p90ms: 23 22 23 18 22 23 19",
+          "ops: 1.4 1.3 0.7 0.8 1.0 1.9 0.9"
+        ],
+        "ts-order-service": [
+          "cpu%: 1.3 1.7 2.8 2.0 1.3 1.4 3.4",
+          "p90ms: 25 21 19 24 475 10 27",
+          "ops: 0.7 1.8 1.6 0.7 0.1 1.8 0.9"
+        ],
+        "ts-payment-service": [
+          "cpu%: 1.1 1.5 0.8 0.8 1.1 0.6 1.0",
+          "p90ms: 24 nan nan nan 48 nan 48",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.1"
+        ],
+        "ts-preserve-other-service": [
+          "cpu%: 0.5 0.5 1.1 1.5 1.5 1.3 1.0",
+          "p90ms: nan nan 4500 4750 4750 2350 475",
+          "ops: 0.0 0.0 0.2 0.1 0.1 0.1 0.1"
+        ],
+        "ts-preserve-service": [
+          "cpu%: 0.4 0.5 0.6 1.0 0.8 0.9 1.2",
+          "p90ms: nan nan 4500 4750 nan nan 4750",
+          "ops: 0.0 0.0 0.1 0.1 0.1 0.1 0.1"
+        ],
+        "ts-price-service": [
+          "cpu%: 1.0 1.1 1.3 1.1 0.8 0.9 1.1",
+          "p90ms: 9 10 9 9 10 9 9",
+          "ops: 0.3 0.3 0.9 0.7 0.5 0.7 0.5"
+        ],
+        "ts-rebook-service": [
+          "cpu%: 0.3 0.2 0.4 0.3 0.2 0.6 0.3",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-route-plan-service": [
+          "cpu%: 1.0 0.3 0.4 0.6 0.4 0.3 0.3",
+          "p90ms: nan nan nan nan nan nan nan",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-route-service": [
+          "cpu%: 1.2 1.6 2.2 1.7 1.7 3.6 2.1",
+          "p90ms: 24 24 23 23 24 24 24",
+          "ops: 0.5 0.7 0.9 0.7 0.7 1.0 0.7"
+        ],
+        "ts-seat-service": [
+          "cpu%: 2.0 3.9 2.7 3.9 2.0 2.7 3.8",
+          "p90ms: 30 65 85 145 275 52 65",
+          "ops: 0.4 1.5 2.6 1.5 0.7 2.1 1.5"
+        ],
+        "ts-security-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: nan 48 205 48 475 48 95",
+          "ops: 0.0 0.1 0.3 0.1 0.1 0.2 0.1"
+        ],
+        "ts-station-food-service": [
+          "cpu%: 0.6 0.7 0.9 0.8 0.9 0.5 0.9",
+          "p90ms: nan nan 24 24 nan nan 24",
+          "ops: 0.0 0.0 0.1 0.1 0.1 0.0 0.1"
+        ],
+        "ts-station-service": [
+          "cpu%: 0.6 0.4 0.8 0.4 1.8 1.6 1.5",
+          "p90ms: 8 5 5 5 21 5 17",
+          "ops: 0.2 0.7 1.5 1.1 0.5 1.0 0.7"
+        ],
+        "ts-ticket-office-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-train-food-service": [
+          "cpu%: 0.7 0.7 0.4 0.4 0.2 0.6 0.4",
+          "p90ms: 10 10 10 24 nan 10 nan",
+          "ops: 0.1 0.0 0.1 0.1 0.1 0.1 0.0"
+        ],
+        "ts-train-service": [
+          "cpu%: 0.4 0.4 0.5 0.5 0.3 1.2 0.8",
+          "p90ms: 5 5 5 5 5 5 5",
+          "ops: 0.3 0.5 0.9 0.7 0.3 0.6 0.6"
+        ],
+        "ts-travel-plan-service": [
+          "cpu%: 0.8 0.5 0.6 0.5 0.3 0.5 0.4",
+          "p90ms: nan nan nan nan nan nan nan",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-travel-service": [
+          "cpu%: 1.8 4.4 1.2 1.1 1.3 2.6 2.9",
+          "p90ms: nan 235 300 438 220 425 1600",
+          "ops: 0.0 0.1 0.6 0.3 0.1 0.2 0.4"
+        ],
+        "ts-travel2-service": [
+          "cpu%: 1.0 0.8 1.3 1.5 1.3 1.4 0.5",
+          "p90ms: 4250 450 425 400 458 438 438",
+          "ops: 0.2 0.2 0.5 0.5 0.3 0.4 0.3"
+        ],
+        "ts-ui-dashboard": [
+          "cpu%: 0.2 0.1 0.2 0.1 0.1 0.1 0.2",
+          "p90ms: 780 463 1600 450 2625 688 2050",
+          "ops: 1.5 1.8 1.5 1.1 1.2 1.7 1.3"
+        ],
+        "ts-user-service": [
+          "cpu%: 0.5 0.2 0.7 0.5 0.7 0.9 0.6",
+          "p90ms: 10 9 10 10 nan 10 24",
+          "ops: 0.1 0.1 0.3 0.1 0.0 0.2 0.1"
+        ],
+        "ts-verification-code-service": [
+          "cpu%: 1.3 0.6 1.3 0.6 0.8 3.5 2.0",
+          "p90ms: 10 10 22 22 19 10 22",
+          "ops: 0.3 0.3 0.1 0.3 0.3 0.4 0.1"
+        ],
+        "ts-voucher-service": [
+          "cpu%: 0.0 0.0 0.0 0.0 0.0 0.0 0.0",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ],
+        "ts-wait-order-service": [
+          "cpu%: 0.2 0.3 0.2 0.6 0.4 0.2 0.4",
+          "p90ms: 0 0 0 0 0 0 0",
+          "ops: 0.0 0.0 0.0 0.0 0.0 0.0 0.0"
+        ]
+      },
+      "logs": [
+        "[ts-train-service] INFO: 22:01:46.609 INFO  t.c.TrainController#72 TraceID: 122aa3b4ffb1b31ffe560b962e2c638e SpanID: 05830391a29cc605 [retrieveByNames][Retrieve train][TrainTypeNames: [TeKuai, ZhiDa, KuaiSu]]",
+        "[ts-seat-service] INFO: 22:00:16.030 INFO  s.s.SeatServiceImpl#139 TraceID: f7525c7925ced1630bab943da5dacb68 SpanID: e685d1b45ee2195d [getLeftTicketOfInterval][TrainNumber start with G|D][trainNumber:G1235]",
+        "[ts-execute-service] ERROR: 22:00:56.813 ERROR e.s.ExecuteServiceImpl#69 TraceID: ed57ca1c6d93f24b6a0b125a0bc88381 SpanID: 412b510aaf88c58b [ticketExecute][getOrderByIdFromOrderOther][ticket execute error: Order Status Wrong][orderId: de3bc0b7-0...",
+        "[ts-basic-service] INFO: 22:02:33.952 INFO  f.m.s.BasicServiceImpl#438 TraceID: 969e03294e251bff47b1ddddfc39d88c SpanID: b3ee8984d0aa7c10 [getRouteByRouteId][Get Route By Id][Success]",
+        "[ts-preserve-other-service] ERROR: 22:01:06.754 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: de09197e647e38c91cc56cb2a514bc40 SpanID: 5e6fbed29e2d6e82 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-food-service] ERROR: 22:00:42.879 ERROR f.s.FoodServiceImpl#302 TraceID: 0e0dceb000f23aa2b0a3aa994f84d5b2 SpanID: 98109a3a15cea40a [getAllFood][Get the Get Food Request Failed!][foodStoresListResult is null][date: 2021-07-14, tripId: D1345]",
+        "[ts-food-service] ERROR: 22:01:04.140 ERROR f.s.FoodServiceImpl#302 TraceID: 5ae75d8e697389d2b0fd9e80b093255e SpanID: 6f573b50798d2de3 [getAllFood][Get the Get Food Request Failed!][foodStoresListResult is null][date: 2021-07-14, tripId: D1345]",
+        "[ts-food-service] ERROR: 22:00:05.134 ERROR f.s.FoodServiceImpl#302 TraceID: c68b2d613d8b7e7b18060995950de8b9 SpanID: d7de5745a638f726 [getAllFood][Get the Get Food Request Failed!][foodStoresListResult is null][date: 2021-07-14, tripId: D1345]",
+        "[ts-travel-service] INFO: 22:01:08.214 INFO  t.s.TravelServiceImpl#548 TraceID: c333295f1acfb1c6fc40ef48c99e8be5 SpanID: a975b41b87ba9e8d [getRestTicketNumber][Seat request][request: Seat(travelDate=2023-01-30 17:38:46, trainNumber=G1235, star...",
+        "[ts-food-service] ERROR: 22:02:38.810 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 8410d4d587df100e65dedd44a6703476 SpanID: fa99bf8fdf9ac421 Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-execute-service] ERROR: 22:00:45.723 ERROR e.s.ExecuteServiceImpl#51 TraceID: ba03ccdc4f4a2edfd869843b65acfd01 SpanID: 3a390a721f813e09 [ticketExecute][getOrderByIdFromOrder][ticket execute error: Order Status Wrong][orderId: ba6eb094-dd52-4...",
+        "[ts-preserve-other-service] ERROR: 22:02:34.107 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 969e03294e251bff47b1ddddfc39d88c SpanID: 47f9aac5bfcc0d9b Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-config-service] INFO: 22:01:19.910 INFO  c.c.ConfigController#67 TraceID: 829ac3456ee0e5191407762030a39588 SpanID: 561ed963472e5551 [retrieve][Retrieve config][configName: DirectTicketAllocationProportion]",
+        "[ts-travel2-service] INFO: 22:01:32.604 INFO  t.c.Travel2Controller#115 TraceID: 26d3149dea2c31c3b2747e061f192a07 SpanID: 48180faa4a9d3fa6 [query][Query TripResponse]",
+        "[ts-preserve-other-service] ERROR: 22:01:32.957 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet]#175 TraceID: 41229d63fbf5a3434446fada9ee1d3e2 SpanID: 5ab39b1ccdbc78df Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [...",
+        "[ts-travel-service] INFO: 22:00:42.845 INFO  t.c.TravelController#53 TraceID: 0e0dceb000f23aa2b0a3aa994f84d5b2 SpanID: cb80bbd9b4f20ddc [getRouteByTripId][Get Route By Trip ID][TripId: D1345]",
+        "[ts-order-service] WARN: 22:01:27.934 WARN  o.s.OrderServiceImpl#361 TraceID: e6caaea56d8317b3eda1d2525048b923 SpanID: 20ece50a07de9a86 [getOrderById][Get Order By ID Fail][Order not found][OrderId: 5a396691-dbe4-4366-8e9a-911e589c0c7e]",
+        "[ts-food-service] ERROR: 22:00:03.258 ERROR f.s.FoodServiceImpl#302 TraceID: 6d256a87b288121b49a09661a3140aff SpanID: de2842613dd82c7b [getAllFood][Get the Get Food Request Failed!][foodStoresListResult is null][date: 2021-07-14, tripId: D1345]",
+        "[ts-travel-service] INFO: 22:00:03.718 INFO  t.s.TravelServiceImpl#558 TraceID: a794ed35dd294fbd5fad8e8552891d9b SpanID: a8bbdc096a9ac1bf [getRestTicketNumber][Get Rest tickets num][num is: Response(status=1, msg=Get Left Ticket of Internal Su...",
+        "[ts-execute-service] ERROR: 22:01:12.244 ERROR e.s.ExecuteServiceImpl#51 TraceID: 76e01891e68c05016d5c17f249f94ecf SpanID: 57cf83d7e5e0578a [ticketExecute][getOrderByIdFromOrder][ticket execute error: Order Status Wrong][orderId: d9337a21-bd83-4...",
+        "[ts-seat-service] INFO: 22:01:14.690 INFO  s.s.SeatServiceImpl#154 TraceID: 61aff37ae5b3268def807338319bafae SpanID: b142f11fab2ce4ec [getLeftTicketOfInterval][TrainNumber start with other capital][trainNumber:Z1234]",
+        "[ts-execute-service] ERROR: 22:00:53.037 ERROR e.s.ExecuteServiceImpl#51 TraceID: 7a77140c0c0870b621db5e58b1b6b69e SpanID: 53a0ddeaac54627d [ticketExecute][getOrderByIdFromOrder][ticket execute error: Order Status Wrong][orderId: d9337a21-bd83-4...",
+        "[ts-order-service] WARN: 22:02:47.056 WARN  o.s.OrderServiceImpl#361 TraceID: 71cadb2f8cd51e2432480cd410c92e70 SpanID: b4c768fd5a804f86 [getOrderById][Get Order By ID Fail][Order not found][OrderId: ebd0ca83-89b7-4e53-aad7-bda33c25bea2]",
+        "[ts-food-service] ERROR: 22:02:46.903 ERROR f.s.FoodServiceImpl#302 TraceID: a8043254b2647122d0afbb76884edb8a SpanID: aad9b4e2b26d7a70 [getAllFood][Get the Get Food Request Failed!][foodStoresListResult is null][date: 2021-07-14, tripId: D1345]",
+        "[ts-execute-service] ERROR: 22:01:22.458 ERROR e.s.ExecuteServiceImpl#69 TraceID: 09e2a343be14003fa85ec502c267d7cb SpanID: 92113a731b34949f [ticketExecute][getOrderByIdFromOrderOther][ticket execute error: Order Status Wrong][orderId: de3bc0b7-0...",
+        "[ts-order-service] WARN: 22:01:55.723 WARN  o.s.OrderServiceImpl#361 TraceID: 44fae527e580946dfa0b8be42b257c2f SpanID: 6efcd184f19a248f [getOrderById][Get Order By ID Fail][Order not found][OrderId: de3bc0b7-0f6b-49e7-a826-9afd4f26c4dd]",
+        "[ts-order-service] WARN: 22:01:22.448 WARN  o.s.OrderServiceImpl#361 TraceID: 09e2a343be14003fa85ec502c267d7cb SpanID: f1642ed0ba3cdcaa [getOrderById][Get Order By ID Fail][Order not found][OrderId: de3bc0b7-0f6b-49e7-a826-9afd4f26c4dd]",
+        "[ts-travel2-service] INFO: 22:01:32.697 INFO  t.s.TravelServiceImpl#459 TraceID: 26d3149dea2c31c3b2747e061f192a07 SpanID: 48180faa4a9d3fa6 [getRestTicketNumber][Seat request][request: Seat(travelDate=2023-01-30 17:38:46, trainNumber=Z1234, star...",
+        "[ts-config-service] INFO: 22:01:38.255 INFO  c.c.ConfigController#67 TraceID: 2712e8cf80a7b9db5ff5a3bfcdc11ecb SpanID: d03c654a2559096d [retrieve][Retrieve config][configName: DirectTicketAllocationProportion]",
+        "[ts-travel2-service] INFO: 22:02:38.732 INFO  t.s.TravelServiceImpl#459 TraceID: 897b62eaa4c251cd9c4408aa189a8aab SpanID: 9923e5a154597415 [getRestTicketNumber][Seat request][request: Seat(travelDate=2023-01-30 17:38:46, trainNumber=Z1234, star..."
+      ],
+      "traces": {
+        "ts-assurance-service": "spans=100 p50=2.6ms p95=17.0ms max=23.2ms",
+        "ts-auth-service": "spans=100 p50=1.4ms p95=196.4ms max=229.0ms",
+        "ts-basic-service": "spans=762 p50=12.0ms p95=74.3ms max=1154.3ms",
+        "ts-cancel-service": "spans=30 p50=26.6ms p95=334.7ms max=340.9ms",
+        "ts-config-service": "spans=1170 p50=1.4ms p95=6.6ms max=35.9ms",
+        "ts-contacts-service": "spans=144 p50=5.6ms p95=16.1ms max=25.2ms",
+        "ts-delivery-service": "spans=77 p50=1.8ms p95=7.7ms max=9.4ms",
+        "ts-execute-service": "spans=59 p50=11.1ms p95=33.8ms max=51.5ms",
+        "ts-food-service": "spans=180 p50=7.0ms p95=67.8ms max=556.9ms",
+        "ts-gateway-service": "spans=432 p50=167.3ms p95=2696.7ms max=3409.2ms",
+        "ts-inside-payment-service": "spans=126 p50=11.9ms p95=285.2ms max=373.7ms",
+        "ts-order-other-service": "spans=1008 p50=2.5ms p95=15.8ms max=22.3ms",
+        "ts-order-service": "spans=1148 p50=3.2ms p95=221.7ms max=368.2ms",
+        "ts-payment-service": "spans=50 p50=4.7ms p95=33.7ms max=42.7ms",
+        "ts-preserve-other-service": "spans=118 p50=68.5ms p95=2636.6ms max=3181.1ms",
+        "ts-preserve-service": "spans=119 p50=77.8ms p95=2839.0ms max=3401.3ms",
+        "ts-price-service": "spans=595 p50=2.3ms p95=5.7ms max=353.7ms",
+        "ts-route-service": "spans=1537 p50=0.9ms p95=14.4ms max=500.2ms",
+        "ts-seat-service": "spans=1008 p50=18.4ms p95=230.9ms max=1035.0ms",
+        "ts-security-service": "spans=240 p50=1.7ms p95=260.1ms max=400.1ms",
+        "ts-station-food-service": "spans=55 p50=3.8ms p95=14.0ms max=16.9ms",
+        "ts-station-service": "spans=835 p50=1.4ms p95=7.4ms max=16.8ms",
+        "ts-train-food-service": "spans=72 p50=1.9ms p95=7.2ms max=10.2ms",
+        "ts-train-service": "spans=595 p50=1.1ms p95=2.7ms max=306.2ms",
+        "ts-travel-service": "spans=503 p50=19.1ms p95=431.2ms max=1768.9ms",
+        "ts-travel2-service": "spans=510 p50=18.9ms p95=359.1ms max=1227.1ms",
+        "ts-user-service": "spans=105 p50=2.5ms p95=7.7ms max=10.4ms",
+        "ts-verification-code-service": "spans=20 p50=5.5ms p95=65.8ms max=65.8ms"
+      }
+    },
+    "ground_truth": {
+      "culprit_service": "unknown",
+      "fault_type": "unknown",
+      "informative_modalities": [],
+      "decoy_modalities": [
+        "metrics",
+        "logs",
+        "traces"
+      ],
+      "evidence_keywords": [],
+      "true_culprit": "ts-security-service",
+      "true_fault_type": "network_delay",
+      "screen_ranks": {
+        "metrics": 45,
+        "logs": 10
+      }
+    }
+  },
+  {
     "id": "mm-ob-clean-baseline",
     "source": "Nezha onlineboutique 2022-08-22 fault-free baseline phase (no fault injected)",
     "system": "onlineboutique",
@@ -2670,36 +4056,36 @@
         ]
       },
       "logs": [
-        "[currencyservice] INFO: TraceID: e5cce707a686c66ad69d62e25b8a89f6 SpanID: 6ad7435e828796c7 Get currency data successful",
-        "[currencyservice] INFO: TraceID: ac94f1510ab6223ecd3b71ba91844af5 SpanID: c0a1372f50b68878 Received conversion request",
-        "[productcatalogservice] INFO: TraceID: 88ca2a911231dc58debfb0de51ae2045 SpanID: 2ee56536a5fa4aa1 get results: {1YMWWN1N4O Home Barista Kit Always wanted to brew coffee with Chemex and Aeropress at home? /static/img/products/barista-kit.jpg currenc...",
-        "[frontend] INFO: TraceID: 65fe4eeeee9da697344a93b43476e5d8 SpanID: 8823fdabb2d4971b View user cart complete",
-        "[productcatalogservice] INFO: TraceID: 4b7f2f4aaeec07c81c475eabd98b83d5 SpanID: 60e0cdb10cb806b2 get results: {9SIQT8TOJO City Bike This single gear bike probably cannot climb the hills of San Francisco. /static/img/products/city-bike.jpg currency...",
-        "[productcatalogservice] INFO: TraceID: 6129b5b2648b40715151f497c77c5682 SpanID: 3dcf6cd1fd104e93 get results: {OLJCESPC7Z Vintage Typewriter This typewriter looks good in your living room. /static/img/products/typewriter.jpg currency_code:\"USD\" un...",
-        "[cartservice] INFO: TraceID: 6e9ec42877305ce40ecbac01cbe93bff SpanID: b8197b2a9fcc9447 GetCartAsync called with userId=f923460a-6cfd-4a9c-ad95-f378508b9dcd",
-        "[cartservice] INFO: TraceID: de400fa7c1953d8ea124001b0b2ab0bd SpanID: bc6598a50129ce4b GetCartAsync called with userId=b7c6bec2-0d0e-42dc-a224-064f6ce06fa9",
-        "[frontend] INFO: TraceID: f35e356a804be6427c264a7b6ed9bb6e SpanID: 9e2efce4fa282555 Choose Ad complete",
-        "[productcatalogservice] INFO: TraceID: dd1032a32d088768c88146313abbd0e4 SpanID: 854893dd4d21b6fa Query product with name and description successfully",
-        "[productcatalogservice] INFO: TraceID: c020a03ef1ed1dad914661c91cc019a5 SpanID: 687f8f21c619ff95 get results: {9SIQT8TOJO City Bike This single gear bike probably cannot climb the hills of San Francisco. /static/img/products/city-bike.jpg currency...",
-        "[cartservice] INFO: TraceID: 98dadc99c4b876e96972e1368fa84943 SpanID: ba245be604b27e47 GetCartAsync called with userId=db2a5be8-a7a7-4ffa-8166-42a239c7c5a6",
-        "[productcatalogservice] INFO: TraceID: ba0e9a00ec2b6732dd7e7f893d06da1c SpanID: 1cda2d539b1f8493 Query product with name and description successfully",
-        "[recommendationservice] INFO: TraceID: 05d378b17ecd8757b90de0aa3e42adee SpanID: eda593e6ac502546 Query Recommendations",
-        "[productcatalogservice] INFO: TraceID: 4fb4ba231dabe934d22f1754c7549dab SpanID: 0a1673060ad75678 get results: {OLJCESPC7Z Vintage Typewriter This typewriter looks good in your living room. /static/img/products/typewriter.jpg currency_code:\"USD\" un...",
-        "[recommendationservice] INFO: TraceID: fbc487519403cac77a8b5fb97a9027fe SpanID: 99a36133de162e63 Query Recommendations",
-        "[productcatalogservice] INFO: TraceID: 143e78fc5b725395e82bf9aa18aae739 SpanID: e9f8c14397ed29a2 get results: {6E92ZMYYFZ Air Plant Have you ever wondered whether air plants need water? Buy one and figure out. /static/img/products/air-plant.jpg cu...",
-        "[frontend] INFO: TraceID: 5ba876ad300f70cdf4c81c82d65f2620 SpanID: f13ba581415353a3 Request started",
-        "[frontend] INFO: TraceID: 1ba362598f38407e7c80410fb448acde SpanID: ed85b3cdc4ce11bb Request started",
-        "[currencyservice] INFO: TraceID: 94c158c9d996ed9aff054cb72b101fa1 SpanID: e7626d3793cf3416 Handles decimal or fractional carrying",
-        "[adservice] INFO: 03:50:28.404 INFO  - TraceID: 2a0292a7d59e7203eb9709991d112752 SpanID: 1902337897018162 Constructe random Ads finish",
-        "[productcatalogservice] INFO: TraceID: f6546e0960c9d4f73165f7f320f42ba9 SpanID: 69ccd55fdd355f02 Parse catalog successfully",
-        "[productcatalogservice] INFO: TraceID: 6e8b629a6642fecd1e7149bd9f837256 SpanID: 9eea6240a0b0c3b1 Query product with name and description 66VCHSJNUP",
-        "[frontend] INFO: TraceID: e782ea08978142ea6a548611a96cbeca SpanID: 61266ffafe2847e2 Request started",
-        "[currencyservice] INFO: TraceID: 2ae82d628fdb8fa643a7ac8e6b3daace SpanID: dcee895dbd6509b3 Getting currency data",
-        "[productcatalogservice] INFO: TraceID: 88ca2a911231dc58debfb0de51ae2045 SpanID: a1cd6f84b4efaf24 Parse catalog successfully",
-        "[productcatalogservice] INFO: TraceID: 4ac4b1e0506cc0cbfd8b38ddce5027ec SpanID: 797133fdce1d7a76 get results: {0PUK6V6EV0 Vintage Record Player It still works. /static/img/products/record-player.jpg currency_code:\"USD\" units:65 nanos:500000000  [m...",
-        "[currencyservice] INFO: TraceID: 1c335e34af370a5b642b8d24495cc74a SpanID: 88bdc2701d2c884a Handles decimal or fractional carrying",
-        "[shippingservice] INFO: TraceID: 078d4c37b6290f2ce71915c2b8112c54 SpanID: 4db40646d756ede3 [CreateQuoteFromFloat] received request",
-        "[currencyservice] INFO: TraceID: 2819844d74401078c0da300531be008d SpanID: cc44a9a2acc98d65 Conversion request successful"
+        "[shippingservice] INFO: TraceID: cb9c0559cfc9db9b833b69a7a43a2611 SpanID: 2fe9b13caac38d44 [CreateQuoteFromFloat] completed request",
+        "[productcatalogservice] INFO: TraceID: c7a6ffe85d3571e0d3f5a4b737d492be SpanID: 0c18c1340340d2d4 Query product with name and description LS4PSXUNUM",
+        "[currencyservice] INFO: TraceID: a63bead840beee12f71757cab370a2c6 SpanID: ef2c530b41de3d42 Get currency data successful",
+        "[currencyservice] INFO: TraceID: 3dc9b462cf453d4eeea92b6a52e45c3c SpanID: 76a54254832fd2a3 Getting currency data",
+        "[currencyservice] INFO: TraceID: b938def8c590c7a22bc0443ae11b585a SpanID: 1bf9daa70a3f2e70 Getting supported currencies...",
+        "[productcatalogservice] INFO: TraceID: 05cc4fae5e0527cdcc7a5c5182d5ca08 SpanID: 88854cda2e1d0a2b Query product with name and description successfully",
+        "[currencyservice] INFO: TraceID: 3dc9b462cf453d4eeea92b6a52e45c3c SpanID: c5d26bf18b37a1fe Handles decimal or fractional carrying",
+        "[currencyservice] INFO: TraceID: 27d232009000214f2406738c98f3cce7 SpanID: 10aa2ee9d8bbf11c Handles decimal or fractional carrying",
+        "[currencyservice] INFO: TraceID: 0dcfb5fbff030e4e41d472e18c52a69f SpanID: 41b514b469e706d9 Handles decimal or fractional carrying",
+        "[cartservice] INFO: TraceID: 4938be9de9c3b7cfb3ac29a472fa2e64 SpanID: 3e05367c9a94c249 GetCartAsync called with userId=58dc8246-f4c4-4547-9fa0-433f6598d729",
+        "[checkoutservice] INFO: TraceID: 7407281e35a6a4947289c5f440bcc6de SpanID: fdb9c34a5bc21f73 Convert currency from currency_code:\"USD\" units:53 nanos:890000000  to CAD successfully",
+        "[productcatalogservice] INFO: TraceID: 469f666d3ea296e6ed6214b346e82f55 SpanID: cfac4befe82839a3 Start parse catalog",
+        "[frontend] INFO: TraceID: 87edc218fcaa23cca842860ebccc711c SpanID: 7e476d4f8028e6ef Request started",
+        "[productcatalogservice] INFO: TraceID: 70f4b8913a5073f9111c418546cd1422 SpanID: 560e3dafd489a88e Query product with name and description successfully",
+        "[productcatalogservice] INFO: TraceID: 4e0d134db1165df80b4f42bd57692fc9 SpanID: 4222bf22d83c2d19 Query product with name and description 6E92ZMYYFZ",
+        "[shippingservice] INFO: TraceID: c406170e06d9df1c34bd4b4621ef36d3 SpanID: 5d0fbf0defe8d998 [CreateQuoteFromCount] received request",
+        "[productcatalogservice] INFO: TraceID: 0b5453ed7637e795fce3247256be1328 SpanID: d98f4602e7654c3f Query product with name and description successfully",
+        "[currencyservice] INFO: TraceID: 6b0e79c7af9fd3517ffe7cb27156da90 SpanID: 32a00f6d983847a4 Handles decimal or fractional carrying",
+        "[currencyservice] INFO: TraceID: 3da9faa51970f29d671e3de63a108bbf SpanID: f463a7ab50929c34 Getting supported currencies...",
+        "[adservice] INFO: 03:50:27.553 INFO  - TraceID: a8d5d64c513903f7884e3c79d7386d9c SpanID: 614c79f8746aa26e Get Ads by Category start",
+        "[productcatalogservice] INFO: TraceID: 52a765da1c2c5d963949a235c220a6de SpanID: 1a8b794fb55ea290 Start query product catalog",
+        "[productcatalogservice] INFO: TraceID: d45204a925d52667ba8d8e2c7904e743 SpanID: 726f8a89eee9d4a5 get results: {LS4PSXUNUM Metal Camping Mug You probably don't go camping that often but this is better than plastic cups. /static/img/products/camp-mu...",
+        "[currencyservice] INFO: TraceID: d5d3b317426e8531d299569bc7611831 SpanID: e0c6c302d2d03fd4 Get currency data successful",
+        "[productcatalogservice] INFO: TraceID: 18ff5ebad180a00f3b93fee41d386d5d SpanID: eaa9e5f528e16500 Parse catalog successfully",
+        "[productcatalogservice] INFO: TraceID: 56aa2c2dc63415e4bd6685ba0aae3a2b SpanID: 4addb4b0345b6d16 Start list products",
+        "[frontend] INFO: TraceID: 8fcc4b31f16388b0168d096017f39bee SpanID: 8d82f277f99b79e1 Choose Ad started",
+        "[productcatalogservice] INFO: TraceID: 1b22993c961e298087b9ee9b650ec4c8 SpanID: 18d802e73318c56d get results: {0PUK6V6EV0 Vintage Record Player It still works. /static/img/products/record-player.jpg currency_code:\"USD\" units:65 nanos:500000000  [m...",
+        "[frontend] INFO: TraceID: f35e356a804be6427c264a7b6ed9bb6e SpanID: 9e2efce4fa282555 Serving product page complete",
+        "[currencyservice] INFO: TraceID: 89a4ce6f3557ec458fa685ab65fd1df2 SpanID: 6a046f2c47ceb60f Handles decimal or fractional carrying",
+        "[frontend] INFO: TraceID: cae785d1e5ec167c3c9a393b69a590e9 SpanID: fd1b0f5c0be9714d Adding to cart started"
       ],
       "traces": {
         "adservice": "spans=1364 p50=4.9ms p95=10.0ms max=688.8ms",
