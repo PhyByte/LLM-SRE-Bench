@@ -208,6 +208,22 @@ python benchmark.py aggregate
 
 Progress streams live in the terminal with per-call scores.
 
+### Publishing to the showcase site
+
+[llm-sre-website](https://github.com/PhyByte/llm-sre-website) reads one artifact from this
+repository over HTTPS, so the two checkouts do not need to sit next to each other:
+
+```bash
+python scripts/export_site_data.py   # writes results/site_data.json
+git add results/site_data.json && git commit && git push
+```
+
+`site_data.json` is the published contract between the two repos: aggregate scores, list prices
+and the per-category prose, derived from `results.json` and `models.json`. Only public
+information goes in it — nothing from `.env` or the response cache. The site pulls it with
+`npm run refresh-data` and compiles it into a typed module, so it only sees exports you have
+actually pushed.
+
 ## Configuring models (`models.json`)
 
 ```json
@@ -285,6 +301,7 @@ evaluators/              one scorer per category + efficiency
 datasets/data/           bundled test cases (JSON)
 scripts/build_datasets.py         deterministic dataset builder (Loghub + synthetic)
 scripts/build_multimodal_rca.py   Nezha builder: signal screen + modality bundling
+scripts/export_site_data.py       emits results/site_data.json for the showcase site
 reports/                 aggregation + report generation
 ```
 
