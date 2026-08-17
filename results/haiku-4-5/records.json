@@ -2297,9 +2297,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 5.451079959049821,
-    "input_tokens": 3626,
-    "output_tokens": 463,
+    "latency_s": 4.840810208115727,
+    "input_tokens": 3809,
+    "output_tokens": 450,
     "cached": false,
     "error": null
   },
@@ -2315,9 +2315,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 5.364255332853645,
-    "input_tokens": 3626,
-    "output_tokens": 423,
+    "latency_s": 4.69807895924896,
+    "input_tokens": 3809,
+    "output_tokens": 407,
     "cached": false,
     "error": null
   },
@@ -2333,9 +2333,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 4.961850124876946,
-    "input_tokens": 3626,
-    "output_tokens": 440,
+    "latency_s": 4.078625333029777,
+    "input_tokens": 3809,
+    "output_tokens": 397,
     "cached": false,
     "error": null
   },
@@ -2351,44 +2351,8 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 5.123844999819994,
-    "input_tokens": 3544,
-    "output_tokens": 481,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "haiku-4-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-ad-02",
-    "run_index": 1,
-    "score": 0.875,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.550000791903585,
-    "input_tokens": 3544,
-    "output_tokens": 414,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "haiku-4-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-ad-02",
-    "run_index": 2,
-    "score": 0.875,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 5.355493209324777,
-    "input_tokens": 3544,
+    "latency_s": 5.610086875036359,
+    "input_tokens": 3727,
     "output_tokens": 472,
     "cached": false,
     "error": null
@@ -2396,6 +2360,42 @@
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-ad-02",
+    "run_index": 1,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.680967750027776,
+    "input_tokens": 3727,
+    "output_tokens": 446,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-ad-02",
+    "run_index": 2,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.8325527077540755,
+    "input_tokens": 3727,
+    "output_tokens": 456,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-currency-03",
     "run_index": 0,
     "score": 0.9166666666666666,
@@ -2405,9 +2405,9 @@
       "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 5.019125875085592,
-    "input_tokens": 3806,
-    "output_tokens": 512,
+    "latency_s": 5.490658250171691,
+    "input_tokens": 3989,
+    "output_tokens": 569,
     "cached": false,
     "error": null
   },
@@ -2416,16 +2416,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-currency-03",
     "run_index": 1,
-    "score": 0.9166666666666666,
+    "score": 0.875,
     "metrics": {
       "culprit_correct": 1.0,
       "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
+      "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 5.6267634578980505,
-    "input_tokens": 3806,
-    "output_tokens": 528,
+    "latency_s": 5.759910708293319,
+    "input_tokens": 3989,
+    "output_tokens": 533,
     "cached": false,
     "error": null
   },
@@ -2441,9 +2441,9 @@
       "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 6.039948749821633,
-    "input_tokens": 3806,
-    "output_tokens": 560,
+    "latency_s": 5.0746367909014225,
+    "input_tokens": 3989,
+    "output_tokens": 511,
     "cached": false,
     "error": null
   },
@@ -2452,16 +2452,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-email-04",
     "run_index": 0,
-    "score": 1.0,
+    "score": 0.9166666666666666,
     "metrics": {
       "culprit_correct": 1.0,
       "fault_type_correct": 1.0,
-      "modality_grounding_f1": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 4.168699332978576,
-    "input_tokens": 3948,
-    "output_tokens": 379,
+    "latency_s": 5.69528045784682,
+    "input_tokens": 4131,
+    "output_tokens": 463,
     "cached": false,
     "error": null
   },
@@ -2470,16 +2470,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-email-04",
     "run_index": 1,
-    "score": 1.0,
+    "score": 0.6666666666666666,
     "metrics": {
       "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 4.319267334416509,
-    "input_tokens": 3948,
-    "output_tokens": 374,
+    "latency_s": 5.505966958124191,
+    "input_tokens": 4131,
+    "output_tokens": 458,
     "cached": false,
     "error": null
   },
@@ -2488,16 +2488,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-email-04",
     "run_index": 2,
-    "score": 1.0,
+    "score": 0.6666666666666666,
     "metrics": {
       "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 3.8644127496518195,
-    "input_tokens": 3948,
-    "output_tokens": 390,
+    "latency_s": 5.447305291891098,
+    "input_tokens": 4131,
+    "output_tokens": 432,
     "cached": false,
     "error": null
   },
@@ -2513,9 +2513,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 5.046959625091404,
-    "input_tokens": 3755,
-    "output_tokens": 482,
+    "latency_s": 4.670870709232986,
+    "input_tokens": 3938,
+    "output_tokens": 451,
     "cached": false,
     "error": null
   },
@@ -2531,9 +2531,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 4.792732708156109,
-    "input_tokens": 3755,
-    "output_tokens": 401,
+    "latency_s": 4.5687735001556575,
+    "input_tokens": 3938,
+    "output_tokens": 474,
     "cached": false,
     "error": null
   },
@@ -2549,9 +2549,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 5.545380416791886,
-    "input_tokens": 3755,
-    "output_tokens": 473,
+    "latency_s": 4.606099083088338,
+    "input_tokens": 3938,
+    "output_tokens": 444,
     "cached": false,
     "error": null
   },
@@ -2567,9 +2567,9 @@
       "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 3.5572297503240407,
-    "input_tokens": 3843,
-    "output_tokens": 331,
+    "latency_s": 3.500225165858865,
+    "input_tokens": 4026,
+    "output_tokens": 342,
     "cached": false,
     "error": null
   },
@@ -2585,26 +2585,8 @@
       "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 4.119871708098799,
-    "input_tokens": 3843,
-    "output_tokens": 384,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "haiku-4-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-productcatalog-06",
-    "run_index": 2,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 3.5829888749867678,
-    "input_tokens": 3843,
+    "latency_s": 3.27528425026685,
+    "input_tokens": 4026,
     "output_tokens": 323,
     "cached": false,
     "error": null
@@ -2612,6 +2594,24 @@
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "run_index": 2,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 4.557792708743364,
+    "input_tokens": 4026,
+    "output_tokens": 443,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-shipping-07",
     "run_index": 0,
     "score": 0.8416666666666667,
@@ -2621,9 +2621,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 4.090880167204887,
-    "input_tokens": 3828,
-    "output_tokens": 420,
+    "latency_s": 3.9703640420921147,
+    "input_tokens": 4011,
+    "output_tokens": 424,
     "cached": false,
     "error": null
   },
@@ -2639,9 +2639,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 5.05633783293888,
-    "input_tokens": 3828,
-    "output_tokens": 520,
+    "latency_s": 4.8163732080720365,
+    "input_tokens": 4011,
+    "output_tokens": 418,
     "cached": false,
     "error": null
   },
@@ -2657,9 +2657,9 @@
       "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 3.7423694590106606,
-    "input_tokens": 3828,
-    "output_tokens": 363,
+    "latency_s": 4.661784208379686,
+    "input_tokens": 4011,
+    "output_tokens": 428,
     "cached": false,
     "error": null
   },
@@ -2668,16 +2668,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-networkd-shipping-08",
     "run_index": 0,
-    "score": 0.25,
+    "score": 0.125,
     "metrics": {
       "culprit_correct": 0.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
       "evidence_recall": 0.0
     },
-    "latency_s": 4.812658874783665,
-    "input_tokens": 3749,
-    "output_tokens": 437,
+    "latency_s": 5.591283583082259,
+    "input_tokens": 3932,
+    "output_tokens": 425,
     "cached": false,
     "error": null
   },
@@ -2686,90 +2686,65 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-networkd-shipping-08",
     "run_index": 1,
-    "score": 0.375,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 0.0
-    },
-    "latency_s": 5.009432082995772,
-    "input_tokens": 3749,
-    "output_tokens": 410,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98rvnPQwADwa8VkergU'}"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-ob-networkd-shipping-08",
     "run_index": 2,
-    "score": 0.375,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 0.0
-    },
-    "latency_s": 4.771701916120946,
-    "input_tokens": 3749,
-    "output_tokens": 433,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98rwnQzJ4hVm9uPXh1f'}"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-returnva-food-09",
     "run_index": 0,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.444523208308965,
-    "input_tokens": 9193,
-    "output_tokens": 344,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98rxgjcX4MD1wVCyC6n'}"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-returnva-food-09",
     "run_index": 1,
-    "score": 0.6666666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.097343540750444,
-    "input_tokens": 9193,
-    "output_tokens": 357,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98ryZpV2xM92RHPgcES'}"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-returnva-food-09",
     "run_index": 2,
-    "score": 0.625,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 5.023477707989514,
-    "input_tokens": 9193,
-    "output_tokens": 438,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98rzRfT4yB62tLx4JQ2'}"
   },
   {
     "model": "haiku-4-5",
@@ -2777,17 +2752,12 @@
     "case_id": "mm-tt-returnva-verification-code-10",
     "run_index": 0,
     "score": 0.0,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 0.0
-    },
-    "latency_s": 4.856659917160869,
-    "input_tokens": 9061,
-    "output_tokens": 453,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
@@ -2795,17 +2765,12 @@
     "case_id": "mm-tt-returnva-verification-code-10",
     "run_index": 1,
     "score": 0.0,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 0.0
-    },
-    "latency_s": 4.236862666904926,
-    "input_tokens": 9061,
-    "output_tokens": 390,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
@@ -2813,178 +2778,323 @@
     "case_id": "mm-tt-returnva-verification-code-10",
     "run_index": 2,
     "score": 0.0,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 0.0
-    },
-    "latency_s": 4.099839833099395,
-    "input_tokens": 9061,
-    "output_tokens": 382,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 0,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.014095208141953,
-    "input_tokens": 8976,
-    "output_tokens": 355,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 1,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.0635770838707685,
-    "input_tokens": 8976,
-    "output_tokens": 367,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 2,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.716622875072062,
-    "input_tokens": 8976,
-    "output_tokens": 431,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-preserve-12",
     "run_index": 0,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.4798544170334935,
-    "input_tokens": 9010,
-    "output_tokens": 386,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-preserve-12",
     "run_index": 1,
-    "score": 0.875,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.132823875173926,
-    "input_tokens": 9010,
-    "output_tokens": 414,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-preserve-12",
     "run_index": 2,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 3.9462869581766427,
-    "input_tokens": 9010,
-    "output_tokens": 355,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-01",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-01",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-01",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+  },
+  {
+    "model": "haiku-4-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-ob-clean-baseline",
     "run_index": 0,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.25918933423236,
-    "input_tokens": 4019,
-    "output_tokens": 383,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-ob-clean-baseline",
     "run_index": 1,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.156463082879782,
-    "input_tokens": 4019,
-    "output_tokens": 357,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   },
   {
     "model": "haiku-4-5",
     "category": "multimodal_rca",
     "case_id": "mm-ob-clean-baseline",
     "run_index": 2,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 4.087923292070627,
-    "input_tokens": 4019,
-    "output_tokens": 348,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
     "cached": false,
-    "error": null
+    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
   }
 ]
