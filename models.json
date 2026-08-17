@@ -53,7 +53,7 @@
       "price_output": 6.0
     },
     {
-      "name": "claude-opus-4-8",
+      "name": "opus-4.8",
       "provider": "anthropic",
       "api_key": "${ANTHROPIC_API_KEY}",
       "model_id": "claude-opus-4-8",
@@ -130,8 +130,26 @@
       "base_url": "https://api.openai.com/v1",
       "api_key": "${OPENAI_API_KEY}",
       "model_id": "gpt-4o",
-      "price_input": 0,
-      "price_output": 0
+      "price_input": 2.5,
+      "price_output": 10.0
+    },
+    {
+      "name": "gemini-3.6-flash",
+      "provider": "google",
+      "api_key": "${GEMINI_API_KEY}",
+      "model_id": "gemini-3.6-flash",
+      "max_tokens": 8192,
+      "price_input": 1.5,
+      "price_output": 7.5
+    },
+    {
+      "name": "gemini-3.1-pro",
+      "provider": "google",
+      "api_key": "${GEMINI_API_KEY}",
+      "model_id": "gemini-3.1-pro-preview",
+      "max_tokens": 8192,
+      "price_input": 2.0,
+      "price_output": 12.0
     },
     {
       "name": "llama-3.3-70b",

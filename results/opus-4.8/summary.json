@@ -1,5 +1,5 @@
 {
-  "model": "claude-opus-4-8",
+  "model": "opus-4.8",
   "global_score": 77.71,
   "category_scores": {
     "log_parsing": 91.86,

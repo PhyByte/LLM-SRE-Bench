@@ -26,7 +26,9 @@ cases drawn from the faults the dataset builder's signal gate rejected — real
 injected faults whose culprit is buried in every channel. They measure whether a
 model knows when it cannot tell, which is the failure mode that makes RCA
 tooling dangerous: an "all clear" or a confident wrong service both read as
-answers, and both send someone to the wrong place at 3am.
+answers, and both send someone to the wrong place at 3am. Grounding is not
+scored on a correct abstention, since a case whose premise is that no modality
+localizes the fault has no correct set of modalities to cite.
 """
 
 from __future__ import annotations
@@ -99,11 +101,25 @@ def evaluate(case: dict[str, Any], result: MultiModalRCAResult) -> EvalResult:
         fault_ok = result.fault_type.strip().lower() == truth["fault_type"].strip().lower()
 
     cited = {e.modality for e in result.evidence}
-    grounding = _f1(cited, set(truth["informative_modalities"]))
-    if abstention and answered == _normalize(truth["true_culprit"]):
+    if not abstention:
+        grounding = _f1(cited, set(truth["informative_modalities"]))
+    elif answered == _normalize(truth["true_culprit"]):
         # It found the culprit the screen could not, so its citations are
         # evidence of that, not false positives against an empty expectation.
         grounding = 1.0 if cited else 0.0
+    elif culprit_ok:
+        # A correct "unknown" is not graded on grounding. The premise of these
+        # cases is that no modality localizes the fault, so there is no correct
+        # set to cite: scoring it would mean docking a model 0.25 for describing
+        # what it saw while abstaining, which is exactly the behaviour we want.
+        # The weight is conceded rather than redistributed so a case's ceiling
+        # stays comparable with the solvable ones.
+        grounding = 1.0
+    else:
+        # Named some other service. Nothing it cites can ground a culprit the
+        # evidence does not support, and staying silent shouldn't earn the
+        # empty-expectation full marks that _f1 would hand back.
+        grounding = 0.0
 
     keywords = truth.get("evidence_keywords", [])
     haystack = " ".join(

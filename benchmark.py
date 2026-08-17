@@ -4,7 +4,7 @@ Usage (recommended workflow for running models one at a time):
 
     # Run models independently (results go to results/<model>/)
     python benchmark.py run -m grok-4
-    python benchmark.py run -m claude-opus-4-8
+    python benchmark.py run -m opus-4.8
     python benchmark.py run -m llama-3.3-70b --runs 1
 
     # Rebuild the combined comparison table + reports from all model folders
@@ -51,9 +51,31 @@ from reports.generator import (
 )
 
 from core.cache import ResponseCache
+from scripts.export_site_data import export as export_site_data, pending_rows
 
 app = typer.Typer(help="Benchmark LLMs on log analysis, anomaly detection, and SRE tasks.")
 console = Console()
+
+
+def _write_site_data(output_dir: Path) -> None:
+    """Refresh the showcase site's payload alongside the other reports.
+
+    Kept in step with results.json automatically: as a separate manual step it
+    was forgotten after most runs, and a stale export shows a finished model as
+    "partial" on the site with nothing to explain why.
+    """
+    try:
+        out, payload = export_site_data(output_dir)
+    except Exception as error:  # noqa: BLE001 - a reporting extra must never fail a run
+        console.print(f"[yellow]Could not write site_data.json: {error}[/yellow]")
+        return
+    console.print(f"  - {out}")
+    for row in pending_rows(payload):
+        console.print(
+            f"[yellow]  ! {row['category']}: {row['cases'] - row['scored']} of "
+            f"{row['cases']} cases are not covered by every ranked model, so the site "
+            "will show them as pending[/yellow]"
+        )
 
 
 @app.command()
@@ -116,7 +138,7 @@ def run(
     for name in models or [m.name for m in config.models]:
         model_config = config.get_model(name)
         needs_key = (
-            model_config.provider in ("openai", "xai", "anthropic")
+            model_config.provider in ("openai", "xai", "anthropic", "google")
             and not (model_config.base_url or "https://").startswith("http://")
         )
         if needs_key and not model_config.api_key:
@@ -208,6 +230,7 @@ def run(
     console.print(f"Aggregated reports written to [bold]{output}/[/bold]:")
     for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
         console.print(f"  - {output / name}")
+    _write_site_data(output)
 
 
 @app.command("aggregate")
@@ -219,7 +242,7 @@ def aggregate_cmd(
 
     Use this after running models individually, e.g.:
         python benchmark.py run -m grok-4
-        python benchmark.py run -m claude-opus-4-8
+        python benchmark.py run -m opus-4.8
         python benchmark.py aggregate
     """
     all_records = load_all_model_records(output_dir)
@@ -244,6 +267,7 @@ def aggregate_cmd(
     console.print(f"\nRebuilt aggregated reports from {n_models} model(s) in [bold]{output}/[/bold]")
     for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
         console.print(f"  - {output / name}")
+    _write_site_data(output)
 
 
 def _fmt_duration(dur) -> str:

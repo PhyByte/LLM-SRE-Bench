@@ -1,0 +1,25 @@
+{
+  "model": "gemma-3-12B",
+  "global_score": 52.06,
+  "category_scores": {
+    "log_parsing": 74.84,
+    "anomaly_detection": 51.81,
+    "pattern_correlation": 81.33,
+    "metrics_timeseries": 24.27,
+    "root_cause": 40.53,
+    "multimodal_rca": 35.96,
+    "efficiency": 40.24
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 72.6236,
+    "avg_total_tokens": 2469.8542,
+    "score_stddev": 1.0332,
+    "latency_score": 0.0,
+    "token_score": 0.3825,
+    "consistency_score": 0.9587
+  },
+  "error_count": 0,
+  "total_runs": 192,
+  "total_duration_s": 13943.72,
+  "last_run_wall_clock_s": 1.08
+}

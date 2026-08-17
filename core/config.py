@@ -13,7 +13,7 @@ from pydantic import BaseModel, Field, field_validator, model_validator
 
 load_dotenv()
 
-Provider = Literal["openai", "xai", "anthropic", "ollama", "mock"]
+Provider = Literal["openai", "xai", "anthropic", "google", "ollama", "mock"]
 
 # Category name -> weight in the global score. Must sum to 1.0.
 CATEGORY_WEIGHTS: dict[str, float] = {

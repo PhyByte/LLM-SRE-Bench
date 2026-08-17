@@ -1,6 +1,6 @@
 """LLM provider clients.
 
-- OpenAI-compatible endpoints (OpenAI, xAI, and anything speaking
+- OpenAI-compatible endpoints (OpenAI, xAI, Gemini, and anything speaking
   /chat/completions) and Ollama use httpx with retry/backoff.
 - Anthropic uses the official `anthropic` SDK (which retries 429/5xx itself).
 - The "mock" provider runs fully offline with simple heuristics, useful for
@@ -99,6 +99,7 @@ class OpenAICompatibleClient(BaseClient):
     _DEFAULT_BASE_URLS = {
         "openai": "https://api.openai.com/v1",
         "xai": "https://api.x.ai/v1",
+        "google": "https://generativelanguage.googleapis.com/v1beta/openai/",
     }
 
     def __init__(self, model: ModelConfig, config: BenchmarkConfig) -> None:
@@ -407,7 +408,7 @@ class MockClient(BaseClient):
 
 
 def build_client(model: ModelConfig, config: BenchmarkConfig) -> BaseClient:
-    if model.provider in ("openai", "xai"):
+    if model.provider in ("openai", "xai", "google"):
         return OpenAICompatibleClient(model, config)
     if model.provider == "anthropic":
         return AnthropicClient(model, config)

@@ -29,7 +29,7 @@ CATEGORIES = {
         "blurb": "Turn raw log lines into templates, masking every variable part.",
         "measures": "Given production log lines, replace IDs, timestamps, paths and durations "
         "with <*> while keeping constant words exactly. This is the foundation of every log "
-        "pipeline — it is how you group millions of lines into a handful of event types.",
+        "pipeline. It is how you group millions of lines into a handful of event types.",
         "scoring": "0.5 x exact-template accuracy + 0.5 x token-level F1 against ground truth.",
         "source": "Real Loghub 2k logs (HDFS, BGL, OpenSSH, Apache, Zookeeper, Linux) with the "
         "official ground-truth templates from logpai/logparser.",
@@ -38,21 +38,21 @@ CATEGORIES = {
     },
     "anomaly_detection": {
         "label": "Anomaly Detection",
-        "blurb": "Flag which log lines are genuinely anomalous — and which only look scary.",
+        "blurb": "Flag which log lines are genuinely anomalous, and which only look scary.",
         "measures": "Given a window of logs, identify the anomalous lines by index. Routine "
         "warnings, retries and rolling-restart noise must be left alone.",
         "scoring": "Precision / recall / F1 over per-line labels.",
         "source": "Real labelled BGL supercomputer windows plus hard synthetic cases.",
         "hard": "BGL labels 'instruction cache parity error corrected' as NORMAL, so grepping "
         "for 'error' scores about 40. One case is a healthy service where the correct answer is "
-        "zero anomalies — over-flagging scores 0. Another is silent data loss with no error "
+        "zero anomalies: over-flagging scores 0. Another is silent data loss with no error "
         "keyword anywhere.",
     },
     "pattern_correlation": {
         "label": "Pattern & Correlation",
         "blurb": "Group related events and work out which failure caused which.",
         "measures": "Identify recurring problem patterns across services, then the causal links "
-        "between them — the A causes B causes C cascade behind a multi-service incident.",
+        "between them: the A causes B causes C cascade behind a multi-service incident.",
         "scoring": "0.6 x pattern coverage + 0.4 x correlation accuracy.",
         "source": "Curated multi-service cascades with distractors and 2-hop causal chains.",
         "hard": "Unrelated failures happen inside the same window and must not be wired into "
@@ -62,7 +62,7 @@ CATEGORIES = {
         "label": "Metrics Time-Series",
         "blurb": "Spot anomalies in a seasonal metric series.",
         "measures": "Given 96 points of a metric on a daily cycle, find the indices that deviate "
-        "from expected seasonal behaviour — spikes, dips and level shifts.",
+        "from expected seasonal behaviour (spikes, dips and level shifts).",
         "scoring": "Point-wise precision / recall / F1 with a +/-1 index tolerance.",
         "source": "Seasonal series with injected anomalies, including two clean series.",
         "hard": "The series follow a daily cycle, so a global z-score misses off-peak spikes and "
@@ -76,8 +76,8 @@ CATEGORIES = {
         "scoring": "0.4 ROUGE-L on the summary + 0.3 ROUGE-1 on the root cause + 0.3 keyword "
         "recall. An optional LLM-as-judge can replace the blend.",
         "source": "Curated incidents with reference answers.",
-        "hard": "Each incident contains red herrings — unrelated deploys, failing crons, network "
-        "blips — that happened in the window and must be ruled out.",
+        "hard": "Each incident contains red herrings (unrelated deploys, failing crons, network "
+        "blips) that happened in the window and must be ruled out.",
     },
     "multimodal_rca": {
         "label": "Multi-modal RCA",
@@ -98,7 +98,7 @@ CATEGORIES = {
         "metrics-only heuristic scores 100 on the CPU cases and 0 on the log-only ones. Five "
         "cases go further: a fault really was injected, but it is buried in every channel, and "
         "the calibrated answer is 'unknown'. Naming a plausible-looking service there scores 10 "
-        "out of 100 — the rule-based baseline does exactly that on all five.",
+        "out of 100. The rule-based baseline does exactly that on all five.",
     },
     "efficiency": {
         "label": "Efficiency & Consistency",
@@ -126,33 +126,51 @@ DATASET_SOURCES = [
 ]
 
 
-def build_datasets(results: dict) -> list[dict]:
-    """Per-category case counts, split into what exists and what has been run.
+def build_datasets(results: dict, ranked: set[str]) -> list[dict]:
+    """Per-category case counts, split into what exists and what the ranking covers.
 
-    A case only counts as scored once it appears in the records. New cases are
-    therefore visible on the site as pending from the moment they are built,
-    rather than silently inflating a total that the published scores do not
-    cover.
+    A case counts as scored only when *every* ranked model has run it. One model
+    running a new case is not coverage: it makes that model's category score
+    incomparable with the rest, which is the opposite of what a leaderboard
+    needs. Counting any single run instead would let five new cases look covered
+    the moment one model touched them.
     """
-    scored_pairs = {(r["category"], r["case_id"]) for r in results["records"]}
+    covered: dict[tuple[str, str], set[str]] = collections.defaultdict(set)
+    for record in results["records"]:
+        covered[(record["category"], record["case_id"])].add(record["model"])
+
     rows = []
     for category, source in DATASET_SOURCES:
         case_ids = [c["id"] for c in json.loads(
             (ROOT / "datasets" / "data" / f"{category}.json").read_text()
         )]
+        # With nothing ranked yet, fall back to "anyone ran it" so the count is
+        # still meaningful rather than uniformly zero.
+        scored = sum(
+            1 for cid in case_ids
+            if (ranked <= covered[(category, cid)] if ranked else covered[(category, cid)])
+        )
         rows.append(
             {
                 "category": category,
                 "cases": len(case_ids),
-                "scored": sum(1 for cid in case_ids if (category, cid) in scored_pairs),
+                "scored": scored,
                 "source": source,
             }
         )
     return rows
 
 
-def main() -> None:
-    results = json.loads((ROOT / "results" / "results.json").read_text())
+def export(results_dir: Path | None = None) -> tuple[Path, dict]:
+    """Build the site payload from `results_dir` and write it beside the reports.
+
+    Returns the path written and the payload, so callers can report on it without
+    re-reading the file. `benchmark.py` calls this at the end of a run: the export
+    is derived entirely from results.json, and leaving it as a separate manual
+    step meant every finished run silently left the site a run behind.
+    """
+    results_dir = results_dir or ROOT / "results"
+    results = json.loads((results_dir / "results.json").read_text())
     config = json.loads((ROOT / "models.json").read_text())
 
     meta = {m["name"]: m for m in config["models"]}
@@ -171,12 +189,30 @@ def main() -> None:
         name = summary["model"]
         entry = meta.get(name, {})
         price_in, price_out = entry.get("price_input"), entry.get("price_output")
+        # A zero is not a price. It is either a placeholder nobody filled in or a
+        # self-hosted model, whose real cost is hardware and operator time rather
+        # than dollars per token — not comparable with list pricing either way.
+        # Left as 0 it wins every "cheapest" comparison on the site and parks the
+        # model on the origin of the score-against-price plot, so it is exported
+        # as unknown and the site renders those cells as "not applicable".
+        if not price_in or not price_out:
+            price_in = price_out = None
         blended = (
             round(price_in * INPUT_SHARE + price_out * OUTPUT_SHARE, 3)
             if price_in is not None and price_out is not None
             else None
         )
         in_tok, out_tok = tokens[name]
+        # Recomputed from the measured tokens and the current price table instead
+        # of read off the run. The runner's own total is exactly this product, but
+        # it was fixed at whatever price was configured that day, so a run made
+        # before a price was filled in reports $0 — publishable as "free" long
+        # after the rate is known.
+        measured_cost = (
+            round((in_tok * price_in + out_tok * price_out) / 1e6, 4)
+            if blended is not None
+            else None
+        )
         covered = sorted(c for c in summary["category_scores"] if c != "efficiency")
         # Every ranked model runs the same cases; some ran fewer repeats, which
         # the site discloses rather than silently normalising away.
@@ -194,7 +230,7 @@ def main() -> None:
                 "price_input": price_in,
                 "price_output": price_out,
                 "price_blended": blended,
-                "measured_cost_usd": summary["total_cost_usd"],
+                "measured_cost_usd": measured_cost,
                 "total_runs": summary["total_runs"],
                 "repeats_per_case": repeats,
                 "errors": summary["error_count"],
@@ -220,15 +256,16 @@ def main() -> None:
         "efficiency": 0.05,
     }
 
-    datasets = build_datasets(results)
+    datasets = build_datasets(results, {m["name"] for m in models if m["complete"]})
 
     payload = {
         "generated": results["run_info"]["timestamp"],
         "runs_per_test": results["run_info"]["runs_per_test"],
-        # n_cases is what the published scores actually cover; n_cases_total is
-        # the suite as built. They differ whenever cases exist that no model has
-        # run yet, and the site says so rather than picking whichever is nicer.
-        "n_cases": results["run_info"]["n_cases"],
+        # n_cases is the comparable set — cases every ranked model ran — not
+        # run_info's count, which rises as soon as a single model touches a new
+        # case. n_cases_total is the suite as built. The site shows both rather
+        # than picking whichever is flattering.
+        "n_cases": sum(d["scored"] for d in datasets),
         "n_cases_total": sum(d["cases"] for d in datasets),
         "price_blend": {"input": INPUT_SHARE, "output": OUTPUT_SHARE},
         "categories": {
@@ -238,23 +275,35 @@ def main() -> None:
         "models": models,
     }
 
-    out = ROOT / "results" / "site_data.json"
+    out = results_dir / "site_data.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(
         json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
+    return out, payload
+
+
+def pending_rows(payload: dict) -> list[dict]:
+    """Dataset rows holding cases that not every ranked model has run."""
+    return [d for d in payload["datasets"] if d["scored"] < d["cases"]]
+
+
+def main() -> None:
+    out, payload = export()
+    models = payload["models"]
     complete = [m for m in models if m["complete"]]
+
     print(f"wrote {out.relative_to(ROOT)}")
-    pending = [d for d in datasets if d["scored"] < d["cases"]]
-    for row in pending:
+    for row in pending_rows(payload):
         print(
             f"  ! {row['category']}: {row['cases'] - row['scored']} of {row['cases']} cases "
-            "have no runs yet — the site will show them as pending"
+            "are not covered by every ranked model — the site will show them as pending"
         )
     print(f"  {len(complete)} fully-covered models, {len(models) - len(complete)} partial")
     for m in complete:
-        print(f"    {m['name']:18s} {m['global_score']:5.1f}  ${m['price_blended']}/1M blended")
+        price = f"${m['price_blended']}/1M blended" if m["price_blended"] else "unpriced"
+        print(f"    {m['name']:18s} {m['global_score']:5.1f}  {price}")
     print("\ncommit and push results/site_data.json, then in the site repo: npm run refresh-data")
 
 
