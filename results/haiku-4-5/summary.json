@@ -1,25 +1,25 @@
 {
   "model": "haiku-4-5",
-  "global_score": 61.53,
+  "global_score": 65.93,
   "category_scores": {
     "log_parsing": 91.57,
     "anomaly_detection": 52.69,
     "pattern_correlation": 80.0,
     "metrics_timeseries": 71.41,
     "root_cause": 53.3,
-    "multimodal_rca": 29.97,
-    "efficiency": 83.18
+    "multimodal_rca": 54.21,
+    "efficiency": 74.17
   },
   "efficiency_metrics": {
-    "avg_latency_s": 2.2334,
-    "avg_total_tokens": 1228.7062,
-    "score_stddev": 2.6155,
-    "latency_score": 0.8883,
-    "token_score": 0.6928,
-    "consistency_score": 0.8954
+    "avg_latency_s": 2.6464,
+    "avg_total_tokens": 2319.9844,
+    "score_stddev": 2.6166,
+    "latency_score": 0.8677,
+    "token_score": 0.42,
+    "consistency_score": 0.8953
   },
-  "error_count": 32,
+  "error_count": 0,
   "total_runs": 192,
-  "total_duration_s": 357.35,
-  "last_run_wall_clock_s": 112.41
+  "total_duration_s": 508.1,
+  "last_run_wall_clock_s": 150.8
 }

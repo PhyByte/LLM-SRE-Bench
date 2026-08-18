@@ -1522,512 +1522,6 @@
   },
   {
     "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 53.48204041598365,
-    "input_tokens": 814,
-    "output_tokens": 16,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 34.31482804194093,
-    "input_tokens": 814,
-    "output_tokens": 16,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 59.859079624991864,
-    "input_tokens": 814,
-    "output_tokens": 16,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 28.684633125085384,
-    "input_tokens": 817,
-    "output_tokens": 37,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 31.771669791080058,
-    "input_tokens": 817,
-    "output_tokens": 37,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 33.349879290908575,
-    "input_tokens": 817,
-    "output_tokens": 37,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 23.760732625145465,
-    "input_tokens": 852,
-    "output_tokens": 13,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 22.109155541984364,
-    "input_tokens": 852,
-    "output_tokens": 13,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 24.016974082915112,
-    "input_tokens": 852,
-    "output_tokens": 13,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 40.17280912515707,
-    "input_tokens": 814,
-    "output_tokens": 49,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 43.45195937505923,
-    "input_tokens": 814,
-    "output_tokens": 49,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 55.363176916958764,
-    "input_tokens": 814,
-    "output_tokens": 49,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 22.047101417090744,
-    "input_tokens": 816,
-    "output_tokens": 19,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 27.69248383399099,
-    "input_tokens": 816,
-    "output_tokens": 19,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 25.168396833818406,
-    "input_tokens": 816,
-    "output_tokens": 19,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 580.3460018748883,
-    "input_tokens": 815,
-    "output_tokens": 8,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 205.1982334998902,
-    "input_tokens": 815,
-    "output_tokens": 8,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: request failed after 5 attempts: The read operation timed out"
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 23.103455916047096,
-    "input_tokens": 814,
-    "output_tokens": 13,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 25.248592833057046,
-    "input_tokens": 814,
-    "output_tokens": 13,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 28.45959729095921,
-    "input_tokens": 814,
-    "output_tokens": 13,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 21.629481083946303,
-    "input_tokens": 907,
-    "output_tokens": 16,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 23.92087687505409,
-    "input_tokens": 907,
-    "output_tokens": 16,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 22.659369291970506,
-    "input_tokens": 907,
-    "output_tokens": 16,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 63.6153846248053,
-    "input_tokens": 817,
-    "output_tokens": 8,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 583.4936913331039,
-    "input_tokens": 817,
-    "output_tokens": 8,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 69.1240772921592,
-    "input_tokens": 817,
-    "output_tokens": 8,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 28.111272957874462,
-    "input_tokens": 817,
-    "output_tokens": 43,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 36.351452332921326,
-    "input_tokens": 817,
-    "output_tokens": 43,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 75.78081354103051,
-    "input_tokens": 817,
-    "output_tokens": 43,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "grok-4.6",
     "category": "root_cause",
     "case_id": "rc-001-pool-leak",
     "run_index": 0,
@@ -3281,6 +2775,516 @@
     "input_tokens": 3988,
     "output_tokens": 261,
     "cached": false,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 53.48204041598365,
+    "input_tokens": 814,
+    "output_tokens": 16,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 34.31482804194093,
+    "input_tokens": 814,
+    "output_tokens": 16,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 59.859079624991864,
+    "input_tokens": 814,
+    "output_tokens": 16,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 28.684633125085384,
+    "input_tokens": 817,
+    "output_tokens": 37,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 31.771669791080058,
+    "input_tokens": 817,
+    "output_tokens": 37,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 33.349879290908575,
+    "input_tokens": 817,
+    "output_tokens": 37,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 23.760732625145465,
+    "input_tokens": 852,
+    "output_tokens": 13,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 22.109155541984364,
+    "input_tokens": 852,
+    "output_tokens": 13,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 24.016974082915112,
+    "input_tokens": 852,
+    "output_tokens": 13,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 40.17280912515707,
+    "input_tokens": 814,
+    "output_tokens": 49,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 43.45195937505923,
+    "input_tokens": 814,
+    "output_tokens": 49,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 55.363176916958764,
+    "input_tokens": 814,
+    "output_tokens": 49,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 22.047101417090744,
+    "input_tokens": 816,
+    "output_tokens": 19,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 27.69248383399099,
+    "input_tokens": 816,
+    "output_tokens": 19,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 25.168396833818406,
+    "input_tokens": 816,
+    "output_tokens": 19,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 580.3460018748883,
+    "input_tokens": 815,
+    "output_tokens": 8,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 205.1982334998902,
+    "input_tokens": 815,
+    "output_tokens": 8,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 141.21498570870608,
+    "input_tokens": 815,
+    "output_tokens": 8,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 23.103455916047096,
+    "input_tokens": 814,
+    "output_tokens": 13,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 25.248592833057046,
+    "input_tokens": 814,
+    "output_tokens": 13,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 28.45959729095921,
+    "input_tokens": 814,
+    "output_tokens": 13,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 21.629481083946303,
+    "input_tokens": 907,
+    "output_tokens": 16,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 23.92087687505409,
+    "input_tokens": 907,
+    "output_tokens": 16,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 22.659369291970506,
+    "input_tokens": 907,
+    "output_tokens": 16,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 63.6153846248053,
+    "input_tokens": 817,
+    "output_tokens": 8,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 583.4936913331039,
+    "input_tokens": 817,
+    "output_tokens": 8,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 69.1240772921592,
+    "input_tokens": 817,
+    "output_tokens": 8,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 28.111272957874462,
+    "input_tokens": 817,
+    "output_tokens": 43,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 36.351452332921326,
+    "input_tokens": 817,
+    "output_tokens": 43,
+    "cached": true,
+    "error": null
+  },
+  {
+    "model": "grok-4.6",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 75.78081354103051,
+    "input_tokens": 817,
+    "output_tokens": 43,
+    "cached": true,
     "error": null
   }
 ]

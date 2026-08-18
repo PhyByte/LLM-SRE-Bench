@@ -2588,7 +2588,7 @@
     "latency_s": 7.677924583200365,
     "input_tokens": 4796,
     "output_tokens": 494,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2606,7 +2606,7 @@
     "latency_s": 7.50283387536183,
     "input_tokens": 4796,
     "output_tokens": 470,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2624,7 +2624,7 @@
     "latency_s": 5.676014999859035,
     "input_tokens": 4803,
     "output_tokens": 388,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2642,7 +2642,7 @@
     "latency_s": 7.198586500249803,
     "input_tokens": 4803,
     "output_tokens": 451,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2660,7 +2660,7 @@
     "latency_s": 7.176591583993286,
     "input_tokens": 4803,
     "output_tokens": 449,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2678,7 +2678,7 @@
     "latency_s": 7.575445791706443,
     "input_tokens": 4682,
     "output_tokens": 474,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2696,7 +2696,7 @@
     "latency_s": 8.221788292285055,
     "input_tokens": 4682,
     "output_tokens": 532,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2714,7 +2714,7 @@
     "latency_s": 8.1392417922616,
     "input_tokens": 4682,
     "output_tokens": 564,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2732,7 +2732,7 @@
     "latency_s": 7.936293042264879,
     "input_tokens": 11025,
     "output_tokens": 438,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2750,7 +2750,7 @@
     "latency_s": 8.694930708035827,
     "input_tokens": 11025,
     "output_tokens": 598,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2768,7 +2768,7 @@
     "latency_s": 8.32094749994576,
     "input_tokens": 11025,
     "output_tokens": 474,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2786,7 +2786,7 @@
     "latency_s": 8.200837541837245,
     "input_tokens": 10769,
     "output_tokens": 567,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2804,7 +2804,7 @@
     "latency_s": 11.090857417322695,
     "input_tokens": 10769,
     "output_tokens": 753,
-    "cached": false,
+    "cached": true,
     "error": null
   },
   {
@@ -2812,324 +2812,479 @@
     "category": "multimodal_rca",
     "case_id": "mm-tt-returnva-verification-code-10",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.05,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.5
+    },
+    "latency_s": 11.110236917156726,
+    "input_tokens": 10769,
+    "output_tokens": 691,
     "cached": false,
-    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98s6dUEmbZagz13YMpk'}"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 9.180400833953172,
+    "input_tokens": 10850,
+    "output_tokens": 602,
     "cached": false,
-    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98s7eFDV2WrsKp7XQnS'}"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 8.515572791919112,
+    "input_tokens": 10850,
+    "output_tokens": 530,
     "cached": false,
-    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98s8ZZUi8wdiVe5mzyr'}"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 9.253187000285834,
+    "input_tokens": 10850,
+    "output_tokens": 613,
     "cached": false,
-    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98s9SdwfNbRDx4W7M1e'}"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-preserve-12",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 6.842862208839506,
+    "input_tokens": 10772,
+    "output_tokens": 480,
     "cached": false,
-    "error": "ClientError: Anthropic API error: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce98sAKyPHcVRXXZcPNx6'}"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-preserve-12",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.802624832838774,
+    "input_tokens": 10772,
+    "output_tokens": 417,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-preserve-12",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.615719917230308,
+    "input_tokens": 10772,
+    "output_tokens": 480,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-unknown-01",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 7.140114624984562,
+    "input_tokens": 4498,
+    "output_tokens": 433,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-unknown-01",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 6.000335750170052,
+    "input_tokens": 4498,
+    "output_tokens": 414,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-unknown-01",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 6.60002970835194,
+    "input_tokens": 4498,
+    "output_tokens": 432,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-unknown-02",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 7.610429458320141,
+    "input_tokens": 4708,
+    "output_tokens": 522,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-unknown-02",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 8.844357958063483,
+    "input_tokens": 4708,
+    "output_tokens": 587,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-unknown-02",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 8.416077666915953,
+    "input_tokens": 4708,
+    "output_tokens": 547,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-03",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 6.871365166269243,
+    "input_tokens": 10697,
+    "output_tokens": 497,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-03",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 8.284681500401348,
+    "input_tokens": 10697,
+    "output_tokens": 518,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-03",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 7.780660834163427,
+    "input_tokens": 10697,
+    "output_tokens": 490,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-04",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 7.583804834168404,
+    "input_tokens": 10691,
+    "output_tokens": 473,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-04",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 7.345727041829377,
+    "input_tokens": 10691,
+    "output_tokens": 501,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-04",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 12.126666208729148,
+    "input_tokens": 10691,
+    "output_tokens": 536,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-05",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 7.3542645000852644,
+    "input_tokens": 10770,
+    "output_tokens": 507,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-05",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 8.116911416873336,
+    "input_tokens": 10770,
+    "output_tokens": 553,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-tt-unknown-05",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 6.100834375247359,
+    "input_tokens": 10770,
+    "output_tokens": 456,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-clean-baseline",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.133684333879501,
+    "input_tokens": 4782,
+    "output_tokens": 451,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-clean-baseline",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.595287499949336,
+    "input_tokens": 4782,
+    "output_tokens": 415,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   },
   {
     "model": "opus-4.8",
     "category": "multimodal_rca",
     "case_id": "mm-ob-clean-baseline",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.8200913751497865,
+    "input_tokens": 4782,
+    "output_tokens": 491,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null
   }
 ]

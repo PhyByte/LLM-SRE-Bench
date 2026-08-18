@@ -1,25 +1,25 @@
 {
   "model": "sonnet-5",
-  "global_score": 68.96,
+  "global_score": 69.7,
   "category_scores": {
     "log_parsing": 89.34,
     "anomaly_detection": 63.09,
     "pattern_correlation": 84.0,
-    "metrics_timeseries": 86.86,
     "root_cause": 55.33,
-    "multimodal_rca": 52.05,
-    "efficiency": 51.08
+    "metrics_timeseries": 86.11,
+    "multimodal_rca": 54.86,
+    "efficiency": 56.12
   },
   "efficiency_metrics": {
-    "avg_latency_s": 11.0422,
-    "avg_total_tokens": 3160.1925,
-    "score_stddev": 2.6097,
-    "latency_score": 0.4479,
-    "token_score": 0.21,
-    "consistency_score": 0.8956
+    "avg_latency_s": 7.4844,
+    "avg_total_tokens": 3144.0729,
+    "score_stddev": 4.4394,
+    "latency_score": 0.6258,
+    "token_score": 0.214,
+    "consistency_score": 0.8224
   },
-  "error_count": 5,
+  "error_count": 0,
   "total_runs": 192,
-  "total_duration_s": 2189.55,
-  "last_run_wall_clock_s": 1537.85
+  "total_duration_s": 1437.0,
+  "last_run_wall_clock_s": 1168.44
 }

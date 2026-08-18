@@ -1522,504 +1522,6 @@
   },
   {
     "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 3.4997355409432203,
-    "input_tokens": 686,
-    "output_tokens": 214,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 1,
-    "score": 0.6666666666666666,
-    "metrics": {
-      "precision": 0.6666666666666666,
-      "recall": 0.6666666666666666,
-      "f1": 0.6666666666666666
-    },
-    "latency_s": 3.888030624948442,
-    "input_tokens": 686,
-    "output_tokens": 232,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.233712499961257,
-    "input_tokens": 686,
-    "output_tokens": 252,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.71042212494649,
-    "input_tokens": 688,
-    "output_tokens": 700,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.0912901249248534,
-    "input_tokens": 688,
-    "output_tokens": 617,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.467665458098054,
-    "input_tokens": 688,
-    "output_tokens": 170,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.4399411669000983,
-    "input_tokens": 722,
-    "output_tokens": 19,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.620547999860719,
-    "input_tokens": 722,
-    "output_tokens": 19,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 2,
-    "score": 0.5,
-    "metrics": {
-      "precision": 0.5,
-      "recall": 0.5,
-      "f1": 0.5
-    },
-    "latency_s": 2.2601614168379456,
-    "input_tokens": 722,
-    "output_tokens": 19,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 17.7378966670949,
-    "input_tokens": 685,
-    "output_tokens": 1891,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 1,
-    "score": 0.9655172413793104,
-    "metrics": {
-      "precision": 0.9333333333333333,
-      "recall": 1.0,
-      "f1": 0.9655172413793104
-    },
-    "latency_s": 12.631223415955901,
-    "input_tokens": 685,
-    "output_tokens": 1609,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 2,
-    "score": 0.9655172413793104,
-    "metrics": {
-      "precision": 0.9333333333333333,
-      "recall": 1.0,
-      "f1": 0.9655172413793104
-    },
-    "latency_s": 4.222855374915525,
-    "input_tokens": 685,
-    "output_tokens": 303,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 1.8383740419521928,
-    "input_tokens": 687,
-    "output_tokens": 25,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 1.5439954579342157,
-    "input_tokens": 687,
-    "output_tokens": 25,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 1.4880246249958873,
-    "input_tokens": 687,
-    "output_tokens": 25,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 38.406008957885206,
-    "input_tokens": 685,
-    "output_tokens": 4096,
-    "cached": true,
-    "error": "ValueError: no JSON object found in response"
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 35.879513832973316,
-    "input_tokens": 685,
-    "output_tokens": 4096,
-    "cached": true,
-    "error": "ValueError: no JSON object found in response"
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 35.17970237508416,
-    "input_tokens": 685,
-    "output_tokens": 4096,
-    "cached": true,
-    "error": "ValueError: no JSON object found in response"
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.757725042058155,
-    "input_tokens": 685,
-    "output_tokens": 19,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.3105341251939535,
-    "input_tokens": 685,
-    "output_tokens": 19,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 3.930093166884035,
-    "input_tokens": 685,
-    "output_tokens": 19,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 10.063916208921,
-    "input_tokens": 777,
-    "output_tokens": 757,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 11.855105250142515,
-    "input_tokens": 777,
-    "output_tokens": 1156,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 3.5728757090400904,
-    "input_tokens": 777,
-    "output_tokens": 152,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.5585243341047317,
-    "input_tokens": 690,
-    "output_tokens": 14,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.2115287920460105,
-    "input_tokens": 690,
-    "output_tokens": 14,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 2.2537363332230598,
-    "input_tokens": 690,
-    "output_tokens": 14,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 0,
-    "score": 0.9600000000000001,
-    "metrics": {
-      "precision": 0.9230769230769231,
-      "recall": 1.0,
-      "f1": 0.9600000000000001
-    },
-    "latency_s": 4.436366125009954,
-    "input_tokens": 688,
-    "output_tokens": 330,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 7.707101832842454,
-    "input_tokens": 688,
-    "output_tokens": 900,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.013949374901131,
-    "input_tokens": 688,
-    "output_tokens": 253,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
     "category": "root_cause",
     "case_id": "rc-001-pool-leak",
     "run_index": 0,
@@ -2275,224 +1777,582 @@
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-exceptio-frontend-01",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
     "run_index": 0,
-    "score": 0.225,
+    "score": 1.0,
     "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
     },
-    "latency_s": 13.176990957930684,
-    "input_tokens": 4519,
-    "output_tokens": 1103,
+    "latency_s": 6.254968542139977,
+    "input_tokens": 686,
+    "output_tokens": 790,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-exceptio-frontend-01",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
     "run_index": 1,
-    "score": 0.225,
+    "score": 0.6666666666666666,
     "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1": 0.6666666666666666
     },
-    "latency_s": 11.54299766710028,
-    "input_tokens": 4519,
-    "output_tokens": 976,
+    "latency_s": 2.7840331252664328,
+    "input_tokens": 686,
+    "output_tokens": 246,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-exceptio-frontend-01",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
     "run_index": 2,
-    "score": 0.225,
+    "score": 1.0,
     "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
     },
-    "latency_s": 14.426145249977708,
-    "input_tokens": 4519,
-    "output_tokens": 1191,
+    "latency_s": 2.9595010839402676,
+    "input_tokens": 686,
+    "output_tokens": 228,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-ad-02",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
     "run_index": 0,
-    "score": 0.875,
+    "score": 1.0,
     "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
     },
-    "latency_s": 6.144453208427876,
-    "input_tokens": 4515,
-    "output_tokens": 444,
+    "latency_s": 4.984321291092783,
+    "input_tokens": 688,
+    "output_tokens": 630,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-ad-02",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
     "run_index": 1,
-    "score": 0.875,
+    "score": 1.0,
     "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
     },
-    "latency_s": 7.501530124805868,
-    "input_tokens": 4515,
-    "output_tokens": 572,
+    "latency_s": 4.8361181248910725,
+    "input_tokens": 688,
+    "output_tokens": 622,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-ad-02",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
     "run_index": 2,
-    "score": 0.875,
+    "score": 1.0,
     "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
     },
-    "latency_s": 5.330707541666925,
-    "input_tokens": 4515,
-    "output_tokens": 493,
+    "latency_s": 2.021161834243685,
+    "input_tokens": 688,
+    "output_tokens": 119,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-currency-03",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
     "run_index": 0,
+    "score": 0.5,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "latency_s": 2.343776416964829,
+    "input_tokens": 722,
+    "output_tokens": 19,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 1,
     "score": 0.0,
-    "metrics": {},
-    "latency_s": 7.6185717498883605,
-    "input_tokens": 4777,
-    "output_tokens": 570,
-    "cached": true,
-    "error": "JSONDecodeError: Expecting ',' delimiter: line 9 column 528 (char 1538)"
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-currency-03",
-    "run_index": 1,
-    "score": 0.9166666666666666,
     "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
     },
-    "latency_s": 7.28172891587019,
-    "input_tokens": 4777,
-    "output_tokens": 525,
+    "latency_s": 1.832312542013824,
+    "input_tokens": 722,
+    "output_tokens": 19,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-currency-03",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
     "run_index": 2,
     "score": 0.0,
-    "metrics": {},
-    "latency_s": 7.574536708649248,
-    "input_tokens": 4777,
-    "output_tokens": 517,
-    "cached": true,
-    "error": "ValueError: unbalanced JSON object in response"
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-email-04",
-    "run_index": 0,
-    "score": 0.9166666666666666,
     "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
     },
-    "latency_s": 8.874414749909192,
-    "input_tokens": 4937,
-    "output_tokens": 689,
+    "latency_s": 1.9303054586052895,
+    "input_tokens": 722,
+    "output_tokens": 19,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-email-04",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 8.185056916903704,
+    "input_tokens": 685,
+    "output_tokens": 1001,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
     "run_index": 1,
-    "score": 0.9166666666666666,
+    "score": 1.0,
     "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
     },
-    "latency_s": 11.875293457880616,
-    "input_tokens": 4937,
-    "output_tokens": 929,
+    "latency_s": 3.726961791049689,
+    "input_tokens": 685,
+    "output_tokens": 288,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-email-04",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
     "run_index": 2,
-    "score": 0.9166666666666666,
+    "score": 1.0,
     "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
     },
-    "latency_s": 10.662120041903108,
-    "input_tokens": 4937,
-    "output_tokens": 796,
+    "latency_s": 3.1059365826658905,
+    "input_tokens": 685,
+    "output_tokens": 239,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3920564576983452,
+    "input_tokens": 687,
+    "output_tokens": 25,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.5136632919311523,
+    "input_tokens": 687,
+    "output_tokens": 25,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.4303636248223484,
+    "input_tokens": 687,
+    "output_tokens": 25,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.4238956249319017,
+    "input_tokens": 685,
+    "output_tokens": 14,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 30.535155334044248,
+    "input_tokens": 685,
+    "output_tokens": 3383,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 3.0742277088575065,
+    "input_tokens": 685,
+    "output_tokens": 224,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3009200002998114,
+    "input_tokens": 685,
+    "output_tokens": 19,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.941765499766916,
+    "input_tokens": 685,
+    "output_tokens": 19,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.2439847076311707,
+    "input_tokens": 685,
+    "output_tokens": 19,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 0,
+    "score": 0.6666666666666666,
+    "metrics": {
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1": 0.6666666666666666
+    },
+    "latency_s": 2.896345333196223,
+    "input_tokens": 777,
+    "output_tokens": 58,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.198129250202328,
+    "input_tokens": 777,
+    "output_tokens": 22,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.0906352498568594,
+    "input_tokens": 777,
+    "output_tokens": 22,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.4182220832444727,
+    "input_tokens": 690,
+    "output_tokens": 14,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3406991669908166,
+    "input_tokens": 690,
+    "output_tokens": 14,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3902900000102818,
+    "input_tokens": 690,
+    "output_tokens": 14,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.117308458313346,
+    "input_tokens": 688,
+    "output_tokens": 557,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.8111139591783285,
+    "input_tokens": 688,
+    "output_tokens": 549,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.716679458040744,
+    "input_tokens": 688,
+    "output_tokens": 788,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
     "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-frontend-05",
+    "case_id": "mm-ob-exceptio-frontend-01",
     "run_index": 0,
-    "score": 0.8416666666666667,
+    "score": 0.225,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 15.331159917172045,
+    "input_tokens": 4519,
+    "output_tokens": 1358,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-exceptio-frontend-01",
+    "run_index": 1,
+    "score": 0.225,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 11.457667000126094,
+    "input_tokens": 4519,
+    "output_tokens": 1018,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-exceptio-frontend-01",
+    "run_index": 2,
+    "score": 0.225,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 10.206028500106186,
+    "input_tokens": 4519,
+    "output_tokens": 957,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-ad-02",
+    "run_index": 0,
+    "score": 0.875,
     "metrics": {
       "culprit_correct": 1.0,
       "fault_type_correct": 1.0,
       "modality_grounding_f1": 0.5,
-      "evidence_recall": 0.6666666666666666
+      "evidence_recall": 1.0
     },
-    "latency_s": 7.570598333142698,
-    "input_tokens": 4698,
+    "latency_s": 6.617048624902964,
+    "input_tokens": 4515,
     "output_tokens": 559,
     "cached": false,
     "error": null
@@ -2500,43 +2360,43 @@
   {
     "model": "sonnet-5",
     "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-frontend-05",
+    "case_id": "mm-ob-cpusatur-ad-02",
     "run_index": 1,
-    "score": 0.8416666666666667,
+    "score": 0.875,
     "metrics": {
       "culprit_correct": 1.0,
       "fault_type_correct": 1.0,
       "modality_grounding_f1": 0.5,
-      "evidence_recall": 0.6666666666666666
+      "evidence_recall": 1.0
     },
-    "latency_s": 6.680289625190198,
-    "input_tokens": 4698,
-    "output_tokens": 547,
+    "latency_s": 4.9302643751725554,
+    "input_tokens": 4515,
+    "output_tokens": 398,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
     "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-frontend-05",
+    "case_id": "mm-ob-cpusatur-ad-02",
     "run_index": 2,
-    "score": 0.8416666666666667,
+    "score": 0.875,
     "metrics": {
       "culprit_correct": 1.0,
       "fault_type_correct": 1.0,
       "modality_grounding_f1": 0.5,
-      "evidence_recall": 0.6666666666666666
+      "evidence_recall": 1.0
     },
-    "latency_s": 8.593213208951056,
-    "input_tokens": 4698,
-    "output_tokens": 595,
+    "latency_s": 6.132126542273909,
+    "input_tokens": 4515,
+    "output_tokens": 540,
     "cached": false,
     "error": null
   },
   {
     "model": "sonnet-5",
     "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "case_id": "mm-ob-cpusatur-currency-03",
     "run_index": 0,
     "score": 0.9166666666666666,
     "metrics": {
@@ -2545,62 +2405,8 @@
       "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 9.090613124892116,
-    "input_tokens": 4796,
-    "output_tokens": 845,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-productcatalog-06",
-    "run_index": 1,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 12.204450374934822,
-    "input_tokens": 4796,
-    "output_tokens": 965,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-productcatalog-06",
-    "run_index": 2,
-    "score": 0.9166666666666666,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 10.351024124771357,
-    "input_tokens": 4796,
-    "output_tokens": 987,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-cpusatur-shipping-07",
-    "run_index": 0,
-    "score": 0.8416666666666667,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 0.6666666666666666
-    },
-    "latency_s": 6.049956041853875,
-    "input_tokens": 4803,
+    "latency_s": 5.647572541143745,
+    "input_tokens": 4777,
     "output_tokens": 492,
     "cached": false,
     "error": null
@@ -2608,6 +2414,222 @@
   {
     "model": "sonnet-5",
     "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-currency-03",
+    "run_index": 1,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 7.106515875086188,
+    "input_tokens": 4777,
+    "output_tokens": 608,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-currency-03",
+    "run_index": 2,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 8.200495957862586,
+    "input_tokens": 4777,
+    "output_tokens": 713,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-email-04",
+    "run_index": 0,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.963630249723792,
+    "input_tokens": 4937,
+    "output_tokens": 499,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-email-04",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.61073891678825,
+    "input_tokens": 4937,
+    "output_tokens": 463,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-email-04",
+    "run_index": 2,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 5.44072379078716,
+    "input_tokens": 4937,
+    "output_tokens": 442,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-frontend-05",
+    "run_index": 0,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 6.204521249979734,
+    "input_tokens": 4698,
+    "output_tokens": 521,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-frontend-05",
+    "run_index": 1,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 6.634455957915634,
+    "input_tokens": 4698,
+    "output_tokens": 571,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-frontend-05",
+    "run_index": 2,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 6.313074624631554,
+    "input_tokens": 4698,
+    "output_tokens": 550,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "run_index": 0,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 8.326341707725078,
+    "input_tokens": 4796,
+    "output_tokens": 769,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "run_index": 1,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 11.125473166815937,
+    "input_tokens": 4796,
+    "output_tokens": 1054,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-productcatalog-06",
+    "run_index": 2,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 10.036112249828875,
+    "input_tokens": 4796,
+    "output_tokens": 882,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-cpusatur-shipping-07",
+    "run_index": 0,
+    "score": 0.8416666666666667,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
+    },
+    "latency_s": 6.389042166061699,
+    "input_tokens": 4803,
+    "output_tokens": 499,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-shipping-07",
     "run_index": 1,
     "score": 0.8416666666666667,
@@ -2617,9 +2639,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 6.5826254999265075,
+    "latency_s": 5.9726963746361434,
     "input_tokens": 4803,
-    "output_tokens": 470,
+    "output_tokens": 471,
     "cached": false,
     "error": null
   },
@@ -2628,16 +2650,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-cpusatur-shipping-07",
     "run_index": 2,
-    "score": 0.9166666666666666,
+    "score": 0.8416666666666667,
     "metrics": {
       "culprit_correct": 1.0,
       "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.6666666666666666,
-      "evidence_recall": 1.0
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.6666666666666666
     },
-    "latency_s": 5.805673249997199,
+    "latency_s": 5.684238041751087,
     "input_tokens": 4803,
-    "output_tokens": 447,
+    "output_tokens": 463,
     "cached": false,
     "error": null
   },
@@ -2646,16 +2668,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-networkd-shipping-08",
     "run_index": 0,
-    "score": 0.125,
+    "score": 0.25,
     "metrics": {
       "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.5,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.0,
       "evidence_recall": 0.0
     },
-    "latency_s": 6.358616707846522,
+    "latency_s": 10.072684208862484,
     "input_tokens": 4682,
-    "output_tokens": 521,
+    "output_tokens": 935,
     "cached": false,
     "error": null
   },
@@ -2664,16 +2686,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-networkd-shipping-08",
     "run_index": 1,
-    "score": 0.25,
+    "score": 0.3,
     "metrics": {
       "culprit_correct": 0.0,
       "fault_type_correct": 1.0,
       "modality_grounding_f1": 0.0,
-      "evidence_recall": 0.0
+      "evidence_recall": 0.5
     },
-    "latency_s": 8.533152374904603,
+    "latency_s": 12.52134958282113,
     "input_tokens": 4682,
-    "output_tokens": 740,
+    "output_tokens": 1078,
     "cached": false,
     "error": null
   },
@@ -2682,16 +2704,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-networkd-shipping-08",
     "run_index": 2,
-    "score": 0.35,
+    "score": 0.3,
     "metrics": {
       "culprit_correct": 0.0,
       "fault_type_correct": 1.0,
       "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0
+      "evidence_recall": 0.5
     },
-    "latency_s": 11.49059291696176,
+    "latency_s": 13.294288749806583,
     "input_tokens": 4682,
-    "output_tokens": 894,
+    "output_tokens": 1166,
     "cached": false,
     "error": null
   },
@@ -2700,16 +2722,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-tt-returnva-food-09",
     "run_index": 0,
-    "score": 0.1,
+    "score": 0.225,
     "metrics": {
       "culprit_correct": 0.0,
       "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
+      "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 27.046855207998306,
+    "latency_s": 23.040431290864944,
     "input_tokens": 11025,
-    "output_tokens": 2369,
+    "output_tokens": 2143,
     "cached": false,
     "error": null
   },
@@ -2725,9 +2747,9 @@
       "modality_grounding_f1": 0.0,
       "evidence_recall": 0.0
     },
-    "latency_s": 54.00468449993059,
+    "latency_s": 23.850655499845743,
     "input_tokens": 11025,
-    "output_tokens": 4981,
+    "output_tokens": 2152,
     "cached": false,
     "error": null
   },
@@ -2736,16 +2758,16 @@
     "category": "multimodal_rca",
     "case_id": "mm-tt-returnva-food-09",
     "run_index": 2,
-    "score": 0.175,
+    "score": 0.0,
     "metrics": {
       "culprit_correct": 0.0,
       "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 0.5
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 0.0
     },
-    "latency_s": 62.14195058401674,
+    "latency_s": 16.91676037525758,
     "input_tokens": 11025,
-    "output_tokens": 5897,
+    "output_tokens": 1595,
     "cached": false,
     "error": null
   },
@@ -2761,9 +2783,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.5
     },
-    "latency_s": 34.20879837498069,
+    "latency_s": 64.05488425027579,
     "input_tokens": 10769,
-    "output_tokens": 3222,
+    "output_tokens": 6043,
     "cached": false,
     "error": null
   },
@@ -2779,9 +2801,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.5
     },
-    "latency_s": 28.105111457873136,
+    "latency_s": 88.69341500010341,
     "input_tokens": 10769,
-    "output_tokens": 2769,
+    "output_tokens": 7795,
     "cached": false,
     "error": null
   },
@@ -2797,9 +2819,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 0.5
     },
-    "latency_s": 22.242349749896675,
+    "latency_s": 27.632127874996513,
     "input_tokens": 10769,
-    "output_tokens": 1923,
+    "output_tokens": 2615,
     "cached": false,
     "error": null
   },
@@ -2808,6 +2830,42 @@
     "category": "multimodal_rca",
     "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 0,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 12.014240459073335,
+    "input_tokens": 10850,
+    "output_tokens": 1039,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
+    "run_index": 1,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 11.175138625316322,
+    "input_tokens": 10850,
+    "output_tokens": 1014,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
+    "run_index": 2,
     "score": 0.9166666666666666,
     "metrics": {
       "culprit_correct": 1.0,
@@ -2815,45 +2873,9 @@
       "modality_grounding_f1": 0.6666666666666666,
       "evidence_recall": 1.0
     },
-    "latency_s": 23.481309375260025,
+    "latency_s": 10.41374274995178,
     "input_tokens": 10850,
-    "output_tokens": 1022,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-basic-11",
-    "run_index": 1,
-    "score": 0.875,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 11.554417166858912,
-    "input_tokens": 10850,
-    "output_tokens": 1037,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-basic-11",
-    "run_index": 2,
-    "score": 0.875,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 0.5,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 13.25334837520495,
-    "input_tokens": 10850,
-    "output_tokens": 1174,
+    "output_tokens": 943,
     "cached": false,
     "error": null
   },
@@ -2869,9 +2891,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 9.131516917143017,
+    "latency_s": 7.137368792202324,
     "input_tokens": 10772,
-    "output_tokens": 612,
+    "output_tokens": 578,
     "cached": false,
     "error": null
   },
@@ -2887,9 +2909,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 5.8287415420636535,
+    "latency_s": 6.910949582699686,
     "input_tokens": 10772,
-    "output_tokens": 455,
+    "output_tokens": 603,
     "cached": false,
     "error": null
   },
@@ -2905,9 +2927,9 @@
       "modality_grounding_f1": 0.5,
       "evidence_recall": 1.0
     },
-    "latency_s": 6.738374582957476,
+    "latency_s": 11.169479916803539,
     "input_tokens": 10772,
-    "output_tokens": 574,
+    "output_tokens": 530,
     "cached": false,
     "error": null
   },
@@ -2916,18 +2938,18 @@
     "category": "multimodal_rca",
     "case_id": "mm-ob-unknown-01",
     "run_index": 0,
-    "score": 0.75,
+    "score": 1.0,
     "metrics": {
       "culprit_correct": 1.0,
-      "fault_type_correct": 0.0,
+      "fault_type_correct": 1.0,
       "modality_grounding_f1": 1.0,
       "evidence_recall": 1.0,
       "abstention_case": 1.0,
       "confidently_wrong": 0.0
     },
-    "latency_s": 14.915938625112176,
+    "latency_s": 16.973090749699622,
     "input_tokens": 4498,
-    "output_tokens": 1197,
+    "output_tokens": 1488,
     "cached": false,
     "error": null
   },
@@ -2945,8 +2967,304 @@
       "abstention_case": 1.0,
       "confidently_wrong": 0.0
     },
-    "latency_s": 16.01728745782748,
+    "latency_s": 10.848788332659751,
     "input_tokens": 4498,
+    "output_tokens": 997,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-01",
+    "run_index": 2,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 14.073669000063092,
+    "input_tokens": 4498,
+    "output_tokens": 1239,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 9.338609667029232,
+    "input_tokens": 4708,
+    "output_tokens": 719,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 11.60056479088962,
+    "input_tokens": 4708,
+    "output_tokens": 1015,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 2,
+    "score": 0.35,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 5.1105812499299645,
+    "input_tokens": 4708,
+    "output_tokens": 451,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 23.787661291193217,
+    "input_tokens": 10697,
+    "output_tokens": 2194,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 40.93952437536791,
+    "input_tokens": 10697,
+    "output_tokens": 3746,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 35.672330875415355,
+    "input_tokens": 10697,
+    "output_tokens": 3199,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 47.723896792158484,
+    "input_tokens": 10691,
+    "output_tokens": 4182,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 35.32182708289474,
+    "input_tokens": 10691,
+    "output_tokens": 3299,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 2,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 21.688760875258595,
+    "input_tokens": 10691,
+    "output_tokens": 2201,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 22.639460416976362,
+    "input_tokens": 10770,
+    "output_tokens": 2073,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 25.67018949985504,
+    "input_tokens": 10770,
+    "output_tokens": 2018,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 2,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 40.34259495791048,
+    "input_tokens": 10770,
+    "output_tokens": 3655,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 14.791351499967277,
+    "input_tokens": 4782,
+    "output_tokens": 1265,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 14.436022541951388,
+    "input_tokens": 4782,
     "output_tokens": 1226,
     "cached": false,
     "error": null
@@ -2954,302 +3272,6 @@
   {
     "model": "sonnet-5",
     "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-01",
-    "run_index": 2,
-    "score": 0.75,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 1.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 0.0
-    },
-    "latency_s": 9.612168124876916,
-    "input_tokens": 4498,
-    "output_tokens": 862,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-02",
-    "run_index": 0,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 11.002087583765388,
-    "input_tokens": 4708,
-    "output_tokens": 836,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-02",
-    "run_index": 1,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 10.705536374822259,
-    "input_tokens": 4708,
-    "output_tokens": 768,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-02",
-    "run_index": 2,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 14.194270041771233,
-    "input_tokens": 4708,
-    "output_tokens": 1143,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-03",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 1.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 0.0
-    },
-    "latency_s": 320.68463308317587,
-    "input_tokens": 10697,
-    "output_tokens": 1822,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-03",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 1.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 0.0
-    },
-    "latency_s": 39.48578270804137,
-    "input_tokens": 10697,
-    "output_tokens": 3856,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-03",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "culprit_correct": 1.0,
-      "fault_type_correct": 1.0,
-      "modality_grounding_f1": 1.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 0.0
-    },
-    "latency_s": 57.43612000020221,
-    "input_tokens": 10697,
-    "output_tokens": 4952,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-04",
-    "run_index": 0,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 34.88468070840463,
-    "input_tokens": 10691,
-    "output_tokens": 3137,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-04",
-    "run_index": 1,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 27.103189999703318,
-    "input_tokens": 10691,
-    "output_tokens": 2636,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-04",
-    "run_index": 2,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 28.072078958153725,
-    "input_tokens": 10691,
-    "output_tokens": 2631,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-05",
-    "run_index": 0,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 25.74967245804146,
-    "input_tokens": 10770,
-    "output_tokens": 2306,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-05",
-    "run_index": 1,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 316.60523916687816,
-    "input_tokens": 10770,
-    "output_tokens": 1519,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-05",
-    "run_index": 2,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0,
-      "abstention_case": 1.0,
-      "confidently_wrong": 1.0
-    },
-    "latency_s": 34.700276833958924,
-    "input_tokens": 10770,
-    "output_tokens": 3276,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-clean-baseline",
-    "run_index": 0,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 23.762239584233612,
-    "input_tokens": 4782,
-    "output_tokens": 1983,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-clean-baseline",
-    "run_index": 1,
-    "score": 0.1,
-    "metrics": {
-      "culprit_correct": 0.0,
-      "fault_type_correct": 0.0,
-      "modality_grounding_f1": 0.0,
-      "evidence_recall": 1.0
-    },
-    "latency_s": 21.04288158379495,
-    "input_tokens": 4782,
-    "output_tokens": 1760,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "multimodal_rca",
     "case_id": "mm-ob-clean-baseline",
     "run_index": 2,
     "score": 0.1,
@@ -3259,9 +3281,9 @@
       "modality_grounding_f1": 0.0,
       "evidence_recall": 1.0
     },
-    "latency_s": 21.372436749748886,
+    "latency_s": 16.68189095892012,
     "input_tokens": 4782,
-    "output_tokens": 1833,
+    "output_tokens": 1388,
     "cached": false,
     "error": null
   }
