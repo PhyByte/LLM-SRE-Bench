@@ -198,6 +198,24 @@
       "price_output": 0
     },
     {
+      "name": "qwen3.6-27b",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "qwen/qwen3.6-27b",
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
+    },
+    {
+      "name": "qwen3.8-27b",
+      "provider": "openai",
+      "base_url": "http://100.99.113.75:1234/v1",
+      "model_id": "qwen/qwen3.8-27b",
+      "request_timeout": 600,
+      "price_input": 0,
+      "price_output": 0
+    },
+    {
       "name": "qwen3-coder-30b",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
