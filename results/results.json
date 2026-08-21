@@ -1,8 +1,8 @@
 {
   "run_info": {
-    "timestamp": "2026-08-21 17:25:07 UTC",
+    "timestamp": "2026-08-21 23:21:07 UTC",
     "runs_per_test": 3,
-    "n_models": 19,
+    "n_models": 21,
     "n_cases": 82
   },
   "summaries": [
@@ -29,7 +29,7 @@
       "error_count": 0,
       "total_runs": 192,
       "total_duration_s": 844.49,
-      "total_cost_usd": 3.6731
+      "total_cost_usd": null
     },
     {
       "model": "grok-4.6-low",
@@ -54,7 +54,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 1951.45,
-      "total_cost_usd": 1.0967
+      "total_cost_usd": null
     },
     {
       "model": "fable-5",
@@ -79,7 +79,7 @@
       "error_count": 0,
       "total_runs": 192,
       "total_duration_s": 2192.57,
-      "total_cost_usd": 9.4929
+      "total_cost_usd": null
     },
     {
       "model": "grok-4.6",
@@ -104,7 +104,7 @@
       "error_count": 0,
       "total_runs": 192,
       "total_duration_s": 10563.23,
-      "total_cost_usd": 0.9972
+      "total_cost_usd": null
     },
     {
       "model": "gpt-5.6-terra",
@@ -129,7 +129,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 965.15,
-      "total_cost_usd": 2.0786
+      "total_cost_usd": null
     },
     {
       "model": "grok-4.5-low",
@@ -154,7 +154,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 2538.03,
-      "total_cost_usd": 1.2355
+      "total_cost_usd": null
     },
     {
       "model": "grok-4.5",
@@ -176,7 +176,7 @@
       "error_count": 0,
       "total_runs": 114,
       "total_duration_s": 3764.92,
-      "total_cost_usd": 0.3226
+      "total_cost_usd": null
     },
     {
       "model": "grok-4",
@@ -201,7 +201,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 1990.75,
-      "total_cost_usd": 1.7368
+      "total_cost_usd": null
     },
     {
       "model": "sonnet-5",
@@ -226,7 +226,7 @@
       "error_count": 3,
       "total_runs": 246,
       "total_duration_s": 1880.21,
-      "total_cost_usd": 4.0724
+      "total_cost_usd": null
     },
     {
       "model": "gpt-5.6-sol",
@@ -251,7 +251,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 1606.44,
-      "total_cost_usd": 4.4568
+      "total_cost_usd": null
     },
     {
       "model": "gpt-5.6-luna",
@@ -276,7 +276,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 1209.0,
-      "total_cost_usd": 1.0908
+      "total_cost_usd": null
     },
     {
       "model": "gemma-4-31b",
@@ -301,7 +301,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 9003.25,
-      "total_cost_usd": 0.0
+      "total_cost_usd": null
     },
     {
       "model": "haiku-4-5",
@@ -326,7 +326,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 634.88,
-      "total_cost_usd": 0.7142
+      "total_cost_usd": null
     },
     {
       "model": "gpt-4o",
@@ -351,7 +351,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 921.1,
-      "total_cost_usd": 1.3224
+      "total_cost_usd": null
     },
     {
       "model": "fable-5-low",
@@ -376,7 +376,7 @@
       "error_count": 48,
       "total_runs": 246,
       "total_duration_s": 1268.38,
-      "total_cost_usd": 7.074
+      "total_cost_usd": null
     },
     {
       "model": "qwen3-coder-30b",
@@ -401,7 +401,7 @@
       "error_count": 5,
       "total_runs": 192,
       "total_duration_s": 290.61,
-      "total_cost_usd": 0.0
+      "total_cost_usd": null
     },
     {
       "model": "gemma-3-12B",
@@ -426,7 +426,7 @@
       "error_count": 0,
       "total_runs": 246,
       "total_duration_s": 14259.49,
-      "total_cost_usd": 0.0
+      "total_cost_usd": null
     },
     {
       "model": "qwen3.8-27b",
@@ -451,7 +451,7 @@
       "error_count": 114,
       "total_runs": 246,
       "total_duration_s": 226.9,
-      "total_cost_usd": 0.0
+      "total_cost_usd": null
     },
     {
       "model": "gemma-4-26B-a4b",
@@ -473,7 +473,35 @@
       "error_count": 87,
       "total_runs": 114,
       "total_duration_s": 384.82,
-      "total_cost_usd": 0.0
+      "total_cost_usd": null
+    },
+    {
+      "model": "mock-heuristic",
+      "global_score": 0.0,
+      "category_scores": {
+        "log_parsing": 0.0,
+        "anomaly_detection": 0.0,
+        "efficiency": 0.0
+      },
+      "efficiency_metrics": {},
+      "error_count": 26,
+      "total_runs": 26,
+      "total_duration_s": 0.47,
+      "total_cost_usd": null
+    },
+    {
+      "model": "mock-naive",
+      "global_score": 0.0,
+      "category_scores": {
+        "log_parsing": 0.0,
+        "anomaly_detection": 0.0,
+        "efficiency": 0.0
+      },
+      "efficiency_metrics": {},
+      "error_count": 26,
+      "total_runs": 26,
+      "total_duration_s": 1.73,
+      "total_cost_usd": null
     }
   ],
   "records": [
@@ -56471,6 +56499,682 @@
       "output_tokens": 188,
       "cached": false,
       "error": null
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-hdfs-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.094,
+      "input_tokens": 126,
+      "output_tokens": 58,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-hdfs-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.078,
+      "input_tokens": 126,
+      "output_tokens": 58,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-hdfs-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.106,
+      "input_tokens": 129,
+      "output_tokens": 61,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-bgl-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.107,
+      "input_tokens": 137,
+      "output_tokens": 69,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-bgl-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.084,
+      "input_tokens": 134,
+      "output_tokens": 66,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-bgl-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-openssh-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-openssh-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-openssh-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-zookeeper-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-zookeeper-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-zookeeper-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-linux-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-linux-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "log_parsing",
+      "case_id": "lp-linux-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-04",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-05",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-06",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-jvm",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-auth",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-deploy",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-clean",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-heuristic",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-silent",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-hdfs-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.399,
+      "input_tokens": 126,
+      "output_tokens": 9,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-hdfs-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.487,
+      "input_tokens": 126,
+      "output_tokens": 9,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-hdfs-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.419,
+      "input_tokens": 129,
+      "output_tokens": 9,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-bgl-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.2,
+      "input_tokens": 137,
+      "output_tokens": 9,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-bgl-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.223,
+      "input_tokens": 134,
+      "output_tokens": 9,
+      "cached": true,
+      "error": "SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-bgl-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-openssh-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-openssh-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-openssh-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-zookeeper-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-zookeeper-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-zookeeper-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-linux-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-linux-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "log_parsing",
+      "case_id": "lp-linux-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-01",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-02",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-03",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-04",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-05",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-bgl-06",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-jvm",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-auth",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-deploy",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-clean",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    },
+    {
+      "model": "mock-naive",
+      "category": "anomaly_detection",
+      "case_id": "ad-syn-silent",
+      "run_index": 0,
+      "score": 0.0,
+      "metrics": {},
+      "latency_s": 0.0,
+      "input_tokens": null,
+      "output_tokens": null,
+      "cached": false,
+      "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
     },
     {
       "model": "opus-4.8",

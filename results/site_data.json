@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21 17:25:07 UTC",
+  "generated": "2026-08-21 23:21:07 UTC",
   "runs_per_test": 3,
   "n_cases": 64,
   "n_cases_total": 82,
@@ -654,6 +654,56 @@
       "score_stddev": 0.2,
       "input_tokens": 26569,
       "output_tokens": 64615,
+      "complete": false
+    },
+    {
+      "name": "mock-heuristic",
+      "provider": null,
+      "reasoning_effort": null,
+      "global_score": 0.0,
+      "scores": {
+        "log_parsing": 0.0,
+        "anomaly_detection": 0.0,
+        "efficiency": 0.0
+      },
+      "price_input": null,
+      "price_output": null,
+      "price_blended": null,
+      "measured_cost_usd": null,
+      "total_runs": 26,
+      "repeats_per_case": 1.0,
+      "errors": 26,
+      "duration_s": 0.47,
+      "avg_latency_s": 0,
+      "avg_tokens": 0,
+      "score_stddev": 0,
+      "input_tokens": 652,
+      "output_tokens": 312,
+      "complete": false
+    },
+    {
+      "name": "mock-naive",
+      "provider": null,
+      "reasoning_effort": null,
+      "global_score": 0.0,
+      "scores": {
+        "log_parsing": 0.0,
+        "anomaly_detection": 0.0,
+        "efficiency": 0.0
+      },
+      "price_input": null,
+      "price_output": null,
+      "price_blended": null,
+      "measured_cost_usd": null,
+      "total_runs": 26,
+      "repeats_per_case": 1.0,
+      "errors": 26,
+      "duration_s": 1.73,
+      "avg_latency_s": 0,
+      "avg_tokens": 0,
+      "score_stddev": 0,
+      "input_tokens": 652,
+      "output_tokens": 45,
       "complete": false
     }
   ]

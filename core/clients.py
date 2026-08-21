@@ -430,10 +430,8 @@ class MockClient(BaseClient):
         .replace(/^-+|-+$/g, '');
 }''',
             "go": '''func Slugify(text string) string {
-    import "regexp"
-    import "strings"
     text = strings.ToLower(text)
-    text = regexp.MustCompile("[_\\\\s]+").ReplaceAllString(text, "-")
+    text = regexp.MustCompile("[_\\s]+").ReplaceAllString(text, "-")
     text = regexp.MustCompile("[^a-z0-9-]").ReplaceAllString(text, "")
     text = regexp.MustCompile("-+").ReplaceAllString(text, "-")
     return strings.Trim(text, "-")

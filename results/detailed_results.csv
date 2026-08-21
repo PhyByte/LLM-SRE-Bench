@@ -3317,6 +3317,58 @@ haiku-4-5,root_cause,rc-009-az-failure-retries,2,45.07,3.323,535.0,230.0,False,,
 haiku-4-5,root_cause,rc-010-rollback-did-not-help,0,39.26,3.052,510.0,188.0,False,,"{""rouge_l_summary"": 0.2081, ""rouge_1_root_cause"": 0.2812, ""keyword_recall"": 0.75}"
 haiku-4-5,root_cause,rc-010-rollback-did-not-help,1,44.03,2.209,510.0,179.0,False,,"{""rouge_l_summary"": 0.284, ""rouge_1_root_cause"": 0.339, ""keyword_recall"": 0.75}"
 haiku-4-5,root_cause,rc-010-rollback-did-not-help,2,37.51,2.493,510.0,188.0,False,,"{""rouge_l_summary"": 0.1788, ""rouge_1_root_cause"": 0.3871, ""keyword_recall"": 0.625}"
+mock-heuristic,log_parsing,lp-hdfs-01,0,0.0,0.094,126.0,58.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-heuristic,log_parsing,lp-hdfs-02,0,0.0,0.078,126.0,58.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-heuristic,log_parsing,lp-hdfs-03,0,0.0,0.106,129.0,61.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-heuristic,log_parsing,lp-bgl-01,0,0.0,0.107,137.0,69.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-heuristic,log_parsing,lp-bgl-02,0,0.0,0.084,134.0,66.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-heuristic,log_parsing,lp-bgl-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-openssh-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-openssh-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-openssh-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-zookeeper-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-zookeeper-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-zookeeper-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-linux-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-linux-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,log_parsing,lp-linux-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-bgl-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-bgl-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-bgl-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-bgl-04,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-bgl-05,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-bgl-06,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-syn-jvm,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-syn-auth,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-syn-deploy,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-syn-clean,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-heuristic,anomaly_detection,ad-syn-silent,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-hdfs-01,0,0.0,0.399,126.0,9.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-naive,log_parsing,lp-hdfs-02,0,0.0,0.487,126.0,9.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-naive,log_parsing,lp-hdfs-03,0,0.0,0.419,129.0,9.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-naive,log_parsing,lp-bgl-01,0,0.0,0.2,137.0,9.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-naive,log_parsing,lp-bgl-02,0,0.0,0.223,134.0,9.0,True,"SyntaxError: unexpected character after line continuation character (code_generation.py, line 847)",{}
+mock-naive,log_parsing,lp-bgl-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-openssh-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-openssh-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-openssh-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-zookeeper-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-zookeeper-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-zookeeper-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-linux-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-linux-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,log_parsing,lp-linux-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-bgl-01,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-bgl-02,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-bgl-03,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-bgl-04,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-bgl-05,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-bgl-06,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-syn-jvm,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-syn-auth,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-syn-deploy,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-syn-clean,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
+mock-naive,anomaly_detection,ad-syn-silent,0,0.0,0.0,,,False,"skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)",{}
 opus-4.8,log_parsing,lp-hdfs-01,0,100.0,3.73,606.0,197.0,False,,"{""template_accuracy"": 1.0, ""token_f1"": 1.0}"
 opus-4.8,log_parsing,lp-hdfs-01,1,100.0,3.461,606.0,197.0,False,,"{""template_accuracy"": 1.0, ""token_f1"": 1.0}"
 opus-4.8,log_parsing,lp-hdfs-01,2,100.0,3.139,606.0,197.0,False,,"{""template_accuracy"": 1.0, ""token_f1"": 1.0}"
