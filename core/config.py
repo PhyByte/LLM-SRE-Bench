@@ -15,8 +15,8 @@ load_dotenv()
 
 Provider = Literal["openai", "xai", "anthropic", "google", "ollama", "mock"]
 
-# Category name -> weight in the global score. Must sum to 1.0.
-CATEGORY_WEIGHTS: dict[str, float] = {
+# SRE/observability track weights (original, must sum to 1.0)
+SRE_CATEGORY_WEIGHTS: dict[str, float] = {
     "log_parsing": 0.15,
     "anomaly_detection": 0.25,
     "pattern_correlation": 0.15,
@@ -26,8 +26,23 @@ CATEGORY_WEIGHTS: dict[str, float] = {
     "efficiency": 0.05,
 }
 
+# Developer/code generation track weights (per language)
+# Each language is equally weighted, and within language all families are equal
+CODE_GEN_CATEGORY_WEIGHTS: dict[str, float] = {
+    "code_generation": 0.95,  # Main category
+    "efficiency": 0.05,  # Reused from SRE
+}
+
+# Category weights used for scoring (defaults to SRE track)
+# Will be switched based on --suite CLI flag
+CATEGORY_WEIGHTS: dict[str, float] = SRE_CATEGORY_WEIGHTS.copy()
+
 # Categories backed by datasets (efficiency is derived from the other runs).
-TASK_CATEGORIES = [c for c in CATEGORY_WEIGHTS if c != "efficiency"]
+# This includes both SRE and developer categories
+SRE_CATEGORIES = [c for c in SRE_CATEGORY_WEIGHTS if c != "efficiency"]
+DEVELOPER_CATEGORIES = ["code_generation"]
+TASK_CATEGORIES = SRE_CATEGORIES  # Default to SRE for backward compatibility
+ALL_CATEGORIES = list(set(SRE_CATEGORIES + DEVELOPER_CATEGORIES))
 
 _ENV_PATTERN = re.compile(r"\$\{([A-Za-z_][A-Za-z0-9_]*)\}")
 
@@ -114,3 +129,37 @@ class BenchmarkConfig(BaseModel):
             if m.name == name:
                 return m
         raise KeyError(f"unknown model '{name}'")
+
+
+def set_suite(suite: str) -> list[str]:
+    """Set the active suite and return the categories to run.
+
+    Args:
+        suite: One of 'sre', 'developer', or 'all'
+
+    Returns:
+        List of category names to run
+    """
+    global CATEGORY_WEIGHTS, TASK_CATEGORIES
+
+    if suite == "sre":
+        CATEGORY_WEIGHTS = SRE_CATEGORY_WEIGHTS.copy()
+        TASK_CATEGORIES = SRE_CATEGORIES
+        return SRE_CATEGORIES
+    elif suite == "developer":
+        CATEGORY_WEIGHTS = CODE_GEN_CATEGORY_WEIGHTS.copy()
+        TASK_CATEGORIES = DEVELOPER_CATEGORIES
+        return DEVELOPER_CATEGORIES
+    elif suite == "all":
+        # Combine both suites with adjusted weights
+        # Give 60% to SRE and 40% to developer
+        CATEGORY_WEIGHTS = {}
+        for cat, weight in SRE_CATEGORY_WEIGHTS.items():
+            if cat != "efficiency":
+                CATEGORY_WEIGHTS[cat] = weight * 0.60
+        CATEGORY_WEIGHTS["code_generation"] = 0.40 * 0.95
+        CATEGORY_WEIGHTS["efficiency"] = 0.05  # Shared across both
+        TASK_CATEGORIES = SRE_CATEGORIES + DEVELOPER_CATEGORIES
+        return TASK_CATEGORIES
+    else:
+        raise ValueError(f"unknown suite '{suite}', must be 'sre', 'developer', or 'all'")

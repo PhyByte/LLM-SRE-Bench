@@ -1,0 +1,386 @@
+[
+  {
+    "id": "slugify_python",
+    "language": "python",
+    "difficulty": "easy",
+    "task_family": "slugify",
+    "spec": "Write a function `slugify(text: str) -> str` that converts a string into a URL-friendly slug:\n- Convert to lowercase\n- Replace spaces and underscores with hyphens\n- Remove all non-alphanumeric characters except hyphens\n- Collapse consecutive hyphens into one\n- Strip leading and trailing hyphens\n\nExample: slugify(\"Hello World!\") should return \"hello-world\"",
+    "signature": "def slugify(text: str) -> str:",
+    "test_cases": [
+      {"input": "Hello World!", "expected": "hello-world"},
+      {"input": "Python 3.11 Released!", "expected": "python-311-released"},
+      {"input": "  spaces  everywhere  ", "expected": "spaces-everywhere"},
+      {"input": "___underscores___", "expected": "underscores"},
+      {"input": "CamelCaseText", "expected": "camelcasetext"},
+      {"input": "mix---of___EVERYTHING!", "expected": "mix-of-everything"},
+      {"input": "", "expected": ""},
+      {"input": "!@#$%", "expected": ""}
+    ]
+  },
+  {
+    "id": "slugify_typescript",
+    "language": "typescript",
+    "difficulty": "easy",
+    "task_family": "slugify",
+    "spec": "Write a function `slugify(text: string): string` that converts a string into a URL-friendly slug:\n- Convert to lowercase\n- Replace spaces and underscores with hyphens\n- Remove all non-alphanumeric characters except hyphens\n- Collapse consecutive hyphens into one\n- Strip leading and trailing hyphens\n\nExample: slugify(\"Hello World!\") should return \"hello-world\"",
+    "signature": "function slugify(text: string): string {",
+    "test_cases": [
+      {"input": "Hello World!", "expected": "hello-world"},
+      {"input": "TypeScript 5.0", "expected": "typescript-50"},
+      {"input": "  spaces  everywhere  ", "expected": "spaces-everywhere"},
+      {"input": "___underscores___", "expected": "underscores"},
+      {"input": "CamelCaseText", "expected": "camelcasetext"},
+      {"input": "mix---of___EVERYTHING!", "expected": "mix-of-everything"},
+      {"input": "", "expected": ""},
+      {"input": "!@#$%", "expected": ""}
+    ]
+  },
+  {
+    "id": "slugify_go",
+    "language": "go",
+    "difficulty": "easy",
+    "task_family": "slugify",
+    "spec": "Write a function `Slugify(text string) string` that converts a string into a URL-friendly slug:\n- Convert to lowercase\n- Replace spaces and underscores with hyphens\n- Remove all non-alphanumeric characters except hyphens\n- Collapse consecutive hyphens into one\n- Strip leading and trailing hyphens\n\nExample: Slugify(\"Hello World!\") should return \"hello-world\"",
+    "signature": "func Slugify(text string) string {",
+    "test_cases": [
+      {"input": "Hello World!", "expected": "hello-world"},
+      {"input": "Go 1.21", "expected": "go-121"},
+      {"input": "  spaces  everywhere  ", "expected": "spaces-everywhere"},
+      {"input": "___underscores___", "expected": "underscores"},
+      {"input": "CamelCaseText", "expected": "camelcasetext"},
+      {"input": "mix---of___EVERYTHING!", "expected": "mix-of-everything"},
+      {"input": "", "expected": ""},
+      {"input": "!@#$%", "expected": ""}
+    ]
+  },
+  {
+    "id": "slugify_rust",
+    "language": "rust",
+    "difficulty": "easy",
+    "task_family": "slugify",
+    "spec": "Write a function `fn slugify(text: &str) -> String` that converts a string into a URL-friendly slug:\n- Convert to lowercase\n- Replace spaces and underscores with hyphens\n- Remove all non-alphanumeric characters except hyphens\n- Collapse consecutive hyphens into one\n- Strip leading and trailing hyphens\n\nExample: slugify(\"Hello World!\") should return \"hello-world\"",
+    "signature": "fn slugify(text: &str) -> String {",
+    "test_cases": [
+      {"input": "Hello World!", "expected": "hello-world"},
+      {"input": "Rust 1.75", "expected": "rust-175"},
+      {"input": "  spaces  everywhere  ", "expected": "spaces-everywhere"},
+      {"input": "___underscores___", "expected": "underscores"},
+      {"input": "CamelCaseText", "expected": "camelcasetext"},
+      {"input": "mix---of___EVERYTHING!", "expected": "mix-of-everything"},
+      {"input": "", "expected": ""},
+      {"input": "!@#$%", "expected": ""}
+    ]
+  },
+  {
+    "id": "interval_merge_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "interval_merge",
+    "spec": "Write a function `merge_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]` that merges overlapping intervals. Intervals are represented as (start, end) tuples where start <= end.\n\nReturn the merged intervals sorted by start time.\n\nExample: merge_intervals([(1,3), (2,6), (8,10), (15,18)]) should return [(1,6), (8,10), (15,18)]",
+    "signature": "def merge_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]:",
+    "test_cases": [
+      {"input": [[1,3], [2,6], [8,10], [15,18]], "expected": [[1,6], [8,10], [15,18]]},
+      {"input": [[1,4], [4,5]], "expected": [[1,5]]},
+      {"input": [], "expected": []},
+      {"input": [[1,1]], "expected": [[1,1]]},
+      {"input": [[1,10], [2,3], [4,5], [6,7]], "expected": [[1,10]]},
+      {"input": [[1,2], [3,4], [5,6]], "expected": [[1,2], [3,4], [5,6]]},
+      {"input": [[1,5], [0,0], [3,7], [10,12]], "expected": [[0,0], [1,7], [10,12]]}
+    ]
+  },
+  {
+    "id": "interval_merge_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "interval_merge",
+    "spec": "Write a function `mergeIntervals(intervals: [number, number][]): [number, number][]` that merges overlapping intervals. Intervals are represented as [start, end] tuples where start <= end.\n\nReturn the merged intervals sorted by start time.\n\nExample: mergeIntervals([[1,3], [2,6], [8,10], [15,18]]) should return [[1,6], [8,10], [15,18]]",
+    "signature": "function mergeIntervals(intervals: [number, number][]): [number, number][] {",
+    "test_cases": [
+      {"input": [[1,3], [2,6], [8,10], [15,18]], "expected": [[1,6], [8,10], [15,18]]},
+      {"input": [[1,4], [4,5]], "expected": [[1,5]]},
+      {"input": [], "expected": []},
+      {"input": [[1,1]], "expected": [[1,1]]},
+      {"input": [[1,10], [2,3], [4,5], [6,7]], "expected": [[1,10]]},
+      {"input": [[1,2], [3,4], [5,6]], "expected": [[1,2], [3,4], [5,6]]},
+      {"input": [[1,5], [0,0], [3,7], [10,12]], "expected": [[0,0], [1,7], [10,12]]}
+    ]
+  },
+  {
+    "id": "interval_merge_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "interval_merge",
+    "spec": "Write a function `MergeIntervals(intervals [][2]int) [][2]int` that merges overlapping intervals. Intervals are represented as [2]int arrays where start <= end.\n\nReturn the merged intervals sorted by start time.\n\nExample: MergeIntervals([][2]int{{1,3}, {2,6}, {8,10}, {15,18}}) should return [][2]int{{1,6}, {8,10}, {15,18}}",
+    "signature": "func MergeIntervals(intervals [][2]int) [][2]int {",
+    "test_cases": [
+      {"input": [[1,3], [2,6], [8,10], [15,18]], "expected": [[1,6], [8,10], [15,18]]},
+      {"input": [[1,4], [4,5]], "expected": [[1,5]]},
+      {"input": [], "expected": []},
+      {"input": [[1,1]], "expected": [[1,1]]},
+      {"input": [[1,10], [2,3], [4,5], [6,7]], "expected": [[1,10]]},
+      {"input": [[1,2], [3,4], [5,6]], "expected": [[1,2], [3,4], [5,6]]},
+      {"input": [[1,5], [0,0], [3,7], [10,12]], "expected": [[0,0], [1,7], [10,12]]}
+    ]
+  },
+  {
+    "id": "interval_merge_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "interval_merge",
+    "spec": "Write a function `fn merge_intervals(intervals: Vec<(i32, i32)>) -> Vec<(i32, i32)>` that merges overlapping intervals. Intervals are represented as (start, end) tuples where start <= end.\n\nReturn the merged intervals sorted by start time.\n\nExample: merge_intervals(vec![(1,3), (2,6), (8,10), (15,18)]) should return vec![(1,6), (8,10), (15,18)]",
+    "signature": "fn merge_intervals(intervals: Vec<(i32, i32)>) -> Vec<(i32, i32)> {",
+    "test_cases": [
+      {"input": [[1,3], [2,6], [8,10], [15,18]], "expected": [[1,6], [8,10], [15,18]]},
+      {"input": [[1,4], [4,5]], "expected": [[1,5]]},
+      {"input": [], "expected": []},
+      {"input": [[1,1]], "expected": [[1,1]]},
+      {"input": [[1,10], [2,3], [4,5], [6,7]], "expected": [[1,10]]},
+      {"input": [[1,2], [3,4], [5,6]], "expected": [[1,2], [3,4], [5,6]]},
+      {"input": [[1,5], [0,0], [3,7], [10,12]], "expected": [[0,0], [1,7], [10,12]]}
+    ]
+  },
+  {
+    "id": "rate_limiter_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "rate_limiter",
+    "spec": "Write a class `RateLimiter` that implements a sliding window rate limiter:\n\nclass RateLimiter:\n    def __init__(self, max_requests: int, window_seconds: float):\n        # max_requests allowed in any window_seconds period\n        pass\n    \n    def allow(self, timestamp: float) -> bool:\n        # Return True if request at timestamp is allowed, False otherwise\n        # Remove timestamps outside current window\n        pass\n\nThe limiter should allow up to max_requests in any sliding window of window_seconds.\nTimestamps are monotonically increasing floats representing seconds.",
+    "signature": "class RateLimiter:\n    def __init__(self, max_requests: int, window_seconds: float):\n        pass\n    def allow(self, timestamp: float) -> bool:\n        pass",
+    "test_cases": [
+      {"input": {"max_requests": 3, "window_seconds": 1.0, "requests": [0.0, 0.1, 0.2, 0.3, 1.1]}, "expected": [true, true, true, false, true]},
+      {"input": {"max_requests": 2, "window_seconds": 5.0, "requests": [0.0, 2.0, 4.0, 5.0, 6.0]}, "expected": [true, true, false, false, true]},
+      {"input": {"max_requests": 1, "window_seconds": 1.0, "requests": [0.0, 0.5, 1.5, 2.0]}, "expected": [true, false, true, false]},
+      {"input": {"max_requests": 5, "window_seconds": 10.0, "requests": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 11.0]}, "expected": [true, true, true, true, true, false, true]}
+    ]
+  },
+  {
+    "id": "rate_limiter_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "rate_limiter",
+    "spec": "Write a class `RateLimiter` that implements a sliding window rate limiter:\n\nclass RateLimiter {\n    constructor(maxRequests: number, windowSeconds: number) {\n        // maxRequests allowed in any windowSeconds period\n    }\n    \n    allow(timestamp: number): boolean {\n        // Return true if request at timestamp is allowed, false otherwise\n        // Remove timestamps outside current window\n    }\n}\n\nThe limiter should allow up to maxRequests in any sliding window of windowSeconds.\nTimestamps are monotonically increasing numbers representing seconds.",
+    "signature": "class RateLimiter {\n    private maxRequests: number;\n    private windowSeconds: number;\n    constructor(maxRequests: number, windowSeconds: number) {\n    }\n    allow(timestamp: number): boolean {\n    }\n}",
+    "test_cases": [
+      {"input": {"max_requests": 3, "window_seconds": 1.0, "requests": [0.0, 0.1, 0.2, 0.3, 1.1]}, "expected": [true, true, true, false, true]},
+      {"input": {"max_requests": 2, "window_seconds": 5.0, "requests": [0.0, 2.0, 4.0, 5.0, 6.0]}, "expected": [true, true, false, false, true]},
+      {"input": {"max_requests": 1, "window_seconds": 1.0, "requests": [0.0, 0.5, 1.5, 2.0]}, "expected": [true, false, true, false]},
+      {"input": {"max_requests": 5, "window_seconds": 10.0, "requests": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 11.0]}, "expected": [true, true, true, true, true, false, true]}
+    ]
+  },
+  {
+    "id": "rate_limiter_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "rate_limiter",
+    "spec": "Write a type `RateLimiter` that implements a sliding window rate limiter:\n\ntype RateLimiter struct {\n    // fields\n}\n\nfunc NewRateLimiter(maxRequests int, windowSeconds float64) *RateLimiter {\n    // maxRequests allowed in any windowSeconds period\n}\n\nfunc (rl *RateLimiter) Allow(timestamp float64) bool {\n    // Return true if request at timestamp is allowed, false otherwise\n    // Remove timestamps outside current window\n}\n\nThe limiter should allow up to maxRequests in any sliding window of windowSeconds.\nTimestamps are monotonically increasing float64 representing seconds.",
+    "signature": "type RateLimiter struct {\n}\nfunc NewRateLimiter(maxRequests int, windowSeconds float64) *RateLimiter {\n}\nfunc (rl *RateLimiter) Allow(timestamp float64) bool {\n}",
+    "test_cases": [
+      {"input": {"max_requests": 3, "window_seconds": 1.0, "requests": [0.0, 0.1, 0.2, 0.3, 1.1]}, "expected": [true, true, true, false, true]},
+      {"input": {"max_requests": 2, "window_seconds": 5.0, "requests": [0.0, 2.0, 4.0, 5.0, 6.0]}, "expected": [true, true, false, false, true]},
+      {"input": {"max_requests": 1, "window_seconds": 1.0, "requests": [0.0, 0.5, 1.5, 2.0]}, "expected": [true, false, true, false]},
+      {"input": {"max_requests": 5, "window_seconds": 10.0, "requests": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 11.0]}, "expected": [true, true, true, true, true, false, true]}
+    ]
+  },
+  {
+    "id": "rate_limiter_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "rate_limiter",
+    "spec": "Write a struct `RateLimiter` that implements a sliding window rate limiter:\n\nstruct RateLimiter {\n    // fields\n}\n\nimpl RateLimiter {\n    fn new(max_requests: usize, window_seconds: f64) -> Self {\n        // max_requests allowed in any window_seconds period\n    }\n    \n    fn allow(&mut self, timestamp: f64) -> bool {\n        // Return true if request at timestamp is allowed, false otherwise\n        // Remove timestamps outside current window\n    }\n}\n\nThe limiter should allow up to max_requests in any sliding window of window_seconds.\nTimestamps are monotonically increasing f64 representing seconds.",
+    "signature": "struct RateLimiter {\n}\nimpl RateLimiter {\n    fn new(max_requests: usize, window_seconds: f64) -> Self {\n    }\n    fn allow(&mut self, timestamp: f64) -> bool {\n    }\n}",
+    "test_cases": [
+      {"input": {"max_requests": 3, "window_seconds": 1.0, "requests": [0.0, 0.1, 0.2, 0.3, 1.1]}, "expected": [true, true, true, false, true]},
+      {"input": {"max_requests": 2, "window_seconds": 5.0, "requests": [0.0, 2.0, 4.0, 5.0, 6.0]}, "expected": [true, true, false, false, true]},
+      {"input": {"max_requests": 1, "window_seconds": 1.0, "requests": [0.0, 0.5, 1.5, 2.0]}, "expected": [true, false, true, false]},
+      {"input": {"max_requests": 5, "window_seconds": 10.0, "requests": [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 11.0]}, "expected": [true, true, true, true, true, false, true]}
+    ]
+  },
+  {
+    "id": "config_overlay_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "config_overlay",
+    "spec": "Write a function `merge_config(base: dict, overlay: dict) -> dict` that recursively merges two configuration dictionaries.\n\nRules:\n- For scalar values (str, int, bool, None), overlay replaces base\n- For lists, overlay replaces base entirely (no list merging)\n- For nested dicts, recursively merge them\n- Overlay keys not in base are added\n- Return a new dict without modifying inputs\n\nExample: merge_config({'a': 1, 'b': {'c': 2}}, {'b': {'d': 3}}) returns {'a': 1, 'b': {'c': 2, 'd': 3}}",
+    "signature": "def merge_config(base: dict, overlay: dict) -> dict:",
+    "test_cases": [
+      {"input": [{"a": 1}, {"b": 2}], "expected": {"a": 1, "b": 2}},
+      {"input": [{"a": 1}, {"a": 2}], "expected": {"a": 2}},
+      {"input": [{"a": {"b": 1}}, {"a": {"c": 2}}], "expected": {"a": {"b": 1, "c": 2}}},
+      {"input": [{"a": {"b": {"c": 1}}}, {"a": {"b": {"d": 2}}}], "expected": {"a": {"b": {"c": 1, "d": 2}}}},
+      {"input": [{"a": [1, 2]}, {"a": [3]}], "expected": {"a": [3]}},
+      {"input": [{}, {"a": 1}], "expected": {"a": 1}},
+      {"input": [{"a": 1}, {}], "expected": {"a": 1}}
+    ]
+  },
+  {
+    "id": "config_overlay_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "config_overlay",
+    "spec": "Write a function `mergeConfig(base: any, overlay: any): any` that recursively merges two configuration objects.\n\nRules:\n- For scalar values (string, number, boolean, null), overlay replaces base\n- For arrays, overlay replaces base entirely (no array merging)\n- For nested objects, recursively merge them\n- Overlay keys not in base are added\n- Return a new object without modifying inputs\n\nExample: mergeConfig({a: 1, b: {c: 2}}, {b: {d: 3}}) returns {a: 1, b: {c: 2, d: 3}}",
+    "signature": "function mergeConfig(base: any, overlay: any): any {",
+    "test_cases": [
+      {"input": [{"a": 1}, {"b": 2}], "expected": {"a": 1, "b": 2}},
+      {"input": [{"a": 1}, {"a": 2}], "expected": {"a": 2}},
+      {"input": [{"a": {"b": 1}}, {"a": {"c": 2}}], "expected": {"a": {"b": 1, "c": 2}}},
+      {"input": [{"a": {"b": {"c": 1}}}, {"a": {"b": {"d": 2}}}], "expected": {"a": {"b": {"c": 1, "d": 2}}}},
+      {"input": [{"a": [1, 2]}, {"a": [3]}], "expected": {"a": [3]}},
+      {"input": [{}, {"a": 1}], "expected": {"a": 1}},
+      {"input": [{"a": 1}, {}], "expected": {"a": 1}}
+    ]
+  },
+  {
+    "id": "config_overlay_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "config_overlay",
+    "spec": "Write a function `MergeConfig(base, overlay map[string]interface{}) map[string]interface{}` that recursively merges two configuration maps.\n\nRules:\n- For scalar values (string, int, bool, nil), overlay replaces base\n- For slices, overlay replaces base entirely (no slice merging)\n- For nested maps, recursively merge them\n- Overlay keys not in base are added\n- Return a new map without modifying inputs\n\nExample: MergeConfig(map[string]interface{}{\"a\": 1, \"b\": map[string]interface{}{\"c\": 2}}, map[string]interface{}{\"b\": map[string]interface{}{\"d\": 3}}) returns map[string]interface{}{\"a\": 1, \"b\": map[string]interface{}{\"c\": 2, \"d\": 3}}",
+    "signature": "func MergeConfig(base, overlay map[string]interface{}) map[string]interface{} {",
+    "test_cases": [
+      {"input": [{"a": 1}, {"b": 2}], "expected": {"a": 1, "b": 2}},
+      {"input": [{"a": 1}, {"a": 2}], "expected": {"a": 2}},
+      {"input": [{"a": {"b": 1}}, {"a": {"c": 2}}], "expected": {"a": {"b": 1, "c": 2}}},
+      {"input": [{"a": {"b": {"c": 1}}}, {"a": {"b": {"d": 2}}}], "expected": {"a": {"b": {"c": 1, "d": 2}}}},
+      {"input": [{"a": [1, 2]}, {"a": [3]}], "expected": {"a": [3]}},
+      {"input": [{}, {"a": 1}], "expected": {"a": 1}},
+      {"input": [{"a": 1}, {}], "expected": {"a": 1}}
+    ]
+  },
+  {
+    "id": "config_overlay_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "config_overlay",
+    "spec": "Write a function `fn merge_config(base: serde_json::Value, overlay: serde_json::Value) -> serde_json::Value` that recursively merges two configuration JSON values.\n\nRules:\n- For scalar values (String, Number, Bool, Null), overlay replaces base\n- For arrays, overlay replaces base entirely (no array merging)\n- For nested objects, recursively merge them\n- Overlay keys not in base are added\n- Return a new Value without modifying inputs\n\nYou can use serde_json::Value for the implementation.\n\nExample: merge_config(json!({\"a\": 1, \"b\": {\"c\": 2}}), json!({\"b\": {\"d\": 3}})) returns json!({\"a\": 1, \"b\": {\"c\": 2, \"d\": 3}})",
+    "signature": "fn merge_config(base: serde_json::Value, overlay: serde_json::Value) -> serde_json::Value {",
+    "test_cases": [
+      {"input": [{"a": 1}, {"b": 2}], "expected": {"a": 1, "b": 2}},
+      {"input": [{"a": 1}, {"a": 2}], "expected": {"a": 2}},
+      {"input": [{"a": {"b": 1}}, {"a": {"c": 2}}], "expected": {"a": {"b": 1, "c": 2}}},
+      {"input": [{"a": {"b": {"c": 1}}}, {"a": {"b": {"d": 2}}}], "expected": {"a": {"b": {"c": 1, "d": 2}}}},
+      {"input": [{"a": [1, 2]}, {"a": [3]}], "expected": {"a": [3]}},
+      {"input": [{}, {"a": 1}], "expected": {"a": 1}},
+      {"input": [{"a": 1}, {}], "expected": {"a": 1}}
+    ]
+  },
+  {
+    "id": "lru_cache_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "lru_cache",
+    "spec": "Write a class `LRUCache` that implements a Least Recently Used cache:\n\nclass LRUCache:\n    def __init__(self, capacity: int):\n        # Cache can hold at most capacity items\n        pass\n    \n    def get(self, key: str) -> int | None:\n        # Return value if key exists (and mark as recently used), None otherwise\n        pass\n    \n    def put(self, key: str, value: int) -> None:\n        # Insert or update key-value pair\n        # If at capacity, evict least recently used item before inserting\n        # Both get and put count as \"using\" a key\n        pass\n\nMust be O(1) average time for both operations.",
+    "signature": "class LRUCache:\n    def __init__(self, capacity: int):\n        pass\n    def get(self, key: str) -> int | None:\n        pass\n    def put(self, key: str, value: int) -> None:\n        pass",
+    "test_cases": [
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "b", 2], ["get", "a"], ["put", "c", 3], ["get", "b"]]}, "expected": [null, null, 1, null, null]},
+      {"input": {"capacity": 1, "ops": [["put", "a", 1], ["get", "a"], ["put", "b", 2], ["get", "a"]]}, "expected": [null, 1, null, null]},
+      {"input": {"capacity": 3, "ops": [["put", "a", 1], ["put", "b", 2], ["put", "c", 3], ["get", "a"], ["put", "d", 4], ["get", "b"]]}, "expected": [null, null, null, 1, null, null]},
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "a", 10], ["get", "a"]]}, "expected": [null, null, 10]}
+    ]
+  },
+  {
+    "id": "lru_cache_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "lru_cache",
+    "spec": "Write a class `LRUCache` that implements a Least Recently Used cache:\n\nclass LRUCache {\n    constructor(capacity: number) {\n        // Cache can hold at most capacity items\n    }\n    \n    get(key: string): number | null {\n        // Return value if key exists (and mark as recently used), null otherwise\n    }\n    \n    put(key: string, value: number): void {\n        // Insert or update key-value pair\n        // If at capacity, evict least recently used item before inserting\n        // Both get and put count as \"using\" a key\n    }\n}\n\nMust be O(1) average time for both operations.",
+    "signature": "class LRUCache {\n    private capacity: number;\n    constructor(capacity: number) {\n    }\n    get(key: string): number | null {\n    }\n    put(key: string, value: number): void {\n    }\n}",
+    "test_cases": [
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "b", 2], ["get", "a"], ["put", "c", 3], ["get", "b"]]}, "expected": [null, null, 1, null, null]},
+      {"input": {"capacity": 1, "ops": [["put", "a", 1], ["get", "a"], ["put", "b", 2], ["get", "a"]]}, "expected": [null, 1, null, null]},
+      {"input": {"capacity": 3, "ops": [["put", "a", 1], ["put", "b", 2], ["put", "c", 3], ["get", "a"], ["put", "d", 4], ["get", "b"]]}, "expected": [null, null, null, 1, null, null]},
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "a", 10], ["get", "a"]]}, "expected": [null, null, 10]}
+    ]
+  },
+  {
+    "id": "lru_cache_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "lru_cache",
+    "spec": "Write a type `LRUCache` that implements a Least Recently Used cache:\n\ntype LRUCache struct {\n    // fields\n}\n\nfunc NewLRUCache(capacity int) *LRUCache {\n    // Cache can hold at most capacity items\n}\n\nfunc (c *LRUCache) Get(key string) (int, bool) {\n    // Return value and true if key exists (and mark as recently used), 0 and false otherwise\n}\n\nfunc (c *LRUCache) Put(key string, value int) {\n    // Insert or update key-value pair\n    // If at capacity, evict least recently used item before inserting\n    // Both Get and Put count as \"using\" a key\n}\n\nMust be O(1) average time for both operations.",
+    "signature": "type LRUCache struct {\n}\nfunc NewLRUCache(capacity int) *LRUCache {\n}\nfunc (c *LRUCache) Get(key string) (int, bool) {\n}\nfunc (c *LRUCache) Put(key string, value int) {\n}",
+    "test_cases": [
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "b", 2], ["get", "a"], ["put", "c", 3], ["get", "b"]]}, "expected": [[null, false], [null, false], [1, true], [null, false], [0, false]]},
+      {"input": {"capacity": 1, "ops": [["put", "a", 1], ["get", "a"], ["put", "b", 2], ["get", "a"]]}, "expected": [[null, false], [1, true], [null, false], [0, false]]},
+      {"input": {"capacity": 3, "ops": [["put", "a", 1], ["put", "b", 2], ["put", "c", 3], ["get", "a"], ["put", "d", 4], ["get", "b"]]}, "expected": [[null, false], [null, false], [null, false], [1, true], [null, false], [0, false]]},
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "a", 10], ["get", "a"]]}, "expected": [[null, false], [null, false], [10, true]]}
+    ]
+  },
+  {
+    "id": "lru_cache_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "lru_cache",
+    "spec": "Write a struct `LRUCache` that implements a Least Recently Used cache:\n\nstruct LRUCache {\n    // fields\n}\n\nimpl LRUCache {\n    fn new(capacity: usize) -> Self {\n        // Cache can hold at most capacity items\n    }\n    \n    fn get(&mut self, key: &str) -> Option<i32> {\n        // Return Some(value) if key exists (and mark as recently used), None otherwise\n    }\n    \n    fn put(&mut self, key: String, value: i32) {\n        // Insert or update key-value pair\n        // If at capacity, evict least recently used item before inserting\n        // Both get and put count as \"using\" a key\n    }\n}\n\nMust be O(1) average time for both operations.",
+    "signature": "struct LRUCache {\n}\nimpl LRUCache {\n    fn new(capacity: usize) -> Self {\n    }\n    fn get(&mut self, key: &str) -> Option<i32> {\n    }\n    fn put(&mut self, key: String, value: i32) {\n    }\n}",
+    "test_cases": [
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "b", 2], ["get", "a"], ["put", "c", 3], ["get", "b"]]}, "expected": [null, null, 1, null, null]},
+      {"input": {"capacity": 1, "ops": [["put", "a", 1], ["get", "a"], ["put", "b", 2], ["get", "a"]]}, "expected": [null, 1, null, null]},
+      {"input": {"capacity": 3, "ops": [["put", "a", 1], ["put", "b", 2], ["put", "c", 3], ["get", "a"], ["put", "d", 4], ["get", "b"]]}, "expected": [null, null, null, 1, null, null]},
+      {"input": {"capacity": 2, "ops": [["put", "a", 1], ["put", "a", 10], ["get", "a"]]}, "expected": [null, null, 10]}
+    ]
+  },
+  {
+    "id": "log_parser_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "log_parser",
+    "spec": "Write a function `parse_log_line(line: str) -> dict` that parses a structured log line.\n\nExpected format: \"[LEVEL] timestamp | service | message\"\nwhere LEVEL is ERROR, WARN, INFO, or DEBUG\ntimestamp is ISO 8601 format (YYYY-MM-DDTHH:MM:SS)\n\nReturn dict with keys: level, timestamp, service, message\n\nHandle edge cases:\n- Invalid format returns {\"level\": \"UNKNOWN\", \"timestamp\": \"\", \"service\": \"\", \"message\": line}\n- Missing fields use empty strings\n- Extra whitespace should be stripped\n- Invalid log level becomes \"UNKNOWN\"",
+    "signature": "def parse_log_line(line: str) -> dict:",
+    "test_cases": [
+      {"input": "[ERROR] 2024-01-15T10:30:45 | api-service | Connection timeout", "expected": {"level": "ERROR", "timestamp": "2024-01-15T10:30:45", "service": "api-service", "message": "Connection timeout"}},
+      {"input": "[INFO] 2024-01-15T10:30:46 | web-server | Request received", "expected": {"level": "INFO", "timestamp": "2024-01-15T10:30:46", "service": "web-server", "message": "Request received"}},
+      {"input": "[WARN] 2024-01-15T10:30:47 |  cache  |  Low memory  ", "expected": {"level": "WARN", "timestamp": "2024-01-15T10:30:47", "service": "cache", "message": "Low memory"}},
+      {"input": "Invalid log line", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "Invalid log line"}},
+      {"input": "[DEBUG] 2024-01-15T10:30:48 | scheduler | Task started", "expected": {"level": "DEBUG", "timestamp": "2024-01-15T10:30:48", "service": "scheduler", "message": "Task started"}},
+      {"input": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full"}}
+    ]
+  },
+  {
+    "id": "log_parser_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "log_parser",
+    "spec": "Write a function `parseLogLine(line: string): {level: string, timestamp: string, service: string, message: string}` that parses a structured log line.\n\nExpected format: \"[LEVEL] timestamp | service | message\"\nwhere LEVEL is ERROR, WARN, INFO, or DEBUG\ntimestamp is ISO 8601 format (YYYY-MM-DDTHH:MM:SS)\n\nReturn object with keys: level, timestamp, service, message\n\nHandle edge cases:\n- Invalid format returns {level: \"UNKNOWN\", timestamp: \"\", service: \"\", message: line}\n- Missing fields use empty strings\n- Extra whitespace should be stripped\n- Invalid log level becomes \"UNKNOWN\"",
+    "signature": "function parseLogLine(line: string): {level: string, timestamp: string, service: string, message: string} {",
+    "test_cases": [
+      {"input": "[ERROR] 2024-01-15T10:30:45 | api-service | Connection timeout", "expected": {"level": "ERROR", "timestamp": "2024-01-15T10:30:45", "service": "api-service", "message": "Connection timeout"}},
+      {"input": "[INFO] 2024-01-15T10:30:46 | web-server | Request received", "expected": {"level": "INFO", "timestamp": "2024-01-15T10:30:46", "service": "web-server", "message": "Request received"}},
+      {"input": "[WARN] 2024-01-15T10:30:47 |  cache  |  Low memory  ", "expected": {"level": "WARN", "timestamp": "2024-01-15T10:30:47", "service": "cache", "message": "Low memory"}},
+      {"input": "Invalid log line", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "Invalid log line"}},
+      {"input": "[DEBUG] 2024-01-15T10:30:48 | scheduler | Task started", "expected": {"level": "DEBUG", "timestamp": "2024-01-15T10:30:48", "service": "scheduler", "message": "Task started"}},
+      {"input": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full"}}
+    ]
+  },
+  {
+    "id": "log_parser_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "log_parser",
+    "spec": "Write a function `ParseLogLine(line string) map[string]string` that parses a structured log line.\n\nExpected format: \"[LEVEL] timestamp | service | message\"\nwhere LEVEL is ERROR, WARN, INFO, or DEBUG\ntimestamp is ISO 8601 format (YYYY-MM-DDTHH:MM:SS)\n\nReturn map with keys: \"level\", \"timestamp\", \"service\", \"message\"\n\nHandle edge cases:\n- Invalid format returns map with level=\"UNKNOWN\", empty timestamp/service, message=line\n- Missing fields use empty strings\n- Extra whitespace should be stripped\n- Invalid log level becomes \"UNKNOWN\"",
+    "signature": "func ParseLogLine(line string) map[string]string {",
+    "test_cases": [
+      {"input": "[ERROR] 2024-01-15T10:30:45 | api-service | Connection timeout", "expected": {"level": "ERROR", "timestamp": "2024-01-15T10:30:45", "service": "api-service", "message": "Connection timeout"}},
+      {"input": "[INFO] 2024-01-15T10:30:46 | web-server | Request received", "expected": {"level": "INFO", "timestamp": "2024-01-15T10:30:46", "service": "web-server", "message": "Request received"}},
+      {"input": "[WARN] 2024-01-15T10:30:47 |  cache  |  Low memory  ", "expected": {"level": "WARN", "timestamp": "2024-01-15T10:30:47", "service": "cache", "message": "Low memory"}},
+      {"input": "Invalid log line", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "Invalid log line"}},
+      {"input": "[DEBUG] 2024-01-15T10:30:48 | scheduler | Task started", "expected": {"level": "DEBUG", "timestamp": "2024-01-15T10:30:48", "service": "scheduler", "message": "Task started"}},
+      {"input": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full"}}
+    ]
+  },
+  {
+    "id": "log_parser_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "log_parser",
+    "spec": "Write a function `fn parse_log_line(line: &str) -> std::collections::HashMap<String, String>` that parses a structured log line.\n\nExpected format: \"[LEVEL] timestamp | service | message\"\nwhere LEVEL is ERROR, WARN, INFO, or DEBUG\ntimestamp is ISO 8601 format (YYYY-MM-DDTHH:MM:SS)\n\nReturn HashMap with keys: \"level\", \"timestamp\", \"service\", \"message\"\n\nHandle edge cases:\n- Invalid format returns HashMap with level=\"UNKNOWN\", empty timestamp/service, message=line\n- Missing fields use empty strings\n- Extra whitespace should be stripped\n- Invalid log level becomes \"UNKNOWN\"",
+    "signature": "fn parse_log_line(line: &str) -> std::collections::HashMap<String, String> {",
+    "test_cases": [
+      {"input": "[ERROR] 2024-01-15T10:30:45 | api-service | Connection timeout", "expected": {"level": "ERROR", "timestamp": "2024-01-15T10:30:45", "service": "api-service", "message": "Connection timeout"}},
+      {"input": "[INFO] 2024-01-15T10:30:46 | web-server | Request received", "expected": {"level": "INFO", "timestamp": "2024-01-15T10:30:46", "service": "web-server", "message": "Request received"}},
+      {"input": "[WARN] 2024-01-15T10:30:47 |  cache  |  Low memory  ", "expected": {"level": "WARN", "timestamp": "2024-01-15T10:30:47", "service": "cache", "message": "Low memory"}},
+      {"input": "Invalid log line", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "Invalid log line"}},
+      {"input": "[DEBUG] 2024-01-15T10:30:48 | scheduler | Task started", "expected": {"level": "DEBUG", "timestamp": "2024-01-15T10:30:48", "service": "scheduler", "message": "Task started"}},
+      {"input": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full", "expected": {"level": "UNKNOWN", "timestamp": "", "service": "", "message": "[CRITICAL] 2024-01-15T10:30:49 | db | Disk full"}}
+    ]
+  }
+]

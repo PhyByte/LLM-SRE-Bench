@@ -16,6 +16,13 @@ SYSTEM_PROMPT = (
     "no markdown fences, no explanations, no text before or after the JSON."
 )
 
+CODE_GENERATION_SYSTEM_PROMPT = (
+    "You are an expert software engineer. "
+    "You always respond with a single valid JSON object containing working code. "
+    "No markdown fences, no explanations, no text before or after the JSON. "
+    "The code must be correct, efficient, and handle all specified edge cases."
+)
+
 JUDGE_SYSTEM_PROMPT = (
     "You are a strict grader for incident root-cause analyses. "
     "You always respond with a single valid JSON object and nothing else."
@@ -196,6 +203,30 @@ return "unknown" for both, and use the summary to say what you observed and why
 it is not enough to localize the fault."""
 
 
+def _code_generation(case: dict[str, Any]) -> str:
+    language = case["language"]
+    spec = case["spec"]
+    signature = case.get("signature", "")
+    
+    return f"""Task: code_generation
+
+Language: {language}
+
+{spec}
+
+{"Required function signature:" if signature else ""}
+{signature}
+
+Return JSON exactly in this shape:
+{{"code": "<complete working implementation>"}}
+
+The code must:
+- Implement the specified functionality correctly
+- Handle all edge cases mentioned in the spec
+- Be syntactically correct and runnable
+- Follow best practices for {language}"""
+
+
 def build_judge_prompt(case: dict[str, Any], candidate_root_cause: str, candidate_summary: str) -> str:
     return f"""Grade a candidate root-cause analysis against the reference answer.
 
@@ -222,4 +253,5 @@ _BUILDERS = {
     "metrics_timeseries": _metrics_timeseries,
     "root_cause": _root_cause,
     "multimodal_rca": _multimodal_rca,
+    "code_generation": _code_generation,
 }
