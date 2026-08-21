@@ -63,6 +63,10 @@ class JudgeResult(BaseModel):
     reasoning: str = ""
 
 
+class CodeGenerationResult(BaseModel):
+    code: str
+
+
 RESULT_SCHEMAS: dict[str, type[BaseModel]] = {
     "log_parsing": LogParsingResult,
     "anomaly_detection": AnomalyDetectionResult,
@@ -70,4 +74,5 @@ RESULT_SCHEMAS: dict[str, type[BaseModel]] = {
     "metrics_timeseries": TimeSeriesResult,
     "root_cause": RootCauseResult,
     "multimodal_rca": MultiModalRCAResult,
+    "code_generation": CodeGenerationResult,
 }

@@ -12,7 +12,13 @@ from evaluators.root_cause import evaluate as evaluate_root_cause
 from .cache import ResponseCache
 from .clients import BaseClient, LLMResponse, build_client
 from .config import BenchmarkConfig, ModelConfig
-from .prompts import JUDGE_SYSTEM_PROMPT, SYSTEM_PROMPT, build_judge_prompt, build_prompt
+from .prompts import (
+    CODE_GENERATION_SYSTEM_PROMPT,
+    JUDGE_SYSTEM_PROMPT,
+    SYSTEM_PROMPT,
+    build_judge_prompt,
+    build_prompt,
+)
 from .schemas import RESULT_SCHEMAS
 from .utils import extract_json
 
@@ -159,7 +165,10 @@ class BenchmarkRunner:
         )
         try:
             user_prompt = build_prompt(category, case)
-            response = self._call(model, SYSTEM_PROMPT, user_prompt, run_index)
+            system_prompt = (
+                CODE_GENERATION_SYSTEM_PROMPT if category == "code_generation" else SYSTEM_PROMPT
+            )
+            response = self._call(model, system_prompt, user_prompt, run_index)
             record.latency_s = response.latency_s
             record.input_tokens = response.input_tokens
             record.output_tokens = response.output_tokens

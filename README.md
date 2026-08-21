@@ -1,13 +1,20 @@
 # llm-sre-bench
 
-**Benchmark frontier LLMs on real SRE work: log parsing, anomaly detection, incident correlation, and root-cause analysis.**
+**Benchmark frontier LLMs on real SRE work and developer coding tasks.**
 
-Most LLM benchmarks test general reasoning. This one tests whether a model can actually do
+This benchmark tests models on two tracks:
+
+1. **SRE/Observability Track**: log parsing, anomaly detection, incident correlation, and root-cause analysis
+2. **Developer Track**: real coding tasks across Python, TypeScript, Go, and Rust
+
+Most LLM benchmarks test general reasoning. The SRE track tests whether a model can actually do
 the job of an on-call engineer: parse raw production logs, spot the anomaly that isn't
 shouting `ERROR`, trace a failure cascade across services, and name the root cause while
-ignoring the red herrings. It runs the same standardized tests against any set of models
-(Grok, Claude, GPT, local models via LM Studio/Ollama/vLLM, …) and produces a ranked,
-weighted scorecard.
+ignoring the red herrings.
+
+The developer track tests practical coding ability with tasks that feel like real Cursor work,
+not leetcode puzzles: string processing, data structures, config merging, rate limiting, and
+log parsing — the kind of code developers actually write.
 
 ```
 ┏━━━━━━┳━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━┳━━━━━━━━┓
@@ -17,10 +24,16 @@ weighted scorecard.
 └──────┴────────┴────────┴─────────┴─────────┴─────────┴─────────┴────────┴─────────┴────────┘
 ```
 
-*A frontier model scoring ~74 is by design — the suite is built to leave headroom, not to
+*A frontier model scoring ~74 on the SRE track is by design — the suite is built to leave headroom, not to
 hand out perfect scores.*
 
-## Why this benchmark is hard
+## Tracks
+
+### SRE/Observability Track (default)
+
+The original track focused on SRE and production operations:
+
+## Why the SRE track is hard
 
 - **Real data with real labels.** Log parsing uses genuine [Loghub](https://github.com/logpai/loghub)
   production logs (HDFS, BGL, OpenSSH, Zookeeper, Linux) with official ground-truth templates.
@@ -42,9 +55,33 @@ hand out perfect scores.*
 - **Rule-based baseline included.** A keyword/z-score mock scores ~55 overall; the gap between
   that and a frontier model is the signal.
 
-## Test categories & scoring
+### Developer Track (code generation)
 
-| Category | Weight | What's measured |
+The developer track tests practical coding across four languages:
+
+- **Real coding tasks, not puzzles.** Tasks feel like actual Cursor work: slugify a string, merge
+  intervals, implement a rate limiter, overlay config dicts, build an LRU cache, parse structured logs.
+  No artificial leetcode-style problems.
+- **Four languages with the same task families.** The same 6 task families (slugify, interval merge,
+  rate limiter, config overlay, LRU cache, log parser) run across Python, TypeScript, Go, and Rust,
+  so you can compare model performance across languages.
+- **Hidden test execution.** The prompt gives a spec and required signature, but not the test cases.
+  Models must generate correct, working code that compiles and passes hidden unit tests.
+- **Sandboxed execution.** Generated code runs in a tight sandbox with timeouts, no network, temp
+  directory isolation, and resource limits. Compilation failures, runtime crashes, timeouts, or
+  incorrect output all affect the score.
+- **Scored on correctness + efficiency + code quality.** 60% correctness (tests passed), 20%
+  compilation success, 10% runtime efficiency, 10% code quality (size penalty for verbose code).
+- **Toolchain detection.** If Python/TypeScript/Go/Rust isn't installed, that language's cases are
+  skipped (and recorded) instead of crashing the run. The mock provider works offline with no
+  compilers needed for smoke testing.
+
+The mock-heuristic baseline generates syntactically valid code that passes some simple tests but
+fails on edge cases, giving frontier models room to demonstrate understanding.
+
+## Test categories & scoring (SRE track)
+
+|| Category | Weight | What's measured |
 |---|---|---|
 | Log Parsing | 15% | Template extraction accuracy + token F1 vs Loghub ground truth |
 | Anomaly Detection | 25% | Precision / Recall / F1 on per-line labels |
@@ -57,6 +94,28 @@ hand out perfect scores.*
 **Global score** = weighted average, 0–100. Every case runs `runs_per_test` times (default 3);
 scores are averaged per case, then per category. Answers must be strict JSON validated against
 pydantic schemas — unparseable output scores 0 for that run.
+
+## Developer track categories & scoring
+
+| Category | Weight | What's measured |
+|---|---|---|
+| Code Generation | 95% | Correctness (60%), compilation (20%), runtime efficiency (10%), code quality (10%) across 24 cases covering 6 task families × 4 languages |
+| Efficiency & Consistency | 5% | Latency, token usage, run-to-run score variance |
+
+**Global score** = weighted average, 0–100. Cases are run `runs_per_test` times (default 3) and
+averaged. For code generation, each case generates code that is compiled and executed against
+hidden unit tests in a sandbox. Tests passed, compilation success, runtime speed, and code size
+all factor into the score.
+
+**Languages tested:** Python, TypeScript, Go, Rust
+
+**Task families (same across all 4 languages):**
+- Slugify (string processing)
+- Interval merge (algorithm + edge cases)
+- Rate limiter (sliding window, state management)
+- Config overlay (recursive dict merge)
+- LRU cache (data structure, O(1) requirement)
+- Log parser (regex, error handling, SRE tie-in)
 
 ## Multi-modal RCA
 
@@ -154,22 +213,44 @@ cd llm-sre-bench
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# Smoke test — no API keys needed (offline rule-based mock models)
+# Smoke test — no API keys or compilers needed (offline rule-based mock models)
 python benchmark.py run --config models.mock.json
 
-# Real benchmark
+# Run the SRE track only (default)
 cp .env.example .env          # add the API keys you have
-python benchmark.py run       # all configured models
+python benchmark.py run       # all configured models on SRE track
+
+# Run the developer track
+python benchmark.py run --suite developer
+
+# Run both tracks
+python benchmark.py run --suite all
 ```
+
+**Developer track requirements:** To actually execute code and score results (not required for
+mock/smoke tests), install the language toolchains:
+
+- **Python:** `python3` (already required for the benchmark itself)
+- **TypeScript:** `node` + `tsx` (install: `npm install -g tsx`)
+- **Go:** `go` (install from golang.org)
+- **Rust:** `rustc` (install from rust-lang.org)
+
+Missing toolchains are detected at runtime; cases for unavailable languages are skipped and
+recorded rather than crashing. You can run the developer track with only Python installed —
+the other languages will be skipped.
 
 Useful variations:
 
 ```bash
-python benchmark.py run -m grok-4 -m opus-4.8   # subset of models
+python benchmark.py run -m grok-4 -m opus-4.8           # subset of models
+python benchmark.py run --suite sre                     # SRE track only (default)
+python benchmark.py run --suite developer               # developer track only
+python benchmark.py run --suite all                     # both tracks
 python benchmark.py run -c anomaly_detection            # single category
+python benchmark.py run -c code_generation              # just the developer category
 python benchmark.py run --runs 1                        # quick pass (1/3 of the calls)
 python benchmark.py list-models                         # check which keys are set
-python benchmark.py list-categories
+python benchmark.py list-categories                     # show all categories and suites
 ```
 
 ### Running models one at a time (recommended for local / expensive models)
@@ -191,10 +272,14 @@ python benchmark.py aggregate
 This command scans `results/<model>/records.json` for every model and regenerates
 `comparison_table.md`, `summary_report.md`, `detailed_results.csv`, and `results.json`.
 
-**Cost:** a full 3-run pass is ~200k input + ~25k output tokens per model — roughly **$0.40–$4.00
-per frontier model** at current list prices. (Multi-modal RCA is about 90k of that input on its
-own: its bundles are far larger than the single-modality cases.) Responses are cached in
-`.cache/`, so interrupted or repeated runs never re-pay for the same call.
+**Cost:** a full 3-run pass is ~200k input + ~25k output tokens per model on the SRE track —
+roughly **$0.40–$4.00 per frontier model** at current list prices. (Multi-modal RCA is about 90k
+of that input on its own: its bundles are far larger than the single-modality cases.)
+
+The developer track adds another ~150k input + ~100k output tokens per model (24 cases × 3 runs,
+generating complete functions/classes). Budget **$0.50–$5.00 per model** depending on pricing.
+
+Responses are cached in `.cache/`, so interrupted or repeated runs never re-pay for the same call.
 
 You can selectively clear the cache for one model (useful when you want to re-run fresh):
 
@@ -307,7 +392,9 @@ retried. Because the cache only stores successes, retries and re-runs cost only 
 root-cause answers get graded 0–10 by that model against the reference
 (score = 0.7 × judge + 0.3 × reference metrics).
 
-## The datasets (82 cases)
+## The datasets (106 cases total: 82 SRE + 24 developer)
+
+### SRE Track
 
 | File | Cases | Source |
 |---|---|---|
@@ -318,7 +405,13 @@ root-cause answers get graded 0–10 by that model against the reference
 | `root_cause.json` | 10 | Curated incidents with red herrings (including false pages, flag defaults, noisy neighbors, AZ failure, decoy rollback) |
 | `multimodal_rca.json` | 18 | Real [Nezha](https://github.com/IntelligentDDS/Nezha) microservice incidents (metrics + logs + traces): 12 signal-screened solvable, 5 unrecoverable (`unknown`), 1 healthy baseline |
 
-Regenerate or scale up the generated portions deterministically:
+### Developer Track
+
+| File | Cases | Languages | Task Families |
+|---|---|---|---|
+| `code_generation.json` | 24 | Python, TypeScript, Go, Rust | 6 families (slugify, interval merge, rate limiter, config overlay, LRU cache, log parser) × 4 languages |
+
+Regenerate or scale up the SRE generated portions deterministically:
 
 ```bash
 python scripts/build_datasets.py [--seed N]          # re-downloads Loghub CSVs to datasets/raw/
@@ -328,9 +421,8 @@ python scripts/build_multimodal_rca.py [--seed N]    # clones Nezha to datasets/
 The Nezha clone is ~343 MB (≈3.2 GB unpacked) and lands in the gitignored `datasets/raw/`;
 `multimodal_rca.json` itself is committed, so you only need the clone to rebuild.
 
-`pattern_correlation.json` and `root_cause.json` are curated by hand — edit them directly.
-You can also point `--data-dir` at your own directory with the same file names (great for
-benchmarking on *your* production logs).
+`pattern_correlation.json`, `root_cause.json`, and `code_generation.json` are curated by hand —
+edit them directly (or point `--data-dir` at your own directory with the same file names).
 
 ## Project layout
 
@@ -353,7 +445,33 @@ reports/                 aggregation + report generation
 - **Add test cases:** append to the JSON files (shapes documented in `datasets/loaders.py`),
   or grow the generated sets via `scripts/build_datasets.py`.
 - **Add a category:** dataset file + prompt template (`core/prompts.py`) + answer schema
-  (`core/schemas.py`) + evaluator (`evaluators/`) + weight (`core/config.py`).
+  (`core/schemas.py`) + evaluator (`evaluators/`) + weight (`core/config.py`). See the
+  `code_generation` category for a complete example of execution-based evaluation.
+- **Add a language to the developer track:** add cases to `code_generation.json` and implement
+  an executor in `evaluators/code_generation.py`.
+
+## Toolchain Requirements (Developer Track)
+
+The developer track requires language toolchains to compile and execute generated code:
+
+- **Python 3.11+**: Already required for the benchmark itself
+- **Node.js + tsx**: For TypeScript execution
+  ```bash
+  npm install -g tsx
+  ```
+- **Go 1.20+**: From [golang.org](https://golang.org/dl/)
+- **Rust 1.70+**: From [rust-lang.org](https://www.rust-lang.org/tools/install)
+  ```bash
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  ```
+
+**Detecting missing toolchains:** The evaluator checks for each compiler at runtime. If a
+language's toolchain is unavailable, its cases are skipped (recorded with an error) rather
+than failing the entire run. You can run the developer track with only Python and get partial
+results — the other 3 languages will show "toolchain_unavailable" in their metrics.
+
+**Offline mock mode:** The mock provider (`models.mock.json`) generates synthetic code without
+executing it, so no compilers are needed for smoke testing the pipeline.
 
 ## Acknowledgements
 

@@ -1,6 +1,6 @@
 # LLM Observability Benchmark — Summary Report
 
-Generated: 2026-08-21 17:25:07 UTC
+Generated: 2026-08-21 23:21:07 UTC
 
 ## Overall Ranking
 
@@ -23,6 +23,8 @@ Generated: 2026-08-21 17:25:07 UTC
 17. **gemma-3-12B** — global score 50.6/100 (0/246 failed runs) — completed in 237m 39s
 18. **qwen3.8-27b** — global score 45.1/100 (114/246 failed runs) — completed in 3m 46s
 19. **gemma-4-26B-a4b** — global score 15.7/100 (87/114 failed runs) — completed in 6m 24s
+20. **mock-heuristic** — global score 0.0/100 (26/26 failed runs) — completed in 0.5s
+21. **mock-naive** — global score 0.0/100 (26/26 failed runs) — completed in 1.7s
 
 ## Category Leaders
 
@@ -55,12 +57,16 @@ Generated: 2026-08-21 17:25:07 UTC
 - **gemma-3-12B**: avg latency 57.97s, avg tokens/call 2162, score stddev across runs 1.1 points, full set: 237m 39s
 - **qwen3.8-27b**: avg latency 1.72s, avg tokens/call 1471, score stddev across runs 0.0 points, full set: 3m 46s
 - **gemma-4-26B-a4b**: avg latency 14.25s, avg tokens/call 3377, score stddev across runs 0.2 points, full set: 6m 24s
+- **mock-heuristic**:, full set: 0.5s
+- **mock-naive**:, full set: 1.7s
 
 ## Reliability
 
 - qwen3.8-27b: 114 failed run(s) (API errors or invalid JSON output)
 - gemma-4-26B-a4b: 87 failed run(s) (API errors or invalid JSON output)
 - fable-5-low: 48 failed run(s) (API errors or invalid JSON output)
+- mock-heuristic: 26 failed run(s) (API errors or invalid JSON output)
+- mock-naive: 26 failed run(s) (API errors or invalid JSON output)
 - qwen3-coder-30b: 5 failed run(s) (API errors or invalid JSON output)
 - sonnet-5: 3 failed run(s) (API errors or invalid JSON output)
 

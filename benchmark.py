@@ -35,7 +35,15 @@ from rich.progress import (
 )
 from rich.table import Table
 
-from core.config import CATEGORY_WEIGHTS, TASK_CATEGORIES, BenchmarkConfig
+from core.config import (
+    ALL_CATEGORIES,
+    CATEGORY_WEIGHTS,
+    DEVELOPER_CATEGORIES,
+    SRE_CATEGORIES,
+    TASK_CATEGORIES,
+    BenchmarkConfig,
+    set_suite,
+)
 from core.runner import BenchmarkRunner, RunRecord
 from datasets.loaders import load_datasets
 from reports.generator import (
@@ -81,6 +89,11 @@ def _write_site_data(output_dir: Path) -> None:
 @app.command()
 def run(
     config_path: Path = typer.Option("models.json", "--config", help="Config file (models.json)."),
+    suite: str = typer.Option(
+        "sre",
+        "--suite",
+        help="Test suite to run: 'sre' (observability), 'developer' (code generation), or 'all'.",
+    ),
     categories: Optional[list[str]] = typer.Option(
         None, "--category", "-c", help="Run only these categories (repeatable)."
     ),
@@ -113,10 +126,20 @@ def run(
     if runs is not None:
         config.runs_per_test = runs
 
-    selected_categories = categories or TASK_CATEGORIES
-    invalid = [c for c in selected_categories if c not in TASK_CATEGORIES]
+    # Set the active suite (affects CATEGORY_WEIGHTS and TASK_CATEGORIES)
+    try:
+        suite_categories = set_suite(suite)
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]")
+        raise typer.Exit(code=1)
+
+    # Allow categories flag to override/filter the suite's categories
+    selected_categories = categories or suite_categories
+    invalid = [c for c in selected_categories if c not in ALL_CATEGORIES]
     if invalid:
-        console.print(f"[red]Unknown categories: {invalid}. Valid: {TASK_CATEGORIES}[/red]")
+        console.print(
+            f"[red]Unknown categories: {invalid}. Valid: {ALL_CATEGORIES}[/red]"
+        )
         raise typer.Exit(code=1)
 
     if models:
@@ -342,14 +365,41 @@ def _print_summary_table(summaries) -> None:
 @app.command("list-categories")
 def list_categories() -> None:
     """Show test categories and their weights in the global score."""
+    # Show all available categories with their suite association
     table = Table(title="Test Categories")
     table.add_column("Category")
-    table.add_column("Weight", justify="right")
+    table.add_column("Suite", justify="center")
+    table.add_column("SRE Weight", justify="right")
+    table.add_column("Developer Weight", justify="right")
     table.add_column("Kind")
-    for category, weight in CATEGORY_WEIGHTS.items():
+
+    from core.config import CODE_GEN_CATEGORY_WEIGHTS, SRE_CATEGORY_WEIGHTS
+
+    all_cats = set(SRE_CATEGORIES + DEVELOPER_CATEGORIES + ["efficiency"])
+    for category in sorted(all_cats):
+        if category in SRE_CATEGORIES:
+            suite = "SRE"
+        elif category in DEVELOPER_CATEGORIES:
+            suite = "Developer"
+        else:
+            suite = "Both"
+
+        sre_weight = SRE_CATEGORY_WEIGHTS.get(category, 0)
+        dev_weight = CODE_GEN_CATEGORY_WEIGHTS.get(category, 0)
         kind = "derived from other runs" if category == "efficiency" else "dataset-backed"
-        table.add_row(category, f"{weight:.0%}", kind)
+
+        table.add_row(
+            category,
+            suite,
+            f"{sre_weight:.0%}" if sre_weight > 0 else "—",
+            f"{dev_weight:.0%}" if dev_weight > 0 else "—",
+            kind,
+        )
+
     console.print(table)
+    console.print(
+        "\n[dim]Use --suite sre|developer|all to select which categories to run.[/dim]"
+    )
 
 
 @app.command("list-models")
