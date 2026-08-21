@@ -746,9 +746,7 @@ impl LRUCache {
     return {level: "UNKNOWN", timestamp: "", service: "", message: line};
 }''',
             "go": '''func ParseLogLine(line string) map[string]string {
-    import "regexp"
-    import "strings"
-    pattern := regexp.MustCompile("\\\\[(\\\\w+)\\\\]\\\\s+([\\\\d\\\\-T:]+)\\\\s+\\\\|\\\\s+([^|]+)\\\\s+\\\\|\\\\s+(.+)")
+    pattern := regexp.MustCompile("\\[(\\w+)\\]\\s+([\\d\\-T:]+)\\s+\\|\\s+([^|]+)\\s+\\|\\s+(.+)")
     match := pattern.FindStringSubmatch(line)
     if len(match) > 0 {
         level := match[1]
