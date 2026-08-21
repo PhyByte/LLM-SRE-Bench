@@ -832,21 +832,23 @@ class RustExecutor(LanguageExecutor):
     }}
 """)
 
-        return f"""
+        code_section = f"""
 {chr(10).join(imports)}
 
 {code}
 
-fn main() {{
+fn main() {{{{
     let mut passed = 0;
     let mut failed = 0;
     let mut errors: Vec<String> = Vec::new();
 
 {''.join(test_code)}
 
-    println!("{{{\\"passed\\":{{}},\\"failed\\":{{}},\\"errors\\":{:?}}}}}", passed, failed, errors);
-}}
+    let result_json = format!(r#"{{{{\"passed\":{{}},\"failed\":{{}},\"errors\":{{:?}}}}}}"#, passed, failed, errors);
+    println!("{{}}", result_json);
+}}}}
 """
+        return code_section
 
     def _extract_function_name(self, signature: str) -> str:
         if "fn " in signature:
