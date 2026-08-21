@@ -3,7 +3,7 @@
 Produces (deterministically, seeded):
   datasets/data/log_parsing.json        — real Loghub 2k lines with ground-truth templates
   datasets/data/anomaly_detection.json  — real labeled BGL windows + hard synthetic cases
-  datasets/data/metrics_timeseries.json — seasonal series with subtle injected anomalies
+  datasets/data/metrics_timeseries.json — seasonal series + harder traps (in-band peak, wrap, flatline)
 
 pattern_correlation.json and root_cause.json are curated by hand and not
 touched by this script.
@@ -266,6 +266,149 @@ def _seasonal_series(rng: random.Random, length: int, base: float, amplitude: fl
     ]
 
 
+def _round_series(values: list[float]) -> list[float]:
+    return [round(v, 2) for v in values]
+
+
+def _build_hard_timeseries(rng: random.Random) -> list[dict]:
+    """Extra cases designed so 'flag the global max / z-score' fails.
+
+    Uses a dedicated RNG so appending these never reshuffles the original 10
+    seasonal cases. The original builder rng is not consumed here.
+    """
+    cases: list[dict] = []
+    length = 96
+
+    values = _seasonal_series(rng, length, base=200, amplitude=80, noise=2.0)
+    peak = 6 + 24
+    values[peak] += 12
+    trough_spike = 18 + 24
+    values[trough_spike] += 28
+    cases.append(
+        {
+            "id": "ts-latency-inband-peak",
+            "metric": "p99_latency_ms",
+            "values": _round_series(values),
+            "anomalous_indices": [trough_spike],
+            "tolerance": 0,
+        }
+    )
+
+    hourly = []
+    for day in range(7):
+        weekend = day >= 5
+        for hour in range(24):
+            v = 700 + 200 * math.sin(2 * math.pi * hour / 24) + rng.gauss(0, 12)
+            if weekend:
+                v *= 0.5
+            hourly.append(v)
+    wed_dip = list(range(2 * 24 + 14, 2 * 24 + 17))
+    for i in wed_dip:
+        hourly[i] *= 0.5
+    cases.append(
+        {
+            "id": "ts-rps-weekend-dip",
+            "metric": "requests_per_second",
+            "values": _round_series(hourly),
+            "anomalous_indices": wed_dip,
+        }
+    )
+
+    values = _seasonal_series(rng, length, base=45, amplitude=18, noise=1.2)
+    freeze_start, freeze_end = 50, 68
+    frozen = values[freeze_start - 1]
+    for i in range(freeze_start, freeze_end):
+        values[i] = frozen
+    cases.append(
+        {
+            "id": "ts-cpu-flatline",
+            "metric": "cpu_percent",
+            "values": _round_series(values),
+            "anomalous_indices": list(range(freeze_start, freeze_end)),
+        }
+    )
+
+    counter = []
+    value = 8.2e8
+    wrap_at = 40
+    real_drop = [72, 73, 74]
+    for i in range(length):
+        value += 5.4e6 + rng.gauss(0, 1.2e5)
+        if i == wrap_at:
+            value = 2.1e6
+        if i in real_drop:
+            value *= 0.55
+        counter.append(max(value, 0.0))
+    cases.append(
+        {
+            "id": "ts-bytes-counter-wrap",
+            "metric": "bytes_sent_total",
+            "values": _round_series(counter),
+            "anomalous_indices": real_drop,
+            "tolerance": 0,
+        }
+    )
+
+    values = _seasonal_series(rng, length, base=55, amplitude=8, noise=0.9)
+    ramp = list(range(54, 78))
+    for k, i in enumerate(ramp):
+        values[i] += 0.4 * (k + 1)
+    cases.append(
+        {
+            "id": "ts-mem-slow-ramp",
+            "metric": "memory_percent",
+            "values": _round_series(values),
+            "anomalous_indices": ramp,
+        }
+    )
+
+    values = []
+    for i in range(length):
+        amp = 20 + 40 * i / (length - 1)
+        values.append(100 + amp * math.sin(2 * math.pi * i / 24) + rng.gauss(0, 1.5))
+    trough = 18 + 3 * 24
+    values[trough] += 22
+    cases.append(
+        {
+            "id": "ts-latency-growing-amp",
+            "metric": "p99_latency_ms",
+            "values": _round_series(values),
+            "anomalous_indices": [trough],
+            "tolerance": 0,
+        }
+    )
+
+    values = _seasonal_series(rng, length, base=62, amplitude=22, noise=1.1)
+    values[6] += 28
+    cases.append(
+        {
+            "id": "ts-cpu-peak-clean",
+            "metric": "cpu_percent",
+            "values": _round_series(values),
+            "anomalous_indices": [],
+        }
+    )
+
+    values = _seasonal_series(rng, length, base=900, amplitude=280, noise=18)
+    hold_start, hold_end = 30, 39
+    held = values[hold_start]
+    for i in range(hold_start, hold_end):
+        values[i] = held
+    dip = [70, 71, 72]
+    for i in dip:
+        values[i] *= 0.78
+    cases.append(
+        {
+            "id": "ts-rps-held-then-dip",
+            "metric": "requests_per_second",
+            "values": _round_series(values),
+            "anomalous_indices": dip,
+        }
+    )
+
+    return cases
+
+
 def build_timeseries(rng: random.Random) -> list[dict]:
     """Seasonal series where global z-scores fail: anomalies are deviations
     from the *expected seasonal value*, sometimes smaller than the seasonal
@@ -312,6 +455,7 @@ def build_timeseries(rng: random.Random) -> list[dict]:
                 "anomalous_indices": indices,
             }
         )
+    cases.extend(_build_hard_timeseries(random.Random(20260819)))
     return cases
 
 

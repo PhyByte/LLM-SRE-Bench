@@ -31,7 +31,9 @@ hand out perfect scores.*
   in healthy logs score 0 on them). Decoy warnings look scary but are routine. One case is
   silent data loss with no error keyword anywhere.
 - **Seasonality-aware time series.** Metric series follow a daily cycle, so a global z-score
-  misses off-peak spikes and level shifts that a competent analysis catches.
+  misses off-peak spikes and level shifts. Harder cases add in-band peaks, weekend-vs-weekday
+  dips, stuck/flatline sensors, counter wraps, and stale held samples — flagging the global
+  max is not enough.
 - **Red herrings in incidents.** Root-cause cases include unrelated deploys, failing crons, and
   network blips that happened during the window and must be ruled out — just like real postmortems.
 - **Multi-modal incidents where the useful signal moves.** Real microservice faults are presented
@@ -47,7 +49,7 @@ hand out perfect scores.*
 | Log Parsing | 15% | Template extraction accuracy + token F1 vs Loghub ground truth |
 | Anomaly Detection | 25% | Precision / Recall / F1 on per-line labels |
 | Pattern & Correlation | 15% | Pattern coverage + causal chain accuracy (A→B→C cascades) |
-| Metrics Time-Series | 10% | Point-wise F1 (±1 tolerance) on injected anomalies |
+| Metrics Time-Series | 10% | Point-wise F1 (default ±1 tolerance) on injected anomalies |
 | Root Cause & Summary | 10% | ROUGE-1/L + keyword recall vs reference (optional LLM-as-judge) |
 | **Multi-modal RCA** | **20%** | Culprit localization across metrics + logs + traces on real microservice incidents |
 | Efficiency & Consistency | 5% | Latency, token usage, run-to-run score variance |
@@ -189,7 +191,7 @@ python benchmark.py aggregate
 This command scans `results/<model>/records.json` for every model and regenerates
 `comparison_table.md`, `summary_report.md`, `detailed_results.csv`, and `results.json`.
 
-**Cost:** a full 3-run pass is ~155k input + ~20k output tokens per model — roughly **$0.30–$3.00
+**Cost:** a full 3-run pass is ~200k input + ~25k output tokens per model — roughly **$0.40–$4.00
 per frontier model** at current list prices. (Multi-modal RCA is about 90k of that input on its
 own: its bundles are far larger than the single-modality cases.) Responses are cached in
 `.cache/`, so interrupted or repeated runs never re-pay for the same call.
@@ -305,15 +307,15 @@ retried. Because the cache only stores successes, retries and re-runs cost only 
 root-cause answers get graded 0–10 by that model against the reference
 (score = 0.7 × judge + 0.3 × reference metrics).
 
-## The datasets (64 cases)
+## The datasets (82 cases)
 
 | File | Cases | Source |
 |---|---|---|
 | `log_parsing.json` | 15 | Real Loghub 2k logs + official templates ([logpai/logparser](https://github.com/logpai/logparser)) |
 | `anomaly_detection.json` | 11 | 6 real labeled BGL windows + 5 hard synthetics (decoys, silent failures, clean case) |
-| `metrics_timeseries.json` | 10 | Seasonal series (96 pts, daily cycle): off-peak spikes, level shifts, dips, 2 clean |
-| `pattern_correlation.json` | 5 | Curated multi-service cascades with distractors and 2-hop causal chains |
-| `root_cause.json` | 5 | Curated incidents with red herrings and reference answers |
+| `metrics_timeseries.json` | 18 | 10 seasonal series (96 pts) plus 8 traps: in-band peak, weekend dip, flatline, counter wrap, slow ramp, growing amplitude, extra clean, held samples |
+| `pattern_correlation.json` | 10 | Curated multi-service cascades with distractors, 2-hop chains, common-cause, inverted cause, decoy deploys |
+| `root_cause.json` | 10 | Curated incidents with red herrings (including false pages, flag defaults, noisy neighbors, AZ failure, decoy rollback) |
 | `multimodal_rca.json` | 18 | Real [Nezha](https://github.com/IntelligentDDS/Nezha) microservice incidents (metrics + logs + traces): 12 signal-screened solvable, 5 unrecoverable (`unknown`), 1 healthy baseline |
 
 Regenerate or scale up the generated portions deterministically:

@@ -153,5 +153,149 @@
       { "cause": "node_cpu_saturation", "effect": "kubelet_degradation" },
       { "cause": "kubelet_degradation", "effect": "pod_restarts" }
     ]
+  },
+  {
+    "id": "pc-006-vacuum-common-cause",
+    "source": "curated: autovacuum is the common cause of API 5xx and DB CPU; they do not cause each other",
+    "logs": [
+      "INFO deploy: billing-api v4.1.0 canary at 2% (health checks green)",
+      "INFO billing-db: autovacuum started on invoices (oldest xmin 14h, freeze table)",
+      "WARN billing-db: CPU 96% on primary, wait_event Vacuum",
+      "WARN billing-api: checkout POST p99 4100ms (SLO 600ms)",
+      "ERROR billing-api: 503 from /invoices: statement timeout after 15s SELECT ... FOR UPDATE",
+      "WARN billing-db: autovacuum on invoices holding AccessShareLock, 22 backends waiting",
+      "ERROR checkout-web: 5xx rate 12% (baseline 0.3%) calling billing-api",
+      "INFO redis-cache: hit ratio 91%, evictions 0 — cache healthy",
+      "WARN billing-api: 503 from /invoices: canceling statement due to lock timeout",
+      "WARN billing-db: CPU 94%, autovacuum still running on invoices (elapsed 18m)",
+      "ERROR checkout-web: 5xx rate 19%",
+      "INFO hpa: billing-api scaled 8 -> 14 replicas — 5xx rate unchanged",
+      "INFO billing-db: autovacuum on invoices completed after 23m",
+      "INFO billing-db: CPU 31%, lock queue drained",
+      "INFO billing-api: p99 420ms, checkout-web 5xx back to 0.2%"
+    ],
+    "expected_patterns": [
+      { "name": "autovacuum_lock_storm", "keywords": ["autovacuum", "vacuum", "lock", "invoices"] },
+      { "name": "db_cpu_saturation", "keywords": ["CPU", "billing-db", "primary"] },
+      { "name": "api_5xx_timeouts", "keywords": ["503", "5xx", "timeout", "billing-api"] }
+    ],
+    "expected_correlations": [
+      { "cause": "autovacuum_lock_storm", "effect": "db_cpu_saturation" },
+      { "cause": "autovacuum_lock_storm", "effect": "api_5xx_timeouts" }
+    ]
+  },
+  {
+    "id": "pc-007-lb-timeout-not-retries",
+    "source": "curated: inverted chain — retries look like the cause; the first failure is an upstream LB timeout",
+    "logs": [
+      "INFO scheduler: cron render-thumbnails started (usual nightly)",
+      "WARN edge-lb: backend catalog-api health check timed out after 2000ms (AZ-a)",
+      "ERROR edge-lb: 502 Bad Gateway for /catalog/items after 3 failed backends in AZ-a",
+      "WARN catalog-api: request cancelled: client disconnected (upstream timeout)",
+      "INFO catalog-api: retry middleware firing, attempt 1 of 5 on getItem",
+      "INFO catalog-api: retry middleware firing, attempt 2 of 5 on getItem",
+      "WARN catalog-api: outbound QPS to inventory-db 6.4x baseline (retries)",
+      "ERROR inventory-db: too many connections (max 200), refusing catalog-api",
+      "INFO catalog-api: retry middleware firing, attempt 4 of 5 on getItem",
+      "WARN inventory-db: CPU 22% — not saturated, just connection slots exhausted",
+      "ERROR catalog-api: getItem failed after 5 retries: connection refused",
+      "INFO oncall: AZ-a edge-lb target group had stale IPs after a rolling restart; AZ-b healthy",
+      "INFO edge-lb: AZ-a target group refreshed, health checks passing",
+      "INFO catalog-api: retry rate back to baseline, inventory-db connections 41/200"
+    ],
+    "expected_patterns": [
+      { "name": "lb_healthcheck_timeouts", "keywords": ["lb", "healthcheck", "timeout", "502", "edge-lb"] },
+      { "name": "client_retries", "keywords": ["retry", "retries", "attempt", "QPS"] },
+      { "name": "db_connection_exhaustion", "keywords": ["connections", "inventory-db", "exhaust"] }
+    ],
+    "expected_correlations": [
+      { "cause": "lb_healthcheck_timeouts", "effect": "client_retries" },
+      { "cause": "client_retries", "effect": "db_connection_exhaustion" }
+    ]
+  },
+  {
+    "id": "pc-008-decoy-deploy",
+    "source": "curated: coincidental deploy in the window is not on the causal path; disk fill is",
+    "logs": [
+      "11:02 INFO deploy: search-api v8.3.1 released (copy change + dependency bump)",
+      "11:08 WARN search-api: p99 180ms (SLO 250ms) — still inside budget",
+      "11:15 WARN kafka-broker-2: disk /var/kafka 91% full",
+      "11:18 ERROR kafka-broker-2: No space left on device writing search-events-4",
+      "11:18 WARN cluster: partition search-events-4 offline",
+      "11:19 ERROR indexer-worker: consumer lag 2.1M, last offset frozen",
+      "11:20 WARN search-api: stale results, newest document 14m old",
+      "11:21 INFO oncall: rolled back search-api to v8.3.0 — p99 unchanged, lag still frozen",
+      "11:24 ERROR indexer-worker: not enough replicas to fetch search-events-4",
+      "11:28 INFO ops: broker-2 disk 100%, largest dir is search-events-* (retention.ms raised yesterday)",
+      "11:31 INFO ops: retention.ms on search-events reverted, old segments deleting",
+      "11:40 INFO kafka-broker-2: disk 58%, partition search-events-4 online",
+      "11:42 INFO indexer-worker: lag draining, search-api freshness recovering",
+      "11:50 INFO search-api: newest document 12s old"
+    ],
+    "expected_patterns": [
+      { "name": "broker_disk_full", "keywords": ["disk", "full", "No space left", "kafka"] },
+      { "name": "partition_offline", "keywords": ["partition", "offline", "replicas"] },
+      { "name": "search_freshness_lag", "keywords": ["lag", "stale", "freshness", "indexer"] }
+    ],
+    "expected_correlations": [
+      { "cause": "broker_disk_full", "effect": "partition_offline" },
+      { "cause": "partition_offline", "effect": "search_freshness_lag" }
+    ]
+  },
+  {
+    "id": "pc-009-thundering-herd",
+    "source": "curated: a 8s origin blip is over; the ongoing outage is a self-inflicted retry herd",
+    "logs": [
+      "14:01:02 ERROR origin-cdn: origin timeout 8000ms for /api/session (single probe)",
+      "14:01:03 INFO origin-cdn: origin recovered, next probe 200ms",
+      "14:01:04 WARN session-api: cache miss storm, hit ratio 11% (baseline 93%)",
+      "14:01:05 WARN session-api: retrying origin GET /api/session attempt 3, backoff 50ms (no jitter)",
+      "14:01:06 ERROR origin-cdn: 429 rate limited from session-api, 22k req/s (baseline 1.4k)",
+      "14:01:08 WARN session-api: retrying origin GET /api/session attempt 6, backoff 50ms",
+      "14:01:09 ERROR origin-cdn: 503, origin CPU 99%, concurrent connections 18k",
+      "14:01:12 INFO autoscaler: session-api 20 -> 60 replicas — inbound retries increased further",
+      "14:01:14 ERROR origin-cdn: 503, origin still overloaded",
+      "14:01:18 INFO oncall: origin process list is healthy except inbound retries; initial 8s blip already cleared",
+      "14:01:22 INFO flags: retry jitter enabled, max attempts cut 6 -> 2 on session-api",
+      "14:01:30 INFO origin-cdn: 200s restored, CPU 34%",
+      "14:01:32 INFO session-api: cache hit ratio 89%"
+    ],
+    "expected_patterns": [
+      { "name": "brief_origin_blip", "keywords": ["origin", "timeout", "blip", "recovered", "probe"] },
+      { "name": "retry_thundering_herd", "keywords": ["retry", "herd", "backoff", "jitter"] },
+      { "name": "origin_overload", "keywords": ["overload", "429", "503", "origin"] }
+    ],
+    "expected_correlations": [
+      { "cause": "brief_origin_blip", "effect": "retry_thundering_herd" },
+      { "cause": "retry_thundering_herd", "effect": "origin_overload" }
+    ]
+  },
+  {
+    "id": "pc-010-missing-middle-stampede",
+    "source": "curated: logs show key expiry and API timeouts; the cache stampede in the middle must be inferred",
+    "logs": [
+      "09:00 INFO redis-cluster: key 'feed:home:v4' ttl expired (was 30s, traffic peak)",
+      "09:00 INFO redis-cluster: key 'feed:home:v4' ttl expired on 3 shards in the same second",
+      "09:01 WARN feed-api: p99 6200ms (SLO 400ms)",
+      "09:01 ERROR feed-api: origin graph-svc deadline exceeded after 5s",
+      "09:02 WARN graph-svc: inbound QPS 18x baseline from feed-api, CPU 97%",
+      "09:02 ERROR feed-api: origin graph-svc deadline exceeded after 5s",
+      "09:03 WARN feed-api: in-flight singleflight missed, 1400 concurrent origin fills for feed:home:v4",
+      "09:03 ERROR graph-svc: thread pool saturated, queue 12k",
+      "09:04 WARN feed-api: p99 8100ms",
+      "09:05 INFO redis-cluster: key 'feed:home:v4' SET after stampede, ttl 30s",
+      "09:06 INFO graph-svc: QPS back to baseline, CPU 28%",
+      "09:06 INFO feed-api: p99 310ms",
+      "INFO metrics-exporter: scrape ok"
+    ],
+    "expected_patterns": [
+      { "name": "hot_key_expiry", "keywords": ["ttl", "expir", "feed:home", "redis", "key"] },
+      { "name": "cache_stampede", "keywords": ["stampede", "singleflight", "concurrent", "fills"] },
+      { "name": "origin_timeouts", "keywords": ["timeout", "deadline", "p99", "graph-svc"] }
+    ],
+    "expected_correlations": [
+      { "cause": "hot_key_expiry", "effect": "cache_stampede" },
+      { "cause": "cache_stampede", "effect": "origin_timeouts" }
+    ]
   }
 ]

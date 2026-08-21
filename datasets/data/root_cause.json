@@ -124,5 +124,109 @@
     "reference_root_cause": "chronyd crashed on worker-5 and the node's clock drifted almost 4 minutes ahead, so tokens minted by the auth pod on that node had future timestamps and failed nbf/iat validation at the gateway.",
     "reference_summary": "After the NTP daemon segfaulted on worker-5, the node's clock drifted about 3m42s ahead. The auth-svc pod on that node began issuing tokens with future iat/nbf claims, which the api-gateway rejected as 'used before issued', causing intermittent 401s for roughly 5% of users — only requests whose tokens came from the skewed pod. Restarting chronyd and stepping the clock fixed validation immediately; the v2.4.4 deploy and the WAF rule change were unrelated.",
     "keywords": ["clock", "skew", "chronyd", "NTP", "worker-5", "token", "nbf", "401"]
+  },
+  {
+    "id": "rc-006-dashboard-timezone",
+    "source": "curated: the page was a UTC vs local dashboard; nothing was broken (red herrings: deploy, CPU blip)",
+    "logs": [
+      "15:02:11 INFO deploy: storefront-api v6.9.2 released (CSS token rename)",
+      "15:18:40 WARN storefront-api: CPU 61% on 2 of 18 pods for 40s, self-resolved",
+      "21:01:00 PAGER duty: SLO burn 'checkout_latency' 2h window at 14.2x (page)",
+      "21:03:12 INFO oncall: grafana dashboard 'Checkout p99 (local)' shows a spike at 21:00",
+      "21:04:02 INFO storefront-api: p99 310ms in UTC now, error rate 0.08%",
+      "21:05:40 INFO oncall: rolled forward a no-op config reload on storefront-api — metrics unchanged",
+      "21:09:18 INFO oncall: the paged panel uses browser-local TZ; the 21:00 spike is yesterday 13:00 UTC replayed by a 15m recording rule",
+      "21:10:02 INFO prometheus: recording rule checkout:p99:15m has stale-now=true and is plotting the last wall-clock 15m in local time",
+      "21:12:55 INFO oncall: UTC dashboard 'Checkout p99 (UTC)' is flat all evening; SLO burn query was on the local-TZ panel",
+      "21:14:10 INFO pager: incident resolved as false page — no customer impact, no rollback",
+      "21:20:00 INFO storefront-api: p99 295ms, error rate 0.07%"
+    ],
+    "reference_root_cause": "The page fired on a Grafana panel that rendered a recording rule in the browser's local timezone, so a daytime UTC bump looked like a 21:00 outage; storefront-api was healthy.",
+    "reference_summary": "On-call was paged for checkout latency SLO burn at 21:00, and the local-timezone Grafana dashboard appeared to show a spike. UTC metrics for storefront-api stayed at ~300ms p99 with a normal error rate. A no-op config reload changed nothing. The recording rule was plotting the last 15 minutes in local time, so yesterday afternoon's traffic was drawn at 21:00. The v6.9.2 CSS deploy and a brief CPU blip were unrelated. The incident was a false page with no customer impact.",
+    "keywords": ["timezone", "UTC", "dashboard", "false page", "recording rule", "Grafana", "local"]
+  },
+  {
+    "id": "rc-007-flag-default-on-restart",
+    "source": "curated: bad feature-flag default after restart, not a code bug (red herrings: image bump, GC)",
+    "logs": [
+      "02:10:00 INFO node worker-3: kernel live-patch applied, kubelet restarting 4 pods",
+      "02:10:41 INFO flags: LaunchDarkly stream timeout; payments-api falling back to baked-in defaults",
+      "02:10:42 INFO payments-api: flag 'charge_sync_legacy_path' default=true (binary default; LD value was false)",
+      "02:11:05 WARN payments-api: GC pause 480ms on pod payments-api-2",
+      "02:11:20 WARN payments-api: /charge p99 2400ms (SLO 400ms), CPU 88%",
+      "02:11:44 ERROR payments-api: legacy sync path calling tax-svc 4 times per charge (was 0)",
+      "02:12:10 INFO deploy: payments-api image digest unchanged since v5.4.0 (no new code)",
+      "02:12:30 ERROR tax-svc: inbound QPS 9x baseline from payments-api, 429s",
+      "02:13:02 WARN api-gateway: /charge error rate 17%",
+      "02:14:11 INFO oncall: LD stream still down; pods on worker-3 are the only ones on the default",
+      "02:16:40 INFO flags: LaunchDarkly stream restored, 'charge_sync_legacy_path' evaluated false",
+      "02:17:05 INFO payments-api: pods refreshed flag, legacy path off",
+      "02:18:20 INFO payments-api: p99 360ms, tax-svc QPS back to baseline"
+    ],
+    "reference_root_cause": "After a kubelet restart, payments-api could not reach LaunchDarkly and used the baked-in default charge_sync_legacy_path=true, which enabled a retired sync tax path; the running image had not changed.",
+    "reference_summary": "A kernel live-patch restarted pods on worker-3. Those processes missed the LaunchDarkly stream and fell back to a binary default that turned 'charge_sync_legacy_path' on, even though the live flag was false. The legacy path stampeded tax-svc, /charge p99 and error rate broke, and there was no new payments-api code. Restoring the flag stream flipped the default off and latency recovered. The GC pause was incidental.",
+    "keywords": ["LaunchDarkly", "default", "charge_sync_legacy_path", "restart", "flag", "tax-svc", "legacy"]
+  },
+  {
+    "id": "rc-008-noisy-neighbor-batch",
+    "source": "curated: paged service is the victim; a batch job on the same node is the culprit (red herrings: HPA, deploy)",
+    "logs": [
+      "03:02:00 INFO deploy: session-api v2.8.1 released on 12 pods, rollout healthy",
+      "03:40:12 INFO scheduler: batch job spark-etl-4401 placed on node worker-7 (no CPU limits)",
+      "03:41:08 WARN worker-7: node CPU 98%, spark-etl-4401 using 15.2 of 16 cores",
+      "03:41:40 WARN kubelet worker-7: liveness probe for session-api-5 timed out",
+      "03:41:41 INFO session-api-5: restarted (liveness failure), 401s during drain",
+      "03:42:02 WARN api-gateway: /session error rate 9% (only pods on worker-7)",
+      "03:42:20 INFO hpa: session-api scaled 12 -> 18 — error rate unchanged for worker-7 pods",
+      "03:43:11 WARN kubelet worker-7: PLEG last seen 3m ago, session-api-8 probe timed out",
+      "03:43:12 INFO session-api-8: restarted (liveness failure)",
+      "03:44:00 INFO oncall: pods on worker-4 and worker-9 are green; only worker-7 is bad",
+      "03:46:30 INFO scheduler: spark-etl-4401 finished on worker-7 after 6m",
+      "03:47:10 INFO worker-7: CPU 22%, kubelet probes succeeding",
+      "03:48:00 INFO api-gateway: /session error rate 0.1%"
+    ],
+    "reference_root_cause": "spark-etl-4401 ran without CPU limits on worker-7 and starved session-api pods of CPU, so kubelet liveness probes failed; session-api itself was not the fault.",
+    "reference_summary": "A limitless Spark ETL job landed on worker-7 and consumed nearly all 16 cores. session-api pods on that node started failing liveness probes and restarting, which showed up as /session errors. HPA added replicas on other nodes and did not help the victim pods. The v2.8.1 deploy was already healthy. When the batch job finished, CPU and probes recovered. The paged service was the noisy-neighbor victim, not the cause.",
+    "keywords": ["spark-etl-4401", "worker-7", "noisy-neighbor", "CPU", "liveness", "session-api", "limits"]
+  },
+  {
+    "id": "rc-009-az-failure-retries",
+    "source": "curated: one AZ dependency is down; retries fan the symptom into every service (red herrings: multi-service 5xx)",
+    "logs": [
+      "18:10:01 ERROR payments-api (az-b): connection to redis-sessions-az-b timed out after 200ms",
+      "18:10:04 WARN checkout-api: retrying payments-api (az-b) attempt 3, then failover skipped (sticky session)",
+      "18:10:08 ERROR cart-api: 500 from payments-api, retrying 5 times with no jitter",
+      "18:10:12 ERROR storefront: /checkout 5xx 38%, /cart 5xx 22%, /account 5xx 11%",
+      "18:10:20 WARN payments-api (az-a): healthy, p99 90ms, redis-sessions-az-a 0.2ms",
+      "18:10:28 ERROR redis-sessions-az-b: node host maintenance, ENETUNREACH from all az-b clients",
+      "18:10:40 INFO hpa: checkout-api, cart-api, storefront all scaling — 5xx still concentrated on az-b callers",
+      "18:11:02 INFO oncall: az-a and az-c error rates 0.4%; az-b 70% of 5xx",
+      "18:12:15 INFO ops: blocked az-b redis-sessions in the service mesh, traffic pinned to az-a/az-c",
+      "18:13:00 INFO storefront: 5xx back to 0.3%",
+      "18:14:40 INFO aws: az-b redis maintenance window posted 40m earlier in the infra channel, missed by app oncall"
+    ],
+    "reference_root_cause": "redis-sessions in az-b became unreachable (ENETUNREACH) during host maintenance; sticky retries kept sending checkout/cart/storefront traffic at the dead AZ instead of failing over.",
+    "reference_summary": "Host maintenance took redis-sessions-az-b off the network. payments-api in az-b started timing out, and checkout, cart, and storefront retried without jitter or AZ failover, so 5xx appeared in many user-facing services. payments-api in az-a stayed healthy. Pinning traffic off az-b cleared the errors. Autoscaling the frontends did not help because the dependency in one AZ was dead. The multi-service symptom was a retry fan-out, not a platform-wide code bug.",
+    "keywords": ["az-b", "redis-sessions", "maintenance", "retry", "failover", "sticky", "ENETUNREACH"]
+  },
+  {
+    "id": "rc-010-rollback-did-not-help",
+    "source": "curated: successful rollback of a same-day deploy did not fix the outage (red herring: the deploy)",
+    "logs": [
+      "08:15:00 INFO deploy: notify-api v3.6.0 released (template tweaks), rollout 12/12 ready",
+      "12:00:01 ERROR notify-api: SMTP AUTH failed: 535 5.7.8 username and password not accepted (smtp.mail-provider.example)",
+      "12:00:20 ERROR notify-api: failed to send password-reset mail, queue depth 4k",
+      "12:01:10 WARN api-gateway: /auth/forgot-password 200s but users report no email",
+      "12:04:00 INFO oncall: rolled back notify-api to v3.5.4 — rollout healthy",
+      "12:04:40 ERROR notify-api: SMTP AUTH failed: 535 5.7.8 username and password not accepted (same as before rollback)",
+      "12:05:12 INFO notify-api: running image v3.5.4, config checksum unchanged across the rollback",
+      "12:08:44 INFO secrets: vault lease smtp-notify-prod last renewed 90 days ago, vendor rotated the SMTP password at 12:00 UTC",
+      "12:12:02 INFO secrets: smtp-notify-prod password updated in vault and synced to notify-api",
+      "12:12:30 INFO notify-api: SMTP AUTH succeeded, drain of 4k queued mails started",
+      "12:18:00 INFO api-gateway: user reports of missing reset mail stopped"
+    ],
+    "reference_root_cause": "The SMTP vendor rotated the notify-api password at 12:00 UTC; the v3.6.0 template deploy was unrelated, which a successful rollback proved because AUTH 535 continued on v3.5.4.",
+    "reference_summary": "Password-reset mail stopped at 12:00 with SMTP 535 authentication failures. On-call rolled back notify-api v3.6.0 to v3.5.4; the rollback completed cleanly and the 535s continued on the old image with the same config checksum. Vault still had a 90-day-old SMTP secret; the vendor had rotated the password at 12:00. Updating the secret restored AUTH and drained the queue. The same-day deploy was a decoy.",
+    "keywords": ["SMTP", "535", "password", "rotated", "rollback", "vault", "notify-api", "vendor"]
   }
 ]

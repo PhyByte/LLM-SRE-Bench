@@ -1282,1011 +1282,6 @@
   },
   {
     "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 0,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 2.976916750019882,
-    "input_tokens": 486,
-    "output_tokens": 243,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 1,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 2.4402457080432214,
-    "input_tokens": 486,
-    "output_tokens": 207,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 2,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 2.0388309589470737,
-    "input_tokens": 486,
-    "output_tokens": 207,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 0,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.3333333333333333,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 4.080392041010782,
-    "input_tokens": 536,
-    "output_tokens": 286,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 1,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.3333333333333333,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 3.4135739580378868,
-    "input_tokens": 536,
-    "output_tokens": 286,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 2,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.3333333333333333,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 3.15707920800196,
-    "input_tokens": 536,
-    "output_tokens": 213,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 0,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 5.7066639580298215,
-    "input_tokens": 468,
-    "output_tokens": 441,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 1,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 2.0921443750266917,
-    "input_tokens": 468,
-    "output_tokens": 142,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 2,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 5.185589875036385,
-    "input_tokens": 468,
-    "output_tokens": 453,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 2.5498320829938166,
-    "input_tokens": 471,
-    "output_tokens": 350,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 3.8130463330307975,
-    "input_tokens": 471,
-    "output_tokens": 359,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 2.7364301250199787,
-    "input_tokens": 471,
-    "output_tokens": 359,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 0,
-    "score": 0.2,
-    "metrics": {
-      "pattern_coverage": 0.0,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 3.3853959169937298,
-    "input_tokens": 497,
-    "output_tokens": 244,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 1,
-    "score": 0.2,
-    "metrics": {
-      "pattern_coverage": 0.0,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 4.181010874977801,
-    "input_tokens": 497,
-    "output_tokens": 271,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 2,
-    "score": 0.2,
-    "metrics": {
-      "pattern_coverage": 0.0,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 4.089116875024047,
-    "input_tokens": 497,
-    "output_tokens": 269,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 0.6264941249974072,
-    "input_tokens": 619,
-    "output_tokens": 15,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 0.6071333750151098,
-    "input_tokens": 619,
-    "output_tokens": 15,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 0.6023712499882095,
-    "input_tokens": 619,
-    "output_tokens": 15,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 1.144392624963075,
-    "input_tokens": 621,
-    "output_tokens": 36,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 1,
-    "score": 0.9523809523809523,
-    "metrics": {
-      "precision": 0.9090909090909091,
-      "recall": 1.0,
-      "f1": 0.9523809523809523
-    },
-    "latency_s": 0.8057537089916877,
-    "input_tokens": 621,
-    "output_tokens": 39,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 1.0344044580124319,
-    "input_tokens": 621,
-    "output_tokens": 36,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 0.6357992499833927,
-    "input_tokens": 656,
-    "output_tokens": 12,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 0.6318310420028865,
-    "input_tokens": 656,
-    "output_tokens": 12,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 0.6739831669838168,
-    "input_tokens": 656,
-    "output_tokens": 12,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 0,
-    "score": 0.8275862068965518,
-    "metrics": {
-      "precision": 0.8,
-      "recall": 0.8571428571428571,
-      "f1": 0.8275862068965518
-    },
-    "latency_s": 0.917564167000819,
-    "input_tokens": 619,
-    "output_tokens": 51,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 1,
-    "score": 0.8275862068965518,
-    "metrics": {
-      "precision": 0.8,
-      "recall": 0.8571428571428571,
-      "f1": 0.8275862068965518
-    },
-    "latency_s": 0.7778461250127293,
-    "input_tokens": 619,
-    "output_tokens": 51,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 2,
-    "score": 0.7368421052631579,
-    "metrics": {
-      "precision": 0.5833333333333334,
-      "recall": 1.0,
-      "f1": 0.7368421052631579
-    },
-    "latency_s": 1.0700314170098864,
-    "input_tokens": 619,
-    "output_tokens": 78,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 0,
-    "score": 0.6666666666666665,
-    "metrics": {
-      "precision": 0.6,
-      "recall": 0.75,
-      "f1": 0.6666666666666665
-    },
-    "latency_s": 1.225908124994021,
-    "input_tokens": 620,
-    "output_tokens": 21,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 1,
-    "score": 0.6666666666666665,
-    "metrics": {
-      "precision": 0.6,
-      "recall": 0.75,
-      "f1": 0.6666666666666665
-    },
-    "latency_s": 1.3272794999647886,
-    "input_tokens": 620,
-    "output_tokens": 21,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 2,
-    "score": 0.6666666666666665,
-    "metrics": {
-      "precision": 0.6,
-      "recall": 0.75,
-      "f1": 0.6666666666666665
-    },
-    "latency_s": 1.1216080419835635,
-    "input_tokens": 620,
-    "output_tokens": 21,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 3.4599474169663154,
-    "input_tokens": 620,
-    "output_tokens": 213,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 2.276663125026971,
-    "input_tokens": 620,
-    "output_tokens": 207,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 2.762728958041407,
-    "input_tokens": 620,
-    "output_tokens": 210,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 0,
-    "score": 0.5,
-    "metrics": {
-      "precision": 0.5,
-      "recall": 0.5,
-      "f1": 0.5
-    },
-    "latency_s": 0.7797775840153918,
-    "input_tokens": 619,
-    "output_tokens": 12,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 1,
-    "score": 0.5,
-    "metrics": {
-      "precision": 0.5,
-      "recall": 0.5,
-      "f1": 0.5
-    },
-    "latency_s": 1.164036667032633,
-    "input_tokens": 619,
-    "output_tokens": 12,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 2,
-    "score": 0.5,
-    "metrics": {
-      "precision": 0.5,
-      "recall": 0.5,
-      "f1": 0.5
-    },
-    "latency_s": 0.6392601249972358,
-    "input_tokens": 619,
-    "output_tokens": 12,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 0.9956108329934068,
-    "input_tokens": 712,
-    "output_tokens": 15,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 1.126123666006606,
-    "input_tokens": 712,
-    "output_tokens": 15,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 1.0334221669472754,
-    "input_tokens": 712,
-    "output_tokens": 15,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 0.9617346249870025,
-    "input_tokens": 621,
-    "output_tokens": 12,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 0.9646216250257567,
-    "input_tokens": 621,
-    "output_tokens": 15,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0
-    },
-    "latency_s": 4.298151082999539,
-    "input_tokens": 621,
-    "output_tokens": 306,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 0,
-    "score": 0.38095238095238093,
-    "metrics": {
-      "precision": 0.23529411764705882,
-      "recall": 1.0,
-      "f1": 0.38095238095238093
-    },
-    "latency_s": 1.9450144579750486,
-    "input_tokens": 621,
-    "output_tokens": 159,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 1,
-    "score": 0.3870967741935484,
-    "metrics": {
-      "precision": 0.24,
-      "recall": 1.0,
-      "f1": 0.3870967741935484
-    },
-    "latency_s": 2.558541417005472,
-    "input_tokens": 621,
-    "output_tokens": 168,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 2,
-    "score": 0.36923076923076925,
-    "metrics": {
-      "precision": 0.22641509433962265,
-      "recall": 1.0,
-      "f1": 0.36923076923076925
-    },
-    "latency_s": 1.902759500022512,
-    "input_tokens": 621,
-    "output_tokens": 177,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 0,
-    "score": 0.5277754503560955,
-    "metrics": {
-      "rouge_l_summary": 0.3064516129032258,
-      "rouge_1_root_cause": 0.6363636363636364,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 1.731879041006323,
-    "input_tokens": 578,
-    "output_tokens": 106,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 1,
-    "score": 0.5277754503560955,
-    "metrics": {
-      "rouge_l_summary": 0.3064516129032258,
-      "rouge_1_root_cause": 0.6363636363636364,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 3.4467572499997914,
-    "input_tokens": 578,
-    "output_tokens": 106,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 2,
-    "score": 0.5287720409671629,
-    "metrics": {
-      "rouge_l_summary": 0.3089430894308943,
-      "rouge_1_root_cause": 0.6363636363636364,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 1.8228125419700518,
-    "input_tokens": 578,
-    "output_tokens": 105,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 0,
-    "score": 0.4531746031746032,
-    "metrics": {
-      "rouge_l_summary": 0.22222222222222224,
-      "rouge_1_root_cause": 0.5,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 1.8593339170329273,
-    "input_tokens": 523,
-    "output_tokens": 105,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 1,
-    "score": 0.4689010989010989,
-    "metrics": {
-      "rouge_l_summary": 0.26153846153846155,
-      "rouge_1_root_cause": 0.5,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 1.7171744580264203,
-    "input_tokens": 523,
-    "output_tokens": 111,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 2,
-    "score": 0.5085513078470825,
-    "metrics": {
-      "rouge_l_summary": 0.2535211267605634,
-      "rouge_1_root_cause": 0.5,
-      "keyword_recall": 0.8571428571428571
-    },
-    "latency_s": 2.062019208970014,
-    "input_tokens": 523,
-    "output_tokens": 123,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 0,
-    "score": 0.4242863601136657,
-    "metrics": {
-      "rouge_l_summary": 0.31645569620253167,
-      "rouge_1_root_cause": 0.3673469387755102,
-      "keyword_recall": 0.625
-    },
-    "latency_s": 2.391482167004142,
-    "input_tokens": 623,
-    "output_tokens": 136,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 1,
-    "score": 0.4119897959183673,
-    "metrics": {
-      "rouge_l_summary": 0.28571428571428564,
-      "rouge_1_root_cause": 0.3673469387755102,
-      "keyword_recall": 0.625
-    },
-    "latency_s": 2.0558529580011964,
-    "input_tokens": 623,
-    "output_tokens": 131,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 2,
-    "score": 0.4119897959183673,
-    "metrics": {
-      "rouge_l_summary": 0.28571428571428564,
-      "rouge_1_root_cause": 0.3673469387755102,
-      "keyword_recall": 0.625
-    },
-    "latency_s": 2.0842289170250297,
-    "input_tokens": 623,
-    "output_tokens": 131,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 0,
-    "score": 0.3890570797855566,
-    "metrics": {
-      "rouge_l_summary": 0.31788079470198677,
-      "rouge_1_root_cause": 0.4444444444444444,
-      "keyword_recall": 0.42857142857142855
-    },
-    "latency_s": 1.8330649580457248,
-    "input_tokens": 520,
-    "output_tokens": 121,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 1,
-    "score": 0.34476190476190477,
-    "metrics": {
-      "rouge_l_summary": 0.3142857142857143,
-      "rouge_1_root_cause": 0.4444444444444444,
-      "keyword_recall": 0.2857142857142857
-    },
-    "latency_s": 1.4339609169983305,
-    "input_tokens": 520,
-    "output_tokens": 99,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 2,
-    "score": 0.3674603174603175,
-    "metrics": {
-      "rouge_l_summary": 0.2638888888888889,
-      "rouge_1_root_cause": 0.4444444444444444,
-      "keyword_recall": 0.42857142857142855
-    },
-    "latency_s": 1.2260037919622846,
-    "input_tokens": 520,
-    "output_tokens": 105,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 0,
-    "score": 0.31832167832167835,
-    "metrics": {
-      "rouge_l_summary": 0.19580419580419578,
-      "rouge_1_root_cause": 0.3,
-      "keyword_recall": 0.5
-    },
-    "latency_s": 2.150311540986877,
-    "input_tokens": 562,
-    "output_tokens": 119,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 1,
-    "score": 0.33502824858757063,
-    "metrics": {
-      "rouge_l_summary": 0.20833333333333331,
-      "rouge_1_root_cause": 0.3389830508474576,
-      "keyword_recall": 0.5
-    },
-    "latency_s": 2.6642601669882424,
-    "input_tokens": 562,
-    "output_tokens": 122,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 2,
-    "score": 0.32333333333333336,
-    "metrics": {
-      "rouge_l_summary": 0.20833333333333331,
-      "rouge_1_root_cause": 0.3,
-      "keyword_recall": 0.5
-    },
-    "latency_s": 1.9371249999967404,
-    "input_tokens": 562,
-    "output_tokens": 122,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "gpt-4o",
     "category": "multimodal_rca",
     "case_id": "mm-ob-exceptio-frontend-01",
     "run_index": 0,
@@ -3284,6 +2279,1914 @@
     "latency_s": 7.485372290946543,
     "input_tokens": 3760,
     "output_tokens": 190,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.6697137500159442,
+    "input_tokens": 619,
+    "output_tokens": 15,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.1739711249247193,
+    "input_tokens": 619,
+    "output_tokens": 15,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 0.7902401657775044,
+    "input_tokens": 619,
+    "output_tokens": 15,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.3228618330322206,
+    "input_tokens": 621,
+    "output_tokens": 36,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 2.4126277500763535,
+    "input_tokens": 621,
+    "output_tokens": 36,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 2,
+    "score": 0.9523809523809523,
+    "metrics": {
+      "precision": 0.9090909090909091,
+      "recall": 1.0,
+      "f1": 0.9523809523809523
+    },
+    "latency_s": 1.4775407910346985,
+    "input_tokens": 621,
+    "output_tokens": 39,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.6924829580821097,
+    "input_tokens": 656,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.8352695829235017,
+    "input_tokens": 656,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.792276750318706,
+    "input_tokens": 656,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 0,
+    "score": 0.8275862068965518,
+    "metrics": {
+      "precision": 0.8,
+      "recall": 0.8571428571428571,
+      "f1": 0.8275862068965518
+    },
+    "latency_s": 1.0361010418273509,
+    "input_tokens": 619,
+    "output_tokens": 51,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 1,
+    "score": 0.8275862068965518,
+    "metrics": {
+      "precision": 0.8,
+      "recall": 0.8571428571428571,
+      "f1": 0.8275862068965518
+    },
+    "latency_s": 3.740377458743751,
+    "input_tokens": 619,
+    "output_tokens": 51,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 2,
+    "score": 0.8275862068965518,
+    "metrics": {
+      "precision": 0.8,
+      "recall": 0.8571428571428571,
+      "f1": 0.8275862068965518
+    },
+    "latency_s": 0.9810180421918631,
+    "input_tokens": 619,
+    "output_tokens": 51,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 0,
+    "score": 0.6666666666666665,
+    "metrics": {
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6666666666666665
+    },
+    "latency_s": 1.7202171660028398,
+    "input_tokens": 620,
+    "output_tokens": 21,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 1,
+    "score": 0.6666666666666665,
+    "metrics": {
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6666666666666665
+    },
+    "latency_s": 0.945442708209157,
+    "input_tokens": 620,
+    "output_tokens": 21,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 2,
+    "score": 0.6666666666666665,
+    "metrics": {
+      "precision": 0.6,
+      "recall": 0.75,
+      "f1": 0.6666666666666665
+    },
+    "latency_s": 0.8832435412332416,
+    "input_tokens": 620,
+    "output_tokens": 21,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 2.360648916102946,
+    "input_tokens": 620,
+    "output_tokens": 204,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 2.2068296670913696,
+    "input_tokens": 620,
+    "output_tokens": 207,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.8925185832194984,
+    "input_tokens": 620,
+    "output_tokens": 207,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 0,
+    "score": 0.5,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "latency_s": 1.0128085841424763,
+    "input_tokens": 619,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 1,
+    "score": 0.5,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "latency_s": 1.4437591671012342,
+    "input_tokens": 619,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 2,
+    "score": 0.5,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "latency_s": 0.8025591252371669,
+    "input_tokens": 619,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.8062588330358267,
+    "input_tokens": 712,
+    "output_tokens": 15,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 1.6893739169463515,
+    "input_tokens": 712,
+    "output_tokens": 15,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 0.7512367917224765,
+    "input_tokens": 712,
+    "output_tokens": 15,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.0992633337154984,
+    "input_tokens": 621,
+    "output_tokens": 30,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.4983776253648102,
+    "input_tokens": 621,
+    "output_tokens": 27,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.147817624732852,
+    "input_tokens": 621,
+    "output_tokens": 27,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 0,
+    "score": 0.4067796610169491,
+    "metrics": {
+      "precision": 0.2553191489361702,
+      "recall": 1.0,
+      "f1": 0.4067796610169491
+    },
+    "latency_s": 1.768042583949864,
+    "input_tokens": 621,
+    "output_tokens": 147,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 1,
+    "score": 0.4067796610169491,
+    "metrics": {
+      "precision": 0.2553191489361702,
+      "recall": 1.0,
+      "f1": 0.4067796610169491
+    },
+    "latency_s": 2.38603154104203,
+    "input_tokens": 621,
+    "output_tokens": 147,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 2,
+    "score": 0.4067796610169491,
+    "metrics": {
+      "precision": 0.2553191489361702,
+      "recall": 1.0,
+      "f1": 0.4067796610169491
+    },
+    "latency_s": 2.3136188331991434,
+    "input_tokens": 621,
+    "output_tokens": 147,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-inband-peak",
+    "run_index": 0,
+    "score": 0.6666666666666666,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+    },
+    "latency_s": 0.7063276246190071,
+    "input_tokens": 621,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-inband-peak",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.759222500026226,
+    "input_tokens": 621,
+    "output_tokens": 9,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-inband-peak",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.7400154168717563,
+    "input_tokens": 621,
+    "output_tokens": 9,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-weekend-dip",
+    "run_index": 0,
+    "score": 0.7499999999999999,
+    "metrics": {
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1": 0.7499999999999999
+    },
+    "latency_s": 1.1195324161089957,
+    "input_tokens": 980,
+    "output_tokens": 21,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-weekend-dip",
+    "run_index": 1,
+    "score": 0.5,
+    "metrics": {
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1": 0.5
+    },
+    "latency_s": 1.2284273747354746,
+    "input_tokens": 980,
+    "output_tokens": 21,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-weekend-dip",
+    "run_index": 2,
+    "score": 0.5,
+    "metrics": {
+      "precision": 0.4,
+      "recall": 0.6666666666666666,
+      "f1": 0.5
+    },
+    "latency_s": 0.9246178329922259,
+    "input_tokens": 980,
+    "output_tokens": 21,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 0,
+    "score": 0.4615384615384615,
+    "metrics": {
+      "precision": 0.3,
+      "recall": 1.0,
+      "f1": 0.4615384615384615
+    },
+    "latency_s": 2.3762454581446946,
+    "input_tokens": 619,
+    "output_tokens": 186,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 1,
+    "score": 0.4615384615384615,
+    "metrics": {
+      "precision": 0.3,
+      "recall": 1.0,
+      "f1": 0.4615384615384615
+    },
+    "latency_s": 1.908260790631175,
+    "input_tokens": 619,
+    "output_tokens": 186,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 2,
+    "score": 0.923076923076923,
+    "metrics": {
+      "precision": 0.8571428571428571,
+      "recall": 1.0,
+      "f1": 0.923076923076923
+    },
+    "latency_s": 0.8811473748646677,
+    "input_tokens": 619,
+    "output_tokens": 69,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-bytes-counter-wrap",
+    "run_index": 0,
+    "score": 0.10526315789473684,
+    "metrics": {
+      "precision": 0.05714285714285714,
+      "recall": 0.6666666666666666,
+      "f1": 0.10526315789473684
+    },
+    "latency_s": 1.5600581248290837,
+    "input_tokens": 819,
+    "output_tokens": 111,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-bytes-counter-wrap",
+    "run_index": 1,
+    "score": 0.10526315789473684,
+    "metrics": {
+      "precision": 0.05714285714285714,
+      "recall": 0.6666666666666666,
+      "f1": 0.10526315789473684
+    },
+    "latency_s": 1.5932582500390708,
+    "input_tokens": 819,
+    "output_tokens": 111,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-bytes-counter-wrap",
+    "run_index": 2,
+    "score": 0.10526315789473684,
+    "metrics": {
+      "precision": 0.05714285714285714,
+      "recall": 0.6666666666666666,
+      "f1": 0.10526315789473684
+    },
+    "latency_s": 1.3751210002228618,
+    "input_tokens": 819,
+    "output_tokens": 111,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-slow-ramp",
+    "run_index": 0,
+    "score": 0.45161290322580644,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.2916666666666667,
+      "f1": 0.45161290322580644
+    },
+    "latency_s": 0.9483118331991136,
+    "input_tokens": 619,
+    "output_tokens": 27,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-slow-ramp",
+    "run_index": 1,
+    "score": 0.45161290322580644,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.2916666666666667,
+      "f1": 0.45161290322580644
+    },
+    "latency_s": 0.8961924999020994,
+    "input_tokens": 619,
+    "output_tokens": 27,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-slow-ramp",
+    "run_index": 2,
+    "score": 0.5,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "f1": 0.5
+    },
+    "latency_s": 1.091787583194673,
+    "input_tokens": 619,
+    "output_tokens": 30,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-growing-amp",
+    "run_index": 0,
+    "score": 0.5,
+    "metrics": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5
+    },
+    "latency_s": 5.364156125113368,
+    "input_tokens": 621,
+    "output_tokens": 15,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-growing-amp",
+    "run_index": 1,
+    "score": 0.2857142857142857,
+    "metrics": {
+      "precision": 0.16666666666666666,
+      "recall": 1.0,
+      "f1": 0.2857142857142857
+    },
+    "latency_s": 0.9512998331338167,
+    "input_tokens": 621,
+    "output_tokens": 24,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-growing-amp",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.8832320407964289,
+    "input_tokens": 621,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-peak-clean",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.8321747090667486,
+    "input_tokens": 619,
+    "output_tokens": 9,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-peak-clean",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.5398460421711206,
+    "input_tokens": 619,
+    "output_tokens": 9,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-peak-clean",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.0766822500154376,
+    "input_tokens": 619,
+    "output_tokens": 9,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-held-then-dip",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.7289503747597337,
+    "input_tokens": 660,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-held-then-dip",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 0.6385291670449078,
+    "input_tokens": 660,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-held-then-dip",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 1.4373931246809661,
+    "input_tokens": 660,
+    "output_tokens": 12,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 2.412736624944955,
+    "input_tokens": 486,
+    "output_tokens": 205,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 2.6929808747954667,
+    "input_tokens": 486,
+    "output_tokens": 209,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 2.846770458854735,
+    "input_tokens": 486,
+    "output_tokens": 208,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 2.270693375263363,
+    "input_tokens": 536,
+    "output_tokens": 269,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 2.160770082846284,
+    "input_tokens": 536,
+    "output_tokens": 263,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 1.6312341671437025,
+    "input_tokens": 536,
+    "output_tokens": 206,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 4.704997791908681,
+    "input_tokens": 468,
+    "output_tokens": 478,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 2.029953292105347,
+    "input_tokens": 468,
+    "output_tokens": 138,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.5913430000655353,
+    "input_tokens": 468,
+    "output_tokens": 249,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 6.1771835829131305,
+    "input_tokens": 471,
+    "output_tokens": 359,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 6.617332165595144,
+    "input_tokens": 471,
+    "output_tokens": 358,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 5.423952957615256,
+    "input_tokens": 471,
+    "output_tokens": 359,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 0,
+    "score": 0.4,
+    "metrics": {
+      "pattern_coverage": 0.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 2.1799629158340394,
+    "input_tokens": 497,
+    "output_tokens": 246,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 1,
+    "score": 0.2,
+    "metrics": {
+      "pattern_coverage": 0.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 2.568717666901648,
+    "input_tokens": 497,
+    "output_tokens": 268,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 2,
+    "score": 0.2,
+    "metrics": {
+      "pattern_coverage": 0.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 2.2261868747882545,
+    "input_tokens": 497,
+    "output_tokens": 268,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 3.072940167039633,
+    "input_tokens": 466,
+    "output_tokens": 216,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 2.3245063326321542,
+    "input_tokens": 466,
+    "output_tokens": 220,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 2.4043723749928176,
+    "input_tokens": 466,
+    "output_tokens": 220,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 4.14917958388105,
+    "input_tokens": 435,
+    "output_tokens": 462,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 5.843565209303051,
+    "input_tokens": 435,
+    "output_tokens": 505,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 4.20149837480858,
+    "input_tokens": 435,
+    "output_tokens": 381,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 6.113366666249931,
+    "input_tokens": 476,
+    "output_tokens": 320,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 4.431993999984115,
+    "input_tokens": 476,
+    "output_tokens": 366,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 5.304120374843478,
+    "input_tokens": 476,
+    "output_tokens": 364,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 0,
+    "score": 0.19999999999999998,
+    "metrics": {
+      "pattern_coverage": 0.3333333333333333,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 4.145772458054125,
+    "input_tokens": 498,
+    "output_tokens": 398,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 1,
+    "score": 0.19999999999999998,
+    "metrics": {
+      "pattern_coverage": 0.3333333333333333,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 6.6815255000256,
+    "input_tokens": 498,
+    "output_tokens": 401,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 2,
+    "score": 0.19999999999999998,
+    "metrics": {
+      "pattern_coverage": 0.3333333333333333,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 5.24379300000146,
+    "input_tokens": 498,
+    "output_tokens": 401,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 4.757276833988726,
+    "input_tokens": 451,
+    "output_tokens": 389,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 1,
+    "score": 0.39999999999999997,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 3.3824599580839276,
+    "input_tokens": 451,
+    "output_tokens": 373,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 2,
+    "score": 0.19999999999999998,
+    "metrics": {
+      "pattern_coverage": 0.3333333333333333,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 3.3840919588692486,
+    "input_tokens": 451,
+    "output_tokens": 311,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 0,
+    "score": 0.5273322097749579,
+    "metrics": {
+      "rouge_l_summary": 0.3053435114503817,
+      "rouge_1_root_cause": 0.6363636363636364,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.2920661247335374,
+    "input_tokens": 578,
+    "output_tokens": 115,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 1,
+    "score": 0.5342270632593213,
+    "metrics": {
+      "rouge_l_summary": 0.3225806451612903,
+      "rouge_1_root_cause": 0.6363636363636364,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.9182496252469718,
+    "input_tokens": 578,
+    "output_tokens": 106,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 2,
+    "score": 0.5258297258297258,
+    "metrics": {
+      "rouge_l_summary": 0.3015873015873015,
+      "rouge_1_root_cause": 0.6363636363636364,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.4702763329260051,
+    "input_tokens": 578,
+    "output_tokens": 109,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 0,
+    "score": 0.4689010989010989,
+    "metrics": {
+      "rouge_l_summary": 0.26153846153846155,
+      "rouge_1_root_cause": 0.5,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.0570313748903573,
+    "input_tokens": 523,
+    "output_tokens": 111,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 1,
+    "score": 0.4722222222222222,
+    "metrics": {
+      "rouge_l_summary": 0.2698412698412698,
+      "rouge_1_root_cause": 0.5,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.9318381659686565,
+    "input_tokens": 523,
+    "output_tokens": 105,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 2,
+    "score": 0.4722222222222222,
+    "metrics": {
+      "rouge_l_summary": 0.2698412698412698,
+      "rouge_1_root_cause": 0.5,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.0355029590427876,
+    "input_tokens": 523,
+    "output_tokens": 105,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 0,
+    "score": 0.4119897959183673,
+    "metrics": {
+      "rouge_l_summary": 0.28571428571428564,
+      "rouge_1_root_cause": 0.3673469387755102,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 1.7442997503094375,
+    "input_tokens": 623,
+    "output_tokens": 131,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 1,
+    "score": 0.424533349925336,
+    "metrics": {
+      "rouge_l_summary": 0.3170731707317073,
+      "rouge_1_root_cause": 0.3673469387755102,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 1.716694707982242,
+    "input_tokens": 623,
+    "output_tokens": 142,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 2,
+    "score": 0.424533349925336,
+    "metrics": {
+      "rouge_l_summary": 0.3170731707317073,
+      "rouge_1_root_cause": 0.3673469387755102,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 1.9203262091614306,
+    "input_tokens": 623,
+    "output_tokens": 142,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 0,
+    "score": 0.3674603174603175,
+    "metrics": {
+      "rouge_l_summary": 0.2638888888888889,
+      "rouge_1_root_cause": 0.4444444444444444,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 1.4562892499379814,
+    "input_tokens": 520,
+    "output_tokens": 105,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 1,
+    "score": 0.3674603174603175,
+    "metrics": {
+      "rouge_l_summary": 0.2638888888888889,
+      "rouge_1_root_cause": 0.4444444444444444,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 2.1319176671095192,
+    "input_tokens": 520,
+    "output_tokens": 105,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 2,
+    "score": 0.3674603174603175,
+    "metrics": {
+      "rouge_l_summary": 0.2638888888888889,
+      "rouge_1_root_cause": 0.4444444444444444,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 1.4468051670119166,
+    "input_tokens": 520,
+    "output_tokens": 105,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 0,
+    "score": 0.33978494623655914,
+    "metrics": {
+      "rouge_l_summary": 0.20833333333333331,
+      "rouge_1_root_cause": 0.3548387096774194,
+      "keyword_recall": 0.5
+    },
+    "latency_s": 1.8432384156621993,
+    "input_tokens": 562,
+    "output_tokens": 124,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 1,
+    "score": 0.3347732912249041,
+    "metrics": {
+      "rouge_l_summary": 0.19580419580419578,
+      "rouge_1_root_cause": 0.3548387096774194,
+      "keyword_recall": 0.5
+    },
+    "latency_s": 1.867594042327255,
+    "input_tokens": 562,
+    "output_tokens": 123,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 2,
+    "score": 0.32275862068965516,
+    "metrics": {
+      "rouge_l_summary": 0.20689655172413793,
+      "rouge_1_root_cause": 0.3,
+      "keyword_recall": 0.5
+    },
+    "latency_s": 2.151770541910082,
+    "input_tokens": 562,
+    "output_tokens": 123,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 0,
+    "score": 0.2438961038961039,
+    "metrics": {
+      "rouge_l_summary": 0.225,
+      "rouge_1_root_cause": 0.22727272727272727,
+      "keyword_recall": 0.2857142857142857
+    },
+    "latency_s": 2.4807234588079154,
+    "input_tokens": 480,
+    "output_tokens": 112,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 1,
+    "score": 0.311038961038961,
+    "metrics": {
+      "rouge_l_summary": 0.2857142857142857,
+      "rouge_1_root_cause": 0.22727272727272727,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 2.2031678343191743,
+    "input_tokens": 480,
+    "output_tokens": 111,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 2,
+    "score": 0.23336630257160057,
+    "metrics": {
+      "rouge_l_summary": 0.19867549668874174,
+      "rouge_1_root_cause": 0.22727272727272727,
+      "keyword_recall": 0.2857142857142857
+    },
+    "latency_s": 1.431658084038645,
+    "input_tokens": 480,
+    "output_tokens": 95,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 0,
+    "score": 0.35595397890699904,
+    "metrics": {
+      "rouge_l_summary": 0.2684563758389262,
+      "rouge_1_root_cause": 0.39999999999999997,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 2.116812416817993,
+    "input_tokens": 485,
+    "output_tokens": 132,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 1,
+    "score": 0.44208713272543054,
+    "metrics": {
+      "rouge_l_summary": 0.2695035460992908,
+      "rouge_1_root_cause": 0.39999999999999997,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.076719374861568,
+    "input_tokens": 485,
+    "output_tokens": 118,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 2,
+    "score": 0.43224489795918364,
+    "metrics": {
+      "rouge_l_summary": 0.24489795918367346,
+      "rouge_1_root_cause": 0.39999999999999997,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.6511828750371933,
+    "input_tokens": 485,
+    "output_tokens": 129,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 0,
+    "score": 0.44477747136617085,
+    "metrics": {
+      "rouge_l_summary": 0.2251655629139073,
+      "rouge_1_root_cause": 0.46808510638297873,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.170998249668628,
+    "input_tokens": 493,
+    "output_tokens": 137,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 1,
+    "score": 0.43587066649046297,
+    "metrics": {
+      "rouge_l_summary": 0.20289855072463767,
+      "rouge_1_root_cause": 0.46808510638297873,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.770916084293276,
+    "input_tokens": 493,
+    "output_tokens": 115,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 2,
+    "score": 0.43471124620060786,
+    "metrics": {
+      "rouge_l_summary": 0.19999999999999998,
+      "rouge_1_root_cause": 0.46808510638297873,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.260564415715635,
+    "input_tokens": 493,
+    "output_tokens": 104,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 0,
+    "score": 0.2820408163265306,
+    "metrics": {
+      "rouge_l_summary": 0.2,
+      "rouge_1_root_cause": 0.24489795918367346,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 1.6337209166958928,
+    "input_tokens": 477,
+    "output_tokens": 131,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 1,
+    "score": 0.26397630019749835,
+    "metrics": {
+      "rouge_l_summary": 0.15483870967741936,
+      "rouge_1_root_cause": 0.24489795918367346,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 1.738531207665801,
+    "input_tokens": 477,
+    "output_tokens": 124,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 2,
+    "score": 0.26357927786499213,
+    "metrics": {
+      "rouge_l_summary": 0.15384615384615383,
+      "rouge_1_root_cause": 0.24489795918367346,
+      "keyword_recall": 0.42857142857142855
+    },
+    "latency_s": 2.1185124590992928,
+    "input_tokens": 477,
+    "output_tokens": 127,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 0,
+    "score": 0.4144368507381082,
+    "metrics": {
+      "rouge_l_summary": 0.21935483870967742,
+      "rouge_1_root_cause": 0.3389830508474576,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 1.6129989996552467,
+    "input_tokens": 452,
+    "output_tokens": 133,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 1,
+    "score": 0.4025058275058275,
+    "metrics": {
+      "rouge_l_summary": 0.20512820512820512,
+      "rouge_1_root_cause": 0.3181818181818182,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 1.412313791923225,
+    "input_tokens": 452,
+    "output_tokens": 116,
+    "cached": false,
+    "error": null
+  },
+  {
+    "model": "gpt-4o",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 2,
+    "score": 0.4025058275058275,
+    "metrics": {
+      "rouge_l_summary": 0.20512820512820512,
+      "rouge_1_root_cause": 0.3181818181818182,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 1.8310463326051831,
+    "input_tokens": 452,
+    "output_tokens": 116,
     "cached": false,
     "error": null
   }

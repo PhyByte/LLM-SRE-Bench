@@ -12,7 +12,8 @@ own directory with the same file names). Expected shapes:
   pattern_correlation.json {"id", "logs": [...],
                             "expected_patterns": [{"name", "keywords": [...]}],
                             "expected_correlations": [{"cause", "effect"}]}
-  metrics_timeseries.json  {"id", "metric", "values": [...], "anomalous_indices": [...]}
+  metrics_timeseries.json  {"id", "metric", "values": [...], "anomalous_indices": [...],
+                            optional "tolerance"}
   root_cause.json          {"id", "logs": [...], "reference_root_cause",
                             "reference_summary", "keywords": [...]}
   multimodal_rca.json      {"id", "system", "services": [...], "incident_window",

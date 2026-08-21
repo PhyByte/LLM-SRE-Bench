@@ -1,25 +1,25 @@
 {
   "model": "gpt-5.6-terra",
-  "global_score": 71.27,
+  "global_score": 70.59,
   "category_scores": {
     "log_parsing": 91.91,
     "anomaly_detection": 62.14,
-    "pattern_correlation": 82.67,
-    "metrics_timeseries": 86.27,
-    "root_cause": 54.15,
     "multimodal_rca": 59.54,
-    "efficiency": 71.92
+    "metrics_timeseries": 77.87,
+    "pattern_correlation": 86.0,
+    "root_cause": 49.76,
+    "efficiency": 74.06
   },
   "efficiency_metrics": {
-    "avg_latency_s": 3.5817,
-    "avg_total_tokens": 2198.8906,
-    "score_stddev": 3.6898,
-    "latency_score": 0.8209,
-    "token_score": 0.4503,
-    "consistency_score": 0.8524
+    "avg_latency_s": 3.9234,
+    "avg_total_tokens": 1916.6016,
+    "score_stddev": 3.0967,
+    "latency_score": 0.8038,
+    "token_score": 0.5208,
+    "consistency_score": 0.8761
   },
   "error_count": 0,
-  "total_runs": 192,
-  "total_duration_s": 687.68,
-  "last_run_wall_clock_s": 287.53
+  "total_runs": 246,
+  "total_duration_s": 965.15,
+  "last_run_wall_clock_s": 483.73
 }

@@ -1,0 +1,22 @@
+{
+  "model": "gemma-4-26B-a4b",
+  "global_score": 15.74,
+  "category_scores": {
+    "metrics_timeseries": 40.01,
+    "pattern_correlation": 0.0,
+    "root_cause": 0.0,
+    "efficiency": 45.93
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 14.2525,
+    "avg_total_tokens": 3377.1852,
+    "score_stddev": 0.1975,
+    "latency_score": 0.2874,
+    "token_score": 0.1557,
+    "consistency_score": 0.9921
+  },
+  "error_count": 87,
+  "total_runs": 114,
+  "total_duration_s": 384.82,
+  "last_run_wall_clock_s": 1709.89
+}

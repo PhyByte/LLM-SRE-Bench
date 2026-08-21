@@ -1,0 +1,22 @@
+{
+  "model": "grok-4.5",
+  "global_score": 68.75,
+  "category_scores": {
+    "metrics_timeseries": 69.49,
+    "pattern_correlation": 85.33,
+    "root_cause": 54.5,
+    "efficiency": 46.01
+  },
+  "efficiency_metrics": {
+    "avg_latency_s": 33.0256,
+    "avg_total_tokens": 1183.4737,
+    "score_stddev": 4.2633,
+    "latency_score": 0.0,
+    "token_score": 0.7041,
+    "consistency_score": 0.8295
+  },
+  "error_count": 0,
+  "total_runs": 114,
+  "total_duration_s": 3764.92,
+  "last_run_wall_clock_s": 3478.14
+}

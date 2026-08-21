@@ -54,19 +54,24 @@ CATEGORIES = {
         "measures": "Identify recurring problem patterns across services, then the causal links "
         "between them: the A causes B causes C cascade behind a multi-service incident.",
         "scoring": "0.6 x pattern coverage + 0.4 x correlation accuracy.",
-        "source": "Curated multi-service cascades with distractors and 2-hop causal chains.",
+        "source": "Curated multi-service cascades with distractors, 2-hop chains, common-cause "
+        "and inverted-cause cases.",
         "hard": "Unrelated failures happen inside the same window and must not be wired into "
-        "the causal chain.",
+        "the causal chain. Some incidents share a common cause rather than A→B; some look like "
+        "the retries are the root cause when the first timeout is upstream.",
     },
     "metrics_timeseries": {
         "label": "Metrics Time-Series",
         "blurb": "Spot anomalies in a seasonal metric series.",
-        "measures": "Given 96 points of a metric on a daily cycle, find the indices that deviate "
-        "from expected seasonal behaviour (spikes, dips and level shifts).",
-        "scoring": "Point-wise precision / recall / F1 with a +/-1 index tolerance.",
-        "source": "Seasonal series with injected anomalies, including two clean series.",
-        "hard": "The series follow a daily cycle, so a global z-score misses off-peak spikes and "
-        "level shifts. Some anomalies are smaller than the seasonal swing itself.",
+        "measures": "Given a metric series (usually 96 points on a daily cycle; one case is 7 "
+        "days hourly), find the indices that deviate from expected seasonal behaviour.",
+        "scoring": "Point-wise precision / recall / F1. Default +/-1 index tolerance; some "
+        "harder cases require an exact index.",
+        "source": "Seasonal series with injected anomalies, clean series, and traps (in-band "
+        "peaks, weekend-vs-weekday dips, flatlines, counter wraps, held samples).",
+        "hard": "A global z-score misses off-peak spikes and level shifts. Harder cases go "
+        "further: the global max is an in-season peak, a weekend dip is normal, a counter wrap "
+        "is not an outage, and a stuck sensor looks like healthy flat numbers.",
     },
     "root_cause": {
         "label": "Root Cause & Summary",
@@ -77,7 +82,9 @@ CATEGORIES = {
         "recall. An optional LLM-as-judge can replace the blend.",
         "source": "Curated incidents with reference answers.",
         "hard": "Each incident contains red herrings (unrelated deploys, failing crons, network "
-        "blips) that happened in the window and must be ruled out.",
+        "blips) that happened in the window and must be ruled out. Some pages are timezone "
+        "false alarms; a successful rollback that does not help means the deploy was not the "
+        "cause.",
     },
     "multimodal_rca": {
         "label": "Multi-modal RCA",
@@ -118,9 +125,9 @@ CATEGORIES = {
 DATASET_SOURCES = [
     ("log_parsing", "Loghub 2k + official templates"),
     ("anomaly_detection", "6 labelled BGL windows + 5 hard synthetics"),
-    ("metrics_timeseries", "Seasonal series, 96 points each"),
-    ("pattern_correlation", "Curated multi-service cascades"),
-    ("root_cause", "Curated incidents with red herrings"),
+    ("metrics_timeseries", "Seasonal series plus in-band / wrap / flatline traps"),
+    ("pattern_correlation", "Curated multi-service cascades (common-cause, inverted, decoy deploy)"),
+    ("root_cause", "Curated incidents with red herrings and decoy rollbacks"),
     ("multimodal_rca", "Nezha microservice incidents (metrics + logs + traces): "
      "12 solvable, 5 where the culprit is unrecoverable, 1 healthy baseline"),
 ]

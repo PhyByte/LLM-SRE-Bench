@@ -8,13 +8,14 @@ from core.schemas import TimeSeriesResult
 
 from .base import EvalResult
 
-_TOLERANCE = 1
+_DEFAULT_TOLERANCE = 1
 
 
 def evaluate(case: dict[str, Any], result: TimeSeriesResult) -> EvalResult:
     n = len(case["values"])
     truth = sorted(set(case["anomalous_indices"]))
     predicted = sorted({i for i in result.anomalous_indices if 0 <= i < n})
+    tolerance = int(case.get("tolerance", _DEFAULT_TOLERANCE))
 
     if not truth:
         value = 1.0 if not predicted else 0.0
@@ -23,7 +24,7 @@ def evaluate(case: dict[str, Any], result: TimeSeriesResult) -> EvalResult:
     unmatched_truth = set(truth)
     true_positives = 0
     for p in predicted:
-        match = next((t for t in sorted(unmatched_truth) if abs(t - p) <= _TOLERANCE), None)
+        match = next((t for t in sorted(unmatched_truth) if abs(t - p) <= tolerance), None)
         if match is not None:
             unmatched_truth.discard(match)
             true_positives += 1

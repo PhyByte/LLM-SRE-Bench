@@ -1,6 +1,6 @@
 # Secrets — never commit API keys
 .env
-
+TODO.txt
 # Python
 .venv/
 venv/
