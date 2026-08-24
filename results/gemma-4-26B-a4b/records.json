@@ -3979,20 +3979,6 @@
   {
     "model": "gemma-4-26B-a4b",
     "category": "log_parsing",
-    "case_id": "lp-bgl-02",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)",
-    "refused": null
-  },
-  {
-    "model": "gemma-4-26B-a4b",
-    "category": "log_parsing",
     "case_id": "lp-openssh-03",
     "run_index": 1,
     "score": 0.7222222222222222,
@@ -4202,34 +4188,6 @@
   {
     "model": "gemma-4-26B-a4b",
     "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)",
-    "refused": null
-  },
-  {
-    "model": "gemma-4-26B-a4b",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)",
-    "refused": null
-  },
-  {
-    "model": "gemma-4-26B-a4b",
-    "category": "metrics_timeseries",
     "case_id": "ts-temp-clean",
     "run_index": 1,
     "score": 0.0,
@@ -4338,34 +4296,6 @@
   {
     "model": "gemma-4-26B-a4b",
     "category": "metrics_timeseries",
-    "case_id": "ts-cpu-flatline",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)",
-    "refused": null
-  },
-  {
-    "model": "gemma-4-26B-a4b",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-flatline",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)",
-    "refused": null
-  },
-  {
-    "model": "gemma-4-26B-a4b",
-    "category": "metrics_timeseries",
     "case_id": "ts-rps-held-then-dip",
     "run_index": 0,
     "score": 0.0,
@@ -4415,6 +4345,91 @@
     "output_tokens": 9353,
     "cached": false,
     "error": null,
+    "refused": null
+  },
+  {
+    "model": "gemma-4-26B-a4b",
+    "category": "log_parsing",
+    "case_id": "lp-bgl-02",
+    "run_index": 0,
+    "score": 0.9326923076923077,
+    "metrics": {
+      "template_accuracy": 0.875,
+      "token_f1": 0.9903846153846154
+    },
+    "latency_s": 108.31443087523803,
+    "input_tokens": 411,
+    "output_tokens": 20231,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "gemma-4-26B-a4b",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 65.23665495822206,
+    "input_tokens": 901,
+    "output_tokens": 12040,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "gemma-4-26B-a4b",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 1,
+    "score": 0.10526315789473684,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.05555555555555555,
+      "f1": 0.10526315789473684
+    },
+    "latency_s": 25.56921370793134,
+    "input_tokens": 810,
+    "output_tokens": 4837,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "gemma-4-26B-a4b",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 89.67101595783606,
+    "input_tokens": 810,
+    "output_tokens": 16416,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "gemma-4-26B-a4b",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)",
     "refused": null
   }
 ]

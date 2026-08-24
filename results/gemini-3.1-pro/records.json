@@ -4422,13 +4422,18 @@
     "category": "multimodal_rca",
     "case_id": "mm-tt-returnva-verification-code-10",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.125,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.0
+    },
+    "latency_s": 22.903453417122364,
+    "input_tokens": 9961,
+    "output_tokens": 252,
     "cached": false,
-    "error": "ClientError: request failed after 5 attempts: HTTP 429 from /chat/completions: [{\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"Your prepayment credits are depleted. Please go to AI Studio at https://ai.studio/projects to manage your project and billing. Learn more at https://ai.google.dev/gemini-api/docs/billing#prepay. \",\n    \"status\": \"RESOURCE_EXHAUSTED\"\n  }\n}\n]",
+    "error": null,
     "refused": null
   }
 ]

@@ -1,6 +1,6 @@
 # LLM Observability Benchmark — Summary Report
 
-Generated: 2026-08-24 16:36:33 UTC
+Generated: 2026-08-24 20:13:56 UTC
 
 ## Overall Ranking
 
@@ -15,14 +15,14 @@ Generated: 2026-08-24 16:36:33 UTC
 9. **gpt-5.6-sol** — global score 67.3/100 (0/246 failed runs) — completed in 26m 46s
 10. **gpt-5.6-luna** — global score 67.2/100 (0/246 failed runs) — completed in 20m 9s
 11. **qwen3.8-27b** — global score 66.9/100 (0/246 failed runs) — completed in 91m 1s
-12. **gemini-3.1-pro** — global score 66.3/100 (1/246 failed runs) — completed in 68m 36s
-13. **gemini-3.6-flash** — global score 66.0/100 (2/246 failed runs) — completed in 66m 50s
-14. **gemma-4-26B-a4b** — global score 65.8/100 (5/246 failed runs) — completed in 60m 48s
-15. **fable-5-low** — global score 65.3/100 (0/246 failed runs, 25 declined) — completed in 23m 50s
+12. **fable-5-low** — global score 66.6/100 (0/246 failed runs, 22 declined) — completed in 24m 16s
+13. **gemini-3.1-pro** — global score 66.4/100 (0/246 failed runs) — completed in 68m 59s
+14. **gemma-4-26B-a4b** — global score 66.2/100 (1/246 failed runs) — completed in 65m 37s
+15. **gemini-3.6-flash** — global score 66.0/100 (0/246 failed runs) — completed in 67m 52s
 16. **qwen3.6-27b** — global score 64.2/100 (0/246 failed runs) — completed in 175m 1s
-17. **gemma-4-31b** — global score 64.1/100 (0/246 failed runs) — completed in 150m 3s
-18. **haiku-4-5** — global score 63.8/100 (0/246 failed runs) — completed in 10m 34s
-19. **fable-5** — global score 63.6/100 (0/246 failed runs, 26 declined) — completed in 40m 58s
+17. **fable-5** — global score 64.1/100 (0/246 failed runs, 25 declined) — completed in 41m 9s
+18. **gemma-4-31b** — global score 64.1/100 (0/246 failed runs) — completed in 150m 3s
+19. **haiku-4-5** — global score 63.8/100 (0/246 failed runs) — completed in 10m 34s
 20. **gpt-4o** — global score 61.0/100 (0/246 failed runs) — completed in 15m 21s
 21. **qwen3-coder-30b** — global score 55.8/100 (0/246 failed runs) — completed in 7m 38s
 22. **qwen3-32b** — global score 52.1/100 (0/246 failed runs) — completed in 70m 36s
@@ -51,14 +51,14 @@ Generated: 2026-08-24 16:36:33 UTC
 - **gpt-5.6-sol**: avg latency 6.53s, avg tokens/call 1957, score stddev across runs 2.8 points, full set: 26m 46s
 - **gpt-5.6-luna**: avg latency 4.91s, avg tokens/call 2092, score stddev across runs 3.1 points, full set: 20m 9s
 - **qwen3.8-27b**: avg latency 22.20s, avg tokens/call 3880, score stddev across runs 0.5 points, full set: 91m 1s
-- **gemini-3.1-pro**: avg latency 16.80s, avg tokens/call 2069, score stddev across runs 0.4 points, full set: 68m 36s
-- **gemini-3.6-flash**: avg latency 16.44s, avg tokens/call 2021, score stddev across runs 2.6 points, full set: 66m 50s
-- **gemma-4-26B-a4b**: avg latency 15.14s, avg tokens/call 4268, score stddev across runs 2.4 points, full set: 60m 48s
-- **fable-5-low**: avg latency 6.47s, avg tokens/call 2504, score stddev across runs 1.9 points, full set: 23m 50s
+- **fable-5-low**: avg latency 6.50s, avg tokens/call 2487, score stddev across runs 1.9 points, full set: 24m 16s
+- **gemini-3.1-pro**: avg latency 16.83s, avg tokens/call 2103, score stddev across runs 0.4 points, full set: 68m 59s
+- **gemma-4-26B-a4b**: avg latency 16.07s, avg tokens/call 4429, score stddev across runs 2.4 points, full set: 65m 37s
+- **gemini-3.6-flash**: avg latency 16.56s, avg tokens/call 2086, score stddev across runs 2.5 points, full set: 67m 52s
 - **qwen3.6-27b**: avg latency 42.69s, avg tokens/call 5066, score stddev across runs 0.0 points, full set: 175m 1s
+- **fable-5**: avg latency 11.17s, avg tokens/call 2758, score stddev across runs 1.3 points, full set: 41m 9s
 - **gemma-4-31b**: avg latency 36.60s, avg tokens/call 3642, score stddev across runs 1.7 points, full set: 150m 3s
 - **haiku-4-5**: avg latency 2.58s, avg tokens/call 1994, score stddev across runs 2.8 points, full set: 10m 34s
-- **fable-5**: avg latency 11.18s, avg tokens/call 2763, score stddev across runs 1.3 points, full set: 40m 58s
 - **gpt-4o**: avg latency 3.74s, avg tokens/call 1756, score stddev across runs 1.7 points, full set: 15m 21s
 - **qwen3-coder-30b**: avg latency 1.86s, avg tokens/call 2338, score stddev across runs 0.8 points, full set: 7m 38s
 - **qwen3-32b**: avg latency 17.22s, avg tokens/call 3015, score stddev across runs 4.0 points, full set: 70m 36s
@@ -66,21 +66,16 @@ Generated: 2026-08-24 16:36:33 UTC
 
 ## Reliability
 
-Coverage gaps — 8/5658 runs failed, 51 declined by the model (scored 0):
-  gemma-4-26B-a4b — 5/246 failed
-    log_parsing (1): 1 empty response — lp-bgl-02#0
-    metrics_timeseries (4): 4 empty response — ts-cpu-flatline#1,2, ts-disk-io-clean#2, ts-temp-clean#0
-  gemini-3.6-flash — 2/246 failed
-    multimodal_rca (2): 2 HTTP 429 — mm-tt-unknown-05#0,1
-  gemini-3.1-pro — 1/246 failed
-    multimodal_rca (1): 1 HTTP 429 — mm-tt-returnva-verification-code-10#2
-  fable-5 — 0/246 failed; 26 declined
+Coverage gaps — 1/5658 runs failed, 47 declined by the model (scored 0):
+  gemma-4-26B-a4b — 1/246 failed
+    metrics_timeseries (1): 1 empty response — ts-temp-clean#0
+  fable-5 — 0/246 failed; 25 declined
     declined metrics_timeseries (9): 9 cyber refusal — ts-bytes-counter-wrap, ts-cpu-flatline, ts-latency-inband-peak
-    declined pattern_correlation (8): 8 cyber refusal — pc-006-vacuum-common-cause, pc-008-decoy-deploy#1,2, pc-009-thundering-herd
+    declined pattern_correlation (7): 7 cyber refusal — pc-006-vacuum-common-cause, pc-008-decoy-deploy#2, pc-009-thundering-herd
     declined root_cause (9): 9 cyber refusal — rc-006-dashboard-timezone, rc-007-flag-default-on-restart, rc-010-rollback-did-not-help
-  fable-5-low — 0/246 failed; 25 declined
-    declined metrics_timeseries (6): 6 unspecified refusal — ts-bytes-counter-wrap, ts-latency-inband-peak
-    declined pattern_correlation (10): 8 unspecified refusal, 2 cyber refusal — pc-006-vacuum-common-cause, pc-008-decoy-deploy, pc-009-thundering-herd, pc-010-missing-middle-stampede#1
+  fable-5-low — 0/246 failed; 22 declined
+    declined metrics_timeseries (6): 6 cyber refusal — ts-bytes-counter-wrap, ts-latency-inband-peak
+    declined pattern_correlation (7): 7 cyber refusal — pc-006-vacuum-common-cause#1, pc-008-decoy-deploy#0,1, pc-009-thundering-herd, pc-010-missing-middle-stampede#1
     declined root_cause (9): 9 cyber refusal — rc-006-dashboard-timezone, rc-007-flag-default-on-restart, rc-010-rollback-did-not-help
 
 ## Recommendations
