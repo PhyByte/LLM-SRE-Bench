@@ -13,7 +13,8 @@
     "input_tokens": 667,
     "output_tokens": 1578,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -29,7 +30,8 @@
     "input_tokens": 667,
     "output_tokens": 1578,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -45,7 +47,8 @@
     "input_tokens": 667,
     "output_tokens": 1578,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -61,7 +64,8 @@
     "input_tokens": 655,
     "output_tokens": 1683,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -77,7 +81,8 @@
     "input_tokens": 655,
     "output_tokens": 1822,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -93,7 +98,8 @@
     "input_tokens": 655,
     "output_tokens": 1822,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -109,7 +115,8 @@
     "input_tokens": 661,
     "output_tokens": 2863,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -125,7 +132,8 @@
     "input_tokens": 661,
     "output_tokens": 2112,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -141,7 +149,8 @@
     "input_tokens": 661,
     "output_tokens": 2112,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -157,7 +166,8 @@
     "input_tokens": 411,
     "output_tokens": 1576,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -173,7 +183,8 @@
     "input_tokens": 411,
     "output_tokens": 1777,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -189,7 +200,8 @@
     "input_tokens": 411,
     "output_tokens": 1777,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -205,7 +217,8 @@
     "input_tokens": 411,
     "output_tokens": 1324,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -221,7 +234,8 @@
     "input_tokens": 411,
     "output_tokens": 1319,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -237,7 +251,8 @@
     "input_tokens": 411,
     "output_tokens": 1319,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -253,7 +268,8 @@
     "input_tokens": 411,
     "output_tokens": 1337,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -269,7 +285,8 @@
     "input_tokens": 411,
     "output_tokens": 1435,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -285,7 +302,8 @@
     "input_tokens": 411,
     "output_tokens": 1435,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -301,7 +319,8 @@
     "input_tokens": 365,
     "output_tokens": 1199,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -317,7 +336,8 @@
     "input_tokens": 365,
     "output_tokens": 1219,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -333,7 +353,8 @@
     "input_tokens": 365,
     "output_tokens": 1219,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -349,7 +370,8 @@
     "input_tokens": 401,
     "output_tokens": 1262,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -365,7 +387,8 @@
     "input_tokens": 401,
     "output_tokens": 1262,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -381,7 +404,8 @@
     "input_tokens": 401,
     "output_tokens": 1262,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -397,7 +421,8 @@
     "input_tokens": 429,
     "output_tokens": 1779,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -413,7 +438,8 @@
     "input_tokens": 429,
     "output_tokens": 1288,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -429,7 +455,8 @@
     "input_tokens": 429,
     "output_tokens": 1288,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -445,7 +472,8 @@
     "input_tokens": 368,
     "output_tokens": 1210,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -461,7 +489,8 @@
     "input_tokens": 368,
     "output_tokens": 1210,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -477,7 +506,8 @@
     "input_tokens": 368,
     "output_tokens": 1210,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -493,7 +523,8 @@
     "input_tokens": 532,
     "output_tokens": 1289,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -509,7 +540,8 @@
     "input_tokens": 532,
     "output_tokens": 1289,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -525,7 +557,8 @@
     "input_tokens": 532,
     "output_tokens": 1289,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -541,7 +574,8 @@
     "input_tokens": 347,
     "output_tokens": 1194,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -557,7 +591,8 @@
     "input_tokens": 347,
     "output_tokens": 1194,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -573,7 +608,8 @@
     "input_tokens": 347,
     "output_tokens": 1194,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -589,7 +625,8 @@
     "input_tokens": 310,
     "output_tokens": 988,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -605,7 +642,8 @@
     "input_tokens": 310,
     "output_tokens": 959,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -621,7 +659,8 @@
     "input_tokens": 310,
     "output_tokens": 959,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -637,7 +676,8 @@
     "input_tokens": 481,
     "output_tokens": 1584,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -653,7 +693,8 @@
     "input_tokens": 481,
     "output_tokens": 1584,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -669,7 +710,8 @@
     "input_tokens": 481,
     "output_tokens": 1584,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -685,7 +727,8 @@
     "input_tokens": 282,
     "output_tokens": 1927,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -701,7 +744,8 @@
     "input_tokens": 282,
     "output_tokens": 1609,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -717,7 +761,8 @@
     "input_tokens": 282,
     "output_tokens": 1609,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -734,7 +779,8 @@
     "input_tokens": 446,
     "output_tokens": 733,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -751,7 +797,8 @@
     "input_tokens": 446,
     "output_tokens": 814,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -768,7 +815,8 @@
     "input_tokens": 446,
     "output_tokens": 814,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -785,7 +833,8 @@
     "input_tokens": 1090,
     "output_tokens": 919,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -802,7 +851,8 @@
     "input_tokens": 1090,
     "output_tokens": 1144,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -819,7 +869,8 @@
     "input_tokens": 1090,
     "output_tokens": 1144,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -836,7 +887,8 @@
     "input_tokens": 954,
     "output_tokens": 1346,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -853,7 +905,8 @@
     "input_tokens": 954,
     "output_tokens": 1316,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -870,7 +923,8 @@
     "input_tokens": 954,
     "output_tokens": 1316,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -887,7 +941,8 @@
     "input_tokens": 982,
     "output_tokens": 1979,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -904,7 +959,8 @@
     "input_tokens": 982,
     "output_tokens": 1712,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -921,7 +977,8 @@
     "input_tokens": 982,
     "output_tokens": 1712,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -938,7 +995,8 @@
     "input_tokens": 1222,
     "output_tokens": 1568,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -955,7 +1013,8 @@
     "input_tokens": 1222,
     "output_tokens": 1460,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -972,7 +1031,8 @@
     "input_tokens": 1222,
     "output_tokens": 1460,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -989,7 +1049,8 @@
     "input_tokens": 788,
     "output_tokens": 1105,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1006,7 +1067,8 @@
     "input_tokens": 788,
     "output_tokens": 1081,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1023,7 +1085,8 @@
     "input_tokens": 788,
     "output_tokens": 1081,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1040,7 +1103,8 @@
     "input_tokens": 668,
     "output_tokens": 868,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1057,7 +1121,8 @@
     "input_tokens": 668,
     "output_tokens": 853,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1074,7 +1139,8 @@
     "input_tokens": 668,
     "output_tokens": 853,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1091,7 +1157,8 @@
     "input_tokens": 703,
     "output_tokens": 1922,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1108,7 +1175,8 @@
     "input_tokens": 703,
     "output_tokens": 1618,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1125,7 +1193,8 @@
     "input_tokens": 703,
     "output_tokens": 1618,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1142,7 +1211,8 @@
     "input_tokens": 659,
     "output_tokens": 898,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1159,7 +1229,8 @@
     "input_tokens": 659,
     "output_tokens": 898,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1176,7 +1247,8 @@
     "input_tokens": 659,
     "output_tokens": 898,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1193,7 +1265,8 @@
     "input_tokens": 572,
     "output_tokens": 735,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1210,7 +1283,8 @@
     "input_tokens": 572,
     "output_tokens": 736,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1227,7 +1301,8 @@
     "input_tokens": 572,
     "output_tokens": 736,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1244,7 +1319,8 @@
     "input_tokens": 539,
     "output_tokens": 1018,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1261,7 +1337,8 @@
     "input_tokens": 539,
     "output_tokens": 1018,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1278,7 +1355,8 @@
     "input_tokens": 539,
     "output_tokens": 1018,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1296,7 +1374,8 @@
     "input_tokens": 4280,
     "output_tokens": 4667,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1314,7 +1393,8 @@
     "input_tokens": 4280,
     "output_tokens": 3480,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1332,7 +1412,8 @@
     "input_tokens": 4280,
     "output_tokens": 2431,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1350,7 +1431,8 @@
     "input_tokens": 4192,
     "output_tokens": 1162,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1368,7 +1450,8 @@
     "input_tokens": 4192,
     "output_tokens": 1154,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1386,7 +1469,8 @@
     "input_tokens": 4192,
     "output_tokens": 1154,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1404,7 +1488,8 @@
     "input_tokens": 4412,
     "output_tokens": 1416,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1422,7 +1507,8 @@
     "input_tokens": 4412,
     "output_tokens": 1580,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1440,7 +1526,8 @@
     "input_tokens": 4412,
     "output_tokens": 1580,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1458,7 +1545,8 @@
     "input_tokens": 4575,
     "output_tokens": 1236,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1476,7 +1564,8 @@
     "input_tokens": 4575,
     "output_tokens": 1612,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1494,7 +1583,8 @@
     "input_tokens": 4575,
     "output_tokens": 1612,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1512,7 +1602,8 @@
     "input_tokens": 4345,
     "output_tokens": 1484,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1530,7 +1621,8 @@
     "input_tokens": 4345,
     "output_tokens": 1330,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1548,7 +1640,8 @@
     "input_tokens": 4345,
     "output_tokens": 1330,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1566,7 +1659,8 @@
     "input_tokens": 4456,
     "output_tokens": 1420,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1584,7 +1678,8 @@
     "input_tokens": 4456,
     "output_tokens": 1437,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1602,7 +1697,8 @@
     "input_tokens": 4456,
     "output_tokens": 1437,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1620,7 +1716,8 @@
     "input_tokens": 4428,
     "output_tokens": 1196,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1638,7 +1735,8 @@
     "input_tokens": 4428,
     "output_tokens": 1060,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1656,7 +1754,8 @@
     "input_tokens": 4428,
     "output_tokens": 1060,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1674,7 +1773,8 @@
     "input_tokens": 4355,
     "output_tokens": 2141,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1692,7 +1792,8 @@
     "input_tokens": 4355,
     "output_tokens": 3018,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1710,7 +1811,8 @@
     "input_tokens": 4355,
     "output_tokens": 3018,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1728,7 +1830,8 @@
     "input_tokens": 10106,
     "output_tokens": 1625,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1746,7 +1849,8 @@
     "input_tokens": 10106,
     "output_tokens": 1433,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1764,7 +1868,8 @@
     "input_tokens": 10106,
     "output_tokens": 1433,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1782,7 +1887,8 @@
     "input_tokens": 9974,
     "output_tokens": 2243,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1800,7 +1906,8 @@
     "input_tokens": 9974,
     "output_tokens": 5021,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1818,7 +1925,8 @@
     "input_tokens": 9974,
     "output_tokens": 3561,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1836,7 +1944,8 @@
     "input_tokens": 9815,
     "output_tokens": 1145,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1854,7 +1963,8 @@
     "input_tokens": 9815,
     "output_tokens": 1034,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1872,7 +1982,8 @@
     "input_tokens": 9815,
     "output_tokens": 1034,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1890,7 +2001,8 @@
     "input_tokens": 9990,
     "output_tokens": 1232,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1908,7 +2020,8 @@
     "input_tokens": 9990,
     "output_tokens": 1346,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1926,7 +2039,8 @@
     "input_tokens": 9990,
     "output_tokens": 1346,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1946,7 +2060,8 @@
     "input_tokens": 4205,
     "output_tokens": 4433,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1966,7 +2081,8 @@
     "input_tokens": 4205,
     "output_tokens": 3215,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -1986,7 +2102,8 @@
     "input_tokens": 4205,
     "output_tokens": 3463,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2006,7 +2123,8 @@
     "input_tokens": 4372,
     "output_tokens": 1464,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2026,7 +2144,8 @@
     "input_tokens": 4372,
     "output_tokens": 2032,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2046,7 +2165,8 @@
     "input_tokens": 4372,
     "output_tokens": 2032,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2066,7 +2186,8 @@
     "input_tokens": 9772,
     "output_tokens": 3953,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2086,7 +2207,8 @@
     "input_tokens": 9772,
     "output_tokens": 3499,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2106,7 +2228,8 @@
     "input_tokens": 9772,
     "output_tokens": 5038,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2126,7 +2249,8 @@
     "input_tokens": 9619,
     "output_tokens": 2178,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2146,7 +2270,8 @@
     "input_tokens": 9619,
     "output_tokens": 2401,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2166,7 +2291,8 @@
     "input_tokens": 9619,
     "output_tokens": 2401,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2186,7 +2312,8 @@
     "input_tokens": 9831,
     "output_tokens": 1903,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2206,7 +2333,8 @@
     "input_tokens": 9831,
     "output_tokens": 2220,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2226,7 +2354,8 @@
     "input_tokens": 9831,
     "output_tokens": 2220,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2244,7 +2373,8 @@
     "input_tokens": 4488,
     "output_tokens": 5058,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2262,7 +2392,8 @@
     "input_tokens": 4488,
     "output_tokens": 5139,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2280,7 +2411,8 @@
     "input_tokens": 4488,
     "output_tokens": 5139,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2297,7 +2429,8 @@
     "input_tokens": 810,
     "output_tokens": 1989,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2314,7 +2447,8 @@
     "input_tokens": 810,
     "output_tokens": 1845,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2331,7 +2465,8 @@
     "input_tokens": 810,
     "output_tokens": 1845,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2348,7 +2483,8 @@
     "input_tokens": 910,
     "output_tokens": 1718,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2365,7 +2501,8 @@
     "input_tokens": 910,
     "output_tokens": 1718,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2382,7 +2519,8 @@
     "input_tokens": 910,
     "output_tokens": 1718,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2399,7 +2537,8 @@
     "input_tokens": 943,
     "output_tokens": 1455,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2416,7 +2555,8 @@
     "input_tokens": 943,
     "output_tokens": 1438,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2433,7 +2573,8 @@
     "input_tokens": 943,
     "output_tokens": 1438,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2450,7 +2591,8 @@
     "input_tokens": 808,
     "output_tokens": 2676,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2467,7 +2609,8 @@
     "input_tokens": 808,
     "output_tokens": 2392,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2484,7 +2627,8 @@
     "input_tokens": 808,
     "output_tokens": 2392,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2501,7 +2645,8 @@
     "input_tokens": 712,
     "output_tokens": 1150,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2518,7 +2663,8 @@
     "input_tokens": 712,
     "output_tokens": 1151,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2535,7 +2681,8 @@
     "input_tokens": 712,
     "output_tokens": 1151,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2552,7 +2699,8 @@
     "input_tokens": 901,
     "output_tokens": 5136,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2569,7 +2717,8 @@
     "input_tokens": 901,
     "output_tokens": 5136,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2586,7 +2735,8 @@
     "input_tokens": 901,
     "output_tokens": 6724,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2603,7 +2753,8 @@
     "input_tokens": 834,
     "output_tokens": 1313,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2620,7 +2771,8 @@
     "input_tokens": 834,
     "output_tokens": 1217,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2637,7 +2789,8 @@
     "input_tokens": 834,
     "output_tokens": 1217,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2654,7 +2807,8 @@
     "input_tokens": 995,
     "output_tokens": 1608,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2671,7 +2825,8 @@
     "input_tokens": 995,
     "output_tokens": 1603,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2688,7 +2843,8 @@
     "input_tokens": 995,
     "output_tokens": 1603,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2705,7 +2861,8 @@
     "input_tokens": 811,
     "output_tokens": 7204,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2722,7 +2879,8 @@
     "input_tokens": 811,
     "output_tokens": 3581,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2739,7 +2897,8 @@
     "input_tokens": 811,
     "output_tokens": 3581,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2756,7 +2915,8 @@
     "input_tokens": 811,
     "output_tokens": 1604,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2773,7 +2933,8 @@
     "input_tokens": 811,
     "output_tokens": 1604,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2790,7 +2951,8 @@
     "input_tokens": 811,
     "output_tokens": 1604,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2807,7 +2969,8 @@
     "input_tokens": 911,
     "output_tokens": 1586,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2824,7 +2987,8 @@
     "input_tokens": 911,
     "output_tokens": 1669,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2841,7 +3005,8 @@
     "input_tokens": 911,
     "output_tokens": 1669,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2858,7 +3023,8 @@
     "input_tokens": 1476,
     "output_tokens": 9222,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2875,7 +3041,8 @@
     "input_tokens": 1476,
     "output_tokens": 4810,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2892,7 +3059,8 @@
     "input_tokens": 1476,
     "output_tokens": 4810,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2909,7 +3077,8 @@
     "input_tokens": 810,
     "output_tokens": 1563,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2926,7 +3095,8 @@
     "input_tokens": 810,
     "output_tokens": 1660,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2943,7 +3113,8 @@
     "input_tokens": 810,
     "output_tokens": 1660,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2960,7 +3131,8 @@
     "input_tokens": 1452,
     "output_tokens": 1951,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2977,7 +3149,8 @@
     "input_tokens": 1452,
     "output_tokens": 1247,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -2994,7 +3167,8 @@
     "input_tokens": 1452,
     "output_tokens": 1247,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3011,7 +3185,8 @@
     "input_tokens": 809,
     "output_tokens": 2432,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3028,7 +3203,8 @@
     "input_tokens": 809,
     "output_tokens": 2240,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3045,7 +3221,8 @@
     "input_tokens": 809,
     "output_tokens": 2240,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3062,7 +3239,8 @@
     "input_tokens": 863,
     "output_tokens": 1852,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3079,7 +3257,8 @@
     "input_tokens": 863,
     "output_tokens": 1929,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3096,7 +3275,8 @@
     "input_tokens": 863,
     "output_tokens": 1929,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3113,7 +3293,8 @@
     "input_tokens": 811,
     "output_tokens": 1701,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3130,7 +3311,8 @@
     "input_tokens": 811,
     "output_tokens": 1701,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3147,7 +3329,8 @@
     "input_tokens": 811,
     "output_tokens": 1701,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3164,7 +3347,8 @@
     "input_tokens": 950,
     "output_tokens": 5959,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3181,7 +3365,8 @@
     "input_tokens": 950,
     "output_tokens": 2850,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3198,7 +3383,8 @@
     "input_tokens": 950,
     "output_tokens": 2850,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3214,7 +3400,8 @@
     "input_tokens": 578,
     "output_tokens": 1244,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3230,7 +3417,8 @@
     "input_tokens": 578,
     "output_tokens": 1244,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3246,7 +3434,8 @@
     "input_tokens": 578,
     "output_tokens": 1244,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3262,7 +3451,8 @@
     "input_tokens": 613,
     "output_tokens": 963,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3278,7 +3468,8 @@
     "input_tokens": 613,
     "output_tokens": 954,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3294,7 +3485,8 @@
     "input_tokens": 613,
     "output_tokens": 954,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3310,7 +3502,8 @@
     "input_tokens": 545,
     "output_tokens": 1051,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3326,7 +3519,8 @@
     "input_tokens": 545,
     "output_tokens": 1051,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3342,7 +3536,8 @@
     "input_tokens": 545,
     "output_tokens": 1051,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3358,7 +3553,8 @@
     "input_tokens": 521,
     "output_tokens": 1110,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3374,7 +3570,8 @@
     "input_tokens": 521,
     "output_tokens": 1156,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3390,7 +3587,8 @@
     "input_tokens": 521,
     "output_tokens": 1156,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3406,7 +3604,8 @@
     "input_tokens": 549,
     "output_tokens": 883,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3422,7 +3621,8 @@
     "input_tokens": 549,
     "output_tokens": 887,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3438,7 +3638,8 @@
     "input_tokens": 549,
     "output_tokens": 887,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3454,7 +3655,8 @@
     "input_tokens": 536,
     "output_tokens": 934,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3470,7 +3672,8 @@
     "input_tokens": 536,
     "output_tokens": 766,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3486,7 +3689,8 @@
     "input_tokens": 536,
     "output_tokens": 766,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3502,7 +3706,8 @@
     "input_tokens": 484,
     "output_tokens": 1530,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3518,7 +3723,8 @@
     "input_tokens": 484,
     "output_tokens": 1184,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3534,7 +3740,8 @@
     "input_tokens": 484,
     "output_tokens": 1184,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3550,7 +3757,8 @@
     "input_tokens": 556,
     "output_tokens": 1123,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3566,7 +3774,8 @@
     "input_tokens": 556,
     "output_tokens": 1125,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3582,7 +3791,8 @@
     "input_tokens": 556,
     "output_tokens": 1125,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3598,7 +3808,8 @@
     "input_tokens": 598,
     "output_tokens": 1512,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3614,7 +3825,8 @@
     "input_tokens": 598,
     "output_tokens": 1517,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3630,7 +3842,8 @@
     "input_tokens": 598,
     "output_tokens": 1517,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3646,7 +3859,8 @@
     "input_tokens": 530,
     "output_tokens": 744,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3662,7 +3876,8 @@
     "input_tokens": 530,
     "output_tokens": 729,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3678,7 +3893,8 @@
     "input_tokens": 530,
     "output_tokens": 729,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3695,7 +3911,8 @@
     "input_tokens": 717,
     "output_tokens": 781,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3712,7 +3929,8 @@
     "input_tokens": 717,
     "output_tokens": 671,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3729,7 +3947,8 @@
     "input_tokens": 717,
     "output_tokens": 671,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3746,7 +3965,8 @@
     "input_tokens": 632,
     "output_tokens": 703,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3763,7 +3983,8 @@
     "input_tokens": 632,
     "output_tokens": 707,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3780,7 +4001,8 @@
     "input_tokens": 632,
     "output_tokens": 707,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3797,7 +4019,8 @@
     "input_tokens": 734,
     "output_tokens": 590,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3814,7 +4037,8 @@
     "input_tokens": 734,
     "output_tokens": 593,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3831,7 +4055,8 @@
     "input_tokens": 734,
     "output_tokens": 593,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3848,7 +4073,8 @@
     "input_tokens": 633,
     "output_tokens": 553,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3865,7 +4091,8 @@
     "input_tokens": 633,
     "output_tokens": 568,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3882,7 +4109,8 @@
     "input_tokens": 633,
     "output_tokens": 568,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3899,7 +4127,8 @@
     "input_tokens": 648,
     "output_tokens": 573,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3916,7 +4145,8 @@
     "input_tokens": 648,
     "output_tokens": 576,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3933,7 +4163,8 @@
     "input_tokens": 648,
     "output_tokens": 576,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3950,7 +4181,8 @@
     "input_tokens": 561,
     "output_tokens": 635,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3967,7 +4199,8 @@
     "input_tokens": 561,
     "output_tokens": 759,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -3984,7 +4217,8 @@
     "input_tokens": 561,
     "output_tokens": 759,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4001,7 +4235,8 @@
     "input_tokens": 573,
     "output_tokens": 902,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4018,7 +4253,8 @@
     "input_tokens": 573,
     "output_tokens": 919,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4035,7 +4271,8 @@
     "input_tokens": 573,
     "output_tokens": 919,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4052,7 +4289,8 @@
     "input_tokens": 572,
     "output_tokens": 723,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4069,7 +4307,8 @@
     "input_tokens": 572,
     "output_tokens": 682,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4086,7 +4325,8 @@
     "input_tokens": 572,
     "output_tokens": 682,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4103,7 +4343,8 @@
     "input_tokens": 558,
     "output_tokens": 493,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4120,7 +4361,8 @@
     "input_tokens": 558,
     "output_tokens": 493,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4137,7 +4379,8 @@
     "input_tokens": 558,
     "output_tokens": 493,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4154,7 +4397,8 @@
     "input_tokens": 523,
     "output_tokens": 740,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4171,7 +4415,8 @@
     "input_tokens": 523,
     "output_tokens": 733,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gemma-4-31b",
@@ -4188,6 +4433,7 @@
     "input_tokens": 523,
     "output_tokens": 733,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   }
 ]

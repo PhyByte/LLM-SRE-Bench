@@ -13,7 +13,8 @@
     "input_tokens": 606,
     "output_tokens": 408,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -29,7 +30,8 @@
     "input_tokens": 606,
     "output_tokens": 222,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -45,7 +47,8 @@
     "input_tokens": 606,
     "output_tokens": 222,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -61,7 +64,8 @@
     "input_tokens": 604,
     "output_tokens": 203,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -77,7 +81,8 @@
     "input_tokens": 604,
     "output_tokens": 204,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -93,7 +98,8 @@
     "input_tokens": 604,
     "output_tokens": 204,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -109,7 +115,8 @@
     "input_tokens": 575,
     "output_tokens": 209,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -125,7 +132,8 @@
     "input_tokens": 575,
     "output_tokens": 209,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -141,7 +149,8 @@
     "input_tokens": 575,
     "output_tokens": 209,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -157,7 +166,8 @@
     "input_tokens": 489,
     "output_tokens": 225,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -173,7 +183,8 @@
     "input_tokens": 489,
     "output_tokens": 755,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -189,7 +200,8 @@
     "input_tokens": 489,
     "output_tokens": 457,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -205,7 +217,8 @@
     "input_tokens": 499,
     "output_tokens": 452,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -221,7 +234,8 @@
     "input_tokens": 499,
     "output_tokens": 437,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -237,7 +251,8 @@
     "input_tokens": 499,
     "output_tokens": 449,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -253,7 +268,8 @@
     "input_tokens": 573,
     "output_tokens": 534,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -269,7 +285,8 @@
     "input_tokens": 573,
     "output_tokens": 954,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -285,7 +302,8 @@
     "input_tokens": 573,
     "output_tokens": 341,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -301,7 +319,8 @@
     "input_tokens": 457,
     "output_tokens": 219,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -317,7 +336,8 @@
     "input_tokens": 457,
     "output_tokens": 219,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -333,7 +353,8 @@
     "input_tokens": 457,
     "output_tokens": 219,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -349,7 +370,8 @@
     "input_tokens": 497,
     "output_tokens": 255,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -365,7 +387,8 @@
     "input_tokens": 497,
     "output_tokens": 262,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -381,7 +404,8 @@
     "input_tokens": 497,
     "output_tokens": 261,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -397,7 +421,8 @@
     "input_tokens": 542,
     "output_tokens": 279,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -413,7 +438,8 @@
     "input_tokens": 542,
     "output_tokens": 279,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -429,7 +455,8 @@
     "input_tokens": 542,
     "output_tokens": 279,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -445,7 +472,8 @@
     "input_tokens": 464,
     "output_tokens": 663,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -461,7 +489,8 @@
     "input_tokens": 464,
     "output_tokens": 253,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -477,7 +506,8 @@
     "input_tokens": 464,
     "output_tokens": 700,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -493,7 +523,8 @@
     "input_tokens": 688,
     "output_tokens": 247,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -509,7 +540,8 @@
     "input_tokens": 688,
     "output_tokens": 247,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -525,7 +557,8 @@
     "input_tokens": 688,
     "output_tokens": 247,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -541,7 +574,8 @@
     "input_tokens": 425,
     "output_tokens": 189,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -557,7 +591,8 @@
     "input_tokens": 425,
     "output_tokens": 189,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -573,7 +608,8 @@
     "input_tokens": 425,
     "output_tokens": 201,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -589,7 +625,8 @@
     "input_tokens": 384,
     "output_tokens": 148,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -605,7 +642,8 @@
     "input_tokens": 384,
     "output_tokens": 148,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -621,7 +659,8 @@
     "input_tokens": 384,
     "output_tokens": 148,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -637,7 +676,8 @@
     "input_tokens": 565,
     "output_tokens": 242,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -653,7 +693,8 @@
     "input_tokens": 565,
     "output_tokens": 241,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -669,7 +710,8 @@
     "input_tokens": 565,
     "output_tokens": 241,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -685,7 +727,8 @@
     "input_tokens": 381,
     "output_tokens": 145,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -701,7 +744,8 @@
     "input_tokens": 381,
     "output_tokens": 145,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -717,7 +761,8 @@
     "input_tokens": 381,
     "output_tokens": 145,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -734,7 +779,8 @@
     "input_tokens": 524,
     "output_tokens": 88,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -751,7 +797,8 @@
     "input_tokens": 524,
     "output_tokens": 88,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -768,7 +815,8 @@
     "input_tokens": 524,
     "output_tokens": 88,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -785,7 +833,8 @@
     "input_tokens": 1322,
     "output_tokens": 34,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -802,7 +851,8 @@
     "input_tokens": 1322,
     "output_tokens": 37,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -819,7 +869,8 @@
     "input_tokens": 1322,
     "output_tokens": 31,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -836,7 +887,8 @@
     "input_tokens": 1044,
     "output_tokens": 240,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -853,7 +905,8 @@
     "input_tokens": 1044,
     "output_tokens": 433,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -870,7 +923,8 @@
     "input_tokens": 1044,
     "output_tokens": 605,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -887,7 +941,8 @@
     "input_tokens": 1193,
     "output_tokens": 46,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -904,7 +959,8 @@
     "input_tokens": 1193,
     "output_tokens": 46,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -921,7 +977,8 @@
     "input_tokens": 1193,
     "output_tokens": 49,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -938,7 +995,8 @@
     "input_tokens": 1339,
     "output_tokens": 64,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -955,7 +1013,8 @@
     "input_tokens": 1339,
     "output_tokens": 79,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -972,7 +1031,8 @@
     "input_tokens": 1339,
     "output_tokens": 64,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -989,7 +1049,8 @@
     "input_tokens": 852,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1006,7 +1067,8 @@
     "input_tokens": 852,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1023,7 +1085,8 @@
     "input_tokens": 852,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1040,7 +1103,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1057,7 +1121,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1074,7 +1139,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1091,7 +1157,8 @@
     "input_tokens": 749,
     "output_tokens": 185,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1108,7 +1175,8 @@
     "input_tokens": 749,
     "output_tokens": 160,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1125,7 +1193,8 @@
     "input_tokens": 749,
     "output_tokens": 31,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1142,7 +1211,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1159,7 +1229,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1176,7 +1247,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1193,7 +1265,8 @@
     "input_tokens": 748,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1210,7 +1283,8 @@
     "input_tokens": 748,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1227,7 +1301,8 @@
     "input_tokens": 748,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1244,7 +1319,8 @@
     "input_tokens": 718,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1261,7 +1337,8 @@
     "input_tokens": 718,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1278,7 +1355,8 @@
     "input_tokens": 718,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1296,7 +1374,8 @@
     "input_tokens": 4519,
     "output_tokens": 1358,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1314,7 +1393,8 @@
     "input_tokens": 4519,
     "output_tokens": 1018,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1332,7 +1412,8 @@
     "input_tokens": 4519,
     "output_tokens": 957,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1350,7 +1431,8 @@
     "input_tokens": 4515,
     "output_tokens": 559,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1368,7 +1450,8 @@
     "input_tokens": 4515,
     "output_tokens": 398,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1386,7 +1469,8 @@
     "input_tokens": 4515,
     "output_tokens": 540,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1404,7 +1488,8 @@
     "input_tokens": 4777,
     "output_tokens": 492,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1422,7 +1507,8 @@
     "input_tokens": 4777,
     "output_tokens": 608,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1440,7 +1526,8 @@
     "input_tokens": 4777,
     "output_tokens": 713,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1458,7 +1545,8 @@
     "input_tokens": 4937,
     "output_tokens": 499,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1476,7 +1564,8 @@
     "input_tokens": 4937,
     "output_tokens": 463,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1494,7 +1583,8 @@
     "input_tokens": 4937,
     "output_tokens": 442,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1512,7 +1602,8 @@
     "input_tokens": 4698,
     "output_tokens": 521,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1530,7 +1621,8 @@
     "input_tokens": 4698,
     "output_tokens": 571,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1548,7 +1640,8 @@
     "input_tokens": 4698,
     "output_tokens": 550,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1566,7 +1659,8 @@
     "input_tokens": 4796,
     "output_tokens": 769,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1584,7 +1678,8 @@
     "input_tokens": 4796,
     "output_tokens": 1054,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1602,7 +1697,8 @@
     "input_tokens": 4796,
     "output_tokens": 882,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1620,7 +1716,8 @@
     "input_tokens": 4803,
     "output_tokens": 499,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1638,7 +1735,8 @@
     "input_tokens": 4803,
     "output_tokens": 471,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1656,7 +1754,8 @@
     "input_tokens": 4803,
     "output_tokens": 463,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1674,7 +1773,8 @@
     "input_tokens": 4682,
     "output_tokens": 935,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1692,7 +1792,8 @@
     "input_tokens": 4682,
     "output_tokens": 1078,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1710,7 +1811,8 @@
     "input_tokens": 4682,
     "output_tokens": 1166,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1728,7 +1830,8 @@
     "input_tokens": 11025,
     "output_tokens": 2143,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1746,7 +1849,8 @@
     "input_tokens": 11025,
     "output_tokens": 2152,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1764,7 +1868,8 @@
     "input_tokens": 11025,
     "output_tokens": 1595,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1782,7 +1887,8 @@
     "input_tokens": 10769,
     "output_tokens": 6043,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1800,7 +1906,8 @@
     "input_tokens": 10769,
     "output_tokens": 7795,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1818,7 +1925,8 @@
     "input_tokens": 10769,
     "output_tokens": 2615,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1836,7 +1944,8 @@
     "input_tokens": 10850,
     "output_tokens": 1039,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1854,7 +1963,8 @@
     "input_tokens": 10850,
     "output_tokens": 1014,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1872,7 +1982,8 @@
     "input_tokens": 10850,
     "output_tokens": 943,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1890,7 +2001,8 @@
     "input_tokens": 10772,
     "output_tokens": 578,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1908,7 +2020,8 @@
     "input_tokens": 10772,
     "output_tokens": 603,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1926,7 +2039,8 @@
     "input_tokens": 10772,
     "output_tokens": 530,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1946,7 +2060,8 @@
     "input_tokens": 4498,
     "output_tokens": 1488,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1966,7 +2081,8 @@
     "input_tokens": 4498,
     "output_tokens": 997,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -1986,7 +2102,8 @@
     "input_tokens": 4498,
     "output_tokens": 1239,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2006,7 +2123,8 @@
     "input_tokens": 4708,
     "output_tokens": 719,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2026,7 +2144,8 @@
     "input_tokens": 4708,
     "output_tokens": 1015,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2046,7 +2165,8 @@
     "input_tokens": 4708,
     "output_tokens": 451,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2066,7 +2186,8 @@
     "input_tokens": 10697,
     "output_tokens": 2194,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2086,7 +2207,8 @@
     "input_tokens": 10697,
     "output_tokens": 3746,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2106,7 +2228,8 @@
     "input_tokens": 10697,
     "output_tokens": 3199,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2126,7 +2249,8 @@
     "input_tokens": 10691,
     "output_tokens": 4182,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2146,7 +2270,8 @@
     "input_tokens": 10691,
     "output_tokens": 3299,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2166,7 +2291,8 @@
     "input_tokens": 10691,
     "output_tokens": 2201,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2186,7 +2312,8 @@
     "input_tokens": 10770,
     "output_tokens": 2073,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2206,7 +2333,8 @@
     "input_tokens": 10770,
     "output_tokens": 2018,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2226,7 +2354,8 @@
     "input_tokens": 10770,
     "output_tokens": 3655,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2244,7 +2373,8 @@
     "input_tokens": 4782,
     "output_tokens": 1265,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2262,7 +2392,8 @@
     "input_tokens": 4782,
     "output_tokens": 1226,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2280,7 +2411,8 @@
     "input_tokens": 4782,
     "output_tokens": 1388,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2296,8 +2428,9 @@
     "latency_s": 3.964469708967954,
     "input_tokens": 686,
     "output_tokens": 206,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2313,8 +2446,9 @@
     "latency_s": 9.39341045776382,
     "input_tokens": 686,
     "output_tokens": 941,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2330,8 +2464,9 @@
     "latency_s": 7.090719375293702,
     "input_tokens": 686,
     "output_tokens": 356,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2347,8 +2482,9 @@
     "latency_s": 6.374544249847531,
     "input_tokens": 688,
     "output_tokens": 710,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2364,8 +2500,9 @@
     "latency_s": 5.631215000059456,
     "input_tokens": 688,
     "output_tokens": 712,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2381,8 +2518,9 @@
     "latency_s": 3.497972959186882,
     "input_tokens": 688,
     "output_tokens": 205,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2398,8 +2536,9 @@
     "latency_s": 1.25805624993518,
     "input_tokens": 722,
     "output_tokens": 19,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2415,8 +2554,9 @@
     "latency_s": 1.2673525409772992,
     "input_tokens": 722,
     "output_tokens": 19,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2432,8 +2572,9 @@
     "latency_s": 1.497340708039701,
     "input_tokens": 722,
     "output_tokens": 19,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2449,8 +2590,9 @@
     "latency_s": 9.140567416790873,
     "input_tokens": 685,
     "output_tokens": 1057,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2466,8 +2608,9 @@
     "latency_s": 7.5756332911551,
     "input_tokens": 685,
     "output_tokens": 842,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2483,8 +2626,9 @@
     "latency_s": 8.853215666953474,
     "input_tokens": 685,
     "output_tokens": 935,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2500,8 +2644,9 @@
     "latency_s": 1.2878414583392441,
     "input_tokens": 687,
     "output_tokens": 25,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2517,8 +2662,9 @@
     "latency_s": 1.324447457678616,
     "input_tokens": 687,
     "output_tokens": 25,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2534,8 +2680,9 @@
     "latency_s": 1.212923957966268,
     "input_tokens": 687,
     "output_tokens": 25,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2551,8 +2698,9 @@
     "latency_s": 1.238405792042613,
     "input_tokens": 685,
     "output_tokens": 14,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2568,8 +2716,9 @@
     "latency_s": 1.295702458359301,
     "input_tokens": 685,
     "output_tokens": 14,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2585,8 +2734,9 @@
     "latency_s": 1.2010688330046833,
     "input_tokens": 685,
     "output_tokens": 14,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2602,8 +2752,9 @@
     "latency_s": 1.155817833263427,
     "input_tokens": 685,
     "output_tokens": 19,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2619,8 +2770,9 @@
     "latency_s": 1.6825706660747528,
     "input_tokens": 685,
     "output_tokens": 19,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2636,8 +2788,9 @@
     "latency_s": 1.2088304162025452,
     "input_tokens": 685,
     "output_tokens": 19,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2653,8 +2806,9 @@
     "latency_s": 1.637561292387545,
     "input_tokens": 777,
     "output_tokens": 22,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2670,8 +2824,9 @@
     "latency_s": 1.4304565419442952,
     "input_tokens": 777,
     "output_tokens": 22,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2687,8 +2842,9 @@
     "latency_s": 1.430832666810602,
     "input_tokens": 777,
     "output_tokens": 22,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2704,8 +2860,9 @@
     "latency_s": 1.147553791757673,
     "input_tokens": 690,
     "output_tokens": 14,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2721,8 +2878,9 @@
     "latency_s": 1.0974330832250416,
     "input_tokens": 690,
     "output_tokens": 14,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2738,8 +2896,9 @@
     "latency_s": 1.7921464587561786,
     "input_tokens": 690,
     "output_tokens": 14,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2755,8 +2914,9 @@
     "latency_s": 5.334879375062883,
     "input_tokens": 688,
     "output_tokens": 567,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2772,8 +2932,9 @@
     "latency_s": 4.620295666623861,
     "input_tokens": 688,
     "output_tokens": 524,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2789,8 +2950,9 @@
     "latency_s": 6.054013583343476,
     "input_tokens": 688,
     "output_tokens": 713,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2806,8 +2968,9 @@
     "latency_s": 11.404834709130228,
     "input_tokens": 688,
     "output_tokens": 949,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2823,8 +2986,9 @@
     "latency_s": 16.371322750113904,
     "input_tokens": 688,
     "output_tokens": 1535,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2840,8 +3004,9 @@
     "latency_s": 5.224027208983898,
     "input_tokens": 688,
     "output_tokens": 247,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2857,8 +3022,9 @@
     "latency_s": 27.13360083429143,
     "input_tokens": 1046,
     "output_tokens": 2962,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2874,8 +3040,9 @@
     "latency_s": 12.261428666766733,
     "input_tokens": 1046,
     "output_tokens": 1455,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2891,8 +3058,9 @@
     "latency_s": 13.65983112482354,
     "input_tokens": 1046,
     "output_tokens": 1472,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2908,8 +3076,9 @@
     "latency_s": 18.49498654063791,
     "input_tokens": 686,
     "output_tokens": 1898,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2925,8 +3094,9 @@
     "latency_s": 7.4763149581849575,
     "input_tokens": 686,
     "output_tokens": 890,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2942,8 +3112,9 @@
     "latency_s": 9.65405054204166,
     "input_tokens": 686,
     "output_tokens": 1076,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2959,8 +3130,9 @@
     "latency_s": 4.772905166726559,
     "input_tokens": 887,
     "output_tokens": 369,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2976,8 +3148,9 @@
     "latency_s": 4.389547249767929,
     "input_tokens": 887,
     "output_tokens": 294,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -2993,8 +3166,9 @@
     "latency_s": 4.449050874914974,
     "input_tokens": 887,
     "output_tokens": 385,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3010,8 +3184,9 @@
     "latency_s": 7.642712666187435,
     "input_tokens": 685,
     "output_tokens": 864,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3027,8 +3202,9 @@
     "latency_s": 7.924448917154223,
     "input_tokens": 685,
     "output_tokens": 927,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3044,8 +3220,9 @@
     "latency_s": 8.286549082957208,
     "input_tokens": 685,
     "output_tokens": 902,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3061,8 +3238,9 @@
     "latency_s": 10.753797750454396,
     "input_tokens": 688,
     "output_tokens": 1346,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3078,8 +3256,9 @@
     "latency_s": 8.033296457957476,
     "input_tokens": 688,
     "output_tokens": 784,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3095,8 +3274,9 @@
     "latency_s": 9.74337958311662,
     "input_tokens": 688,
     "output_tokens": 1139,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3112,8 +3292,9 @@
     "latency_s": 1.178527292329818,
     "input_tokens": 686,
     "output_tokens": 16,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3129,8 +3310,9 @@
     "latency_s": 1.1783142080530524,
     "input_tokens": 686,
     "output_tokens": 16,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3146,8 +3328,9 @@
     "latency_s": 1.0716864997521043,
     "input_tokens": 686,
     "output_tokens": 16,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3163,8 +3346,9 @@
     "latency_s": 7.633165041916072,
     "input_tokens": 726,
     "output_tokens": 728,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3180,8 +3364,9 @@
     "latency_s": 5.978510916233063,
     "input_tokens": 726,
     "output_tokens": 565,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3197,8 +3382,9 @@
     "latency_s": 9.057948458008468,
     "input_tokens": 726,
     "output_tokens": 816,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3213,8 +3399,9 @@
     "latency_s": 7.468930040951818,
     "input_tokens": 750,
     "output_tokens": 870,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3229,8 +3416,9 @@
     "latency_s": 7.060173749923706,
     "input_tokens": 750,
     "output_tokens": 789,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3245,8 +3433,9 @@
     "latency_s": 10.675695708021522,
     "input_tokens": 750,
     "output_tokens": 1136,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3261,8 +3450,9 @@
     "latency_s": 6.4973736251704395,
     "input_tokens": 820,
     "output_tokens": 701,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3277,8 +3467,9 @@
     "latency_s": 5.661650916095823,
     "input_tokens": 820,
     "output_tokens": 620,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3293,8 +3484,9 @@
     "latency_s": 8.314962000120431,
     "input_tokens": 820,
     "output_tokens": 838,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3309,8 +3501,9 @@
     "latency_s": 9.6090142079629,
     "input_tokens": 790,
     "output_tokens": 989,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3325,8 +3518,9 @@
     "latency_s": 11.697823292110115,
     "input_tokens": 790,
     "output_tokens": 1247,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3341,8 +3535,9 @@
     "latency_s": 9.954440875444561,
     "input_tokens": 790,
     "output_tokens": 1102,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3357,8 +3552,9 @@
     "latency_s": 10.852588584180921,
     "input_tokens": 814,
     "output_tokens": 1319,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3373,8 +3569,9 @@
     "latency_s": 10.03184858430177,
     "input_tokens": 814,
     "output_tokens": 1220,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3389,8 +3586,9 @@
     "latency_s": 9.880096917040646,
     "input_tokens": 814,
     "output_tokens": 1117,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3405,8 +3603,9 @@
     "latency_s": 16.48139304155484,
     "input_tokens": 775,
     "output_tokens": 1723,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3421,8 +3620,9 @@
     "latency_s": 8.836681416723877,
     "input_tokens": 775,
     "output_tokens": 1006,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3437,8 +3637,9 @@
     "latency_s": 11.054736583027989,
     "input_tokens": 775,
     "output_tokens": 1221,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3453,8 +3654,9 @@
     "latency_s": 6.903420292306691,
     "input_tokens": 753,
     "output_tokens": 738,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3469,8 +3671,9 @@
     "latency_s": 7.727014707867056,
     "input_tokens": 753,
     "output_tokens": 858,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3485,8 +3688,9 @@
     "latency_s": 11.331803833134472,
     "input_tokens": 753,
     "output_tokens": 1137,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3501,8 +3705,9 @@
     "latency_s": 10.816497624851763,
     "input_tokens": 729,
     "output_tokens": 1213,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3517,8 +3722,9 @@
     "latency_s": 9.76380733307451,
     "input_tokens": 729,
     "output_tokens": 1033,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3533,8 +3739,9 @@
     "latency_s": 10.556230541784316,
     "input_tokens": 729,
     "output_tokens": 1273,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3549,8 +3756,9 @@
     "latency_s": 9.647927375044674,
     "input_tokens": 727,
     "output_tokens": 1100,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3565,8 +3773,9 @@
     "latency_s": 14.196478332858533,
     "input_tokens": 727,
     "output_tokens": 1560,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3581,8 +3790,9 @@
     "latency_s": 11.936742541845888,
     "input_tokens": 727,
     "output_tokens": 1263,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3597,8 +3807,9 @@
     "latency_s": 13.705714208073914,
     "input_tokens": 764,
     "output_tokens": 1501,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3613,8 +3824,9 @@
     "latency_s": 9.300626915879548,
     "input_tokens": 764,
     "output_tokens": 1010,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3629,8 +3841,9 @@
     "latency_s": 9.295356458984315,
     "input_tokens": 764,
     "output_tokens": 1082,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3645,8 +3858,9 @@
     "latency_s": 8.653547624591738,
     "input_tokens": 702,
     "output_tokens": 943,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3661,8 +3875,9 @@
     "latency_s": 7.928173833992332,
     "input_tokens": 702,
     "output_tokens": 862,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3677,8 +3892,9 @@
     "latency_s": 7.880658624693751,
     "input_tokens": 702,
     "output_tokens": 930,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3694,8 +3910,9 @@
     "latency_s": 4.612139082979411,
     "input_tokens": 860,
     "output_tokens": 243,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3711,8 +3928,9 @@
     "latency_s": 3.370547458063811,
     "input_tokens": 860,
     "output_tokens": 251,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3728,8 +3946,9 @@
     "latency_s": 3.68507141713053,
     "input_tokens": 860,
     "output_tokens": 288,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3745,8 +3964,9 @@
     "latency_s": 3.990197875071317,
     "input_tokens": 798,
     "output_tokens": 264,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3762,8 +3982,9 @@
     "latency_s": 3.5818243329413235,
     "input_tokens": 798,
     "output_tokens": 247,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3779,8 +4000,9 @@
     "latency_s": 3.3428452922962606,
     "input_tokens": 798,
     "output_tokens": 236,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3796,8 +4018,9 @@
     "latency_s": 4.333768666256219,
     "input_tokens": 934,
     "output_tokens": 268,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3813,8 +4036,9 @@
     "latency_s": 3.8746454999782145,
     "input_tokens": 934,
     "output_tokens": 263,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3830,8 +4054,9 @@
     "latency_s": 4.281307708006352,
     "input_tokens": 934,
     "output_tokens": 274,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3847,8 +4072,9 @@
     "latency_s": 5.427228374872357,
     "input_tokens": 766,
     "output_tokens": 261,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3864,21 +4090,9 @@
     "latency_s": 3.5559147079475224,
     "input_tokens": 766,
     "output_tokens": 263,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 4.203856875188649,
-    "input_tokens": 766,
-    "output_tokens": 293,
     "cached": true,
-    "error": "ValueError: unbalanced JSON object in response"
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3894,8 +4108,9 @@
     "latency_s": 4.9046361250802875,
     "input_tokens": 816,
     "output_tokens": 319,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3911,8 +4126,9 @@
     "latency_s": 4.892715624999255,
     "input_tokens": 816,
     "output_tokens": 297,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3928,21 +4144,9 @@
     "latency_s": 4.5616734167560935,
     "input_tokens": 816,
     "output_tokens": 335,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "root_cause",
-    "case_id": "rc-006-dashboard-timezone",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 4.1020675408653915,
-    "input_tokens": 711,
-    "output_tokens": 254,
     "cached": true,
-    "error": "ValueError: unbalanced JSON object in response"
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3958,8 +4162,9 @@
     "latency_s": 3.464760083705187,
     "input_tokens": 711,
     "output_tokens": 241,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3975,8 +4180,9 @@
     "latency_s": 4.625240999739617,
     "input_tokens": 711,
     "output_tokens": 291,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -3992,8 +4198,9 @@
     "latency_s": 3.883622707799077,
     "input_tokens": 727,
     "output_tokens": 299,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4009,8 +4216,9 @@
     "latency_s": 4.783129416871816,
     "input_tokens": 727,
     "output_tokens": 341,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4026,8 +4234,9 @@
     "latency_s": 4.3418719582259655,
     "input_tokens": 727,
     "output_tokens": 344,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4043,8 +4252,9 @@
     "latency_s": 4.8208207921124995,
     "input_tokens": 715,
     "output_tokens": 302,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4060,8 +4270,9 @@
     "latency_s": 4.074311875272542,
     "input_tokens": 715,
     "output_tokens": 295,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4077,8 +4288,9 @@
     "latency_s": 3.6786941247992218,
     "input_tokens": 715,
     "output_tokens": 259,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4094,21 +4306,9 @@
     "latency_s": 4.23276958335191,
     "input_tokens": 702,
     "output_tokens": 300,
-    "cached": false,
-    "error": null
-  },
-  {
-    "model": "sonnet-5",
-    "category": "root_cause",
-    "case_id": "rc-009-az-failure-retries",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 4.683600707910955,
-    "input_tokens": 702,
-    "output_tokens": 346,
     "cached": true,
-    "error": "ValueError: unbalanced JSON object in response"
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4124,8 +4324,9 @@
     "latency_s": 3.8766925828531384,
     "input_tokens": 702,
     "output_tokens": 307,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4141,8 +4342,9 @@
     "latency_s": 4.3908684169873595,
     "input_tokens": 691,
     "output_tokens": 327,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4158,8 +4360,9 @@
     "latency_s": 4.7088826252147555,
     "input_tokens": 691,
     "output_tokens": 275,
-    "cached": false,
-    "error": null
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "sonnet-5",
@@ -4175,7 +4378,62 @@
     "latency_s": 4.501704875379801,
     "input_tokens": 691,
     "output_tokens": 298,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 2,
+    "score": 0.6841269841269841,
+    "metrics": {
+      "rouge_l_summary": 0.40476190476190477,
+      "rouge_1_root_cause": 0.7407407407407408,
+      "keyword_recall": 1.0
+    },
+    "latency_s": 4.0546397077851,
+    "input_tokens": 766,
+    "output_tokens": 266,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 0,
+    "score": 0.44478725694195304,
+    "metrics": {
+      "rouge_l_summary": 0.287292817679558,
+      "rouge_1_root_cause": 0.24242424242424243,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 4.022686124779284,
+    "input_tokens": 711,
+    "output_tokens": 267,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "sonnet-5",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 1,
+    "score": 0.4585087809386874,
+    "metrics": {
+      "rouge_l_summary": 0.21495327102803738,
+      "rouge_1_root_cause": 0.3846153846153846,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 4.643590542022139,
+    "input_tokens": 702,
+    "output_tokens": 350,
+    "cached": false,
+    "error": null,
+    "refused": null
   }
 ]

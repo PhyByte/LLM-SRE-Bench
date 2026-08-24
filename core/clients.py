@@ -23,7 +23,20 @@ from .config import BenchmarkConfig, ModelConfig
 
 
 class ClientError(Exception):
-    """A request failed permanently (after retries) or was refused."""
+    """A request failed permanently (after retries)."""
+
+
+class RefusalError(ClientError):
+    """The model declined the prompt.
+
+    Not a transport failure: the call succeeded and the model chose not to
+    answer. Callers score this as a 0 for the case rather than an error.
+    """
+
+    def __init__(self, category: Optional[str] = None, explanation: Optional[str] = None) -> None:
+        self.category = category or "unspecified"
+        self.explanation = explanation
+        super().__init__(f"model declined the prompt (category={self.category})")
 
 
 @dataclass
@@ -33,6 +46,9 @@ class LLMResponse:
     input_tokens: Optional[int] = None
     output_tokens: Optional[int] = None
     cached: bool = False
+    # Set by the runner when a live response should be written to the disk
+    # cache after it successfully parses — not on the transport client.
+    cache_key: Optional[str] = None
 
     @property
     def total_tokens(self) -> Optional[int]:
@@ -55,6 +71,15 @@ class BaseClient:
 
 _RETRYABLE_STATUS = {408, 409, 429, 500, 502, 503, 529}
 _MAX_RETRIES = 4
+# request_timeout budgets generation, which is slow for a big local model. Opening
+# the socket is not: a host that hasn't completed a TCP handshake in this long is
+# down or dropping packets, and waiting the full generation budget on every attempt
+# turns an unreachable endpoint into hours of stalling.
+_CONNECT_TIMEOUT_S = 10.0
+
+
+def _http_timeout(total: float) -> httpx.Timeout:
+    return httpx.Timeout(total, connect=min(total, _CONNECT_TIMEOUT_S))
 
 
 def _retrying_post(client: httpx.Client, url: str, **kwargs) -> httpx.Response:
@@ -74,8 +99,11 @@ def _retrying_post(client: httpx.Client, url: str, **kwargs) -> httpx.Response:
             )
             retry_after = response.headers.get("retry-after")
             delay = float(retry_after) if retry_after else 2**attempt + random.random()
-        except httpx.ConnectError as exc:
-            # Endpoint unreachable (e.g. Ollama not running): retrying won't help.
+        except (httpx.ConnectError, httpx.ConnectTimeout) as exc:
+            # Endpoint refused the connection or never answered the handshake
+            # (server down, or packets dropped by a firewall/offline VPN peer).
+            # Retrying just pays the connect timeout again, so fail now and let
+            # the circuit breaker skip the rest of this model.
             raise ClientError(f"cannot connect to {url}: {exc}") from exc
         except (httpx.TimeoutException, httpx.TransportError) as exc:
             last_error = exc
@@ -113,7 +141,7 @@ class OpenAICompatibleClient(BaseClient):
         self._http = httpx.Client(
             base_url=base_url.rstrip("/"),
             headers=headers,
-            timeout=self.timeout,
+            timeout=_http_timeout(self.timeout),
         )
 
     def _chat_payload(self, system: str, user: str) -> dict:
@@ -209,7 +237,19 @@ class AnthropicClient(BaseClient):
             raise ClientError(f"Anthropic API error: {exc}") from exc
         latency = time.perf_counter() - start
         if response.stop_reason == "refusal":
-            raise ClientError("Anthropic model refused the request")
+            # Fable 5 / Opus 5 classifiers return HTTP 200 with stop_reason
+            # "refusal" (category cyber/bio/reasoning_extraction). The same
+            # prompt refuses again, so this is a verdict on the case, not a
+            # transport failure. Deliberately no fallback model: answering with
+            # another model would score that model as this one.
+            details = getattr(response, "stop_details", None)
+            if isinstance(details, dict):
+                category = details.get("category")
+                explanation = details.get("explanation")
+            else:
+                category = getattr(details, "category", None)
+                explanation = getattr(details, "explanation", None)
+            raise RefusalError(category, explanation)
         text = "".join(b.text for b in response.content if b.type == "text")
         if not text.strip():
             # Current Claude models (Sonnet 5, Opus 5, Fable 5) run thinking by
@@ -235,7 +275,7 @@ class OllamaClient(BaseClient):
     def __init__(self, model: ModelConfig, config: BenchmarkConfig) -> None:
         super().__init__(model, config)
         base_url = (model.base_url or "http://localhost:11434").rstrip("/")
-        self._http = httpx.Client(base_url=base_url, timeout=self.timeout)
+        self._http = httpx.Client(base_url=base_url, timeout=_http_timeout(self.timeout))
 
     def complete(self, system: str, user: str) -> LLMResponse:
         payload = {

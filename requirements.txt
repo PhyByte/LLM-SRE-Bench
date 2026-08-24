@@ -6,3 +6,6 @@ python-dotenv>=1.0
 typer>=0.12
 pydantic>=2.5
 anthropic>=0.40
+# Only needed for models with context_length set: drives LM Studio's native API
+# to load them. Client(host:port) override requires 1.5.0+.
+lmstudio>=1.5.0

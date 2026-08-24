@@ -19,7 +19,8 @@
     "consistency_score": 0.9317
   },
   "error_count": 0,
+  "refused_count": 0,
   "total_runs": 246,
   "total_duration_s": 921.1,
-  "last_run_wall_clock_s": 252.9
+  "last_run_wall_clock_s": 0.0
 }

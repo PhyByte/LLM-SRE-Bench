@@ -13,7 +13,8 @@
     "input_tokens": 650,
     "output_tokens": 145,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -29,7 +30,8 @@
     "input_tokens": 650,
     "output_tokens": 145,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -45,7 +47,8 @@
     "input_tokens": 650,
     "output_tokens": 145,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -61,7 +64,8 @@
     "input_tokens": 640,
     "output_tokens": 199,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -77,7 +81,8 @@
     "input_tokens": 640,
     "output_tokens": 199,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -93,7 +98,8 @@
     "input_tokens": 640,
     "output_tokens": 199,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -109,7 +115,8 @@
     "input_tokens": 651,
     "output_tokens": 164,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -125,7 +132,8 @@
     "input_tokens": 651,
     "output_tokens": 164,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -141,7 +149,8 @@
     "input_tokens": 651,
     "output_tokens": 164,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -157,7 +166,8 @@
     "input_tokens": 405,
     "output_tokens": 163,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -173,7 +183,8 @@
     "input_tokens": 405,
     "output_tokens": 163,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -189,7 +200,8 @@
     "input_tokens": 405,
     "output_tokens": 163,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -205,7 +217,8 @@
     "input_tokens": 406,
     "output_tokens": 148,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -221,7 +234,8 @@
     "input_tokens": 406,
     "output_tokens": 148,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -237,7 +251,8 @@
     "input_tokens": 406,
     "output_tokens": 148,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -253,7 +268,8 @@
     "input_tokens": 412,
     "output_tokens": 217,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -269,7 +285,8 @@
     "input_tokens": 412,
     "output_tokens": 217,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -285,7 +302,8 @@
     "input_tokens": 412,
     "output_tokens": 217,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -301,7 +319,8 @@
     "input_tokens": 362,
     "output_tokens": 149,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -317,7 +336,8 @@
     "input_tokens": 362,
     "output_tokens": 149,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -333,7 +353,8 @@
     "input_tokens": 362,
     "output_tokens": 149,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -349,7 +370,8 @@
     "input_tokens": 397,
     "output_tokens": 185,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -365,7 +387,8 @@
     "input_tokens": 397,
     "output_tokens": 185,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -381,7 +404,8 @@
     "input_tokens": 397,
     "output_tokens": 185,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -397,7 +421,8 @@
     "input_tokens": 424,
     "output_tokens": 189,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -413,7 +438,8 @@
     "input_tokens": 424,
     "output_tokens": 189,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -429,7 +455,8 @@
     "input_tokens": 424,
     "output_tokens": 189,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -445,7 +472,8 @@
     "input_tokens": 365,
     "output_tokens": 155,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -461,7 +489,8 @@
     "input_tokens": 365,
     "output_tokens": 155,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -477,7 +506,8 @@
     "input_tokens": 365,
     "output_tokens": 155,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -493,7 +523,8 @@
     "input_tokens": 487,
     "output_tokens": 164,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -509,7 +540,8 @@
     "input_tokens": 487,
     "output_tokens": 164,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -525,7 +557,8 @@
     "input_tokens": 487,
     "output_tokens": 164,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -541,7 +574,8 @@
     "input_tokens": 344,
     "output_tokens": 133,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -557,7 +591,8 @@
     "input_tokens": 344,
     "output_tokens": 133,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -573,7 +608,8 @@
     "input_tokens": 344,
     "output_tokens": 133,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -589,7 +625,8 @@
     "input_tokens": 308,
     "output_tokens": 111,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -605,7 +642,8 @@
     "input_tokens": 308,
     "output_tokens": 111,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -621,7 +659,8 @@
     "input_tokens": 308,
     "output_tokens": 111,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -637,7 +676,8 @@
     "input_tokens": 469,
     "output_tokens": 162,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -653,7 +693,8 @@
     "input_tokens": 469,
     "output_tokens": 162,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -669,7 +710,8 @@
     "input_tokens": 469,
     "output_tokens": 162,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -685,7 +727,8 @@
     "input_tokens": 282,
     "output_tokens": 101,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -701,7 +744,8 @@
     "input_tokens": 282,
     "output_tokens": 101,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -717,7 +761,8 @@
     "input_tokens": 282,
     "output_tokens": 101,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -734,7 +779,8 @@
     "input_tokens": 444,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -751,7 +797,8 @@
     "input_tokens": 444,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -768,7 +815,8 @@
     "input_tokens": 444,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -785,7 +833,8 @@
     "input_tokens": 1089,
     "output_tokens": 27,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -802,7 +851,8 @@
     "input_tokens": 1089,
     "output_tokens": 27,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -819,7 +869,8 @@
     "input_tokens": 1089,
     "output_tokens": 27,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -836,7 +887,8 @@
     "input_tokens": 941,
     "output_tokens": 30,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -853,7 +905,8 @@
     "input_tokens": 941,
     "output_tokens": 30,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -870,7 +923,8 @@
     "input_tokens": 941,
     "output_tokens": 30,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -887,7 +941,8 @@
     "input_tokens": 950,
     "output_tokens": 47,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -904,7 +959,8 @@
     "input_tokens": 950,
     "output_tokens": 47,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -921,7 +977,8 @@
     "input_tokens": 950,
     "output_tokens": 47,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -938,7 +995,8 @@
     "input_tokens": 1195,
     "output_tokens": 82,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -955,7 +1013,8 @@
     "input_tokens": 1195,
     "output_tokens": 82,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -972,7 +1031,8 @@
     "input_tokens": 1195,
     "output_tokens": 82,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -989,7 +1049,8 @@
     "input_tokens": 769,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1006,7 +1067,8 @@
     "input_tokens": 769,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1023,7 +1085,8 @@
     "input_tokens": 769,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1040,7 +1103,8 @@
     "input_tokens": 638,
     "output_tokens": 18,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1057,7 +1121,8 @@
     "input_tokens": 638,
     "output_tokens": 18,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1074,7 +1139,8 @@
     "input_tokens": 638,
     "output_tokens": 18,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1091,7 +1157,8 @@
     "input_tokens": 709,
     "output_tokens": 28,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1108,7 +1175,8 @@
     "input_tokens": 709,
     "output_tokens": 28,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1125,7 +1193,8 @@
     "input_tokens": 709,
     "output_tokens": 28,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1142,7 +1211,8 @@
     "input_tokens": 644,
     "output_tokens": 17,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1159,7 +1229,8 @@
     "input_tokens": 644,
     "output_tokens": 17,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1176,7 +1247,8 @@
     "input_tokens": 644,
     "output_tokens": 17,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1193,7 +1265,8 @@
     "input_tokens": 561,
     "output_tokens": 8,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1210,7 +1283,8 @@
     "input_tokens": 561,
     "output_tokens": 8,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1227,7 +1301,8 @@
     "input_tokens": 561,
     "output_tokens": 8,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1244,7 +1319,8 @@
     "input_tokens": 537,
     "output_tokens": 14,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1261,7 +1337,8 @@
     "input_tokens": 537,
     "output_tokens": 14,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1278,7 +1355,8 @@
     "input_tokens": 537,
     "output_tokens": 14,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1296,7 +1374,8 @@
     "input_tokens": 4288,
     "output_tokens": 285,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1314,7 +1393,8 @@
     "input_tokens": 4288,
     "output_tokens": 285,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1332,7 +1412,8 @@
     "input_tokens": 4288,
     "output_tokens": 285,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1350,7 +1431,8 @@
     "input_tokens": 4211,
     "output_tokens": 360,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1368,7 +1450,8 @@
     "input_tokens": 4211,
     "output_tokens": 360,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1386,7 +1469,8 @@
     "input_tokens": 4211,
     "output_tokens": 360,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1404,7 +1488,8 @@
     "input_tokens": 4422,
     "output_tokens": 330,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1422,7 +1507,8 @@
     "input_tokens": 4422,
     "output_tokens": 330,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1440,7 +1526,8 @@
     "input_tokens": 4422,
     "output_tokens": 330,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1458,7 +1545,8 @@
     "input_tokens": 4551,
     "output_tokens": 314,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1476,7 +1564,8 @@
     "input_tokens": 4551,
     "output_tokens": 314,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1494,7 +1583,8 @@
     "input_tokens": 4551,
     "output_tokens": 314,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1512,7 +1602,8 @@
     "input_tokens": 4343,
     "output_tokens": 375,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1530,7 +1621,8 @@
     "input_tokens": 4343,
     "output_tokens": 375,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1548,7 +1640,8 @@
     "input_tokens": 4343,
     "output_tokens": 375,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1566,7 +1659,8 @@
     "input_tokens": 4466,
     "output_tokens": 298,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1584,7 +1678,8 @@
     "input_tokens": 4466,
     "output_tokens": 298,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1602,7 +1697,8 @@
     "input_tokens": 4466,
     "output_tokens": 298,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1620,7 +1716,8 @@
     "input_tokens": 4427,
     "output_tokens": 328,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1638,7 +1735,8 @@
     "input_tokens": 4427,
     "output_tokens": 328,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1656,7 +1754,8 @@
     "input_tokens": 4427,
     "output_tokens": 328,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1674,7 +1773,8 @@
     "input_tokens": 4357,
     "output_tokens": 333,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1692,7 +1792,8 @@
     "input_tokens": 4357,
     "output_tokens": 333,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -1710,397 +1811,8 @@
     "input_tokens": 4357,
     "output_tokens": 333,
     "cached": false,
-    "error": null
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-returnva-food-09",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: HTTP 400 from /chat/completions: {\"error\":\"Engine protocol predict request returned 400: {\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"request (9784 tokens) exceeds the available context size (9216 tokens), try increasing it\\\",\\\"type\\\":\\\"exceed_context_size_error\\\",\\\"n_prompt_tokens\\\":9784,\\\"n_ctx\\\":9216}}\"}"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-returnva-food-09",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: HTTP 400 from /chat/completions: {\"error\":\"Engine protocol predict request returned 400: {\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"request (9784 tokens) exceeds the available context size (9216 tokens), try increasing it\\\",\\\"type\\\":\\\"exceed_context_size_error\\\",\\\"n_prompt_tokens\\\":9784,\\\"n_ctx\\\":9216}}\"}"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-returnva-food-09",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: HTTP 400 from /chat/completions: {\"error\":\"Engine protocol predict request returned 400: {\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"request (9784 tokens) exceeds the available context size (9216 tokens), try increasing it\\\",\\\"type\\\":\\\"exceed_context_size_error\\\",\\\"n_prompt_tokens\\\":9784,\\\"n_ctx\\\":9216}}\"}"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-returnva-verification-code-10",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: HTTP 400 from /chat/completions: {\"error\":\"Engine protocol predict request returned 400: {\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"request (9665 tokens) exceeds the available context size (9216 tokens), try increasing it\\\",\\\"type\\\":\\\"exceed_context_size_error\\\",\\\"n_prompt_tokens\\\":9665,\\\"n_ctx\\\":9216}}\"}"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-returnva-verification-code-10",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "ClientError: HTTP 400 from /chat/completions: {\"error\":\"Engine protocol predict request returned 400: {\\\"error\\\":{\\\"code\\\":400,\\\"message\\\":\\\"request (9665 tokens) exceeds the available context size (9216 tokens), try increasing it\\\",\\\"type\\\":\\\"exceed_context_size_error\\\",\\\"n_prompt_tokens\\\":9665,\\\"n_ctx\\\":9216}}\"}"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-returnva-verification-code-10",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-basic-11",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-basic-11",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-basic-11",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-preserve-12",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-preserve-12",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-cpusatur-preserve-12",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-01",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-01",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-01",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-02",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-02",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-unknown-02",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-03",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-03",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-03",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-04",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-04",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-04",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-05",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-05",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-tt-unknown-05",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-clean-baseline",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-clean-baseline",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "multimodal_rca",
-    "case_id": "mm-ob-clean-baseline",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2117,7 +1829,8 @@
     "input_tokens": 810,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2134,7 +1847,8 @@
     "input_tokens": 810,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2151,7 +1865,8 @@
     "input_tokens": 810,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2168,7 +1883,8 @@
     "input_tokens": 909,
     "output_tokens": 46,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2185,7 +1901,8 @@
     "input_tokens": 909,
     "output_tokens": 46,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2202,7 +1919,8 @@
     "input_tokens": 909,
     "output_tokens": 46,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2219,7 +1937,8 @@
     "input_tokens": 942,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2236,7 +1955,8 @@
     "input_tokens": 942,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2253,7 +1973,8 @@
     "input_tokens": 942,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2270,7 +1991,8 @@
     "input_tokens": 808,
     "output_tokens": 62,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2287,7 +2009,8 @@
     "input_tokens": 808,
     "output_tokens": 62,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2304,7 +2027,8 @@
     "input_tokens": 808,
     "output_tokens": 62,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2321,7 +2045,8 @@
     "input_tokens": 711,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2338,7 +2063,8 @@
     "input_tokens": 711,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2355,7 +2081,8 @@
     "input_tokens": 711,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2372,7 +2099,8 @@
     "input_tokens": 901,
     "output_tokens": 318,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2389,7 +2117,8 @@
     "input_tokens": 901,
     "output_tokens": 318,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2406,7 +2135,8 @@
     "input_tokens": 901,
     "output_tokens": 318,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2423,7 +2153,8 @@
     "input_tokens": 834,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2440,7 +2171,8 @@
     "input_tokens": 834,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2457,7 +2189,8 @@
     "input_tokens": 834,
     "output_tokens": 14,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2474,7 +2207,8 @@
     "input_tokens": 995,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2491,7 +2225,8 @@
     "input_tokens": 995,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2508,7 +2243,8 @@
     "input_tokens": 995,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2525,7 +2261,8 @@
     "input_tokens": 810,
     "output_tokens": 146,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2542,7 +2279,8 @@
     "input_tokens": 810,
     "output_tokens": 146,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2559,7 +2297,8 @@
     "input_tokens": 810,
     "output_tokens": 146,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2576,7 +2315,8 @@
     "input_tokens": 810,
     "output_tokens": 58,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2593,7 +2333,8 @@
     "input_tokens": 810,
     "output_tokens": 58,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2610,241 +2351,807 @@
     "input_tokens": 810,
     "output_tokens": 58,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 3.7705569588579237,
+    "input_tokens": 558,
+    "output_tokens": 302,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 3.7946624998003244,
+    "input_tokens": 558,
+    "output_tokens": 371,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 3.724877000320703,
+    "input_tokens": 558,
+    "output_tokens": 371,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 4.644743625074625,
+    "input_tokens": 601,
+    "output_tokens": 402,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 4.075820416212082,
+    "input_tokens": 601,
+    "output_tokens": 402,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 4.083087207749486,
+    "input_tokens": 601,
+    "output_tokens": 402,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 3.8334842496551573,
+    "input_tokens": 522,
+    "output_tokens": 293,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 3.310777291189879,
+    "input_tokens": 522,
+    "output_tokens": 293,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 3.2958725416101515,
+    "input_tokens": 522,
+    "output_tokens": 293,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 3.269102457910776,
+    "input_tokens": 509,
+    "output_tokens": 284,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 2.745115333236754,
+    "input_tokens": 509,
+    "output_tokens": 284,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 2.7536226250231266,
+    "input_tokens": 509,
+    "output_tokens": 284,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.723056875169277,
+    "input_tokens": 541,
+    "output_tokens": 307,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.2212941660545766,
+    "input_tokens": 541,
+    "output_tokens": 307,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 3.2703438331373036,
+    "input_tokens": 541,
+    "output_tokens": 307,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 26.421557208988816,
+    "input_tokens": 549,
+    "output_tokens": 2270,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 17.446716083213687,
+    "input_tokens": 549,
+    "output_tokens": 1528,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 17.514881084207445,
+    "input_tokens": 549,
+    "output_tokens": 1538,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 44.949950749985874,
+    "input_tokens": 497,
+    "output_tokens": 3913,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 26.369532624725252,
+    "input_tokens": 497,
+    "output_tokens": 2255,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 22.13227304071188,
+    "input_tokens": 497,
+    "output_tokens": 2013,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 42.35909783327952,
+    "input_tokens": 569,
+    "output_tokens": 3436,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 25.320752125233412,
+    "input_tokens": 569,
+    "output_tokens": 2067,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 25.982308499980718,
+    "input_tokens": 569,
+    "output_tokens": 2142,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 27.388340666890144,
+    "input_tokens": 619,
+    "output_tokens": 2194,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 21.560853832866997,
+    "input_tokens": 619,
+    "output_tokens": 1785,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 20.974487292114645,
+    "input_tokens": 548,
+    "output_tokens": 1831,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 17.801753958687186,
+    "input_tokens": 548,
+    "output_tokens": 1641,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 17.777254625223577,
+    "input_tokens": 548,
+    "output_tokens": 1641,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-latency-inband-peak",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.6666666666666666,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+    },
+    "latency_s": 41.489338209386915,
+    "input_tokens": 946,
+    "output_tokens": 4199,
     "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-latency-inband-peak",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.6666666666666666,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+    },
+    "latency_s": 65.73254925012589,
+    "input_tokens": 946,
+    "output_tokens": 6868,
     "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-latency-inband-peak",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.6666666666666666,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+    },
+    "latency_s": 67.62096470827237,
+    "input_tokens": 946,
+    "output_tokens": 7499,
     "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-rps-weekend-dip",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1111111111111111,
+    "metrics": {
+      "precision": 0.058823529411764705,
+      "recall": 1.0,
+      "f1": 0.1111111111111111
+    },
+    "latency_s": 115.48565941723064,
+    "input_tokens": 1511,
+    "output_tokens": 11965,
     "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-rps-weekend-dip",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1111111111111111,
+    "metrics": {
+      "precision": 0.058823529411764705,
+      "recall": 1.0,
+      "f1": 0.1111111111111111
+    },
+    "latency_s": 145.71665858337656,
+    "input_tokens": 1511,
+    "output_tokens": 14161,
     "cached": false,
-    "error": "ClientError: empty response (finish_reason=length) — raise this model's max_tokens (reasoning consumed the budget)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-rps-weekend-dip",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.1111111111111111,
+    "metrics": {
+      "precision": 0.058823529411764705,
+      "recall": 1.0,
+      "f1": 0.1111111111111111
+    },
+    "latency_s": 148.52982604224235,
+    "input_tokens": 1511,
+    "output_tokens": 14036,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-cpu-flatline",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.923076923076923,
+    "metrics": {
+      "precision": 0.8571428571428571,
+      "recall": 1.0,
+      "f1": 0.923076923076923
+    },
+    "latency_s": 44.51541537512094,
+    "input_tokens": 846,
+    "output_tokens": 4113,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-cpu-flatline",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.923076923076923,
+    "metrics": {
+      "precision": 0.8571428571428571,
+      "recall": 1.0,
+      "f1": 0.923076923076923
+    },
+    "latency_s": 39.79771304083988,
+    "input_tokens": 846,
+    "output_tokens": 3711,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-cpu-flatline",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.923076923076923,
+    "metrics": {
+      "precision": 0.8571428571428571,
+      "recall": 1.0,
+      "f1": 0.923076923076923
+    },
+    "latency_s": 35.20584345795214,
+    "input_tokens": 846,
+    "output_tokens": 2942,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-bytes-counter-wrap",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.8571428571428571,
+    "metrics": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571
+    },
+    "latency_s": 93.02993737487122,
+    "input_tokens": 1487,
+    "output_tokens": 8157,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-bytes-counter-wrap",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.8571428571428571,
+    "metrics": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571
+    },
+    "latency_s": 75.33515216596425,
+    "input_tokens": 1487,
+    "output_tokens": 6903,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-bytes-counter-wrap",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.8571428571428571,
+    "metrics": {
+      "precision": 0.75,
+      "recall": 1.0,
+      "f1": 0.8571428571428571
+    },
+    "latency_s": 120.49692895775661,
+    "input_tokens": 1487,
+    "output_tokens": 11629,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-mem-slow-ramp",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.2222222222222222,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.125,
+      "f1": 0.2222222222222222
+    },
+    "latency_s": 145.44716120930389,
+    "input_tokens": 845,
+    "output_tokens": 14876,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-mem-slow-ramp",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.2222222222222222,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.125,
+      "f1": 0.2222222222222222
+    },
+    "latency_s": 136.8464725841768,
+    "input_tokens": 845,
+    "output_tokens": 13547,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-mem-slow-ramp",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.2222222222222222,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.125,
+      "f1": 0.2222222222222222
+    },
+    "latency_s": 118.58107024990022,
+    "input_tokens": 845,
+    "output_tokens": 11096,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-latency-growing-amp",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.6666666666666666,
+    "metrics": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666
+    },
+    "latency_s": 78.51217345893383,
+    "input_tokens": 898,
+    "output_tokens": 7423,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-latency-growing-amp",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 131.14543941710144,
+    "input_tokens": 898,
+    "output_tokens": 13161,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-growing-amp",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2852,12 +3159,17 @@
     "case_id": "ts-cpu-peak-clean",
     "run_index": 0,
     "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 14.40710062533617,
+    "input_tokens": 847,
+    "output_tokens": 1399,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2865,12 +3177,17 @@
     "case_id": "ts-cpu-peak-clean",
     "run_index": 1,
     "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 14.238816749770194,
+    "input_tokens": 847,
+    "output_tokens": 1399,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
@@ -2878,830 +3195,1245 @@
     "case_id": "ts-cpu-peak-clean",
     "run_index": 2,
     "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 14.12236441578716,
+    "input_tokens": 847,
+    "output_tokens": 1399,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-rps-held-then-dip",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.15384615384615383,
+    "metrics": {
+      "precision": 0.1,
+      "recall": 0.3333333333333333,
+      "f1": 0.15384615384615383
+    },
+    "latency_s": 157.65692349988967,
+    "input_tokens": 985,
+    "output_tokens": 14391,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-rps-held-then-dip",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.4,
+    "metrics": {
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4
+    },
+    "latency_s": 116.91673066699877,
+    "input_tokens": 985,
+    "output_tokens": 12008,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 0,
+    "score": 0.5973304904051172,
+    "metrics": {
+      "rouge_l_summary": 0.47761194029850745,
+      "rouge_1_root_cause": 0.6399999999999999,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.383531665895134,
+    "input_tokens": 696,
+    "output_tokens": 149,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 1,
+    "score": 0.5973304904051172,
+    "metrics": {
+      "rouge_l_summary": 0.47761194029850745,
+      "rouge_1_root_cause": 0.6399999999999999,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.9060537498444319,
+    "input_tokens": 696,
+    "output_tokens": 149,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 2,
+    "score": 0.5973304904051172,
+    "metrics": {
+      "rouge_l_summary": 0.47761194029850745,
+      "rouge_1_root_cause": 0.6399999999999999,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 1.8222725419327617,
+    "input_tokens": 696,
+    "output_tokens": 149,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 0,
+    "score": 0.5345155341183147,
+    "metrics": {
+      "rouge_l_summary": 0.24060150375939848,
+      "rouge_1_root_cause": 0.6037735849056604,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 2.203646416310221,
+    "input_tokens": 608,
+    "output_tokens": 137,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 1,
+    "score": 0.5345155341183147,
+    "metrics": {
+      "rouge_l_summary": 0.24060150375939848,
+      "rouge_1_root_cause": 0.6037735849056604,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 1.6923310002312064,
+    "input_tokens": 608,
+    "output_tokens": 137,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 2,
+    "score": 0.5345155341183147,
+    "metrics": {
+      "rouge_l_summary": 0.24060150375939848,
+      "rouge_1_root_cause": 0.6037735849056604,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 1.654691290576011,
+    "input_tokens": 608,
+    "output_tokens": 137,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 0,
+    "score": 0.5150070871722183,
+    "metrics": {
+      "rouge_l_summary": 0.3132530120481928,
+      "rouge_1_root_cause": 0.5490196078431373,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.540298417210579,
+    "input_tokens": 722,
+    "output_tokens": 159,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 1,
+    "score": 0.5150070871722183,
+    "metrics": {
+      "rouge_l_summary": 0.3132530120481928,
+      "rouge_1_root_cause": 0.5490196078431373,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.0289142499677837,
+    "input_tokens": 722,
+    "output_tokens": 159,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 2,
+    "score": 0.5150070871722183,
+    "metrics": {
+      "rouge_l_summary": 0.3132530120481928,
+      "rouge_1_root_cause": 0.5490196078431373,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.0160645418800414,
+    "input_tokens": 722,
+    "output_tokens": 159,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 0,
+    "score": 0.5236874236874237,
+    "metrics": {
+      "rouge_l_summary": 0.38461538461538464,
+      "rouge_1_root_cause": 0.5185185185185186,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.714638417121023,
+    "input_tokens": 616,
+    "output_tokens": 162,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 1,
+    "score": 0.5236874236874237,
+    "metrics": {
+      "rouge_l_summary": 0.38461538461538464,
+      "rouge_1_root_cause": 0.5185185185185186,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.1818272923119366,
+    "input_tokens": 616,
+    "output_tokens": 162,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 2,
+    "score": 0.5236874236874237,
+    "metrics": {
+      "rouge_l_summary": 0.38461538461538464,
+      "rouge_1_root_cause": 0.5185185185185186,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 2.175328583922237,
+    "input_tokens": 616,
+    "output_tokens": 162,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 0,
+    "score": 0.4656533575317604,
+    "metrics": {
+      "rouge_l_summary": 0.20689655172413793,
+      "rouge_1_root_cause": 0.5263157894736842,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.58654212532565,
+    "input_tokens": 650,
+    "output_tokens": 152,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 1,
+    "score": 0.4656533575317604,
+    "metrics": {
+      "rouge_l_summary": 0.20689655172413793,
+      "rouge_1_root_cause": 0.5263157894736842,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.0578152500092983,
+    "input_tokens": 650,
+    "output_tokens": 152,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 2,
+    "score": 0.4656533575317604,
+    "metrics": {
+      "rouge_l_summary": 0.20689655172413793,
+      "rouge_1_root_cause": 0.5263157894736842,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 2.0462262919172645,
+    "input_tokens": 650,
+    "output_tokens": 152,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 0,
+    "score": 0.5411255411255411,
+    "metrics": {
+      "rouge_l_summary": 0.3766233766233766,
+      "rouge_1_root_cause": 0.4444444444444444,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.811988374684006,
+    "input_tokens": 588,
+    "output_tokens": 563,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 1,
+    "score": 0.5453149001536098,
+    "metrics": {
+      "rouge_l_summary": 0.38709677419354843,
+      "rouge_1_root_cause": 0.4444444444444444,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.468804208096117,
+    "input_tokens": 588,
+    "output_tokens": 577,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 2,
+    "score": 0.5411255411255411,
+    "metrics": {
+      "rouge_l_summary": 0.3766233766233766,
+      "rouge_1_root_cause": 0.4444444444444444,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.609579750336707,
+    "input_tokens": 588,
+    "output_tokens": 563,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 0,
+    "score": 0.4708527432712215,
+    "metrics": {
+      "rouge_l_summary": 0.28985507246376807,
+      "rouge_1_root_cause": 0.46875,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.9187543750740588,
+    "input_tokens": 590,
+    "output_tokens": 274,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 1,
+    "score": 0.4708527432712215,
+    "metrics": {
+      "rouge_l_summary": 0.28985507246376807,
+      "rouge_1_root_cause": 0.46875,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.663470667321235,
+    "input_tokens": 590,
+    "output_tokens": 274,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 2,
+    "score": 0.4708527432712215,
+    "metrics": {
+      "rouge_l_summary": 0.28985507246376807,
+      "rouge_1_root_cause": 0.46875,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.651481042150408,
+    "input_tokens": 590,
+    "output_tokens": 274,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 0,
+    "score": 0.4721344304550411,
+    "metrics": {
+      "rouge_l_summary": 0.2900763358778626,
+      "rouge_1_root_cause": 0.4727272727272727,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.6606544158421457,
+    "input_tokens": 600,
+    "output_tokens": 273,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 1,
+    "score": 0.4721344304550411,
+    "metrics": {
+      "rouge_l_summary": 0.2900763358778626,
+      "rouge_1_root_cause": 0.4727272727272727,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.525846999604255,
+    "input_tokens": 600,
+    "output_tokens": 273,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 2,
+    "score": 0.4721344304550411,
+    "metrics": {
+      "rouge_l_summary": 0.2900763358778626,
+      "rouge_1_root_cause": 0.4727272727272727,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.478014583233744,
+    "input_tokens": 600,
+    "output_tokens": 273,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 0,
+    "score": 0.3996031746031746,
+    "metrics": {
+      "rouge_l_summary": 0.22222222222222224,
+      "rouge_1_root_cause": 0.32142857142857145,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 4.218840749934316,
+    "input_tokens": 571,
+    "output_tokens": 298,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 1,
+    "score": 0.3996031746031746,
+    "metrics": {
+      "rouge_l_summary": 0.22222222222222224,
+      "rouge_1_root_cause": 0.32142857142857145,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.963676624931395,
+    "input_tokens": 571,
+    "output_tokens": 298,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 2,
+    "score": 0.3996031746031746,
+    "metrics": {
+      "rouge_l_summary": 0.22222222222222224,
+      "rouge_1_root_cause": 0.32142857142857145,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 3.9571986249648035,
+    "input_tokens": 571,
+    "output_tokens": 298,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 0,
+    "score": 0.4995063694267516,
+    "metrics": {
+      "rouge_l_summary": 0.267515923566879,
+      "rouge_1_root_cause": 0.43333333333333324,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 4.332958875223994,
+    "input_tokens": 547,
+    "output_tokens": 293,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 1,
+    "score": 0.46073961499493415,
+    "metrics": {
+      "rouge_l_summary": 0.24113475177304966,
+      "rouge_1_root_cause": 0.4642857142857143,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 3.600810166914016,
+    "input_tokens": 547,
+    "output_tokens": 252,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 2,
+    "score": 0.46073961499493415,
+    "metrics": {
+      "rouge_l_summary": 0.24113475177304966,
+      "rouge_1_root_cause": 0.4642857142857143,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 3.593513583764434,
+    "input_tokens": 547,
+    "output_tokens": 252,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-food-09",
+    "run_index": 0,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 55.528203999623656,
+    "input_tokens": 9820,
+    "output_tokens": 4487,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-food-09",
+    "run_index": 1,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 74.56564504094422,
+    "input_tokens": 9820,
+    "output_tokens": 6369,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-food-09",
+    "run_index": 2,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 45.6369292922318,
+    "input_tokens": 9820,
+    "output_tokens": 3994,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-verification-code-10",
+    "run_index": 0,
+    "score": 0.175,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.5
+    },
+    "latency_s": 171.52563724992797,
+    "input_tokens": 9701,
+    "output_tokens": 13422,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-verification-code-10",
+    "run_index": 1,
+    "score": 0.175,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.5
+    },
+    "latency_s": 99.36646241694689,
+    "input_tokens": 9701,
+    "output_tokens": 8008,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-returnva-verification-code-10",
+    "run_index": 2,
+    "score": 0.175,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 0.5
+    },
+    "latency_s": 141.6528845001012,
+    "input_tokens": 9701,
+    "output_tokens": 11727,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
+    "run_index": 0,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 22.240338667295873,
+    "input_tokens": 9537,
+    "output_tokens": 1466,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
+    "run_index": 1,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 25.349595208186656,
+    "input_tokens": 9537,
+    "output_tokens": 1810,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-preserve-12",
+    "run_index": 0,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 36.305351707618684,
+    "input_tokens": 9717,
+    "output_tokens": 2674,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-preserve-12",
+    "run_index": 1,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 69.65935362502933,
+    "input_tokens": 9717,
+    "output_tokens": 5393,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-preserve-12",
+    "run_index": 2,
+    "score": 0.875,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.5,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 25.67555212508887,
+    "input_tokens": 9717,
+    "output_tokens": 2068,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-01",
+    "run_index": 0,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 47.64510087482631,
+    "input_tokens": 4262,
+    "output_tokens": 3383,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-01",
+    "run_index": 1,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 32.21097587514669,
+    "input_tokens": 4262,
+    "output_tokens": 2447,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-01",
+    "run_index": 2,
+    "score": 0.75,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 33.105855874717236,
+    "input_tokens": 4262,
+    "output_tokens": 2500,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 71.52330304216594,
+    "input_tokens": 4415,
+    "output_tokens": 5211,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 53.961926334071904,
+    "input_tokens": 4415,
+    "output_tokens": 3976,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-unknown-02",
+    "run_index": 2,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 48.16571900015697,
+    "input_tokens": 4415,
+    "output_tokens": 3672,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 111.96979683404788,
+    "input_tokens": 9499,
+    "output_tokens": 9143,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 63.77578366594389,
+    "input_tokens": 9499,
+    "output_tokens": 5241,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-03",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 1.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 0.0
+    },
+    "latency_s": 102.55317449988797,
+    "input_tokens": 9499,
+    "output_tokens": 8357,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 165.01238162489608,
+    "input_tokens": 9332,
+    "output_tokens": 13631,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 157.44940004171804,
+    "input_tokens": 9332,
+    "output_tokens": 13692,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-04",
+    "run_index": 2,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 148.49585741618648,
+    "input_tokens": 9332,
+    "output_tokens": 12319,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 59.03042662516236,
+    "input_tokens": 9573,
+    "output_tokens": 4777,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 73.55542687466368,
+    "input_tokens": 9573,
+    "output_tokens": 6136,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-unknown-05",
+    "run_index": 2,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0,
+      "abstention_case": 1.0,
+      "confidently_wrong": 1.0
+    },
+    "latency_s": 60.09253833303228,
+    "input_tokens": 9573,
+    "output_tokens": 5011,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 0,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 133.17995945876464,
+    "input_tokens": 4536,
+    "output_tokens": 10510,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 1,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 170.93527995795012,
+    "input_tokens": 4536,
+    "output_tokens": 13502,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "multimodal_rca",
+    "case_id": "mm-ob-clean-baseline",
+    "run_index": 2,
+    "score": 0.1,
+    "metrics": {
+      "culprit_correct": 0.0,
+      "fault_type_correct": 0.0,
+      "modality_grounding_f1": 0.0,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 120.22087562503293,
+    "input_tokens": 4536,
+    "output_tokens": 9279,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-growing-amp",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 129.0496676247567,
+    "input_tokens": 898,
+    "output_tokens": 12535,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "qwen3.8-27b",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 63.47140362486243,
+    "input_tokens": 619,
+    "output_tokens": 5402,
+    "cached": false,
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
     "category": "metrics_timeseries",
     "case_id": "ts-rps-held-then-dip",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.4,
+    "metrics": {
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4
+    },
+    "latency_s": 172.45146170910448,
+    "input_tokens": 985,
+    "output_tokens": 15765,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   },
   {
     "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
+    "category": "multimodal_rca",
+    "case_id": "mm-tt-cpusatur-basic-11",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
+    "score": 0.9166666666666666,
+    "metrics": {
+      "culprit_correct": 1.0,
+      "fault_type_correct": 1.0,
+      "modality_grounding_f1": 0.6666666666666666,
+      "evidence_recall": 1.0
+    },
+    "latency_s": 23.660725709050894,
+    "input_tokens": 9537,
+    "output_tokens": 1655,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-006-vacuum-common-cause",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-006-vacuum-common-cause",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-006-vacuum-common-cause",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-007-lb-timeout-not-retries",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-007-lb-timeout-not-retries",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-007-lb-timeout-not-retries",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-008-decoy-deploy",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-008-decoy-deploy",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-008-decoy-deploy",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-009-thundering-herd",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-009-thundering-herd",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-009-thundering-herd",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-010-missing-middle-stampede",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-010-missing-middle-stampede",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "pattern_correlation",
-    "case_id": "pc-010-missing-middle-stampede",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-006-dashboard-timezone",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-006-dashboard-timezone",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-006-dashboard-timezone",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-007-flag-default-on-restart",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-007-flag-default-on-restart",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-007-flag-default-on-restart",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-008-noisy-neighbor-batch",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-008-noisy-neighbor-batch",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-008-noisy-neighbor-batch",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-009-az-failure-retries",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-009-az-failure-retries",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-009-az-failure-retries",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-010-rollback-did-not-help",
-    "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-010-rollback-did-not-help",
-    "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
-  },
-  {
-    "model": "qwen3.8-27b",
-    "category": "root_cause",
-    "case_id": "rc-010-rollback-did-not-help",
-    "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": null
   }
 ]

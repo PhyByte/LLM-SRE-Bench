@@ -42,6 +42,16 @@ class ModelConfig(BaseModel):
     # (e.g. a 70B in LM Studio needs a much longer timeout than a cloud API).
     request_timeout: Optional[float] = None
     max_tokens: Optional[int] = None
+    # LM Studio only. Set this and the runner loads model_id onto the server at
+    # base_url with this context before the model's first call, unloading
+    # whatever else is resident — so a sweep of local models doesn't need you
+    # loading each one by hand in the GUI. Left unset, the model is assumed to
+    # be loaded already and LM Studio's saved default context applies, which is
+    # usually too small for this benchmark's prompts.
+    context_length: Optional[int] = Field(default=None, gt=0)
+    # Fraction of the model to offload to GPU (0-1) when auto-loading. Omit to
+    # let LM Studio decide.
+    gpu_ratio: Optional[float] = Field(default=None, ge=0, le=1)
     # Force JSON output via response_format (OpenAI-compatible + Ollama). Helps
     # weaker models that otherwise reply with prose. Off by default so the
     # benchmark measures unprompted JSON discipline unless you opt in.

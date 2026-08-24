@@ -46,6 +46,14 @@ class ResponseCache:
         with open(self._path(key), "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False)
 
+    def delete(self, key: str) -> bool:
+        """Remove one cache entry. Returns True if a file was deleted."""
+        path = self._path(key)
+        if not path.exists():
+            return False
+        path.unlink(missing_ok=True)
+        return True
+
     def clear_model(self, model_name: str) -> int:
         """Delete all cached entries that belong to the given model name.
 

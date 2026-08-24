@@ -152,19 +152,11 @@
       "price_output": 12.0
     },
     {
-      "name": "llama-3.3-70b",
-      "provider": "openai",
-      "base_url": "http://100.99.113.75:1234/v1",
-      "model_id": "meta/llama-3.3-70b",
-      "request_timeout": 600,
-      "price_input": 0,
-      "price_output": 0
-    },
-    {
       "name": "gemma-3-12B",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "google/gemma-3-12b",
+      "context_length": 16384,
       "request_timeout": 600,
       "price_input": 0,
       "price_output": 0
@@ -174,6 +166,8 @@
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "google/gemma-4-26b-a4b",
+      "context_length": 32768,
+      "max_tokens": 16384,
       "request_timeout": 600,
       "price_input": 0,
       "price_output": 0
@@ -183,6 +177,7 @@
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "google/gemma-4-31b",
+      "context_length": 32768,
       "max_tokens": 16384,
       "request_timeout": 600,
       "price_input": 0,
@@ -193,6 +188,8 @@
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "qwen/qwen3-32b",
+      "context_length": 32768,
+      "max_tokens": 16384,
       "request_timeout": 600,
       "price_input": 0,
       "price_output": 0
@@ -201,7 +198,9 @@
       "name": "qwen3.6-27b",
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
-      "model_id": "qwen/qwen3.6-27b",
+      "model_id": "qwen3.6-27b",
+      "context_length": 32768,
+      "max_tokens": 16384,
       "request_timeout": 600,
       "price_input": 0,
       "price_output": 0
@@ -211,6 +210,8 @@
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "qwen/qwen3.8-27b",
+      "context_length": 32768,
+      "max_tokens": 16384,
       "request_timeout": 600,
       "price_input": 0,
       "price_output": 0
@@ -220,6 +221,8 @@
       "provider": "openai",
       "base_url": "http://100.99.113.75:1234/v1",
       "model_id": "qwen/qwen3-coder-30b",
+      "context_length": 32768,
+      "max_tokens": 16384,
       "request_timeout": 600,
       "price_input": 0,
       "price_output": 0

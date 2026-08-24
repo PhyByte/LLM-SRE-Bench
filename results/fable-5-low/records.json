@@ -13,7 +13,8 @@
     "input_tokens": 606,
     "output_tokens": 246,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -29,7 +30,8 @@
     "input_tokens": 606,
     "output_tokens": 246,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -45,7 +47,8 @@
     "input_tokens": 606,
     "output_tokens": 246,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -61,7 +64,8 @@
     "input_tokens": 604,
     "output_tokens": 251,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -77,7 +81,8 @@
     "input_tokens": 604,
     "output_tokens": 251,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -93,7 +98,8 @@
     "input_tokens": 604,
     "output_tokens": 251,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -109,7 +115,8 @@
     "input_tokens": 575,
     "output_tokens": 233,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -125,7 +132,8 @@
     "input_tokens": 575,
     "output_tokens": 233,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -141,7 +149,8 @@
     "input_tokens": 575,
     "output_tokens": 233,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -157,7 +166,8 @@
     "input_tokens": 489,
     "output_tokens": 236,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -173,7 +183,8 @@
     "input_tokens": 489,
     "output_tokens": 225,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -189,7 +200,8 @@
     "input_tokens": 489,
     "output_tokens": 225,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -205,7 +217,8 @@
     "input_tokens": 499,
     "output_tokens": 208,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -221,7 +234,8 @@
     "input_tokens": 499,
     "output_tokens": 208,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -237,7 +251,8 @@
     "input_tokens": 499,
     "output_tokens": 208,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -253,7 +268,8 @@
     "input_tokens": 573,
     "output_tokens": 353,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -269,7 +285,8 @@
     "input_tokens": 573,
     "output_tokens": 353,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -285,7 +302,8 @@
     "input_tokens": 573,
     "output_tokens": 353,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -301,7 +319,8 @@
     "input_tokens": 457,
     "output_tokens": 223,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -317,7 +336,8 @@
     "input_tokens": 457,
     "output_tokens": 221,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -333,7 +353,8 @@
     "input_tokens": 457,
     "output_tokens": 221,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -349,7 +370,8 @@
     "input_tokens": 497,
     "output_tokens": 262,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -365,7 +387,8 @@
     "input_tokens": 497,
     "output_tokens": 264,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -381,7 +404,8 @@
     "input_tokens": 497,
     "output_tokens": 264,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -397,7 +421,8 @@
     "input_tokens": 542,
     "output_tokens": 290,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -413,7 +438,8 @@
     "input_tokens": 542,
     "output_tokens": 290,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -429,7 +455,8 @@
     "input_tokens": 542,
     "output_tokens": 290,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -445,7 +472,8 @@
     "input_tokens": 464,
     "output_tokens": 218,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -461,7 +489,8 @@
     "input_tokens": 464,
     "output_tokens": 218,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -477,7 +506,8 @@
     "input_tokens": 464,
     "output_tokens": 218,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -493,7 +523,8 @@
     "input_tokens": 688,
     "output_tokens": 215,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -509,7 +540,8 @@
     "input_tokens": 688,
     "output_tokens": 247,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -525,7 +557,8 @@
     "input_tokens": 688,
     "output_tokens": 247,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -541,7 +574,8 @@
     "input_tokens": 425,
     "output_tokens": 157,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -557,7 +591,8 @@
     "input_tokens": 425,
     "output_tokens": 157,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -573,7 +608,8 @@
     "input_tokens": 425,
     "output_tokens": 157,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -589,7 +625,8 @@
     "input_tokens": 384,
     "output_tokens": 163,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -605,7 +642,8 @@
     "input_tokens": 384,
     "output_tokens": 153,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -621,7 +659,8 @@
     "input_tokens": 384,
     "output_tokens": 148,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -637,7 +676,8 @@
     "input_tokens": 565,
     "output_tokens": 242,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -653,7 +693,8 @@
     "input_tokens": 565,
     "output_tokens": 242,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -669,7 +710,8 @@
     "input_tokens": 565,
     "output_tokens": 242,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -685,7 +727,8 @@
     "input_tokens": 381,
     "output_tokens": 161,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -701,7 +744,8 @@
     "input_tokens": 381,
     "output_tokens": 145,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -717,7 +761,8 @@
     "input_tokens": 381,
     "output_tokens": 145,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -734,7 +779,8 @@
     "input_tokens": 524,
     "output_tokens": 122,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -751,7 +797,8 @@
     "input_tokens": 524,
     "output_tokens": 120,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -768,7 +815,8 @@
     "input_tokens": 524,
     "output_tokens": 113,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -785,7 +833,8 @@
     "input_tokens": 1322,
     "output_tokens": 31,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -802,7 +851,8 @@
     "input_tokens": 1322,
     "output_tokens": 40,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -819,7 +869,8 @@
     "input_tokens": 1322,
     "output_tokens": 40,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -836,7 +887,8 @@
     "input_tokens": 1044,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -853,7 +905,8 @@
     "input_tokens": 1044,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -870,7 +923,8 @@
     "input_tokens": 1044,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -887,7 +941,8 @@
     "input_tokens": 1193,
     "output_tokens": 46,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -904,7 +959,8 @@
     "input_tokens": 1193,
     "output_tokens": 46,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -921,7 +977,8 @@
     "input_tokens": 1193,
     "output_tokens": 46,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -938,7 +995,8 @@
     "input_tokens": 1339,
     "output_tokens": 198,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -955,7 +1013,8 @@
     "input_tokens": 1339,
     "output_tokens": 209,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -972,7 +1031,8 @@
     "input_tokens": 1339,
     "output_tokens": 175,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -989,7 +1049,8 @@
     "input_tokens": 852,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1006,7 +1067,8 @@
     "input_tokens": 852,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1023,7 +1085,8 @@
     "input_tokens": 852,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1040,7 +1103,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1057,7 +1121,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1074,7 +1139,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1091,7 +1157,8 @@
     "input_tokens": 749,
     "output_tokens": 31,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1108,7 +1175,8 @@
     "input_tokens": 749,
     "output_tokens": 31,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1125,7 +1193,8 @@
     "input_tokens": 749,
     "output_tokens": 31,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1142,7 +1211,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1159,7 +1229,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1176,7 +1247,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1193,7 +1265,8 @@
     "input_tokens": 748,
     "output_tokens": 14,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1210,7 +1283,8 @@
     "input_tokens": 748,
     "output_tokens": 14,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1227,7 +1301,8 @@
     "input_tokens": 748,
     "output_tokens": 14,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1244,7 +1319,8 @@
     "input_tokens": 718,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1261,7 +1337,8 @@
     "input_tokens": 718,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1278,7 +1355,8 @@
     "input_tokens": 718,
     "output_tokens": 22,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1296,7 +1374,8 @@
     "input_tokens": 4519,
     "output_tokens": 497,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1314,7 +1393,8 @@
     "input_tokens": 4519,
     "output_tokens": 584,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1332,7 +1412,8 @@
     "input_tokens": 4519,
     "output_tokens": 494,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1350,7 +1431,8 @@
     "input_tokens": 4515,
     "output_tokens": 310,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1368,7 +1450,8 @@
     "input_tokens": 4515,
     "output_tokens": 307,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1386,7 +1469,8 @@
     "input_tokens": 4515,
     "output_tokens": 286,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1404,7 +1488,8 @@
     "input_tokens": 4777,
     "output_tokens": 404,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1422,7 +1507,8 @@
     "input_tokens": 4777,
     "output_tokens": 366,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1440,7 +1526,8 @@
     "input_tokens": 4777,
     "output_tokens": 347,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1458,7 +1545,8 @@
     "input_tokens": 4937,
     "output_tokens": 263,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1476,7 +1564,8 @@
     "input_tokens": 4937,
     "output_tokens": 247,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1494,7 +1583,8 @@
     "input_tokens": 4937,
     "output_tokens": 248,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1512,7 +1602,8 @@
     "input_tokens": 4698,
     "output_tokens": 333,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1530,7 +1621,8 @@
     "input_tokens": 4698,
     "output_tokens": 329,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1548,7 +1640,8 @@
     "input_tokens": 4698,
     "output_tokens": 308,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1566,7 +1659,8 @@
     "input_tokens": 4796,
     "output_tokens": 371,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1584,7 +1678,8 @@
     "input_tokens": 4796,
     "output_tokens": 354,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1602,7 +1697,8 @@
     "input_tokens": 4796,
     "output_tokens": 403,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1620,7 +1716,8 @@
     "input_tokens": 4803,
     "output_tokens": 324,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1638,7 +1735,8 @@
     "input_tokens": 4803,
     "output_tokens": 336,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1656,7 +1754,8 @@
     "input_tokens": 4803,
     "output_tokens": 331,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1674,7 +1773,8 @@
     "input_tokens": 4682,
     "output_tokens": 387,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1692,7 +1792,8 @@
     "input_tokens": 4682,
     "output_tokens": 426,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1710,7 +1811,8 @@
     "input_tokens": 4682,
     "output_tokens": 425,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1728,7 +1830,8 @@
     "input_tokens": 11025,
     "output_tokens": 395,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1746,7 +1849,8 @@
     "input_tokens": 11025,
     "output_tokens": 453,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1764,7 +1868,8 @@
     "input_tokens": 11025,
     "output_tokens": 391,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1782,7 +1887,8 @@
     "input_tokens": 10769,
     "output_tokens": 566,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1800,7 +1906,8 @@
     "input_tokens": 10769,
     "output_tokens": 622,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1818,7 +1925,8 @@
     "input_tokens": 10769,
     "output_tokens": 627,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1836,7 +1944,8 @@
     "input_tokens": 10850,
     "output_tokens": 361,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1854,7 +1963,8 @@
     "input_tokens": 10850,
     "output_tokens": 365,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1872,7 +1982,8 @@
     "input_tokens": 10850,
     "output_tokens": 378,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1890,7 +2001,8 @@
     "input_tokens": 10772,
     "output_tokens": 292,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1908,7 +2020,8 @@
     "input_tokens": 10772,
     "output_tokens": 271,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1926,7 +2039,8 @@
     "input_tokens": 10772,
     "output_tokens": 276,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1946,7 +2060,8 @@
     "input_tokens": 4498,
     "output_tokens": 276,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1966,7 +2081,8 @@
     "input_tokens": 4498,
     "output_tokens": 311,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -1986,7 +2102,8 @@
     "input_tokens": 4498,
     "output_tokens": 511,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2006,7 +2123,8 @@
     "input_tokens": 4708,
     "output_tokens": 383,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2026,7 +2144,8 @@
     "input_tokens": 4708,
     "output_tokens": 436,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2046,7 +2165,8 @@
     "input_tokens": 4708,
     "output_tokens": 453,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2066,7 +2186,8 @@
     "input_tokens": 10697,
     "output_tokens": 532,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2086,7 +2207,8 @@
     "input_tokens": 10697,
     "output_tokens": 541,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2106,7 +2228,8 @@
     "input_tokens": 10697,
     "output_tokens": 519,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2126,7 +2249,8 @@
     "input_tokens": 10691,
     "output_tokens": 642,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2146,7 +2270,8 @@
     "input_tokens": 10691,
     "output_tokens": 614,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2166,7 +2291,8 @@
     "input_tokens": 10691,
     "output_tokens": 604,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2186,7 +2312,8 @@
     "input_tokens": 10770,
     "output_tokens": 545,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2206,7 +2333,8 @@
     "input_tokens": 10770,
     "output_tokens": 582,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2226,7 +2354,8 @@
     "input_tokens": 10770,
     "output_tokens": 558,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2244,7 +2373,8 @@
     "input_tokens": 4782,
     "output_tokens": 447,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2262,7 +2392,8 @@
     "input_tokens": 4782,
     "output_tokens": 576,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2280,7 +2411,8 @@
     "input_tokens": 4782,
     "output_tokens": 391,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2297,7 +2429,8 @@
     "input_tokens": 686,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2314,7 +2447,8 @@
     "input_tokens": 686,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2331,7 +2465,8 @@
     "input_tokens": 686,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2348,7 +2483,8 @@
     "input_tokens": 688,
     "output_tokens": 43,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2365,7 +2501,8 @@
     "input_tokens": 688,
     "output_tokens": 43,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2382,7 +2519,8 @@
     "input_tokens": 688,
     "output_tokens": 43,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2399,7 +2537,8 @@
     "input_tokens": 722,
     "output_tokens": 19,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2416,7 +2555,8 @@
     "input_tokens": 722,
     "output_tokens": 19,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2433,7 +2573,8 @@
     "input_tokens": 722,
     "output_tokens": 19,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2450,7 +2591,8 @@
     "input_tokens": 685,
     "output_tokens": 55,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2467,7 +2609,8 @@
     "input_tokens": 685,
     "output_tokens": 71,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2484,7 +2627,8 @@
     "input_tokens": 685,
     "output_tokens": 55,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2501,7 +2645,8 @@
     "input_tokens": 687,
     "output_tokens": 25,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2518,7 +2663,8 @@
     "input_tokens": 687,
     "output_tokens": 25,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2535,7 +2681,8 @@
     "input_tokens": 687,
     "output_tokens": 25,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2552,7 +2699,8 @@
     "input_tokens": 685,
     "output_tokens": 40,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2569,7 +2717,8 @@
     "input_tokens": 685,
     "output_tokens": 37,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2586,7 +2735,8 @@
     "input_tokens": 685,
     "output_tokens": 41,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2603,7 +2753,8 @@
     "input_tokens": 685,
     "output_tokens": 19,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2620,7 +2771,8 @@
     "input_tokens": 685,
     "output_tokens": 19,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2637,7 +2789,8 @@
     "input_tokens": 685,
     "output_tokens": 19,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2654,7 +2807,8 @@
     "input_tokens": 777,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2671,7 +2825,8 @@
     "input_tokens": 777,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2688,7 +2843,8 @@
     "input_tokens": 777,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2705,7 +2861,8 @@
     "input_tokens": 690,
     "output_tokens": 38,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2722,7 +2879,8 @@
     "input_tokens": 690,
     "output_tokens": 38,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2739,7 +2897,8 @@
     "input_tokens": 690,
     "output_tokens": 42,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2756,7 +2915,8 @@
     "input_tokens": 688,
     "output_tokens": 77,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2773,7 +2933,8 @@
     "input_tokens": 688,
     "output_tokens": 80,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2790,7 +2951,8 @@
     "input_tokens": 688,
     "output_tokens": 81,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2803,7 +2965,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -2816,7 +2979,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -2829,7 +2993,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -2846,7 +3011,8 @@
     "input_tokens": 1046,
     "output_tokens": 96,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2863,7 +3029,8 @@
     "input_tokens": 1046,
     "output_tokens": 109,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2880,7 +3047,8 @@
     "input_tokens": 1046,
     "output_tokens": 204,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2897,7 +3065,8 @@
     "input_tokens": 686,
     "output_tokens": 138,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2914,7 +3083,8 @@
     "input_tokens": 686,
     "output_tokens": 115,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2931,7 +3101,8 @@
     "input_tokens": 686,
     "output_tokens": 114,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -2944,7 +3115,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -2957,7 +3129,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -2970,7 +3143,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -2987,7 +3161,8 @@
     "input_tokens": 685,
     "output_tokens": 59,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3004,7 +3179,8 @@
     "input_tokens": 685,
     "output_tokens": 77,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3021,7 +3197,8 @@
     "input_tokens": 685,
     "output_tokens": 73,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3038,7 +3215,8 @@
     "input_tokens": 688,
     "output_tokens": 39,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3055,7 +3233,8 @@
     "input_tokens": 688,
     "output_tokens": 40,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3072,7 +3251,8 @@
     "input_tokens": 688,
     "output_tokens": 16,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3089,7 +3269,8 @@
     "input_tokens": 686,
     "output_tokens": 16,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3106,7 +3287,8 @@
     "input_tokens": 686,
     "output_tokens": 16,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3123,7 +3305,8 @@
     "input_tokens": 686,
     "output_tokens": 16,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3140,7 +3323,8 @@
     "input_tokens": 726,
     "output_tokens": 130,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3157,7 +3341,8 @@
     "input_tokens": 726,
     "output_tokens": 90,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3174,7 +3359,8 @@
     "input_tokens": 726,
     "output_tokens": 105,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3190,7 +3376,8 @@
     "input_tokens": 750,
     "output_tokens": 378,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3206,7 +3393,8 @@
     "input_tokens": 750,
     "output_tokens": 383,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3222,7 +3410,8 @@
     "input_tokens": 750,
     "output_tokens": 377,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3238,7 +3427,8 @@
     "input_tokens": 820,
     "output_tokens": 434,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3254,7 +3444,8 @@
     "input_tokens": 820,
     "output_tokens": 436,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3270,7 +3461,8 @@
     "input_tokens": 820,
     "output_tokens": 461,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3286,7 +3478,8 @@
     "input_tokens": 790,
     "output_tokens": 388,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3302,7 +3495,8 @@
     "input_tokens": 790,
     "output_tokens": 367,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3318,7 +3512,8 @@
     "input_tokens": 790,
     "output_tokens": 400,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3334,7 +3529,8 @@
     "input_tokens": 814,
     "output_tokens": 436,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3350,7 +3546,8 @@
     "input_tokens": 814,
     "output_tokens": 395,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3366,7 +3563,8 @@
     "input_tokens": 814,
     "output_tokens": 449,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3382,7 +3580,8 @@
     "input_tokens": 775,
     "output_tokens": 455,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3398,7 +3597,8 @@
     "input_tokens": 775,
     "output_tokens": 462,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3414,7 +3614,8 @@
     "input_tokens": 775,
     "output_tokens": 427,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3427,7 +3628,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3440,7 +3642,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3453,7 +3656,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3469,7 +3673,8 @@
     "input_tokens": 729,
     "output_tokens": 464,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3485,7 +3690,8 @@
     "input_tokens": 729,
     "output_tokens": 380,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3501,7 +3707,8 @@
     "input_tokens": 729,
     "output_tokens": 356,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3514,7 +3721,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3527,7 +3735,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3540,7 +3749,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3553,7 +3763,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3566,7 +3777,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "ClientError: Anthropic model refused the request"
+    "error": null,
+    "refused": "unspecified"
   },
   {
     "model": "fable-5-low",
@@ -3579,20 +3791,25 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
     "category": "pattern_correlation",
     "case_id": "pc-010-missing-middle-stampede",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 7.492038500029594,
+    "input_tokens": 702,
+    "output_tokens": 430,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3605,215 +3822,295 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
     "category": "pattern_correlation",
     "case_id": "pc-010-missing-middle-stampede",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 8.251765958033502,
+    "input_tokens": 702,
+    "output_tokens": 419,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-001-pool-leak",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.7356613756613756,
+    "metrics": {
+      "rouge_l_summary": 0.47407407407407404,
+      "rouge_1_root_cause": 0.9629629629629629,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 8.703292999882251,
+    "input_tokens": 860,
+    "output_tokens": 228,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-001-pool-leak",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.7362483777578117,
+    "metrics": {
+      "rouge_l_summary": 0.5185185185185185,
+      "rouge_1_root_cause": 0.9056603773584906,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.857445125002414,
+    "input_tokens": 860,
+    "output_tokens": 229,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-001-pool-leak",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.7271786353181702,
+    "metrics": {
+      "rouge_l_summary": 0.5116279069767442,
+      "rouge_1_root_cause": 0.8846153846153846,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 8.133314165985212,
+    "input_tokens": 860,
+    "output_tokens": 222,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-002-cert-expiry",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.6142857142857143,
+    "metrics": {
+      "rouge_l_summary": 0.3571428571428571,
+      "rouge_1_root_cause": 0.5714285714285714,
+      "keyword_recall": 1.0
+    },
+    "latency_s": 5.688300707843155,
+    "input_tokens": 798,
+    "output_tokens": 227,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-002-cert-expiry",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.7080295566502464,
+    "metrics": {
+      "rouge_l_summary": 0.5379310344827586,
+      "rouge_1_root_cause": 0.6428571428571428,
+      "keyword_recall": 1.0
+    },
+    "latency_s": 6.6408624581526965,
+    "input_tokens": 798,
+    "output_tokens": 239,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-002-cert-expiry",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5557414104882459,
+    "metrics": {
+      "rouge_l_summary": 0.2911392405063291,
+      "rouge_1_root_cause": 0.6071428571428571,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.957817083224654,
+    "input_tokens": 798,
+    "output_tokens": 266,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-003-retention-disk-full",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.6035284578363674,
+    "metrics": {
+      "rouge_l_summary": 0.5061728395061729,
+      "rouge_1_root_cause": 0.711864406779661,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 6.506142707774416,
+    "input_tokens": 934,
+    "output_tokens": 266,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-003-retention-disk-full",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5011752136752137,
+    "metrics": {
+      "rouge_l_summary": 0.4230769230769231,
+      "rouge_1_root_cause": 0.4814814814814815,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 6.321704791858792,
+    "input_tokens": 934,
+    "output_tokens": 248,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-003-retention-disk-full",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5592521652231845,
+    "metrics": {
+      "rouge_l_summary": 0.45569620253164556,
+      "rouge_1_root_cause": 0.631578947368421,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 6.862593291793019,
+    "input_tokens": 934,
+    "output_tokens": 255,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-004-debug-flag-cpu",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5468340742520726,
+    "metrics": {
+      "rouge_l_summary": 0.3658536585365854,
+      "rouge_1_root_cause": 0.6206896551724138,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 5.978437791811302,
+    "input_tokens": 766,
+    "output_tokens": 277,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-004-debug-flag-cpu",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5980049261083744,
+    "metrics": {
+      "rouge_l_summary": 0.41250000000000003,
+      "rouge_1_root_cause": 0.5862068965517241,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 8.809891791082919,
+    "input_tokens": 766,
+    "output_tokens": 271,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-004-debug-flag-cpu",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.6062533337516864,
+    "metrics": {
+      "rouge_l_summary": 0.43312101910828027,
+      "rouge_1_root_cause": 0.5862068965517241,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.695637207943946,
+    "input_tokens": 766,
+    "output_tokens": 259,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-005-clock-skew",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.6675678733031674,
+    "metrics": {
+      "rouge_l_summary": 0.4588235294117647,
+      "rouge_1_root_cause": 0.7384615384615385,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 6.3241961661260575,
+    "input_tokens": 816,
+    "output_tokens": 270,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-005-clock-skew",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5950566918630502,
+    "metrics": {
+      "rouge_l_summary": 0.3236994219653179,
+      "rouge_1_root_cause": 0.676923076923077,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 6.26911179209128,
+    "input_tokens": 816,
+    "output_tokens": 281,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-005-clock-skew",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5868649373881931,
+    "metrics": {
+      "rouge_l_summary": 0.4186046511627907,
+      "rouge_1_root_cause": 0.523076923076923,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 6.636441332986578,
+    "input_tokens": 816,
+    "output_tokens": 285,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3826,7 +4123,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
@@ -3839,7 +4137,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
@@ -3852,7 +4151,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
@@ -3865,7 +4165,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
@@ -3878,7 +4179,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
@@ -3891,85 +4193,116 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-008-noisy-neighbor-batch",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5335195941474891,
+    "metrics": {
+      "rouge_l_summary": 0.3103448275862069,
+      "rouge_1_root_cause": 0.5074626865671642,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 7.474381416104734,
+    "input_tokens": 715,
+    "output_tokens": 303,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-008-noisy-neighbor-batch",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5567918350491136,
+    "metrics": {
+      "rouge_l_summary": 0.33532934131736525,
+      "rouge_1_root_cause": 0.5517241379310345,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 7.036350916605443,
+    "input_tokens": 715,
+    "output_tokens": 272,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-008-noisy-neighbor-batch",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5635691894312583,
+    "metrics": {
+      "rouge_l_summary": 0.35227272727272724,
+      "rouge_1_root_cause": 0.5517241379310345,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.885332249570638,
+    "input_tokens": 715,
+    "output_tokens": 290,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-009-az-failure-retries",
     "run_index": 0,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.4502258471036348,
+    "metrics": {
+      "rouge_l_summary": 0.23391812865497075,
+      "rouge_1_root_cause": 0.47457627118644063,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 6.9110012501478195,
+    "input_tokens": 702,
+    "output_tokens": 279,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-009-az-failure-retries",
     "run_index": 1,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.5068783068783068,
+    "metrics": {
+      "rouge_l_summary": 0.24338624338624337,
+      "rouge_1_root_cause": 0.5079365079365079,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 7.724002750124782,
+    "input_tokens": 702,
+    "output_tokens": 325,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
     "category": "root_cause",
     "case_id": "rc-009-az-failure-retries",
     "run_index": 2,
-    "score": 0.0,
-    "metrics": {},
-    "latency_s": 0.0,
-    "input_tokens": null,
-    "output_tokens": null,
-    "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "score": 0.46451574555094566,
+    "metrics": {
+      "rouge_l_summary": 0.2233502538071066,
+      "rouge_1_root_cause": 0.39344262295081966,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 7.254036417230964,
+    "input_tokens": 702,
+    "output_tokens": 334,
+    "cached": true,
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5-low",
@@ -3982,7 +4315,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
@@ -3995,7 +4329,8 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   },
   {
     "model": "fable-5-low",
@@ -4008,6 +4343,7 @@
     "input_tokens": null,
     "output_tokens": null,
     "cached": false,
-    "error": "skipped: 5 consecutive failures for this model (bad key, unreachable endpoint, or exhausted quota)"
+    "error": null,
+    "refused": "cyber"
   }
 ]

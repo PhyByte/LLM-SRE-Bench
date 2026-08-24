@@ -12,7 +12,7 @@ from __future__ import annotations
 import itertools
 import json
 import statistics
-from collections import defaultdict
+from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -32,6 +32,7 @@ class ModelSummary:
     global_score: float  # 0-100, weighted
     efficiency_metrics: dict[str, float] = field(default_factory=dict)
     error_count: int = 0
+    refused_count: int = 0  # runs the model declined; scored 0, not failures
     total_runs: int = 0
     total_duration_s: float | None = None   # Wall-clock time to complete the full set for this model
     total_cost_usd: float | None = None     # Sum of per-call cost; None when the model has no pricing
@@ -100,6 +101,7 @@ def aggregate(records: list[RunRecord], pricing: Pricing | None = None) -> list[
                 global_score=global_score,
                 efficiency_metrics=efficiency.metrics,
                 error_count=sum(1 for r in model_records if r.error is not None),
+                refused_count=sum(1 for r in model_records if r.refused),
                 total_runs=len(model_records),
                 total_duration_s=total_latency,
                 total_cost_usd=total_cost,
@@ -137,12 +139,9 @@ def save_model_results(
 
     By default (``merge=True``) the new records are merged into whatever is
     already stored for this model: new records replace existing ones for the
-    same ``(category, case_id)``, while cases the new run didn't touch are kept.
-    This means re-running a single category (or re-testing a few cases) refreshes
-    just those cases instead of discarding the model's other results — so each
-    model keeps full coverage across sessions, its Duration reflects the whole
-    benchmark, and its scores always use the most recent measurement of each
-    case. Pass ``merge=False`` to overwrite the folder with only ``records``.
+    same ``(category, case_id, run_index)``, while other runs are kept. Re-running
+    one failed slot therefore does not wipe sibling successes on the same case.
+    Pass ``merge=False`` to overwrite the folder with only ``records``.
     """
     base = Path(base_dir)
     model_dir = base / model
@@ -150,8 +149,10 @@ def save_model_results(
 
     if merge:
         existing = load_model_records(base, model)
-        refreshed = {(r.category, r.case_id) for r in records}
-        records = [r for r in existing if (r.category, r.case_id) not in refreshed] + list(records)
+        refreshed = {(r.category, r.case_id, r.run_index) for r in records}
+        records = [
+            r for r in existing if (r.category, r.case_id, r.run_index) not in refreshed
+        ] + list(records)
 
     # Save raw records (source of truth)
     records_payload = [r.to_dict() for r in records]
@@ -170,6 +171,7 @@ def save_model_results(
                 "category_scores": {k: round(v, 2) for k, v in s.category_scores.items()},
                 "efficiency_metrics": {k: round(v, 4) for k, v in s.efficiency_metrics.items()},
                 "error_count": s.error_count,
+                "refused_count": s.refused_count,
                 "total_runs": s.total_runs,
                 # Stable across cached re-runs (sum of per-call latencies).
                 "total_duration_s": round(s.total_duration_s, 2) if s.total_duration_s is not None else None,
@@ -482,6 +484,194 @@ def classify_summaries(
     return ranked, partial, failed, expected
 
 
+@dataclass
+class CaseGap:
+    case_id: str
+    failed_indices: list[int]
+    kinds: dict[str, int]
+    total_runs: int
+
+    def label(self) -> str:
+        if len(self.failed_indices) >= self.total_runs:
+            return self.case_id
+        return f"{self.case_id}#{','.join(str(i) for i in self.failed_indices)}"
+
+
+@dataclass
+class CategoryGap:
+    category: str
+    failed_runs: int
+    kinds: dict[str, int]
+    cases: list[CaseGap]
+    universe_size: int
+
+
+@dataclass
+class ModelGap:
+    model: str
+    total_runs: int
+    failed_runs: int
+    refused_runs: int
+    missing_by_category: dict[str, list[str]]
+    categories: list[CategoryGap]
+    refused_categories: list[CategoryGap]
+
+
+def _error_kind(error: str) -> str:
+    lowered = error.lower()
+    if error.startswith("skipped:"):
+        return "skipped"
+    if "refused" in lowered or "declined the prompt" in lowered:
+        # Records stored before refusals became a scored outcome.
+        return "refusal"
+    if "empty response" in lowered:
+        return "empty response"
+    if any(token in lowered for token in ("unbalanced json", "jsondecode", "no json", "expecting value")):
+        return "invalid JSON"
+    for code in ("401", "403", "404", "429", "400", "500", "502", "503"):
+        if f"http {code}" in lowered:
+            return f"HTTP {code}"
+    return error.split(":", 1)[0][:40]
+
+
+def _category_gaps(
+    recs: list[RunRecord],
+    universe: dict[str, set[str]],
+    runs_per_case: dict[tuple[str, str], int],
+    kind_of: Any,
+) -> list[CategoryGap]:
+    by_category: dict[str, list[RunRecord]] = defaultdict(list)
+    for record in recs:
+        by_category[record.category].append(record)
+
+    gaps: list[CategoryGap] = []
+    for category, cat_recs in sorted(by_category.items()):
+        by_case: dict[str, list[RunRecord]] = defaultdict(list)
+        for record in cat_recs:
+            by_case[record.case_id].append(record)
+        cases = [
+            CaseGap(
+                case_id=case_id,
+                failed_indices=sorted(r.run_index for r in case_recs),
+                kinds=dict(Counter(kind_of(r) for r in case_recs)),
+                total_runs=runs_per_case[(category, case_id)],
+            )
+            for case_id, case_recs in sorted(by_case.items())
+        ]
+        gaps.append(
+            CategoryGap(
+                category=category,
+                failed_runs=len(cat_recs),
+                kinds=dict(Counter(kind_of(r) for r in cat_recs)),
+                cases=cases,
+                universe_size=len(universe[category]),
+            )
+        )
+    return gaps
+
+
+def analyze_coverage(records: list[RunRecord]) -> list[ModelGap]:
+    """Per-model failures, refusals, and cases this model never ran."""
+    universe: dict[str, set[str]] = defaultdict(set)
+    by_model: dict[str, list[RunRecord]] = defaultdict(list)
+    for record in records:
+        universe[record.category].add(record.case_id)
+        by_model[record.model].append(record)
+
+    gaps: list[ModelGap] = []
+    for model, recs in by_model.items():
+        present = {(r.category, r.case_id) for r in recs}
+        missing: dict[str, list[str]] = {}
+        for category, case_ids in universe.items():
+            absent = sorted(cid for cid in case_ids if (category, cid) not in present)
+            if absent:
+                missing[category] = absent
+
+        failed = [r for r in recs if r.error]
+        refused = [r for r in recs if r.refused]
+        if not failed and not refused and not missing:
+            continue
+
+        runs_per_case: dict[tuple[str, str], int] = Counter(
+            (r.category, r.case_id) for r in recs
+        )
+        gaps.append(
+            ModelGap(
+                model=model,
+                total_runs=len(recs),
+                failed_runs=len(failed),
+                refused_runs=len(refused),
+                missing_by_category=missing,
+                categories=_category_gaps(
+                    failed, universe, runs_per_case, lambda r: _error_kind(r.error or "")
+                ),
+                refused_categories=_category_gaps(
+                    refused, universe, runs_per_case, lambda r: f"{r.refused} refusal"
+                ),
+            )
+        )
+
+    gaps.sort(
+        key=lambda g: (
+            -g.failed_runs,
+            -g.refused_runs,
+            -sum(len(v) for v in g.missing_by_category.values()),
+            g.model,
+        )
+    )
+    return gaps
+
+
+def _format_kinds(kinds: dict[str, int]) -> str:
+    return ", ".join(f"{count} {kind}" for kind, count in kinds.items())
+
+
+def _format_category_gap(gap: CategoryGap, prefix: str = "", max_cases: int = 8) -> str:
+    kinds = _format_kinds(gap.kinds)
+    whole_category = (
+        len(gap.cases) == gap.universe_size
+        and all(len(c.failed_indices) >= c.total_runs for c in gap.cases)
+    )
+    if whole_category and len(gap.kinds) == 1:
+        kind = next(iter(gap.kinds))
+        return f"{prefix}{gap.category} ({gap.failed_runs}): all {gap.universe_size} cases {kind}"
+    labels = [c.label() for c in gap.cases]
+    if len(labels) > max_cases:
+        cases = f"{', '.join(labels[:max_cases])} +{len(labels) - max_cases} more"
+    else:
+        cases = ", ".join(labels)
+    return f"{prefix}{gap.category} ({gap.failed_runs}): {kinds} — {cases}"
+
+
+def format_coverage_lines(records: list[RunRecord]) -> list[str]:
+    """Plain-text recap of failed / refused / missing runs, one model at a time."""
+    gaps = analyze_coverage(records)
+    if not gaps:
+        return []
+    failed = sum(1 for r in records if r.error is not None)
+    refused = sum(1 for r in records if r.refused)
+    headline = f"{failed}/{len(records)} runs failed"
+    if refused:
+        headline += f", {refused} declined by the model (scored 0)"
+    lines = [f"Coverage gaps — {headline}:"]
+    for gap in gaps:
+        parts = [f"{gap.failed_runs}/{gap.total_runs} failed"]
+        if gap.refused_runs:
+            parts.append(f"{gap.refused_runs} declined")
+        if gap.missing_by_category:
+            never = ", ".join(
+                f"{cat} ({len(ids)} cases)"
+                for cat, ids in sorted(gap.missing_by_category.items())
+            )
+            parts.append(f"never ran {never}")
+        lines.append(f"  {gap.model} — {'; '.join(parts)}")
+        for category in gap.categories:
+            lines.append(f"    {_format_category_gap(category)}")
+        for category in gap.refused_categories:
+            lines.append(f"    {_format_category_gap(category, prefix='declined ')}")
+    return lines
+
+
 def _write_comparison_table(path: Path, summaries: list[ModelSummary], run_info: dict[str, Any]) -> None:
     categories = _ordered_categories(summaries)
     ranked, partial, failed, expected = classify_summaries(summaries)
@@ -538,6 +728,7 @@ def _write_detailed_csv(path: Path, records: list[RunRecord]) -> None:
             "output_tokens": r.output_tokens,
             "cached": r.cached,
             "error": r.error or "",
+            "refused": r.refused or "",
             "metrics": json.dumps({k: round(v, 4) for k, v in r.metrics.items()}),
         }
         for r in records
@@ -570,9 +761,12 @@ def _write_summary_report(
                 dur_str = f" — completed in {dur:.1f}s"
             else:
                 dur_str = " — completed in <0.1s"
+        declined = (
+            f", {summary.refused_count} declined" if summary.refused_count else ""
+        )
         lines.append(
             f"{rank}. **{summary.model}** — global score {summary.global_score:.1f}/100 "
-            f"({summary.error_count}/{summary.total_runs} failed runs){dur_str}"
+            f"({summary.error_count}/{summary.total_runs} failed runs{declined}){dur_str}"
         )
 
     lines += ["", "## Category Leaders", ""]
@@ -619,14 +813,10 @@ def _write_summary_report(
             f"score stddev across runs {m.get('score_stddev', 0):.1f} points{dur_part}"
         )
 
-    error_records = [r for r in records if r.error is not None]
+    coverage_lines = format_coverage_lines(records)
     lines += ["", "## Reliability", ""]
-    if error_records:
-        by_model_errors: dict[str, int] = defaultdict(int)
-        for r in error_records:
-            by_model_errors[r.model] += 1
-        for model, count in sorted(by_model_errors.items(), key=lambda kv: -kv[1]):
-            lines.append(f"- {model}: {count} failed run(s) (API errors or invalid JSON output)")
+    if coverage_lines:
+        lines.extend(coverage_lines)
     else:
         lines.append("- All runs completed and produced parseable, schema-valid JSON.")
 
@@ -671,6 +861,7 @@ def _write_results_json(
                 "category_scores": {k: round(v, 2) for k, v in s.category_scores.items()},
                 "efficiency_metrics": {k: round(v, 4) for k, v in s.efficiency_metrics.items()},
                 "error_count": s.error_count,
+                "refused_count": s.refused_count,
                 "total_runs": s.total_runs,
                 "total_duration_s": round(s.total_duration_s, 2) if s.total_duration_s is not None else None,
                 "total_cost_usd": round(s.total_cost_usd, 4) if s.total_cost_usd is not None else None,
@@ -690,6 +881,7 @@ def _write_results_json(
                 "output_tokens": r.output_tokens,
                 "cached": r.cached,
                 "error": r.error,
+                "refused": r.refused,
             }
             for r in records
         ],

@@ -13,7 +13,8 @@
     "input_tokens": 439,
     "output_tokens": 416,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -29,7 +30,8 @@
     "input_tokens": 439,
     "output_tokens": 894,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -45,7 +47,8 @@
     "input_tokens": 439,
     "output_tokens": 502,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -61,7 +64,8 @@
     "input_tokens": 434,
     "output_tokens": 408,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -77,7 +81,8 @@
     "input_tokens": 434,
     "output_tokens": 489,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -93,7 +98,8 @@
     "input_tokens": 434,
     "output_tokens": 446,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -109,7 +115,8 @@
     "input_tokens": 432,
     "output_tokens": 962,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -125,7 +132,8 @@
     "input_tokens": 432,
     "output_tokens": 495,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -141,7 +149,8 @@
     "input_tokens": 432,
     "output_tokens": 335,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -157,7 +166,8 @@
     "input_tokens": 341,
     "output_tokens": 246,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -173,7 +183,8 @@
     "input_tokens": 341,
     "output_tokens": 243,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -189,7 +200,8 @@
     "input_tokens": 341,
     "output_tokens": 242,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -205,7 +217,8 @@
     "input_tokens": 350,
     "output_tokens": 205,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -221,7 +234,8 @@
     "input_tokens": 350,
     "output_tokens": 242,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -237,7 +251,8 @@
     "input_tokens": 350,
     "output_tokens": 220,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -253,7 +268,8 @@
     "input_tokens": 375,
     "output_tokens": 314,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -269,7 +285,8 @@
     "input_tokens": 375,
     "output_tokens": 264,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -285,7 +302,8 @@
     "input_tokens": 375,
     "output_tokens": 306,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -301,7 +319,8 @@
     "input_tokens": 314,
     "output_tokens": 251,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -317,7 +336,8 @@
     "input_tokens": 314,
     "output_tokens": 279,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -333,7 +353,8 @@
     "input_tokens": 314,
     "output_tokens": 243,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -349,7 +370,8 @@
     "input_tokens": 348,
     "output_tokens": 369,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -365,7 +387,8 @@
     "input_tokens": 348,
     "output_tokens": 466,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -381,7 +404,8 @@
     "input_tokens": 348,
     "output_tokens": 403,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -397,7 +421,8 @@
     "input_tokens": 365,
     "output_tokens": 270,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -413,7 +438,8 @@
     "input_tokens": 365,
     "output_tokens": 260,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -429,7 +455,8 @@
     "input_tokens": 365,
     "output_tokens": 373,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -445,7 +472,8 @@
     "input_tokens": 322,
     "output_tokens": 330,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -461,7 +489,8 @@
     "input_tokens": 322,
     "output_tokens": 323,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -477,7 +506,8 @@
     "input_tokens": 322,
     "output_tokens": 441,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -493,7 +523,8 @@
     "input_tokens": 432,
     "output_tokens": 249,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -509,7 +540,8 @@
     "input_tokens": 432,
     "output_tokens": 348,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -525,7 +557,8 @@
     "input_tokens": 432,
     "output_tokens": 280,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -541,7 +574,8 @@
     "input_tokens": 295,
     "output_tokens": 159,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -557,7 +591,8 @@
     "input_tokens": 295,
     "output_tokens": 225,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -573,7 +608,8 @@
     "input_tokens": 295,
     "output_tokens": 292,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -589,7 +625,8 @@
     "input_tokens": 269,
     "output_tokens": 154,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -605,7 +642,8 @@
     "input_tokens": 269,
     "output_tokens": 245,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -621,7 +659,8 @@
     "input_tokens": 269,
     "output_tokens": 254,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -637,7 +676,8 @@
     "input_tokens": 399,
     "output_tokens": 446,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -653,7 +693,8 @@
     "input_tokens": 399,
     "output_tokens": 461,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -669,7 +710,8 @@
     "input_tokens": 399,
     "output_tokens": 620,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -685,7 +727,8 @@
     "input_tokens": 255,
     "output_tokens": 172,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -701,7 +744,8 @@
     "input_tokens": 255,
     "output_tokens": 200,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -717,7 +761,8 @@
     "input_tokens": 255,
     "output_tokens": 205,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -734,7 +779,8 @@
     "input_tokens": 375,
     "output_tokens": 59,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -751,7 +797,8 @@
     "input_tokens": 375,
     "output_tokens": 59,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -768,7 +815,8 @@
     "input_tokens": 375,
     "output_tokens": 106,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -785,7 +833,8 @@
     "input_tokens": 958,
     "output_tokens": 207,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -802,7 +851,8 @@
     "input_tokens": 958,
     "output_tokens": 375,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -819,7 +869,8 @@
     "input_tokens": 958,
     "output_tokens": 427,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -836,7 +887,8 @@
     "input_tokens": 760,
     "output_tokens": 357,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -853,7 +905,8 @@
     "input_tokens": 760,
     "output_tokens": 409,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -870,7 +923,8 @@
     "input_tokens": 760,
     "output_tokens": 236,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -887,7 +941,8 @@
     "input_tokens": 847,
     "output_tokens": 138,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -904,7 +959,8 @@
     "input_tokens": 847,
     "output_tokens": 160,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -921,7 +977,8 @@
     "input_tokens": 847,
     "output_tokens": 139,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -938,7 +995,8 @@
     "input_tokens": 955,
     "output_tokens": 239,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -955,7 +1013,8 @@
     "input_tokens": 955,
     "output_tokens": 157,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -972,7 +1031,8 @@
     "input_tokens": 955,
     "output_tokens": 183,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -989,7 +1049,8 @@
     "input_tokens": 610,
     "output_tokens": 186,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1006,7 +1067,8 @@
     "input_tokens": 610,
     "output_tokens": 201,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1023,7 +1085,8 @@
     "input_tokens": 610,
     "output_tokens": 179,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1040,7 +1103,8 @@
     "input_tokens": 552,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1057,7 +1121,8 @@
     "input_tokens": 552,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1074,7 +1139,8 @@
     "input_tokens": 552,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1091,7 +1157,8 @@
     "input_tokens": 596,
     "output_tokens": 88,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1108,7 +1175,8 @@
     "input_tokens": 596,
     "output_tokens": 87,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1125,7 +1193,8 @@
     "input_tokens": 596,
     "output_tokens": 90,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1142,7 +1211,8 @@
     "input_tokens": 588,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1159,7 +1229,8 @@
     "input_tokens": 588,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1176,7 +1247,8 @@
     "input_tokens": 588,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1193,7 +1265,8 @@
     "input_tokens": 493,
     "output_tokens": 10,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1210,7 +1283,8 @@
     "input_tokens": 493,
     "output_tokens": 10,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1227,7 +1301,8 @@
     "input_tokens": 493,
     "output_tokens": 10,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1244,7 +1319,8 @@
     "input_tokens": 451,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1261,7 +1337,8 @@
     "input_tokens": 451,
     "output_tokens": 55,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1278,7 +1355,8 @@
     "input_tokens": 451,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1296,7 +1374,8 @@
     "input_tokens": 3569,
     "output_tokens": 542,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1314,7 +1393,8 @@
     "input_tokens": 3569,
     "output_tokens": 486,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1332,7 +1412,8 @@
     "input_tokens": 3569,
     "output_tokens": 616,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1350,7 +1431,8 @@
     "input_tokens": 3483,
     "output_tokens": 324,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1368,7 +1450,8 @@
     "input_tokens": 3483,
     "output_tokens": 334,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1386,7 +1469,8 @@
     "input_tokens": 3483,
     "output_tokens": 325,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1404,7 +1488,8 @@
     "input_tokens": 3670,
     "output_tokens": 359,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1422,7 +1507,8 @@
     "input_tokens": 3670,
     "output_tokens": 345,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1440,7 +1526,8 @@
     "input_tokens": 3670,
     "output_tokens": 340,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1458,7 +1545,8 @@
     "input_tokens": 3783,
     "output_tokens": 249,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1476,7 +1564,8 @@
     "input_tokens": 3783,
     "output_tokens": 268,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1494,7 +1583,8 @@
     "input_tokens": 3783,
     "output_tokens": 244,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1512,7 +1602,8 @@
     "input_tokens": 3633,
     "output_tokens": 323,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1530,7 +1621,8 @@
     "input_tokens": 3633,
     "output_tokens": 322,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1548,7 +1640,8 @@
     "input_tokens": 3633,
     "output_tokens": 261,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1566,7 +1659,8 @@
     "input_tokens": 3709,
     "output_tokens": 379,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1584,7 +1678,8 @@
     "input_tokens": 3709,
     "output_tokens": 346,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1602,7 +1697,8 @@
     "input_tokens": 3709,
     "output_tokens": 306,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1620,7 +1716,8 @@
     "input_tokens": 3691,
     "output_tokens": 225,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1638,7 +1735,8 @@
     "input_tokens": 3691,
     "output_tokens": 279,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1656,7 +1754,8 @@
     "input_tokens": 3691,
     "output_tokens": 247,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1674,7 +1773,8 @@
     "input_tokens": 3638,
     "output_tokens": 340,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1692,7 +1792,8 @@
     "input_tokens": 3638,
     "output_tokens": 347,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1710,7 +1811,8 @@
     "input_tokens": 3638,
     "output_tokens": 357,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1728,7 +1830,8 @@
     "input_tokens": 8585,
     "output_tokens": 390,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1746,7 +1849,8 @@
     "input_tokens": 8585,
     "output_tokens": 318,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1764,7 +1868,8 @@
     "input_tokens": 8585,
     "output_tokens": 501,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1782,7 +1887,8 @@
     "input_tokens": 8468,
     "output_tokens": 690,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1800,7 +1906,8 @@
     "input_tokens": 8468,
     "output_tokens": 332,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1818,7 +1925,8 @@
     "input_tokens": 8468,
     "output_tokens": 456,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1836,7 +1944,8 @@
     "input_tokens": 8352,
     "output_tokens": 333,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1854,7 +1963,8 @@
     "input_tokens": 8352,
     "output_tokens": 325,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1872,7 +1982,8 @@
     "input_tokens": 8352,
     "output_tokens": 283,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1890,7 +2001,8 @@
     "input_tokens": 8429,
     "output_tokens": 322,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1908,7 +2020,8 @@
     "input_tokens": 8429,
     "output_tokens": 359,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1926,7 +2039,8 @@
     "input_tokens": 8429,
     "output_tokens": 313,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1946,7 +2060,8 @@
     "input_tokens": 3467,
     "output_tokens": 358,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1966,7 +2081,8 @@
     "input_tokens": 3467,
     "output_tokens": 352,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -1986,7 +2102,8 @@
     "input_tokens": 3467,
     "output_tokens": 333,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2006,7 +2123,8 @@
     "input_tokens": 3656,
     "output_tokens": 380,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2026,7 +2144,8 @@
     "input_tokens": 3656,
     "output_tokens": 334,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2046,7 +2165,8 @@
     "input_tokens": 3656,
     "output_tokens": 353,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2066,7 +2186,8 @@
     "input_tokens": 8309,
     "output_tokens": 1174,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2086,7 +2207,8 @@
     "input_tokens": 8309,
     "output_tokens": 1285,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2106,7 +2228,8 @@
     "input_tokens": 8309,
     "output_tokens": 728,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2126,7 +2249,8 @@
     "input_tokens": 8208,
     "output_tokens": 526,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2146,7 +2270,8 @@
     "input_tokens": 8208,
     "output_tokens": 1118,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2166,7 +2291,8 @@
     "input_tokens": 8208,
     "output_tokens": 601,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2186,7 +2312,8 @@
     "input_tokens": 8375,
     "output_tokens": 929,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2206,7 +2333,8 @@
     "input_tokens": 8375,
     "output_tokens": 464,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2226,7 +2354,8 @@
     "input_tokens": 8375,
     "output_tokens": 605,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2244,7 +2373,8 @@
     "input_tokens": 3759,
     "output_tokens": 452,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2262,7 +2392,8 @@
     "input_tokens": 3759,
     "output_tokens": 389,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2280,7 +2411,8 @@
     "input_tokens": 3759,
     "output_tokens": 351,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2297,7 +2429,8 @@
     "input_tokens": 618,
     "output_tokens": 116,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2314,7 +2447,8 @@
     "input_tokens": 618,
     "output_tokens": 109,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2331,7 +2465,8 @@
     "input_tokens": 618,
     "output_tokens": 188,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2348,7 +2483,8 @@
     "input_tokens": 620,
     "output_tokens": 98,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2365,7 +2501,8 @@
     "input_tokens": 620,
     "output_tokens": 130,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2382,7 +2519,8 @@
     "input_tokens": 620,
     "output_tokens": 201,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2399,7 +2537,8 @@
     "input_tokens": 655,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2416,7 +2555,8 @@
     "input_tokens": 655,
     "output_tokens": 35,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2433,7 +2573,8 @@
     "input_tokens": 655,
     "output_tokens": 46,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2450,7 +2591,8 @@
     "input_tokens": 618,
     "output_tokens": 511,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2467,7 +2609,8 @@
     "input_tokens": 618,
     "output_tokens": 142,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2484,7 +2627,8 @@
     "input_tokens": 618,
     "output_tokens": 161,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2501,7 +2645,8 @@
     "input_tokens": 619,
     "output_tokens": 17,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2518,7 +2663,8 @@
     "input_tokens": 619,
     "output_tokens": 57,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2535,7 +2681,8 @@
     "input_tokens": 619,
     "output_tokens": 46,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2552,7 +2699,8 @@
     "input_tokens": 619,
     "output_tokens": 1327,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2569,7 +2717,8 @@
     "input_tokens": 619,
     "output_tokens": 2138,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2586,7 +2735,8 @@
     "input_tokens": 619,
     "output_tokens": 901,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2603,7 +2753,8 @@
     "input_tokens": 618,
     "output_tokens": 84,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2620,7 +2771,8 @@
     "input_tokens": 618,
     "output_tokens": 62,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2637,7 +2789,8 @@
     "input_tokens": 618,
     "output_tokens": 61,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2654,7 +2807,8 @@
     "input_tokens": 711,
     "output_tokens": 50,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2671,7 +2825,8 @@
     "input_tokens": 711,
     "output_tokens": 84,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2688,7 +2843,8 @@
     "input_tokens": 711,
     "output_tokens": 41,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2705,7 +2861,8 @@
     "input_tokens": 620,
     "output_tokens": 596,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2722,7 +2879,8 @@
     "input_tokens": 620,
     "output_tokens": 189,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2739,7 +2897,8 @@
     "input_tokens": 620,
     "output_tokens": 216,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2756,7 +2915,8 @@
     "input_tokens": 620,
     "output_tokens": 106,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2773,7 +2933,8 @@
     "input_tokens": 620,
     "output_tokens": 93,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2790,7 +2951,8 @@
     "input_tokens": 620,
     "output_tokens": 104,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2807,7 +2969,8 @@
     "input_tokens": 620,
     "output_tokens": 234,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2824,7 +2987,8 @@
     "input_tokens": 620,
     "output_tokens": 450,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2841,7 +3005,8 @@
     "input_tokens": 620,
     "output_tokens": 276,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2858,7 +3023,8 @@
     "input_tokens": 979,
     "output_tokens": 304,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2875,7 +3041,8 @@
     "input_tokens": 979,
     "output_tokens": 361,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2892,7 +3059,8 @@
     "input_tokens": 979,
     "output_tokens": 314,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2909,7 +3077,8 @@
     "input_tokens": 618,
     "output_tokens": 428,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2926,7 +3095,8 @@
     "input_tokens": 618,
     "output_tokens": 149,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2943,7 +3113,8 @@
     "input_tokens": 618,
     "output_tokens": 332,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2960,7 +3131,8 @@
     "input_tokens": 818,
     "output_tokens": 715,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2977,7 +3149,8 @@
     "input_tokens": 818,
     "output_tokens": 297,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -2994,7 +3167,8 @@
     "input_tokens": 818,
     "output_tokens": 198,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3011,7 +3185,8 @@
     "input_tokens": 618,
     "output_tokens": 740,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3028,7 +3203,8 @@
     "input_tokens": 618,
     "output_tokens": 747,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3045,7 +3221,8 @@
     "input_tokens": 618,
     "output_tokens": 1285,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3062,7 +3239,8 @@
     "input_tokens": 620,
     "output_tokens": 252,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3079,7 +3257,8 @@
     "input_tokens": 620,
     "output_tokens": 291,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3096,7 +3275,8 @@
     "input_tokens": 620,
     "output_tokens": 174,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3113,7 +3293,8 @@
     "input_tokens": 618,
     "output_tokens": 37,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3130,7 +3311,8 @@
     "input_tokens": 618,
     "output_tokens": 47,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3147,7 +3329,8 @@
     "input_tokens": 618,
     "output_tokens": 39,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3164,7 +3347,8 @@
     "input_tokens": 659,
     "output_tokens": 787,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3181,7 +3365,8 @@
     "input_tokens": 659,
     "output_tokens": 1456,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3198,7 +3383,8 @@
     "input_tokens": 659,
     "output_tokens": 1458,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3214,7 +3400,8 @@
     "input_tokens": 485,
     "output_tokens": 588,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3230,7 +3417,8 @@
     "input_tokens": 485,
     "output_tokens": 474,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3246,7 +3434,8 @@
     "input_tokens": 485,
     "output_tokens": 471,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3262,7 +3451,8 @@
     "input_tokens": 535,
     "output_tokens": 346,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3278,7 +3468,8 @@
     "input_tokens": 535,
     "output_tokens": 313,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3294,7 +3485,8 @@
     "input_tokens": 535,
     "output_tokens": 345,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3310,7 +3502,8 @@
     "input_tokens": 467,
     "output_tokens": 493,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3326,7 +3519,8 @@
     "input_tokens": 467,
     "output_tokens": 492,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3342,7 +3536,8 @@
     "input_tokens": 467,
     "output_tokens": 454,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3358,7 +3553,8 @@
     "input_tokens": 470,
     "output_tokens": 473,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3374,7 +3570,8 @@
     "input_tokens": 470,
     "output_tokens": 432,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3390,7 +3587,8 @@
     "input_tokens": 470,
     "output_tokens": 570,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3406,7 +3604,8 @@
     "input_tokens": 496,
     "output_tokens": 659,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3422,7 +3621,8 @@
     "input_tokens": 496,
     "output_tokens": 499,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3438,7 +3638,8 @@
     "input_tokens": 496,
     "output_tokens": 572,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3454,7 +3655,8 @@
     "input_tokens": 465,
     "output_tokens": 683,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3470,7 +3672,8 @@
     "input_tokens": 465,
     "output_tokens": 399,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3486,7 +3689,8 @@
     "input_tokens": 465,
     "output_tokens": 421,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3502,7 +3706,8 @@
     "input_tokens": 434,
     "output_tokens": 727,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3518,7 +3723,8 @@
     "input_tokens": 434,
     "output_tokens": 758,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3534,7 +3740,8 @@
     "input_tokens": 434,
     "output_tokens": 723,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3550,7 +3757,8 @@
     "input_tokens": 475,
     "output_tokens": 660,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3566,7 +3774,8 @@
     "input_tokens": 475,
     "output_tokens": 572,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3582,7 +3791,8 @@
     "input_tokens": 475,
     "output_tokens": 486,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3598,7 +3808,8 @@
     "input_tokens": 497,
     "output_tokens": 470,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3614,7 +3825,8 @@
     "input_tokens": 497,
     "output_tokens": 519,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3630,7 +3842,8 @@
     "input_tokens": 497,
     "output_tokens": 696,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3646,7 +3859,8 @@
     "input_tokens": 450,
     "output_tokens": 509,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3662,7 +3876,8 @@
     "input_tokens": 450,
     "output_tokens": 425,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3678,7 +3893,8 @@
     "input_tokens": 450,
     "output_tokens": 339,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3695,7 +3911,8 @@
     "input_tokens": 577,
     "output_tokens": 125,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3712,7 +3929,8 @@
     "input_tokens": 577,
     "output_tokens": 141,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3729,7 +3947,8 @@
     "input_tokens": 577,
     "output_tokens": 124,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3746,7 +3965,8 @@
     "input_tokens": 522,
     "output_tokens": 138,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3763,7 +3983,8 @@
     "input_tokens": 522,
     "output_tokens": 134,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3780,7 +4001,8 @@
     "input_tokens": 522,
     "output_tokens": 122,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3797,7 +4019,8 @@
     "input_tokens": 622,
     "output_tokens": 118,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3814,7 +4037,8 @@
     "input_tokens": 622,
     "output_tokens": 124,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3831,7 +4055,8 @@
     "input_tokens": 622,
     "output_tokens": 118,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3848,7 +4073,8 @@
     "input_tokens": 519,
     "output_tokens": 124,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3865,7 +4091,8 @@
     "input_tokens": 519,
     "output_tokens": 122,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3882,7 +4109,8 @@
     "input_tokens": 519,
     "output_tokens": 126,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3899,7 +4127,8 @@
     "input_tokens": 561,
     "output_tokens": 114,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3916,7 +4145,8 @@
     "input_tokens": 561,
     "output_tokens": 111,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3933,7 +4163,8 @@
     "input_tokens": 561,
     "output_tokens": 113,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3950,7 +4181,8 @@
     "input_tokens": 479,
     "output_tokens": 107,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3967,7 +4199,8 @@
     "input_tokens": 479,
     "output_tokens": 116,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -3984,7 +4217,8 @@
     "input_tokens": 479,
     "output_tokens": 113,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4001,7 +4235,8 @@
     "input_tokens": 484,
     "output_tokens": 139,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4018,7 +4253,8 @@
     "input_tokens": 484,
     "output_tokens": 135,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4035,7 +4271,8 @@
     "input_tokens": 484,
     "output_tokens": 136,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4052,7 +4289,8 @@
     "input_tokens": 492,
     "output_tokens": 120,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4069,7 +4307,8 @@
     "input_tokens": 492,
     "output_tokens": 115,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4086,7 +4325,8 @@
     "input_tokens": 492,
     "output_tokens": 130,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4103,7 +4343,8 @@
     "input_tokens": 476,
     "output_tokens": 136,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4120,7 +4361,8 @@
     "input_tokens": 476,
     "output_tokens": 141,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4137,7 +4379,8 @@
     "input_tokens": 476,
     "output_tokens": 137,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4154,7 +4397,8 @@
     "input_tokens": 451,
     "output_tokens": 115,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4171,7 +4415,8 @@
     "input_tokens": 451,
     "output_tokens": 133,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-sol",
@@ -4188,6 +4433,7 @@
     "input_tokens": 451,
     "output_tokens": 113,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   }
 ]

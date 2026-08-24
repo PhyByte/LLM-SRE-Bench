@@ -13,7 +13,8 @@
     "input_tokens": 606,
     "output_tokens": 234,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -29,7 +30,8 @@
     "input_tokens": 606,
     "output_tokens": 258,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -45,7 +47,8 @@
     "input_tokens": 606,
     "output_tokens": 258,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -61,7 +64,8 @@
     "input_tokens": 604,
     "output_tokens": 263,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -77,7 +81,8 @@
     "input_tokens": 604,
     "output_tokens": 263,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -93,7 +98,8 @@
     "input_tokens": 604,
     "output_tokens": 263,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -109,7 +115,8 @@
     "input_tokens": 575,
     "output_tokens": 245,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -125,7 +132,8 @@
     "input_tokens": 575,
     "output_tokens": 245,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -141,7 +149,8 @@
     "input_tokens": 575,
     "output_tokens": 245,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -157,7 +166,8 @@
     "input_tokens": 489,
     "output_tokens": 637,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -173,7 +183,8 @@
     "input_tokens": 489,
     "output_tokens": 620,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -189,7 +200,8 @@
     "input_tokens": 489,
     "output_tokens": 675,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -205,7 +217,8 @@
     "input_tokens": 499,
     "output_tokens": 439,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -221,7 +234,8 @@
     "input_tokens": 499,
     "output_tokens": 444,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -237,7 +251,8 @@
     "input_tokens": 499,
     "output_tokens": 479,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -253,7 +268,8 @@
     "input_tokens": 573,
     "output_tokens": 926,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -269,7 +285,8 @@
     "input_tokens": 573,
     "output_tokens": 842,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -285,7 +302,8 @@
     "input_tokens": 573,
     "output_tokens": 907,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -301,7 +319,8 @@
     "input_tokens": 457,
     "output_tokens": 237,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -317,7 +336,8 @@
     "input_tokens": 457,
     "output_tokens": 238,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -333,7 +353,8 @@
     "input_tokens": 457,
     "output_tokens": 235,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -349,7 +370,8 @@
     "input_tokens": 497,
     "output_tokens": 279,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -365,7 +387,8 @@
     "input_tokens": 497,
     "output_tokens": 279,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -381,7 +404,8 @@
     "input_tokens": 497,
     "output_tokens": 277,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -397,7 +421,8 @@
     "input_tokens": 542,
     "output_tokens": 667,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -413,7 +438,8 @@
     "input_tokens": 542,
     "output_tokens": 617,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -429,7 +455,8 @@
     "input_tokens": 542,
     "output_tokens": 629,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -445,7 +472,8 @@
     "input_tokens": 464,
     "output_tokens": 464,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -461,7 +489,8 @@
     "input_tokens": 464,
     "output_tokens": 549,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -477,7 +506,8 @@
     "input_tokens": 464,
     "output_tokens": 549,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -493,7 +523,8 @@
     "input_tokens": 688,
     "output_tokens": 620,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -509,7 +540,8 @@
     "input_tokens": 688,
     "output_tokens": 229,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -525,7 +557,8 @@
     "input_tokens": 688,
     "output_tokens": 519,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -541,7 +574,8 @@
     "input_tokens": 425,
     "output_tokens": 172,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -557,7 +591,8 @@
     "input_tokens": 425,
     "output_tokens": 157,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -573,7 +608,8 @@
     "input_tokens": 425,
     "output_tokens": 171,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -589,7 +625,8 @@
     "input_tokens": 384,
     "output_tokens": 387,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -605,7 +642,8 @@
     "input_tokens": 384,
     "output_tokens": 400,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -621,7 +659,8 @@
     "input_tokens": 384,
     "output_tokens": 393,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -637,7 +676,8 @@
     "input_tokens": 565,
     "output_tokens": 720,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -653,7 +693,8 @@
     "input_tokens": 565,
     "output_tokens": 757,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -669,7 +710,8 @@
     "input_tokens": 565,
     "output_tokens": 540,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -685,7 +727,8 @@
     "input_tokens": 381,
     "output_tokens": 341,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -701,7 +744,8 @@
     "input_tokens": 381,
     "output_tokens": 389,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -717,7 +761,8 @@
     "input_tokens": 381,
     "output_tokens": 413,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -734,7 +779,8 @@
     "input_tokens": 524,
     "output_tokens": 305,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -751,7 +797,8 @@
     "input_tokens": 524,
     "output_tokens": 255,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -768,7 +815,8 @@
     "input_tokens": 524,
     "output_tokens": 263,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -785,7 +833,8 @@
     "input_tokens": 1322,
     "output_tokens": 590,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -802,7 +851,8 @@
     "input_tokens": 1322,
     "output_tokens": 554,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -819,7 +869,8 @@
     "input_tokens": 1322,
     "output_tokens": 426,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -836,7 +887,8 @@
     "input_tokens": 1044,
     "output_tokens": 590,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -853,7 +905,8 @@
     "input_tokens": 1044,
     "output_tokens": 225,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -870,7 +923,8 @@
     "input_tokens": 1044,
     "output_tokens": 695,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -887,7 +941,8 @@
     "input_tokens": 1193,
     "output_tokens": 195,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -904,7 +959,8 @@
     "input_tokens": 1193,
     "output_tokens": 221,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -921,7 +977,8 @@
     "input_tokens": 1193,
     "output_tokens": 158,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -938,7 +995,8 @@
     "input_tokens": 1339,
     "output_tokens": 381,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -955,7 +1013,8 @@
     "input_tokens": 1339,
     "output_tokens": 390,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -972,7 +1031,8 @@
     "input_tokens": 1339,
     "output_tokens": 334,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -989,7 +1049,8 @@
     "input_tokens": 852,
     "output_tokens": 452,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1006,7 +1067,8 @@
     "input_tokens": 852,
     "output_tokens": 456,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1023,7 +1085,8 @@
     "input_tokens": 852,
     "output_tokens": 548,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1040,7 +1103,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1057,7 +1121,8 @@
     "input_tokens": 826,
     "output_tokens": 65,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1074,7 +1139,8 @@
     "input_tokens": 826,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1091,7 +1157,8 @@
     "input_tokens": 749,
     "output_tokens": 116,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1108,7 +1175,8 @@
     "input_tokens": 749,
     "output_tokens": 117,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1125,7 +1193,8 @@
     "input_tokens": 749,
     "output_tokens": 114,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1142,7 +1211,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1159,7 +1229,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1176,7 +1247,8 @@
     "input_tokens": 827,
     "output_tokens": 22,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1193,7 +1265,8 @@
     "input_tokens": 748,
     "output_tokens": 20,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1210,7 +1283,8 @@
     "input_tokens": 748,
     "output_tokens": 20,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1227,7 +1301,8 @@
     "input_tokens": 748,
     "output_tokens": 20,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1244,7 +1319,8 @@
     "input_tokens": 718,
     "output_tokens": 53,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1261,7 +1337,8 @@
     "input_tokens": 718,
     "output_tokens": 53,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -1278,1012 +1355,8 @@
     "input_tokens": 718,
     "output_tokens": 55,
     "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 0,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 0.0
-    },
-    "latency_s": 10.902815666049719,
-    "input_tokens": 750,
-    "output_tokens": 726,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 1,
-    "score": 0.39999999999999997,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.0
-    },
-    "latency_s": 10.155876625096425,
-    "input_tokens": 750,
-    "output_tokens": 607,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-001-redis-cascade",
-    "run_index": 2,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 0.0
-    },
-    "latency_s": 9.065380583982915,
-    "input_tokens": 750,
-    "output_tokens": 541,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 0,
-    "score": 0.8,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 9.658397415885702,
-    "input_tokens": 820,
-    "output_tokens": 739,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 1,
-    "score": 0.8,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 10.35360329109244,
-    "input_tokens": 820,
-    "output_tokens": 752,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-002-dns-retry-storm",
-    "run_index": 2,
-    "score": 0.8,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 8.613864209037274,
-    "input_tokens": 820,
-    "output_tokens": 582,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 10.345627417089418,
-    "input_tokens": 790,
-    "output_tokens": 564,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 13.203272041864693,
-    "input_tokens": 790,
-    "output_tokens": 633,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-003-migration-locks",
-    "run_index": 2,
-    "score": 0.8,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 11.898408334003761,
-    "input_tokens": 790,
-    "output_tokens": 576,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 10.349503207951784,
-    "input_tokens": 814,
-    "output_tokens": 694,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 142.1539110839367,
-    "input_tokens": 814,
-    "output_tokens": 888,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-004-mtls-cert",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "pattern_coverage": 1.0,
-      "correlation_accuracy": 1.0
-    },
-    "latency_s": 11.057310415897518,
-    "input_tokens": 814,
-    "output_tokens": 720,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 0,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 20.179049415979534,
-    "input_tokens": 775,
-    "output_tokens": 794,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 1,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 15.002333458978683,
-    "input_tokens": 775,
-    "output_tokens": 943,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "pattern_correlation",
-    "case_id": "pc-005-noisy-neighbor",
-    "run_index": 2,
-    "score": 0.6,
-    "metrics": {
-      "pattern_coverage": 0.6666666666666666,
-      "correlation_accuracy": 0.5
-    },
-    "latency_s": 10.34220354189165,
-    "input_tokens": 775,
-    "output_tokens": 747,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.977232333039865,
-    "input_tokens": 686,
-    "output_tokens": 90,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 6.33851133310236,
-    "input_tokens": 686,
-    "output_tokens": 102,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-cpu-offpeak-spike",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 6.257919291034341,
-    "input_tokens": 686,
-    "output_tokens": 128,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 8.062614874914289,
-    "input_tokens": 688,
-    "output_tokens": 101,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 7.8730490419548005,
-    "input_tokens": 688,
-    "output_tokens": 107,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-latency-shift",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 9.752316208090633,
-    "input_tokens": 688,
-    "output_tokens": 114,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.069630666868761,
-    "input_tokens": 722,
-    "output_tokens": 54,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 8.715097791980952,
-    "input_tokens": 722,
-    "output_tokens": 55,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-rps-dip",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.014725290937349,
-    "input_tokens": 722,
-    "output_tokens": 53,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 8.548449374968186,
-    "input_tokens": 685,
-    "output_tokens": 242,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 6.142028500093147,
-    "input_tokens": 685,
-    "output_tokens": 202,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-mem-creep",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 7.7280885830987245,
-    "input_tokens": 685,
-    "output_tokens": 215,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.238987041870132,
-    "input_tokens": 687,
-    "output_tokens": 66,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.417315499857068,
-    "input_tokens": 687,
-    "output_tokens": 64,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-err-rate-burst",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.474443083861843,
-    "input_tokens": 687,
-    "output_tokens": 66,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 6.364431791007519,
-    "input_tokens": 685,
-    "output_tokens": 189,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 6.920422459021211,
-    "input_tokens": 685,
-    "output_tokens": 182,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-disk-io-clean",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.567539167124778,
-    "input_tokens": 685,
-    "output_tokens": 136,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.083173792110756,
-    "input_tokens": 685,
-    "output_tokens": 44,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.900216541951522,
-    "input_tokens": 685,
-    "output_tokens": 44,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-queue-spike",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.903071042150259,
-    "input_tokens": 685,
-    "output_tokens": 44,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.4228215829934925,
-    "input_tokens": 777,
-    "output_tokens": 55,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.576774209039286,
-    "input_tokens": 777,
-    "output_tokens": 55,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-conn-drop",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.937951625091955,
-    "input_tokens": 777,
-    "output_tokens": 55,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.836756167002022,
-    "input_tokens": 690,
-    "output_tokens": 133,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.156172625022009,
-    "input_tokens": 690,
-    "output_tokens": 114,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-temp-clean",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.828317000064999,
-    "input_tokens": 690,
-    "output_tokens": 98,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 0,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 4.873541957931593,
-    "input_tokens": 688,
-    "output_tokens": 122,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 1,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 6.240495250094682,
-    "input_tokens": 688,
-    "output_tokens": 114,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "metrics_timeseries",
-    "case_id": "ts-p50-slow-shift",
-    "run_index": 2,
-    "score": 1.0,
-    "metrics": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "latency_s": 5.772219541948289,
-    "input_tokens": 688,
-    "output_tokens": 117,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 0,
-    "score": 0.6907457322551662,
-    "metrics": {
-      "rouge_l_summary": 0.40476190476190477,
-      "rouge_1_root_cause": 0.9056603773584906,
-      "keyword_recall": 0.8571428571428571
-    },
-    "latency_s": 6.926705792080611,
-    "input_tokens": 860,
-    "output_tokens": 279,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 1,
-    "score": 0.6936454628174373,
-    "metrics": {
-      "rouge_l_summary": 0.38216560509554137,
-      "rouge_1_root_cause": 0.9454545454545454,
-      "keyword_recall": 0.8571428571428571
-    },
-    "latency_s": 8.327066207770258,
-    "input_tokens": 860,
-    "output_tokens": 298,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-001-pool-leak",
-    "run_index": 2,
-    "score": 0.7088911088911088,
-    "metrics": {
-      "rouge_l_summary": 0.44755244755244755,
-      "rouge_1_root_cause": 0.9090909090909091,
-      "keyword_recall": 0.8571428571428571
-    },
-    "latency_s": 8.184051374904811,
-    "input_tokens": 860,
-    "output_tokens": 251,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 0,
-    "score": 0.6037776639927177,
-    "metrics": {
-      "rouge_l_summary": 0.38271604938271603,
-      "rouge_1_root_cause": 0.6451612903225806,
-      "keyword_recall": 0.8571428571428571
-    },
-    "latency_s": 7.066885832929984,
-    "input_tokens": 798,
-    "output_tokens": 284,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 1,
-    "score": 0.6358796754403324,
-    "metrics": {
-      "rouge_l_summary": 0.35582822085889565,
-      "rouge_1_root_cause": 0.6451612903225806,
-      "keyword_recall": 1.0
-    },
-    "latency_s": 6.889621416805312,
-    "input_tokens": 798,
-    "output_tokens": 297,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-002-cert-expiry",
-    "run_index": 2,
-    "score": 0.5413365617433414,
-    "metrics": {
-      "rouge_l_summary": 0.36000000000000004,
-      "rouge_1_root_cause": 0.6101694915254238,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 7.694596000015736,
-    "input_tokens": 798,
-    "output_tokens": 256,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 0,
-    "score": 0.5638080526210884,
-    "metrics": {
-      "rouge_l_summary": 0.38150289017341044,
-      "rouge_1_root_cause": 0.6206896551724138,
-      "keyword_recall": 0.75
-    },
-    "latency_s": 6.885675417026505,
-    "input_tokens": 934,
-    "output_tokens": 285,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 1,
-    "score": 0.545852248844052,
-    "metrics": {
-      "rouge_l_summary": 0.37948717948717947,
-      "rouge_1_root_cause": 0.6885245901639343,
-      "keyword_recall": 0.625
-    },
-    "latency_s": 7.090314083034173,
-    "input_tokens": 934,
-    "output_tokens": 335,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-003-retention-disk-full",
-    "run_index": 2,
-    "score": 0.535780751506558,
-    "metrics": {
-      "rouge_l_summary": 0.3626373626373626,
-      "rouge_1_root_cause": 0.6774193548387096,
-      "keyword_recall": 0.625
-    },
-    "latency_s": 7.29253620817326,
-    "input_tokens": 934,
-    "output_tokens": 311,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 0,
-    "score": 0.5681498829039813,
-    "metrics": {
-      "rouge_l_summary": 0.3928571428571428,
-      "rouge_1_root_cause": 0.6557377049180327,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 6.947792292106897,
-    "input_tokens": 766,
-    "output_tokens": 285,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 1,
-    "score": 0.5678341013824885,
-    "metrics": {
-      "rouge_l_summary": 0.4000000000000001,
-      "rouge_1_root_cause": 0.6451612903225806,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 7.044687541900203,
-    "input_tokens": 766,
-    "output_tokens": 309,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-004-debug-flag-cpu",
-    "run_index": 2,
-    "score": 0.5741125541125541,
-    "metrics": {
-      "rouge_l_summary": 0.37575757575757573,
-      "rouge_1_root_cause": 0.6984126984126984,
-      "keyword_recall": 0.7142857142857143
-    },
-    "latency_s": 6.865936832968146,
-    "input_tokens": 766,
-    "output_tokens": 285,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 0,
-    "score": 0.6167946087448706,
-    "metrics": {
-      "rouge_l_summary": 0.4397905759162304,
-      "rouge_1_root_cause": 0.5945945945945946,
-      "keyword_recall": 0.875
-    },
-    "latency_s": 7.668853499926627,
-    "input_tokens": 816,
-    "output_tokens": 346,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 1,
-    "score": 0.6157299944920922,
-    "metrics": {
-      "rouge_l_summary": 0.5027932960893855,
-      "rouge_1_root_cause": 0.5070422535211268,
-      "keyword_recall": 0.875
-    },
-    "latency_s": 7.72241820814088,
-    "input_tokens": 816,
-    "output_tokens": 317,
-    "cached": true,
-    "error": null
-  },
-  {
-    "model": "fable-5",
-    "category": "root_cause",
-    "case_id": "rc-005-clock-skew",
-    "run_index": 2,
-    "score": 0.5844656283566059,
-    "metrics": {
-      "rouge_l_summary": 0.4693877551020409,
-      "rouge_1_root_cause": 0.4473684210526316,
-      "keyword_recall": 0.875
-    },
-    "latency_s": 8.261258916929364,
-    "input_tokens": 816,
-    "output_tokens": 353,
-    "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2301,7 +1374,8 @@
     "input_tokens": 4519,
     "output_tokens": 1166,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2319,7 +1393,8 @@
     "input_tokens": 4519,
     "output_tokens": 1713,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2337,7 +1412,8 @@
     "input_tokens": 4519,
     "output_tokens": 1456,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2355,7 +1431,8 @@
     "input_tokens": 4515,
     "output_tokens": 562,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2373,7 +1450,8 @@
     "input_tokens": 4515,
     "output_tokens": 563,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2391,7 +1469,8 @@
     "input_tokens": 4515,
     "output_tokens": 530,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2409,7 +1488,8 @@
     "input_tokens": 4777,
     "output_tokens": 738,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2427,7 +1507,8 @@
     "input_tokens": 4777,
     "output_tokens": 721,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2445,7 +1526,8 @@
     "input_tokens": 4777,
     "output_tokens": 805,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2463,7 +1545,8 @@
     "input_tokens": 4937,
     "output_tokens": 572,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2481,7 +1564,8 @@
     "input_tokens": 4937,
     "output_tokens": 724,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2499,7 +1583,8 @@
     "input_tokens": 4937,
     "output_tokens": 571,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2517,7 +1602,8 @@
     "input_tokens": 4698,
     "output_tokens": 611,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2535,7 +1621,8 @@
     "input_tokens": 4698,
     "output_tokens": 663,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2553,7 +1640,8 @@
     "input_tokens": 4698,
     "output_tokens": 584,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2571,7 +1659,8 @@
     "input_tokens": 4796,
     "output_tokens": 671,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2589,7 +1678,8 @@
     "input_tokens": 4796,
     "output_tokens": 635,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2607,7 +1697,8 @@
     "input_tokens": 4796,
     "output_tokens": 649,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2625,7 +1716,8 @@
     "input_tokens": 4803,
     "output_tokens": 559,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2643,7 +1735,8 @@
     "input_tokens": 4803,
     "output_tokens": 583,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2661,7 +1754,8 @@
     "input_tokens": 4803,
     "output_tokens": 573,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2679,7 +1773,8 @@
     "input_tokens": 4682,
     "output_tokens": 626,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2697,7 +1792,8 @@
     "input_tokens": 4682,
     "output_tokens": 766,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2715,7 +1811,8 @@
     "input_tokens": 4682,
     "output_tokens": 599,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2733,7 +1830,8 @@
     "input_tokens": 11025,
     "output_tokens": 603,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2751,7 +1849,8 @@
     "input_tokens": 11025,
     "output_tokens": 692,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2769,7 +1868,8 @@
     "input_tokens": 11025,
     "output_tokens": 900,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2787,7 +1887,8 @@
     "input_tokens": 10769,
     "output_tokens": 2129,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2805,7 +1906,8 @@
     "input_tokens": 10769,
     "output_tokens": 1142,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2823,7 +1925,8 @@
     "input_tokens": 10769,
     "output_tokens": 1598,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2841,7 +1944,8 @@
     "input_tokens": 10850,
     "output_tokens": 660,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2859,7 +1963,8 @@
     "input_tokens": 10850,
     "output_tokens": 732,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2877,7 +1982,8 @@
     "input_tokens": 10850,
     "output_tokens": 673,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2895,7 +2001,8 @@
     "input_tokens": 10772,
     "output_tokens": 504,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2913,7 +2020,8 @@
     "input_tokens": 10772,
     "output_tokens": 528,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2931,7 +2039,8 @@
     "input_tokens": 10772,
     "output_tokens": 549,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2951,7 +2060,8 @@
     "input_tokens": 4498,
     "output_tokens": 630,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2971,7 +2081,8 @@
     "input_tokens": 4498,
     "output_tokens": 686,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -2991,7 +2102,8 @@
     "input_tokens": 4498,
     "output_tokens": 637,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3011,7 +2123,8 @@
     "input_tokens": 4708,
     "output_tokens": 630,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3031,7 +2144,8 @@
     "input_tokens": 4708,
     "output_tokens": 656,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3051,7 +2165,8 @@
     "input_tokens": 4708,
     "output_tokens": 749,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3071,7 +2186,8 @@
     "input_tokens": 10697,
     "output_tokens": 1736,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3091,7 +2207,8 @@
     "input_tokens": 10697,
     "output_tokens": 1812,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3111,7 +2228,8 @@
     "input_tokens": 10697,
     "output_tokens": 1278,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3131,7 +2249,8 @@
     "input_tokens": 10691,
     "output_tokens": 1066,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3151,7 +2270,8 @@
     "input_tokens": 10691,
     "output_tokens": 1130,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3171,7 +2291,8 @@
     "input_tokens": 10691,
     "output_tokens": 1089,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3191,7 +2312,8 @@
     "input_tokens": 10770,
     "output_tokens": 1540,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3211,7 +2333,8 @@
     "input_tokens": 10770,
     "output_tokens": 1461,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3231,7 +2354,8 @@
     "input_tokens": 10770,
     "output_tokens": 1441,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3249,7 +2373,8 @@
     "input_tokens": 4782,
     "output_tokens": 1274,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3267,7 +2392,8 @@
     "input_tokens": 4782,
     "output_tokens": 922,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "fable-5",
@@ -3285,6 +2411,1933 @@
     "input_tokens": 4782,
     "output_tokens": 1184,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.977232333039865,
+    "input_tokens": 686,
+    "output_tokens": 90,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.33851133310236,
+    "input_tokens": 686,
+    "output_tokens": 102,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-offpeak-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.257919291034341,
+    "input_tokens": 686,
+    "output_tokens": 128,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 8.062614874914289,
+    "input_tokens": 688,
+    "output_tokens": 101,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 7.8730490419548005,
+    "input_tokens": 688,
+    "output_tokens": 107,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-shift",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 9.752316208090633,
+    "input_tokens": 688,
+    "output_tokens": 114,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.069630666868761,
+    "input_tokens": 722,
+    "output_tokens": 54,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 8.715097791980952,
+    "input_tokens": 722,
+    "output_tokens": 55,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-dip",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.014725290937349,
+    "input_tokens": 722,
+    "output_tokens": 53,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 8.548449374968186,
+    "input_tokens": 685,
+    "output_tokens": 242,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.142028500093147,
+    "input_tokens": 685,
+    "output_tokens": 202,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-creep",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 7.7280885830987245,
+    "input_tokens": 685,
+    "output_tokens": 215,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.238987041870132,
+    "input_tokens": 687,
+    "output_tokens": 66,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.417315499857068,
+    "input_tokens": 687,
+    "output_tokens": 64,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-err-rate-burst",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.474443083861843,
+    "input_tokens": 687,
+    "output_tokens": 66,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.364431791007519,
+    "input_tokens": 685,
+    "output_tokens": 189,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.920422459021211,
+    "input_tokens": 685,
+    "output_tokens": 182,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-disk-io-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.567539167124778,
+    "input_tokens": 685,
+    "output_tokens": 136,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.083173792110756,
+    "input_tokens": 685,
+    "output_tokens": 44,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.900216541951522,
+    "input_tokens": 685,
+    "output_tokens": 44,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-queue-spike",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.903071042150259,
+    "input_tokens": 685,
+    "output_tokens": 44,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.4228215829934925,
+    "input_tokens": 777,
+    "output_tokens": 55,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.576774209039286,
+    "input_tokens": 777,
+    "output_tokens": 55,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-conn-drop",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.937951625091955,
+    "input_tokens": 777,
+    "output_tokens": 55,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.836756167002022,
+    "input_tokens": 690,
+    "output_tokens": 133,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.156172625022009,
+    "input_tokens": 690,
+    "output_tokens": 114,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-temp-clean",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.828317000064999,
+    "input_tokens": 690,
+    "output_tokens": 98,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.873541957931593,
+    "input_tokens": 688,
+    "output_tokens": 122,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.240495250094682,
+    "input_tokens": 688,
+    "output_tokens": 114,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-p50-slow-shift",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.772219541948289,
+    "input_tokens": 688,
+    "output_tokens": 117,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-inband-peak",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-inband-peak",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-inband-peak",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-weekend-dip",
+    "run_index": 0,
+    "score": 0.1111111111111111,
+    "metrics": {
+      "precision": 0.058823529411764705,
+      "recall": 1.0,
+      "f1": 0.1111111111111111
+    },
+    "latency_s": 9.409169416874647,
+    "input_tokens": 1046,
+    "output_tokens": 439,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-weekend-dip",
+    "run_index": 1,
+    "score": 0.1111111111111111,
+    "metrics": {
+      "precision": 0.058823529411764705,
+      "recall": 1.0,
+      "f1": 0.1111111111111111
+    },
+    "latency_s": 8.457787957973778,
+    "input_tokens": 1046,
+    "output_tokens": 414,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-weekend-dip",
+    "run_index": 2,
+    "score": 0.1111111111111111,
+    "metrics": {
+      "precision": 0.058823529411764705,
+      "recall": 1.0,
+      "f1": 0.1111111111111111
+    },
+    "latency_s": 8.618576374836266,
+    "input_tokens": 1046,
+    "output_tokens": 439,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-flatline",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-bytes-counter-wrap",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-bytes-counter-wrap",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-bytes-counter-wrap",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-slow-ramp",
+    "run_index": 0,
+    "score": 0.2857142857142857,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857
+    },
+    "latency_s": 6.790822375100106,
+    "input_tokens": 685,
+    "output_tokens": 204,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-slow-ramp",
+    "run_index": 1,
+    "score": 0.2857142857142857,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857
+    },
+    "latency_s": 7.949611166957766,
+    "input_tokens": 685,
+    "output_tokens": 223,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-mem-slow-ramp",
+    "run_index": 2,
+    "score": 0.2857142857142857,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 0.16666666666666666,
+      "f1": 0.2857142857142857
+    },
+    "latency_s": 7.713518125005066,
+    "input_tokens": 685,
+    "output_tokens": 230,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-growing-amp",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 6.144383000209928,
+    "input_tokens": 688,
+    "output_tokens": 84,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-growing-amp",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 4.554217749740928,
+    "input_tokens": 688,
+    "output_tokens": 91,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-latency-growing-amp",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "latency_s": 5.879190749954432,
+    "input_tokens": 688,
+    "output_tokens": 120,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-peak-clean",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 5.495030874852091,
+    "input_tokens": 686,
+    "output_tokens": 55,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-peak-clean",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 6.7951327078044415,
+    "input_tokens": 686,
+    "output_tokens": 43,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-cpu-peak-clean",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 5.992789708077908,
+    "input_tokens": 686,
+    "output_tokens": 58,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-held-then-dip",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 8.75223295809701,
+    "input_tokens": 726,
+    "output_tokens": 316,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-held-then-dip",
+    "run_index": 1,
+    "score": 0.16666666666666666,
+    "metrics": {
+      "precision": 0.1111111111111111,
+      "recall": 0.3333333333333333,
+      "f1": 0.16666666666666666
+    },
+    "latency_s": 29.244128459133208,
+    "input_tokens": 726,
+    "output_tokens": 1965,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "metrics_timeseries",
+    "case_id": "ts-rps-held-then-dip",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "latency_s": 12.163272417150438,
+    "input_tokens": 726,
+    "output_tokens": 597,
+    "cached": false,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 10.902815666049719,
+    "input_tokens": 750,
+    "output_tokens": 726,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 1,
+    "score": 0.39999999999999997,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 10.155876625096425,
+    "input_tokens": 750,
+    "output_tokens": 607,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-001-redis-cascade",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.0
+    },
+    "latency_s": 9.065380583982915,
+    "input_tokens": 750,
+    "output_tokens": 541,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 9.658397415885702,
+    "input_tokens": 820,
+    "output_tokens": 739,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 10.35360329109244,
+    "input_tokens": 820,
+    "output_tokens": 752,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-002-dns-retry-storm",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 8.613864209037274,
+    "input_tokens": 820,
+    "output_tokens": 582,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 10.345627417089418,
+    "input_tokens": 790,
+    "output_tokens": 564,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 13.203272041864693,
+    "input_tokens": 790,
+    "output_tokens": 633,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-003-migration-locks",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 11.898408334003761,
+    "input_tokens": 790,
+    "output_tokens": 576,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 10.349503207951784,
+    "input_tokens": 814,
+    "output_tokens": 694,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 142.1539110839367,
+    "input_tokens": 814,
+    "output_tokens": 888,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-004-mtls-cert",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 11.057310415897518,
+    "input_tokens": 814,
+    "output_tokens": 720,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 0,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 20.179049415979534,
+    "input_tokens": 775,
+    "output_tokens": 794,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 1,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 15.002333458978683,
+    "input_tokens": 775,
+    "output_tokens": 943,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-005-noisy-neighbor",
+    "run_index": 2,
+    "score": 0.6,
+    "metrics": {
+      "pattern_coverage": 0.6666666666666666,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 10.34220354189165,
+    "input_tokens": 775,
+    "output_tokens": 747,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-006-vacuum-common-cause",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 15.56556791672483,
+    "input_tokens": 729,
+    "output_tokens": 1003,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 1,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 11.36273566680029,
+    "input_tokens": 729,
+    "output_tokens": 741,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-007-lb-timeout-not-retries",
+    "run_index": 2,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 11.289236082695425,
+    "input_tokens": 729,
+    "output_tokens": 739,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 0,
+    "score": 1.0,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 1.0
+    },
+    "latency_s": 13.008664582856,
+    "input_tokens": 727,
+    "output_tokens": 801,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-008-decoy-deploy",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-009-thundering-herd",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 0,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 12.04296433320269,
+    "input_tokens": 702,
+    "output_tokens": 652,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 1,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 10.614623832982033,
+    "input_tokens": 702,
+    "output_tokens": 660,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "pattern_correlation",
+    "case_id": "pc-010-missing-middle-stampede",
+    "run_index": 2,
+    "score": 0.8,
+    "metrics": {
+      "pattern_coverage": 1.0,
+      "correlation_accuracy": 0.5
+    },
+    "latency_s": 11.304917625151575,
+    "input_tokens": 702,
+    "output_tokens": 635,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 0,
+    "score": 0.6907457322551662,
+    "metrics": {
+      "rouge_l_summary": 0.40476190476190477,
+      "rouge_1_root_cause": 0.9056603773584906,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.926705792080611,
+    "input_tokens": 860,
+    "output_tokens": 279,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 1,
+    "score": 0.6936454628174373,
+    "metrics": {
+      "rouge_l_summary": 0.38216560509554137,
+      "rouge_1_root_cause": 0.9454545454545454,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 8.327066207770258,
+    "input_tokens": 860,
+    "output_tokens": 298,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-001-pool-leak",
+    "run_index": 2,
+    "score": 0.7088911088911088,
+    "metrics": {
+      "rouge_l_summary": 0.44755244755244755,
+      "rouge_1_root_cause": 0.9090909090909091,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 8.184051374904811,
+    "input_tokens": 860,
+    "output_tokens": 251,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 0,
+    "score": 0.6037776639927177,
+    "metrics": {
+      "rouge_l_summary": 0.38271604938271603,
+      "rouge_1_root_cause": 0.6451612903225806,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 7.066885832929984,
+    "input_tokens": 798,
+    "output_tokens": 284,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 1,
+    "score": 0.6358796754403324,
+    "metrics": {
+      "rouge_l_summary": 0.35582822085889565,
+      "rouge_1_root_cause": 0.6451612903225806,
+      "keyword_recall": 1.0
+    },
+    "latency_s": 6.889621416805312,
+    "input_tokens": 798,
+    "output_tokens": 297,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-002-cert-expiry",
+    "run_index": 2,
+    "score": 0.5413365617433414,
+    "metrics": {
+      "rouge_l_summary": 0.36000000000000004,
+      "rouge_1_root_cause": 0.6101694915254238,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 7.694596000015736,
+    "input_tokens": 798,
+    "output_tokens": 256,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 0,
+    "score": 0.5638080526210884,
+    "metrics": {
+      "rouge_l_summary": 0.38150289017341044,
+      "rouge_1_root_cause": 0.6206896551724138,
+      "keyword_recall": 0.75
+    },
+    "latency_s": 6.885675417026505,
+    "input_tokens": 934,
+    "output_tokens": 285,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 1,
+    "score": 0.545852248844052,
+    "metrics": {
+      "rouge_l_summary": 0.37948717948717947,
+      "rouge_1_root_cause": 0.6885245901639343,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 7.090314083034173,
+    "input_tokens": 934,
+    "output_tokens": 335,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-003-retention-disk-full",
+    "run_index": 2,
+    "score": 0.535780751506558,
+    "metrics": {
+      "rouge_l_summary": 0.3626373626373626,
+      "rouge_1_root_cause": 0.6774193548387096,
+      "keyword_recall": 0.625
+    },
+    "latency_s": 7.29253620817326,
+    "input_tokens": 934,
+    "output_tokens": 311,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 0,
+    "score": 0.5681498829039813,
+    "metrics": {
+      "rouge_l_summary": 0.3928571428571428,
+      "rouge_1_root_cause": 0.6557377049180327,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 6.947792292106897,
+    "input_tokens": 766,
+    "output_tokens": 285,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 1,
+    "score": 0.5678341013824885,
+    "metrics": {
+      "rouge_l_summary": 0.4000000000000001,
+      "rouge_1_root_cause": 0.6451612903225806,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 7.044687541900203,
+    "input_tokens": 766,
+    "output_tokens": 309,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-004-debug-flag-cpu",
+    "run_index": 2,
+    "score": 0.5741125541125541,
+    "metrics": {
+      "rouge_l_summary": 0.37575757575757573,
+      "rouge_1_root_cause": 0.6984126984126984,
+      "keyword_recall": 0.7142857142857143
+    },
+    "latency_s": 6.865936832968146,
+    "input_tokens": 766,
+    "output_tokens": 285,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 0,
+    "score": 0.6167946087448706,
+    "metrics": {
+      "rouge_l_summary": 0.4397905759162304,
+      "rouge_1_root_cause": 0.5945945945945946,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 7.668853499926627,
+    "input_tokens": 816,
+    "output_tokens": 346,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 1,
+    "score": 0.6157299944920922,
+    "metrics": {
+      "rouge_l_summary": 0.5027932960893855,
+      "rouge_1_root_cause": 0.5070422535211268,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 7.72241820814088,
+    "input_tokens": 816,
+    "output_tokens": 317,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-005-clock-skew",
+    "run_index": 2,
+    "score": 0.5844656283566059,
+    "metrics": {
+      "rouge_l_summary": 0.4693877551020409,
+      "rouge_1_root_cause": 0.4473684210526316,
+      "keyword_recall": 0.875
+    },
+    "latency_s": 8.261258916929364,
+    "input_tokens": 816,
+    "output_tokens": 353,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-006-dashboard-timezone",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-007-flag-default-on-restart",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 0,
+    "score": 0.5424081800552388,
+    "metrics": {
+      "rouge_l_summary": 0.32085561497326204,
+      "rouge_1_root_cause": 0.523076923076923,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 7.0818063747137785,
+    "input_tokens": 715,
+    "output_tokens": 383,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 1,
+    "score": 0.5268181231187976,
+    "metrics": {
+      "rouge_l_summary": 0.32487309644670054,
+      "rouge_1_root_cause": 0.4657534246575343,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 7.163962833117694,
+    "input_tokens": 715,
+    "output_tokens": 363,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-008-noisy-neighbor-batch",
+    "run_index": 2,
+    "score": 0.5356107660455487,
+    "metrics": {
+      "rouge_l_summary": 0.3152173913043478,
+      "rouge_1_root_cause": 0.507936507936508,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 6.220327790826559,
+    "input_tokens": 715,
+    "output_tokens": 325,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 0,
+    "score": 0.5168831168831169,
+    "metrics": {
+      "rouge_l_summary": 0.2857142857142857,
+      "rouge_1_root_cause": 0.4848484848484849,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 8.441465917043388,
+    "input_tokens": 702,
+    "output_tokens": 332,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 1,
+    "score": 0.484672268907563,
+    "metrics": {
+      "rouge_l_summary": 0.26,
+      "rouge_1_root_cause": 0.411764705882353,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 9.169796083122492,
+    "input_tokens": 702,
+    "output_tokens": 337,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-009-az-failure-retries",
+    "run_index": 2,
+    "score": 0.49262672811059904,
+    "metrics": {
+      "rouge_l_summary": 0.25,
+      "rouge_1_root_cause": 0.45161290322580644,
+      "keyword_recall": 0.8571428571428571
+    },
+    "latency_s": 9.130499000195414,
+    "input_tokens": 702,
+    "output_tokens": 372,
+    "cached": true,
+    "error": null,
+    "refused": null
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 0,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 1,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
+  },
+  {
+    "model": "fable-5",
+    "category": "root_cause",
+    "case_id": "rc-010-rollback-did-not-help",
+    "run_index": 2,
+    "score": 0.0,
+    "metrics": {},
+    "latency_s": 0.0,
+    "input_tokens": null,
+    "output_tokens": null,
+    "cached": false,
+    "error": null,
+    "refused": "cyber"
   }
 ]

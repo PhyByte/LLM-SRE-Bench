@@ -295,13 +295,55 @@ actually pushed.
 API keys are referenced as `${ENV_VAR}` placeholders resolved from your environment / `.env` —
 no secrets in the config file.
 
+### Loading LM Studio models automatically
+
+LM Studio only answers for the model currently in memory, and its JIT loader uses whatever
+context length was saved in the GUI — often too small for the longer cases here (the biggest
+prompt is ~4.5k tokens, so a 4096-token answer needs ~9k of context). Benchmarking several
+local models otherwise means loading each one by hand.
+
+Set `context_length` on a model and the runner loads it for you before its first call,
+unloading whatever else is resident first, so a whole sweep runs unattended:
+
+```json
+{ "name": "llama-3.3-70b", "provider": "openai",
+  "base_url": "http://localhost:1234/v1", "model_id": "meta/llama-3.3-70b",
+  "context_length": 16384, "gpu_ratio": 1.0 }
+```
+
+`model_id` must match the key LM Studio itself advertises — check with
+`curl http://<host>:1234/api/v0/models`, since it isn't always the publisher-prefixed name.
+The control API listens on the same port as inference, so this works against a remote box.
+`gpu_ratio` (0-1) is optional; omit it to let LM Studio decide. Models are loaded with no
+idle TTL so one can't be evicted mid-run, and if a load fails the model's runs are all
+failed with that reason rather than silently scored against whatever was already loaded.
+
+Requires `lmstudio>=1.5.0` (in `requirements.txt`). Models without `context_length` are left
+alone, so this is opt-in and cloud models are unaffected.
+
 **Reliability:** models with missing keys are skipped with a warning, unreachable endpoints
-fail fast, any per-call failure is recorded and the run continues, and a model failing 5 calls
-in a row is circuit-broken instead of stalling the benchmark. One bad model never ruins a run.
-Transient failures (intermittent 401s, timeouts, rate limits, malformed JSON) are automatically
-re-attempted after the main pass — `--retries N` sets the number of extra passes (default 1;
-`--retries 0` disables). Permanent failures (403 no-access, 404, connection refused) are not
-retried. Because the cache only stores successes, retries and re-runs cost only the failed calls.
+fail fast, any per-call failure is recorded and the run continues, and a model failing 5
+infrastructure calls in a row is circuit-broken instead of stalling the benchmark. One bad
+model never ruins a run. Per-prompt misses (Fable 5 / Opus 5 classifier refusals, empty
+answers, malformed JSON) score 0 for that case and do **not** trip the breaker — otherwise a
+cluster of Fable refusals would skip the rest of the suite. Transient failures (intermittent
+401s, timeouts, rate limits, malformed JSON) are automatically re-attempted on the same slot
+before the next case — `--retries N` is the number of extra attempts per slot (default 1;
+`--retries 0` disables). That keeps the progress bar moving instead of stalling in a bulk
+retry pass at the end of each model. Permanent failures (403 no-access, 404, connection
+refused) are not retried. Re-runs skip slots already scored in `results/<model>/` and only
+call failures or never-run cases (`--replace` re-runs everything).
+
+**Refusals are a result, not an error.** Claude Fable 5 and Opus 5 ship safety classifiers
+that decline some prompts; the API returns HTTP 200 with `stop_reason: "refusal"`. The
+benchmark records that as a completed run scoring **0** for the case, tagged with the
+classifier category (`cyber`, `bio`, `reasoning_extraction`), and reports it separately from
+failures — declining to analyse an incident is a property of the model, so it counts against
+it. A refusal is deterministic for a given prompt, so declined slots are never retried and
+are skipped on re-runs; pass `--declined` to re-check them after a provider policy change.
+The run is never routed to a fallback model: answering with Opus would score Opus as Fable.
+Note that this suite's log- and metrics-analysis prompts trip Fable 5's `cyber` classifier
+on a substantial share of cases.
 
 **LLM-as-judge (optional):** set `"judge_model"` to one of your configured model names and
 root-cause answers get graded 0–10 by that model against the reference

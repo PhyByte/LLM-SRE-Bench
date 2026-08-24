@@ -13,7 +13,8 @@
     "input_tokens": 620,
     "output_tokens": 96,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -29,7 +30,8 @@
     "input_tokens": 620,
     "output_tokens": 96,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -45,7 +47,8 @@
     "input_tokens": 620,
     "output_tokens": 96,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -61,7 +64,8 @@
     "input_tokens": 614,
     "output_tokens": 99,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -77,7 +81,8 @@
     "input_tokens": 614,
     "output_tokens": 99,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -93,7 +98,8 @@
     "input_tokens": 614,
     "output_tokens": 102,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -109,7 +115,8 @@
     "input_tokens": 614,
     "output_tokens": 89,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -125,7 +132,8 @@
     "input_tokens": 614,
     "output_tokens": 90,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -141,7 +149,8 @@
     "input_tokens": 614,
     "output_tokens": 91,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -157,7 +166,8 @@
     "input_tokens": 520,
     "output_tokens": 133,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -173,7 +183,8 @@
     "input_tokens": 520,
     "output_tokens": 133,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -189,7 +200,8 @@
     "input_tokens": 520,
     "output_tokens": 127,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -205,7 +217,8 @@
     "input_tokens": 529,
     "output_tokens": 119,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -221,7 +234,8 @@
     "input_tokens": 529,
     "output_tokens": 119,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -237,7 +251,8 @@
     "input_tokens": 529,
     "output_tokens": 119,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -253,7 +268,8 @@
     "input_tokens": 556,
     "output_tokens": 199,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -269,7 +285,8 @@
     "input_tokens": 556,
     "output_tokens": 193,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -285,7 +302,8 @@
     "input_tokens": 556,
     "output_tokens": 193,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -301,7 +319,8 @@
     "input_tokens": 496,
     "output_tokens": 127,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -317,7 +336,8 @@
     "input_tokens": 496,
     "output_tokens": 128,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -333,7 +353,8 @@
     "input_tokens": 496,
     "output_tokens": 128,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -349,7 +370,8 @@
     "input_tokens": 529,
     "output_tokens": 160,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -365,7 +387,8 @@
     "input_tokens": 529,
     "output_tokens": 159,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -381,7 +404,8 @@
     "input_tokens": 529,
     "output_tokens": 160,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -397,7 +421,8 @@
     "input_tokens": 544,
     "output_tokens": 160,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -413,7 +438,8 @@
     "input_tokens": 544,
     "output_tokens": 160,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -429,7 +455,8 @@
     "input_tokens": 544,
     "output_tokens": 160,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -445,7 +472,8 @@
     "input_tokens": 504,
     "output_tokens": 128,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -461,7 +489,8 @@
     "input_tokens": 504,
     "output_tokens": 123,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -477,7 +506,8 @@
     "input_tokens": 504,
     "output_tokens": 129,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -493,7 +523,8 @@
     "input_tokens": 610,
     "output_tokens": 129,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -509,7 +540,8 @@
     "input_tokens": 610,
     "output_tokens": 129,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -525,7 +557,8 @@
     "input_tokens": 610,
     "output_tokens": 129,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -541,7 +574,8 @@
     "input_tokens": 478,
     "output_tokens": 83,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -557,7 +591,8 @@
     "input_tokens": 478,
     "output_tokens": 83,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -573,7 +608,8 @@
     "input_tokens": 478,
     "output_tokens": 83,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -589,7 +625,8 @@
     "input_tokens": 452,
     "output_tokens": 86,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -605,7 +642,8 @@
     "input_tokens": 452,
     "output_tokens": 86,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -621,7 +659,8 @@
     "input_tokens": 452,
     "output_tokens": 84,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -637,7 +676,8 @@
     "input_tokens": 582,
     "output_tokens": 135,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -653,7 +693,8 @@
     "input_tokens": 582,
     "output_tokens": 135,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -669,7 +710,8 @@
     "input_tokens": 582,
     "output_tokens": 138,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -685,7 +727,8 @@
     "input_tokens": 435,
     "output_tokens": 74,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -701,7 +744,8 @@
     "input_tokens": 435,
     "output_tokens": 74,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -717,7 +761,8 @@
     "input_tokens": 435,
     "output_tokens": 74,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -734,7 +779,8 @@
     "input_tokens": 555,
     "output_tokens": 48,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -751,7 +797,8 @@
     "input_tokens": 555,
     "output_tokens": 21,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -768,7 +815,8 @@
     "input_tokens": 555,
     "output_tokens": 81,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -785,7 +833,8 @@
     "input_tokens": 1119,
     "output_tokens": 33,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -802,7 +851,8 @@
     "input_tokens": 1119,
     "output_tokens": 33,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -819,7 +869,8 @@
     "input_tokens": 1119,
     "output_tokens": 33,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -836,7 +887,8 @@
     "input_tokens": 927,
     "output_tokens": 33,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -853,7 +905,8 @@
     "input_tokens": 927,
     "output_tokens": 25,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -870,7 +923,8 @@
     "input_tokens": 927,
     "output_tokens": 30,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -887,7 +941,8 @@
     "input_tokens": 1017,
     "output_tokens": 45,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -904,7 +959,8 @@
     "input_tokens": 1017,
     "output_tokens": 45,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -921,7 +977,8 @@
     "input_tokens": 1017,
     "output_tokens": 45,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -938,7 +995,8 @@
     "input_tokens": 1125,
     "output_tokens": 57,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -955,7 +1013,8 @@
     "input_tokens": 1125,
     "output_tokens": 66,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -972,7 +1031,8 @@
     "input_tokens": 1125,
     "output_tokens": 66,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -989,7 +1049,8 @@
     "input_tokens": 790,
     "output_tokens": 24,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1006,7 +1067,8 @@
     "input_tokens": 790,
     "output_tokens": 24,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1023,7 +1085,8 @@
     "input_tokens": 790,
     "output_tokens": 24,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1040,7 +1103,8 @@
     "input_tokens": 732,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1057,7 +1121,8 @@
     "input_tokens": 732,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1074,7 +1139,8 @@
     "input_tokens": 732,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1091,7 +1157,8 @@
     "input_tokens": 776,
     "output_tokens": 24,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1108,7 +1175,8 @@
     "input_tokens": 776,
     "output_tokens": 24,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1125,7 +1193,8 @@
     "input_tokens": 776,
     "output_tokens": 24,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1142,7 +1211,8 @@
     "input_tokens": 762,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1159,7 +1229,8 @@
     "input_tokens": 762,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1176,7 +1247,8 @@
     "input_tokens": 762,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1193,7 +1265,8 @@
     "input_tokens": 673,
     "output_tokens": 8,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1210,7 +1283,8 @@
     "input_tokens": 673,
     "output_tokens": 8,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1227,7 +1301,8 @@
     "input_tokens": 673,
     "output_tokens": 8,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1244,7 +1319,8 @@
     "input_tokens": 631,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1261,7 +1337,8 @@
     "input_tokens": 631,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1278,7 +1355,8 @@
     "input_tokens": 631,
     "output_tokens": 15,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1296,7 +1374,8 @@
     "input_tokens": 3733,
     "output_tokens": 189,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1314,7 +1393,8 @@
     "input_tokens": 3733,
     "output_tokens": 192,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1332,7 +1412,8 @@
     "input_tokens": 3733,
     "output_tokens": 220,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1350,7 +1431,8 @@
     "input_tokens": 3643,
     "output_tokens": 208,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1368,7 +1450,8 @@
     "input_tokens": 3643,
     "output_tokens": 182,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1386,7 +1469,8 @@
     "input_tokens": 3643,
     "output_tokens": 193,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1404,7 +1488,8 @@
     "input_tokens": 3835,
     "output_tokens": 171,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1422,7 +1507,8 @@
     "input_tokens": 3835,
     "output_tokens": 147,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1440,7 +1526,8 @@
     "input_tokens": 3835,
     "output_tokens": 178,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1458,7 +1545,8 @@
     "input_tokens": 3934,
     "output_tokens": 170,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1476,7 +1564,8 @@
     "input_tokens": 3934,
     "output_tokens": 148,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1494,7 +1583,8 @@
     "input_tokens": 3934,
     "output_tokens": 162,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1512,7 +1602,8 @@
     "input_tokens": 3790,
     "output_tokens": 170,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1530,7 +1621,8 @@
     "input_tokens": 3790,
     "output_tokens": 165,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1548,7 +1640,8 @@
     "input_tokens": 3790,
     "output_tokens": 183,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1566,7 +1659,8 @@
     "input_tokens": 3878,
     "output_tokens": 153,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1584,7 +1678,8 @@
     "input_tokens": 3878,
     "output_tokens": 169,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1602,7 +1697,8 @@
     "input_tokens": 3878,
     "output_tokens": 159,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1620,7 +1716,8 @@
     "input_tokens": 3845,
     "output_tokens": 140,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1638,7 +1735,8 @@
     "input_tokens": 3845,
     "output_tokens": 177,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1656,7 +1754,8 @@
     "input_tokens": 3845,
     "output_tokens": 158,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1674,7 +1773,8 @@
     "input_tokens": 3800,
     "output_tokens": 155,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1692,7 +1792,8 @@
     "input_tokens": 3800,
     "output_tokens": 175,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1710,7 +1811,8 @@
     "input_tokens": 3800,
     "output_tokens": 186,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1728,7 +1830,8 @@
     "input_tokens": 8637,
     "output_tokens": 154,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1746,7 +1849,8 @@
     "input_tokens": 8637,
     "output_tokens": 158,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1764,7 +1868,8 @@
     "input_tokens": 8637,
     "output_tokens": 154,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1782,7 +1887,8 @@
     "input_tokens": 8535,
     "output_tokens": 168,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1800,7 +1906,8 @@
     "input_tokens": 8535,
     "output_tokens": 240,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1818,7 +1925,8 @@
     "input_tokens": 8535,
     "output_tokens": 181,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1836,7 +1944,8 @@
     "input_tokens": 8407,
     "output_tokens": 140,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1854,7 +1963,8 @@
     "input_tokens": 8407,
     "output_tokens": 177,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1872,7 +1982,8 @@
     "input_tokens": 8407,
     "output_tokens": 139,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1890,7 +2001,8 @@
     "input_tokens": 8495,
     "output_tokens": 189,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1908,7 +2020,8 @@
     "input_tokens": 8495,
     "output_tokens": 195,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1926,7 +2039,8 @@
     "input_tokens": 8495,
     "output_tokens": 205,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1946,7 +2060,8 @@
     "input_tokens": 3625,
     "output_tokens": 141,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1966,7 +2081,8 @@
     "input_tokens": 3625,
     "output_tokens": 160,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -1986,7 +2102,8 @@
     "input_tokens": 3625,
     "output_tokens": 174,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2006,7 +2123,8 @@
     "input_tokens": 3820,
     "output_tokens": 177,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2026,7 +2144,8 @@
     "input_tokens": 3820,
     "output_tokens": 189,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2046,7 +2165,8 @@
     "input_tokens": 3820,
     "output_tokens": 176,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2066,7 +2186,8 @@
     "input_tokens": 8367,
     "output_tokens": 167,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2086,7 +2207,8 @@
     "input_tokens": 8367,
     "output_tokens": 242,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2106,7 +2228,8 @@
     "input_tokens": 8367,
     "output_tokens": 147,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2126,7 +2249,8 @@
     "input_tokens": 8259,
     "output_tokens": 139,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2146,7 +2270,8 @@
     "input_tokens": 8259,
     "output_tokens": 137,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2166,7 +2291,8 @@
     "input_tokens": 8259,
     "output_tokens": 249,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2186,7 +2312,8 @@
     "input_tokens": 8431,
     "output_tokens": 192,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2206,7 +2333,8 @@
     "input_tokens": 8431,
     "output_tokens": 181,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2226,7 +2354,8 @@
     "input_tokens": 8431,
     "output_tokens": 185,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2244,7 +2373,8 @@
     "input_tokens": 3931,
     "output_tokens": 150,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2262,7 +2392,8 @@
     "input_tokens": 3931,
     "output_tokens": 170,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2280,7 +2411,8 @@
     "input_tokens": 3931,
     "output_tokens": 177,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2297,7 +2429,8 @@
     "input_tokens": 797,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2314,7 +2447,8 @@
     "input_tokens": 797,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2331,7 +2465,8 @@
     "input_tokens": 797,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2348,7 +2483,8 @@
     "input_tokens": 799,
     "output_tokens": 36,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2365,7 +2501,8 @@
     "input_tokens": 799,
     "output_tokens": 36,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2382,7 +2519,8 @@
     "input_tokens": 799,
     "output_tokens": 36,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2399,7 +2537,8 @@
     "input_tokens": 834,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2416,7 +2555,8 @@
     "input_tokens": 834,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2433,7 +2573,8 @@
     "input_tokens": 834,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2450,7 +2591,8 @@
     "input_tokens": 797,
     "output_tokens": 48,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2467,7 +2609,8 @@
     "input_tokens": 797,
     "output_tokens": 48,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2484,7 +2627,8 @@
     "input_tokens": 797,
     "output_tokens": 51,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2501,7 +2645,8 @@
     "input_tokens": 798,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2518,7 +2663,8 @@
     "input_tokens": 798,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2535,7 +2681,8 @@
     "input_tokens": 798,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2552,7 +2699,8 @@
     "input_tokens": 798,
     "output_tokens": 27,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2569,7 +2717,8 @@
     "input_tokens": 798,
     "output_tokens": 8,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2586,7 +2735,8 @@
     "input_tokens": 798,
     "output_tokens": 8,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2603,7 +2753,8 @@
     "input_tokens": 797,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2620,7 +2771,8 @@
     "input_tokens": 797,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2637,7 +2789,8 @@
     "input_tokens": 797,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2654,7 +2807,8 @@
     "input_tokens": 890,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2671,7 +2825,8 @@
     "input_tokens": 890,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2688,7 +2843,8 @@
     "input_tokens": 890,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2705,7 +2861,8 @@
     "input_tokens": 799,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2722,7 +2879,8 @@
     "input_tokens": 799,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2739,7 +2897,8 @@
     "input_tokens": 799,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2756,7 +2915,8 @@
     "input_tokens": 799,
     "output_tokens": 45,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2773,7 +2933,8 @@
     "input_tokens": 799,
     "output_tokens": 42,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2790,7 +2951,8 @@
     "input_tokens": 799,
     "output_tokens": 42,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2807,7 +2969,8 @@
     "input_tokens": 799,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2824,7 +2987,8 @@
     "input_tokens": 799,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2841,7 +3005,8 @@
     "input_tokens": 799,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2858,7 +3023,8 @@
     "input_tokens": 1158,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2875,7 +3041,8 @@
     "input_tokens": 1158,
     "output_tokens": 159,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2892,7 +3059,8 @@
     "input_tokens": 1158,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2909,7 +3077,8 @@
     "input_tokens": 797,
     "output_tokens": 63,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2926,7 +3095,8 @@
     "input_tokens": 797,
     "output_tokens": 63,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2943,7 +3113,8 @@
     "input_tokens": 797,
     "output_tokens": 63,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2960,7 +3131,8 @@
     "input_tokens": 997,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2977,7 +3149,8 @@
     "input_tokens": 997,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -2994,7 +3167,8 @@
     "input_tokens": 997,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3011,7 +3185,8 @@
     "input_tokens": 797,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3028,7 +3203,8 @@
     "input_tokens": 797,
     "output_tokens": 21,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3045,7 +3221,8 @@
     "input_tokens": 797,
     "output_tokens": 18,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3062,7 +3239,8 @@
     "input_tokens": 799,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3079,7 +3257,8 @@
     "input_tokens": 799,
     "output_tokens": 12,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3096,7 +3275,8 @@
     "input_tokens": 799,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3113,7 +3293,8 @@
     "input_tokens": 797,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3130,7 +3311,8 @@
     "input_tokens": 797,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3147,7 +3329,8 @@
     "input_tokens": 797,
     "output_tokens": 9,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3164,7 +3347,8 @@
     "input_tokens": 838,
     "output_tokens": 33,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3181,7 +3365,8 @@
     "input_tokens": 838,
     "output_tokens": 33,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3198,7 +3383,8 @@
     "input_tokens": 838,
     "output_tokens": 33,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3214,7 +3400,8 @@
     "input_tokens": 666,
     "output_tokens": 171,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3230,7 +3417,8 @@
     "input_tokens": 666,
     "output_tokens": 116,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3246,7 +3434,8 @@
     "input_tokens": 666,
     "output_tokens": 216,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3262,7 +3451,8 @@
     "input_tokens": 719,
     "output_tokens": 187,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3278,7 +3468,8 @@
     "input_tokens": 719,
     "output_tokens": 177,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3294,7 +3485,8 @@
     "input_tokens": 719,
     "output_tokens": 225,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3310,7 +3502,8 @@
     "input_tokens": 651,
     "output_tokens": 172,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3326,7 +3519,8 @@
     "input_tokens": 651,
     "output_tokens": 180,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3342,7 +3536,8 @@
     "input_tokens": 651,
     "output_tokens": 191,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3358,7 +3553,8 @@
     "input_tokens": 656,
     "output_tokens": 237,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3374,7 +3570,8 @@
     "input_tokens": 656,
     "output_tokens": 181,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3390,7 +3587,8 @@
     "input_tokens": 656,
     "output_tokens": 188,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3406,7 +3604,8 @@
     "input_tokens": 682,
     "output_tokens": 202,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3422,7 +3621,8 @@
     "input_tokens": 682,
     "output_tokens": 203,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3438,7 +3638,8 @@
     "input_tokens": 682,
     "output_tokens": 211,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3454,7 +3655,8 @@
     "input_tokens": 648,
     "output_tokens": 206,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3470,7 +3672,8 @@
     "input_tokens": 648,
     "output_tokens": 189,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3486,7 +3689,8 @@
     "input_tokens": 648,
     "output_tokens": 247,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3502,7 +3706,8 @@
     "input_tokens": 616,
     "output_tokens": 169,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3518,7 +3723,8 @@
     "input_tokens": 616,
     "output_tokens": 210,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3534,7 +3740,8 @@
     "input_tokens": 616,
     "output_tokens": 198,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3550,7 +3757,8 @@
     "input_tokens": 656,
     "output_tokens": 148,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3566,7 +3774,8 @@
     "input_tokens": 656,
     "output_tokens": 133,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3582,7 +3791,8 @@
     "input_tokens": 656,
     "output_tokens": 170,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3598,7 +3808,8 @@
     "input_tokens": 675,
     "output_tokens": 172,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3614,7 +3825,8 @@
     "input_tokens": 675,
     "output_tokens": 220,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3630,7 +3842,8 @@
     "input_tokens": 675,
     "output_tokens": 241,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3646,7 +3859,8 @@
     "input_tokens": 631,
     "output_tokens": 204,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3662,7 +3876,8 @@
     "input_tokens": 631,
     "output_tokens": 180,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3678,7 +3893,8 @@
     "input_tokens": 631,
     "output_tokens": 179,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3695,7 +3911,8 @@
     "input_tokens": 759,
     "output_tokens": 147,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3712,7 +3929,8 @@
     "input_tokens": 759,
     "output_tokens": 143,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3729,7 +3947,8 @@
     "input_tokens": 759,
     "output_tokens": 147,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3746,7 +3965,8 @@
     "input_tokens": 698,
     "output_tokens": 146,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3763,7 +3983,8 @@
     "input_tokens": 698,
     "output_tokens": 134,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3780,7 +4001,8 @@
     "input_tokens": 698,
     "output_tokens": 141,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3797,7 +4019,8 @@
     "input_tokens": 808,
     "output_tokens": 163,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3814,7 +4037,8 @@
     "input_tokens": 808,
     "output_tokens": 159,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3831,7 +4055,8 @@
     "input_tokens": 808,
     "output_tokens": 147,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3848,7 +4073,8 @@
     "input_tokens": 702,
     "output_tokens": 154,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3865,7 +4091,8 @@
     "input_tokens": 702,
     "output_tokens": 153,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3882,7 +4109,8 @@
     "input_tokens": 702,
     "output_tokens": 137,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3899,7 +4127,8 @@
     "input_tokens": 740,
     "output_tokens": 154,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3916,7 +4145,8 @@
     "input_tokens": 740,
     "output_tokens": 146,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3933,7 +4163,8 @@
     "input_tokens": 740,
     "output_tokens": 176,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3950,7 +4181,8 @@
     "input_tokens": 659,
     "output_tokens": 172,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3967,7 +4199,8 @@
     "input_tokens": 659,
     "output_tokens": 159,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -3984,7 +4217,8 @@
     "input_tokens": 659,
     "output_tokens": 168,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4001,7 +4235,8 @@
     "input_tokens": 664,
     "output_tokens": 167,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4018,7 +4253,8 @@
     "input_tokens": 664,
     "output_tokens": 171,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4035,7 +4271,8 @@
     "input_tokens": 664,
     "output_tokens": 176,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4052,7 +4289,8 @@
     "input_tokens": 674,
     "output_tokens": 170,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4069,7 +4307,8 @@
     "input_tokens": 674,
     "output_tokens": 149,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4086,7 +4325,8 @@
     "input_tokens": 674,
     "output_tokens": 166,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4103,7 +4343,8 @@
     "input_tokens": 654,
     "output_tokens": 171,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4120,7 +4361,8 @@
     "input_tokens": 654,
     "output_tokens": 166,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4137,7 +4379,8 @@
     "input_tokens": 654,
     "output_tokens": 163,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4154,7 +4397,8 @@
     "input_tokens": 633,
     "output_tokens": 179,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4171,7 +4415,8 @@
     "input_tokens": 633,
     "output_tokens": 179,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "grok-4",
@@ -4188,6 +4433,7 @@
     "input_tokens": 633,
     "output_tokens": 197,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   }
 ]

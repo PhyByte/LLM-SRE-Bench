@@ -26,7 +26,9 @@ STDDEV_BUDGET = 25.0  # score points (0-100 scale)
 
 
 def evaluate(records: list["RunRecord"]) -> EvalResult:
-    valid = [r for r in records if r.error is None]
+    # Refusals are excluded alongside errors: the model never produced an
+    # answer, so its latency and token counts say nothing about efficiency.
+    valid = [r for r in records if r.error is None and not r.refused]
     if not valid:
         return EvalResult(score=0.0, metrics={})
 

@@ -13,7 +13,8 @@
     "input_tokens": 439,
     "output_tokens": 408,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -29,7 +30,8 @@
     "input_tokens": 439,
     "output_tokens": 209,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -45,7 +47,8 @@
     "input_tokens": 439,
     "output_tokens": 296,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -61,7 +64,8 @@
     "input_tokens": 434,
     "output_tokens": 312,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -77,7 +81,8 @@
     "input_tokens": 434,
     "output_tokens": 421,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -93,7 +98,8 @@
     "input_tokens": 434,
     "output_tokens": 553,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -109,7 +115,8 @@
     "input_tokens": 432,
     "output_tokens": 252,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -125,7 +132,8 @@
     "input_tokens": 432,
     "output_tokens": 319,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -141,7 +149,8 @@
     "input_tokens": 432,
     "output_tokens": 208,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -157,7 +166,8 @@
     "input_tokens": 341,
     "output_tokens": 291,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -173,7 +183,8 @@
     "input_tokens": 341,
     "output_tokens": 211,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -189,7 +200,8 @@
     "input_tokens": 341,
     "output_tokens": 359,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -205,7 +217,8 @@
     "input_tokens": 350,
     "output_tokens": 213,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -221,7 +234,8 @@
     "input_tokens": 350,
     "output_tokens": 245,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -237,7 +251,8 @@
     "input_tokens": 350,
     "output_tokens": 311,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -253,7 +268,8 @@
     "input_tokens": 375,
     "output_tokens": 305,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -269,7 +285,8 @@
     "input_tokens": 375,
     "output_tokens": 317,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -285,7 +302,8 @@
     "input_tokens": 375,
     "output_tokens": 307,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -301,7 +319,8 @@
     "input_tokens": 314,
     "output_tokens": 126,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -317,7 +336,8 @@
     "input_tokens": 314,
     "output_tokens": 126,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -333,7 +353,8 @@
     "input_tokens": 314,
     "output_tokens": 126,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -349,7 +370,8 @@
     "input_tokens": 348,
     "output_tokens": 158,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -365,7 +387,8 @@
     "input_tokens": 348,
     "output_tokens": 158,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -381,7 +404,8 @@
     "input_tokens": 348,
     "output_tokens": 159,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -397,7 +421,8 @@
     "input_tokens": 365,
     "output_tokens": 164,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -413,7 +438,8 @@
     "input_tokens": 365,
     "output_tokens": 164,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -429,7 +455,8 @@
     "input_tokens": 365,
     "output_tokens": 164,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -445,7 +472,8 @@
     "input_tokens": 322,
     "output_tokens": 132,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -461,7 +489,8 @@
     "input_tokens": 322,
     "output_tokens": 132,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -477,7 +506,8 @@
     "input_tokens": 322,
     "output_tokens": 132,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -493,7 +523,8 @@
     "input_tokens": 432,
     "output_tokens": 482,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -509,7 +540,8 @@
     "input_tokens": 432,
     "output_tokens": 468,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -525,7 +557,8 @@
     "input_tokens": 432,
     "output_tokens": 196,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -541,7 +574,8 @@
     "input_tokens": 295,
     "output_tokens": 296,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -557,7 +591,8 @@
     "input_tokens": 295,
     "output_tokens": 227,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -573,7 +608,8 @@
     "input_tokens": 295,
     "output_tokens": 204,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -589,7 +625,8 @@
     "input_tokens": 269,
     "output_tokens": 136,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -605,7 +642,8 @@
     "input_tokens": 269,
     "output_tokens": 338,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -621,7 +659,8 @@
     "input_tokens": 269,
     "output_tokens": 142,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -637,7 +676,8 @@
     "input_tokens": 399,
     "output_tokens": 444,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -653,7 +693,8 @@
     "input_tokens": 399,
     "output_tokens": 319,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -669,7 +710,8 @@
     "input_tokens": 399,
     "output_tokens": 420,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -685,7 +727,8 @@
     "input_tokens": 255,
     "output_tokens": 222,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -701,7 +744,8 @@
     "input_tokens": 255,
     "output_tokens": 131,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -717,7 +761,8 @@
     "input_tokens": 255,
     "output_tokens": 73,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -734,7 +779,8 @@
     "input_tokens": 375,
     "output_tokens": 161,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -751,7 +797,8 @@
     "input_tokens": 375,
     "output_tokens": 119,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -768,7 +815,8 @@
     "input_tokens": 375,
     "output_tokens": 122,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -785,7 +833,8 @@
     "input_tokens": 958,
     "output_tokens": 151,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -802,7 +851,8 @@
     "input_tokens": 958,
     "output_tokens": 261,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -819,7 +869,8 @@
     "input_tokens": 958,
     "output_tokens": 204,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -836,7 +887,8 @@
     "input_tokens": 760,
     "output_tokens": 367,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -853,7 +905,8 @@
     "input_tokens": 760,
     "output_tokens": 479,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -870,7 +923,8 @@
     "input_tokens": 760,
     "output_tokens": 200,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -887,7 +941,8 @@
     "input_tokens": 847,
     "output_tokens": 173,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -904,7 +959,8 @@
     "input_tokens": 847,
     "output_tokens": 264,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -921,7 +977,8 @@
     "input_tokens": 847,
     "output_tokens": 214,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -938,7 +995,8 @@
     "input_tokens": 955,
     "output_tokens": 207,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -955,7 +1013,8 @@
     "input_tokens": 955,
     "output_tokens": 178,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -972,7 +1031,8 @@
     "input_tokens": 955,
     "output_tokens": 211,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -989,7 +1049,8 @@
     "input_tokens": 610,
     "output_tokens": 245,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1006,7 +1067,8 @@
     "input_tokens": 610,
     "output_tokens": 183,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1023,7 +1085,8 @@
     "input_tokens": 610,
     "output_tokens": 157,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1040,7 +1103,8 @@
     "input_tokens": 552,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1057,7 +1121,8 @@
     "input_tokens": 552,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1074,7 +1139,8 @@
     "input_tokens": 552,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1091,7 +1157,8 @@
     "input_tokens": 596,
     "output_tokens": 80,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1108,7 +1175,8 @@
     "input_tokens": 596,
     "output_tokens": 155,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1125,7 +1193,8 @@
     "input_tokens": 596,
     "output_tokens": 98,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1142,7 +1211,8 @@
     "input_tokens": 588,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1159,7 +1229,8 @@
     "input_tokens": 588,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1176,7 +1247,8 @@
     "input_tokens": 588,
     "output_tokens": 15,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1193,7 +1265,8 @@
     "input_tokens": 493,
     "output_tokens": 10,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1210,7 +1283,8 @@
     "input_tokens": 493,
     "output_tokens": 10,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1227,7 +1301,8 @@
     "input_tokens": 493,
     "output_tokens": 10,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1244,7 +1319,8 @@
     "input_tokens": 451,
     "output_tokens": 52,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1261,7 +1337,8 @@
     "input_tokens": 451,
     "output_tokens": 94,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1278,7 +1355,8 @@
     "input_tokens": 451,
     "output_tokens": 53,
     "cached": true,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1296,7 +1374,8 @@
     "input_tokens": 3569,
     "output_tokens": 686,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1314,7 +1393,8 @@
     "input_tokens": 3569,
     "output_tokens": 436,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1332,7 +1412,8 @@
     "input_tokens": 3569,
     "output_tokens": 543,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1350,7 +1431,8 @@
     "input_tokens": 3483,
     "output_tokens": 278,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1368,7 +1450,8 @@
     "input_tokens": 3483,
     "output_tokens": 327,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1386,7 +1469,8 @@
     "input_tokens": 3483,
     "output_tokens": 293,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1404,7 +1488,8 @@
     "input_tokens": 3670,
     "output_tokens": 265,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1422,7 +1507,8 @@
     "input_tokens": 3670,
     "output_tokens": 341,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1440,7 +1526,8 @@
     "input_tokens": 3670,
     "output_tokens": 293,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1458,7 +1545,8 @@
     "input_tokens": 3783,
     "output_tokens": 363,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1476,7 +1564,8 @@
     "input_tokens": 3783,
     "output_tokens": 306,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1494,7 +1583,8 @@
     "input_tokens": 3783,
     "output_tokens": 292,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1512,7 +1602,8 @@
     "input_tokens": 3633,
     "output_tokens": 284,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1530,7 +1621,8 @@
     "input_tokens": 3633,
     "output_tokens": 272,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1548,7 +1640,8 @@
     "input_tokens": 3633,
     "output_tokens": 281,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1566,7 +1659,8 @@
     "input_tokens": 3709,
     "output_tokens": 359,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1584,7 +1678,8 @@
     "input_tokens": 3709,
     "output_tokens": 393,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1602,7 +1697,8 @@
     "input_tokens": 3709,
     "output_tokens": 379,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1620,7 +1716,8 @@
     "input_tokens": 3691,
     "output_tokens": 275,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1638,7 +1735,8 @@
     "input_tokens": 3691,
     "output_tokens": 222,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1656,7 +1754,8 @@
     "input_tokens": 3691,
     "output_tokens": 214,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1674,7 +1773,8 @@
     "input_tokens": 3638,
     "output_tokens": 317,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1692,7 +1792,8 @@
     "input_tokens": 3638,
     "output_tokens": 319,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1710,7 +1811,8 @@
     "input_tokens": 3638,
     "output_tokens": 341,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1728,7 +1830,8 @@
     "input_tokens": 8585,
     "output_tokens": 233,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1746,7 +1849,8 @@
     "input_tokens": 8585,
     "output_tokens": 251,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1764,7 +1868,8 @@
     "input_tokens": 8585,
     "output_tokens": 253,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1782,7 +1887,8 @@
     "input_tokens": 8468,
     "output_tokens": 488,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1800,7 +1906,8 @@
     "input_tokens": 8468,
     "output_tokens": 1088,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1818,7 +1925,8 @@
     "input_tokens": 8468,
     "output_tokens": 598,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1836,7 +1944,8 @@
     "input_tokens": 8352,
     "output_tokens": 277,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1854,7 +1963,8 @@
     "input_tokens": 8352,
     "output_tokens": 349,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1872,7 +1982,8 @@
     "input_tokens": 8352,
     "output_tokens": 247,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1890,7 +2001,8 @@
     "input_tokens": 8429,
     "output_tokens": 329,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1908,7 +2020,8 @@
     "input_tokens": 8429,
     "output_tokens": 333,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1926,7 +2039,8 @@
     "input_tokens": 8429,
     "output_tokens": 302,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1946,7 +2060,8 @@
     "input_tokens": 3467,
     "output_tokens": 301,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1966,7 +2081,8 @@
     "input_tokens": 3467,
     "output_tokens": 325,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -1986,7 +2102,8 @@
     "input_tokens": 3467,
     "output_tokens": 336,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2006,7 +2123,8 @@
     "input_tokens": 3656,
     "output_tokens": 309,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2026,7 +2144,8 @@
     "input_tokens": 3656,
     "output_tokens": 341,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2046,7 +2165,8 @@
     "input_tokens": 3656,
     "output_tokens": 317,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2066,7 +2186,8 @@
     "input_tokens": 8309,
     "output_tokens": 726,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2086,7 +2207,8 @@
     "input_tokens": 8309,
     "output_tokens": 573,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2106,7 +2228,8 @@
     "input_tokens": 8309,
     "output_tokens": 725,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2126,7 +2249,8 @@
     "input_tokens": 8208,
     "output_tokens": 703,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2146,7 +2270,8 @@
     "input_tokens": 8208,
     "output_tokens": 564,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2166,7 +2291,8 @@
     "input_tokens": 8208,
     "output_tokens": 712,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2186,7 +2312,8 @@
     "input_tokens": 8375,
     "output_tokens": 755,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2206,7 +2333,8 @@
     "input_tokens": 8375,
     "output_tokens": 654,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2226,7 +2354,8 @@
     "input_tokens": 8375,
     "output_tokens": 726,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2244,7 +2373,8 @@
     "input_tokens": 3759,
     "output_tokens": 371,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2262,7 +2392,8 @@
     "input_tokens": 3759,
     "output_tokens": 348,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2280,7 +2411,8 @@
     "input_tokens": 3759,
     "output_tokens": 371,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2297,7 +2429,8 @@
     "input_tokens": 618,
     "output_tokens": 246,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2314,7 +2447,8 @@
     "input_tokens": 618,
     "output_tokens": 96,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2331,7 +2465,8 @@
     "input_tokens": 618,
     "output_tokens": 110,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2348,7 +2483,8 @@
     "input_tokens": 620,
     "output_tokens": 118,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2365,7 +2501,8 @@
     "input_tokens": 620,
     "output_tokens": 127,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2382,7 +2519,8 @@
     "input_tokens": 620,
     "output_tokens": 121,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2399,7 +2537,8 @@
     "input_tokens": 655,
     "output_tokens": 59,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2416,7 +2555,8 @@
     "input_tokens": 655,
     "output_tokens": 43,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2433,7 +2573,8 @@
     "input_tokens": 655,
     "output_tokens": 33,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2450,7 +2591,8 @@
     "input_tokens": 618,
     "output_tokens": 118,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2467,7 +2609,8 @@
     "input_tokens": 618,
     "output_tokens": 123,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2484,7 +2627,8 @@
     "input_tokens": 618,
     "output_tokens": 123,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2501,7 +2645,8 @@
     "input_tokens": 619,
     "output_tokens": 51,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2518,7 +2663,8 @@
     "input_tokens": 619,
     "output_tokens": 124,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2535,7 +2681,8 @@
     "input_tokens": 619,
     "output_tokens": 59,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2552,7 +2699,8 @@
     "input_tokens": 619,
     "output_tokens": 1462,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2569,7 +2717,8 @@
     "input_tokens": 619,
     "output_tokens": 691,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2586,7 +2735,8 @@
     "input_tokens": 619,
     "output_tokens": 2275,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2603,7 +2753,8 @@
     "input_tokens": 618,
     "output_tokens": 40,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2620,7 +2771,8 @@
     "input_tokens": 618,
     "output_tokens": 45,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2637,7 +2789,8 @@
     "input_tokens": 618,
     "output_tokens": 75,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2654,7 +2807,8 @@
     "input_tokens": 711,
     "output_tokens": 46,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2671,7 +2825,8 @@
     "input_tokens": 711,
     "output_tokens": 95,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2688,7 +2843,8 @@
     "input_tokens": 711,
     "output_tokens": 80,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2705,7 +2861,8 @@
     "input_tokens": 620,
     "output_tokens": 529,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2722,7 +2879,8 @@
     "input_tokens": 620,
     "output_tokens": 427,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2739,7 +2897,8 @@
     "input_tokens": 620,
     "output_tokens": 1081,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2756,7 +2915,8 @@
     "input_tokens": 620,
     "output_tokens": 177,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2773,7 +2933,8 @@
     "input_tokens": 620,
     "output_tokens": 190,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2790,7 +2951,8 @@
     "input_tokens": 620,
     "output_tokens": 266,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2807,7 +2969,8 @@
     "input_tokens": 620,
     "output_tokens": 302,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2824,7 +2987,8 @@
     "input_tokens": 620,
     "output_tokens": 166,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2841,7 +3005,8 @@
     "input_tokens": 620,
     "output_tokens": 327,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2858,7 +3023,8 @@
     "input_tokens": 979,
     "output_tokens": 1251,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2875,7 +3041,8 @@
     "input_tokens": 979,
     "output_tokens": 257,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2892,7 +3059,8 @@
     "input_tokens": 979,
     "output_tokens": 208,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2909,7 +3077,8 @@
     "input_tokens": 618,
     "output_tokens": 247,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2926,7 +3095,8 @@
     "input_tokens": 618,
     "output_tokens": 355,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2943,7 +3113,8 @@
     "input_tokens": 618,
     "output_tokens": 418,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2960,7 +3131,8 @@
     "input_tokens": 818,
     "output_tokens": 187,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2977,7 +3149,8 @@
     "input_tokens": 818,
     "output_tokens": 214,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -2994,7 +3167,8 @@
     "input_tokens": 818,
     "output_tokens": 225,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3011,7 +3185,8 @@
     "input_tokens": 618,
     "output_tokens": 547,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3028,7 +3203,8 @@
     "input_tokens": 618,
     "output_tokens": 894,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3045,7 +3221,8 @@
     "input_tokens": 618,
     "output_tokens": 551,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3062,7 +3239,8 @@
     "input_tokens": 620,
     "output_tokens": 153,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3079,7 +3257,8 @@
     "input_tokens": 620,
     "output_tokens": 154,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3096,7 +3275,8 @@
     "input_tokens": 620,
     "output_tokens": 126,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3113,7 +3293,8 @@
     "input_tokens": 618,
     "output_tokens": 32,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3130,7 +3311,8 @@
     "input_tokens": 618,
     "output_tokens": 38,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3147,7 +3329,8 @@
     "input_tokens": 618,
     "output_tokens": 38,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3164,7 +3347,8 @@
     "input_tokens": 659,
     "output_tokens": 1470,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3181,7 +3365,8 @@
     "input_tokens": 659,
     "output_tokens": 538,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3198,7 +3383,8 @@
     "input_tokens": 659,
     "output_tokens": 1511,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3214,7 +3400,8 @@
     "input_tokens": 485,
     "output_tokens": 353,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3230,7 +3417,8 @@
     "input_tokens": 485,
     "output_tokens": 257,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3246,7 +3434,8 @@
     "input_tokens": 485,
     "output_tokens": 300,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3262,7 +3451,8 @@
     "input_tokens": 535,
     "output_tokens": 255,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3278,7 +3468,8 @@
     "input_tokens": 535,
     "output_tokens": 331,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3294,7 +3485,8 @@
     "input_tokens": 535,
     "output_tokens": 249,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3310,7 +3502,8 @@
     "input_tokens": 467,
     "output_tokens": 195,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3326,7 +3519,8 @@
     "input_tokens": 467,
     "output_tokens": 303,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3342,7 +3536,8 @@
     "input_tokens": 467,
     "output_tokens": 186,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3358,7 +3553,8 @@
     "input_tokens": 470,
     "output_tokens": 309,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3374,7 +3570,8 @@
     "input_tokens": 470,
     "output_tokens": 303,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3390,7 +3587,8 @@
     "input_tokens": 470,
     "output_tokens": 381,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3406,7 +3604,8 @@
     "input_tokens": 496,
     "output_tokens": 403,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3422,7 +3621,8 @@
     "input_tokens": 496,
     "output_tokens": 504,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3438,7 +3638,8 @@
     "input_tokens": 496,
     "output_tokens": 478,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3454,7 +3655,8 @@
     "input_tokens": 465,
     "output_tokens": 401,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3470,7 +3672,8 @@
     "input_tokens": 465,
     "output_tokens": 405,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3486,7 +3689,8 @@
     "input_tokens": 465,
     "output_tokens": 542,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3502,7 +3706,8 @@
     "input_tokens": 434,
     "output_tokens": 569,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3518,7 +3723,8 @@
     "input_tokens": 434,
     "output_tokens": 311,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3534,7 +3740,8 @@
     "input_tokens": 434,
     "output_tokens": 430,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3550,7 +3757,8 @@
     "input_tokens": 475,
     "output_tokens": 370,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3566,7 +3774,8 @@
     "input_tokens": 475,
     "output_tokens": 309,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3582,7 +3791,8 @@
     "input_tokens": 475,
     "output_tokens": 379,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3598,7 +3808,8 @@
     "input_tokens": 497,
     "output_tokens": 445,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3614,7 +3825,8 @@
     "input_tokens": 497,
     "output_tokens": 391,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3630,7 +3842,8 @@
     "input_tokens": 497,
     "output_tokens": 420,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3646,7 +3859,8 @@
     "input_tokens": 450,
     "output_tokens": 381,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3662,7 +3876,8 @@
     "input_tokens": 450,
     "output_tokens": 350,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3678,7 +3893,8 @@
     "input_tokens": 450,
     "output_tokens": 399,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3695,7 +3911,8 @@
     "input_tokens": 577,
     "output_tokens": 121,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3712,7 +3929,8 @@
     "input_tokens": 577,
     "output_tokens": 119,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3729,7 +3947,8 @@
     "input_tokens": 577,
     "output_tokens": 120,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3746,7 +3965,8 @@
     "input_tokens": 522,
     "output_tokens": 129,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3763,7 +3983,8 @@
     "input_tokens": 522,
     "output_tokens": 113,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3780,7 +4001,8 @@
     "input_tokens": 522,
     "output_tokens": 129,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3797,7 +4019,8 @@
     "input_tokens": 622,
     "output_tokens": 127,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3814,7 +4037,8 @@
     "input_tokens": 622,
     "output_tokens": 131,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3831,7 +4055,8 @@
     "input_tokens": 622,
     "output_tokens": 134,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3848,7 +4073,8 @@
     "input_tokens": 519,
     "output_tokens": 139,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3865,7 +4091,8 @@
     "input_tokens": 519,
     "output_tokens": 124,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3882,7 +4109,8 @@
     "input_tokens": 519,
     "output_tokens": 124,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3899,7 +4127,8 @@
     "input_tokens": 561,
     "output_tokens": 132,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3916,7 +4145,8 @@
     "input_tokens": 561,
     "output_tokens": 128,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3933,7 +4163,8 @@
     "input_tokens": 561,
     "output_tokens": 129,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3950,7 +4181,8 @@
     "input_tokens": 479,
     "output_tokens": 114,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3967,7 +4199,8 @@
     "input_tokens": 479,
     "output_tokens": 122,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -3984,7 +4217,8 @@
     "input_tokens": 479,
     "output_tokens": 103,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4001,7 +4235,8 @@
     "input_tokens": 484,
     "output_tokens": 157,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4018,7 +4253,8 @@
     "input_tokens": 484,
     "output_tokens": 146,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4035,7 +4271,8 @@
     "input_tokens": 484,
     "output_tokens": 153,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4052,7 +4289,8 @@
     "input_tokens": 492,
     "output_tokens": 140,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4069,7 +4307,8 @@
     "input_tokens": 492,
     "output_tokens": 149,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4086,7 +4325,8 @@
     "input_tokens": 492,
     "output_tokens": 143,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4103,7 +4343,8 @@
     "input_tokens": 476,
     "output_tokens": 142,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4120,7 +4361,8 @@
     "input_tokens": 476,
     "output_tokens": 135,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4137,7 +4379,8 @@
     "input_tokens": 476,
     "output_tokens": 137,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4154,7 +4397,8 @@
     "input_tokens": 451,
     "output_tokens": 126,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4171,7 +4415,8 @@
     "input_tokens": 451,
     "output_tokens": 144,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   },
   {
     "model": "gpt-5.6-terra",
@@ -4188,6 +4433,7 @@
     "input_tokens": 451,
     "output_tokens": 126,
     "cached": false,
-    "error": null
+    "error": null,
+    "refused": null
   }
 ]

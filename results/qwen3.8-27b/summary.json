@@ -1,25 +1,26 @@
 {
   "model": "qwen3.8-27b",
-  "global_score": 45.14,
+  "global_score": 66.9,
   "category_scores": {
     "log_parsing": 88.0,
     "anomaly_detection": 69.31,
-    "multimodal_rca": 33.1,
-    "metrics_timeseries": 37.19,
-    "pattern_correlation": 0.0,
-    "root_cause": 0.0,
-    "efficiency": 85.53
+    "multimodal_rca": 60.14,
+    "metrics_timeseries": 59.34,
+    "pattern_correlation": 79.33,
+    "root_cause": 49.95,
+    "efficiency": 30.33
   },
   "efficiency_metrics": {
-    "avg_latency_s": 1.7189,
-    "avg_total_tokens": 1470.9318,
-    "score_stddev": 0.0,
-    "latency_score": 0.9141,
-    "token_score": 0.6323,
-    "consistency_score": 1.0
+    "avg_latency_s": 22.2022,
+    "avg_total_tokens": 3879.874,
+    "score_stddev": 0.4728,
+    "latency_score": 0.0,
+    "token_score": 0.03,
+    "consistency_score": 0.9811
   },
-  "error_count": 114,
+  "error_count": 0,
+  "refused_count": 0,
   "total_runs": 246,
-  "total_duration_s": 226.9,
-  "last_run_wall_clock_s": 635.31
+  "total_duration_s": 5461.73,
+  "last_run_wall_clock_s": 12.11
 }

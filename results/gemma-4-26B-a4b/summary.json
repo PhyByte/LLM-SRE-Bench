@@ -1,22 +1,26 @@
 {
   "model": "gemma-4-26B-a4b",
-  "global_score": 15.74,
+  "global_score": 65.79,
   "category_scores": {
-    "metrics_timeseries": 40.01,
-    "pattern_correlation": 0.0,
-    "root_cause": 0.0,
-    "efficiency": 45.93
+    "metrics_timeseries": 56.04,
+    "log_parsing": 86.59,
+    "anomaly_detection": 70.95,
+    "pattern_correlation": 73.33,
+    "root_cause": 45.33,
+    "multimodal_rca": 60.4,
+    "efficiency": 36.89
   },
   "efficiency_metrics": {
-    "avg_latency_s": 14.2525,
-    "avg_total_tokens": 3377.1852,
-    "score_stddev": 0.1975,
-    "latency_score": 0.2874,
-    "token_score": 0.1557,
-    "consistency_score": 0.9921
+    "avg_latency_s": 15.139,
+    "avg_total_tokens": 4267.8382,
+    "score_stddev": 2.3596,
+    "latency_score": 0.2431,
+    "token_score": 0.0,
+    "consistency_score": 0.9056
   },
-  "error_count": 87,
-  "total_runs": 114,
-  "total_duration_s": 384.82,
-  "last_run_wall_clock_s": 1709.89
+  "error_count": 5,
+  "refused_count": 0,
+  "total_runs": 246,
+  "total_duration_s": 3648.49,
+  "last_run_wall_clock_s": 993.64
 }

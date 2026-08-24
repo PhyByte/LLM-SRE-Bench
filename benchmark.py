@@ -42,6 +42,7 @@ from reports.generator import (
     aggregate,
     build_pricing,
     classify_summaries,
+    format_coverage_lines,
     load_all_model_records,
     make_run_info,
     save_model_results,
@@ -91,17 +92,25 @@ def run(
     retries: int = typer.Option(
         1,
         "--retries",
-        help="Extra passes to re-attempt transiently-failed runs (401/timeout/5xx/bad JSON). 0 disables.",
+        help="Extra attempts per slot after a transient failure (timeout/5xx/bad JSON/"
+        "empty response). Retries run immediately on that slot before moving on. "
+        "0 disables.",
         min=0,
     ),
     no_cache: bool = typer.Option(False, "--no-cache", help="Bypass the response cache."),
     replace: bool = typer.Option(
         False,
         "--replace",
-        help="Overwrite each model's stored results instead of merging. By default a "
-        "run merges into existing per-model results (refreshing only the cases it ran), "
-        "so re-running a subset of categories keeps the model's other results and full "
-        "Duration. Use --replace to discard prior results for the models being run.",
+        help="Re-run every selected slot and overwrite stored results. By default a "
+        "run skips slots already scored in results/<model>/ and only calls "
+        "failures or never-run cases.",
+    ),
+    declined: bool = typer.Option(
+        False,
+        "--declined",
+        help="Also re-run slots the model previously declined (safety-classifier "
+        "refusals). Skipped by default because a refusal is deterministic for a "
+        "given prompt — use this to re-check after a provider policy change.",
     ),
     output_dir: Path = typer.Option("results", "--output-dir", "-o", help="Report directory."),
     data_dir: Optional[Path] = typer.Option(
@@ -154,13 +163,52 @@ def run(
         console.print("[red]No runnable models: every selected model is missing its API key.[/red]")
         raise typer.Exit(code=1)
 
-    total = BenchmarkRunner.total_tasks(config, datasets, model_names)
+    # Already-scored slots are not called again: a stored success stands, and a
+    # stored refusal is a settled 0 (the same prompt is declined again). Only
+    # failures and never-run cases cost API calls.
+    skip_keys: set[tuple[str, str, str, int]] = set()
+    skipped_declined = 0
+    if not replace:
+        selected_cases = {
+            (category, case["id"])
+            for category, cases in datasets.items()
+            for case in cases
+        }
+        for record in load_all_model_records(output_dir):
+            if (
+                record.model not in model_names
+                or record.error is not None
+                or (record.category, record.case_id) not in selected_cases
+                or not 0 <= record.run_index < config.runs_per_test
+            ):
+                continue
+            if record.refused:
+                if declined:
+                    continue
+                skipped_declined += 1
+            skip_keys.add(
+                (record.model, record.category, record.case_id, record.run_index)
+            )
+
+    planned = BenchmarkRunner.total_tasks(config, datasets, model_names)
+    total = BenchmarkRunner.total_tasks(config, datasets, model_names, skip_keys=skip_keys)
 
     console.print(
         f"\n[bold]LLM Observability Benchmark[/bold] — "
         f"{len(model_names)} model(s) x {n_cases} case(s) x {config.runs_per_test} run(s) "
-        f"= {total} calls\n"
+        f"= {planned} slots"
     )
+    if skip_keys:
+        scored = f"{len(skip_keys)} already scored"
+        if skipped_declined:
+            scored += f" ({skipped_declined} declined)"
+        console.print(f"  [dim]{scored}, {total} remaining[/dim]")
+        console.print(
+            "  [dim]--declined re-checks declined slots · "
+            "--replace re-runs everything[/dim]\n"
+        )
+    else:
+        console.print()
 
     runner = BenchmarkRunner(config, use_cache=not no_cache)
     records: list[RunRecord] = []
@@ -175,41 +223,65 @@ def run(
         console=console,
     ) as progress:
         task = progress.add_task("Benchmarking...", total=total)
-        seen_keys: set[tuple] = set()
 
         def on_record(record: RunRecord) -> None:
-            status = "[red]ERR[/red]" if record.error else f"{100 * record.score:5.1f}"
+            # Called once per slot with the final outcome (retries already done
+            # inline), so the counter always advances. Print a lasting line so
+            # past OK/ERR results stay visible instead of being overwritten.
+            if record.error:
+                status = "[red]ERR[/red]"
+            elif record.refused:
+                status = "[magenta]DECLINED[/magenta]"
+            else:
+                status = f"[green]{100 * record.score:5.1f}[/green]"
             cached = " [dim](cached)[/dim]" if record.cached else ""
-            key = (record.model, record.category, record.case_id, record.run_index)
-            # First sighting advances the bar; a repeat is a retry pass — relabel
-            # without advancing, so the counter stays within the planned total.
-            is_retry = key in seen_keys
-            seen_keys.add(key)
-            tag = " [yellow](retry)[/yellow]" if is_retry else ""
-            progress.update(
-                task,
-                advance=0 if is_retry else 1,
-                description=(
-                    f"{record.model} · {record.category} · {record.case_id} "
-                    f"#{record.run_index} → {status}{cached}{tag}"
-                ),
+            detail = ""
+            if record.error:
+                # Keep the line short: first meaningful clause of the error.
+                brief = record.error.split(" — ", 1)[0]
+                if len(brief) > 72:
+                    brief = brief[:69] + "..."
+                detail = f"  [dim]{brief}[/dim]"
+            elif record.refused:
+                detail = f"  [dim]{record.refused}[/dim]"
+            progress.print(
+                f"{record.model} · {record.category} · {record.case_id} "
+                f"#{record.run_index} → {status}{cached}{detail}"
+            )
+            # Advance the counter; leave the live description alone — the runner
+            # sets it to the next in-flight slot via on_status.
+            progress.update(task, advance=1)
+
+        # Checkpoint each model the moment it finishes. A full sweep takes hours,
+        # and a Ctrl-C partway through must not throw away the models that are
+        # already done. Also enables running one model at a time across sessions.
+        def on_model_complete(
+            model_name: str, model_recs: list[RunRecord], duration: float
+        ) -> None:
+            save_model_results(
+                output_dir,
+                model_name,
+                model_recs,
+                total_duration_s=duration,
+                merge=not replace,
             )
 
+        def on_status(message: str) -> None:
+            # Loading / in-flight retries: update the live bar only (no new line).
+            progress.update(task, description=f"[cyan]{message}[/cyan]")
+
         records, model_durations = runner.run(
-            datasets, model_names, on_record=on_record, retry_failed=retries
+            datasets,
+            model_names,
+            on_record=on_record,
+            retry_failed=retries,
+            skip_keys=skip_keys,
+            on_model_complete=on_model_complete,
+            on_status=on_status,
         )
 
-    # 1. Persist the models we just ran into their own folders
-    #    (this enables running one model at a time across multiple sessions)
-    for model_name in sorted({r.model for r in records}):
-        model_recs = [r for r in records if r.model == model_name]
-        duration = model_durations.get(model_name)
-        save_model_results(
-            output_dir, model_name, model_recs, total_duration_s=duration, merge=not replace
-        )
-
-    # 2. Rebuild the cross-model comparison from *all* available per-model folders
-    #    (merges newly run models with any previously saved ones)
+    # Rebuild the cross-model comparison from *all* available per-model folders
+    # (merges newly run models with any previously saved ones)
     all_records = load_all_model_records(output_dir) or records
     pricing = build_pricing(config.models)
     summaries = aggregate(all_records, pricing)
@@ -222,10 +294,7 @@ def run(
     output = write_aggregated_reports(output_dir, pricing=pricing)
 
     _print_summary_table(summaries)
-
-    failed = sum(1 for r in all_records if r.error is not None)
-    if failed:
-        console.print(f"[yellow]{failed}/{len(all_records)} runs failed across all models[/yellow]")
+    _print_coverage_resume(all_records)
     console.print(f"\nPer-model results saved under [bold]{output}/<model>/[/bold]")
     console.print(f"Aggregated reports written to [bold]{output}/[/bold]:")
     for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
@@ -263,6 +332,7 @@ def aggregate_cmd(
     output = write_aggregated_reports(output_dir, pricing=pricing)
 
     _print_summary_table(summaries)
+    _print_coverage_resume(all_records)
 
     console.print(f"\nRebuilt aggregated reports from {n_models} model(s) in [bold]{output}/[/bold]")
     for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
@@ -337,6 +407,19 @@ def _print_summary_table(summaries) -> None:
         )
         for summary in failed:
             console.print(f"  [dim]- {summary.model} ({summary.total_runs} calls failed)[/dim]")
+
+
+def _print_coverage_resume(records: list[RunRecord]) -> None:
+    """After the ranking table: which models missed runs, and where."""
+    lines = format_coverage_lines(records)
+    if not lines:
+        return
+    console.print(f"\n[yellow]{lines[0]}[/yellow]")
+    for line in lines[1:]:
+        if line.startswith("    "):
+            console.print(f"[dim]{line}[/dim]")
+        else:
+            console.print(line)
 
 
 @app.command("list-categories")
