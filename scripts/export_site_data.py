@@ -241,6 +241,7 @@ def export(results_dir: Path | None = None) -> tuple[Path, dict]:
                 "total_runs": summary["total_runs"],
                 "repeats_per_case": repeats,
                 "errors": summary["error_count"],
+                "refused": summary.get("refused_count", 0),
                 "duration_s": summary["total_duration_s"],
                 "avg_latency_s": round(summary["efficiency_metrics"].get("avg_latency_s", 0), 2),
                 "avg_tokens": round(summary["efficiency_metrics"].get("avg_total_tokens", 0)),
