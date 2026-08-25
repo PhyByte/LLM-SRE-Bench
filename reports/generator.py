@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import itertools
 import json
+import re
 import statistics
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
@@ -20,7 +21,12 @@ from typing import Any
 
 import pandas as pd
 
-from core.config import CATEGORY_WEIGHTS
+from core.config import (
+    CATEGORY_WEIGHTS,
+    DEVELOPER_CATEGORIES,
+    SRE_CATEGORIES,
+    set_suite,
+)
 from core.runner import RunRecord
 from evaluators.efficiency import evaluate as evaluate_efficiency
 
@@ -47,6 +53,9 @@ def aggregate(records: list[RunRecord], pricing: Pricing | None = None) -> list[
 
     Weights are renormalized over the categories actually run (plus
     efficiency), so partial runs via --category still yield a 0-100 score.
+
+    For ``code_generation`` records, also emits per-language scores
+    (``code_gen_python``, …) used by the developer comparison table.
     """
     by_model: dict[str, list[RunRecord]] = defaultdict(list)
     for record in records:
@@ -63,6 +72,17 @@ def aggregate(records: list[RunRecord], pricing: Pricing | None = None) -> list[
         for category, cases in by_category_case.items():
             case_means = [statistics.fmean(scores) for scores in cases.values()]
             category_scores[category] = 100 * statistics.fmean(case_means)
+
+        # Developer track: break code_generation down by language for the
+        # comparison table (case ids are family_language, e.g. slugify_python).
+        if "code_generation" in by_category_case:
+            by_lang: dict[str, list[float]] = defaultdict(list)
+            for case_id, scores in by_category_case["code_generation"].items():
+                lang = _language_from_case_id(case_id)
+                if lang is not None:
+                    by_lang[lang].append(statistics.fmean(scores))
+            for lang, means in by_lang.items():
+                category_scores[f"code_gen_{lang}"] = 100 * statistics.fmean(means)
 
         efficiency = evaluate_efficiency(model_records)
         category_scores["efficiency"] = 100 * efficiency.score
@@ -110,6 +130,16 @@ def aggregate(records: list[RunRecord], pricing: Pricing | None = None) -> list[
 
     summaries.sort(key=lambda s: s.global_score, reverse=True)
     return summaries
+
+
+_CASE_ID_LANGUAGE = re.compile(
+    r"_(python|typescript|go|rust)$",
+)
+
+
+def _language_from_case_id(case_id: str) -> str | None:
+    match = _CASE_ID_LANGUAGE.search(case_id)
+    return match.group(1) if match else None
 
 
 # ---------------------------------------------------------------------------
@@ -254,11 +284,14 @@ def write_aggregated_reports(
     extra_run_info: dict[str, Any] | None = None,
     pricing: Pricing | None = None,
 ) -> Path:
-    """Load records from all per-model folders, aggregate, and write the
-    top-level comparison reports (comparison_table.md, etc.).
+    """Load records from all per-model folders, aggregate, and write reports.
 
-    This is the function you call to "rebuild the report" after running
-    models individually.
+    Writes two independent leaderboards when both tracks have data:
+    - ``comparison_table.md`` — SRE / observability
+    - ``comparison_table_developer.md`` — developer / code generation
+
+    Shared artifacts (CSV, JSON, summary report) keep the full record set;
+    the summary report and primary JSON ranking use the SRE track when present.
     """
     base = Path(base_dir)
     base.mkdir(parents=True, exist_ok=True)
@@ -266,7 +299,6 @@ def write_aggregated_reports(
     all_records = load_all_model_records(base)
 
     if not all_records:
-        # Nothing to do
         return base
 
     # If we loaded from legacy flat files, seed per-model folders for future use
@@ -277,16 +309,15 @@ def write_aggregated_reports(
             model_recs = [r for r in all_records if r.model == model]
             save_model_results(base, model, model_recs)
 
-    summaries = aggregate(all_records, pricing)
-
-    # Build a reasonable run_info
     n_models = len({r.model for r in all_records})
     n_cases = len({(r.category, r.case_id) for r in all_records})
-    # Try to infer runs_per_test from the data (most common value)
     sorted_for_runs = sorted(all_records, key=lambda r: (r.model, r.category, r.case_id))
-    runs_counts = [len(list(g)) for _, g in itertools.groupby(
-        sorted_for_runs, key=lambda r: (r.model, r.category, r.case_id)
-    )]
+    runs_counts = [
+        len(list(g))
+        for _, g in itertools.groupby(
+            sorted_for_runs, key=lambda r: (r.model, r.category, r.case_id)
+        )
+    ]
     runs_per_test = max(runs_counts) if runs_counts else 3
 
     run_info = {
@@ -298,8 +329,53 @@ def write_aggregated_reports(
     if extra_run_info:
         run_info.update(extra_run_info)
 
-    # Write the usual top-level artifacts
-    _write_comparison_table(base / "comparison_table.md", summaries, run_info)
+    sre_records = [r for r in all_records if r.category in SRE_CATEGORIES]
+    dev_records = [r for r in all_records if r.category in DEVELOPER_CATEGORIES]
+    has_sre = bool(sre_records)
+    has_dev = bool(dev_records)
+
+    if has_sre:
+        set_suite("sre")
+        summaries = aggregate(sre_records, pricing)
+        sre_info = {
+            **run_info,
+            "n_models": len({r.model for r in sre_records}),
+            "n_cases": len({(r.category, r.case_id) for r in sre_records}),
+            "suite": "sre",
+        }
+        _write_comparison_table(
+            base / "comparison_table.md",
+            summaries,
+            sre_info,
+            title="SRE / Observability Benchmark",
+            sibling="comparison_table_developer.md" if has_dev else None,
+            sibling_label="Developer / Code Generation",
+        )
+    else:
+        set_suite("developer")
+        summaries = aggregate(dev_records, pricing)
+
+    if has_dev:
+        set_suite("developer")
+        dev_summaries = aggregate(dev_records, pricing)
+        dev_info = {
+            **run_info,
+            "n_models": len({r.model for r in dev_records}),
+            "n_cases": len({(r.category, r.case_id) for r in dev_records}),
+            "suite": "developer",
+        }
+        _write_comparison_table(
+            base / "comparison_table_developer.md",
+            dev_summaries,
+            dev_info,
+            title="Developer / Code Generation Benchmark",
+            sibling="comparison_table.md" if has_sre else None,
+            sibling_label="SRE / Observability",
+        )
+        if has_sre:
+            set_suite("sre")
+            summaries = aggregate(sre_records, pricing)
+
     _write_detailed_csv(base / "detailed_results.csv", all_records)
     _write_summary_report(base / "summary_report.md", summaries, all_records, run_info)
     _write_results_json(base / "results.json", summaries, all_records, run_info)
@@ -314,6 +390,11 @@ _CATEGORY_LABELS = {
     "metrics_timeseries": "Metrics Time-Series",
     "root_cause": "Root Cause & Summary",
     "multimodal_rca": "Multi-modal RCA",
+    "code_generation": "Code Generation",
+    "code_gen_python": "Python",
+    "code_gen_typescript": "TypeScript",
+    "code_gen_go": "Go",
+    "code_gen_rust": "Rust",
     "efficiency": "Efficiency & Consistency",
 }
 
@@ -332,6 +413,17 @@ _CATEGORY_DESCRIPTIONS = {
     "multimodal_rca": "Localizing the culprit service across metrics, logs and traces "
     "on real microservice incidents. 0.4 culprit + 0.25 fault type + 0.25 modality "
     "grounding (citing the modalities that actually carry signal) + 0.1 evidence recall.",
+    "code_generation": "Writing working code for developer/SRE utilities across "
+    "languages. Overall mean of the per-language columns.",
+    "code_gen_python": "Code-generation cases targeting Python. Mean of the six "
+    "Python task families (slugify, interval merge, rate limiter, config overlay, "
+    "LRU cache, log parser).",
+    "code_gen_typescript": "Code-generation cases targeting TypeScript. Mean of "
+    "the six TypeScript task families.",
+    "code_gen_go": "Code-generation cases targeting Go. Mean of the six Go task "
+    "families. Scores 0 when the Go toolchain is unavailable.",
+    "code_gen_rust": "Code-generation cases targeting Rust. Mean of the six Rust "
+    "task families.",
     "efficiency": "Derived from the runs above, not a dataset. 0.4 speed (vs a 20s "
     "budget) + 0.3 token thrift (vs 4000 tokens) + 0.3 run-to-run score stability.",
 }
@@ -387,13 +479,12 @@ def write_reports(
 ) -> Path:
     """Legacy-friendly entry point.
 
-    - Saves per-model records into results/<model>/ (so future aggregation works)
-    - Then writes the usual top-level aggregated reports.
+    Saves per-model records, then rebuilds dual-track comparison tables from
+    every folder under the output directory.
     """
     output = Path(output_dir)
     output.mkdir(parents=True, exist_ok=True)
 
-    # Always persist per-model data (this is the new canonical storage)
     by_model: dict[str, list[RunRecord]] = defaultdict(list)
     for r in records:
         by_model[r.model].append(r)
@@ -401,13 +492,7 @@ def write_reports(
     for model, model_records in by_model.items():
         save_model_results(output, model, model_records, run_info)
 
-    # Write the combined view at the root
-    _write_comparison_table(output / "comparison_table.md", summaries, run_info)
-    _write_detailed_csv(output / "detailed_results.csv", records)
-    _write_summary_report(output / "summary_report.md", summaries, records, run_info)
-    _write_results_json(output / "results.json", summaries, records, run_info)
-
-    return output
+    return write_aggregated_reports(output, extra_run_info=run_info)
 
 
 def _md_table(headers: list[str], rows: list[list[str]]) -> str:
@@ -463,15 +548,28 @@ def classify_summaries(
 ) -> tuple[list[ModelSummary], list[ModelSummary], list[ModelSummary], set[str]]:
     """Split models into (ranked, partial, failed, expected_categories).
 
-    Only models that ran the full set of categories present in this benchmark
-    are ranked against each other — a model that ran just one category would
-    otherwise get a misleadingly high global score (its weights renormalize
-    over the subset it ran). `expected` is the union of task categories any
-    model produced data for.
+    Only models that ran the full shared category set are ranked against each
+    other — a model that ran just one category would otherwise get a
+    misleadingly high global score (its weights renormalize over the subset it
+    ran).
+
+    ``expected`` is the set of task categories present for a *majority* of
+    non-failed models (at least 2). A category only one model has run (e.g. an
+    early ``code_generation`` pass) still appears as a table column when the
+    suite includes it, but does not demote every other model to "partial".
     """
-    expected: set[str] = set()
-    for s in summaries:
-        expected |= _task_categories(s)
+    non_failed = [s for s in summaries if s.error_count < s.total_runs]
+    cat_counts: Counter[str] = Counter()
+    for s in non_failed:
+        cat_counts.update(_task_categories(s))
+
+    if not non_failed:
+        expected: set[str] = set()
+    else:
+        # Majority of models that produced any scored runs; floor of 2 so a
+        # single-model smoke test doesn't invent a gate against itself either.
+        threshold = max(2, (len(non_failed) + 1) // 2)
+        expected = {c for c, n in cat_counts.items() if n >= threshold}
 
     ranked, partial, failed = [], [], []
     for s in summaries:
@@ -672,9 +770,17 @@ def format_coverage_lines(records: list[RunRecord]) -> list[str]:
     return lines
 
 
-def _write_comparison_table(path: Path, summaries: list[ModelSummary], run_info: dict[str, Any]) -> None:
+def _write_comparison_table(
+    path: Path,
+    summaries: list[ModelSummary],
+    run_info: dict[str, Any],
+    *,
+    title: str = "SRE / Observability Benchmark",
+    sibling: str | None = None,
+    sibling_label: str | None = None,
+) -> None:
     categories = _ordered_categories(summaries)
-    ranked, partial, failed, expected = classify_summaries(summaries)
+    ranked, partial, failed, _expected = classify_summaries(summaries)
 
     show_cost = any(s.total_cost_usd is not None for s in ranked)
     headers = ["Rank", "Model", "Global Score"] + [
@@ -689,13 +795,20 @@ def _write_comparison_table(path: Path, summaries: list[ModelSummary], run_info:
             + [_fmt_duration(summary.total_duration_s)]
             + ([_fmt_cost(summary.total_cost_usd)] if show_cost else [])
         )
+
+    intro = (
+        f"All scores are 0-100. The global score is the weighted average of the category scores. "
+        f"Only models that ran the full category set for this track are ranked."
+    )
+    if sibling:
+        intro += f" See also [{sibling_label or sibling}]({sibling})."
+
     content = (
-        f"# LLM Observability Benchmark — Comparison\n\n"
+        f"# {title} — Comparison\n\n"
         f"Generated: {run_info['timestamp']}  \n"
         f"Runs per test: {run_info['runs_per_test']} · Models: {run_info['n_models']} · "
         f"Test cases: {run_info['n_cases']}\n\n"
-        f"All scores are 0-100. The global score is the weighted average of the category scores. "
-        f"Only models that ran the full category set are ranked.\n\n"
+        f"{intro}\n\n"
         + _md_table(headers, rows)
         + "\n"
     )
@@ -708,11 +821,22 @@ def _write_comparison_table(path: Path, summaries: list[ModelSummary], run_info:
             covered = sorted(_task_categories(s))
             content += f"- {s.model} — ran only: {', '.join(covered) or 'none'}\n"
     if failed:
-        content += "\n**Did not complete** (every call failed — bad key, no model access, or unreachable endpoint):\n\n"
+        content += (
+            "\n**Did not complete** (every call failed — bad key, no model access, or "
+            "unreachable endpoint):\n\n"
+        )
         content += "\n".join(f"- {s.model} ({s.total_runs} calls failed)" for s in failed)
         content += "\n"
     content += "\n" + _column_legend(categories, show_cost)
     path.write_text(content, encoding="utf-8")
+
+def _format_metric_value(value: Any) -> Any:
+    """Round numeric metrics; leave strings/bools as-is (e.g. code_gen toolchain errors)."""
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return round(value, 4)
+    return value
 
 
 def _write_detailed_csv(path: Path, records: list[RunRecord]) -> None:
@@ -729,7 +853,9 @@ def _write_detailed_csv(path: Path, records: list[RunRecord]) -> None:
             "cached": r.cached,
             "error": r.error or "",
             "refused": r.refused or "",
-            "metrics": json.dumps({k: round(v, 4) for k, v in r.metrics.items()}),
+            "metrics": json.dumps(
+                {k: _format_metric_value(v) for k, v in r.metrics.items()}
+            ),
         }
         for r in records
     ]

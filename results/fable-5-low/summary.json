@@ -1,26 +1,25 @@
 {
   "model": "fable-5-low",
-  "global_score": 66.58,
+  "global_score": 78.91,
   "category_scores": {
-    "log_parsing": 91.04,
-    "anomaly_detection": 67.39,
-    "multimodal_rca": 61.4,
-    "metrics_timeseries": 71.53,
-    "pattern_correlation": 61.33,
-    "root_cause": 41.39,
-    "efficiency": 66.1
+    "code_generation": 78.77,
+    "code_gen_python": 94.64,
+    "code_gen_typescript": 95.83,
+    "code_gen_go": 80.83,
+    "code_gen_rust": 43.78,
+    "efficiency": 81.42
   },
   "efficiency_metrics": {
-    "avg_latency_s": 6.5012,
-    "avg_total_tokens": 2486.8661,
-    "score_stddev": 1.8721,
-    "latency_score": 0.6749,
-    "token_score": 0.3783,
-    "consistency_score": 0.9251
+    "avg_latency_s": 6.0989,
+    "avg_total_tokens": 843.9552,
+    "score_stddev": 0.0433,
+    "latency_score": 0.6951,
+    "token_score": 0.789,
+    "consistency_score": 0.9983
   },
   "error_count": 0,
-  "refused_count": 22,
-  "total_runs": 246,
-  "total_duration_s": 1456.27,
-  "last_run_wall_clock_s": 67.95
+  "refused_count": 5,
+  "total_runs": 72,
+  "total_duration_s": 408.63,
+  "last_run_wall_clock_s": 60.71
 }

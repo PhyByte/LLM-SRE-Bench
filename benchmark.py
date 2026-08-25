@@ -307,7 +307,6 @@ def run(
     # (merges newly run models with any previously saved ones)
     all_records = load_all_model_records(output_dir) or records
     pricing = build_pricing(config.models)
-    summaries = aggregate(all_records, pricing)
 
     # Use the actual number of distinct models we have data for
     actual_models = len({r.model for r in all_records})
@@ -316,12 +315,30 @@ def run(
 
     output = write_aggregated_reports(output_dir, pricing=pricing)
 
+    # Console summary uses the active suite from the run; for dual-track data the
+    # SRE table stays the primary printed ranking.
+    sre_recs = [r for r in all_records if r.category in SRE_CATEGORIES]
+    if sre_recs:
+        set_suite("sre")
+        summaries = aggregate(sre_recs, pricing)
+    else:
+        summaries = aggregate(all_records, pricing)
+
     _print_summary_table(summaries)
     _print_coverage_resume(all_records)
     console.print(f"\nPer-model results saved under [bold]{output}/<model>/[/bold]")
     console.print(f"Aggregated reports written to [bold]{output}/[/bold]:")
-    for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
-        console.print(f"  - {output / name}")
+    report_names = [
+        "comparison_table.md",
+        "comparison_table_developer.md",
+        "detailed_results.csv",
+        "summary_report.md",
+        "results.json",
+    ]
+    for name in report_names:
+        path = output / name
+        if path.exists():
+            console.print(f"  - {path}")
     _write_site_data(output)
 
 
@@ -330,7 +347,10 @@ def aggregate_cmd(
     config_path: Path = typer.Option("models.json", "--config", help="Config file (for model pricing)."),
     output_dir: Path = typer.Option("results", "--output-dir", "-o", help="Results directory containing per-model folders."),
 ) -> None:
-    """Rebuild comparison_table.md, summary_report.md, etc. from all per-model result folders.
+    """Rebuild comparison tables and reports from all per-model result folders.
+
+    Writes ``comparison_table.md`` (SRE) and, when code-generation results exist,
+    ``comparison_table_developer.md``.
 
     Use this after running models individually, e.g.:
         python benchmark.py run -m grok-4
@@ -346,20 +366,30 @@ def aggregate_cmd(
     if config_path.exists():
         pricing = build_pricing(BenchmarkConfig.load(config_path).models)
 
-    summaries = aggregate(all_records, pricing)
-
-    n_models = len({r.model for r in all_records})
-    n_cases = len({(r.category, r.case_id) for r in all_records})
-
-    run_info = make_run_info(3, n_models, n_cases)
     output = write_aggregated_reports(output_dir, pricing=pricing)
 
+    sre_recs = [r for r in all_records if r.category in SRE_CATEGORIES]
+    if sre_recs:
+        set_suite("sre")
+        summaries = aggregate(sre_recs, pricing)
+    else:
+        summaries = aggregate(all_records, pricing)
+
+    n_models = len({r.model for r in all_records})
     _print_summary_table(summaries)
     _print_coverage_resume(all_records)
 
     console.print(f"\nRebuilt aggregated reports from {n_models} model(s) in [bold]{output}/[/bold]")
-    for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
-        console.print(f"  - {output / name}")
+    for name in (
+        "comparison_table.md",
+        "comparison_table_developer.md",
+        "detailed_results.csv",
+        "summary_report.md",
+        "results.json",
+    ):
+        path = output / name
+        if path.exists():
+            console.print(f"  - {path}")
     _write_site_data(output)
 
 

@@ -1,26 +1,25 @@
 {
   "model": "qwen3-coder-30b",
-  "global_score": 55.76,
+  "global_score": 76.49,
   "category_scores": {
-    "log_parsing": 87.89,
-    "anomaly_detection": 60.94,
-    "multimodal_rca": 33.33,
-    "metrics_timeseries": 22.47,
-    "pattern_correlation": 67.33,
-    "root_cause": 44.36,
-    "efficiency": 77.83
+    "code_generation": 75.67,
+    "code_gen_python": 94.64,
+    "code_gen_typescript": 97.5,
+    "code_gen_go": 63.33,
+    "code_gen_rust": 47.21,
+    "efficiency": 91.99
   },
   "efficiency_metrics": {
-    "avg_latency_s": 1.8629,
-    "avg_total_tokens": 2338.3943,
-    "score_stddev": 0.7587,
-    "latency_score": 0.9069,
-    "token_score": 0.4154,
-    "consistency_score": 0.9697
+    "avg_latency_s": 0.9748,
+    "avg_total_tokens": 551.3333,
+    "score_stddev": 1.6021,
+    "latency_score": 0.9513,
+    "token_score": 0.8622,
+    "consistency_score": 0.9359
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 458.28,
-  "last_run_wall_clock_s": 9.8
+  "total_runs": 72,
+  "total_duration_s": 70.19,
+  "last_run_wall_clock_s": 11.86
 }

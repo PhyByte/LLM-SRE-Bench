@@ -182,18 +182,23 @@ class OpenAICompatibleClient(BaseClient):
             text = choice["message"]["content"] or ""
         except (KeyError, IndexError) as exc:
             raise ClientError(f"malformed completion response: {data}") from exc
-        if not text.strip():
-            # Reasoning models (o-series, GPT-5+) can spend the whole token
-            # budget on hidden reasoning and return empty content. Surface a
-            # clear, retryable error instead of a downstream "no JSON" failure.
-            finish = choice.get("finish_reason")
-            hint = (
-                " — raise this model's max_tokens (reasoning consumed the budget)"
-                if finish == "length"
-                else ""
-            )
-            raise ClientError(f"empty response (finish_reason={finish}){hint}")
         usage = data.get("usage") or {}
+        if not text.strip():
+            # Reasoning models (o-series, GPT-5+, Qwen-thinking via LM Studio)
+            # can spend the whole token budget on hidden reasoning and return
+            # empty content. Surface a clear error instead of a downstream
+            # "no JSON" failure. For local Qwen, prefer reasoning_effort=none.
+            finish = choice.get("finish_reason")
+            details = usage.get("completion_tokens_details") or {}
+            reasoning_tokens = details.get("reasoning_tokens")
+            hint = ""
+            if finish == "length":
+                hint = " — raise this model's max_tokens (reasoning consumed the budget)"
+                if reasoning_tokens:
+                    hint += f"; reasoning_tokens={reasoning_tokens}"
+                if self.model.reasoning_effort != "none":
+                    hint += " or set reasoning_effort=none"
+            raise ClientError(f"empty response (finish_reason={finish}){hint}")
         return LLMResponse(
             text=text,
             latency_s=latency,
@@ -471,9 +476,9 @@ class MockClient(BaseClient):
 }''',
             "go": '''func Slugify(text string) string {
     text = strings.ToLower(text)
-    text = regexp.MustCompile("[_\\s]+").ReplaceAllString(text, "-")
-    text = regexp.MustCompile("[^a-z0-9-]").ReplaceAllString(text, "")
-    text = regexp.MustCompile("-+").ReplaceAllString(text, "-")
+    text = regexp.MustCompile(`[_\\s]+`).ReplaceAllString(text, "-")
+    text = regexp.MustCompile(`[^a-z0-9-]`).ReplaceAllString(text, "")
+    text = regexp.MustCompile(`-+`).ReplaceAllString(text, "-")
     return strings.Trim(text, "-")
 }''',
             "rust": '''fn slugify(text: &str) -> String {
@@ -786,7 +791,7 @@ impl LRUCache {
     return {level: "UNKNOWN", timestamp: "", service: "", message: line};
 }''',
             "go": '''func ParseLogLine(line string) map[string]string {
-    pattern := regexp.MustCompile("\\[(\\w+)\\]\\s+([\\d\\-T:]+)\\s+\\|\\s+([^|]+)\\s+\\|\\s+(.+)")
+    pattern := regexp.MustCompile(`\\[(\\w+)\\]\\s+([\\d\\-T:]+)\\s+\\|\\s+([^|]+)\\s+\\|\\s+(.+)`)
     match := pattern.FindStringSubmatch(line)
     if len(match) > 0 {
         level := match[1]

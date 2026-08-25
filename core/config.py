@@ -26,11 +26,13 @@ SRE_CATEGORY_WEIGHTS: dict[str, float] = {
     "efficiency": 0.05,
 }
 
-# Developer/code generation track weights (per language)
-# Each language is equally weighted, and within language all families are equal
+# Developer track: equal weight per language (95% total) + efficiency (5%).
+# Keys are synthetic score buckets derived from code_generation case_ids.
+CODE_GEN_LANGUAGES = ("python", "typescript", "go", "rust")
+_CODE_GEN_LANG_WEIGHT = 0.95 / len(CODE_GEN_LANGUAGES)
 CODE_GEN_CATEGORY_WEIGHTS: dict[str, float] = {
-    "code_generation": 0.95,  # Main category
-    "efficiency": 0.05,  # Reused from SRE
+    **{f"code_gen_{lang}": _CODE_GEN_LANG_WEIGHT for lang in CODE_GEN_LANGUAGES},
+    "efficiency": 0.05,
 }
 
 # Category weights used for scoring (defaults to SRE track)
@@ -75,10 +77,11 @@ class ModelConfig(BaseModel):
     # provider's default. Define two entries with the same model_id but different
     # names/efforts to A/B "with vs. without" heavy reasoning. Wiring per provider:
     #   - openai / xai: sent as `reasoning_effort` on /chat/completions
-    #     (OpenAI GPT-5/o-series, xAI Grok models that accept it).
+    #     (OpenAI GPT-5/o-series, xAI Grok models that accept it; LM Studio Qwen
+    #     accepts "none" to disable thinking and avoid empty finish_reason=length).
     #   - anthropic: sent as `output_config.effort` (Claude models — Fable 5,
     #     Opus 5/4.8, Sonnet 5, etc. — where thinking is always on and effort is
-    #     the depth control). "minimal" is not valid here; use "low".
+    #     the depth control). "minimal"/"none" are not valid here; use "low".
     #   - ollama: ignored.
     reasoning_effort: Optional[str] = None
     # Price in USD per 1,000,000 tokens, used to compute a total cost column in
@@ -93,9 +96,10 @@ class ModelConfig(BaseModel):
     def _check_effort(cls, value: Optional[str]) -> Optional[str]:
         if value is None:
             return None
-        # Union across providers: minimal (OpenAI) + low/medium/high (all) +
-        # xhigh/max (Anthropic, newer). Provider rejects anything it doesn't take.
-        allowed = {"minimal", "low", "medium", "high", "xhigh", "max"}
+        # Union across providers: none (LM Studio / Qwen — disable thinking) +
+        # minimal (OpenAI) + low/medium/high (all) + xhigh/max (Anthropic, newer).
+        # Provider rejects anything it doesn't take.
+        allowed = {"none", "minimal", "low", "medium", "high", "xhigh", "max"}
         if value not in allowed:
             raise ValueError(
                 f"reasoning_effort must be one of {sorted(allowed)} or null, got {value!r}"
@@ -149,27 +153,45 @@ def set_suite(suite: str) -> list[str]:
 
     Returns:
         List of category names to run
-    """
-    global CATEGORY_WEIGHTS, TASK_CATEGORIES
 
+    Note:
+        Mutates ``CATEGORY_WEIGHTS`` and ``TASK_CATEGORIES`` in place so every
+        module that imported those names keeps seeing the active suite.
+    """
     if suite == "sre":
-        CATEGORY_WEIGHTS = SRE_CATEGORY_WEIGHTS.copy()
-        TASK_CATEGORIES = SRE_CATEGORIES
-        return SRE_CATEGORIES
-    elif suite == "developer":
-        CATEGORY_WEIGHTS = CODE_GEN_CATEGORY_WEIGHTS.copy()
-        TASK_CATEGORIES = DEVELOPER_CATEGORIES
-        return DEVELOPER_CATEGORIES
-    elif suite == "all":
-        # Combine both suites with adjusted weights
-        # Give 60% to SRE and 40% to developer
-        CATEGORY_WEIGHTS = {}
+        CATEGORY_WEIGHTS.clear()
+        CATEGORY_WEIGHTS.update(SRE_CATEGORY_WEIGHTS)
+        TASK_CATEGORIES[:] = list(SRE_CATEGORIES)
+        return list(SRE_CATEGORIES)
+    if suite == "developer":
+        CATEGORY_WEIGHTS.clear()
+        CATEGORY_WEIGHTS.update(CODE_GEN_CATEGORY_WEIGHTS)
+        TASK_CATEGORIES[:] = list(DEVELOPER_CATEGORIES)
+        return list(DEVELOPER_CATEGORIES)
+    if suite == "all":
+        # Combine both suites with adjusted weights (60% SRE / 40% developer).
+        combined: dict[str, float] = {}
         for cat, weight in SRE_CATEGORY_WEIGHTS.items():
             if cat != "efficiency":
-                CATEGORY_WEIGHTS[cat] = weight * 0.60
-        CATEGORY_WEIGHTS["code_generation"] = 0.40 * 0.95
-        CATEGORY_WEIGHTS["efficiency"] = 0.05  # Shared across both
-        TASK_CATEGORIES = SRE_CATEGORIES + DEVELOPER_CATEGORIES
-        return TASK_CATEGORIES
-    else:
-        raise ValueError(f"unknown suite '{suite}', must be 'sre', 'developer', or 'all'")
+                combined[cat] = weight * 0.60
+        combined["code_generation"] = 0.40 * 0.95
+        combined["efficiency"] = 0.05
+        CATEGORY_WEIGHTS.clear()
+        CATEGORY_WEIGHTS.update(combined)
+        TASK_CATEGORIES[:] = list(SRE_CATEGORIES) + list(DEVELOPER_CATEGORIES)
+        return list(TASK_CATEGORIES)
+    raise ValueError(f"unknown suite '{suite}', must be 'sre', 'developer', or 'all'")
+
+
+def detect_suite(categories: set[str]) -> str:
+    """Infer which suite fits a set of category names from stored results.
+
+    Returns 'all' when both tracks appear, otherwise the single track that does.
+    """
+    has_sre = bool(categories & set(SRE_CATEGORIES))
+    has_dev = bool(categories & set(DEVELOPER_CATEGORIES))
+    if has_sre and has_dev:
+        return "all"
+    if has_dev:
+        return "developer"
+    return "sre"

@@ -1,26 +1,25 @@
 {
   "model": "grok-4.5",
-  "global_score": 69.96,
+  "global_score": 84.97,
   "category_scores": {
-    "metrics_timeseries": 69.49,
-    "pattern_correlation": 85.33,
-    "root_cause": 54.5,
-    "log_parsing": 91.57,
-    "anomaly_detection": 61.55,
-    "multimodal_rca": 68.3,
-    "efficiency": 39.45
+    "code_generation": 86.61,
+    "code_gen_python": 94.64,
+    "code_gen_typescript": 95.83,
+    "code_gen_go": 95.83,
+    "code_gen_rust": 60.13,
+    "efficiency": 53.77
   },
   "efficiency_metrics": {
-    "avg_latency_s": 26.4465,
-    "avg_total_tokens": 2287.4715,
-    "score_stddev": 2.8291,
-    "latency_score": 0.0,
-    "token_score": 0.4281,
-    "consistency_score": 0.8868
+    "avg_latency_s": 19.0611,
+    "avg_total_tokens": 1066.0417,
+    "score_stddev": 0.0911,
+    "latency_score": 0.0469,
+    "token_score": 0.7335,
+    "consistency_score": 0.9964
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 6505.84,
-  "last_run_wall_clock_s": 0.0
+  "total_runs": 72,
+  "total_duration_s": 1372.4,
+  "last_run_wall_clock_s": 42.44
 }

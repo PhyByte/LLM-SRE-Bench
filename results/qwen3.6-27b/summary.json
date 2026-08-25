@@ -1,6 +1,6 @@
 {
   "model": "qwen3.6-27b",
-  "global_score": 64.17,
+  "global_score": 80.59,
   "category_scores": {
     "log_parsing": 91.13,
     "anomaly_detection": 63.03,
@@ -8,11 +8,16 @@
     "metrics_timeseries": 61.5,
     "root_cause": 48.47,
     "multimodal_rca": 60.23,
+    "code_generation": 83.26,
+    "code_gen_python": 94.64,
+    "code_gen_typescript": 95.77,
+    "code_gen_go": 82.5,
+    "code_gen_rust": 60.11,
     "efficiency": 30.0
   },
   "efficiency_metrics": {
-    "avg_latency_s": 42.6905,
-    "avg_total_tokens": 5066.061,
+    "avg_latency_s": 50.9233,
+    "avg_total_tokens": 5178.3962,
     "score_stddev": 0.0,
     "latency_score": 0.0,
     "token_score": 0.0,
@@ -20,7 +25,7 @@
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 10501.87,
-  "last_run_wall_clock_s": 12.11
+  "total_runs": 318,
+  "total_duration_s": 16193.61,
+  "last_run_wall_clock_s": 15.01
 }

@@ -1,6 +1,6 @@
 {
   "model": "gemma-4-31b",
-  "global_score": 64.08,
+  "global_score": 83.07,
   "category_scores": {
     "log_parsing": 90.35,
     "anomaly_detection": 61.67,
@@ -8,19 +8,24 @@
     "metrics_timeseries": 72.22,
     "pattern_correlation": 66.0,
     "root_cause": 46.13,
-    "efficiency": 30.69
+    "code_generation": 85.7,
+    "code_gen_python": 94.64,
+    "code_gen_typescript": 95.57,
+    "code_gen_go": 95.83,
+    "code_gen_rust": 56.76,
+    "efficiency": 33.19
   },
   "efficiency_metrics": {
-    "avg_latency_s": 36.5986,
-    "avg_total_tokens": 3642.2724,
-    "score_stddev": 1.662,
+    "avg_latency_s": 36.0625,
+    "avg_total_tokens": 3367.5283,
+    "score_stddev": 1.2935,
     "latency_score": 0.0,
-    "token_score": 0.0894,
-    "consistency_score": 0.9335
+    "token_score": 0.1581,
+    "consistency_score": 0.9483
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 9003.25,
-  "last_run_wall_clock_s": 14.19
+  "total_runs": 318,
+  "total_duration_s": 11467.87,
+  "last_run_wall_clock_s": 13.49
 }

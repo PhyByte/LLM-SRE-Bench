@@ -1,26 +1,25 @@
 {
   "model": "opus-4.8",
-  "global_score": 73.29,
+  "global_score": 81.45,
   "category_scores": {
-    "log_parsing": 91.86,
-    "anomaly_detection": 68.81,
-    "multimodal_rca": 60.59,
-    "metrics_timeseries": 81.85,
-    "pattern_correlation": 86.0,
-    "root_cause": 55.17,
-    "efficiency": 71.78
+    "code_generation": 81.5,
+    "code_gen_python": 94.64,
+    "code_gen_typescript": 95.83,
+    "code_gen_go": 85.0,
+    "code_gen_rust": 50.51,
+    "efficiency": 80.61
   },
   "efficiency_metrics": {
-    "avg_latency_s": 4.3012,
-    "avg_total_tokens": 2383.4228,
-    "score_stddev": 1.4494,
-    "latency_score": 0.7849,
-    "token_score": 0.4041,
-    "consistency_score": 0.942
+    "avg_latency_s": 5.3107,
+    "avg_total_tokens": 898.875,
+    "score_stddev": 1.6862,
+    "latency_score": 0.7345,
+    "token_score": 0.7753,
+    "consistency_score": 0.9326
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 1058.1,
-  "last_run_wall_clock_s": 0.0
+  "total_runs": 72,
+  "total_duration_s": 382.37,
+  "last_run_wall_clock_s": 39.74
 }
