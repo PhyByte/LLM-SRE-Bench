@@ -12,7 +12,6 @@ Usage (recommended workflow for running models one at a time):
 
 Other examples:
     python benchmark.py run --category anomaly_detection
-    python benchmark.py run --config models.mock.json   # offline smoke test
     python benchmark.py list-categories
     python benchmark.py list-models
     python benchmark.py clear-cache -m grok-4
@@ -81,7 +80,7 @@ def _write_site_data(output_dir: Path) -> None:
     console.print(f"  - {out}")
     for row in pending_rows(payload):
         console.print(
-            f"[yellow]  ! {row['category']}: {row['cases'] - row['scored']} of "
+            f"[yellow]  ! {row['track']}/{row['category']}: {row['cases'] - row['scored']} of "
             f"{row['cases']} cases are not covered by every ranked model, so the site "
             "will show them as pending[/yellow]"
         )
@@ -114,9 +113,10 @@ def run(
     replace: bool = typer.Option(
         False,
         "--replace",
-        help="Re-run every selected slot and overwrite stored results. By default a "
+        help="Re-run every selected slot and overwrite its stored result. By default a "
         "run skips slots already scored in results/<model>/ and only calls "
-        "failures or never-run cases.",
+        "failures or never-run cases. Only the selected slots are replaced — "
+        "results for categories this run did not touch are left alone.",
     ),
     declined: bool = typer.Option(
         False,
@@ -281,12 +281,19 @@ def run(
         def on_model_complete(
             model_name: str, model_recs: list[RunRecord], duration: float
         ) -> None:
+            # Always merge. --replace means "re-run the slots I selected and
+            # overwrite those results", and the merge already does exactly that:
+            # a new record replaces the stored one for the same (category,
+            # case_id, run_index). Writing the folder from scratch instead threw
+            # away every category the current run did not touch, so a
+            # `--suite developer --replace` pass silently deleted all the stored
+            # SRE results for each model it ran.
             save_model_results(
                 output_dir,
                 model_name,
                 model_recs,
                 total_duration_s=duration,
-                merge=not replace,
+                merge=True,
             )
 
         def on_status(message: str) -> None:
@@ -486,7 +493,7 @@ def list_categories() -> None:
     table.add_column("Developer Weight", justify="right")
     table.add_column("Kind")
 
-    from core.config import CODE_GEN_CATEGORY_WEIGHTS, SRE_CATEGORY_WEIGHTS
+    from core.config import DEVELOPER_CATEGORY_WEIGHTS, SRE_CATEGORY_WEIGHTS
 
     all_cats = set(SRE_CATEGORIES + DEVELOPER_CATEGORIES + ["efficiency"])
     for category in sorted(all_cats):
@@ -498,7 +505,7 @@ def list_categories() -> None:
             suite = "Both"
 
         sre_weight = SRE_CATEGORY_WEIGHTS.get(category, 0)
-        dev_weight = CODE_GEN_CATEGORY_WEIGHTS.get(category, 0)
+        dev_weight = DEVELOPER_CATEGORY_WEIGHTS.get(category, 0)
         kind = "derived from other runs" if category == "efficiency" else "dataset-backed"
 
         table.add_row(

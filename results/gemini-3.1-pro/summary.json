@@ -1,6 +1,6 @@
 {
   "model": "gemini-3.1-pro",
-  "global_score": 66.36,
+  "global_score": 22.93,
   "category_scores": {
     "log_parsing": 90.71,
     "anomaly_detection": 63.97,
@@ -8,19 +8,28 @@
     "metrics_timeseries": 69.25,
     "root_cause": 46.81,
     "multimodal_rca": 59.75,
-    "efficiency": 50.07
+    "code_generation": 58.81,
+    "code_efficiency": 0.0,
+    "code_debugging": 0.0,
+    "code_refactoring": 0.0,
+    "code_review": 0.0,
+    "code_python": 28.39,
+    "code_typescript": 27.25,
+    "code_go": 22.92,
+    "code_rust": 15.54,
+    "efficiency": 46.96
   },
   "efficiency_metrics": {
-    "avg_latency_s": 16.8271,
-    "avg_total_tokens": 2102.5488,
-    "score_stddev": 0.4228,
-    "latency_score": 0.1586,
-    "token_score": 0.4744,
-    "consistency_score": 0.9831
+    "avg_latency_s": 19.4079,
+    "avg_total_tokens": 1783.9579,
+    "score_stddev": 0.7028,
+    "latency_score": 0.0296,
+    "token_score": 0.554,
+    "consistency_score": 0.9719
   },
-  "error_count": 0,
+  "error_count": 177,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 4139.47,
-  "last_run_wall_clock_s": 91.49
+  "total_runs": 486,
+  "total_duration_s": 6589.24,
+  "last_run_wall_clock_s": 1540.36
 }

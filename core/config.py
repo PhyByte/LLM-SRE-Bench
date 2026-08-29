@@ -26,14 +26,22 @@ SRE_CATEGORY_WEIGHTS: dict[str, float] = {
     "efficiency": 0.05,
 }
 
-# Developer track: equal weight per language (95% total) + efficiency (5%).
-# Keys are synthetic score buckets derived from code_generation case_ids.
-CODE_GEN_LANGUAGES = ("python", "typescript", "go", "rust")
-_CODE_GEN_LANG_WEIGHT = 0.95 / len(CODE_GEN_LANGUAGES)
-CODE_GEN_CATEGORY_WEIGHTS: dict[str, float] = {
-    **{f"code_gen_{lang}": _CODE_GEN_LANG_WEIGHT for lang in CODE_GEN_LANGUAGES},
+# Developer track: five kinds of coding work (95% total) + efficiency (5%).
+# Every case in these categories exists in all four languages, so the same
+# weights also describe an even split across Python/TypeScript/Go/Rust.
+DEVELOPER_CATEGORY_WEIGHTS: dict[str, float] = {
+    "code_generation": 0.35,
+    "code_efficiency": 0.15,
+    "code_debugging": 0.15,
+    "code_refactoring": 0.15,
+    "code_review": 0.15,
     "efficiency": 0.05,
 }
+
+# Per-language score buckets (code_python, code_go, ...) are derived from case
+# ids in reports/generator.py for the secondary by-language table. They are not
+# weighted directly — that would double-count the same runs.
+CODE_GEN_LANGUAGES = ("python", "typescript", "go", "rust")
 
 # Category weights used for scoring (defaults to SRE track)
 # Will be switched based on --suite CLI flag
@@ -42,7 +50,7 @@ CATEGORY_WEIGHTS: dict[str, float] = SRE_CATEGORY_WEIGHTS.copy()
 # Categories backed by datasets (efficiency is derived from the other runs).
 # This includes both SRE and developer categories
 SRE_CATEGORIES = [c for c in SRE_CATEGORY_WEIGHTS if c != "efficiency"]
-DEVELOPER_CATEGORIES = ["code_generation"]
+DEVELOPER_CATEGORIES = [c for c in DEVELOPER_CATEGORY_WEIGHTS if c != "efficiency"]
 TASK_CATEGORIES = SRE_CATEGORIES  # Default to SRE for backward compatibility
 ALL_CATEGORIES = list(set(SRE_CATEGORIES + DEVELOPER_CATEGORIES))
 
@@ -165,16 +173,24 @@ def set_suite(suite: str) -> list[str]:
         return list(SRE_CATEGORIES)
     if suite == "developer":
         CATEGORY_WEIGHTS.clear()
-        CATEGORY_WEIGHTS.update(CODE_GEN_CATEGORY_WEIGHTS)
+        CATEGORY_WEIGHTS.update(DEVELOPER_CATEGORY_WEIGHTS)
         TASK_CATEGORIES[:] = list(DEVELOPER_CATEGORIES)
         return list(DEVELOPER_CATEGORIES)
     if suite == "all":
-        # Combine both suites with adjusted weights (60% SRE / 40% developer).
+        # Combine both suites with adjusted weights (60% SRE / 40% developer),
+        # keeping each track's internal proportions.
         combined: dict[str, float] = {}
         for cat, weight in SRE_CATEGORY_WEIGHTS.items():
             if cat != "efficiency":
                 combined[cat] = weight * 0.60
-        combined["code_generation"] = 0.40 * 0.95
+        developer_total = sum(
+            weight
+            for cat, weight in DEVELOPER_CATEGORY_WEIGHTS.items()
+            if cat != "efficiency"
+        )
+        for cat, weight in DEVELOPER_CATEGORY_WEIGHTS.items():
+            if cat != "efficiency":
+                combined[cat] = weight / developer_total * 0.95 * 0.40
         combined["efficiency"] = 0.05
         CATEGORY_WEIGHTS.clear()
         CATEGORY_WEIGHTS.update(combined)

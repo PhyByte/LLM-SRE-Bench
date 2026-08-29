@@ -1,25 +1,35 @@
 {
   "model": "gpt-5.6-sol",
-  "global_score": 74.42,
+  "global_score": 67.3,
   "category_scores": {
-    "code_generation": 75.16,
-    "code_gen_python": 94.64,
-    "code_gen_typescript": 95.83,
-    "code_gen_go": 50.56,
-    "code_gen_rust": 59.59,
-    "efficiency": 60.36
+    "code_generation": 76.99,
+    "code_efficiency": 100.0,
+    "code_debugging": 97.5,
+    "code_refactoring": 99.54,
+    "code_review": 84.38,
+    "log_parsing": 91.73,
+    "anomaly_detection": 61.07,
+    "multimodal_rca": 56.22,
+    "metrics_timeseries": 73.69,
+    "pattern_correlation": 75.33,
+    "root_cause": 49.19,
+    "code_python": 96.14,
+    "code_typescript": 96.06,
+    "code_go": 77.29,
+    "code_rust": 82.55,
+    "efficiency": 68.86
   },
   "efficiency_metrics": {
-    "avg_latency_s": 11.553,
-    "avg_total_tokens": 970.2917,
-    "score_stddev": 7.7136,
-    "latency_score": 0.4224,
-    "token_score": 0.7574,
-    "consistency_score": 0.6915
+    "avg_latency_s": 7.7039,
+    "avg_total_tokens": 1427.3169,
+    "score_stddev": 4.1852,
+    "latency_score": 0.6148,
+    "token_score": 0.6432,
+    "consistency_score": 0.8326
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 72,
-  "total_duration_s": 831.82,
-  "last_run_wall_clock_s": 37.67
+  "total_runs": 486,
+  "total_duration_s": 3744.11,
+  "last_run_wall_clock_s": null
 }

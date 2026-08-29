@@ -1,25 +1,35 @@
 {
   "model": "qwen3-coder-30b",
-  "global_score": 76.49,
+  "global_score": 85.98,
   "category_scores": {
-    "code_generation": 75.67,
-    "code_gen_python": 94.64,
-    "code_gen_typescript": 97.5,
-    "code_gen_go": 63.33,
-    "code_gen_rust": 47.21,
-    "efficiency": 91.99
+    "log_parsing": 87.89,
+    "anomaly_detection": 60.94,
+    "multimodal_rca": 33.33,
+    "metrics_timeseries": 22.47,
+    "pattern_correlation": 67.33,
+    "root_cause": 44.36,
+    "code_generation": 79.52,
+    "code_efficiency": 99.51,
+    "code_debugging": 98.77,
+    "code_refactoring": 86.94,
+    "code_review": 74.33,
+    "code_python": 95.79,
+    "code_typescript": 94.16,
+    "code_go": 80.27,
+    "code_rust": 72.74,
+    "efficiency": 84.33
   },
   "efficiency_metrics": {
-    "avg_latency_s": 0.9748,
-    "avg_total_tokens": 551.3333,
-    "score_stddev": 1.6021,
-    "latency_score": 0.9513,
-    "token_score": 0.8622,
-    "consistency_score": 0.9359
+    "avg_latency_s": 1.3789,
+    "avg_total_tokens": 1492.1481,
+    "score_stddev": 1.4304,
+    "latency_score": 0.9311,
+    "token_score": 0.627,
+    "consistency_score": 0.9428
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 72,
-  "total_duration_s": 70.19,
-  "last_run_wall_clock_s": 11.86
+  "total_runs": 486,
+  "total_duration_s": 670.15,
+  "last_run_wall_clock_s": 350.39
 }

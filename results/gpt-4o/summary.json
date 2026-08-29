@@ -1,25 +1,35 @@
 {
   "model": "gpt-4o",
-  "global_score": 69.57,
+  "global_score": 61.28,
   "category_scores": {
-    "code_generation": 68.51,
-    "code_gen_python": 96.55,
-    "code_gen_typescript": 97.5,
-    "code_gen_go": 20.0,
-    "code_gen_rust": 60.0,
-    "efficiency": 89.61
+    "code_generation": 70.69,
+    "code_efficiency": 89.12,
+    "code_debugging": 100.0,
+    "code_refactoring": 85.28,
+    "code_review": 73.4,
+    "log_parsing": 90.62,
+    "anomaly_detection": 62.4,
+    "multimodal_rca": 52.96,
+    "metrics_timeseries": 42.45,
+    "pattern_correlation": 61.33,
+    "root_cause": 39.08,
+    "code_python": 92.71,
+    "code_typescript": 93.81,
+    "code_go": 51.52,
+    "code_rust": 83.75,
+    "efficiency": 82.76
   },
   "efficiency_metrics": {
-    "avg_latency_s": 3.0346,
-    "avg_total_tokens": 521.9306,
-    "score_stddev": 0.3367,
-    "latency_score": 0.8483,
-    "token_score": 0.8695,
-    "consistency_score": 0.9865
+    "avg_latency_s": 3.3877,
+    "avg_total_tokens": 1168.7346,
+    "score_stddev": 1.4179,
+    "latency_score": 0.8306,
+    "token_score": 0.7078,
+    "consistency_score": 0.9433
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 72,
-  "total_duration_s": 218.49,
-  "last_run_wall_clock_s": 34.1
+  "total_runs": 486,
+  "total_duration_s": 1646.43,
+  "last_run_wall_clock_s": null
 }

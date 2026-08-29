@@ -1,25 +1,35 @@
 {
   "model": "gpt-5.6-terra",
-  "global_score": 75.74,
+  "global_score": 70.73,
   "category_scores": {
-    "code_generation": 75.57,
-    "code_gen_python": 94.64,
-    "code_gen_typescript": 95.83,
-    "code_gen_go": 53.33,
-    "code_gen_rust": 58.46,
-    "efficiency": 79.04
+    "code_generation": 79.02,
+    "code_efficiency": 89.44,
+    "code_debugging": 95.0,
+    "code_refactoring": 93.06,
+    "code_review": 84.26,
+    "log_parsing": 91.91,
+    "anomaly_detection": 62.14,
+    "multimodal_rca": 59.54,
+    "metrics_timeseries": 77.87,
+    "pattern_correlation": 86.0,
+    "root_cause": 49.76,
+    "code_python": 95.38,
+    "code_typescript": 97.08,
+    "code_go": 68.92,
+    "code_rust": 82.11,
+    "efficiency": 76.71
   },
   "efficiency_metrics": {
-    "avg_latency_s": 4.9498,
-    "avg_total_tokens": 731.1389,
-    "score_stddev": 4.6439,
-    "latency_score": 0.7525,
-    "token_score": 0.8172,
-    "consistency_score": 0.8142
+    "avg_latency_s": 4.4659,
+    "avg_total_tokens": 1339.4218,
+    "score_stddev": 3.5911,
+    "latency_score": 0.7767,
+    "token_score": 0.6651,
+    "consistency_score": 0.8564
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 72,
-  "total_duration_s": 356.38,
-  "last_run_wall_clock_s": 37.59
+  "total_runs": 486,
+  "total_duration_s": 2170.44,
+  "last_run_wall_clock_s": null
 }

@@ -1,0 +1,1654 @@
+[
+  {
+    "id": "count_pairs_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "count_pairs",
+    "skill": "hashing",
+    "spec": "Count how many index pairs (i, j) with i < j satisfy values[i] + values[j] == target.\n\nRules:\n- Count pairs of *positions*, not pairs of distinct values: [3, 3, 3] with\n  target 6 has three pairs.\n- The input is unsorted and may contain duplicates.\n- Return 0 when there is no such pair, and 0 for inputs shorter than 2.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def count_pairs(values: list[int], target: int) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 20260817,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000003,
+          "offset": 1
+        }
+      ],
+      "scalars": {
+        "target": 1000004
+      },
+      "call_args": [
+        "values",
+        "target"
+      ],
+      "expected": 20196
+    },
+    "time_budget_ms": 250,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            3,
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0
+          ],
+          0
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            -10,
+            20,
+            -20
+          ],
+          0
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            7,
+            8,
+            9
+          ],
+          100
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "count_pairs_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "count_pairs",
+    "skill": "hashing",
+    "spec": "Count how many index pairs (i, j) with i < j satisfy values[i] + values[j] == target.\n\nRules:\n- Count pairs of *positions*, not pairs of distinct values: [3, 3, 3] with\n  target 6 has three pairs.\n- The input is unsorted and may contain duplicates.\n- Return 0 when there is no such pair, and 0 for inputs shorter than 2.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function countPairs(values: number[], target: number): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 20260817,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000003,
+          "offset": 1
+        }
+      ],
+      "scalars": {
+        "target": 1000004
+      },
+      "call_args": [
+        "values",
+        "target"
+      ],
+      "expected": 20196
+    },
+    "time_budget_ms": 250,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            3,
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0
+          ],
+          0
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            -10,
+            20,
+            -20
+          ],
+          0
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            7,
+            8,
+            9
+          ],
+          100
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "count_pairs_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "count_pairs",
+    "skill": "hashing",
+    "spec": "Count how many index pairs (i, j) with i < j satisfy values[i] + values[j] == target.\n\nRules:\n- Count pairs of *positions*, not pairs of distinct values: [3, 3, 3] with\n  target 6 has three pairs.\n- The input is unsorted and may contain duplicates.\n- Return 0 when there is no such pair, and 0 for inputs shorter than 2.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func CountPairs(values []int, target int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 20260817,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000003,
+          "offset": 1
+        }
+      ],
+      "scalars": {
+        "target": 1000004
+      },
+      "call_args": [
+        "values",
+        "target"
+      ],
+      "expected": 20196
+    },
+    "time_budget_ms": 120,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            3,
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0
+          ],
+          0
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            -10,
+            20,
+            -20
+          ],
+          0
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            7,
+            8,
+            9
+          ],
+          100
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "count_pairs_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "count_pairs",
+    "skill": "hashing",
+    "spec": "Count how many index pairs (i, j) with i < j satisfy values[i] + values[j] == target.\n\nRules:\n- Count pairs of *positions*, not pairs of distinct values: [3, 3, 3] with\n  target 6 has three pairs.\n- The input is unsorted and may contain duplicates.\n- Return 0 when there is no such pair, and 0 for inputs shorter than 2.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn count_pairs(values: &[i64], target: i64) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 20260817,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000003,
+          "offset": 1
+        }
+      ],
+      "scalars": {
+        "target": 1000004
+      },
+      "call_args": [
+        "values",
+        "target"
+      ],
+      "expected": 20196
+    },
+    "time_budget_ms": 160,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            3,
+            3,
+            3
+          ],
+          6
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0
+          ],
+          0
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            -10,
+            20,
+            -20
+          ],
+          0
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            7,
+            8,
+            9
+          ],
+          100
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "max_window_sum_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "max_window_sum",
+    "skill": "sliding_window",
+    "spec": "Return the largest sum of any k consecutive values \u2014 the \"worst k-sample burst\"\nquestion you ask of a metric series.\n\nRules:\n- Windows are contiguous and of exactly length k.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Values may be zero; the series is not sorted.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def max_window_sum(values: list[int], k: int) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 991733,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 50000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 25099804
+    },
+    "time_budget_ms": 120,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          2
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          5
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            5,
+            1,
+            1,
+            1,
+            5
+          ],
+          1
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          4
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            2,
+            0,
+            7,
+            1,
+            0,
+            8
+          ],
+          3
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            6
+          ],
+          1
+        ],
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": "max_window_sum_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "max_window_sum",
+    "skill": "sliding_window",
+    "spec": "Return the largest sum of any k consecutive values \u2014 the \"worst k-sample burst\"\nquestion you ask of a metric series.\n\nRules:\n- Windows are contiguous and of exactly length k.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Values may be zero; the series is not sorted.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function maxWindowSum(values: number[], k: number): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 991733,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 50000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 25099804
+    },
+    "time_budget_ms": 60,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          2
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          5
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            5,
+            1,
+            1,
+            1,
+            5
+          ],
+          1
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          4
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            2,
+            0,
+            7,
+            1,
+            0,
+            8
+          ],
+          3
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            6
+          ],
+          1
+        ],
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": "max_window_sum_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "max_window_sum",
+    "skill": "sliding_window",
+    "spec": "Return the largest sum of any k consecutive values \u2014 the \"worst k-sample burst\"\nquestion you ask of a metric series.\n\nRules:\n- Windows are contiguous and of exactly length k.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Values may be zero; the series is not sorted.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func MaxWindowSum(values []int, k int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 991733,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 50000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 25099804
+    },
+    "time_budget_ms": 25,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          2
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          5
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            5,
+            1,
+            1,
+            1,
+            5
+          ],
+          1
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          4
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            2,
+            0,
+            7,
+            1,
+            0,
+            8
+          ],
+          3
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            6
+          ],
+          1
+        ],
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": "max_window_sum_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "max_window_sum",
+    "skill": "sliding_window",
+    "spec": "Return the largest sum of any k consecutive values \u2014 the \"worst k-sample burst\"\nquestion you ask of a metric series.\n\nRules:\n- Windows are contiguous and of exactly length k.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Values may be zero; the series is not sorted.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn max_window_sum(values: &[i64], k: i64) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 991733,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 50000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 25099804
+    },
+    "time_budget_ms": 25,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          2
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          5
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            5,
+            1,
+            1,
+            1,
+            5
+          ],
+          1
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          4
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            2,
+            0,
+            7,
+            1,
+            0,
+            8
+          ],
+          3
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          [
+            6
+          ],
+          1
+        ],
+        "expected": 6
+      }
+    ]
+  },
+  {
+    "id": "top_k_frequent_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "top_k_frequent",
+    "skill": "counting",
+    "spec": "Return the k most frequent values, most frequent first \u2014 the \"top talkers\"\nquery you run over a stream of status codes or client ids.\n\nRules:\n- Ties are broken by the smaller value first, so the answer is deterministic.\n- Return every distinct value when k is larger than the number of distinct\n  values, and an empty list when k <= 0 or the input is empty.\n- The result holds the values themselves, not their counts.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def top_k_frequent(values: list[int], k: int) -> list[int]:",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "list<int>"
+    },
+    "workload": {
+      "seed": 570241,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 10
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": [
+        1509,
+        4726,
+        1571,
+        4586,
+        853,
+        2347,
+        2367,
+        1183,
+        1673,
+        2106
+      ]
+    },
+    "time_budget_ms": 200,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4,
+            1,
+            1,
+            2
+          ],
+          1
+        ],
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": [
+          [
+            5,
+            3,
+            1
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            7,
+            7,
+            7
+          ],
+          5
+        ],
+        "expected": [
+          7
+        ]
+      },
+      {
+        "input": [
+          [],
+          3
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            8,
+            8
+          ],
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            2,
+            2,
+            3,
+            3,
+            1,
+            1
+          ],
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            6,
+            5,
+            6,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": [
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "top_k_frequent_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "top_k_frequent",
+    "skill": "counting",
+    "spec": "Return the k most frequent values, most frequent first \u2014 the \"top talkers\"\nquery you run over a stream of status codes or client ids.\n\nRules:\n- Ties are broken by the smaller value first, so the answer is deterministic.\n- Return every distinct value when k is larger than the number of distinct\n  values, and an empty list when k <= 0 or the input is empty.\n- The result holds the values themselves, not their counts.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function topKFrequent(values: number[], k: number): number[] {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "list<int>"
+    },
+    "workload": {
+      "seed": 570241,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 10
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": [
+        1509,
+        4726,
+        1571,
+        4586,
+        853,
+        2347,
+        2367,
+        1183,
+        1673,
+        2106
+      ]
+    },
+    "time_budget_ms": 150,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4,
+            1,
+            1,
+            2
+          ],
+          1
+        ],
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": [
+          [
+            5,
+            3,
+            1
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            7,
+            7,
+            7
+          ],
+          5
+        ],
+        "expected": [
+          7
+        ]
+      },
+      {
+        "input": [
+          [],
+          3
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            8,
+            8
+          ],
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            2,
+            2,
+            3,
+            3,
+            1,
+            1
+          ],
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            6,
+            5,
+            6,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": [
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "top_k_frequent_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "top_k_frequent",
+    "skill": "counting",
+    "spec": "Return the k most frequent values, most frequent first \u2014 the \"top talkers\"\nquery you run over a stream of status codes or client ids.\n\nRules:\n- Ties are broken by the smaller value first, so the answer is deterministic.\n- Return every distinct value when k is larger than the number of distinct\n  values, and an empty list when k <= 0 or the input is empty.\n- The result holds the values themselves, not their counts.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func TopKFrequent(values []int, k int) []int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "list<int>"
+    },
+    "workload": {
+      "seed": 570241,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 10
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": [
+        1509,
+        4726,
+        1571,
+        4586,
+        853,
+        2347,
+        2367,
+        1183,
+        1673,
+        2106
+      ]
+    },
+    "time_budget_ms": 100,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4,
+            1,
+            1,
+            2
+          ],
+          1
+        ],
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": [
+          [
+            5,
+            3,
+            1
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            7,
+            7,
+            7
+          ],
+          5
+        ],
+        "expected": [
+          7
+        ]
+      },
+      {
+        "input": [
+          [],
+          3
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            8,
+            8
+          ],
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            2,
+            2,
+            3,
+            3,
+            1,
+            1
+          ],
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            6,
+            5,
+            6,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": [
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "top_k_frequent_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "top_k_frequent",
+    "skill": "counting",
+    "spec": "Return the k most frequent values, most frequent first \u2014 the \"top talkers\"\nquery you run over a stream of status codes or client ids.\n\nRules:\n- Ties are broken by the smaller value first, so the answer is deterministic.\n- Return every distinct value when k is larger than the number of distinct\n  values, and an empty list when k <= 0 or the input is empty.\n- The result holds the values themselves, not their counts.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn top_k_frequent(values: &[i64], k: i64) -> Vec<i64> {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "list<int>"
+    },
+    "workload": {
+      "seed": 570241,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 10
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": [
+        1509,
+        4726,
+        1571,
+        4586,
+        853,
+        2347,
+        2367,
+        1183,
+        1673,
+        2106
+      ]
+    },
+    "time_budget_ms": 80,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            1,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4,
+            1,
+            1,
+            2
+          ],
+          1
+        ],
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": [
+          [
+            5,
+            3,
+            1
+          ],
+          2
+        ],
+        "expected": [
+          1,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            7,
+            7,
+            7
+          ],
+          5
+        ],
+        "expected": [
+          7
+        ]
+      },
+      {
+        "input": [
+          [],
+          3
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            8,
+            8
+          ],
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            2,
+            2,
+            3,
+            3,
+            1,
+            1
+          ],
+          3
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [
+            6,
+            5,
+            6,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": [
+          5,
+          6
+        ]
+      }
+    ]
+  }
+]

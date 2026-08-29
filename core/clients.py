@@ -121,6 +121,29 @@ def _openai_reasoning_model(model_id: str) -> bool:
     return mid.startswith("gpt-5")
 
 
+def _json_response_format(model: ModelConfig) -> dict:
+    """Build response_format for json_mode, accounting for server quirks.
+
+    LM Studio's OpenAI shim rejects ``json_object`` and only accepts
+    ``json_schema`` or ``text``. Cloud OpenAI-compatible APIs use json_object.
+    """
+    base = (model.base_url or "").lower()
+    cloud = (
+        base.startswith("https://api.openai.com")
+        or base.startswith("https://api.x.ai")
+        or "generativelanguage.googleapis.com" in base
+    )
+    if model.json_mode and not cloud:
+        return {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "response",
+                "schema": {"type": "object"},
+            },
+        }
+    return {"type": "json_object"}
+
+
 class OpenAICompatibleClient(BaseClient):
     """OpenAI, xAI Grok, and any other /chat/completions-compatible endpoint."""
 
@@ -163,7 +186,7 @@ class OpenAICompatibleClient(BaseClient):
         if self.model.json_mode:
             # The system prompt already instructs "single valid JSON object",
             # which satisfies servers that require the word "json" for this mode.
-            payload["response_format"] = {"type": "json_object"}
+            payload["response_format"] = _json_response_format(self.model)
         if self.model.reasoning_effort:
             # OpenAI GPT-5/o-series and xAI Grok expose this knob; endpoints that
             # don't understand it will 400, which surfaces as a failed run for
@@ -396,10 +419,57 @@ class MockClient(BaseClient):
             }
         if category == "multimodal_rca":
             return self._multimodal_rca(user, heuristic)
-        if category == "code_generation":
+        if category in ("code_generation", "code_efficiency"):
             return self._code_generation(user, heuristic)
+        if category in ("code_debugging", "code_refactoring"):
+            return self._code_rewrite(user, heuristic)
+        if category == "code_review":
+            return self._code_review(user, heuristic)
         # Judge prompts (no Task: tag) — return a neutral grade.
         return {"score": 5, "reasoning": "mock judge"}
+
+    _PROMPT_CODE = re.compile(r"<code>\n(.*?)\n</code>", re.DOTALL)
+
+    def _code_rewrite(self, user: str, heuristic: bool) -> dict:
+        """Baseline for the fix-it / refactor-it categories: hand the code back.
+
+        It is the honest floor for these tasks — behavior is preserved, so the
+        tests the original already passed still pass, and nothing else does.
+        The naive variant does not even manage that.
+        """
+        match = self._PROMPT_CODE.search(user)
+        if not heuristic or match is None:
+            language = self._language_of(user)
+            return self._naive_code(language)
+        return {"code": match.group(1)}
+
+    # Defect phrasings the rule-based reviewer knows to look for, keyed by a
+    # marker it can find in the code itself.
+    _REVIEW_RULES = (
+        ("unwrap()", "high", "unwrap() will panic instead of returning an error"),
+        ("SELECT", "high", "query built by string concatenation — SQL injection risk"),
+        ("log", "medium", "logging may include the authorization token, a leaked secret"),
+    )
+
+    def _code_review(self, user: str, heuristic: bool) -> dict:
+        match = self._PROMPT_CODE.search(user)
+        if not heuristic or match is None:
+            return {"findings": []}
+        findings = []
+        for number, line in enumerate(match.group(1).split("\n"), start=1):
+            text = line.split(": ", 1)[1] if ": " in line else line
+            for marker, severity, issue in self._REVIEW_RULES:
+                if marker in text:
+                    findings.append({"line": number, "severity": severity, "issue": issue})
+                    break
+        return {"findings": findings[:5]}
+
+    @staticmethod
+    def _language_of(user: str) -> str:
+        for language in ("typescript", "go", "rust"):
+            if f"Language: {language}" in user:
+                return language
+        return "python"
 
     _METRICS = re.compile(r"<metrics>\n(.*?)\n</metrics>", re.DOTALL)
     _CANDIDATES = re.compile(r"Candidate services \(the culprit is one of these.*?\):\n(.*?)\n", re.DOTALL)

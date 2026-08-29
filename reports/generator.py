@@ -23,6 +23,7 @@ import pandas as pd
 
 from core.config import (
     CATEGORY_WEIGHTS,
+    CODE_GEN_LANGUAGES,
     DEVELOPER_CATEGORIES,
     SRE_CATEGORIES,
     set_suite,
@@ -54,8 +55,8 @@ def aggregate(records: list[RunRecord], pricing: Pricing | None = None) -> list[
     Weights are renormalized over the categories actually run (plus
     efficiency), so partial runs via --category still yield a 0-100 score.
 
-    For ``code_generation`` records, also emits per-language scores
-    (``code_gen_python``, …) used by the developer comparison table.
+    For developer-track records it also emits per-language scores
+    (``code_python``, …) used by the by-language table in the developer report.
     """
     by_model: dict[str, list[RunRecord]] = defaultdict(list)
     for record in records:
@@ -73,16 +74,21 @@ def aggregate(records: list[RunRecord], pricing: Pricing | None = None) -> list[
             case_means = [statistics.fmean(scores) for scores in cases.values()]
             category_scores[category] = 100 * statistics.fmean(case_means)
 
-        # Developer track: break code_generation down by language for the
-        # comparison table (case ids are family_language, e.g. slugify_python).
-        if "code_generation" in by_category_case:
+        # Developer track: every code case exists in all four languages and its
+        # id ends with the language (slugify_python, count_pairs_rust, ...), so
+        # the same runs also roll up into a by-language view for the secondary
+        # table. These buckets are reported, never weighted — the weighted
+        # categories above already cover these runs once.
+        developer_present = [c for c in by_category_case if c in DEVELOPER_CATEGORIES]
+        if developer_present:
             by_lang: dict[str, list[float]] = defaultdict(list)
-            for case_id, scores in by_category_case["code_generation"].items():
-                lang = _language_from_case_id(case_id)
-                if lang is not None:
-                    by_lang[lang].append(statistics.fmean(scores))
+            for category in developer_present:
+                for case_id, scores in by_category_case[category].items():
+                    lang = _language_from_case_id(case_id)
+                    if lang is not None:
+                        by_lang[lang].append(statistics.fmean(scores))
             for lang, means in by_lang.items():
-                category_scores[f"code_gen_{lang}"] = 100 * statistics.fmean(means)
+                category_scores[f"code_{lang}"] = 100 * statistics.fmean(means)
 
         efficiency = evaluate_efficiency(model_records)
         category_scores["efficiency"] = 100 * efficiency.score
@@ -171,7 +177,11 @@ def save_model_results(
     already stored for this model: new records replace existing ones for the
     same ``(category, case_id, run_index)``, while other runs are kept. Re-running
     one failed slot therefore does not wipe sibling successes on the same case.
-    Pass ``merge=False`` to overwrite the folder with only ``records``.
+
+    ``merge=False`` replaces the folder with only ``records``, discarding every
+    stored run this call did not include — including whole categories from other
+    suites. That is a purge, not a re-run: it is not what ``--replace`` wants,
+    and callers should leave it alone unless they intend to drop history.
     """
     base = Path(base_dir)
     model_dir = base / model
@@ -349,7 +359,7 @@ def write_aggregated_reports(
             sre_info,
             title="SRE / Observability Benchmark",
             sibling="comparison_table_developer.md" if has_dev else None,
-            sibling_label="Developer / Code Generation",
+            sibling_label="Developer / Coding",
         )
     else:
         set_suite("developer")
@@ -368,9 +378,10 @@ def write_aggregated_reports(
             base / "comparison_table_developer.md",
             dev_summaries,
             dev_info,
-            title="Developer / Code Generation Benchmark",
+            title="Developer / Coding Benchmark",
             sibling="comparison_table.md" if has_sre else None,
             sibling_label="SRE / Observability",
+            by_language=True,
         )
         if has_sre:
             set_suite("sre")
@@ -391,10 +402,14 @@ _CATEGORY_LABELS = {
     "root_cause": "Root Cause & Summary",
     "multimodal_rca": "Multi-modal RCA",
     "code_generation": "Code Generation",
-    "code_gen_python": "Python",
-    "code_gen_typescript": "TypeScript",
-    "code_gen_go": "Go",
-    "code_gen_rust": "Rust",
+    "code_efficiency": "Code Efficiency",
+    "code_debugging": "Bug Fixing",
+    "code_refactoring": "Refactoring",
+    "code_review": "Code Review",
+    "code_python": "Python",
+    "code_typescript": "TypeScript",
+    "code_go": "Go",
+    "code_rust": "Rust",
     "efficiency": "Efficiency & Consistency",
 }
 
@@ -413,17 +428,32 @@ _CATEGORY_DESCRIPTIONS = {
     "multimodal_rca": "Localizing the culprit service across metrics, logs and traces "
     "on real microservice incidents. 0.4 culprit + 0.25 fault type + 0.25 modality "
     "grounding (citing the modalities that actually carry signal) + 0.1 evidence recall.",
-    "code_generation": "Writing working code for developer/SRE utilities across "
-    "languages. Overall mean of the per-language columns.",
-    "code_gen_python": "Code-generation cases targeting Python. Mean of the six "
-    "Python task families (slugify, interval merge, rate limiter, config overlay, "
-    "LRU cache, log parser).",
-    "code_gen_typescript": "Code-generation cases targeting TypeScript. Mean of "
-    "the six TypeScript task families.",
-    "code_gen_go": "Code-generation cases targeting Go. Mean of the six Go task "
-    "families. Scores 0 when the Go toolchain is unavailable.",
-    "code_gen_rust": "Code-generation cases targeting Rust. Mean of the six Rust "
-    "task families.",
+    "code_generation": "Writing a utility from a spec and a signature, with the "
+    "tests hidden. 0.6 tests passed + 0.2 compiles + 0.1 runtime + 0.1 code size.",
+    "code_efficiency": "Writing code that is fast enough, not just correct: each "
+    "case is timed on a 200k-element input against a per-language budget. "
+    "0.45 correctness + 0.15 compiles + 0.35 within-budget speed (scaled by correctness, so "
+    "a fast wrong answer earns nothing) + 0.05 code size.",
+    "code_debugging": "Fixing a defect from the code plus the symptom a colleague "
+    "reported. 0.7 correctness + 0.2 compiles + 0.1 code size, where correctness is "
+    "half the whole test set and half the tests the shipped buggy version fails — so "
+    "returning the code unchanged cannot collect most of the weight.",
+    "code_refactoring": "Restructuring working code without changing what it does. "
+    "0.4 tests still pass + 0.1 compiles + 0.5 structural rules scaled by correctness "
+    "(the branch chain is gone, the table or loop is there, it got shorter). Handing the "
+    "code back unchanged keeps the behavior half and forfeits most of the structure half; "
+    "a stub that satisfies the rules without working earns neither.",
+    "code_review": "Finding the seeded defects in a snippet — injection, races, "
+    "unbounded growth, leaked secrets, missing timeouts. 0.65 defect recall + "
+    "0.2 precision (speculative findings cost) + 0.15 line localization.",
+    "code_python": "Every developer-track case targeting Python, across all five "
+    "categories.",
+    "code_typescript": "Every developer-track case targeting TypeScript, across all "
+    "five categories.",
+    "code_go": "Every developer-track case targeting Go, across all five categories. "
+    "Scores 0 when the Go toolchain is unavailable.",
+    "code_rust": "Every developer-track case targeting Rust, across all five "
+    "categories.",
     "efficiency": "Derived from the runs above, not a dataset. 0.4 speed (vs a 20s "
     "budget) + 0.3 token thrift (vs 4000 tokens) + 0.3 run-to-run score stability.",
 }
@@ -770,6 +800,32 @@ def format_coverage_lines(records: list[RunRecord]) -> list[str]:
     return lines
 
 
+def _language_table(summaries: list[ModelSummary]) -> str:
+    """Secondary view of the developer track: the same runs, grouped by language.
+
+    The weighted columns above answer "which kind of coding work is this model
+    good at"; this answers "and in which language", which is the question the
+    four-language design exists to make answerable.
+    """
+    keys = [f"code_{lang}" for lang in CODE_GEN_LANGUAGES]
+    present = [k for k in keys if any(k in s.category_scores for s in summaries)]
+    if not present:
+        return ""
+    headers = ["Model"] + [_CATEGORY_LABELS[k] for k in present]
+    rows = [
+        [summary.model] + [f"{summary.category_scores.get(k, 0):.1f}" for k in present]
+        for summary in summaries
+    ]
+    return (
+        "\n## By language\n\n"
+        "The same runs as above, grouped by target language instead of by category. "
+        "Every case exists in all four languages, so these columns are directly "
+        "comparable — but they are a view, not extra weight in the Global Score.\n\n"
+        + _md_table(headers, rows)
+        + "\n"
+    )
+
+
 def _write_comparison_table(
     path: Path,
     summaries: list[ModelSummary],
@@ -778,6 +834,7 @@ def _write_comparison_table(
     title: str = "SRE / Observability Benchmark",
     sibling: str | None = None,
     sibling_label: str | None = None,
+    by_language: bool = False,
 ) -> None:
     categories = _ordered_categories(summaries)
     ranked, partial, failed, _expected = classify_summaries(summaries)
@@ -827,6 +884,8 @@ def _write_comparison_table(
         )
         content += "\n".join(f"- {s.model} ({s.total_runs} calls failed)" for s in failed)
         content += "\n"
+    if by_language:
+        content += _language_table(ranked + partial)
     content += "\n" + _column_legend(categories, show_cost)
     path.write_text(content, encoding="utf-8")
 

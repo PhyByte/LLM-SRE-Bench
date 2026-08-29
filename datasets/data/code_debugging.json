@@ -1,0 +1,1370 @@
+[
+  {
+    "id": "median_of_python",
+    "language": "python",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "def median_of(values: list[int]) -> float:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "def median_of(values: list[int]) -> float:\n    if not values:\n        return -1.0\n    middle = len(values) // 2\n    return float(values[middle])",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "median_of_typescript",
+    "language": "typescript",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "function medianOf(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "function medianOf(values: number[]): number {\n    if (values.length === 0) {\n        return -1.0;\n    }\n    const middle = Math.floor(values.length / 2);\n    return values[middle];\n}",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "median_of_go",
+    "language": "go",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "func MedianOf(values []int) float64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "func MedianOf(values []int) float64 {\n    if len(values) == 0 {\n        return -1.0\n    }\n    middle := len(values) / 2\n    return float64(values[middle])\n}",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "median_of_rust",
+    "language": "rust",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "fn median_of(values: &[i64]) -> f64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "fn median_of(values: &[i64]) -> f64 {\n    if values.is_empty() {\n        return -1.0;\n    }\n    let middle = values.len() / 2;\n    values[middle] as f64\n}",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "merge_sorted_python",
+    "language": "python",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "def merge_sorted(a: list[int], b: list[int]) -> list[int]:",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "def merge_sorted(a: list[int], b: list[int]) -> list[int]:\n    out: list[int] = []\n    i = 0\n    j = 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            out.append(a[i])\n            i += 1\n        else:\n            out.append(b[j])\n            j += 1\n    while i < len(a):\n        out.append(a[i])\n        i += 1\n    return out",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "merge_sorted_typescript",
+    "language": "typescript",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "function mergeSorted(a: number[], b: number[]): number[] {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "function mergeSorted(a: number[], b: number[]): number[] {\n    const out: number[] = [];\n    let i = 0;\n    let j = 0;\n    while (i < a.length && j < b.length) {\n        if (a[i] <= b[j]) {\n            out.push(a[i]);\n            i++;\n        } else {\n            out.push(b[j]);\n            j++;\n        }\n    }\n    while (i < a.length) {\n        out.push(a[i]);\n        i++;\n    }\n    return out;\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "merge_sorted_go",
+    "language": "go",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "func MergeSorted(a []int, b []int) []int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "func MergeSorted(a []int, b []int) []int {\n    out := []int{}\n    i, j := 0, 0\n    for i < len(a) && j < len(b) {\n        if a[i] <= b[j] {\n            out = append(out, a[i])\n            i++\n        } else {\n            out = append(out, b[j])\n            j++\n        }\n    }\n    for i < len(a) {\n        out = append(out, a[i])\n        i++\n    }\n    return out\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "merge_sorted_rust",
+    "language": "rust",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "fn merge_sorted(a: &[i64], b: &[i64]) -> Vec<i64> {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "fn merge_sorted(a: &[i64], b: &[i64]) -> Vec<i64> {\n    let mut out = Vec::new();\n    let mut i = 0;\n    let mut j = 0;\n    while i < a.len() && j < b.len() {\n        if a[i] <= b[j] {\n            out.push(a[i]);\n            i += 1;\n        } else {\n            out.push(b[j]);\n            j += 1;\n        }\n    }\n    while i < a.len() {\n        out.push(a[i]);\n        i += 1;\n    }\n    out\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "normalize_path_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "def normalize_path(path: str) -> str:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "def normalize_path(path: str) -> str:\n    stack: list[str] = []\n    for part in path.split(\"/\"):\n        if part == \"..\":\n            stack.pop()\n        elif part != \".\" and part != \"\":\n            stack.append(part)\n    return \"/\" + \"/\".join(stack)",
+    "symptom": "The config loader crashes on some requests instead of returning a path. The stack trace points at this function, and the paths that trigger it all contain more '..' segments than directories.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      1,
+      8
+    ]
+  },
+  {
+    "id": "normalize_path_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "function normalizePath(path: string): string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "function normalizePath(path: string): string {\n    const stack: string[] = [];\n    for (const part of path.split(\"/\")) {\n        if (part === \"..\") {\n            stack.pop();\n        } else if (part !== \".\" && part !== \"\") {\n            stack.push(part);\n        }\n    }\n    return \"/\" + stack.join(\"/\") + (path.endsWith(\"/\") ? \"/\" : \"\");\n}",
+    "symptom": "The cache holds two entries for the same file whenever the caller passed a path with a trailing slash, and the root path comes back looking wrong entirely.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      2,
+      4
+    ]
+  },
+  {
+    "id": "normalize_path_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "func NormalizePath(path string) string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "func NormalizePath(path string) string {\n    stack := []string{}\n    for _, part := range strings.Split(path, \"/\") {\n        if part == \"..\" {\n            stack = stack[:len(stack)-1]\n        } else if part != \".\" && part != \"\" {\n            stack = append(stack, part)\n        }\n    }\n    return \"/\" + strings.Join(stack, \"/\")\n}",
+    "symptom": "The config loader crashes on some requests instead of returning a path. The stack trace points at this function, and the paths that trigger it all contain more '..' segments than directories.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      1,
+      8
+    ]
+  },
+  {
+    "id": "normalize_path_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "fn normalize_path(path: &str) -> String {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "fn normalize_path(path: &str) -> String {\n    let mut stack: Vec<&str> = Vec::new();\n    for part in path.split('/') {\n        if part == \"..\" {\n            stack.pop().unwrap();\n        } else if part != \".\" && !part.is_empty() {\n            stack.push(part);\n        }\n    }\n    format!(\"/{}\", stack.join(\"/\"))\n}",
+    "symptom": "The config loader crashes on some requests instead of returning a path. The stack trace points at this function, and the paths that trigger it all contain more '..' segments than directories.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+]

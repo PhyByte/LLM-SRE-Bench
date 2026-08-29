@@ -1,0 +1,758 @@
+[
+  {
+    "id": "ttl_cache_python",
+    "language": "python",
+    "component": "ttl_cache",
+    "difficulty": "medium",
+    "context": "This cache sits in front of a slow permissions service. It is created once at process start and shared by every request handler; the server handles requests concurrently. Entries are meant to disappear after the TTL.",
+    "code": "import time\n\n\nclass TTLCache:\n    def __init__(self, ttl_seconds: int):\n        self.ttl = ttl_seconds\n        self.entries = {}\n\n    def get(self, key):\n        entry = self.entries.get(key)\n        if entry is None:\n            return None\n        value, stored_at = entry\n        if time.time() - stored_at > self.ttl:\n            return value\n        return value\n\n    def put(self, key, value):\n        self.entries[key] = (value, time.time())\n\n    def size(self):\n        return len(self.entries)",
+    "defects": [
+      {
+        "id": "stale_read",
+        "line": 14,
+        "severity": "high",
+        "keywords_any": [
+          "expired",
+          "stale",
+          "ttl",
+          "past its ttl",
+          "returns the value anyway",
+          "should be a miss",
+          "cache miss",
+          "still served",
+          "not invalidated"
+        ]
+      },
+      {
+        "id": "unbounded_growth",
+        "line": 19,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "never evict",
+          "no eviction",
+          "grows without",
+          "memory leak",
+          "no size limit",
+          "no maximum size",
+          "max size",
+          "unlimited growth",
+          "grows forever",
+          "out of memory",
+          "no bound",
+          "leak"
+        ]
+      },
+      {
+        "id": "data_race",
+        "line": 7,
+        "severity": "medium",
+        "keywords_any": [
+          "race",
+          "concurrent",
+          "not thread safe",
+          "thread safe",
+          "no lock",
+          "without a lock",
+          "mutex",
+          "synchron",
+          "goroutine",
+          "shared state",
+          "map is not safe"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ttl_cache_typescript",
+    "language": "typescript",
+    "component": "ttl_cache",
+    "difficulty": "medium",
+    "context": "This cache sits in front of a slow permissions service. It is created once at process start and shared by every request handler; the server handles requests concurrently. Entries are meant to disappear after the TTL.",
+    "code": "type Entry = { value: unknown; storedAt: number };\n\nexport class TTLCache {\n    private ttlSeconds: number;\n    private entries = new Map<string, Entry>();\n\n    constructor(ttlSeconds: number) {\n        this.ttlSeconds = ttlSeconds;\n    }\n\n    get(key: string): unknown {\n        const entry = this.entries.get(key);\n        if (entry === undefined) {\n            return null;\n        }\n        if (Date.now() - entry.storedAt > this.ttlSeconds) {\n            return entry.value;\n        }\n        return entry.value;\n    }\n\n    put(key: string, value: unknown): void {\n        this.entries.set(key, { value, storedAt: Date.now() });\n    }\n\n    size(): number {\n        return this.entries.size;\n    }\n}",
+    "defects": [
+      {
+        "id": "stale_read",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "expired",
+          "stale",
+          "ttl",
+          "past its ttl",
+          "returns the value anyway",
+          "should be a miss",
+          "cache miss",
+          "still served",
+          "not invalidated"
+        ]
+      },
+      {
+        "id": "unbounded_growth",
+        "line": 23,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "never evict",
+          "no eviction",
+          "grows without",
+          "memory leak",
+          "no size limit",
+          "no maximum size",
+          "max size",
+          "unlimited growth",
+          "grows forever",
+          "out of memory",
+          "no bound",
+          "leak"
+        ]
+      },
+      {
+        "id": "unit_mismatch",
+        "line": 4,
+        "severity": "high",
+        "keywords_any": [
+          "millisecond",
+          "1000",
+          "seconds",
+          "wrong unit",
+          "unit mismatch",
+          "mismatch",
+          "wrong scale",
+          "date now"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ttl_cache_go",
+    "language": "go",
+    "component": "ttl_cache",
+    "difficulty": "medium",
+    "context": "This cache sits in front of a slow permissions service. It is created once at process start and shared by every request handler; the server handles requests concurrently. Entries are meant to disappear after the TTL.",
+    "code": "package cache\n\nimport \"time\"\n\ntype entry struct {\n    value    interface{}\n    storedAt time.Time\n}\n\ntype TTLCache struct {\n    ttl     time.Duration\n    entries map[string]entry\n}\n\nfunc NewTTLCache(ttl time.Duration) *TTLCache {\n    return &TTLCache{ttl: ttl, entries: make(map[string]entry)}\n}\n\nfunc (c *TTLCache) Get(key string) (interface{}, bool) {\n    e, ok := c.entries[key]\n    if !ok {\n        return nil, false\n    }\n    if time.Since(e.storedAt) > c.ttl {\n        return e.value, true\n    }\n    return e.value, true\n}\n\nfunc (c *TTLCache) Put(key string, value interface{}) {\n    c.entries[key] = entry{value: value, storedAt: time.Now()}\n}",
+    "defects": [
+      {
+        "id": "stale_read",
+        "line": 24,
+        "severity": "high",
+        "keywords_any": [
+          "expired",
+          "stale",
+          "ttl",
+          "past its ttl",
+          "returns the value anyway",
+          "should be a miss",
+          "cache miss",
+          "still served",
+          "not invalidated"
+        ]
+      },
+      {
+        "id": "unbounded_growth",
+        "line": 31,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "never evict",
+          "no eviction",
+          "grows without",
+          "memory leak",
+          "no size limit",
+          "no maximum size",
+          "max size",
+          "unlimited growth",
+          "grows forever",
+          "out of memory",
+          "no bound",
+          "leak"
+        ]
+      },
+      {
+        "id": "data_race",
+        "line": 12,
+        "severity": "high",
+        "keywords_any": [
+          "race",
+          "concurrent",
+          "not thread safe",
+          "thread safe",
+          "no lock",
+          "without a lock",
+          "mutex",
+          "synchron",
+          "goroutine",
+          "shared state",
+          "map is not safe"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ttl_cache_rust",
+    "language": "rust",
+    "component": "ttl_cache",
+    "difficulty": "medium",
+    "context": "This cache sits in front of a slow permissions service. It is created once at process start and shared by every request handler; the server handles requests concurrently. Entries are meant to disappear after the TTL.",
+    "code": "use std::collections::HashMap;\nuse std::time::{Duration, Instant};\n\npub struct TtlCache {\n    ttl: Duration,\n    entries: HashMap<String, (String, Instant)>,\n}\n\nimpl TtlCache {\n    pub fn new(ttl: Duration) -> Self {\n        TtlCache { ttl, entries: HashMap::new() }\n    }\n\n    pub fn get(&self, key: &str) -> Option<String> {\n        let (value, stored_at) = self.entries.get(key)?;\n        if stored_at.elapsed() > self.ttl {\n            return Some(value.clone());\n        }\n        Some(value.clone())\n    }\n\n    pub fn put(&mut self, key: String, value: String) {\n        self.entries.insert(key, (value, Instant::now()));\n    }\n\n    pub fn must_get(&self, key: &str) -> String {\n        self.get(key).unwrap()\n    }\n}",
+    "defects": [
+      {
+        "id": "stale_read",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "expired",
+          "stale",
+          "ttl",
+          "past its ttl",
+          "returns the value anyway",
+          "should be a miss",
+          "cache miss",
+          "still served",
+          "not invalidated"
+        ]
+      },
+      {
+        "id": "unbounded_growth",
+        "line": 23,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "never evict",
+          "no eviction",
+          "grows without",
+          "memory leak",
+          "no size limit",
+          "no maximum size",
+          "max size",
+          "unlimited growth",
+          "grows forever",
+          "out of memory",
+          "no bound",
+          "leak"
+        ]
+      },
+      {
+        "id": "panic_on_miss",
+        "line": 27,
+        "severity": "high",
+        "keywords_any": [
+          "unwrap",
+          "panic",
+          "crash",
+          "none",
+          "missing key",
+          "cache miss",
+          "expect",
+          "propagate the error",
+          "option"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "user_lookup_python",
+    "language": "python",
+    "component": "user_lookup",
+    "difficulty": "medium",
+    "context": "This is the admin console's user search. `name_filter` comes straight from a query parameter, and the largest tenant has ~40,000 users.",
+    "code": "def search_users(conn, name_filter, tenant_id):\n    cursor = conn.cursor()\n    query = (\n        \"SELECT id, name FROM users \"\n        f\"WHERE tenant_id = {tenant_id} AND name LIKE '%{name_filter}%'\"\n    )\n    cursor.execute(query)\n    rows = cursor.fetchall()\n\n    results = []\n    for row in rows:\n        user_id, name = row\n        role_cursor = conn.cursor()\n        role_cursor.execute(\"SELECT role FROM roles WHERE user_id = ?\", (user_id,))\n        role = role_cursor.fetchone()\n        results.append({\"id\": user_id, \"name\": name, \"role\": role[0]})\n    return results",
+    "defects": [
+      {
+        "id": "sql_injection",
+        "line": 5,
+        "severity": "critical",
+        "keywords_any": [
+          "sql injection",
+          "injection",
+          "parameterized",
+          "parameterised",
+          "prepared statement",
+          "bind parameter",
+          "placeholder",
+          "string concatenation",
+          "interpolat",
+          "not escaped",
+          "unsanitized",
+          "unsanitised"
+        ]
+      },
+      {
+        "id": "n_plus_one",
+        "line": 14,
+        "severity": "high",
+        "keywords_any": [
+          "n 1",
+          "n plus 1",
+          "query per",
+          "query inside the loop",
+          "query in a loop",
+          "per row query",
+          "round trip per",
+          "batch",
+          "join",
+          "one query for each",
+          "queries in a loop",
+          "loop issues a query"
+        ]
+      },
+      {
+        "id": "unchecked_result",
+        "line": 16,
+        "severity": "medium",
+        "keywords_any": [
+          "none",
+          "null",
+          "no role",
+          "missing row",
+          "fetchone",
+          "index error",
+          "typeerror",
+          "unchecked",
+          "no result",
+          "crash",
+          "exception"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "user_lookup_typescript",
+    "language": "typescript",
+    "component": "user_lookup",
+    "difficulty": "medium",
+    "context": "This is the admin console's user search. `name_filter` comes straight from a query parameter, and the largest tenant has ~40,000 users.",
+    "code": "export async function searchUsers(db: Db, nameFilter: string, tenantId: string) {\n    const query =\n        \"SELECT id, name FROM users WHERE tenant_id = '\" + tenantId +\n        \"' AND name LIKE '%\" + nameFilter + \"%'\";\n    const rows = await db.query(query);\n\n    const results = [];\n    for (const row of rows) {\n        const roleRow = db.query(\"SELECT role FROM roles WHERE user_id = $1\", [row.id]);\n        results.push({ id: row.id, name: row.name, role: roleRow.role });\n    }\n    return results;\n}",
+    "defects": [
+      {
+        "id": "sql_injection",
+        "line": 3,
+        "severity": "critical",
+        "keywords_any": [
+          "sql injection",
+          "injection",
+          "parameterized",
+          "parameterised",
+          "prepared statement",
+          "bind parameter",
+          "placeholder",
+          "string concatenation",
+          "interpolat",
+          "not escaped",
+          "unsanitized",
+          "unsanitised"
+        ]
+      },
+      {
+        "id": "n_plus_one",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "n 1",
+          "n plus 1",
+          "query per",
+          "query inside the loop",
+          "query in a loop",
+          "per row query",
+          "round trip per",
+          "batch",
+          "join",
+          "one query for each",
+          "queries in a loop",
+          "loop issues a query"
+        ]
+      },
+      {
+        "id": "missing_await",
+        "line": 10,
+        "severity": "high",
+        "keywords_any": [
+          "await",
+          "promise",
+          "async",
+          "not awaited",
+          "unresolved",
+          "undefined",
+          "floating promise",
+          "unhandled rejection"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "user_lookup_go",
+    "language": "go",
+    "component": "user_lookup",
+    "difficulty": "medium",
+    "context": "This is the admin console's user search. `name_filter` comes straight from a query parameter, and the largest tenant has ~40,000 users.",
+    "code": "func SearchUsers(db *sql.DB, nameFilter string, tenantID string) []User {\n    query := fmt.Sprintf(\n        \"SELECT id, name FROM users WHERE tenant_id = '%s' AND name LIKE '%%%s%%'\",\n        tenantID, nameFilter,\n    )\n    rows, _ := db.Query(query)\n\n    var results []User\n    for rows.Next() {\n        var u User\n        rows.Scan(&u.ID, &u.Name)\n        roleRow := db.QueryRow(\"SELECT role FROM roles WHERE user_id = $1\", u.ID)\n        roleRow.Scan(&u.Role)\n        results = append(results, u)\n    }\n    return results\n}",
+    "defects": [
+      {
+        "id": "sql_injection",
+        "line": 3,
+        "severity": "critical",
+        "keywords_any": [
+          "sql injection",
+          "injection",
+          "parameterized",
+          "parameterised",
+          "prepared statement",
+          "bind parameter",
+          "placeholder",
+          "string concatenation",
+          "interpolat",
+          "not escaped",
+          "unsanitized",
+          "unsanitised"
+        ]
+      },
+      {
+        "id": "n_plus_one",
+        "line": 12,
+        "severity": "high",
+        "keywords_any": [
+          "n 1",
+          "n plus 1",
+          "query per",
+          "query inside the loop",
+          "query in a loop",
+          "per row query",
+          "round trip per",
+          "batch",
+          "join",
+          "one query for each",
+          "queries in a loop",
+          "loop issues a query"
+        ]
+      },
+      {
+        "id": "ignored_error",
+        "line": 6,
+        "severity": "high",
+        "keywords_any": [
+          "error",
+          "err",
+          "ignored",
+          "discard",
+          "blank identifier",
+          "not checked",
+          "unchecked",
+          "nil pointer",
+          "close",
+          "rows err"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "user_lookup_rust",
+    "language": "rust",
+    "component": "user_lookup",
+    "difficulty": "medium",
+    "context": "This is the admin console's user search. `name_filter` comes straight from a query parameter, and the largest tenant has ~40,000 users.",
+    "code": "pub fn search_users(conn: &Connection, name_filter: &str, tenant_id: &str) -> Vec<User> {\n    let query = format!(\n        \"SELECT id, name FROM users WHERE tenant_id = '{}' AND name LIKE '%{}%'\",\n        tenant_id, name_filter\n    );\n    let rows = conn.query(&query).unwrap();\n\n    let mut results = Vec::new();\n    for row in rows {\n        let role = conn\n            .query_one(\"SELECT role FROM roles WHERE user_id = $1\", &[&row.id])\n            .unwrap();\n        results.push(User { id: row.id, name: row.name, role: role.get(0) });\n    }\n    results\n}",
+    "defects": [
+      {
+        "id": "sql_injection",
+        "line": 3,
+        "severity": "critical",
+        "keywords_any": [
+          "sql injection",
+          "injection",
+          "parameterized",
+          "parameterised",
+          "prepared statement",
+          "bind parameter",
+          "placeholder",
+          "string concatenation",
+          "interpolat",
+          "not escaped",
+          "unsanitized",
+          "unsanitised"
+        ]
+      },
+      {
+        "id": "n_plus_one",
+        "line": 11,
+        "severity": "high",
+        "keywords_any": [
+          "n 1",
+          "n plus 1",
+          "query per",
+          "query inside the loop",
+          "query in a loop",
+          "per row query",
+          "round trip per",
+          "batch",
+          "join",
+          "one query for each",
+          "queries in a loop",
+          "loop issues a query"
+        ]
+      },
+      {
+        "id": "unwrap_panic",
+        "line": 6,
+        "severity": "high",
+        "keywords_any": [
+          "unwrap",
+          "panic",
+          "crash",
+          "result",
+          "propagate",
+          "error handling",
+          "question mark",
+          "expect"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fetch_with_retry_python",
+    "language": "python",
+    "component": "fetch_with_retry",
+    "difficulty": "medium",
+    "context": "This helper calls a third-party billing API from a request handler. It runs on every checkout, and the API has been known to stall for minutes during incidents.",
+    "code": "import logging\nimport requests\n\nlog = logging.getLogger(__name__)\n\n\ndef fetch_invoice(invoice_id: str, api_token: str) -> dict:\n    url = f\"https://billing.example.com/invoices/{invoice_id}\"\n    headers = {\"Authorization\": f\"Bearer {api_token}\"}\n    log.info(\"calling billing api url=%s headers=%s\", url, headers)\n\n    attempt = 0\n    while attempt < 5:\n        attempt += 1\n        response = requests.get(url, headers=headers)\n        if response.status_code == 200:\n            return response.json()\n    raise RuntimeError(\"billing api unavailable\")",
+    "defects": [
+      {
+        "id": "leaked_secret",
+        "line": 10,
+        "severity": "critical",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "authorization header",
+          "auth header",
+          "logs the token",
+          "logging the token",
+          "password",
+          "sensitive",
+          "redact"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 15,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs forever",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely"
+        ]
+      },
+      {
+        "id": "no_backoff",
+        "line": 13,
+        "severity": "medium",
+        "keywords_any": [
+          "backoff",
+          "back off",
+          "immediately retr",
+          "tight loop",
+          "hammer",
+          "no delay",
+          "no sleep",
+          "no wait",
+          "retry storm",
+          "thundering herd",
+          "busy loop",
+          "spin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fetch_with_retry_typescript",
+    "language": "typescript",
+    "component": "fetch_with_retry",
+    "difficulty": "medium",
+    "context": "This helper calls a third-party billing API from a request handler. It runs on every checkout, and the API has been known to stall for minutes during incidents.",
+    "code": "export async function fetchInvoice(invoiceId: string, apiToken: string) {\n    const url = `https://billing.example.com/invoices/${invoiceId}`;\n    const headers = { Authorization: `Bearer ${apiToken}` };\n    console.log(\"calling billing api\", { url, headers });\n\n    let attempt = 0;\n    while (attempt < 5) {\n        attempt += 1;\n        const response = await fetch(url, { headers });\n        if (response.status === 200) {\n            return await response.json();\n        }\n    }\n    throw new Error(\"billing api unavailable\");\n}",
+    "defects": [
+      {
+        "id": "leaked_secret",
+        "line": 4,
+        "severity": "critical",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "authorization header",
+          "auth header",
+          "logs the token",
+          "logging the token",
+          "password",
+          "sensitive",
+          "redact"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs forever",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely"
+        ]
+      },
+      {
+        "id": "no_backoff",
+        "line": 7,
+        "severity": "medium",
+        "keywords_any": [
+          "backoff",
+          "back off",
+          "immediately retr",
+          "tight loop",
+          "hammer",
+          "no delay",
+          "no sleep",
+          "no wait",
+          "retry storm",
+          "thundering herd",
+          "busy loop",
+          "spin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fetch_with_retry_go",
+    "language": "go",
+    "component": "fetch_with_retry",
+    "difficulty": "medium",
+    "context": "This helper calls a third-party billing API from a request handler. It runs on every checkout, and the API has been known to stall for minutes during incidents.",
+    "code": "func FetchInvoice(invoiceID string, apiToken string) ([]byte, error) {\n    url := fmt.Sprintf(\"https://billing.example.com/invoices/%s\", invoiceID)\n    req, _ := http.NewRequest(\"GET\", url, nil)\n    req.Header.Set(\"Authorization\", \"Bearer \"+apiToken)\n    log.Printf(\"calling billing api url=%s headers=%v\", url, req.Header)\n\n    for attempt := 0; attempt < 5; attempt++ {\n        resp, err := http.DefaultClient.Do(req)\n        if err != nil {\n            continue\n        }\n        if resp.StatusCode == 200 {\n            return io.ReadAll(resp.Body)\n        }\n    }\n    return nil, errors.New(\"billing api unavailable\")\n}",
+    "defects": [
+      {
+        "id": "leaked_secret",
+        "line": 5,
+        "severity": "critical",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "authorization header",
+          "auth header",
+          "logs the token",
+          "logging the token",
+          "password",
+          "sensitive",
+          "redact"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs forever",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely"
+        ]
+      },
+      {
+        "id": "no_backoff",
+        "line": 7,
+        "severity": "medium",
+        "keywords_any": [
+          "backoff",
+          "back off",
+          "immediately retr",
+          "tight loop",
+          "hammer",
+          "no delay",
+          "no sleep",
+          "no wait",
+          "retry storm",
+          "thundering herd",
+          "busy loop",
+          "spin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fetch_with_retry_rust",
+    "language": "rust",
+    "component": "fetch_with_retry",
+    "difficulty": "medium",
+    "context": "This helper calls a third-party billing API from a request handler. It runs on every checkout, and the API has been known to stall for minutes during incidents.",
+    "code": "pub fn fetch_invoice(invoice_id: &str, api_token: &str) -> Result<String, Error> {\n    let url = format!(\"https://billing.example.com/invoices/{}\", invoice_id);\n    let auth = format!(\"Bearer {}\", api_token);\n    log::info!(\"calling billing api url={} auth={}\", url, auth);\n\n    let client = reqwest::blocking::Client::new();\n    let mut attempt = 0;\n    while attempt < 5 {\n        attempt += 1;\n        if let Ok(response) = client.get(&url).header(\"Authorization\", &auth).send() {\n            if response.status().is_success() {\n                return Ok(response.text()?);\n            }\n        }\n    }\n    Err(Error::Unavailable)\n}",
+    "defects": [
+      {
+        "id": "leaked_secret",
+        "line": 4,
+        "severity": "critical",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "authorization header",
+          "auth header",
+          "logs the token",
+          "logging the token",
+          "password",
+          "sensitive",
+          "redact"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 6,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs forever",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely"
+        ]
+      },
+      {
+        "id": "no_backoff",
+        "line": 8,
+        "severity": "medium",
+        "keywords_any": [
+          "backoff",
+          "back off",
+          "immediately retr",
+          "tight loop",
+          "hammer",
+          "no delay",
+          "no sleep",
+          "no wait",
+          "retry storm",
+          "thundering herd",
+          "busy loop",
+          "spin"
+        ]
+      }
+    ]
+  }
+]

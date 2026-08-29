@@ -23,7 +23,11 @@ def clamp01(value: float) -> float:
 def get_evaluator(category: str) -> Callable[[dict[str, Any], BaseModel], EvalResult]:
     from . import (
         anomaly_detection,
+        code_debugging,
+        code_efficiency,
         code_generation,
+        code_refactoring,
+        code_review,
         log_parsing,
         metrics_timeseries,
         multimodal_rca,
@@ -39,5 +43,9 @@ def get_evaluator(category: str) -> Callable[[dict[str, Any], BaseModel], EvalRe
         "root_cause": root_cause.evaluate,
         "multimodal_rca": multimodal_rca.evaluate,
         "code_generation": code_generation.evaluate,
+        "code_efficiency": code_efficiency.evaluate,
+        "code_debugging": code_debugging.evaluate,
+        "code_refactoring": code_refactoring.evaluate,
+        "code_review": code_review.evaluate,
     }
     return evaluators[category]

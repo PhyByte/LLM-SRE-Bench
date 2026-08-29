@@ -1,0 +1,1206 @@
+[
+  {
+    "id": "severity_rank_python",
+    "language": "python",
+    "difficulty": "easy",
+    "task_family": "severity_rank",
+    "skill": "branch_collapse",
+    "spec": "`severity_rank` maps a log level name to a numeric rank. The current version\nworks and must keep working exactly as it does today:\n\n- debug 10, info 20, notice 25, warn 30, warning 30, error 40, critical 50,\n  fatal 50, and 0 for anything else.\n- The input is trimmed of surrounding whitespace and matched case-insensitively.\n\nRefactor it so the level-to-rank mapping is data, not control flow: one lookup\n(a dictionary/map/table, or the language's idiomatic match) instead of a chain\nof comparisons. Adding a level later should mean adding one entry.",
+    "signature": "def severity_rank(level: str) -> int:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "goal": "Replace the comparison chain with a single data-driven lookup, so adding a level is a one-line data change.",
+    "original_code": "def severity_rank(level: str) -> int:\n    normalized = level.strip().lower()\n    if normalized == \"debug\":\n        return 10\n    elif normalized == \"info\":\n        return 20\n    elif normalized == \"notice\":\n        return 25\n    elif normalized == \"warn\":\n        return 30\n    elif normalized == \"warning\":\n        return 30\n    elif normalized == \"error\":\n        return 40\n    elif normalized == \"critical\":\n        return 50\n    elif normalized == \"fatal\":\n        return 50\n    else:\n        return 0",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b|\\belif\\b",
+          "max": 2,
+          "reason": "the comparison chain should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\{[^{}]*:",
+            "\\bmatch\\b",
+            "dict\\("
+          ],
+          "reason": "the levels should live in a lookup table"
+        }
+      ],
+      "max_lines": 20
+    },
+    "test_cases": [
+      {
+        "input": "debug",
+        "expected": 10
+      },
+      {
+        "input": "INFO",
+        "expected": 20
+      },
+      {
+        "input": " notice ",
+        "expected": 25
+      },
+      {
+        "input": "warn",
+        "expected": 30
+      },
+      {
+        "input": "Warning",
+        "expected": 30
+      },
+      {
+        "input": "error",
+        "expected": 40
+      },
+      {
+        "input": "critical",
+        "expected": 50
+      },
+      {
+        "input": "FATAL",
+        "expected": 50
+      },
+      {
+        "input": "trace",
+        "expected": 0
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "  ",
+        "expected": 0
+      },
+      {
+        "input": "Error",
+        "expected": 40
+      }
+    ]
+  },
+  {
+    "id": "severity_rank_typescript",
+    "language": "typescript",
+    "difficulty": "easy",
+    "task_family": "severity_rank",
+    "skill": "branch_collapse",
+    "spec": "`severity_rank` maps a log level name to a numeric rank. The current version\nworks and must keep working exactly as it does today:\n\n- debug 10, info 20, notice 25, warn 30, warning 30, error 40, critical 50,\n  fatal 50, and 0 for anything else.\n- The input is trimmed of surrounding whitespace and matched case-insensitively.\n\nRefactor it so the level-to-rank mapping is data, not control flow: one lookup\n(a dictionary/map/table, or the language's idiomatic match) instead of a chain\nof comparisons. Adding a level later should mean adding one entry.",
+    "signature": "function severityRank(level: string): number {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "goal": "Replace the comparison chain with a single data-driven lookup, so adding a level is a one-line data change.",
+    "original_code": "function severityRank(level: string): number {\n    const normalized = level.trim().toLowerCase();\n    if (normalized === \"debug\") {\n        return 10;\n    } else if (normalized === \"info\") {\n        return 20;\n    } else if (normalized === \"notice\") {\n        return 25;\n    } else if (normalized === \"warn\") {\n        return 30;\n    } else if (normalized === \"warning\") {\n        return 30;\n    } else if (normalized === \"error\") {\n        return 40;\n    } else if (normalized === \"critical\") {\n        return 50;\n    } else if (normalized === \"fatal\") {\n        return 50;\n    } else {\n        return 0;\n    }\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 2,
+          "reason": "the comparison chain should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "Record<",
+            "\\{[^{}]*:",
+            "new Map"
+          ],
+          "reason": "the levels should live in a lookup table"
+        }
+      ],
+      "max_lines": 20
+    },
+    "test_cases": [
+      {
+        "input": "debug",
+        "expected": 10
+      },
+      {
+        "input": "INFO",
+        "expected": 20
+      },
+      {
+        "input": " notice ",
+        "expected": 25
+      },
+      {
+        "input": "warn",
+        "expected": 30
+      },
+      {
+        "input": "Warning",
+        "expected": 30
+      },
+      {
+        "input": "error",
+        "expected": 40
+      },
+      {
+        "input": "critical",
+        "expected": 50
+      },
+      {
+        "input": "FATAL",
+        "expected": 50
+      },
+      {
+        "input": "trace",
+        "expected": 0
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "  ",
+        "expected": 0
+      },
+      {
+        "input": "Error",
+        "expected": 40
+      }
+    ]
+  },
+  {
+    "id": "severity_rank_go",
+    "language": "go",
+    "difficulty": "easy",
+    "task_family": "severity_rank",
+    "skill": "branch_collapse",
+    "spec": "`severity_rank` maps a log level name to a numeric rank. The current version\nworks and must keep working exactly as it does today:\n\n- debug 10, info 20, notice 25, warn 30, warning 30, error 40, critical 50,\n  fatal 50, and 0 for anything else.\n- The input is trimmed of surrounding whitespace and matched case-insensitively.\n\nRefactor it so the level-to-rank mapping is data, not control flow: one lookup\n(a dictionary/map/table, or the language's idiomatic match) instead of a chain\nof comparisons. Adding a level later should mean adding one entry.",
+    "signature": "func SeverityRank(level string) int {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "goal": "Replace the comparison chain with a single data-driven lookup, so adding a level is a one-line data change.",
+    "original_code": "func SeverityRank(level string) int {\n    normalized := strings.ToLower(strings.TrimSpace(level))\n    if normalized == \"debug\" {\n        return 10\n    } else if normalized == \"info\" {\n        return 20\n    } else if normalized == \"notice\" {\n        return 25\n    } else if normalized == \"warn\" {\n        return 30\n    } else if normalized == \"warning\" {\n        return 30\n    } else if normalized == \"error\" {\n        return 40\n    } else if normalized == \"critical\" {\n        return 50\n    } else if normalized == \"fatal\" {\n        return 50\n    }\n    return 0\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 2,
+          "reason": "the comparison chain should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "map\\[string\\]",
+            "\\bswitch\\b"
+          ],
+          "reason": "the levels should live in a map or a switch"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": "debug",
+        "expected": 10
+      },
+      {
+        "input": "INFO",
+        "expected": 20
+      },
+      {
+        "input": " notice ",
+        "expected": 25
+      },
+      {
+        "input": "warn",
+        "expected": 30
+      },
+      {
+        "input": "Warning",
+        "expected": 30
+      },
+      {
+        "input": "error",
+        "expected": 40
+      },
+      {
+        "input": "critical",
+        "expected": 50
+      },
+      {
+        "input": "FATAL",
+        "expected": 50
+      },
+      {
+        "input": "trace",
+        "expected": 0
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "  ",
+        "expected": 0
+      },
+      {
+        "input": "Error",
+        "expected": 40
+      }
+    ]
+  },
+  {
+    "id": "severity_rank_rust",
+    "language": "rust",
+    "difficulty": "easy",
+    "task_family": "severity_rank",
+    "skill": "branch_collapse",
+    "spec": "`severity_rank` maps a log level name to a numeric rank. The current version\nworks and must keep working exactly as it does today:\n\n- debug 10, info 20, notice 25, warn 30, warning 30, error 40, critical 50,\n  fatal 50, and 0 for anything else.\n- The input is trimmed of surrounding whitespace and matched case-insensitively.\n\nRefactor it so the level-to-rank mapping is data, not control flow: one lookup\n(a dictionary/map/table, or the language's idiomatic match) instead of a chain\nof comparisons. Adding a level later should mean adding one entry.",
+    "signature": "fn severity_rank(level: &str) -> i64 {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "goal": "Replace the comparison chain with a single data-driven lookup, so adding a level is a one-line data change.",
+    "original_code": "fn severity_rank(level: &str) -> i64 {\n    let normalized = level.trim().to_lowercase();\n    if normalized == \"debug\" {\n        return 10;\n    } else if normalized == \"info\" {\n        return 20;\n    } else if normalized == \"notice\" {\n        return 25;\n    } else if normalized == \"warn\" {\n        return 30;\n    } else if normalized == \"warning\" {\n        return 30;\n    } else if normalized == \"error\" {\n        return 40;\n    } else if normalized == \"critical\" {\n        return 50;\n    } else if normalized == \"fatal\" {\n        return 50;\n    }\n    0\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 2,
+          "reason": "the comparison chain should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bmatch\\b",
+            "HashMap"
+          ],
+          "reason": "the levels should live in a match or a map"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": "debug",
+        "expected": 10
+      },
+      {
+        "input": "INFO",
+        "expected": 20
+      },
+      {
+        "input": " notice ",
+        "expected": 25
+      },
+      {
+        "input": "warn",
+        "expected": 30
+      },
+      {
+        "input": "Warning",
+        "expected": 30
+      },
+      {
+        "input": "error",
+        "expected": 40
+      },
+      {
+        "input": "critical",
+        "expected": 50
+      },
+      {
+        "input": "FATAL",
+        "expected": 50
+      },
+      {
+        "input": "trace",
+        "expected": 0
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "  ",
+        "expected": 0
+      },
+      {
+        "input": "Error",
+        "expected": 40
+      }
+    ]
+  },
+  {
+    "id": "format_bytes_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "format_bytes",
+    "skill": "duplication",
+    "spec": "`format_bytes` renders a byte count the way a UI does. Behavior must not\nchange:\n\n- Units are B, KB, MB, GB, TB, each 1024 of the previous one. Values of 1024 TB\n  and above stay in TB.\n- Below 1024 the result is the whole number followed by \" B\", with no decimal:\n  512 renders as \"512 B\".\n- Otherwise the value is truncated (never rounded up) to one decimal place and\n  followed by a space and the unit: 1536 renders as \"1.5 KB\", and 1048575\n  renders as \"1023.9 KB\".\n\nRefactor the copy-pasted per-unit blocks into one loop over a unit table. The\nscaling arithmetic should appear once, not once per unit.",
+    "signature": "def format_bytes(n: int) -> str:",
+    "io": {
+      "args": [
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Collapse the repeated per-unit branches into one loop over a unit table so the scaling arithmetic exists in exactly one place.",
+    "original_code": "def format_bytes(n: int) -> str:\n    if n < 1024:\n        return f\"{n} B\"\n    if n < 1024 * 1024:\n        value = (n * 10 // 1024) / 10\n        return f\"{value:.1f} KB\"\n    if n < 1024 * 1024 * 1024:\n        value = (n * 10 // (1024 * 1024)) / 10\n        return f\"{value:.1f} MB\"\n    if n < 1024 * 1024 * 1024 * 1024:\n        value = (n * 10 // (1024 * 1024 * 1024)) / 10\n        return f\"{value:.1f} GB\"\n    value = (n * 10 // (1024 * 1024 * 1024 * 1024)) / 10\n    return f\"{value:.1f} TB\"",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\"KB\"|\\bKB\\b",
+          "max": 2,
+          "reason": "each unit should be named once, in a table"
+        },
+        {
+          "pattern": "\\bif\\b",
+          "max": 3,
+          "reason": "the per-unit branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bfor\\b",
+            "\\bwhile\\b"
+          ],
+          "reason": "one loop should walk the unit table"
+        }
+      ],
+      "max_lines": 25
+    },
+    "test_cases": [
+      {
+        "input": 0,
+        "expected": "0 B"
+      },
+      {
+        "input": 5,
+        "expected": "5 B"
+      },
+      {
+        "input": 512,
+        "expected": "512 B"
+      },
+      {
+        "input": 1023,
+        "expected": "1023 B"
+      },
+      {
+        "input": 1024,
+        "expected": "1.0 KB"
+      },
+      {
+        "input": 1536,
+        "expected": "1.5 KB"
+      },
+      {
+        "input": 1048575,
+        "expected": "1023.9 KB"
+      },
+      {
+        "input": 1048576,
+        "expected": "1.0 MB"
+      },
+      {
+        "input": 1572864,
+        "expected": "1.5 MB"
+      },
+      {
+        "input": 1073741824,
+        "expected": "1.0 GB"
+      },
+      {
+        "input": 1099511627776,
+        "expected": "1.0 TB"
+      },
+      {
+        "input": 2199023255552,
+        "expected": "2.0 TB"
+      }
+    ]
+  },
+  {
+    "id": "format_bytes_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "format_bytes",
+    "skill": "duplication",
+    "spec": "`format_bytes` renders a byte count the way a UI does. Behavior must not\nchange:\n\n- Units are B, KB, MB, GB, TB, each 1024 of the previous one. Values of 1024 TB\n  and above stay in TB.\n- Below 1024 the result is the whole number followed by \" B\", with no decimal:\n  512 renders as \"512 B\".\n- Otherwise the value is truncated (never rounded up) to one decimal place and\n  followed by a space and the unit: 1536 renders as \"1.5 KB\", and 1048575\n  renders as \"1023.9 KB\".\n\nRefactor the copy-pasted per-unit blocks into one loop over a unit table. The\nscaling arithmetic should appear once, not once per unit.",
+    "signature": "function formatBytes(n: number): string {",
+    "io": {
+      "args": [
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Collapse the repeated per-unit branches into one loop over a unit table so the scaling arithmetic exists in exactly one place.",
+    "original_code": "function formatBytes(n: number): string {\n    if (n < 1024) {\n        return `${n} B`;\n    }\n    if (n < 1024 * 1024) {\n        const value = Math.floor((n * 10) / 1024) / 10;\n        return `${value.toFixed(1)} KB`;\n    }\n    if (n < 1024 * 1024 * 1024) {\n        const value = Math.floor((n * 10) / (1024 * 1024)) / 10;\n        return `${value.toFixed(1)} MB`;\n    }\n    if (n < 1024 * 1024 * 1024 * 1024) {\n        const value = Math.floor((n * 10) / (1024 * 1024 * 1024)) / 10;\n        return `${value.toFixed(1)} GB`;\n    }\n    const value = Math.floor((n * 10) / (1024 * 1024 * 1024 * 1024)) / 10;\n    return `${value.toFixed(1)} TB`;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bKB\\b",
+          "max": 2,
+          "reason": "each unit should be named once, in a table"
+        },
+        {
+          "pattern": "\\bif\\b",
+          "max": 3,
+          "reason": "the per-unit branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bfor\\b",
+            "\\bwhile\\b"
+          ],
+          "reason": "one loop should walk the unit table"
+        }
+      ],
+      "max_lines": 25
+    },
+    "test_cases": [
+      {
+        "input": 0,
+        "expected": "0 B"
+      },
+      {
+        "input": 5,
+        "expected": "5 B"
+      },
+      {
+        "input": 512,
+        "expected": "512 B"
+      },
+      {
+        "input": 1023,
+        "expected": "1023 B"
+      },
+      {
+        "input": 1024,
+        "expected": "1.0 KB"
+      },
+      {
+        "input": 1536,
+        "expected": "1.5 KB"
+      },
+      {
+        "input": 1048575,
+        "expected": "1023.9 KB"
+      },
+      {
+        "input": 1048576,
+        "expected": "1.0 MB"
+      },
+      {
+        "input": 1572864,
+        "expected": "1.5 MB"
+      },
+      {
+        "input": 1073741824,
+        "expected": "1.0 GB"
+      },
+      {
+        "input": 1099511627776,
+        "expected": "1.0 TB"
+      },
+      {
+        "input": 2199023255552,
+        "expected": "2.0 TB"
+      }
+    ]
+  },
+  {
+    "id": "format_bytes_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "format_bytes",
+    "skill": "duplication",
+    "spec": "`format_bytes` renders a byte count the way a UI does. Behavior must not\nchange:\n\n- Units are B, KB, MB, GB, TB, each 1024 of the previous one. Values of 1024 TB\n  and above stay in TB.\n- Below 1024 the result is the whole number followed by \" B\", with no decimal:\n  512 renders as \"512 B\".\n- Otherwise the value is truncated (never rounded up) to one decimal place and\n  followed by a space and the unit: 1536 renders as \"1.5 KB\", and 1048575\n  renders as \"1023.9 KB\".\n\nRefactor the copy-pasted per-unit blocks into one loop over a unit table. The\nscaling arithmetic should appear once, not once per unit.",
+    "signature": "func FormatBytes(n int) string {",
+    "io": {
+      "args": [
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Collapse the repeated per-unit branches into one loop over a unit table so the scaling arithmetic exists in exactly one place.",
+    "original_code": "func FormatBytes(n int) string {\n    if n < 1024 {\n        return fmt.Sprintf(\"%d B\", n)\n    }\n    if n < 1024*1024 {\n        value := float64(n*10/1024) / 10\n        return fmt.Sprintf(\"%.1f KB\", value)\n    }\n    if n < 1024*1024*1024 {\n        value := float64(n*10/(1024*1024)) / 10\n        return fmt.Sprintf(\"%.1f MB\", value)\n    }\n    if n < 1024*1024*1024*1024 {\n        value := float64(n*10/(1024*1024*1024)) / 10\n        return fmt.Sprintf(\"%.1f GB\", value)\n    }\n    value := float64(n*10/(1024*1024*1024*1024)) / 10\n    return fmt.Sprintf(\"%.1f TB\", value)\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bKB\\b",
+          "max": 2,
+          "reason": "each unit should be named once, in a table"
+        },
+        {
+          "pattern": "\\bif\\b",
+          "max": 3,
+          "reason": "the per-unit branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bfor\\b"
+          ],
+          "reason": "one loop should walk the unit table"
+        }
+      ],
+      "max_lines": 25
+    },
+    "test_cases": [
+      {
+        "input": 0,
+        "expected": "0 B"
+      },
+      {
+        "input": 5,
+        "expected": "5 B"
+      },
+      {
+        "input": 512,
+        "expected": "512 B"
+      },
+      {
+        "input": 1023,
+        "expected": "1023 B"
+      },
+      {
+        "input": 1024,
+        "expected": "1.0 KB"
+      },
+      {
+        "input": 1536,
+        "expected": "1.5 KB"
+      },
+      {
+        "input": 1048575,
+        "expected": "1023.9 KB"
+      },
+      {
+        "input": 1048576,
+        "expected": "1.0 MB"
+      },
+      {
+        "input": 1572864,
+        "expected": "1.5 MB"
+      },
+      {
+        "input": 1073741824,
+        "expected": "1.0 GB"
+      },
+      {
+        "input": 1099511627776,
+        "expected": "1.0 TB"
+      },
+      {
+        "input": 2199023255552,
+        "expected": "2.0 TB"
+      }
+    ]
+  },
+  {
+    "id": "format_bytes_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "format_bytes",
+    "skill": "duplication",
+    "spec": "`format_bytes` renders a byte count the way a UI does. Behavior must not\nchange:\n\n- Units are B, KB, MB, GB, TB, each 1024 of the previous one. Values of 1024 TB\n  and above stay in TB.\n- Below 1024 the result is the whole number followed by \" B\", with no decimal:\n  512 renders as \"512 B\".\n- Otherwise the value is truncated (never rounded up) to one decimal place and\n  followed by a space and the unit: 1536 renders as \"1.5 KB\", and 1048575\n  renders as \"1023.9 KB\".\n\nRefactor the copy-pasted per-unit blocks into one loop over a unit table. The\nscaling arithmetic should appear once, not once per unit.",
+    "signature": "fn format_bytes(n: i64) -> String {",
+    "io": {
+      "args": [
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Collapse the repeated per-unit branches into one loop over a unit table so the scaling arithmetic exists in exactly one place.",
+    "original_code": "fn format_bytes(n: i64) -> String {\n    if n < 1024 {\n        return format!(\"{} B\", n);\n    }\n    if n < 1024 * 1024 {\n        let value = (n * 10 / 1024) as f64 / 10.0;\n        return format!(\"{:.1} KB\", value);\n    }\n    if n < 1024 * 1024 * 1024 {\n        let value = (n * 10 / (1024 * 1024)) as f64 / 10.0;\n        return format!(\"{:.1} MB\", value);\n    }\n    if n < 1024 * 1024 * 1024 * 1024 {\n        let value = (n * 10 / (1024 * 1024 * 1024)) as f64 / 10.0;\n        return format!(\"{:.1} GB\", value);\n    }\n    let value = (n * 10 / (1024 * 1024 * 1024 * 1024)) as f64 / 10.0;\n    format!(\"{:.1} TB\", value)\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bKB\\b",
+          "max": 2,
+          "reason": "each unit should be named once, in a table"
+        },
+        {
+          "pattern": "\\bif\\b",
+          "max": 3,
+          "reason": "the per-unit branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bfor\\b",
+            "\\bwhile\\b",
+            "\\.iter\\("
+          ],
+          "reason": "one loop should walk the unit table"
+        }
+      ],
+      "max_lines": 25
+    },
+    "test_cases": [
+      {
+        "input": 0,
+        "expected": "0 B"
+      },
+      {
+        "input": 5,
+        "expected": "5 B"
+      },
+      {
+        "input": 512,
+        "expected": "512 B"
+      },
+      {
+        "input": 1023,
+        "expected": "1023 B"
+      },
+      {
+        "input": 1024,
+        "expected": "1.0 KB"
+      },
+      {
+        "input": 1536,
+        "expected": "1.5 KB"
+      },
+      {
+        "input": 1048575,
+        "expected": "1023.9 KB"
+      },
+      {
+        "input": 1048576,
+        "expected": "1.0 MB"
+      },
+      {
+        "input": 1572864,
+        "expected": "1.5 MB"
+      },
+      {
+        "input": 1073741824,
+        "expected": "1.0 GB"
+      },
+      {
+        "input": 1099511627776,
+        "expected": "1.0 TB"
+      },
+      {
+        "input": 2199023255552,
+        "expected": "2.0 TB"
+      }
+    ]
+  },
+  {
+    "id": "dedupe_preserving_order_python",
+    "language": "python",
+    "difficulty": "easy",
+    "task_family": "dedupe_preserving_order",
+    "skill": "complexity",
+    "spec": "`dedupe_preserving_order` removes duplicate entries while keeping the first\noccurrence of each, in order. Behavior must not change:\n\n- The first occurrence of a value stays where it is; later ones are dropped.\n- Comparison is exact (case-sensitive, no trimming).\n- An empty input returns an empty list.\n\nThe current version re-scans everything it has kept for every element, which is\nquadratic on the alert streams this runs against. Refactor it into a single\npass using a set or map for membership.",
+    "signature": "def dedupe_preserving_order(items: list[str]) -> list[str]:",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the nested membership scan with a single pass backed by a set or map, preserving first-occurrence order.",
+    "original_code": "def dedupe_preserving_order(items: list[str]) -> list[str]:\n    out: list[str] = []\n    for item in items:\n        duplicate = False\n        for existing in out:\n            if existing == item:\n                duplicate = True\n        if not duplicate:\n            out.append(item)\n    return out",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "one pass, not nested scans"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bset\\(",
+            "\\bdict\\b",
+            "fromkeys",
+            "\\{\\}"
+          ],
+          "reason": "membership should be a set or map lookup"
+        }
+      ],
+      "max_lines": 15
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b",
+          "a",
+          "c",
+          "b"
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          "x",
+          "x"
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": [
+          "one"
+        ]
+      },
+      {
+        "input": [
+          "A",
+          "a",
+          "A"
+        ],
+        "expected": [
+          "A",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          "p",
+          "q",
+          "r"
+        ],
+        "expected": [
+          "p",
+          "q",
+          "r"
+        ]
+      },
+      {
+        "input": [
+          "",
+          "",
+          "z"
+        ],
+        "expected": [
+          "",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          "node-1",
+          "node-2",
+          "node-1",
+          "node-3",
+          "node-2",
+          "node-1"
+        ],
+        "expected": [
+          "node-1",
+          "node-2",
+          "node-3"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dedupe_preserving_order_typescript",
+    "language": "typescript",
+    "difficulty": "easy",
+    "task_family": "dedupe_preserving_order",
+    "skill": "complexity",
+    "spec": "`dedupe_preserving_order` removes duplicate entries while keeping the first\noccurrence of each, in order. Behavior must not change:\n\n- The first occurrence of a value stays where it is; later ones are dropped.\n- Comparison is exact (case-sensitive, no trimming).\n- An empty input returns an empty list.\n\nThe current version re-scans everything it has kept for every element, which is\nquadratic on the alert streams this runs against. Refactor it into a single\npass using a set or map for membership.",
+    "signature": "function dedupePreservingOrder(items: string[]): string[] {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the nested membership scan with a single pass backed by a set or map, preserving first-occurrence order.",
+    "original_code": "function dedupePreservingOrder(items: string[]): string[] {\n    const out: string[] = [];\n    for (const item of items) {\n        let duplicate = false;\n        for (const existing of out) {\n            if (existing === item) {\n                duplicate = true;\n            }\n        }\n        if (!duplicate) {\n            out.push(item);\n        }\n    }\n    return out;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "one pass, not nested scans"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bSet\\b",
+            "\\bMap\\b"
+          ],
+          "reason": "membership should be a Set or Map lookup"
+        }
+      ],
+      "max_lines": 15
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b",
+          "a",
+          "c",
+          "b"
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          "x",
+          "x"
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": [
+          "one"
+        ]
+      },
+      {
+        "input": [
+          "A",
+          "a",
+          "A"
+        ],
+        "expected": [
+          "A",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          "p",
+          "q",
+          "r"
+        ],
+        "expected": [
+          "p",
+          "q",
+          "r"
+        ]
+      },
+      {
+        "input": [
+          "",
+          "",
+          "z"
+        ],
+        "expected": [
+          "",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          "node-1",
+          "node-2",
+          "node-1",
+          "node-3",
+          "node-2",
+          "node-1"
+        ],
+        "expected": [
+          "node-1",
+          "node-2",
+          "node-3"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dedupe_preserving_order_go",
+    "language": "go",
+    "difficulty": "easy",
+    "task_family": "dedupe_preserving_order",
+    "skill": "complexity",
+    "spec": "`dedupe_preserving_order` removes duplicate entries while keeping the first\noccurrence of each, in order. Behavior must not change:\n\n- The first occurrence of a value stays where it is; later ones are dropped.\n- Comparison is exact (case-sensitive, no trimming).\n- An empty input returns an empty list.\n\nThe current version re-scans everything it has kept for every element, which is\nquadratic on the alert streams this runs against. Refactor it into a single\npass using a set or map for membership.",
+    "signature": "func DedupePreservingOrder(items []string) []string {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the nested membership scan with a single pass backed by a set or map, preserving first-occurrence order.",
+    "original_code": "func DedupePreservingOrder(items []string) []string {\n    out := []string{}\n    for _, item := range items {\n        duplicate := false\n        for _, existing := range out {\n            if existing == item {\n                duplicate = true\n            }\n        }\n        if !duplicate {\n            out = append(out, item)\n        }\n    }\n    return out\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "one pass, not nested scans"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "map\\[string\\]"
+          ],
+          "reason": "membership should be a map lookup"
+        }
+      ],
+      "max_lines": 16
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b",
+          "a",
+          "c",
+          "b"
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          "x",
+          "x"
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": [
+          "one"
+        ]
+      },
+      {
+        "input": [
+          "A",
+          "a",
+          "A"
+        ],
+        "expected": [
+          "A",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          "p",
+          "q",
+          "r"
+        ],
+        "expected": [
+          "p",
+          "q",
+          "r"
+        ]
+      },
+      {
+        "input": [
+          "",
+          "",
+          "z"
+        ],
+        "expected": [
+          "",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          "node-1",
+          "node-2",
+          "node-1",
+          "node-3",
+          "node-2",
+          "node-1"
+        ],
+        "expected": [
+          "node-1",
+          "node-2",
+          "node-3"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dedupe_preserving_order_rust",
+    "language": "rust",
+    "difficulty": "easy",
+    "task_family": "dedupe_preserving_order",
+    "skill": "complexity",
+    "spec": "`dedupe_preserving_order` removes duplicate entries while keeping the first\noccurrence of each, in order. Behavior must not change:\n\n- The first occurrence of a value stays where it is; later ones are dropped.\n- Comparison is exact (case-sensitive, no trimming).\n- An empty input returns an empty list.\n\nThe current version re-scans everything it has kept for every element, which is\nquadratic on the alert streams this runs against. Refactor it into a single\npass using a set or map for membership.",
+    "signature": "fn dedupe_preserving_order(items: &[&str]) -> Vec<String> {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the nested membership scan with a single pass backed by a set or map, preserving first-occurrence order.",
+    "original_code": "fn dedupe_preserving_order(items: &[&str]) -> Vec<String> {\n    let mut out: Vec<String> = Vec::new();\n    for item in items {\n        let mut duplicate = false;\n        for existing in &out {\n            if existing == item {\n                duplicate = true;\n            }\n        }\n        if !duplicate {\n            out.push(item.to_string());\n        }\n    }\n    out\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "one pass, not nested scans"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "HashSet",
+            "HashMap",
+            "BTreeSet"
+          ],
+          "reason": "membership should be a set or map lookup"
+        }
+      ],
+      "max_lines": 16
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b",
+          "a",
+          "c",
+          "b"
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          "x",
+          "x"
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": [
+          "one"
+        ]
+      },
+      {
+        "input": [
+          "A",
+          "a",
+          "A"
+        ],
+        "expected": [
+          "A",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          "p",
+          "q",
+          "r"
+        ],
+        "expected": [
+          "p",
+          "q",
+          "r"
+        ]
+      },
+      {
+        "input": [
+          "",
+          "",
+          "z"
+        ],
+        "expected": [
+          "",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          "node-1",
+          "node-2",
+          "node-1",
+          "node-3",
+          "node-2",
+          "node-1"
+        ],
+        "expected": [
+          "node-1",
+          "node-2",
+          "node-3"
+        ]
+      }
+    ]
+  }
+]

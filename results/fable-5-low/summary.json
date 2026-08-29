@@ -1,25 +1,35 @@
 {
   "model": "fable-5-low",
-  "global_score": 78.91,
+  "global_score": 65.51,
   "category_scores": {
-    "code_generation": 78.77,
-    "code_gen_python": 94.64,
-    "code_gen_typescript": 95.83,
-    "code_gen_go": 80.83,
-    "code_gen_rust": 43.78,
-    "efficiency": 81.42
+    "code_generation": 69.25,
+    "code_efficiency": 44.44,
+    "code_debugging": 0.0,
+    "code_refactoring": 16.67,
+    "code_review": 0.0,
+    "log_parsing": 91.04,
+    "anomaly_detection": 67.39,
+    "multimodal_rca": 61.4,
+    "metrics_timeseries": 71.53,
+    "pattern_correlation": 52.67,
+    "root_cause": 41.39,
+    "code_python": 38.39,
+    "code_typescript": 53.7,
+    "code_go": 34.58,
+    "code_rust": 20.79,
+    "efficiency": 70.6
   },
   "efficiency_metrics": {
-    "avg_latency_s": 6.0989,
-    "avg_total_tokens": 843.9552,
-    "score_stddev": 0.0433,
-    "latency_score": 0.6951,
-    "token_score": 0.789,
-    "consistency_score": 0.9983
+    "avg_latency_s": 6.4265,
+    "avg_total_tokens": 1992.096,
+    "score_stddev": 1.3371,
+    "latency_score": 0.6787,
+    "token_score": 0.502,
+    "consistency_score": 0.9465
   },
   "error_count": 0,
-  "refused_count": 5,
-  "total_runs": 72,
-  "total_duration_s": 408.63,
-  "last_run_wall_clock_s": 60.71
+  "refused_count": 163,
+  "total_runs": 486,
+  "total_duration_s": 2075.77,
+  "last_run_wall_clock_s": null
 }

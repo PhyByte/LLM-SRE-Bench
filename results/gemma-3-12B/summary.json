@@ -1,25 +1,35 @@
 {
   "model": "gemma-3-12B",
-  "global_score": 65.84,
+  "global_score": 68.36,
   "category_scores": {
-    "code_generation": 64.68,
-    "code_gen_python": 88.41,
-    "code_gen_typescript": 96.07,
-    "code_gen_go": 40.89,
-    "code_gen_rust": 33.33,
-    "efficiency": 87.98
+    "log_parsing": 74.84,
+    "anomaly_detection": 51.81,
+    "multimodal_rca": 35.96,
+    "metrics_timeseries": 19.11,
+    "pattern_correlation": 76.0,
+    "root_cause": 38.2,
+    "code_generation": 63.43,
+    "code_efficiency": 81.2,
+    "code_debugging": 83.25,
+    "code_refactoring": 72.51,
+    "code_review": 54.81,
+    "code_python": 85.46,
+    "code_typescript": 87.41,
+    "code_go": 51.81,
+    "code_rust": 51.88,
+    "efficiency": 47.91
   },
   "efficiency_metrics": {
-    "avg_latency_s": 2.6446,
-    "avg_total_tokens": 641.8611,
-    "score_stddev": 1.601,
-    "latency_score": 0.8678,
-    "token_score": 0.8395,
-    "consistency_score": 0.936
+    "avg_latency_s": 30.4279,
+    "avg_total_tokens": 1417.6302,
+    "score_stddev": 1.2152,
+    "latency_score": 0.0,
+    "token_score": 0.6456,
+    "consistency_score": 0.9514
   },
-  "error_count": 0,
+  "error_count": 2,
   "refused_count": 0,
-  "total_runs": 72,
-  "total_duration_s": 190.41,
-  "last_run_wall_clock_s": 8.22
+  "total_runs": 486,
+  "total_duration_s": 14791.21,
+  "last_run_wall_clock_s": 128.42
 }
