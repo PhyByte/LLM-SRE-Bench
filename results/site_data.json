@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31 10:44:51 UTC",
+  "generated": "2026-08-31 16:32:19 UTC",
   "runs_per_test": 3,
   "n_cases": 362,
   "n_cases_total": 362,
@@ -485,39 +485,6 @@
           "score_stddev": 0.47,
           "input_tokens": 477396,
           "output_tokens": 477053,
-          "complete": true,
-          "categories_scored": 6,
-          "categories_total": 6,
-          "language_scores": {}
-        },
-        {
-          "name": "gemini-3.1-pro",
-          "provider": "google",
-          "reasoning_effort": null,
-          "global_score": 66.4,
-          "scores": {
-            "log_parsing": 90.7,
-            "anomaly_detection": 64.0,
-            "pattern_correlation": 71.3,
-            "metrics_timeseries": 69.3,
-            "root_cause": 46.8,
-            "multimodal_rca": 59.8,
-            "efficiency": 50.1
-          },
-          "price_input": 2.0,
-          "price_output": 12.0,
-          "price_blended": 3.0,
-          "measured_cost_usd": 1.4133,
-          "total_runs": 246,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 4139.473096079659,
-          "avg_latency_s": 16.83,
-          "avg_tokens": 2103,
-          "score_stddev": 0.42,
-          "input_tokens": 479343,
-          "output_tokens": 37884,
           "complete": true,
           "categories_scored": 6,
           "categories_total": 6,
@@ -2476,71 +2443,6 @@
             "rust": {
               "code_generation": 31.3,
               "code_efficiency": 64.1,
-              "code_debugging": 0.0,
-              "code_refactoring": 0.0,
-              "code_review": 0.0
-            }
-          }
-        },
-        {
-          "name": "gemini-3.1-pro",
-          "provider": "google",
-          "reasoning_effort": null,
-          "global_score": 15.4,
-          "scores": {
-            "code_generation": 37.0,
-            "code_efficiency": 0.0,
-            "code_debugging": 0.0,
-            "code_refactoring": 0.0,
-            "code_review": 0.0,
-            "code_python": 12.9,
-            "code_typescript": 7.8,
-            "code_go": 9.9,
-            "code_rust": 7.5,
-            "efficiency": 49.7
-          },
-          "price_input": 2.0,
-          "price_output": 12.0,
-          "price_blended": 3.0,
-          "measured_cost_usd": 0.4691,
-          "total_runs": 840,
-          "repeats_per_case": 3.0,
-          "errors": 742,
-          "refused": 0,
-          "duration_s": 4535.008634120692,
-          "avg_latency_s": 35.72,
-          "avg_tokens": 606,
-          "score_stddev": 4.78,
-          "input_tokens": 33042,
-          "output_tokens": 33587,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 50.1,
-              "code_efficiency": 0.0,
-              "code_debugging": 0.0,
-              "code_refactoring": 0.0,
-              "code_review": 0.0
-            },
-            "typescript": {
-              "code_generation": 30.3,
-              "code_efficiency": 0.0,
-              "code_debugging": 0.0,
-              "code_refactoring": 0.0,
-              "code_review": 0.0
-            },
-            "go": {
-              "code_generation": 38.4,
-              "code_efficiency": 0.0,
-              "code_debugging": 0.0,
-              "code_refactoring": 0.0,
-              "code_review": 0.0
-            },
-            "rust": {
-              "code_generation": 29.1,
-              "code_efficiency": 0.0,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0

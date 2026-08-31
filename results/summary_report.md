@@ -1,72 +1,70 @@
 # LLM Observability Benchmark — Summary Report
 
-Generated: 2026-08-31 10:44:51 UTC
+Generated: 2026-08-31 16:32:19 UTC
 
 ## Overall Ranking
 
-1. **qwen3-coder-30b** — global score 90.3/100 (3/840 failed runs) — completed in 15m 16s
-2. **gemma-3-12B** — global score 88.8/100 (4/840 failed runs) — completed in 30m 29s
-3. **gpt-4o** — global score 88.3/100 (3/840 failed runs) — completed in 30m 53s
-4. **qwen3.8-27b** — global score 88.0/100 (3/840 failed runs) — completed in 41m 46s
-5. **qwen3-32b** — global score 84.0/100 (4/840 failed runs) — completed in 66m 27s
-6. **qwen3.6-27b** — global score 84.0/100 (3/840 failed runs) — completed in 69m 53s
-7. **opus-4.8** — global score 79.8/100 (0/840 failed runs) — completed in 74m 7s
-8. **haiku-4-5** — global score 78.8/100 (0/840 failed runs) — completed in 50m 34s
-9. **gpt-5.6-terra** — global score 78.3/100 (0/840 failed runs) — completed in 69m 9s
-10. **fable-5-low** — global score 78.0/100 (0/840 failed runs, 585 declined) — completed in 29m 13s
-11. **grok-4** — global score 75.5/100 (0/840 failed runs) — completed in 106m 39s
-12. **grok-4.5-low** — global score 72.4/100 (0/840 failed runs) — completed in 115m 35s
-13. **gpt-5.6-sol** — global score 72.0/100 (1/840 failed runs) — completed in 107m 49s
-14. **gpt-5.6-luna** — global score 71.5/100 (0/840 failed runs) — completed in 105m 6s
-15. **grok-4.6-low** — global score 68.9/100 (0/840 failed runs) — completed in 126m 54s
-16. **sonnet-5** — global score 68.6/100 (0/840 failed runs) — completed in 111m 56s
-17. **gemini-3.6-flash** — global score 64.1/100 (0/840 failed runs) — completed in 190m 28s
-18. **fable-5** — global score 61.4/100 (0/840 failed runs, 578 declined) — completed in 48m 5s
-19. **grok-4.5** — global score 50.9/100 (1/840 failed runs) — completed in 263m 2s
-20. **gemini-3.1-pro** — global score 49.7/100 (742/840 failed runs) — completed in 75m 35s
-21. **grok-4.6** — global score 46.8/100 (0/840 failed runs) — completed in 631m 35s
-22. **gemma-4-31b** — global score 39.9/100 (2/840 failed runs) — completed in 458m 44s
-23. **gemma-4-26B-a4b** — global score 35.6/100 (4/840 failed runs) — completed in 234m 19s
+1. **opus-4.8** — global score 73.3/100 (0/246 failed runs) — completed in 17m 38s
+2. **grok-4.6-low** — global score 72.6/100 (0/246 failed runs) — completed in 32m 31s
+3. **gpt-5.6-terra** — global score 70.6/100 (0/246 failed runs) — completed in 16m 5s
+4. **grok-4.5-low** — global score 70.4/100 (0/246 failed runs) — completed in 42m 18s
+5. **grok-4.5** — global score 70.0/100 (0/246 failed runs) — completed in 108m 25s
+6. **grok-4.6** — global score 69.2/100 (0/246 failed runs) — completed in 248m 2s
+7. **sonnet-5** — global score 68.3/100 (0/246 failed runs) — completed in 31m 19s
+8. **grok-4** — global score 67.9/100 (0/246 failed runs) — completed in 33m 10s
+9. **gpt-5.6-sol** — global score 67.3/100 (0/246 failed runs) — completed in 26m 46s
+10. **gpt-5.6-luna** — global score 67.2/100 (0/246 failed runs) — completed in 20m 9s
+11. **qwen3.8-27b** — global score 66.9/100 (0/246 failed runs) — completed in 91m 1s
+12. **gemma-4-26B-a4b** — global score 66.2/100 (1/246 failed runs) — completed in 65m 25s
+13. **gemini-3.6-flash** — global score 66.0/100 (2/246 failed runs) — completed in 66m 50s
+14. **fable-5-low** — global score 65.3/100 (0/246 failed runs, 25 declined) — completed in 23m 50s
+15. **qwen3.6-27b** — global score 64.2/100 (0/246 failed runs) — completed in 175m 1s
+16. **gemma-4-31b** — global score 64.1/100 (0/246 failed runs) — completed in 150m 3s
+17. **haiku-4-5** — global score 63.8/100 (0/246 failed runs) — completed in 10m 34s
+18. **fable-5** — global score 63.6/100 (0/246 failed runs, 26 declined) — completed in 40m 58s
+19. **gpt-4o** — global score 61.0/100 (0/246 failed runs) — completed in 15m 21s
+20. **qwen3-coder-30b** — global score 55.8/100 (0/246 failed runs) — completed in 7m 38s
+21. **qwen3-32b** — global score 52.1/100 (0/246 failed runs) — completed in 70m 36s
+22. **gemma-3-12B** — global score 50.6/100 (0/246 failed runs) — completed in 237m 39s
 
 ## Category Leaders
 
-- **Efficiency & Consistency**: qwen3-coder-30b with 90.3 (next: gemma-3-12B at 88.8)
+- **Log Parsing**: fable-5 with 92.1 (next: gpt-5.6-terra at 91.9)
+- **Anomaly Detection**: gemma-4-26B-a4b with 70.9 (next: qwen3.8-27b at 69.3)
+- **Pattern & Correlation**: gpt-5.6-terra with 86.0 (next: opus-4.8 at 86.0)
+- **Metrics Time-Series**: opus-4.8 with 81.8 (next: grok-4.6 at 79.6)
+- **Root Cause & Summary**: grok-4.5-low with 56.2 (next: grok-4.6 at 55.9)
+- **Multi-modal RCA**: grok-4.6-low with 68.8 (next: grok-4.5 at 68.3)
+- **Efficiency & Consistency**: qwen3-coder-30b with 77.8 (next: gpt-4o at 77.3)
 
 ## Efficiency Details
 
-- **qwen3-coder-30b**: avg latency 1.09s, avg tokens/call 719, score stddev across runs 1.7 points, full set: 15m 16s
-- **gemma-3-12B**: avg latency 2.11s, avg tokens/call 716, score stddev across runs 1.4 points, full set: 30m 29s
-- **gpt-4o**: avg latency 2.21s, avg tokens/call 636, score stddev across runs 2.1 points, full set: 30m 53s
-- **qwen3.8-27b**: avg latency 2.99s, avg tokens/call 744, score stddev across runs 0.4 points, full set: 41m 46s
-- **qwen3-32b**: avg latency 4.27s, avg tokens/call 709, score stddev across runs 1.8 points, full set: 66m 27s
-- **qwen3.6-27b**: avg latency 4.98s, avg tokens/call 805, score stddev across runs 0.0 points, full set: 69m 53s
-- **opus-4.8**: avg latency 5.29s, avg tokens/call 1008, score stddev across runs 1.7 points, full set: 74m 7s
-- **haiku-4-5**: avg latency 3.61s, avg tokens/call 898, score stddev across runs 6.0 points, full set: 50m 34s
-- **gpt-5.6-terra**: avg latency 4.94s, avg tokens/call 862, score stddev across runs 4.4 points, full set: 69m 9s
-- **fable-5-low**: avg latency 6.88s, avg tokens/call 947, score stddev across runs 0.9 points, full set: 29m 13s
-- **grok-4**: avg latency 7.62s, avg tokens/call 804, score stddev across runs 2.7 points, full set: 106m 39s
-- **grok-4.5-low**: avg latency 8.26s, avg tokens/call 1191, score stddev across runs 1.8 points, full set: 115m 35s
-- **gpt-5.6-sol**: avg latency 7.71s, avg tokens/call 949, score stddev across runs 4.6 points, full set: 107m 49s
-- **gpt-5.6-luna**: avg latency 7.51s, avg tokens/call 1092, score stddev across runs 4.4 points, full set: 105m 6s
-- **grok-4.6-low**: avg latency 9.06s, avg tokens/call 1303, score stddev across runs 2.7 points, full set: 126m 54s
-- **sonnet-5**: avg latency 8.00s, avg tokens/call 1411, score stddev across runs 4.0 points, full set: 111m 56s
-- **gemini-3.6-flash**: avg latency 13.60s, avg tokens/call 717, score stddev across runs 2.8 points, full set: 190m 28s
-- **fable-5**: avg latency 11.01s, avg tokens/call 1383, score stddev across runs 5.1 points, full set: 48m 5s
-- **grok-4.5**: avg latency 18.79s, avg tokens/call 1182, score stddev across runs 2.2 points, full set: 263m 2s
-- **gemini-3.1-pro**: avg latency 35.72s, avg tokens/call 606, score stddev across runs 4.8 points, full set: 75m 35s
-- **grok-4.6**: avg latency 45.11s, avg tokens/call 1315, score stddev across runs 2.8 points, full set: 631m 35s
-- **gemma-4-31b**: avg latency 32.80s, avg tokens/call 2418, score stddev across runs 1.7 points, full set: 458m 44s
-- **gemma-4-26B-a4b**: avg latency 16.79s, avg tokens/call 3644, score stddev across runs 2.9 points, full set: 234m 19s
+- **opus-4.8**: avg latency 4.30s, avg tokens/call 2383, score stddev across runs 1.4 points, full set: 17m 38s
+- **grok-4.6-low**: avg latency 7.93s, avg tokens/call 1984, score stddev across runs 2.0 points, full set: 32m 31s
+- **gpt-5.6-terra**: avg latency 3.92s, avg tokens/call 1917, score stddev across runs 3.1 points, full set: 16m 5s
+- **grok-4.5-low**: avg latency 10.32s, avg tokens/call 2234, score stddev across runs 4.0 points, full set: 42m 18s
+- **grok-4.5**: avg latency 26.45s, avg tokens/call 2287, score stddev across runs 2.8 points, full set: 108m 25s
+- **grok-4.6**: avg latency 60.50s, avg tokens/call 2050, score stddev across runs 3.0 points, full set: 248m 2s
+- **sonnet-5**: avg latency 7.64s, avg tokens/call 2797, score stddev across runs 4.0 points, full set: 31m 19s
+- **grok-4**: avg latency 8.09s, avg tokens/call 1903, score stddev across runs 5.5 points, full set: 33m 10s
+- **gpt-5.6-sol**: avg latency 6.53s, avg tokens/call 1957, score stddev across runs 2.8 points, full set: 26m 46s
+- **gpt-5.6-luna**: avg latency 4.91s, avg tokens/call 2092, score stddev across runs 3.1 points, full set: 20m 9s
+- **qwen3.8-27b**: avg latency 22.20s, avg tokens/call 3880, score stddev across runs 0.5 points, full set: 91m 1s
+- **gemma-4-26B-a4b**: avg latency 16.02s, avg tokens/call 4429, score stddev across runs 2.4 points, full set: 65m 25s
+- **gemini-3.6-flash**: avg latency 16.44s, avg tokens/call 2021, score stddev across runs 2.6 points, full set: 66m 50s
+- **fable-5-low**: avg latency 6.47s, avg tokens/call 2504, score stddev across runs 1.9 points, full set: 23m 50s
+- **qwen3.6-27b**: avg latency 42.69s, avg tokens/call 5066, score stddev across runs 0.0 points, full set: 175m 1s
+- **gemma-4-31b**: avg latency 36.60s, avg tokens/call 3642, score stddev across runs 1.7 points, full set: 150m 3s
+- **haiku-4-5**: avg latency 2.58s, avg tokens/call 1994, score stddev across runs 2.8 points, full set: 10m 34s
+- **fable-5**: avg latency 11.18s, avg tokens/call 2763, score stddev across runs 1.3 points, full set: 40m 58s
+- **gpt-4o**: avg latency 3.74s, avg tokens/call 1756, score stddev across runs 1.7 points, full set: 15m 21s
+- **qwen3-coder-30b**: avg latency 1.86s, avg tokens/call 2338, score stddev across runs 0.8 points, full set: 7m 38s
+- **qwen3-32b**: avg latency 17.22s, avg tokens/call 3015, score stddev across runs 4.0 points, full set: 70m 36s
+- **gemma-3-12B**: avg latency 57.97s, avg tokens/call 2162, score stddev across runs 1.1 points, full set: 237m 39s
 
 ## Reliability
 
-Coverage gaps — 773/24978 runs failed, 1214 declined by the model (scored 0):
-  gemini-3.1-pro — 742/1086 failed
-    code_debugging (156): all 52 cases skipped
-    code_efficiency (156): all 52 cases skipped
-    code_generation (118): 11 invalid JSON, 7 HTTP 429, 100 skipped — cron_field_matches_go, cron_field_matches_python#0,1, cron_field_matches_rust, cron_field_matches_typescript, evaluate_expression_go, evaluate_expression_python, evaluate_expression_rust, evaluate_expression_typescript +34 more
-    code_refactoring (156): all 52 cases skipped
-    code_review (156): all 52 cases skipped
+Coverage gaps — 31/23892 runs failed, 1214 declined by the model (scored 0):
   gemma-4-26B-a4b — 5/1086 failed
     code_generation (1): 1 empty response — tokenize_command_typescript#0
     code_refactoring (3): 3 invalid JSON — compact_ranges_rust
@@ -113,4 +111,10 @@ Coverage gaps — 773/24978 runs failed, 1214 declined by the model (scored 0):
 
 ## Recommendations
 
-- **qwen3-coder-30b** is the strongest overall pick for log/metrics analysis workloads in this run (global score 90.3).
+- **opus-4.8** is the strongest overall pick for log/metrics analysis workloads in this run (global score 73.3).
+- For **log parsing** specifically, consider **fable-5** (92.1 vs 91.9).
+- For **anomaly detection** specifically, consider **gemma-4-26B-a4b** (70.9 vs 68.8).
+- For **pattern & correlation** specifically, consider **gpt-5.6-terra** (86.0 vs 86.0).
+- For **root cause & summary** specifically, consider **grok-4.5-low** (56.2 vs 55.2).
+- For **multi-modal rca** specifically, consider **grok-4.6-low** (68.8 vs 60.6).
+- For **efficiency & consistency** specifically, consider **qwen3-coder-30b** (77.8 vs 71.8).

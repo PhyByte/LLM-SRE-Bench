@@ -1,7 +1,7 @@
 # Developer / Coding Benchmark — Comparison
 
-Generated: 2026-08-31 10:44:51 UTC  
-Runs per test: 3 · Models: 23 · Test cases: 280
+Generated: 2026-08-31 16:32:19 UTC  
+Runs per test: 3 · Models: 22 · Test cases: 280
 
 All scores are 0-100. The global score is the weighted average of the category scores. Only models that ran the full category set for this track are ranked. See also [SRE / Observability](comparison_table.md).
 
@@ -29,7 +29,6 @@ All scores are 0-100. The global score is the weighted average of the category s
 | 20 | **gemma-3-12B** | **54.5** | 44.9 | 55.9 | 64.2 | 59.8 | 49.2 | 88.8 | 30m 29s | $0.00 |
 | 21 | **fable-5-low** | **36.6** | 70.2 | 46.8 | 3.8 | 3.8 | 0.0 | 78.0 | 29m 13s | $7.09 |
 | 22 | **fable-5** | **33.3** | 65.3 | 45.6 | 2.6 | 0.6 | 0.0 | 61.4 | 48m 5s | $13.05 |
-| 23 | **gemini-3.1-pro** | **15.4** | 37.0 | 0.0 | 0.0 | 0.0 | 0.0 | 49.7 | 75m 35s | $0.47 |
 
 ## By language
 
@@ -59,7 +58,6 @@ The same runs as above, grouped by target language instead of by category. Every
 | gemma-3-12B | 80.9 | 31.5 | 53.7 | 50.3 |
 | fable-5-low | 30.5 | 35.8 | 25.3 | 21.1 |
 | fable-5 | 29.5 | 30.6 | 23.4 | 20.0 |
-| gemini-3.1-pro | 12.9 | 7.8 | 9.9 | 7.5 |
 
 ## What each column measures
 
