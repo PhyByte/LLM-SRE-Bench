@@ -754,5 +754,2803 @@
         ]
       }
     ]
+  },
+  {
+    "id": "sync_pager_python",
+    "language": "python",
+    "component": "sync_pager",
+    "difficulty": "hard",
+    "context": "This job pulls audit events from a partner API into our warehouse. It runs every five minutes for every tenant; the API returns at most 500 events per page and signals the end of the stream with an empty next cursor. The busiest tenant produces a few million events a day.",
+    "code": "def sync_events(client, warehouse, tenant_id, since):\n    cursor = \"\"\n    collected = []\n\n    while True:\n        page = client.list_events(tenant_id, since=since, cursor=cursor)\n        collected.extend(page[\"events\"])\n        if len(page[\"events\"]) < 500:\n            break\n        cursor = page.get(\"next_cursor\", cursor)\n\n    warehouse.write(collected)\n    return len(collected)",
+    "defects": [
+      {
+        "id": "stuck_cursor",
+        "line": 10,
+        "severity": "high",
+        "keywords_any": [
+          "infinite",
+          "never advance",
+          "does not advance",
+          "loop forever",
+          "never terminate",
+          "same page",
+          "same cursor",
+          "spin",
+          "unchanged",
+          "repeat",
+          "endless",
+          "stuck",
+          "no progress"
+        ]
+      },
+      {
+        "id": "unbounded_buffer",
+        "line": 7,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "memory",
+          "accumulat",
+          "grows",
+          "buffers everything",
+          "in memory",
+          "out of memory",
+          "oom",
+          "whole result",
+          "entire",
+          "all at once",
+          "no limit",
+          "stream"
+        ]
+      },
+      {
+        "id": "short_page_end",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "short page",
+          "fewer than",
+          "partial page",
+          "ends early",
+          "stops early",
+          "premature",
+          "misses",
+          "missed",
+          "skips",
+          "skipped",
+          "full page",
+          "page size",
+          "500",
+          "wrong termination",
+          "silently"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sync_pager_typescript",
+    "language": "typescript",
+    "component": "sync_pager",
+    "difficulty": "hard",
+    "context": "This job pulls audit events from a partner API into our warehouse. It runs every five minutes for every tenant; the API returns at most 500 events per page and signals the end of the stream with an empty next cursor. The busiest tenant produces a few million events a day.",
+    "code": "export async function syncEvents(\n    client: PartnerClient,\n    warehouse: Warehouse,\n    tenantId: string,\n    since: string,\n): Promise<number> {\n    let cursor = \"\";\n    const collected: AuditEvent[] = [];\n\n    while (true) {\n        const page = await client.listEvents(tenantId, since, cursor);\n        collected.push(...page.events);\n        if (page.events.length < 500) {\n            break;\n        }\n        cursor = page.nextCursor ?? cursor;\n    }\n\n    await warehouse.write(collected);\n    return collected.length;\n}",
+    "defects": [
+      {
+        "id": "stuck_cursor",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "infinite",
+          "never advance",
+          "does not advance",
+          "loop forever",
+          "never terminate",
+          "same page",
+          "same cursor",
+          "spin",
+          "unchanged",
+          "repeat",
+          "endless",
+          "stuck",
+          "no progress"
+        ]
+      },
+      {
+        "id": "unbounded_buffer",
+        "line": 12,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "memory",
+          "accumulat",
+          "grows",
+          "buffers everything",
+          "in memory",
+          "out of memory",
+          "oom",
+          "whole result",
+          "entire",
+          "all at once",
+          "no limit",
+          "stream"
+        ]
+      },
+      {
+        "id": "short_page_end",
+        "line": 13,
+        "severity": "high",
+        "keywords_any": [
+          "short page",
+          "fewer than",
+          "partial page",
+          "ends early",
+          "stops early",
+          "premature",
+          "misses",
+          "missed",
+          "skips",
+          "skipped",
+          "full page",
+          "page size",
+          "500",
+          "wrong termination",
+          "silently"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sync_pager_go",
+    "language": "go",
+    "component": "sync_pager",
+    "difficulty": "hard",
+    "context": "This job pulls audit events from a partner API into our warehouse. It runs every five minutes for every tenant; the API returns at most 500 events per page and signals the end of the stream with an empty next cursor. The busiest tenant produces a few million events a day.",
+    "code": "func SyncEvents(client *PartnerClient, wh *Warehouse, tenantID string, since time.Time) (int, error) {\n    cursor := \"\"\n    var collected []AuditEvent\n\n    for {\n        page, err := client.ListEvents(tenantID, since, cursor)\n        if err != nil {\n            return 0, err\n        }\n        collected = append(collected, page.Events...)\n        if len(page.Events) < 500 {\n            break\n        }\n        if page.NextCursor != \"\" {\n            cursor = page.NextCursor\n        }\n    }\n\n    return len(collected), wh.Write(collected)\n}",
+    "defects": [
+      {
+        "id": "stuck_cursor",
+        "line": 14,
+        "severity": "high",
+        "keywords_any": [
+          "infinite",
+          "never advance",
+          "does not advance",
+          "loop forever",
+          "never terminate",
+          "same page",
+          "same cursor",
+          "spin",
+          "unchanged",
+          "repeat",
+          "endless",
+          "stuck",
+          "no progress"
+        ]
+      },
+      {
+        "id": "unbounded_buffer",
+        "line": 10,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "memory",
+          "accumulat",
+          "grows",
+          "buffers everything",
+          "in memory",
+          "out of memory",
+          "oom",
+          "whole result",
+          "entire",
+          "all at once",
+          "no limit",
+          "stream"
+        ]
+      },
+      {
+        "id": "short_page_end",
+        "line": 11,
+        "severity": "high",
+        "keywords_any": [
+          "short page",
+          "fewer than",
+          "partial page",
+          "ends early",
+          "stops early",
+          "premature",
+          "misses",
+          "missed",
+          "skips",
+          "skipped",
+          "full page",
+          "page size",
+          "500",
+          "wrong termination",
+          "silently"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sync_pager_rust",
+    "language": "rust",
+    "component": "sync_pager",
+    "difficulty": "hard",
+    "context": "This job pulls audit events from a partner API into our warehouse. It runs every five minutes for every tenant; the API returns at most 500 events per page and signals the end of the stream with an empty next cursor. The busiest tenant produces a few million events a day.",
+    "code": "pub fn sync_events(\n    client: &PartnerClient,\n    warehouse: &Warehouse,\n    tenant_id: &str,\n    since: i64,\n) -> usize {\n    let mut cursor = String::new();\n    let mut collected: Vec<AuditEvent> = Vec::new();\n\n    loop {\n        let page = client.list_events(tenant_id, since, &cursor);\n        collected.extend(page.events.iter().cloned());\n        if page.events.len() < 500 {\n            break;\n        }\n        cursor = page.next_cursor.unwrap_or(cursor);\n    }\n\n    warehouse.write(&collected);\n    collected.len()\n}",
+    "defects": [
+      {
+        "id": "stuck_cursor",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "infinite",
+          "never advance",
+          "does not advance",
+          "loop forever",
+          "never terminate",
+          "same page",
+          "same cursor",
+          "spin",
+          "unchanged",
+          "repeat",
+          "endless",
+          "stuck",
+          "no progress"
+        ]
+      },
+      {
+        "id": "unbounded_buffer",
+        "line": 12,
+        "severity": "high",
+        "keywords_any": [
+          "unbounded",
+          "memory",
+          "accumulat",
+          "grows",
+          "buffers everything",
+          "in memory",
+          "out of memory",
+          "oom",
+          "whole result",
+          "entire",
+          "all at once",
+          "no limit",
+          "stream"
+        ]
+      },
+      {
+        "id": "short_page_end",
+        "line": 13,
+        "severity": "high",
+        "keywords_any": [
+          "short page",
+          "fewer than",
+          "partial page",
+          "ends early",
+          "stops early",
+          "premature",
+          "misses",
+          "missed",
+          "skips",
+          "skipped",
+          "full page",
+          "page size",
+          "500",
+          "wrong termination",
+          "silently"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "charge_once_python",
+    "language": "python",
+    "component": "charge_once",
+    "difficulty": "hard",
+    "context": "This endpoint charges a customer's card and is meant to be safe to retry. Clients retry on network errors, and the mobile app is known to send the same request twice a few hundred milliseconds apart.",
+    "code": "import logging\nimport time\n\nlog = logging.getLogger(__name__)\n\n\ndef charge_once(db, gateway, customer_id, amount_cents, card_token):\n    key = f\"{customer_id}:{amount_cents}:{int(time.time())}\"\n    log.info(\n        \"charging customer=%s card=%s amount=%s\",\n        customer_id, card_token, amount_cents,\n    )\n\n    existing = db.get_charge(key)\n    if existing is not None:\n        return existing\n\n    receipt = gateway.charge(card_token, amount_cents)\n    db.put_charge(key, receipt)\n    return receipt",
+    "defects": [
+      {
+        "id": "unstable_key",
+        "line": 8,
+        "severity": "critical",
+        "keywords_any": [
+          "timestamp",
+          "clock",
+          "time",
+          "different key",
+          "new key",
+          "changes",
+          "not stable",
+          "unstable",
+          "not deterministic",
+          "deterministic",
+          "never matches",
+          "unique every",
+          "defeats"
+        ]
+      },
+      {
+        "id": "check_then_act",
+        "line": 14,
+        "severity": "critical",
+        "keywords_any": [
+          "race",
+          "toctou",
+          "check then act",
+          "concurrent",
+          "atomic",
+          "not atomic",
+          "double charge",
+          "charged twice",
+          "duplicate",
+          "twice",
+          "simultaneous",
+          "lock",
+          "unique constraint",
+          "upsert",
+          "two requests"
+        ]
+      },
+      {
+        "id": "leaked_secret",
+        "line": 11,
+        "severity": "high",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "card",
+          "pan",
+          "authorization",
+          "auth header",
+          "logs the",
+          "logging",
+          "password",
+          "sensitive",
+          "redact",
+          "pci"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "charge_once_typescript",
+    "language": "typescript",
+    "component": "charge_once",
+    "difficulty": "hard",
+    "context": "This endpoint charges a customer's card and is meant to be safe to retry. Clients retry on network errors, and the mobile app is known to send the same request twice a few hundred milliseconds apart.",
+    "code": "export async function chargeOnce(\n    db: Db,\n    gateway: Gateway,\n    customerId: string,\n    amountCents: number,\n    cardToken: string,\n): Promise<Receipt> {\n    const key = `${customerId}:${amountCents}:${Date.now()}`;\n    console.log(\"charging\", { customerId, cardToken, amountCents });\n\n    const existing = await db.getCharge(key);\n    if (existing) {\n        return existing;\n    }\n\n    const receipt = await gateway.charge(cardToken, amountCents);\n    await db.putCharge(key, receipt);\n    return receipt;\n}",
+    "defects": [
+      {
+        "id": "unstable_key",
+        "line": 8,
+        "severity": "critical",
+        "keywords_any": [
+          "timestamp",
+          "clock",
+          "time",
+          "different key",
+          "new key",
+          "changes",
+          "not stable",
+          "unstable",
+          "not deterministic",
+          "deterministic",
+          "never matches",
+          "unique every",
+          "defeats"
+        ]
+      },
+      {
+        "id": "check_then_act",
+        "line": 11,
+        "severity": "critical",
+        "keywords_any": [
+          "race",
+          "toctou",
+          "check then act",
+          "concurrent",
+          "atomic",
+          "not atomic",
+          "double charge",
+          "charged twice",
+          "duplicate",
+          "twice",
+          "simultaneous",
+          "lock",
+          "unique constraint",
+          "upsert",
+          "two requests"
+        ]
+      },
+      {
+        "id": "leaked_secret",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "card",
+          "pan",
+          "authorization",
+          "auth header",
+          "logs the",
+          "logging",
+          "password",
+          "sensitive",
+          "redact",
+          "pci"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "charge_once_go",
+    "language": "go",
+    "component": "charge_once",
+    "difficulty": "hard",
+    "context": "This endpoint charges a customer's card and is meant to be safe to retry. Clients retry on network errors, and the mobile app is known to send the same request twice a few hundred milliseconds apart.",
+    "code": "func ChargeOnce(db *DB, gw *Gateway, customerID string, amountCents int64, cardToken string) (*Receipt, error) {\n    key := fmt.Sprintf(\"%s:%d:%d\", customerID, amountCents, time.Now().Unix())\n    log.Printf(\"charging customer=%s card=%s amount=%d\", customerID, cardToken, amountCents)\n\n    existing, err := db.GetCharge(key)\n    if err != nil {\n        return nil, err\n    }\n    if existing != nil {\n        return existing, nil\n    }\n\n    receipt, err := gw.Charge(cardToken, amountCents)\n    if err != nil {\n        return nil, err\n    }\n    return receipt, db.PutCharge(key, receipt)\n}",
+    "defects": [
+      {
+        "id": "unstable_key",
+        "line": 2,
+        "severity": "critical",
+        "keywords_any": [
+          "timestamp",
+          "clock",
+          "time",
+          "different key",
+          "new key",
+          "changes",
+          "not stable",
+          "unstable",
+          "not deterministic",
+          "deterministic",
+          "never matches",
+          "unique every",
+          "defeats"
+        ]
+      },
+      {
+        "id": "check_then_act",
+        "line": 5,
+        "severity": "critical",
+        "keywords_any": [
+          "race",
+          "toctou",
+          "check then act",
+          "concurrent",
+          "atomic",
+          "not atomic",
+          "double charge",
+          "charged twice",
+          "duplicate",
+          "twice",
+          "simultaneous",
+          "lock",
+          "unique constraint",
+          "upsert",
+          "two requests"
+        ]
+      },
+      {
+        "id": "leaked_secret",
+        "line": 3,
+        "severity": "high",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "card",
+          "pan",
+          "authorization",
+          "auth header",
+          "logs the",
+          "logging",
+          "password",
+          "sensitive",
+          "redact",
+          "pci"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "charge_once_rust",
+    "language": "rust",
+    "component": "charge_once",
+    "difficulty": "hard",
+    "context": "This endpoint charges a customer's card and is meant to be safe to retry. Clients retry on network errors, and the mobile app is known to send the same request twice a few hundred milliseconds apart.",
+    "code": "pub fn charge_once(\n    db: &Db,\n    gateway: &Gateway,\n    customer_id: &str,\n    amount_cents: i64,\n    card_token: &str,\n) -> Receipt {\n    let key = format!(\"{}:{}:{}\", customer_id, amount_cents, now_unix());\n    log::info!(\n        \"charging customer={} card={} amount={}\",\n        customer_id, card_token, amount_cents\n    );\n\n    if let Some(existing) = db.get_charge(&key) {\n        return existing;\n    }\n\n    let receipt = gateway.charge(card_token, amount_cents);\n    db.put_charge(&key, &receipt);\n    receipt\n}",
+    "defects": [
+      {
+        "id": "unstable_key",
+        "line": 8,
+        "severity": "critical",
+        "keywords_any": [
+          "timestamp",
+          "clock",
+          "time",
+          "different key",
+          "new key",
+          "changes",
+          "not stable",
+          "unstable",
+          "not deterministic",
+          "deterministic",
+          "never matches",
+          "unique every",
+          "defeats"
+        ]
+      },
+      {
+        "id": "check_then_act",
+        "line": 14,
+        "severity": "critical",
+        "keywords_any": [
+          "race",
+          "toctou",
+          "check then act",
+          "concurrent",
+          "atomic",
+          "not atomic",
+          "double charge",
+          "charged twice",
+          "duplicate",
+          "twice",
+          "simultaneous",
+          "lock",
+          "unique constraint",
+          "upsert",
+          "two requests"
+        ]
+      },
+      {
+        "id": "leaked_secret",
+        "line": 11,
+        "severity": "high",
+        "keywords_any": [
+          "secret",
+          "token",
+          "credential",
+          "api key",
+          "card",
+          "pan",
+          "authorization",
+          "auth header",
+          "logs the",
+          "logging",
+          "password",
+          "sensitive",
+          "redact",
+          "pci"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "readiness_python",
+    "language": "python",
+    "component": "readiness",
+    "difficulty": "hard",
+    "context": "This is the /readyz handler behind the load balancer. Kubernetes calls it every two seconds per pod and takes the pod out of the service when it fails; the database check talks to the primary.",
+    "code": "_state = {\"ready\": False}\n\n\ndef readyz(db):\n    if _state[\"ready\"]:\n        return {\"status\": \"ok\"}, 200\n\n    try:\n        db.execute(\"SELECT 1\")\n    except Exception:\n        return {\"status\": \"ok\"}, 200\n\n    _state[\"ready\"] = True\n    return {\"status\": \"ok\"}, 200",
+    "defects": [
+      {
+        "id": "cached_forever",
+        "line": 5,
+        "severity": "high",
+        "keywords_any": [
+          "cached",
+          "cache",
+          "never refresh",
+          "never re",
+          "only once",
+          "once",
+          "first call",
+          "latches",
+          "sticky",
+          "stale",
+          "permanently",
+          "forever",
+          "memo",
+          "never rechecked"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely",
+          "stall"
+        ]
+      },
+      {
+        "id": "fail_open",
+        "line": 10,
+        "severity": "critical",
+        "keywords_any": [
+          "fail open",
+          "fails open",
+          "swallow",
+          "silently",
+          "reports healthy",
+          "healthy anyway",
+          "still healthy",
+          "always healthy",
+          "catch",
+          "except",
+          "masks",
+          "hides",
+          "ignores the error",
+          "returns 200",
+          "200 anyway"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "readiness_typescript",
+    "language": "typescript",
+    "component": "readiness",
+    "difficulty": "hard",
+    "context": "This is the /readyz handler behind the load balancer. Kubernetes calls it every two seconds per pod and takes the pod out of the service when it fails; the database check talks to the primary.",
+    "code": "let ready = false;\n\nexport async function readyz(db: Db, res: Response): Promise<Response> {\n    if (ready) {\n        return res.status(200).json({ status: \"ok\" });\n    }\n\n    try {\n        await db.query(\"SELECT 1\");\n    } catch (err) {\n        return res.status(200).json({ status: \"ok\" });\n    }\n\n    ready = true;\n    return res.status(200).json({ status: \"ok\" });\n}",
+    "defects": [
+      {
+        "id": "cached_forever",
+        "line": 4,
+        "severity": "high",
+        "keywords_any": [
+          "cached",
+          "cache",
+          "never refresh",
+          "never re",
+          "only once",
+          "once",
+          "first call",
+          "latches",
+          "sticky",
+          "stale",
+          "permanently",
+          "forever",
+          "memo",
+          "never rechecked"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely",
+          "stall"
+        ]
+      },
+      {
+        "id": "fail_open",
+        "line": 10,
+        "severity": "critical",
+        "keywords_any": [
+          "fail open",
+          "fails open",
+          "swallow",
+          "silently",
+          "reports healthy",
+          "healthy anyway",
+          "still healthy",
+          "always healthy",
+          "catch",
+          "except",
+          "masks",
+          "hides",
+          "ignores the error",
+          "returns 200",
+          "200 anyway"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "readiness_go",
+    "language": "go",
+    "component": "readiness",
+    "difficulty": "hard",
+    "context": "This is the /readyz handler behind the load balancer. Kubernetes calls it every two seconds per pod and takes the pod out of the service when it fails; the database check talks to the primary.",
+    "code": "var ready bool\n\nfunc Readyz(w http.ResponseWriter, r *http.Request, db *sql.DB) {\n    if ready {\n        w.WriteHeader(http.StatusOK)\n        return\n    }\n\n    _, err := db.Query(\"SELECT 1\")\n    if err != nil {\n        w.WriteHeader(http.StatusOK)\n        return\n    }\n\n    ready = true\n    w.WriteHeader(http.StatusOK)\n}",
+    "defects": [
+      {
+        "id": "cached_forever",
+        "line": 4,
+        "severity": "high",
+        "keywords_any": [
+          "cached",
+          "cache",
+          "never refresh",
+          "never re",
+          "only once",
+          "once",
+          "first call",
+          "latches",
+          "sticky",
+          "stale",
+          "permanently",
+          "forever",
+          "memo",
+          "never rechecked"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely",
+          "stall"
+        ]
+      },
+      {
+        "id": "fail_open",
+        "line": 10,
+        "severity": "critical",
+        "keywords_any": [
+          "fail open",
+          "fails open",
+          "swallow",
+          "silently",
+          "reports healthy",
+          "healthy anyway",
+          "still healthy",
+          "always healthy",
+          "catch",
+          "except",
+          "masks",
+          "hides",
+          "ignores the error",
+          "returns 200",
+          "200 anyway"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "readiness_rust",
+    "language": "rust",
+    "component": "readiness",
+    "difficulty": "hard",
+    "context": "This is the /readyz handler behind the load balancer. Kubernetes calls it every two seconds per pod and takes the pod out of the service when it fails; the database check talks to the primary.",
+    "code": "static READY: AtomicBool = AtomicBool::new(false);\n\npub fn readyz(db: &Db) -> Response {\n    if READY.load(Ordering::Relaxed) {\n        return Response::ok();\n    }\n\n    match db.query(\"SELECT 1\") {\n        Ok(_) => {}\n        Err(_) => return Response::ok(),\n    }\n\n    READY.store(true, Ordering::Relaxed);\n    Response::ok()\n}",
+    "defects": [
+      {
+        "id": "cached_forever",
+        "line": 4,
+        "severity": "high",
+        "keywords_any": [
+          "cached",
+          "cache",
+          "never refresh",
+          "never re",
+          "only once",
+          "once",
+          "first call",
+          "latches",
+          "sticky",
+          "stale",
+          "permanently",
+          "forever",
+          "memo",
+          "never rechecked"
+        ]
+      },
+      {
+        "id": "no_timeout",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "timeout",
+          "time out",
+          "hang",
+          "hangs",
+          "block forever",
+          "no deadline",
+          "deadline",
+          "indefinitely",
+          "stall"
+        ]
+      },
+      {
+        "id": "fail_open",
+        "line": 10,
+        "severity": "critical",
+        "keywords_any": [
+          "fail open",
+          "fails open",
+          "swallow",
+          "silently",
+          "reports healthy",
+          "healthy anyway",
+          "still healthy",
+          "always healthy",
+          "catch",
+          "except",
+          "masks",
+          "hides",
+          "ignores the error",
+          "returns 200",
+          "200 anyway"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "token_bucket_python",
+    "language": "python",
+    "component": "token_bucket",
+    "difficulty": "hard",
+    "context": "This middleware rate-limits the public API. It is constructed once and used by every request handler in a multi-threaded server; limits are meant to be per API client and are configured as requests per minute.",
+    "code": "import time\n\n\nclass RateLimiter:\n    def __init__(self, per_minute):\n        self.per_minute = per_minute\n        self.buckets = {}\n\n    def allow(self, request):\n        now = time.time()\n        bucket = self.buckets.setdefault(\n            request.path, {\"tokens\": self.per_minute, \"at\": now}\n        )\n        refill = int((now - bucket[\"at\"]) / 60) * self.per_minute\n        bucket[\"tokens\"] = min(self.per_minute, bucket[\"tokens\"] + refill)\n        bucket[\"at\"] = now\n\n        if bucket[\"tokens\"] <= 0:\n            return False\n        bucket[\"tokens\"] -= 1\n        return True",
+    "defects": [
+      {
+        "id": "integer_drift",
+        "line": 14,
+        "severity": "high",
+        "keywords_any": [
+          "integer division",
+          "truncat",
+          "rounds down",
+          "floor",
+          "remainder",
+          "drift",
+          "loses",
+          "lost",
+          "fractional",
+          "rounding",
+          "lower than",
+          "slower than",
+          "under the configured",
+          "int"
+        ]
+      },
+      {
+        "id": "wrong_key",
+        "line": 12,
+        "severity": "critical",
+        "keywords_any": [
+          "per client",
+          "per tenant",
+          "per user",
+          "all clients",
+          "one client",
+          "not keyed",
+          "keyed by",
+          "everyone",
+          "cross tenant",
+          "same bucket",
+          "single bucket",
+          "endpoint",
+          "path",
+          "route"
+        ]
+      },
+      {
+        "id": "data_race",
+        "line": 20,
+        "severity": "high",
+        "keywords_any": [
+          "race",
+          "concurrent",
+          "not thread safe",
+          "thread safe",
+          "no lock",
+          "without a lock",
+          "mutex",
+          "synchron",
+          "goroutine",
+          "shared state",
+          "map is not safe",
+          "atomic"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "token_bucket_typescript",
+    "language": "typescript",
+    "component": "token_bucket",
+    "difficulty": "hard",
+    "context": "This middleware rate-limits the public API. It is constructed once and used by every request handler in a multi-threaded server; limits are meant to be per API client and are configured as requests per minute.",
+    "code": "type Bucket = { tokens: number; at: number };\n\nexport class RateLimiter {\n    private buckets = new Map<string, Bucket>();\n\n    constructor(private perMinute: number) {}\n\n    allow(req: Request): boolean {\n        const now = Date.now() / 1000;\n        let bucket = this.buckets.get(req.path);\n        if (bucket === undefined) {\n            bucket = { tokens: this.perMinute, at: now };\n            this.buckets.set(req.path, bucket);\n        }\n\n        const refill = Math.floor((now - bucket.at) / 60) * this.perMinute;\n        bucket.tokens = Math.min(this.perMinute, bucket.tokens + refill);\n        bucket.at = now;\n\n        if (bucket.tokens <= 0) {\n            return false;\n        }\n        bucket.tokens -= 1;\n        return true;\n    }\n}",
+    "defects": [
+      {
+        "id": "integer_drift",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "integer division",
+          "truncat",
+          "rounds down",
+          "floor",
+          "remainder",
+          "drift",
+          "loses",
+          "lost",
+          "fractional",
+          "rounding",
+          "lower than",
+          "slower than",
+          "under the configured",
+          "int"
+        ]
+      },
+      {
+        "id": "wrong_key",
+        "line": 10,
+        "severity": "critical",
+        "keywords_any": [
+          "per client",
+          "per tenant",
+          "per user",
+          "all clients",
+          "one client",
+          "not keyed",
+          "keyed by",
+          "everyone",
+          "cross tenant",
+          "same bucket",
+          "single bucket",
+          "endpoint",
+          "path",
+          "route"
+        ]
+      },
+      {
+        "id": "never_evicted",
+        "line": 4,
+        "severity": "high",
+        "keywords_any": [
+          "never evict",
+          "no eviction",
+          "grows",
+          "unbounded",
+          "memory leak",
+          "no size limit",
+          "leak",
+          "never removed",
+          "cleanup",
+          "forever",
+          "out of memory",
+          "entry per"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "token_bucket_go",
+    "language": "go",
+    "component": "token_bucket",
+    "difficulty": "hard",
+    "context": "This middleware rate-limits the public API. It is constructed once and used by every request handler in a multi-threaded server; limits are meant to be per API client and are configured as requests per minute.",
+    "code": "type bucket struct {\n    tokens int\n    at     time.Time\n}\n\ntype RateLimiter struct {\n    perMinute int\n    buckets   map[string]*bucket\n}\n\nfunc (l *RateLimiter) Allow(r *http.Request) bool {\n    now := time.Now()\n    b, ok := l.buckets[r.URL.Path]\n    if !ok {\n        b = &bucket{tokens: l.perMinute, at: now}\n        l.buckets[r.URL.Path] = b\n    }\n\n    refill := int(now.Sub(b.at)/time.Minute) * l.perMinute\n    b.tokens = min(l.perMinute, b.tokens+refill)\n    b.at = now\n\n    if b.tokens <= 0 {\n        return false\n    }\n    b.tokens--\n    return true\n}",
+    "defects": [
+      {
+        "id": "integer_drift",
+        "line": 19,
+        "severity": "high",
+        "keywords_any": [
+          "integer division",
+          "truncat",
+          "rounds down",
+          "floor",
+          "remainder",
+          "drift",
+          "loses",
+          "lost",
+          "fractional",
+          "rounding",
+          "lower than",
+          "slower than",
+          "under the configured",
+          "int"
+        ]
+      },
+      {
+        "id": "wrong_key",
+        "line": 13,
+        "severity": "critical",
+        "keywords_any": [
+          "per client",
+          "per tenant",
+          "per user",
+          "all clients",
+          "one client",
+          "not keyed",
+          "keyed by",
+          "everyone",
+          "cross tenant",
+          "same bucket",
+          "single bucket",
+          "endpoint",
+          "path",
+          "route"
+        ]
+      },
+      {
+        "id": "data_race",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "race",
+          "concurrent",
+          "not thread safe",
+          "thread safe",
+          "no lock",
+          "without a lock",
+          "mutex",
+          "synchron",
+          "goroutine",
+          "shared state",
+          "map is not safe",
+          "atomic"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "token_bucket_rust",
+    "language": "rust",
+    "component": "token_bucket",
+    "difficulty": "hard",
+    "context": "This middleware rate-limits the public API. It is constructed once and used by every request handler in a multi-threaded server; limits are meant to be per API client and are configured as requests per minute.",
+    "code": "struct Bucket {\n    tokens: i64,\n    at: i64,\n}\n\npub struct RateLimiter {\n    per_minute: i64,\n    buckets: HashMap<String, Bucket>,\n}\n\nimpl RateLimiter {\n    pub fn allow(&mut self, req: &Request) -> bool {\n        let now = now_secs();\n        let per_minute = self.per_minute;\n        let bucket = self\n            .buckets\n            .entry(req.path.clone())\n            .or_insert(Bucket { tokens: per_minute, at: now });\n\n        let refill = ((now - bucket.at) / 60) * per_minute;\n        bucket.tokens = per_minute.min(bucket.tokens + refill);\n        bucket.at = now;\n\n        if bucket.tokens <= 0 {\n            return false;\n        }\n        bucket.tokens -= 1;\n        true\n    }\n}",
+    "defects": [
+      {
+        "id": "integer_drift",
+        "line": 20,
+        "severity": "high",
+        "keywords_any": [
+          "integer division",
+          "truncat",
+          "rounds down",
+          "floor",
+          "remainder",
+          "drift",
+          "loses",
+          "lost",
+          "fractional",
+          "rounding",
+          "lower than",
+          "slower than",
+          "under the configured",
+          "int"
+        ]
+      },
+      {
+        "id": "wrong_key",
+        "line": 17,
+        "severity": "critical",
+        "keywords_any": [
+          "per client",
+          "per tenant",
+          "per user",
+          "all clients",
+          "one client",
+          "not keyed",
+          "keyed by",
+          "everyone",
+          "cross tenant",
+          "same bucket",
+          "single bucket",
+          "endpoint",
+          "path",
+          "route"
+        ]
+      },
+      {
+        "id": "never_evicted",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "never evict",
+          "no eviction",
+          "grows",
+          "unbounded",
+          "memory leak",
+          "no size limit",
+          "leak",
+          "never removed",
+          "cleanup",
+          "forever",
+          "out of memory",
+          "entry per"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "config_reload_python",
+    "language": "python",
+    "component": "config_reload",
+    "difficulty": "hard",
+    "context": "The service reloads its configuration when SIGHUP arrives, while request handlers read the same config object concurrently. A bad reload has taken the fleet down before.",
+    "code": "import json\n\nCONFIG = {}\n\n\ndef reload_config(path):\n    try:\n        parsed = json.loads(open(path).read())\n    except Exception:\n        return\n\n    CONFIG.clear()\n    for key, value in parsed.items():\n        CONFIG[key] = value",
+    "defects": [
+      {
+        "id": "torn_config",
+        "line": 12,
+        "severity": "critical",
+        "keywords_any": [
+          "in place",
+          "mutate",
+          "partially",
+          "half",
+          "torn",
+          "readers",
+          "atomic",
+          "swap",
+          "replace",
+          "clear",
+          "visible",
+          "concurrent",
+          "race",
+          "empty for",
+          "window"
+        ]
+      },
+      {
+        "id": "no_validation",
+        "line": 14,
+        "severity": "high",
+        "keywords_any": [
+          "validat",
+          "verify",
+          "schema",
+          "sanity",
+          "typo",
+          "malformed",
+          "invalid",
+          "bad config",
+          "before applying",
+          "check the",
+          "unchecked",
+          "garbage"
+        ]
+      },
+      {
+        "id": "swallowed_error",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "swallow",
+          "silently",
+          "ignored",
+          "ignores",
+          "no log",
+          "hides",
+          "masks",
+          "fails silently",
+          "empty config",
+          "defaults",
+          "no alert",
+          "unnoticed",
+          "except pass",
+          "bare except"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "config_reload_typescript",
+    "language": "typescript",
+    "component": "config_reload",
+    "difficulty": "hard",
+    "context": "The service reloads its configuration when SIGHUP arrives, while request handlers read the same config object concurrently. A bad reload has taken the fleet down before.",
+    "code": "import { readFileSync } from \"fs\";\n\nexport const config: Record<string, unknown> = {};\n\nexport function reloadConfig(path: string): void {\n    let parsed: Record<string, unknown>;\n    try {\n        parsed = JSON.parse(readFileSync(path, \"utf8\"));\n    } catch (err) {\n        return;\n    }\n\n    for (const key of Object.keys(config)) {\n        delete config[key];\n    }\n    for (const [key, value] of Object.entries(parsed)) {\n        config[key] = value;\n    }\n}",
+    "defects": [
+      {
+        "id": "torn_config",
+        "line": 14,
+        "severity": "critical",
+        "keywords_any": [
+          "in place",
+          "mutate",
+          "partially",
+          "half",
+          "torn",
+          "readers",
+          "atomic",
+          "swap",
+          "replace",
+          "clear",
+          "visible",
+          "concurrent",
+          "race",
+          "empty for",
+          "window"
+        ]
+      },
+      {
+        "id": "no_validation",
+        "line": 17,
+        "severity": "high",
+        "keywords_any": [
+          "validat",
+          "verify",
+          "schema",
+          "sanity",
+          "typo",
+          "malformed",
+          "invalid",
+          "bad config",
+          "before applying",
+          "check the",
+          "unchecked",
+          "garbage"
+        ]
+      },
+      {
+        "id": "swallowed_error",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "swallow",
+          "silently",
+          "ignored",
+          "ignores",
+          "no log",
+          "hides",
+          "masks",
+          "fails silently",
+          "empty config",
+          "defaults",
+          "no alert",
+          "unnoticed",
+          "except pass",
+          "bare except"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "config_reload_go",
+    "language": "go",
+    "component": "config_reload",
+    "difficulty": "hard",
+    "context": "The service reloads its configuration when SIGHUP arrives, while request handlers read the same config object concurrently. A bad reload has taken the fleet down before.",
+    "code": "var Config = map[string]string{}\n\nfunc ReloadConfig(path string) {\n    raw, err := os.ReadFile(path)\n    if err != nil {\n        return\n    }\n\n    parsed := map[string]string{}\n    if err := json.Unmarshal(raw, &parsed); err != nil {\n        return\n    }\n\n    for k := range Config {\n        delete(Config, k)\n    }\n    for k, v := range parsed {\n        Config[k] = v\n    }\n}",
+    "defects": [
+      {
+        "id": "torn_config",
+        "line": 15,
+        "severity": "critical",
+        "keywords_any": [
+          "in place",
+          "mutate",
+          "partially",
+          "half",
+          "torn",
+          "readers",
+          "atomic",
+          "swap",
+          "replace",
+          "clear",
+          "visible",
+          "concurrent",
+          "race",
+          "empty for",
+          "window"
+        ]
+      },
+      {
+        "id": "no_validation",
+        "line": 18,
+        "severity": "high",
+        "keywords_any": [
+          "validat",
+          "verify",
+          "schema",
+          "sanity",
+          "typo",
+          "malformed",
+          "invalid",
+          "bad config",
+          "before applying",
+          "check the",
+          "unchecked",
+          "garbage"
+        ]
+      },
+      {
+        "id": "swallowed_error",
+        "line": 10,
+        "severity": "high",
+        "keywords_any": [
+          "swallow",
+          "silently",
+          "ignored",
+          "ignores",
+          "no log",
+          "hides",
+          "masks",
+          "fails silently",
+          "empty config",
+          "defaults",
+          "no alert",
+          "unnoticed",
+          "except pass",
+          "bare except"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "config_reload_rust",
+    "language": "rust",
+    "component": "config_reload",
+    "difficulty": "hard",
+    "context": "The service reloads its configuration when SIGHUP arrives, while request handlers read the same config object concurrently. A bad reload has taken the fleet down before.",
+    "code": "pub fn reload_config(path: &str, config: &mut HashMap<String, String>) {\n    let parsed: HashMap<String, String> = match fs::read_to_string(path) {\n        Ok(raw) => serde_json::from_str(&raw).unwrap_or_default(),\n        Err(_) => return,\n    };\n\n    config.clear();\n    for (key, value) in parsed {\n        config.insert(key, value);\n    }\n}",
+    "defects": [
+      {
+        "id": "torn_config",
+        "line": 7,
+        "severity": "critical",
+        "keywords_any": [
+          "in place",
+          "mutate",
+          "partially",
+          "half",
+          "torn",
+          "readers",
+          "atomic",
+          "swap",
+          "replace",
+          "clear",
+          "visible",
+          "concurrent",
+          "race",
+          "empty for",
+          "window"
+        ]
+      },
+      {
+        "id": "no_validation",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "validat",
+          "verify",
+          "schema",
+          "sanity",
+          "typo",
+          "malformed",
+          "invalid",
+          "bad config",
+          "before applying",
+          "check the",
+          "unchecked",
+          "garbage"
+        ]
+      },
+      {
+        "id": "swallowed_error",
+        "line": 3,
+        "severity": "high",
+        "keywords_any": [
+          "swallow",
+          "silently",
+          "ignored",
+          "ignores",
+          "no log",
+          "hides",
+          "masks",
+          "fails silently",
+          "empty config",
+          "defaults",
+          "no alert",
+          "unnoticed",
+          "except pass",
+          "bare except"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "batch_writer_python",
+    "language": "python",
+    "component": "batch_writer",
+    "difficulty": "hard",
+    "context": "This buffers metric points and ships them to the time-series database. One instance runs per pod, `record` is called from request handlers, and pods are recycled on every deploy. Low-traffic pods see a few points a minute.",
+    "code": "class MetricWriter:\n    def __init__(self, client, batch_size=500):\n        self.client = client\n        self.batch_size = batch_size\n        self.buffer = []\n\n    def record(self, point):\n        self.buffer.append(point)\n        if len(self.buffer) >= self.batch_size:\n            self.flush()\n\n    def flush(self):\n        batch = self.buffer\n        self.buffer = []\n        self.client.write(batch)\n\n    def close(self):\n        self.client.close()",
+    "defects": [
+      {
+        "id": "no_time_flush",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "timer",
+          "time based",
+          "interval",
+          "only when full",
+          "never flushed",
+          "sits",
+          "delayed",
+          "low volume",
+          "linger",
+          "until it fills",
+          "size only",
+          "latency",
+          "hours"
+        ]
+      },
+      {
+        "id": "cleared_before_write",
+        "line": 15,
+        "severity": "high",
+        "keywords_any": [
+          "cleared before",
+          "clear the buffer",
+          "before the write",
+          "before flush",
+          "before it succeeds",
+          "on failure",
+          "error path",
+          "discarded",
+          "dropped",
+          "not restored",
+          "not retried",
+          "lost"
+        ]
+      },
+      {
+        "id": "no_shutdown_flush",
+        "line": 18,
+        "severity": "high",
+        "keywords_any": [
+          "shutdown",
+          "shut down",
+          "exit",
+          "sigterm",
+          "drain",
+          "graceful",
+          "terminate",
+          "final flush",
+          "remaining",
+          "close",
+          "deploy",
+          "restart"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "batch_writer_typescript",
+    "language": "typescript",
+    "component": "batch_writer",
+    "difficulty": "hard",
+    "context": "This buffers metric points and ships them to the time-series database. One instance runs per pod, `record` is called from request handlers, and pods are recycled on every deploy. Low-traffic pods see a few points a minute.",
+    "code": "export class MetricWriter {\n    private buffer: Point[] = [];\n\n    constructor(private client: TsdbClient, private batchSize = 500) {}\n\n    record(point: Point): void {\n        this.buffer.push(point);\n        if (this.buffer.length >= this.batchSize) {\n            void this.flush();\n        }\n    }\n\n    async flush(): Promise<void> {\n        const batch = this.buffer;\n        this.buffer = [];\n        await this.client.write(batch);\n    }\n\n    async close(): Promise<void> {\n        await this.client.close();\n    }\n}",
+    "defects": [
+      {
+        "id": "no_time_flush",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "timer",
+          "time based",
+          "interval",
+          "only when full",
+          "never flushed",
+          "sits",
+          "delayed",
+          "low volume",
+          "linger",
+          "until it fills",
+          "size only",
+          "latency",
+          "hours"
+        ]
+      },
+      {
+        "id": "cleared_before_write",
+        "line": 15,
+        "severity": "high",
+        "keywords_any": [
+          "cleared before",
+          "clear the buffer",
+          "before the write",
+          "before flush",
+          "before it succeeds",
+          "on failure",
+          "error path",
+          "discarded",
+          "dropped",
+          "not restored",
+          "not retried",
+          "lost"
+        ]
+      },
+      {
+        "id": "no_shutdown_flush",
+        "line": 20,
+        "severity": "high",
+        "keywords_any": [
+          "shutdown",
+          "shut down",
+          "exit",
+          "sigterm",
+          "drain",
+          "graceful",
+          "terminate",
+          "final flush",
+          "remaining",
+          "close",
+          "deploy",
+          "restart"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "batch_writer_go",
+    "language": "go",
+    "component": "batch_writer",
+    "difficulty": "hard",
+    "context": "This buffers metric points and ships them to the time-series database. One instance runs per pod, `record` is called from request handlers, and pods are recycled on every deploy. Low-traffic pods see a few points a minute.",
+    "code": "type MetricWriter struct {\n    client    *TSDBClient\n    batchSize int\n    buffer    []Point\n}\n\nfunc (w *MetricWriter) Record(p Point) {\n    w.buffer = append(w.buffer, p)\n    if len(w.buffer) >= w.batchSize {\n        w.Flush()\n    }\n}\n\nfunc (w *MetricWriter) Flush() {\n    batch := w.buffer\n    w.buffer = nil\n    w.client.Write(batch)\n}\n\nfunc (w *MetricWriter) Close() error {\n    return w.client.Close()\n}",
+    "defects": [
+      {
+        "id": "no_time_flush",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "timer",
+          "time based",
+          "interval",
+          "only when full",
+          "never flushed",
+          "sits",
+          "delayed",
+          "low volume",
+          "linger",
+          "until it fills",
+          "size only",
+          "latency",
+          "hours"
+        ]
+      },
+      {
+        "id": "cleared_before_write",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "cleared before",
+          "clear the buffer",
+          "before the write",
+          "before flush",
+          "before it succeeds",
+          "on failure",
+          "error path",
+          "discarded",
+          "dropped",
+          "not restored",
+          "not retried",
+          "lost"
+        ]
+      },
+      {
+        "id": "no_shutdown_flush",
+        "line": 21,
+        "severity": "high",
+        "keywords_any": [
+          "shutdown",
+          "shut down",
+          "exit",
+          "sigterm",
+          "drain",
+          "graceful",
+          "terminate",
+          "final flush",
+          "remaining",
+          "close",
+          "deploy",
+          "restart"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "batch_writer_rust",
+    "language": "rust",
+    "component": "batch_writer",
+    "difficulty": "hard",
+    "context": "This buffers metric points and ships them to the time-series database. One instance runs per pod, `record` is called from request handlers, and pods are recycled on every deploy. Low-traffic pods see a few points a minute.",
+    "code": "pub struct MetricWriter {\n    client: TsdbClient,\n    batch_size: usize,\n    buffer: Vec<Point>,\n}\n\nimpl MetricWriter {\n    pub fn record(&mut self, point: Point) {\n        self.buffer.push(point);\n        if self.buffer.len() >= self.batch_size {\n            self.flush();\n        }\n    }\n\n    pub fn flush(&mut self) {\n        let batch = std::mem::take(&mut self.buffer);\n        self.client.write(&batch);\n    }\n\n    pub fn close(&mut self) {\n        self.client.close();\n    }\n}",
+    "defects": [
+      {
+        "id": "no_time_flush",
+        "line": 10,
+        "severity": "high",
+        "keywords_any": [
+          "timer",
+          "time based",
+          "interval",
+          "only when full",
+          "never flushed",
+          "sits",
+          "delayed",
+          "low volume",
+          "linger",
+          "until it fills",
+          "size only",
+          "latency",
+          "hours"
+        ]
+      },
+      {
+        "id": "cleared_before_write",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "cleared before",
+          "clear the buffer",
+          "before the write",
+          "before flush",
+          "before it succeeds",
+          "on failure",
+          "error path",
+          "discarded",
+          "dropped",
+          "not restored",
+          "not retried",
+          "lost"
+        ]
+      },
+      {
+        "id": "no_shutdown_flush",
+        "line": 21,
+        "severity": "high",
+        "keywords_any": [
+          "shutdown",
+          "shut down",
+          "exit",
+          "sigterm",
+          "drain",
+          "graceful",
+          "terminate",
+          "final flush",
+          "remaining",
+          "close",
+          "deploy",
+          "restart"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lease_renew_python",
+    "language": "python",
+    "component": "lease_renew",
+    "difficulty": "hard",
+    "context": "Exactly one replica must own the migration worker. Each replica claims a lease row with a 10-second TTL and renews it in this loop. A pod can be paused by a long GC or descheduled at any moment, and the replicas' clocks are synced by NTP, which occasionally steps them.",
+    "code": "import time\nfrom datetime import datetime, timedelta\n\nLEASE_TTL_SECONDS = 10\n\n\ndef run_as_leader(db, node_id, do_work):\n    while True:\n        expires_at = datetime.now() + timedelta(seconds=LEASE_TTL_SECONDS)\n        if not db.upsert_lease(node_id, expires_at):\n            time.sleep(1)\n            continue\n\n        do_work()\n        time.sleep(LEASE_TTL_SECONDS)",
+    "defects": [
+      {
+        "id": "lease_margin",
+        "line": 15,
+        "severity": "critical",
+        "keywords_any": [
+          "ttl",
+          "interval",
+          "too long",
+          "equal",
+          "no margin",
+          "gap",
+          "renewal period",
+          "half",
+          "same as",
+          "one renewal",
+          "single missed",
+          "misses one",
+          "sleeps for",
+          "as long as"
+        ]
+      },
+      {
+        "id": "no_fencing",
+        "line": 14,
+        "severity": "critical",
+        "keywords_any": [
+          "fencing",
+          "fence",
+          "split brain",
+          "two leaders",
+          "old leader",
+          "paused",
+          "gc pause",
+          "still writes",
+          "stale leader",
+          "epoch",
+          "generation",
+          "both",
+          "partition"
+        ]
+      },
+      {
+        "id": "wall_clock",
+        "line": 9,
+        "severity": "high",
+        "keywords_any": [
+          "wall clock",
+          "monotonic",
+          "ntp",
+          "skew",
+          "time jump",
+          "system time",
+          "local time",
+          "adjust",
+          "clock change",
+          "backwards",
+          "steps"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lease_renew_typescript",
+    "language": "typescript",
+    "component": "lease_renew",
+    "difficulty": "hard",
+    "context": "Exactly one replica must own the migration worker. Each replica claims a lease row with a 10-second TTL and renews it in this loop. A pod can be paused by a long GC or descheduled at any moment, and the replicas' clocks are synced by NTP, which occasionally steps them.",
+    "code": "const LEASE_TTL_MS = 10_000;\n\nexport async function runAsLeader(db: Db, nodeId: string, doWork: () => Promise<void>) {\n    while (true) {\n        const expiresAt = new Date(Date.now() + LEASE_TTL_MS);\n        if (!(await db.upsertLease(nodeId, expiresAt))) {\n            await sleep(1000);\n            continue;\n        }\n\n        await doWork();\n        await sleep(LEASE_TTL_MS);\n    }\n}",
+    "defects": [
+      {
+        "id": "lease_margin",
+        "line": 12,
+        "severity": "critical",
+        "keywords_any": [
+          "ttl",
+          "interval",
+          "too long",
+          "equal",
+          "no margin",
+          "gap",
+          "renewal period",
+          "half",
+          "same as",
+          "one renewal",
+          "single missed",
+          "misses one",
+          "sleeps for",
+          "as long as"
+        ]
+      },
+      {
+        "id": "no_fencing",
+        "line": 11,
+        "severity": "critical",
+        "keywords_any": [
+          "fencing",
+          "fence",
+          "split brain",
+          "two leaders",
+          "old leader",
+          "paused",
+          "gc pause",
+          "still writes",
+          "stale leader",
+          "epoch",
+          "generation",
+          "both",
+          "partition"
+        ]
+      },
+      {
+        "id": "wall_clock",
+        "line": 5,
+        "severity": "high",
+        "keywords_any": [
+          "wall clock",
+          "monotonic",
+          "ntp",
+          "skew",
+          "time jump",
+          "system time",
+          "local time",
+          "adjust",
+          "clock change",
+          "backwards",
+          "steps"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lease_renew_go",
+    "language": "go",
+    "component": "lease_renew",
+    "difficulty": "hard",
+    "context": "Exactly one replica must own the migration worker. Each replica claims a lease row with a 10-second TTL and renews it in this loop. A pod can be paused by a long GC or descheduled at any moment, and the replicas' clocks are synced by NTP, which occasionally steps them.",
+    "code": "const leaseTTL = 10 * time.Second\n\nfunc RunAsLeader(db *DB, nodeID string, doWork func()) {\n    for {\n        expiresAt := time.Now().Add(leaseTTL)\n        ok, err := db.UpsertLease(nodeID, expiresAt)\n        if err != nil || !ok {\n            time.Sleep(time.Second)\n            continue\n        }\n\n        doWork()\n        time.Sleep(leaseTTL)\n    }\n}",
+    "defects": [
+      {
+        "id": "lease_margin",
+        "line": 13,
+        "severity": "critical",
+        "keywords_any": [
+          "ttl",
+          "interval",
+          "too long",
+          "equal",
+          "no margin",
+          "gap",
+          "renewal period",
+          "half",
+          "same as",
+          "one renewal",
+          "single missed",
+          "misses one",
+          "sleeps for",
+          "as long as"
+        ]
+      },
+      {
+        "id": "no_fencing",
+        "line": 12,
+        "severity": "critical",
+        "keywords_any": [
+          "fencing",
+          "fence",
+          "split brain",
+          "two leaders",
+          "old leader",
+          "paused",
+          "gc pause",
+          "still writes",
+          "stale leader",
+          "epoch",
+          "generation",
+          "both",
+          "partition"
+        ]
+      },
+      {
+        "id": "wall_clock",
+        "line": 5,
+        "severity": "high",
+        "keywords_any": [
+          "wall clock",
+          "monotonic",
+          "ntp",
+          "skew",
+          "time jump",
+          "system time",
+          "local time",
+          "adjust",
+          "clock change",
+          "backwards",
+          "steps"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "lease_renew_rust",
+    "language": "rust",
+    "component": "lease_renew",
+    "difficulty": "hard",
+    "context": "Exactly one replica must own the migration worker. Each replica claims a lease row with a 10-second TTL and renews it in this loop. A pod can be paused by a long GC or descheduled at any moment, and the replicas' clocks are synced by NTP, which occasionally steps them.",
+    "code": "const LEASE_TTL: Duration = Duration::from_secs(10);\n\npub fn run_as_leader(db: &Db, node_id: &str, do_work: impl Fn()) {\n    loop {\n        let expires_at = SystemTime::now() + LEASE_TTL;\n        if !db.upsert_lease(node_id, expires_at) {\n            thread::sleep(Duration::from_secs(1));\n            continue;\n        }\n\n        do_work();\n        thread::sleep(LEASE_TTL);\n    }\n}",
+    "defects": [
+      {
+        "id": "lease_margin",
+        "line": 12,
+        "severity": "critical",
+        "keywords_any": [
+          "ttl",
+          "interval",
+          "too long",
+          "equal",
+          "no margin",
+          "gap",
+          "renewal period",
+          "half",
+          "same as",
+          "one renewal",
+          "single missed",
+          "misses one",
+          "sleeps for",
+          "as long as"
+        ]
+      },
+      {
+        "id": "no_fencing",
+        "line": 11,
+        "severity": "critical",
+        "keywords_any": [
+          "fencing",
+          "fence",
+          "split brain",
+          "two leaders",
+          "old leader",
+          "paused",
+          "gc pause",
+          "still writes",
+          "stale leader",
+          "epoch",
+          "generation",
+          "both",
+          "partition"
+        ]
+      },
+      {
+        "id": "wall_clock",
+        "line": 5,
+        "severity": "high",
+        "keywords_any": [
+          "wall clock",
+          "monotonic",
+          "ntp",
+          "skew",
+          "time jump",
+          "system time",
+          "local time",
+          "adjust",
+          "clock change",
+          "backwards",
+          "steps"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "webhook_verify_python",
+    "language": "python",
+    "component": "webhook_verify",
+    "difficulty": "hard",
+    "context": "This verifies incoming webhooks from our payment provider. The endpoint is public, the shared secret is long-lived, and the provider sends the signature in X-Signature and the send time in X-Timestamp.",
+    "code": "import hashlib\nimport hmac\n\n\ndef verify_webhook(secret, headers, body):\n    signature = headers.get(\"X-Signature\", \"\")\n    expected = hmac.new(secret.encode(), body, hashlib.sha256).hexdigest()\n\n    if not signature:\n        return True\n\n    return signature == expected",
+    "defects": [
+      {
+        "id": "no_replay_protection",
+        "line": 6,
+        "severity": "high",
+        "keywords_any": [
+          "replay",
+          "timestamp",
+          "expiry",
+          "expire",
+          "stale request",
+          "nonce",
+          "reused",
+          "reuse",
+          "old request",
+          "captured request",
+          "freshness",
+          "age of the"
+        ]
+      },
+      {
+        "id": "missing_signature",
+        "line": 9,
+        "severity": "critical",
+        "keywords_any": [
+          "missing",
+          "absent",
+          "empty",
+          "no signature",
+          "none",
+          "null",
+          "bypass",
+          "skips verification",
+          "unsigned",
+          "not present",
+          "unauthenticated",
+          "returns true",
+          "accepts",
+          "anyone"
+        ]
+      },
+      {
+        "id": "timing_attack",
+        "line": 12,
+        "severity": "high",
+        "keywords_any": [
+          "timing attack",
+          "constant time",
+          "timing",
+          "side channel",
+          "early return",
+          "byte by byte",
+          "compare_digest",
+          "hmac equal",
+          "leaks the signature",
+          "guess the signature"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "webhook_verify_typescript",
+    "language": "typescript",
+    "component": "webhook_verify",
+    "difficulty": "hard",
+    "context": "This verifies incoming webhooks from our payment provider. The endpoint is public, the shared secret is long-lived, and the provider sends the signature in X-Signature and the send time in X-Timestamp.",
+    "code": "import { createHmac } from \"crypto\";\n\nexport function verifyWebhook(\n    secret: string,\n    headers: Record<string, string>,\n    body: string,\n): boolean {\n    const signature = headers[\"x-signature\"] ?? \"\";\n    const expected = createHmac(\"sha256\", secret).update(body).digest(\"hex\");\n\n    if (signature === \"\") {\n        return true;\n    }\n\n    return signature === expected;\n}",
+    "defects": [
+      {
+        "id": "no_replay_protection",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "replay",
+          "timestamp",
+          "expiry",
+          "expire",
+          "stale request",
+          "nonce",
+          "reused",
+          "reuse",
+          "old request",
+          "captured request",
+          "freshness",
+          "age of the"
+        ]
+      },
+      {
+        "id": "missing_signature",
+        "line": 11,
+        "severity": "critical",
+        "keywords_any": [
+          "missing",
+          "absent",
+          "empty",
+          "no signature",
+          "none",
+          "null",
+          "bypass",
+          "skips verification",
+          "unsigned",
+          "not present",
+          "unauthenticated",
+          "returns true",
+          "accepts",
+          "anyone"
+        ]
+      },
+      {
+        "id": "timing_attack",
+        "line": 15,
+        "severity": "high",
+        "keywords_any": [
+          "timing attack",
+          "constant time",
+          "timing",
+          "side channel",
+          "early return",
+          "byte by byte",
+          "compare_digest",
+          "hmac equal",
+          "leaks the signature",
+          "guess the signature"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "webhook_verify_go",
+    "language": "go",
+    "component": "webhook_verify",
+    "difficulty": "hard",
+    "context": "This verifies incoming webhooks from our payment provider. The endpoint is public, the shared secret is long-lived, and the provider sends the signature in X-Signature and the send time in X-Timestamp.",
+    "code": "func VerifyWebhook(secret string, headers http.Header, body []byte) bool {\n    signature := headers.Get(\"X-Signature\")\n\n    mac := hmac.New(sha256.New, []byte(secret))\n    mac.Write(body)\n    expected := hex.EncodeToString(mac.Sum(nil))\n\n    if signature == \"\" {\n        return true\n    }\n\n    return signature == expected\n}",
+    "defects": [
+      {
+        "id": "no_replay_protection",
+        "line": 2,
+        "severity": "high",
+        "keywords_any": [
+          "replay",
+          "timestamp",
+          "expiry",
+          "expire",
+          "stale request",
+          "nonce",
+          "reused",
+          "reuse",
+          "old request",
+          "captured request",
+          "freshness",
+          "age of the"
+        ]
+      },
+      {
+        "id": "missing_signature",
+        "line": 8,
+        "severity": "critical",
+        "keywords_any": [
+          "missing",
+          "absent",
+          "empty",
+          "no signature",
+          "none",
+          "null",
+          "bypass",
+          "skips verification",
+          "unsigned",
+          "not present",
+          "unauthenticated",
+          "returns true",
+          "accepts",
+          "anyone"
+        ]
+      },
+      {
+        "id": "timing_attack",
+        "line": 12,
+        "severity": "high",
+        "keywords_any": [
+          "timing attack",
+          "constant time",
+          "timing",
+          "side channel",
+          "early return",
+          "byte by byte",
+          "compare_digest",
+          "hmac equal",
+          "leaks the signature",
+          "guess the signature"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "webhook_verify_rust",
+    "language": "rust",
+    "component": "webhook_verify",
+    "difficulty": "hard",
+    "context": "This verifies incoming webhooks from our payment provider. The endpoint is public, the shared secret is long-lived, and the provider sends the signature in X-Signature and the send time in X-Timestamp.",
+    "code": "pub fn verify_webhook(\n    secret: &str,\n    headers: &HashMap<String, String>,\n    body: &[u8],\n) -> bool {\n    let signature = headers.get(\"x-signature\").cloned().unwrap_or_default();\n    let expected = hex::encode(hmac_sha256(secret.as_bytes(), body));\n\n    if signature.is_empty() {\n        return true;\n    }\n\n    signature == expected\n}",
+    "defects": [
+      {
+        "id": "no_replay_protection",
+        "line": 6,
+        "severity": "high",
+        "keywords_any": [
+          "replay",
+          "timestamp",
+          "expiry",
+          "expire",
+          "stale request",
+          "nonce",
+          "reused",
+          "reuse",
+          "old request",
+          "captured request",
+          "freshness",
+          "age of the"
+        ]
+      },
+      {
+        "id": "missing_signature",
+        "line": 9,
+        "severity": "critical",
+        "keywords_any": [
+          "missing",
+          "absent",
+          "empty",
+          "no signature",
+          "none",
+          "null",
+          "bypass",
+          "skips verification",
+          "unsigned",
+          "not present",
+          "unauthenticated",
+          "returns true",
+          "accepts",
+          "anyone"
+        ]
+      },
+      {
+        "id": "timing_attack",
+        "line": 13,
+        "severity": "high",
+        "keywords_any": [
+          "timing attack",
+          "constant time",
+          "timing",
+          "side channel",
+          "early return",
+          "byte by byte",
+          "compare_digest",
+          "hmac equal",
+          "leaks the signature",
+          "guess the signature"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "circuit_breaker_python",
+    "language": "python",
+    "component": "circuit_breaker",
+    "difficulty": "hard",
+    "context": "This breaker guards calls to the recommendations service from every request handler in a multi-threaded server. It is meant to trip after five consecutive dependency failures and, once the cool-off has passed, let a single probe through before closing again.",
+    "code": "import time\n\n\nclass CircuitBreaker:\n    def __init__(self, threshold=5, cooloff=30):\n        self.threshold = threshold\n        self.cooloff = cooloff\n        self.failures = 0\n        self.opened_at: float | None = None\n\n    def call(self, fn):\n        if self.opened_at is not None:\n            if time.time() - self.opened_at < self.cooloff:\n                raise CircuitOpen()\n            self.opened_at = None\n\n        try:\n            result = fn()\n        except DependencyError:\n            self.failures += 1\n            if self.failures >= self.threshold:\n                self.opened_at = time.time()\n            raise\n        return result",
+    "defects": [
+      {
+        "id": "half_open_flood",
+        "line": 15,
+        "severity": "high",
+        "keywords_any": [
+          "half open",
+          "stampede",
+          "all requests",
+          "one request",
+          "probe",
+          "single",
+          "flood",
+          "thundering herd",
+          "at once",
+          "everything through"
+        ]
+      },
+      {
+        "id": "never_resets",
+        "line": 24,
+        "severity": "high",
+        "keywords_any": [
+          "reset",
+          "never reset",
+          "cumulative",
+          "consecutive",
+          "not consecutive",
+          "over time",
+          "eventually",
+          "counter",
+          "accumulat",
+          "lifetime",
+          "success",
+          "days",
+          "forever"
+        ]
+      },
+      {
+        "id": "data_race",
+        "line": 20,
+        "severity": "high",
+        "keywords_any": [
+          "race",
+          "concurrent",
+          "not thread safe",
+          "thread safe",
+          "no lock",
+          "without a lock",
+          "mutex",
+          "synchron",
+          "goroutine",
+          "shared state",
+          "map is not safe",
+          "atomic"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "circuit_breaker_typescript",
+    "language": "typescript",
+    "component": "circuit_breaker",
+    "difficulty": "hard",
+    "context": "This breaker guards calls to the recommendations service from every request handler in a multi-threaded server. It is meant to trip after five consecutive dependency failures and, once the cool-off has passed, let a single probe through before closing again.",
+    "code": "export class CircuitBreaker {\n    private failures = 0;\n    private openedAt: number | null = null;\n\n    constructor(private threshold = 5, private cooloffMs = 30_000) {}\n\n    async call<T>(fn: () => Promise<T>): Promise<T> {\n        if (this.openedAt !== null) {\n            if (Date.now() - this.openedAt < this.cooloffMs) {\n                throw new CircuitOpenError();\n            }\n            this.openedAt = null;\n        }\n\n        try {\n            return await fn();\n        } catch (err) {\n            this.failures += 1;\n            if (this.failures >= this.threshold) {\n                this.openedAt = Date.now();\n            }\n            throw err;\n        }\n    }\n}",
+    "defects": [
+      {
+        "id": "half_open_flood",
+        "line": 12,
+        "severity": "high",
+        "keywords_any": [
+          "half open",
+          "stampede",
+          "all requests",
+          "one request",
+          "probe",
+          "single",
+          "flood",
+          "thundering herd",
+          "at once",
+          "everything through"
+        ]
+      },
+      {
+        "id": "never_resets",
+        "line": 16,
+        "severity": "high",
+        "keywords_any": [
+          "reset",
+          "never reset",
+          "cumulative",
+          "consecutive",
+          "not consecutive",
+          "over time",
+          "eventually",
+          "counter",
+          "accumulat",
+          "lifetime",
+          "success",
+          "days",
+          "forever"
+        ]
+      },
+      {
+        "id": "overbroad_catch",
+        "line": 17,
+        "severity": "high",
+        "keywords_any": [
+          "every exception",
+          "all exceptions",
+          "any exception",
+          "every error",
+          "all errors",
+          "client error",
+          "4xx",
+          "validation",
+          "bad request",
+          "unrelated",
+          "programming",
+          "not a dependency",
+          "catch all",
+          "indiscriminate",
+          "own errors"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "circuit_breaker_go",
+    "language": "go",
+    "component": "circuit_breaker",
+    "difficulty": "hard",
+    "context": "This breaker guards calls to the recommendations service from every request handler in a multi-threaded server. It is meant to trip after five consecutive dependency failures and, once the cool-off has passed, let a single probe through before closing again.",
+    "code": "type CircuitBreaker struct {\n    threshold int\n    cooloff   time.Duration\n    failures  int\n    openedAt  time.Time\n}\n\nfunc (b *CircuitBreaker) Call(fn func() error) error {\n    if !b.openedAt.IsZero() {\n        if time.Since(b.openedAt) < b.cooloff {\n            return ErrCircuitOpen\n        }\n        b.openedAt = time.Time{}\n    }\n\n    if err := fn(); err != nil {\n        b.failures++\n        if b.failures >= b.threshold {\n            b.openedAt = time.Now()\n        }\n        return err\n    }\n    return nil\n}",
+    "defects": [
+      {
+        "id": "half_open_flood",
+        "line": 13,
+        "severity": "high",
+        "keywords_any": [
+          "half open",
+          "stampede",
+          "all requests",
+          "one request",
+          "probe",
+          "single",
+          "flood",
+          "thundering herd",
+          "at once",
+          "everything through"
+        ]
+      },
+      {
+        "id": "never_resets",
+        "line": 23,
+        "severity": "high",
+        "keywords_any": [
+          "reset",
+          "never reset",
+          "cumulative",
+          "consecutive",
+          "not consecutive",
+          "over time",
+          "eventually",
+          "counter",
+          "accumulat",
+          "lifetime",
+          "success",
+          "days",
+          "forever"
+        ]
+      },
+      {
+        "id": "data_race",
+        "line": 17,
+        "severity": "high",
+        "keywords_any": [
+          "race",
+          "concurrent",
+          "not thread safe",
+          "thread safe",
+          "no lock",
+          "without a lock",
+          "mutex",
+          "synchron",
+          "goroutine",
+          "shared state",
+          "map is not safe",
+          "atomic"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "circuit_breaker_rust",
+    "language": "rust",
+    "component": "circuit_breaker",
+    "difficulty": "hard",
+    "context": "This breaker guards calls to the recommendations service from every request handler in a multi-threaded server. It is meant to trip after five consecutive dependency failures and, once the cool-off has passed, let a single probe through before closing again.",
+    "code": "pub struct CircuitBreaker {\n    threshold: u32,\n    cooloff: Duration,\n    failures: u32,\n    opened_at: Option<Instant>,\n}\n\nimpl CircuitBreaker {\n    pub fn call<T>(&mut self, f: impl FnOnce() -> Result<T, Error>) -> Result<T, Error> {\n        if let Some(opened_at) = self.opened_at {\n            if opened_at.elapsed() < self.cooloff {\n                return Err(Error::CircuitOpen);\n            }\n            self.opened_at = None;\n        }\n\n        match f() {\n            Ok(value) => Ok(value),\n            Err(err) => {\n                self.failures += 1;\n                if self.failures >= self.threshold {\n                    self.opened_at = Some(Instant::now());\n                }\n                Err(err)\n            }\n        }\n    }\n}",
+    "defects": [
+      {
+        "id": "half_open_flood",
+        "line": 14,
+        "severity": "high",
+        "keywords_any": [
+          "half open",
+          "stampede",
+          "all requests",
+          "one request",
+          "probe",
+          "single",
+          "flood",
+          "thundering herd",
+          "at once",
+          "everything through"
+        ]
+      },
+      {
+        "id": "never_resets",
+        "line": 18,
+        "severity": "high",
+        "keywords_any": [
+          "reset",
+          "never reset",
+          "cumulative",
+          "consecutive",
+          "not consecutive",
+          "over time",
+          "eventually",
+          "counter",
+          "accumulat",
+          "lifetime",
+          "success",
+          "days",
+          "forever"
+        ]
+      },
+      {
+        "id": "overbroad_catch",
+        "line": 19,
+        "severity": "high",
+        "keywords_any": [
+          "every exception",
+          "all exceptions",
+          "any exception",
+          "every error",
+          "all errors",
+          "client error",
+          "4xx",
+          "validation",
+          "bad request",
+          "unrelated",
+          "programming",
+          "not a dependency",
+          "catch all",
+          "indiscriminate",
+          "own errors"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "upload_handler_python",
+    "language": "python",
+    "component": "upload_handler",
+    "difficulty": "hard",
+    "context": "This endpoint accepts avatar uploads from authenticated users and stores them on a shared volume that the web server also serves files from. The filename comes from the multipart form and the body is whatever the client sends.",
+    "code": "import os\n\nUPLOAD_DIR = \"/srv/avatars\"\n\n\ndef handle_upload(request):\n    filename = request.form[\"filename\"]\n    target = os.path.join(UPLOAD_DIR, filename)\n\n    data = request.stream.read()\n\n    handle = open(target, \"wb\")\n    handle.write(data)\n    handle.close()\n    return {\"path\": target}",
+    "defects": [
+      {
+        "id": "path_traversal",
+        "line": 8,
+        "severity": "critical",
+        "keywords_any": [
+          "traversal",
+          "dot dot",
+          "sanitize",
+          "sanitise",
+          "basename",
+          "arbitrary",
+          "escape the directory",
+          "overwrite",
+          "outside",
+          "absolute path",
+          "attacker controlled",
+          "filename",
+          "join"
+        ]
+      },
+      {
+        "id": "unbounded_read",
+        "line": 10,
+        "severity": "high",
+        "keywords_any": [
+          "size limit",
+          "content length",
+          "unbounded",
+          "memory",
+          "whole file",
+          "entire",
+          "read all",
+          "oom",
+          "out of memory",
+          "max size",
+          "large upload",
+          "dos",
+          "exhaust"
+        ]
+      },
+      {
+        "id": "handle_leak",
+        "line": 12,
+        "severity": "medium",
+        "keywords_any": [
+          "close",
+          "closed",
+          "leak",
+          "handle",
+          "descriptor",
+          "defer",
+          "cleanup",
+          "clean up",
+          "temp",
+          "not removed",
+          "orphan",
+          "context manager",
+          "left behind",
+          "fills the disk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "upload_handler_typescript",
+    "language": "typescript",
+    "component": "upload_handler",
+    "difficulty": "hard",
+    "context": "This endpoint accepts avatar uploads from authenticated users and stores them on a shared volume that the web server also serves files from. The filename comes from the multipart form and the body is whatever the client sends.",
+    "code": "import * as path from \"path\";\nimport { promises as fs } from \"fs\";\n\nconst UPLOAD_DIR = \"/srv/avatars\";\n\nexport async function handleUpload(req: Request): Promise<{ path: string }> {\n    const filename = req.body.filename as string;\n    const target = path.join(UPLOAD_DIR, filename);\n\n    const data = await readEntireBody(req);\n\n    const handle = await fs.open(target, \"w\");\n    await handle.write(data);\n    await handle.close();\n    return { path: target };\n}",
+    "defects": [
+      {
+        "id": "path_traversal",
+        "line": 8,
+        "severity": "critical",
+        "keywords_any": [
+          "traversal",
+          "dot dot",
+          "sanitize",
+          "sanitise",
+          "basename",
+          "arbitrary",
+          "escape the directory",
+          "overwrite",
+          "outside",
+          "absolute path",
+          "attacker controlled",
+          "filename",
+          "join"
+        ]
+      },
+      {
+        "id": "unbounded_read",
+        "line": 10,
+        "severity": "high",
+        "keywords_any": [
+          "size limit",
+          "content length",
+          "unbounded",
+          "memory",
+          "whole file",
+          "entire",
+          "read all",
+          "oom",
+          "out of memory",
+          "max size",
+          "large upload",
+          "dos",
+          "exhaust"
+        ]
+      },
+      {
+        "id": "handle_leak",
+        "line": 12,
+        "severity": "medium",
+        "keywords_any": [
+          "close",
+          "closed",
+          "leak",
+          "handle",
+          "descriptor",
+          "defer",
+          "cleanup",
+          "clean up",
+          "temp",
+          "not removed",
+          "orphan",
+          "context manager",
+          "left behind",
+          "fills the disk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "upload_handler_go",
+    "language": "go",
+    "component": "upload_handler",
+    "difficulty": "hard",
+    "context": "This endpoint accepts avatar uploads from authenticated users and stores them on a shared volume that the web server also serves files from. The filename comes from the multipart form and the body is whatever the client sends.",
+    "code": "const uploadDir = \"/srv/avatars\"\n\nfunc HandleUpload(w http.ResponseWriter, r *http.Request) {\n    filename := r.FormValue(\"filename\")\n    target := filepath.Join(uploadDir, filename)\n\n    data, err := io.ReadAll(r.Body)\n    if err != nil {\n        http.Error(w, \"bad request\", http.StatusBadRequest)\n        return\n    }\n\n    f, err := os.Create(target)\n    if err != nil {\n        http.Error(w, \"server error\", http.StatusInternalServerError)\n        return\n    }\n    f.Write(data)\n    f.Close()\n}",
+    "defects": [
+      {
+        "id": "path_traversal",
+        "line": 5,
+        "severity": "critical",
+        "keywords_any": [
+          "traversal",
+          "dot dot",
+          "sanitize",
+          "sanitise",
+          "basename",
+          "arbitrary",
+          "escape the directory",
+          "overwrite",
+          "outside",
+          "absolute path",
+          "attacker controlled",
+          "filename",
+          "join"
+        ]
+      },
+      {
+        "id": "unbounded_read",
+        "line": 7,
+        "severity": "high",
+        "keywords_any": [
+          "size limit",
+          "content length",
+          "unbounded",
+          "memory",
+          "whole file",
+          "entire",
+          "read all",
+          "oom",
+          "out of memory",
+          "max size",
+          "large upload",
+          "dos",
+          "exhaust"
+        ]
+      },
+      {
+        "id": "handle_leak",
+        "line": 19,
+        "severity": "medium",
+        "keywords_any": [
+          "close",
+          "closed",
+          "leak",
+          "handle",
+          "descriptor",
+          "defer",
+          "cleanup",
+          "clean up",
+          "temp",
+          "not removed",
+          "orphan",
+          "context manager",
+          "left behind",
+          "fills the disk"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "upload_handler_rust",
+    "language": "rust",
+    "component": "upload_handler",
+    "difficulty": "hard",
+    "context": "This endpoint accepts avatar uploads from authenticated users and stores them on a shared volume that the web server also serves files from. The filename comes from the multipart form and the body is whatever the client sends.",
+    "code": "const UPLOAD_DIR: &str = \"/srv/avatars\";\n\npub fn handle_upload(req: &mut Request) -> Result<String, Error> {\n    let filename = req.form_value(\"filename\");\n    let target = Path::new(UPLOAD_DIR).join(&filename);\n\n    let mut data = Vec::new();\n    req.body().read_to_end(&mut data)?;\n\n    let mut file = File::create(&target)?;\n    file.write_all(&data)?;\n    Ok(target.display().to_string())\n}",
+    "defects": [
+      {
+        "id": "path_traversal",
+        "line": 5,
+        "severity": "critical",
+        "keywords_any": [
+          "traversal",
+          "dot dot",
+          "sanitize",
+          "sanitise",
+          "basename",
+          "arbitrary",
+          "escape the directory",
+          "overwrite",
+          "outside",
+          "absolute path",
+          "attacker controlled",
+          "filename",
+          "join"
+        ]
+      },
+      {
+        "id": "unbounded_read",
+        "line": 8,
+        "severity": "high",
+        "keywords_any": [
+          "size limit",
+          "content length",
+          "unbounded",
+          "memory",
+          "whole file",
+          "entire",
+          "read all",
+          "oom",
+          "out of memory",
+          "max size",
+          "large upload",
+          "dos",
+          "exhaust"
+        ]
+      },
+      {
+        "id": "partial_file",
+        "line": 11,
+        "severity": "medium",
+        "keywords_any": [
+          "close",
+          "closed",
+          "leak",
+          "handle",
+          "descriptor",
+          "defer",
+          "cleanup",
+          "clean up",
+          "temp",
+          "not removed",
+          "orphan",
+          "context manager",
+          "left behind",
+          "fills the disk"
+        ]
+      }
+    ]
   }
 ]

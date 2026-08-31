@@ -21,6 +21,15 @@ from typing import Any, Callable
 
 LANGUAGES = ("python", "typescript", "go", "rust")
 
+# Appended to every code_efficiency spec. The timing rule is part of the task,
+# so the model is told about it rather than being ambushed by the budget.
+BUDGET_NOTE = """
+This case is timed. The graders run your function once on a 200,000-element
+input and compare the elapsed time against a budget; the obvious quadratic
+solution is correct but far too slow to score. Aim for a single pass (or a
+sort), not nested scans over the input.
+"""
+
 
 @dataclass
 class Family:

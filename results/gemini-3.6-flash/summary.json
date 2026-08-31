@@ -1,35 +1,35 @@
 {
   "model": "gemini-3.6-flash",
-  "global_score": 66.45,
+  "global_score": 77.2,
   "category_scores": {
-    "code_generation": 87.3,
-    "code_efficiency": 92.08,
-    "code_debugging": 97.5,
-    "code_refactoring": 99.07,
-    "code_review": 82.69,
+    "code_generation": 78.84,
+    "code_efficiency": 78.33,
+    "code_debugging": 79.52,
+    "code_refactoring": 79.54,
+    "code_review": 73.08,
     "log_parsing": 89.66,
     "anomaly_detection": 64.76,
     "pattern_correlation": 72.0,
     "metrics_timeseries": 71.58,
     "root_cause": 51.34,
     "multimodal_rca": 54.17,
-    "code_python": 96.82,
-    "code_typescript": 93.16,
-    "code_go": 91.64,
-    "code_rust": 80.86,
-    "efficiency": 57.78
+    "code_python": 95.91,
+    "code_typescript": 36.8,
+    "code_go": 90.99,
+    "code_rust": 88.03,
+    "efficiency": 60.67
   },
   "efficiency_metrics": {
-    "avg_latency_s": 14.2971,
-    "avg_total_tokens": 1340.6921,
-    "score_stddev": 2.9767,
-    "latency_score": 0.2851,
-    "token_score": 0.6648,
-    "consistency_score": 0.8809
+    "avg_latency_s": 14.2427,
+    "avg_total_tokens": 1010.5766,
+    "score_stddev": 2.719,
+    "latency_score": 0.2879,
+    "token_score": 0.7474,
+    "consistency_score": 0.8912
   },
   "error_count": 2,
   "refused_count": 0,
-  "total_runs": 486,
-  "total_duration_s": 6919.77,
-  "last_run_wall_clock_s": null
+  "total_runs": 1086,
+  "total_duration_s": 15439.05,
+  "last_run_wall_clock_s": 7422.82
 }

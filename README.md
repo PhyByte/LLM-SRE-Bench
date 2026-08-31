@@ -58,25 +58,30 @@ The original track focused on SRE and production operations:
 
 ### Developer Track (five categories of coding work)
 
-80 cases — 20 per language — split across five things a working developer actually does:
+280 cases — 70 per language — split across five things a working developer actually does:
 
-- **Code generation (32 cases).** Write a utility from a spec and a required signature, with the
+- **Code generation (72 cases).** Write a utility from a spec and a required signature, with the
   tests hidden: slugify, interval merge, rate limiter, config overlay, LRU cache, log parser,
-  semver comparison, latency quantiles.
-- **Code efficiency (12 cases).** Correct is not enough. Each case is run once on a 200,000-element
+  semver comparison, latency quantiles, and a harder set where the difficulty is in the
+  specification — glob matching, cron fields, npm-style semver ranges, shell-style tokenization,
+  an expression evaluator whose division truncates toward zero.
+- **Code efficiency (52 cases).** Correct is not enough. Each case is run once on a 200,000-element
   input and timed *inside the process* against a per-language budget. A quadratic answer passes the
   small tests, compiles, and still loses the speed component — that gap is the whole point.
-- **Bug fixing (12 cases).** A plausible implementation that is subtly wrong, plus the symptom a
+- **Bug fixing (52 cases).** A plausible implementation that is subtly wrong, plus the symptom a
   colleague reported. The hidden tests include the inputs the buggy version already handled — a
   fix that breaks those is not a fix — but the tests the bug *does* break are scored as their own
   half, measured per language at build time by running the shipped buggy code. Returning the code
   unchanged scores 30–58; fixing it scores 100.
-- **Refactoring (12 cases).** Working code with a stated goal (collapse the branch chain into a
+- **Refactoring (52 cases).** Working code with a stated goal (collapse the branch chain into a
   table, replace the nested scan with a single pass). Execution proves the behavior survived;
   per-case structural rules prove it was actually restructured and not just reformatted.
-- **Code review (12 cases).** A snippet with seeded defects — SQL injection, an N+1 query, a data
-  race, unbounded cache growth, a logged auth token, a missing timeout, a `.unwrap()` that panics.
-  Scored on defect recall, with a precision penalty so padding the review costs points.
+- **Code review (52 cases).** A snippet with seeded defects — SQL injection, an N+1 query, a data
+  race, unbounded cache growth, a logged auth token, a missing timeout, a `.unwrap()` that panics —
+  and harder ones where nothing looks wrong on the line: a paginator that spins when a cursor is
+  missing, a readiness probe that reports healthy *because* its database check threw, a leader lease
+  renewed on the same interval as its own TTL. Scored on defect recall, with a precision penalty so
+  padding the review costs points.
 
 What makes the track hard:
 
@@ -117,28 +122,28 @@ pydantic schemas — unparseable output scores 0 for that run.
 
 | Category | Weight | Cases | What's measured |
 |---|---|---|---|
-| Code Generation | 35% | 32 | 0.60 tests passed + 0.20 compiles + 0.10 runtime + 0.10 code size |
-| Code Efficiency | 15% | 12 | 0.45 correctness + 0.15 compiles + 0.35 speed × correctness + 0.05 code size |
-| Bug Fixing | 15% | 12 | 0.70 correctness + 0.20 compiles + 0.10 code size, where correctness is ½ all tests + ½ the tests the bug actually breaks |
-| Refactoring | 15% | 12 | 0.40 tests still pass + 0.10 compiles + 0.50 structural rules × correctness |
-| Code Review | 15% | 12 | 0.65 defect recall + 0.20 precision + 0.15 line localization |
+| Code Generation | 35% | 72 | 0.60 tests passed + 0.20 compiles + 0.10 runtime + 0.10 code size |
+| Code Efficiency | 15% | 52 | 0.45 correctness + 0.15 compiles + 0.35 speed × correctness + 0.05 code size |
+| Bug Fixing | 15% | 52 | 0.70 correctness + 0.20 compiles + 0.10 code size, where correctness is ½ all tests + ½ the tests the bug actually breaks |
+| Refactoring | 15% | 52 | 0.40 tests still pass + 0.10 compiles + 0.50 structural rules × correctness |
+| Code Review | 15% | 52 | 0.65 defect recall + 0.20 precision + 0.15 line localization |
 | Efficiency & Consistency | 5% | — | Latency, token usage, run-to-run score variance |
 
 **Global score** = weighted average, 0–100. Cases are run `runs_per_test` times (default 3) and
 averaged. The developer report also prints a **by-language** table: the same runs grouped by
 target language instead of by category. Those columns are a view, not extra weight.
 
-**Languages tested:** Python, TypeScript, Go, Rust — 20 cases each, 80 total.
+**Languages tested:** Python, TypeScript, Go, Rust — 70 cases each, 280 total.
 
 **Task families:**
 
 | Category | Families (each × 4 languages) |
 |---|---|
-| Code Generation | slugify, interval merge, rate limiter, config overlay, LRU cache, log parser, semver compare, histogram quantile |
-| Code Efficiency | count pairs (hashing), max window sum (sliding window), top-k frequent (counting) |
-| Bug Fixing | median (unsorted + even-length), merge sorted (dropped tail), normalize path (stack underflow) |
-| Refactoring | severity rank (branch chain → table), format bytes (duplicated units → loop), dedupe (nested scan → single pass) |
-| Code Review | TTL cache (stale reads, unbounded growth, race), user lookup (SQL injection, N+1, unchecked result), fetch with retry (leaked token, no timeout, no backoff) |
+| Code Generation | slugify, interval merge, rate limiter, config overlay, LRU cache, log parser, semver compare, histogram quantile, glob match, cron field, range expansion, text wrap, topological order, expression evaluator, route params, semver ranges, command tokenizer, percent decode |
+| Code Efficiency | count pairs (hashing), max window sum (sliding window), top-k frequent (counting), count inversions (divide and conquer), longest unique run, largest rectangle (monotonic stack), window max total (monotonic deque), longest increasing run, trapped water (two pointers), distinct window total, min rooms (sweep line), running median sum (heaps), max XOR pair (bit tricks) |
+| Bug Fixing | median (unsorted + even-length), merge sorted (dropped tail), normalize path (stack underflow), lower bound (`<=` in the binary search), parse duration (overwritten total), covered seconds (nested interval), Luhn (doubling from the wrong end), IP in CIDR (byte-aligned assumption), sliding rate limit (strict window edge), counter increase (equal reading read as a reset), version bump (lower components not reset), CSV field (quote not doubled), parse size (SI suffix treated as binary) |
+| Refactoring | severity rank (branch chain → table), format bytes (duplicated units → loop), dedupe (nested scan → single pass), deploy gate (→ guard clauses), next state (→ transition table), summarize series (→ single pass), format table row (→ library padding), check limits (→ shared helper), first error line (→ early return), rank services (→ library sort), bill summary (→ hoisted duplication), parse kv (→ library split), compact ranges (→ shared helper) |
+| Code Review | TTL cache (stale reads, unbounded growth, race), user lookup (SQL injection, N+1, unchecked result), fetch with retry (leaked token, no timeout, no backoff), sync pager (stuck cursor, buffered everything, short-page end), charge once (unstable idempotency key, check-then-act, logged card token), readiness (latched cache, no timeout, fails open), token bucket (integer refill drift, wrong bucket key, race), config reload (torn read, no validation, swallowed error), batch writer (no time flush, cleared before write, no shutdown flush), lease renew (no renewal margin, no fencing, wall clock), webhook verify (no replay check, empty signature accepted, non-constant-time compare), circuit breaker (half-open flood, never resets, over-broad catch), upload handler (path traversal, unbounded read, leaked handle) |
 
 **How the efficiency budgets are set.** Each case is timed in-language on a 200,000-element input
 generated by a seeded LCG inside the test runner (identical data in all four languages, no huge
@@ -314,8 +319,8 @@ This command scans `results/<model>/records.json` for every model and regenerate
 roughly **$0.40–$4.00 per frontier model** at current list prices. (Multi-modal RCA is about 90k
 of that input on its own: its bundles are far larger than the single-modality cases.)
 
-The developer track adds another ~500k input + ~330k output tokens per model (80 cases × 3 runs,
-generating complete functions/classes). Budget **$0.50–$5.00 per model** depending on pricing.
+The developer track adds another ~1.8M input + ~1.2M output tokens per model (280 cases × 3 runs,
+generating complete functions/classes). Budget **$2–$18 per model** depending on pricing.
 
 Responses are cached in `.cache/`, so interrupted or repeated runs never re-pay for the same call.
 
@@ -471,7 +476,7 @@ on a substantial share of cases.
 root-cause answers get graded 0–10 by that model against the reference
 (score = 0.7 × judge + 0.3 × reference metrics).
 
-## The datasets (162 cases total: 82 SRE + 80 developer)
+## The datasets (362 cases total: 82 SRE + 280 developer)
 
 ### SRE Track
 
@@ -486,15 +491,15 @@ root-cause answers get graded 0–10 by that model against the reference
 
 ### Developer Track
 
-All five files hold 4 languages × the same families, so every language carries 20 cases.
+All five files hold 4 languages × the same families, so every language carries 70 cases.
 
 | File | Cases | Task Families |
 |---|---|---|
-| `code_generation.json` | 32 | slugify, interval merge, rate limiter, config overlay, LRU cache, log parser, semver compare, histogram quantile |
-| `code_efficiency.json` | 12 | count pairs, max window sum, top-k frequent — each with a timed 200k-element workload |
-| `code_debugging.json` | 12 | median, merge sorted, normalize path — each shipped with the buggy version and its reported symptom |
-| `code_refactoring.json` | 12 | severity rank, format bytes, dedupe — each with the messy original and its structural rules |
-| `code_review.json` | 12 | TTL cache, user lookup, fetch with retry — 3 seeded defects each |
+| `code_generation.json` | 72 | 18 families: the 8 original utilities plus 10 spec-heavy ones (glob, cron, ranges, wrapping, topological order, expressions, routes, semver ranges, tokenizing, percent decoding) |
+| `code_efficiency.json` | 52 | 13 families, each with a timed 200k-element workload |
+| `code_debugging.json` | 52 | 13 families, each shipped with the buggy version and its reported symptom |
+| `code_refactoring.json` | 52 | 13 families, each with the messy original and its structural rules |
+| `code_review.json` | 52 | 13 components — 3 seeded defects each |
 
 Regenerate or scale up the SRE generated portions deterministically:
 

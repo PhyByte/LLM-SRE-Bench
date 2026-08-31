@@ -5,6 +5,7 @@ from __future__ import annotations
 import math
 
 from .common import Family, dedent_code
+from .generation_advanced import ADVANCED_FAMILIES
 
 
 def _semver_key(version: str):
@@ -458,4 +459,4 @@ Rules:
 )
 
 
-FAMILIES = [SEMVER, QUANTILE]
+FAMILIES = [SEMVER, QUANTILE, *ADVANCED_FAMILIES]

@@ -11,6 +11,7 @@ or a loop*, not for one blessed implementation.
 from __future__ import annotations
 
 from .common import Family, dedent_code
+from .refactoring_advanced import ADVANCED_FAMILIES
 
 _RANKS = {
     "debug": 10,
@@ -833,4 +834,4 @@ pass using a set or map for membership.
 )
 
 
-FAMILIES = [SEVERITY_RANK, FORMAT_BYTES, DEDUPE]
+FAMILIES = [SEVERITY_RANK, FORMAT_BYTES, DEDUPE, *ADVANCED_FAMILIES]

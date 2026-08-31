@@ -17,7 +17,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from evaluators.code_exec import workload_inputs  # noqa: E402
 
-from .common import Family, dedent_code  # noqa: E402
+from .common import BUDGET_NOTE, Family, dedent_code  # noqa: E402
+from .efficiency_advanced import ADVANCED_FAMILIES  # noqa: E402
 
 
 def count_pairs(values: list[int], target: int) -> int:
@@ -86,12 +87,7 @@ TOPK_WORKLOAD = _with_expected(
 )
 
 
-_BUDGET_NOTE = """
-This case is timed. The graders run your function once on a 200,000-element
-input and compare the elapsed time against a budget; the obvious quadratic
-solution is correct but far too slow to score. Aim for a single pass (or a
-sort), not nested scans over the input.
-"""
+_BUDGET_NOTE = BUDGET_NOTE
 
 
 COUNT_PAIRS = Family(
@@ -402,4 +398,4 @@ Rules:
 )
 
 
-FAMILIES = [COUNT_PAIRS, MAX_WINDOW_SUM, TOP_K_FREQUENT]
+FAMILIES = [COUNT_PAIRS, MAX_WINDOW_SUM, TOP_K_FREQUENT, *ADVANCED_FAMILIES]

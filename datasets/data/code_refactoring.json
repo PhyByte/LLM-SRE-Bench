@@ -1202,5 +1202,4458 @@
         ]
       }
     ]
+  },
+  {
+    "id": "deploy_gate_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "deploy_gate",
+    "skill": "guard_clauses",
+    "spec": "`deploy_gate` decides whether a deploy may proceed. The current version is\ncorrect and every one of these rules must still hold, in this order:\n\n1. An environment other than \"prod\", \"staging\" or \"dev\" gives\n   \"blocked: unknown env\".\n2. A change freeze blocks \"prod\" only: \"blocked: change freeze\".\n3. An unhealthy target gives \"blocked: unhealthy\".\n4. \"prod\" needs at least 2 approvals, otherwise \"blocked: needs 2 approvals\".\n5. \"staging\" needs at least 1, otherwise \"blocked: needs 1 approval\".\n6. Anything else is \"allowed\".\n\nThe logic is buried in a pyramid of nested conditionals, so reading rule 4 means\ntracking four enclosing branches. Refactor it into a flat sequence of guard\nclauses that reject early and return \"allowed\" at the end, keeping the order of\nthe checks exactly as it is.",
+    "signature": "def deploy_gate(env: str, healthy: bool, approvals: int, frozen: bool) -> str:",
+    "io": {
+      "args": [
+        "str",
+        "bool",
+        "int",
+        "bool"
+      ],
+      "returns": "str"
+    },
+    "goal": "Flatten the nesting into guard clauses: each rejection returns immediately, and the success path is the last line.",
+    "original_code": "def deploy_gate(env: str, healthy: bool, approvals: int, frozen: bool) -> str:\n    if env == \"prod\" or env == \"staging\" or env == \"dev\":\n        if not (frozen and env == \"prod\"):\n            if healthy:\n                if env == \"prod\":\n                    if approvals < 2:\n                        return \"blocked: needs 2 approvals\"\n                    else:\n                        return \"allowed\"\n                else:\n                    if env == \"staging\":\n                        if approvals < 1:\n                            return \"blocked: needs 1 approval\"\n                        else:\n                            return \"allowed\"\n                    else:\n                        return \"allowed\"\n            else:\n                return \"blocked: unhealthy\"\n        else:\n            return \"blocked: change freeze\"\n    else:\n        return \"blocked: unknown env\"",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\belse\\b",
+          "max": 1,
+          "reason": "guard clauses return early instead of nesting an else"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": [
+          "prod",
+          true,
+          2,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          1,
+          false
+        ],
+        "expected": "blocked: needs 2 approvals"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          5,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          5,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          0,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          0,
+          false
+        ],
+        "expected": "blocked: needs 1 approval"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          1,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          3,
+          true
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          true,
+          0,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          false,
+          0,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "qa",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      },
+      {
+        "input": [
+          "",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      }
+    ]
+  },
+  {
+    "id": "deploy_gate_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "deploy_gate",
+    "skill": "guard_clauses",
+    "spec": "`deploy_gate` decides whether a deploy may proceed. The current version is\ncorrect and every one of these rules must still hold, in this order:\n\n1. An environment other than \"prod\", \"staging\" or \"dev\" gives\n   \"blocked: unknown env\".\n2. A change freeze blocks \"prod\" only: \"blocked: change freeze\".\n3. An unhealthy target gives \"blocked: unhealthy\".\n4. \"prod\" needs at least 2 approvals, otherwise \"blocked: needs 2 approvals\".\n5. \"staging\" needs at least 1, otherwise \"blocked: needs 1 approval\".\n6. Anything else is \"allowed\".\n\nThe logic is buried in a pyramid of nested conditionals, so reading rule 4 means\ntracking four enclosing branches. Refactor it into a flat sequence of guard\nclauses that reject early and return \"allowed\" at the end, keeping the order of\nthe checks exactly as it is.",
+    "signature": "function deployGate(env: string, healthy: boolean, approvals: number, frozen: boolean): string {",
+    "io": {
+      "args": [
+        "str",
+        "bool",
+        "int",
+        "bool"
+      ],
+      "returns": "str"
+    },
+    "goal": "Flatten the nesting into guard clauses: each rejection returns immediately, and the success path is the last line.",
+    "original_code": "function deployGate(env: string, healthy: boolean, approvals: number, frozen: boolean): string {\n    if (env === \"prod\" || env === \"staging\" || env === \"dev\") {\n        if (!(frozen && env === \"prod\")) {\n            if (healthy) {\n                if (env === \"prod\") {\n                    if (approvals < 2) {\n                        return \"blocked: needs 2 approvals\";\n                    } else {\n                        return \"allowed\";\n                    }\n                } else {\n                    if (env === \"staging\") {\n                        if (approvals < 1) {\n                            return \"blocked: needs 1 approval\";\n                        } else {\n                            return \"allowed\";\n                        }\n                    } else {\n                        return \"allowed\";\n                    }\n                }\n            } else {\n                return \"blocked: unhealthy\";\n            }\n        } else {\n            return \"blocked: change freeze\";\n        }\n    } else {\n        return \"blocked: unknown env\";\n    }\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\belse\\b",
+          "max": 1,
+          "reason": "guard clauses return early instead of nesting an else"
+        }
+      ],
+      "max_lines": 24
+    },
+    "test_cases": [
+      {
+        "input": [
+          "prod",
+          true,
+          2,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          1,
+          false
+        ],
+        "expected": "blocked: needs 2 approvals"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          5,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          5,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          0,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          0,
+          false
+        ],
+        "expected": "blocked: needs 1 approval"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          1,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          3,
+          true
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          true,
+          0,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          false,
+          0,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "qa",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      },
+      {
+        "input": [
+          "",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      }
+    ]
+  },
+  {
+    "id": "deploy_gate_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "deploy_gate",
+    "skill": "guard_clauses",
+    "spec": "`deploy_gate` decides whether a deploy may proceed. The current version is\ncorrect and every one of these rules must still hold, in this order:\n\n1. An environment other than \"prod\", \"staging\" or \"dev\" gives\n   \"blocked: unknown env\".\n2. A change freeze blocks \"prod\" only: \"blocked: change freeze\".\n3. An unhealthy target gives \"blocked: unhealthy\".\n4. \"prod\" needs at least 2 approvals, otherwise \"blocked: needs 2 approvals\".\n5. \"staging\" needs at least 1, otherwise \"blocked: needs 1 approval\".\n6. Anything else is \"allowed\".\n\nThe logic is buried in a pyramid of nested conditionals, so reading rule 4 means\ntracking four enclosing branches. Refactor it into a flat sequence of guard\nclauses that reject early and return \"allowed\" at the end, keeping the order of\nthe checks exactly as it is.",
+    "signature": "func DeployGate(env string, healthy bool, approvals int, frozen bool) string {",
+    "io": {
+      "args": [
+        "str",
+        "bool",
+        "int",
+        "bool"
+      ],
+      "returns": "str"
+    },
+    "goal": "Flatten the nesting into guard clauses: each rejection returns immediately, and the success path is the last line.",
+    "original_code": "func DeployGate(env string, healthy bool, approvals int, frozen bool) string {\n    if env == \"prod\" || env == \"staging\" || env == \"dev\" {\n        if !(frozen && env == \"prod\") {\n            if healthy {\n                if env == \"prod\" {\n                    if approvals < 2 {\n                        return \"blocked: needs 2 approvals\"\n                    } else {\n                        return \"allowed\"\n                    }\n                } else {\n                    if env == \"staging\" {\n                        if approvals < 1 {\n                            return \"blocked: needs 1 approval\"\n                        } else {\n                            return \"allowed\"\n                        }\n                    } else {\n                        return \"allowed\"\n                    }\n                }\n            } else {\n                return \"blocked: unhealthy\"\n            }\n        } else {\n            return \"blocked: change freeze\"\n        }\n    } else {\n        return \"blocked: unknown env\"\n    }\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\belse\\b",
+          "max": 1,
+          "reason": "guard clauses return early instead of nesting an else"
+        }
+      ],
+      "max_lines": 26
+    },
+    "test_cases": [
+      {
+        "input": [
+          "prod",
+          true,
+          2,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          1,
+          false
+        ],
+        "expected": "blocked: needs 2 approvals"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          5,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          5,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          0,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          0,
+          false
+        ],
+        "expected": "blocked: needs 1 approval"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          1,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          3,
+          true
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          true,
+          0,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          false,
+          0,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "qa",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      },
+      {
+        "input": [
+          "",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      }
+    ]
+  },
+  {
+    "id": "deploy_gate_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "deploy_gate",
+    "skill": "guard_clauses",
+    "spec": "`deploy_gate` decides whether a deploy may proceed. The current version is\ncorrect and every one of these rules must still hold, in this order:\n\n1. An environment other than \"prod\", \"staging\" or \"dev\" gives\n   \"blocked: unknown env\".\n2. A change freeze blocks \"prod\" only: \"blocked: change freeze\".\n3. An unhealthy target gives \"blocked: unhealthy\".\n4. \"prod\" needs at least 2 approvals, otherwise \"blocked: needs 2 approvals\".\n5. \"staging\" needs at least 1, otherwise \"blocked: needs 1 approval\".\n6. Anything else is \"allowed\".\n\nThe logic is buried in a pyramid of nested conditionals, so reading rule 4 means\ntracking four enclosing branches. Refactor it into a flat sequence of guard\nclauses that reject early and return \"allowed\" at the end, keeping the order of\nthe checks exactly as it is.",
+    "signature": "fn deploy_gate(env: &str, healthy: bool, approvals: i64, frozen: bool) -> String {",
+    "io": {
+      "args": [
+        "str",
+        "bool",
+        "int",
+        "bool"
+      ],
+      "returns": "str"
+    },
+    "goal": "Flatten the nesting into guard clauses: each rejection returns immediately, and the success path is the last line.",
+    "original_code": "fn deploy_gate(env: &str, healthy: bool, approvals: i64, frozen: bool) -> String {\n    if env == \"prod\" || env == \"staging\" || env == \"dev\" {\n        if !(frozen && env == \"prod\") {\n            if healthy {\n                if env == \"prod\" {\n                    if approvals < 2 {\n                        return \"blocked: needs 2 approvals\".to_string();\n                    } else {\n                        return \"allowed\".to_string();\n                    }\n                } else {\n                    if env == \"staging\" {\n                        if approvals < 1 {\n                            return \"blocked: needs 1 approval\".to_string();\n                        } else {\n                            return \"allowed\".to_string();\n                        }\n                    } else {\n                        return \"allowed\".to_string();\n                    }\n                }\n            } else {\n                return \"blocked: unhealthy\".to_string();\n            }\n        } else {\n            return \"blocked: change freeze\".to_string();\n        }\n    } else {\n        return \"blocked: unknown env\".to_string();\n    }\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\belse\\b",
+          "max": 1,
+          "reason": "guard clauses return early instead of nesting an else"
+        }
+      ],
+      "max_lines": 26
+    },
+    "test_cases": [
+      {
+        "input": [
+          "prod",
+          true,
+          2,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          1,
+          false
+        ],
+        "expected": "blocked: needs 2 approvals"
+      },
+      {
+        "input": [
+          "prod",
+          true,
+          5,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          5,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "prod",
+          false,
+          0,
+          true
+        ],
+        "expected": "blocked: change freeze"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          0,
+          false
+        ],
+        "expected": "blocked: needs 1 approval"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          1,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "staging",
+          true,
+          3,
+          true
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          true,
+          0,
+          false
+        ],
+        "expected": "allowed"
+      },
+      {
+        "input": [
+          "dev",
+          false,
+          0,
+          false
+        ],
+        "expected": "blocked: unhealthy"
+      },
+      {
+        "input": [
+          "qa",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      },
+      {
+        "input": [
+          "",
+          true,
+          5,
+          false
+        ],
+        "expected": "blocked: unknown env"
+      }
+    ]
+  },
+  {
+    "id": "next_state_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "next_state",
+    "skill": "state_machine",
+    "spec": "`next_state` advances a job's state machine. The behavior is correct and must\nnot change:\n\n- Known states are idle, running, paused, done, failed and cancelled. Any other\n  state returns \"invalid\".\n- The transitions are: idle+start to running; running+pause to paused;\n  running+finish to done; running+fail to failed; paused+resume to running;\n  paused+cancel to cancelled; failed+retry to running.\n- A known state with an event that has no transition stays where it is: the\n  state itself is returned.\n\nToday this is a chain of comparisons, one branch per transition, so adding a\ntransition means adding a branch. Refactor it so the transitions are *data* \u2014\na table keyed by state and event, or the language's idiomatic match \u2014 leaving\nonly the unknown-state check and the lookup as control flow.",
+    "signature": "def next_state(state: str, event: str) -> str:",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Turn the transition chain into a lookup table so a new transition is a new row, not a new branch.",
+    "original_code": "def next_state(state: str, event: str) -> str:\n    if state == \"idle\":\n        if event == \"start\":\n            return \"running\"\n        return state\n    elif state == \"running\":\n        if event == \"pause\":\n            return \"paused\"\n        elif event == \"finish\":\n            return \"done\"\n        elif event == \"fail\":\n            return \"failed\"\n        return state\n    elif state == \"paused\":\n        if event == \"resume\":\n            return \"running\"\n        elif event == \"cancel\":\n            return \"cancelled\"\n        return state\n    elif state == \"failed\":\n        if event == \"retry\":\n            return \"running\"\n        return state\n    elif state == \"done\":\n        return state\n    elif state == \"cancelled\":\n        return state\n    else:\n        return \"invalid\"",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b|\\belif\\b",
+          "max": 3,
+          "reason": "the per-transition branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\{[^{}]*:",
+            "\\bmatch\\b",
+            "dict\\("
+          ],
+          "reason": "the transitions should live in a table"
+        }
+      ],
+      "max_lines": 26
+    },
+    "test_cases": [
+      {
+        "input": [
+          "idle",
+          "start"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "idle",
+          "finish"
+        ],
+        "expected": "idle"
+      },
+      {
+        "input": [
+          "running",
+          "pause"
+        ],
+        "expected": "paused"
+      },
+      {
+        "input": [
+          "running",
+          "finish"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "running",
+          "fail"
+        ],
+        "expected": "failed"
+      },
+      {
+        "input": [
+          "paused",
+          "resume"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "paused",
+          "cancel"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "failed",
+          "retry"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "done",
+          "start"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "cancelled",
+          "retry"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "sleeping",
+          "start"
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "invalid"
+      }
+    ]
+  },
+  {
+    "id": "next_state_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "next_state",
+    "skill": "state_machine",
+    "spec": "`next_state` advances a job's state machine. The behavior is correct and must\nnot change:\n\n- Known states are idle, running, paused, done, failed and cancelled. Any other\n  state returns \"invalid\".\n- The transitions are: idle+start to running; running+pause to paused;\n  running+finish to done; running+fail to failed; paused+resume to running;\n  paused+cancel to cancelled; failed+retry to running.\n- A known state with an event that has no transition stays where it is: the\n  state itself is returned.\n\nToday this is a chain of comparisons, one branch per transition, so adding a\ntransition means adding a branch. Refactor it so the transitions are *data* \u2014\na table keyed by state and event, or the language's idiomatic match \u2014 leaving\nonly the unknown-state check and the lookup as control flow.",
+    "signature": "function nextState(state: string, event: string): string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Turn the transition chain into a lookup table so a new transition is a new row, not a new branch.",
+    "original_code": "function nextState(state: string, event: string): string {\n    if (state === \"idle\") {\n        if (event === \"start\") return \"running\";\n        return state;\n    } else if (state === \"running\") {\n        if (event === \"pause\") return \"paused\";\n        else if (event === \"finish\") return \"done\";\n        else if (event === \"fail\") return \"failed\";\n        return state;\n    } else if (state === \"paused\") {\n        if (event === \"resume\") return \"running\";\n        else if (event === \"cancel\") return \"cancelled\";\n        return state;\n    } else if (state === \"failed\") {\n        if (event === \"retry\") return \"running\";\n        return state;\n    } else if (state === \"done\") {\n        return state;\n    } else if (state === \"cancelled\") {\n        return state;\n    }\n    return \"invalid\";\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 3,
+          "reason": "the per-transition branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "Record<",
+            "new Map",
+            "\\{[^{}]*:"
+          ],
+          "reason": "the transitions should live in a table"
+        }
+      ],
+      "max_lines": 26
+    },
+    "test_cases": [
+      {
+        "input": [
+          "idle",
+          "start"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "idle",
+          "finish"
+        ],
+        "expected": "idle"
+      },
+      {
+        "input": [
+          "running",
+          "pause"
+        ],
+        "expected": "paused"
+      },
+      {
+        "input": [
+          "running",
+          "finish"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "running",
+          "fail"
+        ],
+        "expected": "failed"
+      },
+      {
+        "input": [
+          "paused",
+          "resume"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "paused",
+          "cancel"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "failed",
+          "retry"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "done",
+          "start"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "cancelled",
+          "retry"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "sleeping",
+          "start"
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "invalid"
+      }
+    ]
+  },
+  {
+    "id": "next_state_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "next_state",
+    "skill": "state_machine",
+    "spec": "`next_state` advances a job's state machine. The behavior is correct and must\nnot change:\n\n- Known states are idle, running, paused, done, failed and cancelled. Any other\n  state returns \"invalid\".\n- The transitions are: idle+start to running; running+pause to paused;\n  running+finish to done; running+fail to failed; paused+resume to running;\n  paused+cancel to cancelled; failed+retry to running.\n- A known state with an event that has no transition stays where it is: the\n  state itself is returned.\n\nToday this is a chain of comparisons, one branch per transition, so adding a\ntransition means adding a branch. Refactor it so the transitions are *data* \u2014\na table keyed by state and event, or the language's idiomatic match \u2014 leaving\nonly the unknown-state check and the lookup as control flow.",
+    "signature": "func NextState(state string, event string) string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Turn the transition chain into a lookup table so a new transition is a new row, not a new branch.",
+    "original_code": "func NextState(state string, event string) string {\n    if state == \"idle\" {\n        if event == \"start\" {\n            return \"running\"\n        }\n        return state\n    } else if state == \"running\" {\n        if event == \"pause\" {\n            return \"paused\"\n        } else if event == \"finish\" {\n            return \"done\"\n        } else if event == \"fail\" {\n            return \"failed\"\n        }\n        return state\n    } else if state == \"paused\" {\n        if event == \"resume\" {\n            return \"running\"\n        } else if event == \"cancel\" {\n            return \"cancelled\"\n        }\n        return state\n    } else if state == \"failed\" {\n        if event == \"retry\" {\n            return \"running\"\n        }\n        return state\n    } else if state == \"done\" {\n        return state\n    } else if state == \"cancelled\" {\n        return state\n    }\n    return \"invalid\"\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 3,
+          "reason": "the per-transition branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "map\\[string\\]",
+            "\\bswitch\\b"
+          ],
+          "reason": "the transitions should live in a map or a switch"
+        }
+      ],
+      "max_lines": 30
+    },
+    "test_cases": [
+      {
+        "input": [
+          "idle",
+          "start"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "idle",
+          "finish"
+        ],
+        "expected": "idle"
+      },
+      {
+        "input": [
+          "running",
+          "pause"
+        ],
+        "expected": "paused"
+      },
+      {
+        "input": [
+          "running",
+          "finish"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "running",
+          "fail"
+        ],
+        "expected": "failed"
+      },
+      {
+        "input": [
+          "paused",
+          "resume"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "paused",
+          "cancel"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "failed",
+          "retry"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "done",
+          "start"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "cancelled",
+          "retry"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "sleeping",
+          "start"
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "invalid"
+      }
+    ]
+  },
+  {
+    "id": "next_state_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "next_state",
+    "skill": "state_machine",
+    "spec": "`next_state` advances a job's state machine. The behavior is correct and must\nnot change:\n\n- Known states are idle, running, paused, done, failed and cancelled. Any other\n  state returns \"invalid\".\n- The transitions are: idle+start to running; running+pause to paused;\n  running+finish to done; running+fail to failed; paused+resume to running;\n  paused+cancel to cancelled; failed+retry to running.\n- A known state with an event that has no transition stays where it is: the\n  state itself is returned.\n\nToday this is a chain of comparisons, one branch per transition, so adding a\ntransition means adding a branch. Refactor it so the transitions are *data* \u2014\na table keyed by state and event, or the language's idiomatic match \u2014 leaving\nonly the unknown-state check and the lookup as control flow.",
+    "signature": "fn next_state(state: &str, event: &str) -> String {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Turn the transition chain into a lookup table so a new transition is a new row, not a new branch.",
+    "original_code": "fn next_state(state: &str, event: &str) -> String {\n    if state == \"idle\" {\n        if event == \"start\" {\n            return \"running\".to_string();\n        }\n        return state.to_string();\n    } else if state == \"running\" {\n        if event == \"pause\" {\n            return \"paused\".to_string();\n        } else if event == \"finish\" {\n            return \"done\".to_string();\n        } else if event == \"fail\" {\n            return \"failed\".to_string();\n        }\n        return state.to_string();\n    } else if state == \"paused\" {\n        if event == \"resume\" {\n            return \"running\".to_string();\n        } else if event == \"cancel\" {\n            return \"cancelled\".to_string();\n        }\n        return state.to_string();\n    } else if state == \"failed\" {\n        if event == \"retry\" {\n            return \"running\".to_string();\n        }\n        return state.to_string();\n    } else if state == \"done\" {\n        return state.to_string();\n    } else if state == \"cancelled\" {\n        return state.to_string();\n    }\n    \"invalid\".to_string()\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 3,
+          "reason": "the per-transition branches should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\bmatch\\b",
+            "HashMap"
+          ],
+          "reason": "the transitions should live in a match or a map"
+        }
+      ],
+      "max_lines": 30
+    },
+    "test_cases": [
+      {
+        "input": [
+          "idle",
+          "start"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "idle",
+          "finish"
+        ],
+        "expected": "idle"
+      },
+      {
+        "input": [
+          "running",
+          "pause"
+        ],
+        "expected": "paused"
+      },
+      {
+        "input": [
+          "running",
+          "finish"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "running",
+          "fail"
+        ],
+        "expected": "failed"
+      },
+      {
+        "input": [
+          "paused",
+          "resume"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "paused",
+          "cancel"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "failed",
+          "retry"
+        ],
+        "expected": "running"
+      },
+      {
+        "input": [
+          "done",
+          "start"
+        ],
+        "expected": "done"
+      },
+      {
+        "input": [
+          "cancelled",
+          "retry"
+        ],
+        "expected": "cancelled"
+      },
+      {
+        "input": [
+          "sleeping",
+          "start"
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "invalid"
+      }
+    ]
+  },
+  {
+    "id": "summarize_series_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "summarize_series",
+    "skill": "single_pass",
+    "spec": "`summarize_series` renders a one-line summary of a sample.\n\n- An empty sample gives exactly \"n=0\".\n- Otherwise the result is\n  \"n=<count> min=<smallest> max=<largest> sum=<total> neg=<how many are below zero>\",\n  with single spaces between the fields and no trailing space.\n\nThe current version walks the sample four separate times, once per statistic.\nRefactor it to compute the whole summary in a single traversal (or with the\nlanguage's own aggregate helpers), without changing the output by a character.",
+    "signature": "def summarize_series(values: list[int]) -> str:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "One traversal instead of four, with the rendered output unchanged.",
+    "original_code": "def summarize_series(values: list[int]) -> str:\n    if len(values) == 0:\n        return \"n=0\"\n    smallest = values[0]\n    for value in values:\n        if value < smallest:\n            smallest = value\n    largest = values[0]\n    for value in values:\n        if value > largest:\n            largest = value\n    total = 0\n    for value in values:\n        total = total + value\n    negatives = 0\n    for value in values:\n        if value < 0:\n            negatives = negatives + 1\n    return f\"n={len(values)} min={smallest} max={largest} sum={total} neg={negatives}\"",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b|\\bwhile\\b",
+          "max": 1,
+          "reason": "the sample should be walked once, not once per statistic"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": "n=3 min=1 max=3 sum=6 neg=0"
+      },
+      {
+        "input": [
+          -5,
+          0,
+          5
+        ],
+        "expected": "n=3 min=-5 max=5 sum=0 neg=1"
+      },
+      {
+        "input": [],
+        "expected": "n=0"
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": "n=1 min=7 max=7 sum=7 neg=0"
+      },
+      {
+        "input": [
+          -1,
+          -2,
+          -3
+        ],
+        "expected": "n=3 min=-3 max=-1 sum=-6 neg=3"
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": "n=3 min=0 max=0 sum=0 neg=0"
+      },
+      {
+        "input": [
+          10,
+          -10,
+          20,
+          -20
+        ],
+        "expected": "n=4 min=-20 max=20 sum=0 neg=2"
+      },
+      {
+        "input": [
+          100
+        ],
+        "expected": "n=1 min=100 max=100 sum=100 neg=0"
+      },
+      {
+        "input": [
+          3,
+          1,
+          4,
+          1,
+          5,
+          9,
+          2,
+          6
+        ],
+        "expected": "n=8 min=1 max=9 sum=31 neg=0"
+      }
+    ]
+  },
+  {
+    "id": "summarize_series_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "summarize_series",
+    "skill": "single_pass",
+    "spec": "`summarize_series` renders a one-line summary of a sample.\n\n- An empty sample gives exactly \"n=0\".\n- Otherwise the result is\n  \"n=<count> min=<smallest> max=<largest> sum=<total> neg=<how many are below zero>\",\n  with single spaces between the fields and no trailing space.\n\nThe current version walks the sample four separate times, once per statistic.\nRefactor it to compute the whole summary in a single traversal (or with the\nlanguage's own aggregate helpers), without changing the output by a character.",
+    "signature": "function summarizeSeries(values: number[]): string {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "One traversal instead of four, with the rendered output unchanged.",
+    "original_code": "function summarizeSeries(values: number[]): string {\n    if (values.length === 0) return \"n=0\";\n    let smallest = values[0];\n    for (const value of values) {\n        if (value < smallest) smallest = value;\n    }\n    let largest = values[0];\n    for (const value of values) {\n        if (value > largest) largest = value;\n    }\n    let total = 0;\n    for (const value of values) {\n        total = total + value;\n    }\n    let negatives = 0;\n    for (const value of values) {\n        if (value < 0) negatives = negatives + 1;\n    }\n    return `n=${values.length} min=${smallest} max=${largest} sum=${total} neg=${negatives}`;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b|\\bwhile\\b",
+          "max": 1,
+          "reason": "the sample should be walked once, not once per statistic"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": "n=3 min=1 max=3 sum=6 neg=0"
+      },
+      {
+        "input": [
+          -5,
+          0,
+          5
+        ],
+        "expected": "n=3 min=-5 max=5 sum=0 neg=1"
+      },
+      {
+        "input": [],
+        "expected": "n=0"
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": "n=1 min=7 max=7 sum=7 neg=0"
+      },
+      {
+        "input": [
+          -1,
+          -2,
+          -3
+        ],
+        "expected": "n=3 min=-3 max=-1 sum=-6 neg=3"
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": "n=3 min=0 max=0 sum=0 neg=0"
+      },
+      {
+        "input": [
+          10,
+          -10,
+          20,
+          -20
+        ],
+        "expected": "n=4 min=-20 max=20 sum=0 neg=2"
+      },
+      {
+        "input": [
+          100
+        ],
+        "expected": "n=1 min=100 max=100 sum=100 neg=0"
+      },
+      {
+        "input": [
+          3,
+          1,
+          4,
+          1,
+          5,
+          9,
+          2,
+          6
+        ],
+        "expected": "n=8 min=1 max=9 sum=31 neg=0"
+      }
+    ]
+  },
+  {
+    "id": "summarize_series_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "summarize_series",
+    "skill": "single_pass",
+    "spec": "`summarize_series` renders a one-line summary of a sample.\n\n- An empty sample gives exactly \"n=0\".\n- Otherwise the result is\n  \"n=<count> min=<smallest> max=<largest> sum=<total> neg=<how many are below zero>\",\n  with single spaces between the fields and no trailing space.\n\nThe current version walks the sample four separate times, once per statistic.\nRefactor it to compute the whole summary in a single traversal (or with the\nlanguage's own aggregate helpers), without changing the output by a character.",
+    "signature": "func SummarizeSeries(values []int) string {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "One traversal instead of four, with the rendered output unchanged.",
+    "original_code": "func SummarizeSeries(values []int) string {\n    if len(values) == 0 {\n        return \"n=0\"\n    }\n    smallest := values[0]\n    for _, value := range values {\n        if value < smallest {\n            smallest = value\n        }\n    }\n    largest := values[0]\n    for _, value := range values {\n        if value > largest {\n            largest = value\n        }\n    }\n    total := 0\n    for _, value := range values {\n        total = total + value\n    }\n    negatives := 0\n    for _, value := range values {\n        if value < 0 {\n            negatives = negatives + 1\n        }\n    }\n    return fmt.Sprintf(\"n=%d min=%d max=%d sum=%d neg=%d\", len(values), smallest, largest, total, negatives)\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "the sample should be walked once, not once per statistic"
+        }
+      ],
+      "max_lines": 26
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": "n=3 min=1 max=3 sum=6 neg=0"
+      },
+      {
+        "input": [
+          -5,
+          0,
+          5
+        ],
+        "expected": "n=3 min=-5 max=5 sum=0 neg=1"
+      },
+      {
+        "input": [],
+        "expected": "n=0"
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": "n=1 min=7 max=7 sum=7 neg=0"
+      },
+      {
+        "input": [
+          -1,
+          -2,
+          -3
+        ],
+        "expected": "n=3 min=-3 max=-1 sum=-6 neg=3"
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": "n=3 min=0 max=0 sum=0 neg=0"
+      },
+      {
+        "input": [
+          10,
+          -10,
+          20,
+          -20
+        ],
+        "expected": "n=4 min=-20 max=20 sum=0 neg=2"
+      },
+      {
+        "input": [
+          100
+        ],
+        "expected": "n=1 min=100 max=100 sum=100 neg=0"
+      },
+      {
+        "input": [
+          3,
+          1,
+          4,
+          1,
+          5,
+          9,
+          2,
+          6
+        ],
+        "expected": "n=8 min=1 max=9 sum=31 neg=0"
+      }
+    ]
+  },
+  {
+    "id": "summarize_series_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "summarize_series",
+    "skill": "single_pass",
+    "spec": "`summarize_series` renders a one-line summary of a sample.\n\n- An empty sample gives exactly \"n=0\".\n- Otherwise the result is\n  \"n=<count> min=<smallest> max=<largest> sum=<total> neg=<how many are below zero>\",\n  with single spaces between the fields and no trailing space.\n\nThe current version walks the sample four separate times, once per statistic.\nRefactor it to compute the whole summary in a single traversal (or with the\nlanguage's own aggregate helpers), without changing the output by a character.",
+    "signature": "fn summarize_series(values: &[i64]) -> String {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "One traversal instead of four, with the rendered output unchanged.",
+    "original_code": "fn summarize_series(values: &[i64]) -> String {\n    if values.is_empty() {\n        return \"n=0\".to_string();\n    }\n    let mut smallest = values[0];\n    for &value in values {\n        if value < smallest {\n            smallest = value;\n        }\n    }\n    let mut largest = values[0];\n    for &value in values {\n        if value > largest {\n            largest = value;\n        }\n    }\n    let mut total: i64 = 0;\n    for &value in values {\n        total = total + value;\n    }\n    let mut negatives: i64 = 0;\n    for &value in values {\n        if value < 0 {\n            negatives = negatives + 1;\n        }\n    }\n    format!(\n        \"n={} min={} max={} sum={} neg={}\",\n        values.len(), smallest, largest, total, negatives\n    )\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b|\\bwhile\\b",
+          "max": 1,
+          "reason": "the sample should be walked once, not once per statistic"
+        }
+      ],
+      "max_lines": 28
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": "n=3 min=1 max=3 sum=6 neg=0"
+      },
+      {
+        "input": [
+          -5,
+          0,
+          5
+        ],
+        "expected": "n=3 min=-5 max=5 sum=0 neg=1"
+      },
+      {
+        "input": [],
+        "expected": "n=0"
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": "n=1 min=7 max=7 sum=7 neg=0"
+      },
+      {
+        "input": [
+          -1,
+          -2,
+          -3
+        ],
+        "expected": "n=3 min=-3 max=-1 sum=-6 neg=3"
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": "n=3 min=0 max=0 sum=0 neg=0"
+      },
+      {
+        "input": [
+          10,
+          -10,
+          20,
+          -20
+        ],
+        "expected": "n=4 min=-20 max=20 sum=0 neg=2"
+      },
+      {
+        "input": [
+          100
+        ],
+        "expected": "n=1 min=100 max=100 sum=100 neg=0"
+      },
+      {
+        "input": [
+          3,
+          1,
+          4,
+          1,
+          5,
+          9,
+          2,
+          6
+        ],
+        "expected": "n=8 min=1 max=9 sum=31 neg=0"
+      }
+    ]
+  },
+  {
+    "id": "format_table_row_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "format_table_row",
+    "skill": "string_building",
+    "spec": "`format_table_row` renders one row of a fixed-width text table.\n\n- Every cell is padded on the right with spaces to a width of 8. A cell already\n  8 characters or longer is left alone.\n- Padded cells are joined with \" | \" (space, pipe, space) and there is no\n  separator after the last cell, so the row never ends with \" | \".\n- An empty list of cells renders as the empty string.\n\nThe current version concatenates into an accumulator, pads with its own loop,\nand special-cases the last index to avoid a trailing separator. Refactor it to\npad each cell and let the language's join do the separating, so the\nlast-element special case disappears.",
+    "signature": "def format_table_row(cells: list[str]) -> str:",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Pad each cell, then join \u2014 no accumulator, no last-index special case, no hand-written padding loop.",
+    "original_code": "def format_table_row(cells: list[str]) -> str:\n    out = \"\"\n    for index in range(len(cells)):\n        cell = cells[index]\n        padded = cell\n        while len(padded) < 8:\n            padded = padded + \" \"\n        out = out + padded\n        if index != len(cells) - 1:\n            out = out + \" | \"\n    return out",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bwhile\\b",
+          "max": 0,
+          "reason": "padding is a library call, not a hand-written loop"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.join\\("
+          ],
+          "reason": "join should place the separators"
+        }
+      ],
+      "max_lines": 12
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b"
+        ],
+        "expected": "a        | b       "
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": "one     "
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          "exactly8",
+          "x"
+        ],
+        "expected": "exactly8 | x       "
+      },
+      {
+        "input": [
+          "averylongcell",
+          "b"
+        ],
+        "expected": "averylongcell | b       "
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "         |         "
+      },
+      {
+        "input": [
+          "svc",
+          "prod",
+          "ok"
+        ],
+        "expected": "svc      | prod     | ok      "
+      },
+      {
+        "input": [
+          "12345678"
+        ],
+        "expected": "12345678"
+      }
+    ]
+  },
+  {
+    "id": "format_table_row_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "format_table_row",
+    "skill": "string_building",
+    "spec": "`format_table_row` renders one row of a fixed-width text table.\n\n- Every cell is padded on the right with spaces to a width of 8. A cell already\n  8 characters or longer is left alone.\n- Padded cells are joined with \" | \" (space, pipe, space) and there is no\n  separator after the last cell, so the row never ends with \" | \".\n- An empty list of cells renders as the empty string.\n\nThe current version concatenates into an accumulator, pads with its own loop,\nand special-cases the last index to avoid a trailing separator. Refactor it to\npad each cell and let the language's join do the separating, so the\nlast-element special case disappears.",
+    "signature": "function formatTableRow(cells: string[]): string {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Pad each cell, then join \u2014 no accumulator, no last-index special case, no hand-written padding loop.",
+    "original_code": "function formatTableRow(cells: string[]): string {\n    let out = \"\";\n    for (let index = 0; index < cells.length; index++) {\n        let padded = cells[index];\n        while (padded.length < 8) {\n            padded = padded + \" \";\n        }\n        out = out + padded;\n        if (index !== cells.length - 1) {\n            out = out + \" | \";\n        }\n    }\n    return out;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bwhile\\b",
+          "max": 0,
+          "reason": "padding is a library call, not a hand-written loop"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.join\\("
+          ],
+          "reason": "join should place the separators"
+        }
+      ],
+      "max_lines": 12
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b"
+        ],
+        "expected": "a        | b       "
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": "one     "
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          "exactly8",
+          "x"
+        ],
+        "expected": "exactly8 | x       "
+      },
+      {
+        "input": [
+          "averylongcell",
+          "b"
+        ],
+        "expected": "averylongcell | b       "
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "         |         "
+      },
+      {
+        "input": [
+          "svc",
+          "prod",
+          "ok"
+        ],
+        "expected": "svc      | prod     | ok      "
+      },
+      {
+        "input": [
+          "12345678"
+        ],
+        "expected": "12345678"
+      }
+    ]
+  },
+  {
+    "id": "format_table_row_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "format_table_row",
+    "skill": "string_building",
+    "spec": "`format_table_row` renders one row of a fixed-width text table.\n\n- Every cell is padded on the right with spaces to a width of 8. A cell already\n  8 characters or longer is left alone.\n- Padded cells are joined with \" | \" (space, pipe, space) and there is no\n  separator after the last cell, so the row never ends with \" | \".\n- An empty list of cells renders as the empty string.\n\nThe current version concatenates into an accumulator, pads with its own loop,\nand special-cases the last index to avoid a trailing separator. Refactor it to\npad each cell and let the language's join do the separating, so the\nlast-element special case disappears.",
+    "signature": "func FormatTableRow(cells []string) string {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Pad each cell, then join \u2014 no accumulator, no last-index special case, no hand-written padding loop.",
+    "original_code": "func FormatTableRow(cells []string) string {\n    out := \"\"\n    for index := 0; index < len(cells); index++ {\n        padded := cells[index]\n        for len(padded) < 8 {\n            padded = padded + \" \"\n        }\n        out = out + padded\n        if index != len(cells)-1 {\n            out = out + \" | \"\n        }\n    }\n    return out\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "padding is a library call, not a hand-written loop"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "strings\\.Join"
+          ],
+          "reason": "join should place the separators"
+        }
+      ],
+      "max_lines": 16
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b"
+        ],
+        "expected": "a        | b       "
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": "one     "
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          "exactly8",
+          "x"
+        ],
+        "expected": "exactly8 | x       "
+      },
+      {
+        "input": [
+          "averylongcell",
+          "b"
+        ],
+        "expected": "averylongcell | b       "
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "         |         "
+      },
+      {
+        "input": [
+          "svc",
+          "prod",
+          "ok"
+        ],
+        "expected": "svc      | prod     | ok      "
+      },
+      {
+        "input": [
+          "12345678"
+        ],
+        "expected": "12345678"
+      }
+    ]
+  },
+  {
+    "id": "format_table_row_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "format_table_row",
+    "skill": "string_building",
+    "spec": "`format_table_row` renders one row of a fixed-width text table.\n\n- Every cell is padded on the right with spaces to a width of 8. A cell already\n  8 characters or longer is left alone.\n- Padded cells are joined with \" | \" (space, pipe, space) and there is no\n  separator after the last cell, so the row never ends with \" | \".\n- An empty list of cells renders as the empty string.\n\nThe current version concatenates into an accumulator, pads with its own loop,\nand special-cases the last index to avoid a trailing separator. Refactor it to\npad each cell and let the language's join do the separating, so the\nlast-element special case disappears.",
+    "signature": "fn format_table_row(cells: &[&str]) -> String {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Pad each cell, then join \u2014 no accumulator, no last-index special case, no hand-written padding loop.",
+    "original_code": "fn format_table_row(cells: &[&str]) -> String {\n    let mut out = String::new();\n    for index in 0..cells.len() {\n        let mut padded = cells[index].to_string();\n        while padded.len() < 8 {\n            padded.push(' ');\n        }\n        out.push_str(&padded);\n        if index != cells.len() - 1 {\n            out.push_str(\" | \");\n        }\n    }\n    out\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bwhile\\b",
+          "max": 0,
+          "reason": "padding is a library call, not a hand-written loop"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.join\\("
+          ],
+          "reason": "join should place the separators"
+        }
+      ],
+      "max_lines": 12
+    },
+    "test_cases": [
+      {
+        "input": [
+          "a",
+          "b"
+        ],
+        "expected": "a        | b       "
+      },
+      {
+        "input": [
+          "one"
+        ],
+        "expected": "one     "
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          "exactly8",
+          "x"
+        ],
+        "expected": "exactly8 | x       "
+      },
+      {
+        "input": [
+          "averylongcell",
+          "b"
+        ],
+        "expected": "averylongcell | b       "
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "         |         "
+      },
+      {
+        "input": [
+          "svc",
+          "prod",
+          "ok"
+        ],
+        "expected": "svc      | prod     | ok      "
+      },
+      {
+        "input": [
+          "12345678"
+        ],
+        "expected": "12345678"
+      }
+    ]
+  },
+  {
+    "id": "check_limits_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "check_limits",
+    "skill": "extract_helper",
+    "spec": "`check_limits` validates two configuration values and reports the first\nproblem it finds.\n\n- The port is checked first, then the timeout.\n- A value that is empty or not made entirely of digits gives\n  \"<name> must be an integer\".\n- A port outside 1..65535, or a timeout outside 1..3600, gives\n  \"<name> out of range\".\n- `<name>` is \"port\" or \"timeout\".\n- When both are fine the result is the empty string.\n\nThe two checks are the same logic written out twice, so the messages and the\nrules live in two places. Refactor so that logic exists once, parameterised by\nname and bounds, and `check_limits` just applies it to each value in order.",
+    "signature": "def check_limits(port_text: str, timeout_text: str) -> str:",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the duplicated check into one helper taking the field name and its bounds; call it twice.",
+    "original_code": "def check_limits(port_text: str, timeout_text: str) -> str:\n    if not port_text or not port_text.isdigit():\n        return \"port must be an integer\"\n    port = int(port_text)\n    if port < 1 or port > 65535:\n        return \"port out of range\"\n    if not timeout_text or not timeout_text.isdigit():\n        return \"timeout must be an integer\"\n    timeout = int(timeout_text)\n    if timeout < 1 or timeout > 3600:\n        return \"timeout out of range\"\n    return \"\"",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "must be an integer",
+          "max": 1,
+          "reason": "the message should be written once, in the shared check"
+        },
+        {
+          "pattern": "out of range",
+          "max": 1,
+          "reason": "the message should be written once, in the shared check"
+        }
+      ],
+      "max_lines": 20
+    },
+    "test_cases": [
+      {
+        "input": [
+          "8080",
+          "30"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "80x",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "0",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "70000",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "8080",
+          ""
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "abc"
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "0"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "8080",
+          "4000"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "1",
+          "3600"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "65535",
+          "1"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "port must be an integer"
+      }
+    ]
+  },
+  {
+    "id": "check_limits_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "check_limits",
+    "skill": "extract_helper",
+    "spec": "`check_limits` validates two configuration values and reports the first\nproblem it finds.\n\n- The port is checked first, then the timeout.\n- A value that is empty or not made entirely of digits gives\n  \"<name> must be an integer\".\n- A port outside 1..65535, or a timeout outside 1..3600, gives\n  \"<name> out of range\".\n- `<name>` is \"port\" or \"timeout\".\n- When both are fine the result is the empty string.\n\nThe two checks are the same logic written out twice, so the messages and the\nrules live in two places. Refactor so that logic exists once, parameterised by\nname and bounds, and `check_limits` just applies it to each value in order.",
+    "signature": "function checkLimits(portText: string, timeoutText: string): string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the duplicated check into one helper taking the field name and its bounds; call it twice.",
+    "original_code": "function checkLimits(portText: string, timeoutText: string): string {\n    if (portText.length === 0 || !/^[0-9]+$/.test(portText)) {\n        return \"port must be an integer\";\n    }\n    const port = parseInt(portText, 10);\n    if (port < 1 || port > 65535) {\n        return \"port out of range\";\n    }\n    if (timeoutText.length === 0 || !/^[0-9]+$/.test(timeoutText)) {\n        return \"timeout must be an integer\";\n    }\n    const timeout = parseInt(timeoutText, 10);\n    if (timeout < 1 || timeout > 3600) {\n        return \"timeout out of range\";\n    }\n    return \"\";\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "must be an integer",
+          "max": 1,
+          "reason": "the message should be written once, in the shared check"
+        },
+        {
+          "pattern": "out of range",
+          "max": 1,
+          "reason": "the message should be written once, in the shared check"
+        }
+      ],
+      "max_lines": 24
+    },
+    "test_cases": [
+      {
+        "input": [
+          "8080",
+          "30"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "80x",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "0",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "70000",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "8080",
+          ""
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "abc"
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "0"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "8080",
+          "4000"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "1",
+          "3600"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "65535",
+          "1"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "port must be an integer"
+      }
+    ]
+  },
+  {
+    "id": "check_limits_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "check_limits",
+    "skill": "extract_helper",
+    "spec": "`check_limits` validates two configuration values and reports the first\nproblem it finds.\n\n- The port is checked first, then the timeout.\n- A value that is empty or not made entirely of digits gives\n  \"<name> must be an integer\".\n- A port outside 1..65535, or a timeout outside 1..3600, gives\n  \"<name> out of range\".\n- `<name>` is \"port\" or \"timeout\".\n- When both are fine the result is the empty string.\n\nThe two checks are the same logic written out twice, so the messages and the\nrules live in two places. Refactor so that logic exists once, parameterised by\nname and bounds, and `check_limits` just applies it to each value in order.",
+    "signature": "func CheckLimits(portText string, timeoutText string) string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the duplicated check into one helper taking the field name and its bounds; call it twice.",
+    "original_code": "func CheckLimits(portText string, timeoutText string) string {\n    if len(portText) == 0 {\n        return \"port must be an integer\"\n    }\n    for _, ch := range portText {\n        if ch < '0' || ch > '9' {\n            return \"port must be an integer\"\n        }\n    }\n    port, err := strconv.Atoi(portText)\n    if err != nil || port < 1 || port > 65535 {\n        return \"port out of range\"\n    }\n    if len(timeoutText) == 0 {\n        return \"timeout must be an integer\"\n    }\n    for _, ch := range timeoutText {\n        if ch < '0' || ch > '9' {\n            return \"timeout must be an integer\"\n        }\n    }\n    timeout, err2 := strconv.Atoi(timeoutText)\n    if err2 != nil || timeout < 1 || timeout > 3600 {\n        return \"timeout out of range\"\n    }\n    return \"\"\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "must be an integer",
+          "max": 2,
+          "reason": "the message should be written once, in the shared check"
+        },
+        {
+          "pattern": "out of range",
+          "max": 1,
+          "reason": "the message should be written once, in the shared check"
+        }
+      ],
+      "max_lines": 32
+    },
+    "test_cases": [
+      {
+        "input": [
+          "8080",
+          "30"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "80x",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "0",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "70000",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "8080",
+          ""
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "abc"
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "0"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "8080",
+          "4000"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "1",
+          "3600"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "65535",
+          "1"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "port must be an integer"
+      }
+    ]
+  },
+  {
+    "id": "check_limits_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "check_limits",
+    "skill": "extract_helper",
+    "spec": "`check_limits` validates two configuration values and reports the first\nproblem it finds.\n\n- The port is checked first, then the timeout.\n- A value that is empty or not made entirely of digits gives\n  \"<name> must be an integer\".\n- A port outside 1..65535, or a timeout outside 1..3600, gives\n  \"<name> out of range\".\n- `<name>` is \"port\" or \"timeout\".\n- When both are fine the result is the empty string.\n\nThe two checks are the same logic written out twice, so the messages and the\nrules live in two places. Refactor so that logic exists once, parameterised by\nname and bounds, and `check_limits` just applies it to each value in order.",
+    "signature": "fn check_limits(port_text: &str, timeout_text: &str) -> String {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the duplicated check into one helper taking the field name and its bounds; call it twice.",
+    "original_code": "fn check_limits(port_text: &str, timeout_text: &str) -> String {\n    if port_text.is_empty() || !port_text.chars().all(|c| c.is_ascii_digit()) {\n        return \"port must be an integer\".to_string();\n    }\n    let port: i64 = port_text.parse().unwrap_or(-1);\n    if port < 1 || port > 65535 {\n        return \"port out of range\".to_string();\n    }\n    if timeout_text.is_empty() || !timeout_text.chars().all(|c| c.is_ascii_digit()) {\n        return \"timeout must be an integer\".to_string();\n    }\n    let timeout: i64 = timeout_text.parse().unwrap_or(-1);\n    if timeout < 1 || timeout > 3600 {\n        return \"timeout out of range\".to_string();\n    }\n    String::new()\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "must be an integer",
+          "max": 1,
+          "reason": "the message should be written once, in the shared check"
+        },
+        {
+          "pattern": "out of range",
+          "max": 1,
+          "reason": "the message should be written once, in the shared check"
+        }
+      ],
+      "max_lines": 24
+    },
+    "test_cases": [
+      {
+        "input": [
+          "8080",
+          "30"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "80x",
+          "30"
+        ],
+        "expected": "port must be an integer"
+      },
+      {
+        "input": [
+          "0",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "70000",
+          "30"
+        ],
+        "expected": "port out of range"
+      },
+      {
+        "input": [
+          "8080",
+          ""
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "abc"
+        ],
+        "expected": "timeout must be an integer"
+      },
+      {
+        "input": [
+          "8080",
+          "0"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "8080",
+          "4000"
+        ],
+        "expected": "timeout out of range"
+      },
+      {
+        "input": [
+          "1",
+          "3600"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "65535",
+          "1"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "port must be an integer"
+      }
+    ]
+  },
+  {
+    "id": "first_error_line_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "first_error_line",
+    "skill": "early_return",
+    "spec": "`first_error_line` returns the index of the first line containing the substring\n\"ERROR\", or -1 when no line does.\n\n- The match is a plain, case-sensitive substring test, so \"ERRORS everywhere\"\n  counts and \"error\" does not.\n- Indices are 0-based.\n- An empty list gives -1.\n\nThe current version seeds a result variable with -1, walks every line to the\nend, and guards each assignment with \"only if we have not found one yet\".\nRefactor it to return as soon as it finds the line, so the sentinel variable and\nits guard both disappear.",
+    "signature": "def first_error_line(lines: list[str]) -> int:",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "int"
+    },
+    "goal": "Return the index as soon as it is known; drop the sentinel variable and the 'have we already found one' guard.",
+    "original_code": "def first_error_line(lines: list[str]) -> int:\n    result = -1\n    for index in range(len(lines)):\n        line = lines[index]\n        if \"ERROR\" in line:\n            if result == -1:\n                result = index\n    return result",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 1,
+          "reason": "the 'not found yet' guard should be gone"
+        }
+      ],
+      "max_lines": 10
+    },
+    "test_cases": [
+      {
+        "input": [
+          "ok",
+          "ERROR bad",
+          "ERROR worse"
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          "ok",
+          "fine"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [],
+        "expected": -1
+      },
+      {
+        "input": [
+          "ERROR first"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "error lowercase"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          "a",
+          "b",
+          "c ERROR"
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          "ERRORS everywhere"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "",
+          "ERROR"
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "first_error_line_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "first_error_line",
+    "skill": "early_return",
+    "spec": "`first_error_line` returns the index of the first line containing the substring\n\"ERROR\", or -1 when no line does.\n\n- The match is a plain, case-sensitive substring test, so \"ERRORS everywhere\"\n  counts and \"error\" does not.\n- Indices are 0-based.\n- An empty list gives -1.\n\nThe current version seeds a result variable with -1, walks every line to the\nend, and guards each assignment with \"only if we have not found one yet\".\nRefactor it to return as soon as it finds the line, so the sentinel variable and\nits guard both disappear.",
+    "signature": "function firstErrorLine(lines: string[]): number {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "int"
+    },
+    "goal": "Return the index as soon as it is known; drop the sentinel variable and the 'have we already found one' guard.",
+    "original_code": "function firstErrorLine(lines: string[]): number {\n    let result = -1;\n    for (let index = 0; index < lines.length; index++) {\n        const line = lines[index];\n        if (line.includes(\"ERROR\")) {\n            if (result === -1) {\n                result = index;\n            }\n        }\n    }\n    return result;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 1,
+          "reason": "the 'not found yet' guard should be gone"
+        }
+      ],
+      "max_lines": 12
+    },
+    "test_cases": [
+      {
+        "input": [
+          "ok",
+          "ERROR bad",
+          "ERROR worse"
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          "ok",
+          "fine"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [],
+        "expected": -1
+      },
+      {
+        "input": [
+          "ERROR first"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "error lowercase"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          "a",
+          "b",
+          "c ERROR"
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          "ERRORS everywhere"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "",
+          "ERROR"
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "first_error_line_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "first_error_line",
+    "skill": "early_return",
+    "spec": "`first_error_line` returns the index of the first line containing the substring\n\"ERROR\", or -1 when no line does.\n\n- The match is a plain, case-sensitive substring test, so \"ERRORS everywhere\"\n  counts and \"error\" does not.\n- Indices are 0-based.\n- An empty list gives -1.\n\nThe current version seeds a result variable with -1, walks every line to the\nend, and guards each assignment with \"only if we have not found one yet\".\nRefactor it to return as soon as it finds the line, so the sentinel variable and\nits guard both disappear.",
+    "signature": "func FirstErrorLine(lines []string) int {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "int"
+    },
+    "goal": "Return the index as soon as it is known; drop the sentinel variable and the 'have we already found one' guard.",
+    "original_code": "func FirstErrorLine(lines []string) int {\n    result := -1\n    for index := 0; index < len(lines); index++ {\n        line := lines[index]\n        if strings.Contains(line, \"ERROR\") {\n            if result == -1 {\n                result = index\n            }\n        }\n    }\n    return result\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 1,
+          "reason": "the 'not found yet' guard should be gone"
+        }
+      ],
+      "max_lines": 16
+    },
+    "test_cases": [
+      {
+        "input": [
+          "ok",
+          "ERROR bad",
+          "ERROR worse"
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          "ok",
+          "fine"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [],
+        "expected": -1
+      },
+      {
+        "input": [
+          "ERROR first"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "error lowercase"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          "a",
+          "b",
+          "c ERROR"
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          "ERRORS everywhere"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "",
+          "ERROR"
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "first_error_line_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "first_error_line",
+    "skill": "early_return",
+    "spec": "`first_error_line` returns the index of the first line containing the substring\n\"ERROR\", or -1 when no line does.\n\n- The match is a plain, case-sensitive substring test, so \"ERRORS everywhere\"\n  counts and \"error\" does not.\n- Indices are 0-based.\n- An empty list gives -1.\n\nThe current version seeds a result variable with -1, walks every line to the\nend, and guards each assignment with \"only if we have not found one yet\".\nRefactor it to return as soon as it finds the line, so the sentinel variable and\nits guard both disappear.",
+    "signature": "fn first_error_line(lines: &[&str]) -> i64 {",
+    "io": {
+      "args": [
+        "list<str>"
+      ],
+      "returns": "int"
+    },
+    "goal": "Return the index as soon as it is known; drop the sentinel variable and the 'have we already found one' guard.",
+    "original_code": "fn first_error_line(lines: &[&str]) -> i64 {\n    let mut result: i64 = -1;\n    for index in 0..lines.len() {\n        let line = lines[index];\n        if line.contains(\"ERROR\") {\n            if result == -1 {\n                result = index as i64;\n            }\n        }\n    }\n    result\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bif\\b",
+          "max": 1,
+          "reason": "the 'not found yet' guard should be gone"
+        }
+      ],
+      "max_lines": 12
+    },
+    "test_cases": [
+      {
+        "input": [
+          "ok",
+          "ERROR bad",
+          "ERROR worse"
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          "ok",
+          "fine"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [],
+        "expected": -1
+      },
+      {
+        "input": [
+          "ERROR first"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "error lowercase"
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          "a",
+          "b",
+          "c ERROR"
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          "ERRORS everywhere"
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          "",
+          "ERROR"
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "rank_services_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "rank_services",
+    "skill": "use_library_sort",
+    "spec": "`rank_services` orders services for a leaderboard.\n\n- `names` and `scores` are parallel arrays of the same length.\n- The result is the names ordered by score descending; services on the same\n  score are ordered by name ascending, so the ranking is deterministic.\n- An empty input gives an empty result.\n\nThe current version is a hand-written bubble sort over two parallel arrays,\nwith the tie-break spelled out as a swap condition. Refactor it to use the\nlanguage's own sort with a comparator (or key) expressing \"score descending,\nthen name ascending\", keeping the result identical.",
+    "signature": "def rank_services(names: list[str], scores: list[int]) -> list[str]:",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<int>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the hand-rolled bubble sort with the standard library sort plus a comparator for the two-level ordering.",
+    "original_code": "def rank_services(names: list[str], scores: list[int]) -> list[str]:\n    n = min(len(names), len(scores))\n    out_names = [names[i] for i in range(n)]\n    out_scores = [scores[i] for i in range(n)]\n    for i in range(n):\n        for j in range(n - 1 - i):\n            swap = False\n            if out_scores[j] < out_scores[j + 1]:\n                swap = True\n            elif out_scores[j] == out_scores[j + 1] and out_names[j] > out_names[j + 1]:\n                swap = True\n            if swap:\n                out_scores[j], out_scores[j + 1] = out_scores[j + 1], out_scores[j]\n                out_names[j], out_names[j + 1] = out_names[j + 1], out_names[j]\n    return out_names",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 2,
+          "reason": "the nested comparison loops should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "sorted\\(",
+            "\\.sort\\("
+          ],
+          "reason": "the library sort should do the ordering"
+        }
+      ],
+      "max_lines": 16
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          "a",
+          "c",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "b",
+            "a"
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "x"
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "zeta",
+            "alpha",
+            "mid"
+          ],
+          [
+            2,
+            2,
+            9
+          ]
+        ],
+        "expected": [
+          "mid",
+          "alpha",
+          "zeta"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            -1,
+            -2
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "p",
+            "q",
+            "r",
+            "s"
+          ],
+          [
+            4,
+            4,
+            1,
+            9
+          ]
+        ],
+        "expected": [
+          "s",
+          "p",
+          "q",
+          "r"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rank_services_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "rank_services",
+    "skill": "use_library_sort",
+    "spec": "`rank_services` orders services for a leaderboard.\n\n- `names` and `scores` are parallel arrays of the same length.\n- The result is the names ordered by score descending; services on the same\n  score are ordered by name ascending, so the ranking is deterministic.\n- An empty input gives an empty result.\n\nThe current version is a hand-written bubble sort over two parallel arrays,\nwith the tie-break spelled out as a swap condition. Refactor it to use the\nlanguage's own sort with a comparator (or key) expressing \"score descending,\nthen name ascending\", keeping the result identical.",
+    "signature": "function rankServices(names: string[], scores: number[]): string[] {",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<int>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the hand-rolled bubble sort with the standard library sort plus a comparator for the two-level ordering.",
+    "original_code": "function rankServices(names: string[], scores: number[]): string[] {\n    const n = Math.min(names.length, scores.length);\n    const outNames: string[] = [];\n    const outScores: number[] = [];\n    for (let i = 0; i < n; i++) {\n        outNames.push(names[i]);\n        outScores.push(scores[i]);\n    }\n    for (let i = 0; i < n; i++) {\n        for (let j = 0; j < n - 1 - i; j++) {\n            let swap = false;\n            if (outScores[j] < outScores[j + 1]) {\n                swap = true;\n            } else if (outScores[j] === outScores[j + 1] && outNames[j] > outNames[j + 1]) {\n                swap = true;\n            }\n            if (swap) {\n                const tmpScore = outScores[j];\n                outScores[j] = outScores[j + 1];\n                outScores[j + 1] = tmpScore;\n                const tmpName = outNames[j];\n                outNames[j] = outNames[j + 1];\n                outNames[j + 1] = tmpName;\n            }\n        }\n    }\n    return outNames;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "the nested comparison loops should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.sort\\("
+          ],
+          "reason": "the library sort should do the ordering"
+        }
+      ],
+      "max_lines": 16
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          "a",
+          "c",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "b",
+            "a"
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "x"
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "zeta",
+            "alpha",
+            "mid"
+          ],
+          [
+            2,
+            2,
+            9
+          ]
+        ],
+        "expected": [
+          "mid",
+          "alpha",
+          "zeta"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            -1,
+            -2
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "p",
+            "q",
+            "r",
+            "s"
+          ],
+          [
+            4,
+            4,
+            1,
+            9
+          ]
+        ],
+        "expected": [
+          "s",
+          "p",
+          "q",
+          "r"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rank_services_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "rank_services",
+    "skill": "use_library_sort",
+    "spec": "`rank_services` orders services for a leaderboard.\n\n- `names` and `scores` are parallel arrays of the same length.\n- The result is the names ordered by score descending; services on the same\n  score are ordered by name ascending, so the ranking is deterministic.\n- An empty input gives an empty result.\n\nThe current version is a hand-written bubble sort over two parallel arrays,\nwith the tie-break spelled out as a swap condition. Refactor it to use the\nlanguage's own sort with a comparator (or key) expressing \"score descending,\nthen name ascending\", keeping the result identical.",
+    "signature": "func RankServices(names []string, scores []int) []string {",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<int>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the hand-rolled bubble sort with the standard library sort plus a comparator for the two-level ordering.",
+    "original_code": "func RankServices(names []string, scores []int) []string {\n    n := len(names)\n    if len(scores) < n {\n        n = len(scores)\n    }\n    outNames := make([]string, n)\n    outScores := make([]int, n)\n    for i := 0; i < n; i++ {\n        outNames[i] = names[i]\n        outScores[i] = scores[i]\n    }\n    for i := 0; i < n; i++ {\n        for j := 0; j < n-1-i; j++ {\n            swap := false\n            if outScores[j] < outScores[j+1] {\n                swap = true\n            } else if outScores[j] == outScores[j+1] && outNames[j] > outNames[j+1] {\n                swap = true\n            }\n            if swap {\n                outScores[j], outScores[j+1] = outScores[j+1], outScores[j]\n                outNames[j], outNames[j+1] = outNames[j+1], outNames[j]\n            }\n        }\n    }\n    return outNames\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 2,
+          "reason": "the nested comparison loops should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "sort\\."
+          ],
+          "reason": "the library sort should do the ordering"
+        }
+      ],
+      "max_lines": 26
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          "a",
+          "c",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "b",
+            "a"
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "x"
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "zeta",
+            "alpha",
+            "mid"
+          ],
+          [
+            2,
+            2,
+            9
+          ]
+        ],
+        "expected": [
+          "mid",
+          "alpha",
+          "zeta"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            -1,
+            -2
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "p",
+            "q",
+            "r",
+            "s"
+          ],
+          [
+            4,
+            4,
+            1,
+            9
+          ]
+        ],
+        "expected": [
+          "s",
+          "p",
+          "q",
+          "r"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "rank_services_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "rank_services",
+    "skill": "use_library_sort",
+    "spec": "`rank_services` orders services for a leaderboard.\n\n- `names` and `scores` are parallel arrays of the same length.\n- The result is the names ordered by score descending; services on the same\n  score are ordered by name ascending, so the ranking is deterministic.\n- An empty input gives an empty result.\n\nThe current version is a hand-written bubble sort over two parallel arrays,\nwith the tie-break spelled out as a swap condition. Refactor it to use the\nlanguage's own sort with a comparator (or key) expressing \"score descending,\nthen name ascending\", keeping the result identical.",
+    "signature": "fn rank_services(names: &[&str], scores: &[i64]) -> Vec<String> {",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<int>"
+      ],
+      "returns": "list<str>"
+    },
+    "goal": "Replace the hand-rolled bubble sort with the standard library sort plus a comparator for the two-level ordering.",
+    "original_code": "fn rank_services(names: &[&str], scores: &[i64]) -> Vec<String> {\n    let n = names.len().min(scores.len());\n    let mut out_names: Vec<String> = Vec::new();\n    let mut out_scores: Vec<i64> = Vec::new();\n    for i in 0..n {\n        out_names.push(names[i].to_string());\n        out_scores.push(scores[i]);\n    }\n    for i in 0..n {\n        for j in 0..(n - 1 - i) {\n            let mut swap = false;\n            if out_scores[j] < out_scores[j + 1] {\n                swap = true;\n            } else if out_scores[j] == out_scores[j + 1] && out_names[j] > out_names[j + 1] {\n                swap = true;\n            }\n            if swap {\n                out_scores.swap(j, j + 1);\n                out_names.swap(j, j + 1);\n            }\n        }\n    }\n    out_names\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 1,
+          "reason": "the nested comparison loops should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.sort"
+          ],
+          "reason": "the library sort should do the ordering"
+        }
+      ],
+      "max_lines": 14
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            3,
+            1,
+            2
+          ]
+        ],
+        "expected": [
+          "a",
+          "c",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "b",
+            "a"
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "x"
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": [
+          "x"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "zeta",
+            "alpha",
+            "mid"
+          ],
+          [
+            2,
+            2,
+            9
+          ]
+        ],
+        "expected": [
+          "mid",
+          "alpha",
+          "zeta"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            -1,
+            -2
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "p",
+            "q",
+            "r",
+            "s"
+          ],
+          [
+            4,
+            4,
+            1,
+            9
+          ]
+        ],
+        "expected": [
+          "s",
+          "p",
+          "q",
+          "r"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bill_summary_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "bill_summary",
+    "skill": "hoist_duplication",
+    "spec": "`bill_summary` renders an invoice line. The behavior is correct and must not\nchange:\n\n- Negative units or a negative rate give exactly \"invalid\".\n- The subtotal is units multiplied by the rate in cents.\n- A discount of 0 or less is labelled \"no discount\" and the total equals the\n  subtotal.\n- A discount of 100 or more is labelled \"free\" and the total is 0.\n- Anything in between is labelled \"discounted\" and the total is the subtotal\n  minus (subtotal * discount) / 100 using *integer* division that truncates\n  toward zero.\n- The result is \"<label> subtotal=<subtotal> total=<total>\".\n\nThe subtotal expression is recomputed inside every branch. Refactor so it is\ncomputed once, before the branches, and each branch only decides the label and\nthe total.",
+    "signature": "def bill_summary(units: int, rate_cents: int, discount_pct: int) -> str:",
+    "io": {
+      "args": [
+        "int",
+        "int",
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Compute the subtotal once, above the branches; leave each branch responsible only for the label and the total.",
+    "original_code": "def bill_summary(units: int, rate_cents: int, discount_pct: int) -> str:\n    if units < 0 or rate_cents < 0:\n        return \"invalid\"\n    if discount_pct <= 0:\n        return \"no discount subtotal=\" + str(units * rate_cents) + \" total=\" + str(units * rate_cents)\n    if discount_pct >= 100:\n        return \"free subtotal=\" + str(units * rate_cents) + \" total=0\"\n    discounted = units * rate_cents - (units * rate_cents * discount_pct) // 100\n    return \"discounted subtotal=\" + str(units * rate_cents) + \" total=\" + str(discounted)",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "units \\* rate_cents",
+          "max": 1,
+          "reason": "the subtotal should be computed once and reused"
+        }
+      ],
+      "max_lines": 18
+    },
+    "test_cases": [
+      {
+        "input": [
+          100,
+          250,
+          0
+        ],
+        "expected": "no discount subtotal=25000 total=25000"
+      },
+      {
+        "input": [
+          100,
+          250,
+          10
+        ],
+        "expected": "discounted subtotal=25000 total=22500"
+      },
+      {
+        "input": [
+          100,
+          250,
+          100
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          100,
+          250,
+          150
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          0,
+          500,
+          20
+        ],
+        "expected": "discounted subtotal=0 total=0"
+      },
+      {
+        "input": [
+          -1,
+          10,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          10,
+          -5,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          3,
+          333,
+          33
+        ],
+        "expected": "discounted subtotal=999 total=670"
+      },
+      {
+        "input": [
+          1,
+          1,
+          -5
+        ],
+        "expected": "no discount subtotal=1 total=1"
+      },
+      {
+        "input": [
+          7,
+          100,
+          99
+        ],
+        "expected": "discounted subtotal=700 total=7"
+      }
+    ]
+  },
+  {
+    "id": "bill_summary_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "bill_summary",
+    "skill": "hoist_duplication",
+    "spec": "`bill_summary` renders an invoice line. The behavior is correct and must not\nchange:\n\n- Negative units or a negative rate give exactly \"invalid\".\n- The subtotal is units multiplied by the rate in cents.\n- A discount of 0 or less is labelled \"no discount\" and the total equals the\n  subtotal.\n- A discount of 100 or more is labelled \"free\" and the total is 0.\n- Anything in between is labelled \"discounted\" and the total is the subtotal\n  minus (subtotal * discount) / 100 using *integer* division that truncates\n  toward zero.\n- The result is \"<label> subtotal=<subtotal> total=<total>\".\n\nThe subtotal expression is recomputed inside every branch. Refactor so it is\ncomputed once, before the branches, and each branch only decides the label and\nthe total.",
+    "signature": "function billSummary(units: number, rateCents: number, discountPct: number): string {",
+    "io": {
+      "args": [
+        "int",
+        "int",
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Compute the subtotal once, above the branches; leave each branch responsible only for the label and the total.",
+    "original_code": "function billSummary(units: number, rateCents: number, discountPct: number): string {\n    if (units < 0 || rateCents < 0) return \"invalid\";\n    if (discountPct <= 0) {\n        return `no discount subtotal=${units * rateCents} total=${units * rateCents}`;\n    }\n    if (discountPct >= 100) {\n        return `free subtotal=${units * rateCents} total=0`;\n    }\n    const total = units * rateCents - Math.trunc((units * rateCents * discountPct) / 100);\n    return `discounted subtotal=${units * rateCents} total=${total}`;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "units \\* rateCents",
+          "max": 1,
+          "reason": "the subtotal should be computed once and reused"
+        }
+      ],
+      "max_lines": 18
+    },
+    "test_cases": [
+      {
+        "input": [
+          100,
+          250,
+          0
+        ],
+        "expected": "no discount subtotal=25000 total=25000"
+      },
+      {
+        "input": [
+          100,
+          250,
+          10
+        ],
+        "expected": "discounted subtotal=25000 total=22500"
+      },
+      {
+        "input": [
+          100,
+          250,
+          100
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          100,
+          250,
+          150
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          0,
+          500,
+          20
+        ],
+        "expected": "discounted subtotal=0 total=0"
+      },
+      {
+        "input": [
+          -1,
+          10,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          10,
+          -5,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          3,
+          333,
+          33
+        ],
+        "expected": "discounted subtotal=999 total=670"
+      },
+      {
+        "input": [
+          1,
+          1,
+          -5
+        ],
+        "expected": "no discount subtotal=1 total=1"
+      },
+      {
+        "input": [
+          7,
+          100,
+          99
+        ],
+        "expected": "discounted subtotal=700 total=7"
+      }
+    ]
+  },
+  {
+    "id": "bill_summary_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "bill_summary",
+    "skill": "hoist_duplication",
+    "spec": "`bill_summary` renders an invoice line. The behavior is correct and must not\nchange:\n\n- Negative units or a negative rate give exactly \"invalid\".\n- The subtotal is units multiplied by the rate in cents.\n- A discount of 0 or less is labelled \"no discount\" and the total equals the\n  subtotal.\n- A discount of 100 or more is labelled \"free\" and the total is 0.\n- Anything in between is labelled \"discounted\" and the total is the subtotal\n  minus (subtotal * discount) / 100 using *integer* division that truncates\n  toward zero.\n- The result is \"<label> subtotal=<subtotal> total=<total>\".\n\nThe subtotal expression is recomputed inside every branch. Refactor so it is\ncomputed once, before the branches, and each branch only decides the label and\nthe total.",
+    "signature": "func BillSummary(units int, rateCents int, discountPct int) string {",
+    "io": {
+      "args": [
+        "int",
+        "int",
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Compute the subtotal once, above the branches; leave each branch responsible only for the label and the total.",
+    "original_code": "func BillSummary(units int, rateCents int, discountPct int) string {\n    if units < 0 || rateCents < 0 {\n        return \"invalid\"\n    }\n    if discountPct <= 0 {\n        return fmt.Sprintf(\"no discount subtotal=%d total=%d\", units*rateCents, units*rateCents)\n    }\n    if discountPct >= 100 {\n        return fmt.Sprintf(\"free subtotal=%d total=0\", units*rateCents)\n    }\n    total := units*rateCents - (units*rateCents*discountPct)/100\n    return fmt.Sprintf(\"discounted subtotal=%d total=%d\", units*rateCents, total)\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "units\\*rateCents|units \\* rateCents",
+          "max": 1,
+          "reason": "the subtotal should be computed once and reused"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": [
+          100,
+          250,
+          0
+        ],
+        "expected": "no discount subtotal=25000 total=25000"
+      },
+      {
+        "input": [
+          100,
+          250,
+          10
+        ],
+        "expected": "discounted subtotal=25000 total=22500"
+      },
+      {
+        "input": [
+          100,
+          250,
+          100
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          100,
+          250,
+          150
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          0,
+          500,
+          20
+        ],
+        "expected": "discounted subtotal=0 total=0"
+      },
+      {
+        "input": [
+          -1,
+          10,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          10,
+          -5,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          3,
+          333,
+          33
+        ],
+        "expected": "discounted subtotal=999 total=670"
+      },
+      {
+        "input": [
+          1,
+          1,
+          -5
+        ],
+        "expected": "no discount subtotal=1 total=1"
+      },
+      {
+        "input": [
+          7,
+          100,
+          99
+        ],
+        "expected": "discounted subtotal=700 total=7"
+      }
+    ]
+  },
+  {
+    "id": "bill_summary_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "bill_summary",
+    "skill": "hoist_duplication",
+    "spec": "`bill_summary` renders an invoice line. The behavior is correct and must not\nchange:\n\n- Negative units or a negative rate give exactly \"invalid\".\n- The subtotal is units multiplied by the rate in cents.\n- A discount of 0 or less is labelled \"no discount\" and the total equals the\n  subtotal.\n- A discount of 100 or more is labelled \"free\" and the total is 0.\n- Anything in between is labelled \"discounted\" and the total is the subtotal\n  minus (subtotal * discount) / 100 using *integer* division that truncates\n  toward zero.\n- The result is \"<label> subtotal=<subtotal> total=<total>\".\n\nThe subtotal expression is recomputed inside every branch. Refactor so it is\ncomputed once, before the branches, and each branch only decides the label and\nthe total.",
+    "signature": "fn bill_summary(units: i64, rate_cents: i64, discount_pct: i64) -> String {",
+    "io": {
+      "args": [
+        "int",
+        "int",
+        "int"
+      ],
+      "returns": "str"
+    },
+    "goal": "Compute the subtotal once, above the branches; leave each branch responsible only for the label and the total.",
+    "original_code": "fn bill_summary(units: i64, rate_cents: i64, discount_pct: i64) -> String {\n    if units < 0 || rate_cents < 0 {\n        return \"invalid\".to_string();\n    }\n    if discount_pct <= 0 {\n        return format!(\n            \"no discount subtotal={} total={}\",\n            units * rate_cents,\n            units * rate_cents\n        );\n    }\n    if discount_pct >= 100 {\n        return format!(\"free subtotal={} total=0\", units * rate_cents);\n    }\n    let total = units * rate_cents - (units * rate_cents * discount_pct) / 100;\n    return format!(\"discounted subtotal={} total={}\", units * rate_cents, total);\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "units \\* rate_cents",
+          "max": 1,
+          "reason": "the subtotal should be computed once and reused"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": [
+          100,
+          250,
+          0
+        ],
+        "expected": "no discount subtotal=25000 total=25000"
+      },
+      {
+        "input": [
+          100,
+          250,
+          10
+        ],
+        "expected": "discounted subtotal=25000 total=22500"
+      },
+      {
+        "input": [
+          100,
+          250,
+          100
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          100,
+          250,
+          150
+        ],
+        "expected": "free subtotal=25000 total=0"
+      },
+      {
+        "input": [
+          0,
+          500,
+          20
+        ],
+        "expected": "discounted subtotal=0 total=0"
+      },
+      {
+        "input": [
+          -1,
+          10,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          10,
+          -5,
+          0
+        ],
+        "expected": "invalid"
+      },
+      {
+        "input": [
+          3,
+          333,
+          33
+        ],
+        "expected": "discounted subtotal=999 total=670"
+      },
+      {
+        "input": [
+          1,
+          1,
+          -5
+        ],
+        "expected": "no discount subtotal=1 total=1"
+      },
+      {
+        "input": [
+          7,
+          100,
+          99
+        ],
+        "expected": "discounted subtotal=700 total=7"
+      }
+    ]
+  },
+  {
+    "id": "parse_kv_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "parse_kv",
+    "skill": "use_library_split",
+    "spec": "`parse_kv` reads a comma-separated `key=value` string and renders it back in a\ncanonical form.\n\n- Pairs are separated by commas; within a pair, the key ends at the **first**\n  `=`, so \"k=v=w\" has key \"k\" and value \"v=w\".\n- A pair with no `=`, or with an empty key, is dropped. An empty value is kept,\n  so \"a=\" is the key \"a\" with an empty value.\n- When a key repeats, the last value wins.\n- The result lists the surviving pairs as \"key=value\", sorted by key ascending\n  and joined with \";\". No pairs gives the empty string.\n\nThe current version walks the string one character at a time, tracking indexes\nby hand to find the separators. Refactor it to split on the separators with the\nlanguage's own string functions, keeping the behavior identical.",
+    "signature": "def parse_kv(text: str) -> str:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Split on the separators with the standard library instead of walking indexes by hand.",
+    "original_code": "def parse_kv(text: str) -> str:\n    result = {}\n    index = 0\n    length = len(text)\n    while index < length:\n        end = index\n        while end < length and text[end] != \",\":\n            end = end + 1\n        piece = text[index:end]\n        equals = -1\n        position = 0\n        while position < len(piece):\n            if piece[position] == \"=\" and equals == -1:\n                equals = position\n            position = position + 1\n        if equals > 0:\n            result[piece[0:equals]] = piece[equals + 1:]\n        index = end + 1\n    keys = sorted(result)\n    out = \"\"\n    for key in keys:\n        if out != \"\":\n            out = out + \";\"\n        out = out + key + \"=\" + result[key]\n    return out",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bwhile\\b",
+          "max": 0,
+          "reason": "hand-rolled index scanning should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.split\\(",
+            "\\.partition\\("
+          ],
+          "reason": "the standard split should find the separators"
+        }
+      ],
+      "max_lines": 20
+    },
+    "test_cases": [
+      {
+        "input": "a=1,b=2",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "a=1,a=2",
+        "expected": "a=2"
+      },
+      {
+        "input": "noequals",
+        "expected": ""
+      },
+      {
+        "input": "=novalue",
+        "expected": ""
+      },
+      {
+        "input": "a=",
+        "expected": "a="
+      },
+      {
+        "input": "b=2,a=1",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "x=1,,y=2",
+        "expected": "x=1;y=2"
+      },
+      {
+        "input": "k=v=w",
+        "expected": "k=v=w"
+      },
+      {
+        "input": "a=1,b",
+        "expected": "a=1"
+      },
+      {
+        "input": "z=26,y=25,x=24",
+        "expected": "x=24;y=25;z=26"
+      }
+    ]
+  },
+  {
+    "id": "parse_kv_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "parse_kv",
+    "skill": "use_library_split",
+    "spec": "`parse_kv` reads a comma-separated `key=value` string and renders it back in a\ncanonical form.\n\n- Pairs are separated by commas; within a pair, the key ends at the **first**\n  `=`, so \"k=v=w\" has key \"k\" and value \"v=w\".\n- A pair with no `=`, or with an empty key, is dropped. An empty value is kept,\n  so \"a=\" is the key \"a\" with an empty value.\n- When a key repeats, the last value wins.\n- The result lists the surviving pairs as \"key=value\", sorted by key ascending\n  and joined with \";\". No pairs gives the empty string.\n\nThe current version walks the string one character at a time, tracking indexes\nby hand to find the separators. Refactor it to split on the separators with the\nlanguage's own string functions, keeping the behavior identical.",
+    "signature": "function parseKv(text: string): string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Split on the separators with the standard library instead of walking indexes by hand.",
+    "original_code": "function parseKv(text: string): string {\n    const result: Record<string, string> = {};\n    let index = 0;\n    while (index < text.length) {\n        let end = index;\n        while (end < text.length && text[end] !== \",\") {\n            end = end + 1;\n        }\n        const piece = text.slice(index, end);\n        let equals = -1;\n        let position = 0;\n        while (position < piece.length) {\n            if (piece[position] === \"=\" && equals === -1) {\n                equals = position;\n            }\n            position = position + 1;\n        }\n        if (equals > 0) {\n            result[piece.slice(0, equals)] = piece.slice(equals + 1);\n        }\n        index = end + 1;\n    }\n    const keys = Object.keys(result).sort();\n    let out = \"\";\n    for (const key of keys) {\n        if (out !== \"\") out = out + \";\";\n        out = out + key + \"=\" + result[key];\n    }\n    return out;\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bwhile\\b",
+          "max": 0,
+          "reason": "hand-rolled index scanning should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.split\\("
+          ],
+          "reason": "the standard split should find the separators"
+        }
+      ],
+      "max_lines": 22
+    },
+    "test_cases": [
+      {
+        "input": "a=1,b=2",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "a=1,a=2",
+        "expected": "a=2"
+      },
+      {
+        "input": "noequals",
+        "expected": ""
+      },
+      {
+        "input": "=novalue",
+        "expected": ""
+      },
+      {
+        "input": "a=",
+        "expected": "a="
+      },
+      {
+        "input": "b=2,a=1",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "x=1,,y=2",
+        "expected": "x=1;y=2"
+      },
+      {
+        "input": "k=v=w",
+        "expected": "k=v=w"
+      },
+      {
+        "input": "a=1,b",
+        "expected": "a=1"
+      },
+      {
+        "input": "z=26,y=25,x=24",
+        "expected": "x=24;y=25;z=26"
+      }
+    ]
+  },
+  {
+    "id": "parse_kv_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "parse_kv",
+    "skill": "use_library_split",
+    "spec": "`parse_kv` reads a comma-separated `key=value` string and renders it back in a\ncanonical form.\n\n- Pairs are separated by commas; within a pair, the key ends at the **first**\n  `=`, so \"k=v=w\" has key \"k\" and value \"v=w\".\n- A pair with no `=`, or with an empty key, is dropped. An empty value is kept,\n  so \"a=\" is the key \"a\" with an empty value.\n- When a key repeats, the last value wins.\n- The result lists the surviving pairs as \"key=value\", sorted by key ascending\n  and joined with \";\". No pairs gives the empty string.\n\nThe current version walks the string one character at a time, tracking indexes\nby hand to find the separators. Refactor it to split on the separators with the\nlanguage's own string functions, keeping the behavior identical.",
+    "signature": "func ParseKv(text string) string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Split on the separators with the standard library instead of walking indexes by hand.",
+    "original_code": "func ParseKv(text string) string {\n    result := map[string]string{}\n    index := 0\n    for index < len(text) {\n        end := index\n        for end < len(text) && text[end] != ',' {\n            end = end + 1\n        }\n        piece := text[index:end]\n        equals := -1\n        position := 0\n        for position < len(piece) {\n            if piece[position] == '=' && equals == -1 {\n                equals = position\n            }\n            position = position + 1\n        }\n        if equals > 0 {\n            result[piece[0:equals]] = piece[equals+1:]\n        }\n        index = end + 1\n    }\n    keys := make([]string, 0, len(result))\n    for key := range result {\n        keys = append(keys, key)\n    }\n    sort.Strings(keys)\n    out := \"\"\n    for _, key := range keys {\n        if out != \"\" {\n            out = out + \";\"\n        }\n        out = out + key + \"=\" + result[key]\n    }\n    return out\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bfor\\b",
+          "max": 3,
+          "reason": "hand-rolled index scanning should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "strings\\.Split"
+          ],
+          "reason": "the standard split should find the separators"
+        }
+      ],
+      "max_lines": 30
+    },
+    "test_cases": [
+      {
+        "input": "a=1,b=2",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "a=1,a=2",
+        "expected": "a=2"
+      },
+      {
+        "input": "noequals",
+        "expected": ""
+      },
+      {
+        "input": "=novalue",
+        "expected": ""
+      },
+      {
+        "input": "a=",
+        "expected": "a="
+      },
+      {
+        "input": "b=2,a=1",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "x=1,,y=2",
+        "expected": "x=1;y=2"
+      },
+      {
+        "input": "k=v=w",
+        "expected": "k=v=w"
+      },
+      {
+        "input": "a=1,b",
+        "expected": "a=1"
+      },
+      {
+        "input": "z=26,y=25,x=24",
+        "expected": "x=24;y=25;z=26"
+      }
+    ]
+  },
+  {
+    "id": "parse_kv_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "parse_kv",
+    "skill": "use_library_split",
+    "spec": "`parse_kv` reads a comma-separated `key=value` string and renders it back in a\ncanonical form.\n\n- Pairs are separated by commas; within a pair, the key ends at the **first**\n  `=`, so \"k=v=w\" has key \"k\" and value \"v=w\".\n- A pair with no `=`, or with an empty key, is dropped. An empty value is kept,\n  so \"a=\" is the key \"a\" with an empty value.\n- When a key repeats, the last value wins.\n- The result lists the surviving pairs as \"key=value\", sorted by key ascending\n  and joined with \";\". No pairs gives the empty string.\n\nThe current version walks the string one character at a time, tracking indexes\nby hand to find the separators. Refactor it to split on the separators with the\nlanguage's own string functions, keeping the behavior identical.",
+    "signature": "fn parse_kv(text: &str) -> String {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "goal": "Split on the separators with the standard library instead of walking indexes by hand.",
+    "original_code": "use std::collections::BTreeMap;\n\nfn parse_kv(text: &str) -> String {\n    let bytes = text.as_bytes();\n    let mut result: BTreeMap<String, String> = BTreeMap::new();\n    let mut index = 0usize;\n    while index < bytes.len() {\n        let mut end = index;\n        while end < bytes.len() && bytes[end] != b',' {\n            end += 1;\n        }\n        let piece = &text[index..end];\n        let mut equals: i64 = -1;\n        let mut position = 0usize;\n        while position < piece.len() {\n            if piece.as_bytes()[position] == b'=' && equals == -1 {\n                equals = position as i64;\n            }\n            position += 1;\n        }\n        if equals > 0 {\n            let cut = equals as usize;\n            result.insert(piece[..cut].to_string(), piece[cut + 1..].to_string());\n        }\n        index = end + 1;\n    }\n    let mut out = String::new();\n    for (key, value) in &result {\n        if !out.is_empty() {\n            out.push(';');\n        }\n        out.push_str(key);\n        out.push('=');\n        out.push_str(value);\n    }\n    out\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "\\bwhile\\b",
+          "max": 0,
+          "reason": "hand-rolled index scanning should be gone"
+        }
+      ],
+      "require_any": [
+        {
+          "patterns": [
+            "\\.split",
+            "split_once"
+          ],
+          "reason": "the standard split should find the separators"
+        }
+      ],
+      "max_lines": 24
+    },
+    "test_cases": [
+      {
+        "input": "a=1,b=2",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "a=1,a=2",
+        "expected": "a=2"
+      },
+      {
+        "input": "noequals",
+        "expected": ""
+      },
+      {
+        "input": "=novalue",
+        "expected": ""
+      },
+      {
+        "input": "a=",
+        "expected": "a="
+      },
+      {
+        "input": "b=2,a=1",
+        "expected": "a=1;b=2"
+      },
+      {
+        "input": "x=1,,y=2",
+        "expected": "x=1;y=2"
+      },
+      {
+        "input": "k=v=w",
+        "expected": "k=v=w"
+      },
+      {
+        "input": "a=1,b",
+        "expected": "a=1"
+      },
+      {
+        "input": "z=26,y=25,x=24",
+        "expected": "x=24;y=25;z=26"
+      }
+    ]
+  },
+  {
+    "id": "compact_ranges_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "compact_ranges",
+    "skill": "extract_helper",
+    "spec": "`compact_ranges` collapses a sorted list of distinct integers into range\nnotation.\n\n- Consecutive values collapse into \"first-last\"; a value with no neighbour\n  stands alone.\n- Pieces are joined with commas, in order: [1, 2, 3, 5, 7, 8, 9] renders as\n  \"1-3,5,7-9\".\n- A run of exactly two, like [1, 2], still renders as \"1-2\".\n- Negative values are written as they are, so [-3, -2, -1] renders as \"-3--1\".\n- An empty list gives the empty string.\n\nThe block that turns a finished run into text is written out twice \u2014 once when\na run ends inside the loop, once for the final run after it. Refactor so that\nformatting exists in exactly one place and both call sites use it.",
+    "signature": "def compact_ranges(values: list[int]) -> str:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the run-formatting into one helper and call it from both places instead of duplicating the branch.",
+    "original_code": "def compact_ranges(values: list[int]) -> str:\n    if not values:\n        return \"\"\n    parts = []\n    start = values[0]\n    end = values[0]\n    for value in values[1:]:\n        if value == end + 1:\n            end = value\n        else:\n            if start == end:\n                parts.append(str(start))\n            else:\n                parts.append(str(start) + \"-\" + str(end))\n            start = value\n            end = value\n    if start == end:\n        parts.append(str(start))\n    else:\n        parts.append(str(start) + \"-\" + str(end))\n    return \",\".join(parts)",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "start == end",
+          "max": 1,
+          "reason": "the run-formatting branch should exist in one place"
+        }
+      ],
+      "max_lines": 24
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ],
+        "expected": "1-3,5,7-9"
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": "4"
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": "1-2"
+      },
+      {
+        "input": [
+          1,
+          3,
+          5
+        ],
+        "expected": "1,3,5"
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": "1-5"
+      },
+      {
+        "input": [
+          -3,
+          -2,
+          -1,
+          4
+        ],
+        "expected": "-3--1,4"
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": "0"
+      },
+      {
+        "input": [
+          10,
+          11,
+          13,
+          14
+        ],
+        "expected": "10-11,13-14"
+      }
+    ]
+  },
+  {
+    "id": "compact_ranges_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "compact_ranges",
+    "skill": "extract_helper",
+    "spec": "`compact_ranges` collapses a sorted list of distinct integers into range\nnotation.\n\n- Consecutive values collapse into \"first-last\"; a value with no neighbour\n  stands alone.\n- Pieces are joined with commas, in order: [1, 2, 3, 5, 7, 8, 9] renders as\n  \"1-3,5,7-9\".\n- A run of exactly two, like [1, 2], still renders as \"1-2\".\n- Negative values are written as they are, so [-3, -2, -1] renders as \"-3--1\".\n- An empty list gives the empty string.\n\nThe block that turns a finished run into text is written out twice \u2014 once when\na run ends inside the loop, once for the final run after it. Refactor so that\nformatting exists in exactly one place and both call sites use it.",
+    "signature": "function compactRanges(values: number[]): string {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the run-formatting into one helper and call it from both places instead of duplicating the branch.",
+    "original_code": "function compactRanges(values: number[]): string {\n    if (values.length === 0) return \"\";\n    const parts: string[] = [];\n    let start = values[0];\n    let end = values[0];\n    for (let i = 1; i < values.length; i++) {\n        const value = values[i];\n        if (value === end + 1) {\n            end = value;\n        } else {\n            if (start === end) {\n                parts.push(String(start));\n            } else {\n                parts.push(String(start) + \"-\" + String(end));\n            }\n            start = value;\n            end = value;\n        }\n    }\n    if (start === end) {\n        parts.push(String(start));\n    } else {\n        parts.push(String(start) + \"-\" + String(end));\n    }\n    return parts.join(\",\");\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "start === end",
+          "max": 1,
+          "reason": "the run-formatting branch should exist in one place"
+        }
+      ],
+      "max_lines": 26
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ],
+        "expected": "1-3,5,7-9"
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": "4"
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": "1-2"
+      },
+      {
+        "input": [
+          1,
+          3,
+          5
+        ],
+        "expected": "1,3,5"
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": "1-5"
+      },
+      {
+        "input": [
+          -3,
+          -2,
+          -1,
+          4
+        ],
+        "expected": "-3--1,4"
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": "0"
+      },
+      {
+        "input": [
+          10,
+          11,
+          13,
+          14
+        ],
+        "expected": "10-11,13-14"
+      }
+    ]
+  },
+  {
+    "id": "compact_ranges_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "compact_ranges",
+    "skill": "extract_helper",
+    "spec": "`compact_ranges` collapses a sorted list of distinct integers into range\nnotation.\n\n- Consecutive values collapse into \"first-last\"; a value with no neighbour\n  stands alone.\n- Pieces are joined with commas, in order: [1, 2, 3, 5, 7, 8, 9] renders as\n  \"1-3,5,7-9\".\n- A run of exactly two, like [1, 2], still renders as \"1-2\".\n- Negative values are written as they are, so [-3, -2, -1] renders as \"-3--1\".\n- An empty list gives the empty string.\n\nThe block that turns a finished run into text is written out twice \u2014 once when\na run ends inside the loop, once for the final run after it. Refactor so that\nformatting exists in exactly one place and both call sites use it.",
+    "signature": "func CompactRanges(values []int) string {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the run-formatting into one helper and call it from both places instead of duplicating the branch.",
+    "original_code": "func CompactRanges(values []int) string {\n    if len(values) == 0 {\n        return \"\"\n    }\n    parts := []string{}\n    start := values[0]\n    end := values[0]\n    for i := 1; i < len(values); i++ {\n        value := values[i]\n        if value == end+1 {\n            end = value\n        } else {\n            if start == end {\n                parts = append(parts, strconv.Itoa(start))\n            } else {\n                parts = append(parts, strconv.Itoa(start)+\"-\"+strconv.Itoa(end))\n            }\n            start = value\n            end = value\n        }\n    }\n    if start == end {\n        parts = append(parts, strconv.Itoa(start))\n    } else {\n        parts = append(parts, strconv.Itoa(start)+\"-\"+strconv.Itoa(end))\n    }\n    return strings.Join(parts, \",\")\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "start == end",
+          "max": 1,
+          "reason": "the run-formatting branch should exist in one place"
+        }
+      ],
+      "max_lines": 32
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ],
+        "expected": "1-3,5,7-9"
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": "4"
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": "1-2"
+      },
+      {
+        "input": [
+          1,
+          3,
+          5
+        ],
+        "expected": "1,3,5"
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": "1-5"
+      },
+      {
+        "input": [
+          -3,
+          -2,
+          -1,
+          4
+        ],
+        "expected": "-3--1,4"
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": "0"
+      },
+      {
+        "input": [
+          10,
+          11,
+          13,
+          14
+        ],
+        "expected": "10-11,13-14"
+      }
+    ]
+  },
+  {
+    "id": "compact_ranges_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "compact_ranges",
+    "skill": "extract_helper",
+    "spec": "`compact_ranges` collapses a sorted list of distinct integers into range\nnotation.\n\n- Consecutive values collapse into \"first-last\"; a value with no neighbour\n  stands alone.\n- Pieces are joined with commas, in order: [1, 2, 3, 5, 7, 8, 9] renders as\n  \"1-3,5,7-9\".\n- A run of exactly two, like [1, 2], still renders as \"1-2\".\n- Negative values are written as they are, so [-3, -2, -1] renders as \"-3--1\".\n- An empty list gives the empty string.\n\nThe block that turns a finished run into text is written out twice \u2014 once when\na run ends inside the loop, once for the final run after it. Refactor so that\nformatting exists in exactly one place and both call sites use it.",
+    "signature": "fn compact_ranges(values: &[i64]) -> String {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "str"
+    },
+    "goal": "Extract the run-formatting into one helper and call it from both places instead of duplicating the branch.",
+    "original_code": "fn compact_ranges(values: &[i64]) -> String {\n    if values.is_empty() {\n        return String::new();\n    }\n    let mut parts: Vec<String> = Vec::new();\n    let mut start = values[0];\n    let mut end = values[0];\n    for &value in &values[1..] {\n        if value == end + 1 {\n            end = value;\n        } else {\n            if start == end {\n                parts.push(start.to_string());\n            } else {\n                parts.push(format!(\"{}-{}\", start, end));\n            }\n            start = value;\n            end = value;\n        }\n    }\n    if start == end {\n        parts.push(start.to_string());\n    } else {\n        parts.push(format!(\"{}-{}\", start, end));\n    }\n    parts.join(\",\")\n}",
+    "structure": {
+      "max_matches": [
+        {
+          "pattern": "start == end",
+          "max": 1,
+          "reason": "the run-formatting branch should exist in one place"
+        }
+      ],
+      "max_lines": 28
+    },
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ],
+        "expected": "1-3,5,7-9"
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": [
+          4
+        ],
+        "expected": "4"
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": "1-2"
+      },
+      {
+        "input": [
+          1,
+          3,
+          5
+        ],
+        "expected": "1,3,5"
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": "1-5"
+      },
+      {
+        "input": [
+          -3,
+          -2,
+          -1,
+          4
+        ],
+        "expected": "-3--1,4"
+      },
+      {
+        "input": [
+          0
+        ],
+        "expected": "0"
+      },
+      {
+        "input": [
+          10,
+          11,
+          13,
+          14
+        ],
+        "expected": "10-11,13-14"
+      }
+    ]
   }
 ]

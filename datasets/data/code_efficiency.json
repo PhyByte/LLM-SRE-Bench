@@ -1650,5 +1650,4437 @@
         ]
       }
     ]
+  },
+  {
+    "id": "count_inversions_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "count_inversions",
+    "skill": "divide_and_conquer",
+    "spec": "Count the inversions in a series: the number of index pairs (i, j) with i < j\nand values[i] > values[j]. It is the standard measure of how far a list is from\nsorted, and the same count a merge sort accumulates on its way through.\n\nRules:\n- Compare positions, not distinct values: equal values are not an inversion.\n- A sorted series has 0 inversions; a strictly descending series of length n has\n  n * (n - 1) / 2.\n- Return 0 for series shorter than 2.\n- The count can exceed a 32-bit integer on the timed input, so accumulate it in\n  a 64-bit-safe way.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def count_inversions(values: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 33107711,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 100000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 9964399244
+    },
+    "time_budget_ms": 1800,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          1,
+          4,
+          2,
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          10,
+          10,
+          9,
+          9
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          1,
+          2
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": "count_inversions_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "count_inversions",
+    "skill": "divide_and_conquer",
+    "spec": "Count the inversions in a series: the number of index pairs (i, j) with i < j\nand values[i] > values[j]. It is the standard measure of how far a list is from\nsorted, and the same count a merge sort accumulates on its way through.\n\nRules:\n- Compare positions, not distinct values: equal values are not an inversion.\n- A sorted series has 0 inversions; a strictly descending series of length n has\n  n * (n - 1) / 2.\n- Return 0 for series shorter than 2.\n- The count can exceed a 32-bit integer on the timed input, so accumulate it in\n  a 64-bit-safe way.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function countInversions(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 33107711,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 100000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 9964399244
+    },
+    "time_budget_ms": 280,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          1,
+          4,
+          2,
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          10,
+          10,
+          9,
+          9
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          1,
+          2
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": "count_inversions_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "count_inversions",
+    "skill": "divide_and_conquer",
+    "spec": "Count the inversions in a series: the number of index pairs (i, j) with i < j\nand values[i] > values[j]. It is the standard measure of how far a list is from\nsorted, and the same count a merge sort accumulates on its way through.\n\nRules:\n- Compare positions, not distinct values: equal values are not an inversion.\n- A sorted series has 0 inversions; a strictly descending series of length n has\n  n * (n - 1) / 2.\n- Return 0 for series shorter than 2.\n- The count can exceed a 32-bit integer on the timed input, so accumulate it in\n  a 64-bit-safe way.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func CountInversions(values []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 33107711,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 100000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 9964399244
+    },
+    "time_budget_ms": 220,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          1,
+          4,
+          2,
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          10,
+          10,
+          9,
+          9
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          1,
+          2
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": "count_inversions_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "count_inversions",
+    "skill": "divide_and_conquer",
+    "spec": "Count the inversions in a series: the number of index pairs (i, j) with i < j\nand values[i] > values[j]. It is the standard measure of how far a list is from\nsorted, and the same count a merge sort accumulates on its way through.\n\nRules:\n- Compare positions, not distinct values: equal values are not an inversion.\n- A sorted series has 0 inversions; a strictly descending series of length n has\n  n * (n - 1) / 2.\n- Return 0 for series shorter than 2.\n- The count can exceed a 32-bit integer on the timed input, so accumulate it in\n  a 64-bit-safe way.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn count_inversions(values: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 33107711,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 100000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 9964399244
+    },
+    "time_budget_ms": 200,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          1,
+          4,
+          2,
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          10,
+          10,
+          9,
+          9
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          1,
+          2
+        ],
+        "expected": 2
+      }
+    ]
+  },
+  {
+    "id": "longest_unique_run_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "longest_unique_run",
+    "skill": "sliding_window",
+    "spec": "Return the length of the longest contiguous stretch in which no value repeats \u2014\nthe longest window of a request log where every client id is different.\n\nRules:\n- The stretch must be contiguous.\n- Return 0 for an empty series.\n- A series with no repeats at all is entirely one stretch, so the answer is its\n  length.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def longest_unique_run(values: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 6620391,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 64,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 34
+    },
+    "time_budget_ms": 90,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          9,
+          8,
+          9,
+          7,
+          6,
+          8
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "longest_unique_run_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "longest_unique_run",
+    "skill": "sliding_window",
+    "spec": "Return the length of the longest contiguous stretch in which no value repeats \u2014\nthe longest window of a request log where every client id is different.\n\nRules:\n- The stretch must be contiguous.\n- Return 0 for an empty series.\n- A series with no repeats at all is entirely one stretch, so the answer is its\n  length.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function longestUniqueRun(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 6620391,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 64,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 34
+    },
+    "time_budget_ms": 50,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          9,
+          8,
+          9,
+          7,
+          6,
+          8
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "longest_unique_run_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "longest_unique_run",
+    "skill": "sliding_window",
+    "spec": "Return the length of the longest contiguous stretch in which no value repeats \u2014\nthe longest window of a request log where every client id is different.\n\nRules:\n- The stretch must be contiguous.\n- Return 0 for an empty series.\n- A series with no repeats at all is entirely one stretch, so the answer is its\n  length.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func LongestUniqueRun(values []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 6620391,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 64,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 34
+    },
+    "time_budget_ms": 40,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          9,
+          8,
+          9,
+          7,
+          6,
+          8
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "longest_unique_run_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "longest_unique_run",
+    "skill": "sliding_window",
+    "spec": "Return the length of the longest contiguous stretch in which no value repeats \u2014\nthe longest window of a request log where every client id is different.\n\nRules:\n- The stretch must be contiguous.\n- Return 0 for an empty series.\n- A series with no repeats at all is entirely one stretch, so the answer is its\n  length.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn longest_unique_run(values: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 6620391,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 64,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 34
+    },
+    "time_budget_ms": 35,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          4,
+          5,
+          4,
+          5,
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          9,
+          8,
+          9,
+          7,
+          6,
+          8
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          0,
+          1,
+          2,
+          3,
+          0
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "largest_rectangle_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "largest_rectangle",
+    "skill": "monotonic_stack",
+    "spec": "Given bar heights standing side by side, each one unit wide, return the area of\nthe largest axis-aligned rectangle that fits entirely inside the histogram.\n\nRules:\n- The rectangle spans a contiguous range of bars and its height is the smallest\n  bar in that range, so the area is (smallest height) * (number of bars).\n- Heights are non-negative and may repeat.\n- Return 0 for an empty histogram.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def largest_rectangle(heights: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 41180923,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 13664
+    },
+    "time_budget_ms": 170,
+    "test_cases": [
+      {
+        "input": [
+          2,
+          1,
+          5,
+          6,
+          2,
+          3
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          2,
+          2
+        ],
+        "expected": 4
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          3,
+          1,
+          3,
+          1,
+          3
+        ],
+        "expected": 5
+      }
+    ]
+  },
+  {
+    "id": "largest_rectangle_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "largest_rectangle",
+    "skill": "monotonic_stack",
+    "spec": "Given bar heights standing side by side, each one unit wide, return the area of\nthe largest axis-aligned rectangle that fits entirely inside the histogram.\n\nRules:\n- The rectangle spans a contiguous range of bars and its height is the smallest\n  bar in that range, so the area is (smallest height) * (number of bars).\n- Heights are non-negative and may repeat.\n- Return 0 for an empty histogram.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function largestRectangle(heights: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 41180923,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 13664
+    },
+    "time_budget_ms": 40,
+    "test_cases": [
+      {
+        "input": [
+          2,
+          1,
+          5,
+          6,
+          2,
+          3
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          2,
+          2
+        ],
+        "expected": 4
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          3,
+          1,
+          3,
+          1,
+          3
+        ],
+        "expected": 5
+      }
+    ]
+  },
+  {
+    "id": "largest_rectangle_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "largest_rectangle",
+    "skill": "monotonic_stack",
+    "spec": "Given bar heights standing side by side, each one unit wide, return the area of\nthe largest axis-aligned rectangle that fits entirely inside the histogram.\n\nRules:\n- The rectangle spans a contiguous range of bars and its height is the smallest\n  bar in that range, so the area is (smallest height) * (number of bars).\n- Heights are non-negative and may repeat.\n- Return 0 for an empty histogram.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func LargestRectangle(heights []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 41180923,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 13664
+    },
+    "time_budget_ms": 25,
+    "test_cases": [
+      {
+        "input": [
+          2,
+          1,
+          5,
+          6,
+          2,
+          3
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          2,
+          2
+        ],
+        "expected": 4
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          3,
+          1,
+          3,
+          1,
+          3
+        ],
+        "expected": 5
+      }
+    ]
+  },
+  {
+    "id": "largest_rectangle_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "largest_rectangle",
+    "skill": "monotonic_stack",
+    "spec": "Given bar heights standing side by side, each one unit wide, return the area of\nthe largest axis-aligned rectangle that fits entirely inside the histogram.\n\nRules:\n- The rectangle spans a contiguous range of bars and its height is the smallest\n  bar in that range, so the area is (smallest height) * (number of bars).\n- Heights are non-negative and may repeat.\n- Return 0 for an empty histogram.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn largest_rectangle(heights: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 41180923,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 13664
+    },
+    "time_budget_ms": 25,
+    "test_cases": [
+      {
+        "input": [
+          2,
+          1,
+          5,
+          6,
+          2,
+          3
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          2,
+          2
+        ],
+        "expected": 4
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          3,
+          1,
+          3,
+          1,
+          3
+        ],
+        "expected": 5
+      }
+    ]
+  },
+  {
+    "id": "window_max_total_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "window_max_total",
+    "skill": "monotonic_deque",
+    "spec": "Slide a window of exactly k samples across the series and add up the maximum of\neach window position \u2014 the total of the per-window peaks a rolling-max alert\nwould have fired on.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Recomputing the maximum of every window from scratch is the slow answer; the\n  intended one visits each element a constant number of times.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def window_max_total(values: list[int], k: int) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 7712849,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 5000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 194805999
+    },
+    "time_budget_ms": 180,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": 16
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          1
+        ],
+        "expected": 12
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            7,
+            2
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          3
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            1,
+            1,
+            1,
+            9
+          ],
+          3
+        ],
+        "expected": 19
+      },
+      {
+        "input": [
+          [
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          2
+        ],
+        "expected": 14
+      }
+    ]
+  },
+  {
+    "id": "window_max_total_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "window_max_total",
+    "skill": "monotonic_deque",
+    "spec": "Slide a window of exactly k samples across the series and add up the maximum of\neach window position \u2014 the total of the per-window peaks a rolling-max alert\nwould have fired on.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Recomputing the maximum of every window from scratch is the slow answer; the\n  intended one visits each element a constant number of times.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function windowMaxTotal(values: number[], k: number): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 7712849,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 5000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 194805999
+    },
+    "time_budget_ms": 40,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": 16
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          1
+        ],
+        "expected": 12
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            7,
+            2
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          3
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            1,
+            1,
+            1,
+            9
+          ],
+          3
+        ],
+        "expected": 19
+      },
+      {
+        "input": [
+          [
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          2
+        ],
+        "expected": 14
+      }
+    ]
+  },
+  {
+    "id": "window_max_total_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "window_max_total",
+    "skill": "monotonic_deque",
+    "spec": "Slide a window of exactly k samples across the series and add up the maximum of\neach window position \u2014 the total of the per-window peaks a rolling-max alert\nwould have fired on.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Recomputing the maximum of every window from scratch is the slow answer; the\n  intended one visits each element a constant number of times.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func WindowMaxTotal(values []int, k int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 7712849,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 5000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 194805999
+    },
+    "time_budget_ms": 30,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": 16
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          1
+        ],
+        "expected": 12
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            7,
+            2
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          3
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            1,
+            1,
+            1,
+            9
+          ],
+          3
+        ],
+        "expected": 19
+      },
+      {
+        "input": [
+          [
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          2
+        ],
+        "expected": 14
+      }
+    ]
+  },
+  {
+    "id": "window_max_total_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "window_max_total",
+    "skill": "monotonic_deque",
+    "spec": "Slide a window of exactly k samples across the series and add up the maximum of\neach window position \u2014 the total of the per-window peaks a rolling-max alert\nwould have fired on.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Recomputing the maximum of every window from scratch is the slow answer; the\n  intended one visits each element a constant number of times.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn window_max_total(values: &[i64], k: i64) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 7712849,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 5000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 194805999
+    },
+    "time_budget_ms": 30,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          2
+        ],
+        "expected": 16
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            2,
+            5,
+            4
+          ],
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            4
+          ],
+          1
+        ],
+        "expected": 12
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            7,
+            2
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          3
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            9,
+            1,
+            1,
+            1,
+            9
+          ],
+          3
+        ],
+        "expected": 19
+      },
+      {
+        "input": [
+          [
+            5,
+            4,
+            3,
+            2,
+            1
+          ],
+          2
+        ],
+        "expected": 14
+      }
+    ]
+  },
+  {
+    "id": "longest_increasing_run_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "longest_increasing_run",
+    "skill": "dynamic_programming",
+    "spec": "Return the length of the longest strictly increasing subsequence: pick values\nleft to right, skipping as many as you like, so that each kept value is strictly\ngreater than the previous one.\n\nRules:\n- The picked values keep their original order but need not be adjacent.\n- Strictly increasing, so equal values cannot both be kept.\n- Return 0 for an empty series.\n- The straightforward \"compare against every earlier element\" answer is\n  quadratic; the intended one is O(n log n).\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def longest_increasing_run(values: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 9930277,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 876
+    },
+    "time_budget_ms": 160,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          10,
+          9,
+          2,
+          5,
+          3,
+          7,
+          101,
+          18
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          3,
+          2,
+          4,
+          3,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          8,
+          4,
+          12,
+          2,
+          10,
+          6,
+          14
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "longest_increasing_run_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "longest_increasing_run",
+    "skill": "dynamic_programming",
+    "spec": "Return the length of the longest strictly increasing subsequence: pick values\nleft to right, skipping as many as you like, so that each kept value is strictly\ngreater than the previous one.\n\nRules:\n- The picked values keep their original order but need not be adjacent.\n- Strictly increasing, so equal values cannot both be kept.\n- Return 0 for an empty series.\n- The straightforward \"compare against every earlier element\" answer is\n  quadratic; the intended one is O(n log n).\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function longestIncreasingRun(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 9930277,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 876
+    },
+    "time_budget_ms": 70,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          10,
+          9,
+          2,
+          5,
+          3,
+          7,
+          101,
+          18
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          3,
+          2,
+          4,
+          3,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          8,
+          4,
+          12,
+          2,
+          10,
+          6,
+          14
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "longest_increasing_run_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "longest_increasing_run",
+    "skill": "dynamic_programming",
+    "spec": "Return the length of the longest strictly increasing subsequence: pick values\nleft to right, skipping as many as you like, so that each kept value is strictly\ngreater than the previous one.\n\nRules:\n- The picked values keep their original order but need not be adjacent.\n- Strictly increasing, so equal values cannot both be kept.\n- Return 0 for an empty series.\n- The straightforward \"compare against every earlier element\" answer is\n  quadratic; the intended one is O(n log n).\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func LongestIncreasingRun(values []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 9930277,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 876
+    },
+    "time_budget_ms": 70,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          10,
+          9,
+          2,
+          5,
+          3,
+          7,
+          101,
+          18
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          3,
+          2,
+          4,
+          3,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          8,
+          4,
+          12,
+          2,
+          10,
+          6,
+          14
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "longest_increasing_run_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "longest_increasing_run",
+    "skill": "dynamic_programming",
+    "spec": "Return the length of the longest strictly increasing subsequence: pick values\nleft to right, skipping as many as you like, so that each kept value is strictly\ngreater than the previous one.\n\nRules:\n- The picked values keep their original order but need not be adjacent.\n- Strictly increasing, so equal values cannot both be kept.\n- Return 0 for an empty series.\n- The straightforward \"compare against every earlier element\" answer is\n  quadratic; the intended one is O(n log n).\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn longest_increasing_run(values: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 9930277,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 876
+    },
+    "time_budget_ms": 40,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          4,
+          3,
+          2,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          2,
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          10,
+          9,
+          2,
+          5,
+          3,
+          7,
+          101,
+          18
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          1,
+          3,
+          2,
+          4,
+          3,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          0,
+          8,
+          4,
+          12,
+          2,
+          10,
+          6,
+          14
+        ],
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "id": "trapped_water_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "trapped_water",
+    "skill": "two_pointers",
+    "spec": "Given a skyline of bar heights, each one unit wide, return how many units of\nwater are trapped between the bars after rain.\n\nRules:\n- Water above a bar is limited by the tallest bar to its left and the tallest to\n  its right: it holds min(tallest_left, tallest_right) - own_height, when that\n  is positive.\n- Water runs off the ends, so nothing is trapped outside the outermost bars.\n- Return 0 when fewer than 3 bars are given.\n- Scanning left and right for every bar is the quadratic answer; a single pass\n  from both ends is enough.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def trapped_water(heights: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 15583307,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 99960685
+    },
+    "time_budget_ms": 80,
+    "test_cases": [
+      {
+        "input": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          0,
+          1,
+          3,
+          2,
+          1,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          4,
+          2,
+          0,
+          3,
+          2,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          0,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "trapped_water_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "trapped_water",
+    "skill": "two_pointers",
+    "spec": "Given a skyline of bar heights, each one unit wide, return how many units of\nwater are trapped between the bars after rain.\n\nRules:\n- Water above a bar is limited by the tallest bar to its left and the tallest to\n  its right: it holds min(tallest_left, tallest_right) - own_height, when that\n  is positive.\n- Water runs off the ends, so nothing is trapped outside the outermost bars.\n- Return 0 when fewer than 3 bars are given.\n- Scanning left and right for every bar is the quadratic answer; a single pass\n  from both ends is enough.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function trappedWater(heights: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 15583307,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 99960685
+    },
+    "time_budget_ms": 30,
+    "test_cases": [
+      {
+        "input": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          0,
+          1,
+          3,
+          2,
+          1,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          4,
+          2,
+          0,
+          3,
+          2,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          0,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "trapped_water_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "trapped_water",
+    "skill": "two_pointers",
+    "spec": "Given a skyline of bar heights, each one unit wide, return how many units of\nwater are trapped between the bars after rain.\n\nRules:\n- Water above a bar is limited by the tallest bar to its left and the tallest to\n  its right: it holds min(tallest_left, tallest_right) - own_height, when that\n  is positive.\n- Water runs off the ends, so nothing is trapped outside the outermost bars.\n- Return 0 when fewer than 3 bars are given.\n- Scanning left and right for every bar is the quadratic answer; a single pass\n  from both ends is enough.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func TrappedWater(heights []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 15583307,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 99960685
+    },
+    "time_budget_ms": 25,
+    "test_cases": [
+      {
+        "input": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          0,
+          1,
+          3,
+          2,
+          1,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          4,
+          2,
+          0,
+          3,
+          2,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          0,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "trapped_water_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "trapped_water",
+    "skill": "two_pointers",
+    "spec": "Given a skyline of bar heights, each one unit wide, return how many units of\nwater are trapped between the bars after rain.\n\nRules:\n- Water above a bar is limited by the tallest bar to its left and the tallest to\n  its right: it holds min(tallest_left, tallest_right) - own_height, when that\n  is positive.\n- Water runs off the ends, so nothing is trapped outside the outermost bars.\n- Return 0 when fewer than 3 bars are given.\n- Scanning left and right for every bar is the quadratic answer; a single pass\n  from both ends is enough.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn trapped_water(heights: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 15583307,
+      "arrays": [
+        {
+          "name": "heights",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "heights"
+      ],
+      "expected": 99960685
+    },
+    "time_budget_ms": 25,
+    "test_cases": [
+      {
+        "input": [
+          0,
+          1,
+          0,
+          2,
+          1,
+          0,
+          1,
+          3,
+          2,
+          1,
+          2,
+          1
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          4,
+          2,
+          0,
+          3,
+          2,
+          5
+        ],
+        "expected": 9
+      },
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          2,
+          0,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      }
+    ]
+  },
+  {
+    "id": "distinct_window_total_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "distinct_window_total",
+    "skill": "hashing",
+    "spec": "Slide a window of exactly k samples across the series and add up how many\n*distinct* values each window position holds \u2014 the cardinality curve you would\nplot for a rolling \"unique clients per interval\" panel.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Each window contributes its number of distinct values, not its length.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Counting each window from scratch is O(n*k) and too slow; maintain the counts\n  incrementally as the window moves.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def distinct_window_total(values: list[int], k: int) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 28840111,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 2000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 326379712
+    },
+    "time_budget_ms": 250,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            1,
+            3
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            5,
+            6
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          5
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            5,
+            5,
+            6
+          ],
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          1
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": "distinct_window_total_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "distinct_window_total",
+    "skill": "hashing",
+    "spec": "Slide a window of exactly k samples across the series and add up how many\n*distinct* values each window position holds \u2014 the cardinality curve you would\nplot for a rolling \"unique clients per interval\" panel.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Each window contributes its number of distinct values, not its length.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Counting each window from scratch is O(n*k) and too slow; maintain the counts\n  incrementally as the window moves.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function distinctWindowTotal(values: number[], k: number): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 28840111,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 2000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 326379712
+    },
+    "time_budget_ms": 90,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            1,
+            3
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            5,
+            6
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          5
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            5,
+            5,
+            6
+          ],
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          1
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": "distinct_window_total_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "distinct_window_total",
+    "skill": "hashing",
+    "spec": "Slide a window of exactly k samples across the series and add up how many\n*distinct* values each window position holds \u2014 the cardinality curve you would\nplot for a rolling \"unique clients per interval\" panel.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Each window contributes its number of distinct values, not its length.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Counting each window from scratch is O(n*k) and too slow; maintain the counts\n  incrementally as the window moves.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func DistinctWindowTotal(values []int, k int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 28840111,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 2000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 326379712
+    },
+    "time_budget_ms": 50,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            1,
+            3
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            5,
+            6
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          5
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            5,
+            5,
+            6
+          ],
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          1
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": "distinct_window_total_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "distinct_window_total",
+    "skill": "hashing",
+    "spec": "Slide a window of exactly k samples across the series and add up how many\n*distinct* values each window position holds \u2014 the cardinality curve you would\nplot for a rolling \"unique clients per interval\" panel.\n\nRules:\n- Windows are contiguous and of exactly length k, so a series of length n has\n  n - k + 1 of them.\n- Each window contributes its number of distinct values, not its length.\n- Return -1 if k <= 0 or if the series is shorter than k.\n- Counting each window from scratch is O(n*k) and too slow; maintain the counts\n  incrementally as the window moves.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn distinct_window_total(values: &[i64], k: i64) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 28840111,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 5000,
+          "offset": 0
+        }
+      ],
+      "scalars": {
+        "k": 2000
+      },
+      "call_args": [
+        "values",
+        "k"
+      ],
+      "expected": 326379712
+    },
+    "time_budget_ms": 35,
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            2,
+            1,
+            3
+          ],
+          2
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3,
+            4
+          ],
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          [],
+          1
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            5,
+            6
+          ],
+          0
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          5
+        ],
+        "expected": -1
+      },
+      {
+        "input": [
+          [
+            4,
+            4,
+            5,
+            5,
+            6
+          ],
+          3
+        ],
+        "expected": 6
+      },
+      {
+        "input": [
+          [
+            9,
+            9,
+            9
+          ],
+          1
+        ],
+        "expected": 3
+      }
+    ]
+  },
+  {
+    "id": "min_rooms_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "min_rooms",
+    "skill": "sweep_line",
+    "spec": "Meeting i starts at starts[i] and runs for durations[i], occupying the\nhalf-open interval [start, start + duration). Return the smallest number of\nrooms needed to hold every meeting, which is the largest number that overlap at\nany instant.\n\nRules:\n- `starts` and `durations` are parallel arrays of the same length.\n- Intervals are half-open: a meeting ending exactly when another starts does not\n  need a second room.\n- A zero-length meeting overlaps nothing.\n- Return 0 when there are no meetings.\n- Comparing every pair of meetings is the quadratic answer; sorting the\n  boundaries and sweeping them is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def min_rooms(starts: list[int], durations: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 51004493,
+      "arrays": [
+        {
+          "name": "starts",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        },
+        {
+          "name": "durations",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 1
+        }
+      ],
+      "call_args": [
+        "starts",
+        "durations"
+      ],
+      "expected": 147
+    },
+    "time_budget_ms": 480,
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5,
+            15
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            10,
+            20
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            7,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "min_rooms_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "min_rooms",
+    "skill": "sweep_line",
+    "spec": "Meeting i starts at starts[i] and runs for durations[i], occupying the\nhalf-open interval [start, start + duration). Return the smallest number of\nrooms needed to hold every meeting, which is the largest number that overlap at\nany instant.\n\nRules:\n- `starts` and `durations` are parallel arrays of the same length.\n- Intervals are half-open: a meeting ending exactly when another starts does not\n  need a second room.\n- A zero-length meeting overlaps nothing.\n- Return 0 when there are no meetings.\n- Comparing every pair of meetings is the quadratic answer; sorting the\n  boundaries and sweeping them is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function minRooms(starts: number[], durations: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 51004493,
+      "arrays": [
+        {
+          "name": "starts",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        },
+        {
+          "name": "durations",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 1
+        }
+      ],
+      "call_args": [
+        "starts",
+        "durations"
+      ],
+      "expected": 147
+    },
+    "time_budget_ms": 550,
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5,
+            15
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            10,
+            20
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            7,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "min_rooms_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "min_rooms",
+    "skill": "sweep_line",
+    "spec": "Meeting i starts at starts[i] and runs for durations[i], occupying the\nhalf-open interval [start, start + duration). Return the smallest number of\nrooms needed to hold every meeting, which is the largest number that overlap at\nany instant.\n\nRules:\n- `starts` and `durations` are parallel arrays of the same length.\n- Intervals are half-open: a meeting ending exactly when another starts does not\n  need a second room.\n- A zero-length meeting overlaps nothing.\n- Return 0 when there are no meetings.\n- Comparing every pair of meetings is the quadratic answer; sorting the\n  boundaries and sweeping them is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func MinRooms(starts []int, durations []int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 51004493,
+      "arrays": [
+        {
+          "name": "starts",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        },
+        {
+          "name": "durations",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 1
+        }
+      ],
+      "call_args": [
+        "starts",
+        "durations"
+      ],
+      "expected": 147
+    },
+    "time_budget_ms": 130,
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5,
+            15
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            10,
+            20
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            7,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "min_rooms_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "min_rooms",
+    "skill": "sweep_line",
+    "spec": "Meeting i starts at starts[i] and runs for durations[i], occupying the\nhalf-open interval [start, start + duration). Return the smallest number of\nrooms needed to hold every meeting, which is the largest number that overlap at\nany instant.\n\nRules:\n- `starts` and `durations` are parallel arrays of the same length.\n- Intervals are half-open: a meeting ending exactly when another starts does not\n  need a second room.\n- A zero-length meeting overlaps nothing.\n- Return 0 when there are no meetings.\n- Comparing every pair of meetings is the quadratic answer; sorting the\n  boundaries and sweeping them is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn min_rooms(starts: &[i64], durations: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 51004493,
+      "arrays": [
+        {
+          "name": "starts",
+          "n": 200000,
+          "mod": 1000000,
+          "offset": 0
+        },
+        {
+          "name": "durations",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 1
+        }
+      ],
+      "call_args": [
+        "starts",
+        "durations"
+      ],
+      "expected": 147
+    },
+    "time_budget_ms": 60,
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5,
+            15
+          ],
+          [
+            10,
+            15,
+            10
+          ]
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            10,
+            20
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            0
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            0,
+            2,
+            4
+          ],
+          [
+            5,
+            5,
+            5
+          ]
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            7,
+            3,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        "expected": 1
+      }
+    ]
+  },
+  {
+    "id": "running_median_sum_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "running_median_sum",
+    "skill": "heaps",
+    "spec": "Stream the series one value at a time. After each value, take the median of\neverything seen so far and add it to a running total; return that total.\n\nRules:\n- With an odd count the median is the middle value of the sorted prefix.\n- With an even count, take the *lower* of the two middle values, so the answer\n  stays an integer and is fully determined.\n- Return 0 for an empty series.\n- Re-sorting the prefix after every value is the slow answer; keeping the two\n  halves in heaps is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def running_median_sum(values: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 60221399,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 99686497
+    },
+    "time_budget_ms": 400,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 7
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "expected": 60
+      },
+      {
+        "input": [
+          4,
+          1,
+          7,
+          2,
+          9
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "expected": 8
+      }
+    ]
+  },
+  {
+    "id": "running_median_sum_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "running_median_sum",
+    "skill": "heaps",
+    "spec": "Stream the series one value at a time. After each value, take the median of\neverything seen so far and add it to a running total; return that total.\n\nRules:\n- With an odd count the median is the middle value of the sorted prefix.\n- With an even count, take the *lower* of the two middle values, so the answer\n  stays an integer and is fully determined.\n- Return 0 for an empty series.\n- Re-sorting the prefix after every value is the slow answer; keeping the two\n  halves in heaps is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function runningMedianSum(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 60221399,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 99686497
+    },
+    "time_budget_ms": 280,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 7
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "expected": 60
+      },
+      {
+        "input": [
+          4,
+          1,
+          7,
+          2,
+          9
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "expected": 8
+      }
+    ]
+  },
+  {
+    "id": "running_median_sum_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "running_median_sum",
+    "skill": "heaps",
+    "spec": "Stream the series one value at a time. After each value, take the median of\neverything seen so far and add it to a running total; return that total.\n\nRules:\n- With an odd count the median is the middle value of the sorted prefix.\n- With an even count, take the *lower* of the two middle values, so the answer\n  stays an integer and is fully determined.\n- Return 0 for an empty series.\n- Re-sorting the prefix after every value is the slow answer; keeping the two\n  halves in heaps is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func RunningMedianSum(values []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 60221399,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 99686497
+    },
+    "time_budget_ms": 120,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 7
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "expected": 60
+      },
+      {
+        "input": [
+          4,
+          1,
+          7,
+          2,
+          9
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "expected": 8
+      }
+    ]
+  },
+  {
+    "id": "running_median_sum_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "running_median_sum",
+    "skill": "heaps",
+    "spec": "Stream the series one value at a time. After each value, take the median of\neverything seen so far and add it to a running total; return that total.\n\nRules:\n- With an odd count the median is the middle value of the sorted prefix.\n- With an even count, take the *lower* of the two middle values, so the answer\n  stays an integer and is fully determined.\n- Return 0 for an empty series.\n- Re-sorting the prefix after every value is the slow answer; keeping the two\n  halves in heaps is not.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn running_median_sum(values: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 60221399,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1000,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 99686497
+    },
+    "time_budget_ms": 50,
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          3,
+          2,
+          1
+        ],
+        "expected": 7
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          5
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "expected": 60
+      },
+      {
+        "input": [
+          4,
+          1,
+          7,
+          2,
+          9
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "expected": 8
+      }
+    ]
+  },
+  {
+    "id": "max_xor_pair_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "max_xor_pair",
+    "skill": "bit_manipulation",
+    "spec": "Return the largest value of `values[i] XOR values[j]` over all index pairs with\ni < j, using bitwise exclusive-or.\n\nRules:\n- All values are non-negative.\n- Return 0 when fewer than 2 values are given, and 0 when every value is equal\n  (a value XOR itself is 0).\n- Trying every pair is quadratic and too slow; decide the answer one bit at a\n  time, from the highest bit down, checking whether that bit is achievable.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "def max_xor_pair(values: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 77300281,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1048576,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 1048575
+    },
+    "time_budget_ms": 1100,
+    "test_cases": [
+      {
+        "input": [
+          3,
+          10,
+          5,
+          25,
+          2,
+          8
+        ],
+        "expected": 28
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          8,
+          1,
+          2,
+          12,
+          7,
+          6
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          3,
+          7,
+          15
+        ],
+        "expected": 14
+      }
+    ]
+  },
+  {
+    "id": "max_xor_pair_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "max_xor_pair",
+    "skill": "bit_manipulation",
+    "spec": "Return the largest value of `values[i] XOR values[j]` over all index pairs with\ni < j, using bitwise exclusive-or.\n\nRules:\n- All values are non-negative.\n- Return 0 when fewer than 2 values are given, and 0 when every value is equal\n  (a value XOR itself is 0).\n- Trying every pair is quadratic and too slow; decide the answer one bit at a\n  time, from the highest bit down, checking whether that bit is achievable.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "function maxXorPair(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 77300281,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1048576,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 1048575
+    },
+    "time_budget_ms": 700,
+    "test_cases": [
+      {
+        "input": [
+          3,
+          10,
+          5,
+          25,
+          2,
+          8
+        ],
+        "expected": 28
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          8,
+          1,
+          2,
+          12,
+          7,
+          6
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          3,
+          7,
+          15
+        ],
+        "expected": 14
+      }
+    ]
+  },
+  {
+    "id": "max_xor_pair_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "max_xor_pair",
+    "skill": "bit_manipulation",
+    "spec": "Return the largest value of `values[i] XOR values[j]` over all index pairs with\ni < j, using bitwise exclusive-or.\n\nRules:\n- All values are non-negative.\n- Return 0 when fewer than 2 values are given, and 0 when every value is equal\n  (a value XOR itself is 0).\n- Trying every pair is quadratic and too slow; decide the answer one bit at a\n  time, from the highest bit down, checking whether that bit is achievable.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "func MaxXorPair(values []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 77300281,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1048576,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 1048575
+    },
+    "time_budget_ms": 250,
+    "test_cases": [
+      {
+        "input": [
+          3,
+          10,
+          5,
+          25,
+          2,
+          8
+        ],
+        "expected": 28
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          8,
+          1,
+          2,
+          12,
+          7,
+          6
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          3,
+          7,
+          15
+        ],
+        "expected": 14
+      }
+    ]
+  },
+  {
+    "id": "max_xor_pair_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "max_xor_pair",
+    "skill": "bit_manipulation",
+    "spec": "Return the largest value of `values[i] XOR values[j]` over all index pairs with\ni < j, using bitwise exclusive-or.\n\nRules:\n- All values are non-negative.\n- Return 0 when fewer than 2 values are given, and 0 when every value is equal\n  (a value XOR itself is 0).\n- Trying every pair is quadratic and too slow; decide the answer one bit at a\n  time, from the highest bit down, checking whether that bit is achievable.\n\nThis case is timed. The graders run your function once on a 200,000-element\ninput and compare the elapsed time against a budget; the obvious quadratic\nsolution is correct but far too slow to score. Aim for a single pass (or a\nsort), not nested scans over the input.",
+    "signature": "fn max_xor_pair(values: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "workload": {
+      "seed": 77300281,
+      "arrays": [
+        {
+          "name": "values",
+          "n": 200000,
+          "mod": 1048576,
+          "offset": 0
+        }
+      ],
+      "call_args": [
+        "values"
+      ],
+      "expected": 1048575
+    },
+    "time_budget_ms": 200,
+    "test_cases": [
+      {
+        "input": [
+          3,
+          10,
+          5,
+          25,
+          2,
+          8
+        ],
+        "expected": 28
+      },
+      {
+        "input": [
+          0,
+          0,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          8,
+          1,
+          2,
+          12,
+          7,
+          6
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          1,
+          3,
+          7,
+          15
+        ],
+        "expected": 14
+      }
+    ]
   }
 ]

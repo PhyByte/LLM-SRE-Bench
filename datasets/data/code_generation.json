@@ -3660,5 +3660,5309 @@
         "expected": 100.0
       }
     ]
+  },
+  {
+    "id": "glob_match_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "glob_match",
+    "skill": "pattern_matching",
+    "spec": "Decide whether a glob pattern matches a string, the way a log-file or path\nfilter does.\n\nRules:\n- `*` matches any run of characters, **including an empty one**, so \"a*c\"\n  matches \"ac\" as well as \"abbbc\".\n- `?` matches exactly one character, and never zero, so \"a?c\" does not match\n  \"ac\".\n- Every other character matches only itself. There are no character classes and\n  no escaping \u2014 a `*` in the pattern is always a wildcard.\n- The pattern must match the *whole* string, not a prefix: \"*.log\" does not\n  match \"app.log.gz\".\n- An empty pattern matches only the empty string, and a pattern of only stars\n  matches anything.",
+    "signature": "def glob_match(pattern: str, text: str) -> bool:",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "",
+          "a"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "?",
+          ""
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a*c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "ac"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "abcd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log.gz"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a?c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a?c",
+          "ac"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "**",
+          "anything"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "axb"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "ab"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "abc",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "abc",
+          "abd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxbxxcxx"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxcxxbxx"
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": "glob_match_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "glob_match",
+    "skill": "pattern_matching",
+    "spec": "Decide whether a glob pattern matches a string, the way a log-file or path\nfilter does.\n\nRules:\n- `*` matches any run of characters, **including an empty one**, so \"a*c\"\n  matches \"ac\" as well as \"abbbc\".\n- `?` matches exactly one character, and never zero, so \"a?c\" does not match\n  \"ac\".\n- Every other character matches only itself. There are no character classes and\n  no escaping \u2014 a `*` in the pattern is always a wildcard.\n- The pattern must match the *whole* string, not a prefix: \"*.log\" does not\n  match \"app.log.gz\".\n- An empty pattern matches only the empty string, and a pattern of only stars\n  matches anything.",
+    "signature": "function globMatch(pattern: string, text: string): boolean {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "",
+          "a"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "?",
+          ""
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a*c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "ac"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "abcd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log.gz"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a?c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a?c",
+          "ac"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "**",
+          "anything"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "axb"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "ab"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "abc",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "abc",
+          "abd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxbxxcxx"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxcxxbxx"
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": "glob_match_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "glob_match",
+    "skill": "pattern_matching",
+    "spec": "Decide whether a glob pattern matches a string, the way a log-file or path\nfilter does.\n\nRules:\n- `*` matches any run of characters, **including an empty one**, so \"a*c\"\n  matches \"ac\" as well as \"abbbc\".\n- `?` matches exactly one character, and never zero, so \"a?c\" does not match\n  \"ac\".\n- Every other character matches only itself. There are no character classes and\n  no escaping \u2014 a `*` in the pattern is always a wildcard.\n- The pattern must match the *whole* string, not a prefix: \"*.log\" does not\n  match \"app.log.gz\".\n- An empty pattern matches only the empty string, and a pattern of only stars\n  matches anything.",
+    "signature": "func GlobMatch(pattern string, text string) bool {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "",
+          "a"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "?",
+          ""
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a*c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "ac"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "abcd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log.gz"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a?c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a?c",
+          "ac"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "**",
+          "anything"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "axb"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "ab"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "abc",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "abc",
+          "abd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxbxxcxx"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxcxxbxx"
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": "glob_match_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "glob_match",
+    "skill": "pattern_matching",
+    "spec": "Decide whether a glob pattern matches a string, the way a log-file or path\nfilter does.\n\nRules:\n- `*` matches any run of characters, **including an empty one**, so \"a*c\"\n  matches \"ac\" as well as \"abbbc\".\n- `?` matches exactly one character, and never zero, so \"a?c\" does not match\n  \"ac\".\n- Every other character matches only itself. There are no character classes and\n  no escaping \u2014 a `*` in the pattern is always a wildcard.\n- The pattern must match the *whole* string, not a prefix: \"*.log\" does not\n  match \"app.log.gz\".\n- An empty pattern matches only the empty string, and a pattern of only stars\n  matches anything.",
+    "signature": "fn glob_match(pattern: &str, text: &str) -> bool {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "",
+          "a"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*",
+          ""
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "?",
+          ""
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a*c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "ac"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a*c",
+          "abcd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*.log",
+          "app.log.gz"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a?c",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "a?c",
+          "ac"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "**",
+          "anything"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "axb"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*x*",
+          "ab"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "abc",
+          "abc"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "abc",
+          "abd"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxbxxcxx"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*a*b*c*",
+          "xxaxxcxxbxx"
+        ],
+        "expected": false
+      }
+    ]
+  },
+  {
+    "id": "cron_field_matches_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "cron_field_matches",
+    "skill": "parsing",
+    "spec": "Decide whether a single cron field matches a value \u2014 the check a scheduler runs\nonce per field to see whether a job is due.\n\nA field is a comma-separated list of terms, and the field matches when **any**\nterm matches. Each term is one of:\n\n- `*` \u2014 matches every value.\n- `N` \u2014 matches exactly N.\n- `A-B` \u2014 matches A through B inclusive.\n- any of the above followed by `/S` \u2014 a step. `*/S` matches values that are\n  multiples of S. `A-B/S` matches values in A..B that are S apart *counting\n  from A*, so \"0-30/10\" matches 0, 10, 20 and 30 but not 25.\n\nRules:\n- `value` is zero or greater.\n- The whole field is rejected \u2014 return false \u2014 if any term is malformed: an\n  empty term, a non-numeric bound or step, a step of zero, or a range whose low\n  bound is above its high bound. An empty field is also false.\n- Numbers are plain decimal digits; there are no names, no `L`, no `?`.",
+    "signature": "def cron_field_matches(field: str, value: int) -> bool:",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "*",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          30
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          31
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "5",
+          6
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-6",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-6",
+          7
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-30/10",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-30/10",
+          25
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1,3,5",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1,3,5",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "",
+          0
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a",
+          1
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5-1",
+          3
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*/0",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10-20",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          7
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          8
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0,10-20/5",
+          15
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "cron_field_matches_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "cron_field_matches",
+    "skill": "parsing",
+    "spec": "Decide whether a single cron field matches a value \u2014 the check a scheduler runs\nonce per field to see whether a job is due.\n\nA field is a comma-separated list of terms, and the field matches when **any**\nterm matches. Each term is one of:\n\n- `*` \u2014 matches every value.\n- `N` \u2014 matches exactly N.\n- `A-B` \u2014 matches A through B inclusive.\n- any of the above followed by `/S` \u2014 a step. `*/S` matches values that are\n  multiples of S. `A-B/S` matches values in A..B that are S apart *counting\n  from A*, so \"0-30/10\" matches 0, 10, 20 and 30 but not 25.\n\nRules:\n- `value` is zero or greater.\n- The whole field is rejected \u2014 return false \u2014 if any term is malformed: an\n  empty term, a non-numeric bound or step, a step of zero, or a range whose low\n  bound is above its high bound. An empty field is also false.\n- Numbers are plain decimal digits; there are no names, no `L`, no `?`.",
+    "signature": "function cronFieldMatches(field: string, value: number): boolean {",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "*",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          30
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          31
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "5",
+          6
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-6",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-6",
+          7
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-30/10",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-30/10",
+          25
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1,3,5",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1,3,5",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "",
+          0
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a",
+          1
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5-1",
+          3
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*/0",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10-20",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          7
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          8
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0,10-20/5",
+          15
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "cron_field_matches_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "cron_field_matches",
+    "skill": "parsing",
+    "spec": "Decide whether a single cron field matches a value \u2014 the check a scheduler runs\nonce per field to see whether a job is due.\n\nA field is a comma-separated list of terms, and the field matches when **any**\nterm matches. Each term is one of:\n\n- `*` \u2014 matches every value.\n- `N` \u2014 matches exactly N.\n- `A-B` \u2014 matches A through B inclusive.\n- any of the above followed by `/S` \u2014 a step. `*/S` matches values that are\n  multiples of S. `A-B/S` matches values in A..B that are S apart *counting\n  from A*, so \"0-30/10\" matches 0, 10, 20 and 30 but not 25.\n\nRules:\n- `value` is zero or greater.\n- The whole field is rejected \u2014 return false \u2014 if any term is malformed: an\n  empty term, a non-numeric bound or step, a step of zero, or a range whose low\n  bound is above its high bound. An empty field is also false.\n- Numbers are plain decimal digits; there are no names, no `L`, no `?`.",
+    "signature": "func CronFieldMatches(field string, value int) bool {",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "*",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          30
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          31
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "5",
+          6
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-6",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-6",
+          7
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-30/10",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-30/10",
+          25
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1,3,5",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1,3,5",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "",
+          0
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a",
+          1
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5-1",
+          3
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*/0",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10-20",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          7
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          8
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0,10-20/5",
+          15
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "cron_field_matches_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "cron_field_matches",
+    "skill": "parsing",
+    "spec": "Decide whether a single cron field matches a value \u2014 the check a scheduler runs\nonce per field to see whether a job is due.\n\nA field is a comma-separated list of terms, and the field matches when **any**\nterm matches. Each term is one of:\n\n- `*` \u2014 matches every value.\n- `N` \u2014 matches exactly N.\n- `A-B` \u2014 matches A through B inclusive.\n- any of the above followed by `/S` \u2014 a step. `*/S` matches values that are\n  multiples of S. `A-B/S` matches values in A..B that are S apart *counting\n  from A*, so \"0-30/10\" matches 0, 10, 20 and 30 but not 25.\n\nRules:\n- `value` is zero or greater.\n- The whole field is rejected \u2014 return false \u2014 if any term is malformed: an\n  empty term, a non-numeric bound or step, a step of zero, or a range whose low\n  bound is above its high bound. An empty field is also false.\n- Numbers are plain decimal digits; there are no names, no `L`, no `?`.",
+    "signature": "fn cron_field_matches(field: &str, value: i64) -> bool {",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "*",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          30
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "*/15",
+          31
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5",
+          5
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "5",
+          6
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-6",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-6",
+          7
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0-30/10",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0-30/10",
+          25
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1,3,5",
+          3
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1,3,5",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "",
+          0
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "a",
+          1
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "5-1",
+          3
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "*/0",
+          4
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10-20",
+          20
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          7
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1-10/3",
+          8
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0,10-20/5",
+          15
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "expand_ranges_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "expand_ranges",
+    "skill": "parsing",
+    "spec": "Expand a compact range list such as \"1-3,5,7-9\" back into the integers it\nstands for: [1, 2, 3, 5, 7, 8, 9].\n\nRules:\n- Terms are separated by commas and expand in the order written; nothing is\n  sorted and nothing is de-duplicated.\n- A term is either a single integer or `low-high`, which expands to every\n  integer from low to high inclusive. `5-5` is just [5].\n- Integers may be negative, which makes the separator ambiguous: in \"-3--1\" the\n  separating dash is the one that is neither the first character of the term nor\n  directly preceded by another dash. That term expands to [-3, -2, -1].\n- The whole input is rejected \u2014 return an empty list \u2014 if any term is malformed:\n  an empty term, something that is not an optionally-signed run of digits, or a\n  range whose low bound is above its high bound.\n- The empty string expands to an empty list.",
+    "signature": "def expand_ranges(text: str) -> list[int]:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<int>"
+    },
+    "test_cases": [
+      {
+        "input": "1-3,5,7-9",
+        "expected": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "4",
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": "1-2",
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": "-3--1,4",
+        "expected": [
+          -3,
+          -2,
+          -1,
+          4
+        ]
+      },
+      {
+        "input": "5-5",
+        "expected": [
+          5
+        ]
+      },
+      {
+        "input": "3-1",
+        "expected": []
+      },
+      {
+        "input": "a",
+        "expected": []
+      },
+      {
+        "input": "1,,2",
+        "expected": []
+      },
+      {
+        "input": "1-",
+        "expected": []
+      },
+      {
+        "input": "0",
+        "expected": [
+          0
+        ]
+      },
+      {
+        "input": "10-11,13-14",
+        "expected": [
+          10,
+          11,
+          13,
+          14
+        ]
+      },
+      {
+        "input": "-5",
+        "expected": [
+          -5
+        ]
+      },
+      {
+        "input": "2,2,2",
+        "expected": [
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expand_ranges_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "expand_ranges",
+    "skill": "parsing",
+    "spec": "Expand a compact range list such as \"1-3,5,7-9\" back into the integers it\nstands for: [1, 2, 3, 5, 7, 8, 9].\n\nRules:\n- Terms are separated by commas and expand in the order written; nothing is\n  sorted and nothing is de-duplicated.\n- A term is either a single integer or `low-high`, which expands to every\n  integer from low to high inclusive. `5-5` is just [5].\n- Integers may be negative, which makes the separator ambiguous: in \"-3--1\" the\n  separating dash is the one that is neither the first character of the term nor\n  directly preceded by another dash. That term expands to [-3, -2, -1].\n- The whole input is rejected \u2014 return an empty list \u2014 if any term is malformed:\n  an empty term, something that is not an optionally-signed run of digits, or a\n  range whose low bound is above its high bound.\n- The empty string expands to an empty list.",
+    "signature": "function expandRanges(text: string): number[] {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<int>"
+    },
+    "test_cases": [
+      {
+        "input": "1-3,5,7-9",
+        "expected": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "4",
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": "1-2",
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": "-3--1,4",
+        "expected": [
+          -3,
+          -2,
+          -1,
+          4
+        ]
+      },
+      {
+        "input": "5-5",
+        "expected": [
+          5
+        ]
+      },
+      {
+        "input": "3-1",
+        "expected": []
+      },
+      {
+        "input": "a",
+        "expected": []
+      },
+      {
+        "input": "1,,2",
+        "expected": []
+      },
+      {
+        "input": "1-",
+        "expected": []
+      },
+      {
+        "input": "0",
+        "expected": [
+          0
+        ]
+      },
+      {
+        "input": "10-11,13-14",
+        "expected": [
+          10,
+          11,
+          13,
+          14
+        ]
+      },
+      {
+        "input": "-5",
+        "expected": [
+          -5
+        ]
+      },
+      {
+        "input": "2,2,2",
+        "expected": [
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expand_ranges_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "expand_ranges",
+    "skill": "parsing",
+    "spec": "Expand a compact range list such as \"1-3,5,7-9\" back into the integers it\nstands for: [1, 2, 3, 5, 7, 8, 9].\n\nRules:\n- Terms are separated by commas and expand in the order written; nothing is\n  sorted and nothing is de-duplicated.\n- A term is either a single integer or `low-high`, which expands to every\n  integer from low to high inclusive. `5-5` is just [5].\n- Integers may be negative, which makes the separator ambiguous: in \"-3--1\" the\n  separating dash is the one that is neither the first character of the term nor\n  directly preceded by another dash. That term expands to [-3, -2, -1].\n- The whole input is rejected \u2014 return an empty list \u2014 if any term is malformed:\n  an empty term, something that is not an optionally-signed run of digits, or a\n  range whose low bound is above its high bound.\n- The empty string expands to an empty list.",
+    "signature": "func ExpandRanges(text string) []int {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<int>"
+    },
+    "test_cases": [
+      {
+        "input": "1-3,5,7-9",
+        "expected": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "4",
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": "1-2",
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": "-3--1,4",
+        "expected": [
+          -3,
+          -2,
+          -1,
+          4
+        ]
+      },
+      {
+        "input": "5-5",
+        "expected": [
+          5
+        ]
+      },
+      {
+        "input": "3-1",
+        "expected": []
+      },
+      {
+        "input": "a",
+        "expected": []
+      },
+      {
+        "input": "1,,2",
+        "expected": []
+      },
+      {
+        "input": "1-",
+        "expected": []
+      },
+      {
+        "input": "0",
+        "expected": [
+          0
+        ]
+      },
+      {
+        "input": "10-11,13-14",
+        "expected": [
+          10,
+          11,
+          13,
+          14
+        ]
+      },
+      {
+        "input": "-5",
+        "expected": [
+          -5
+        ]
+      },
+      {
+        "input": "2,2,2",
+        "expected": [
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expand_ranges_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "expand_ranges",
+    "skill": "parsing",
+    "spec": "Expand a compact range list such as \"1-3,5,7-9\" back into the integers it\nstands for: [1, 2, 3, 5, 7, 8, 9].\n\nRules:\n- Terms are separated by commas and expand in the order written; nothing is\n  sorted and nothing is de-duplicated.\n- A term is either a single integer or `low-high`, which expands to every\n  integer from low to high inclusive. `5-5` is just [5].\n- Integers may be negative, which makes the separator ambiguous: in \"-3--1\" the\n  separating dash is the one that is neither the first character of the term nor\n  directly preceded by another dash. That term expands to [-3, -2, -1].\n- The whole input is rejected \u2014 return an empty list \u2014 if any term is malformed:\n  an empty term, something that is not an optionally-signed run of digits, or a\n  range whose low bound is above its high bound.\n- The empty string expands to an empty list.",
+    "signature": "fn expand_ranges(text: &str) -> Vec<i64> {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<int>"
+    },
+    "test_cases": [
+      {
+        "input": "1-3,5,7-9",
+        "expected": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "4",
+        "expected": [
+          4
+        ]
+      },
+      {
+        "input": "1-2",
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": "-3--1,4",
+        "expected": [
+          -3,
+          -2,
+          -1,
+          4
+        ]
+      },
+      {
+        "input": "5-5",
+        "expected": [
+          5
+        ]
+      },
+      {
+        "input": "3-1",
+        "expected": []
+      },
+      {
+        "input": "a",
+        "expected": []
+      },
+      {
+        "input": "1,,2",
+        "expected": []
+      },
+      {
+        "input": "1-",
+        "expected": []
+      },
+      {
+        "input": "0",
+        "expected": [
+          0
+        ]
+      },
+      {
+        "input": "10-11,13-14",
+        "expected": [
+          10,
+          11,
+          13,
+          14
+        ]
+      },
+      {
+        "input": "-5",
+        "expected": [
+          -5
+        ]
+      },
+      {
+        "input": "2,2,2",
+        "expected": [
+          2,
+          2,
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "wrap_text_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "wrap_text",
+    "skill": "text_layout",
+    "spec": "Wrap a line of text into fixed-width lines, the way a terminal report does.\n\nRules:\n- Words are the runs of non-space characters; runs of spaces separate them and\n  are otherwise discarded, so leading, trailing and repeated spaces never reach\n  the output.\n- Fill greedily: keep adding the next word to the current line while the result,\n  counting the single space that joins them, is at most `width`.\n- A word longer than `width` is never broken. It goes on a line of its own,\n  over-long, and wrapping continues after it.\n- Words on a line are joined by exactly one space, and no line has leading or\n  trailing spaces.\n- Text with no words gives no lines, and a width of zero or less gives no lines.",
+    "signature": "def wrap_text(text: str, width: int) -> list[str]:",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "the quick brown fox",
+          10
+        ],
+        "expected": [
+          "the quick",
+          "brown fox"
+        ]
+      },
+      {
+        "input": [
+          "",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "   ",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "supercalifragilistic",
+          5
+        ],
+        "expected": [
+          "supercalifragilistic"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          1
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          3
+        ],
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          11
+        ],
+        "expected": [
+          "hello world"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          10
+        ],
+        "expected": [
+          "hello",
+          "world"
+        ]
+      },
+      {
+        "input": [
+          "one  two",
+          10
+        ],
+        "expected": [
+          "one two"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "alpha beta gamma delta",
+          12
+        ],
+        "expected": [
+          "alpha beta",
+          "gamma delta"
+        ]
+      },
+      {
+        "input": [
+          "  padded  words  here  ",
+          12
+        ],
+        "expected": [
+          "padded words",
+          "here"
+        ]
+      },
+      {
+        "input": [
+          "toolongword short",
+          6
+        ],
+        "expected": [
+          "toolongword",
+          "short"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "wrap_text_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "wrap_text",
+    "skill": "text_layout",
+    "spec": "Wrap a line of text into fixed-width lines, the way a terminal report does.\n\nRules:\n- Words are the runs of non-space characters; runs of spaces separate them and\n  are otherwise discarded, so leading, trailing and repeated spaces never reach\n  the output.\n- Fill greedily: keep adding the next word to the current line while the result,\n  counting the single space that joins them, is at most `width`.\n- A word longer than `width` is never broken. It goes on a line of its own,\n  over-long, and wrapping continues after it.\n- Words on a line are joined by exactly one space, and no line has leading or\n  trailing spaces.\n- Text with no words gives no lines, and a width of zero or less gives no lines.",
+    "signature": "function wrapText(text: string, width: number): string[] {",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "the quick brown fox",
+          10
+        ],
+        "expected": [
+          "the quick",
+          "brown fox"
+        ]
+      },
+      {
+        "input": [
+          "",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "   ",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "supercalifragilistic",
+          5
+        ],
+        "expected": [
+          "supercalifragilistic"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          1
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          3
+        ],
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          11
+        ],
+        "expected": [
+          "hello world"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          10
+        ],
+        "expected": [
+          "hello",
+          "world"
+        ]
+      },
+      {
+        "input": [
+          "one  two",
+          10
+        ],
+        "expected": [
+          "one two"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "alpha beta gamma delta",
+          12
+        ],
+        "expected": [
+          "alpha beta",
+          "gamma delta"
+        ]
+      },
+      {
+        "input": [
+          "  padded  words  here  ",
+          12
+        ],
+        "expected": [
+          "padded words",
+          "here"
+        ]
+      },
+      {
+        "input": [
+          "toolongword short",
+          6
+        ],
+        "expected": [
+          "toolongword",
+          "short"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "wrap_text_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "wrap_text",
+    "skill": "text_layout",
+    "spec": "Wrap a line of text into fixed-width lines, the way a terminal report does.\n\nRules:\n- Words are the runs of non-space characters; runs of spaces separate them and\n  are otherwise discarded, so leading, trailing and repeated spaces never reach\n  the output.\n- Fill greedily: keep adding the next word to the current line while the result,\n  counting the single space that joins them, is at most `width`.\n- A word longer than `width` is never broken. It goes on a line of its own,\n  over-long, and wrapping continues after it.\n- Words on a line are joined by exactly one space, and no line has leading or\n  trailing spaces.\n- Text with no words gives no lines, and a width of zero or less gives no lines.",
+    "signature": "func WrapText(text string, width int) []string {",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "the quick brown fox",
+          10
+        ],
+        "expected": [
+          "the quick",
+          "brown fox"
+        ]
+      },
+      {
+        "input": [
+          "",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "   ",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "supercalifragilistic",
+          5
+        ],
+        "expected": [
+          "supercalifragilistic"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          1
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          3
+        ],
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          11
+        ],
+        "expected": [
+          "hello world"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          10
+        ],
+        "expected": [
+          "hello",
+          "world"
+        ]
+      },
+      {
+        "input": [
+          "one  two",
+          10
+        ],
+        "expected": [
+          "one two"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "alpha beta gamma delta",
+          12
+        ],
+        "expected": [
+          "alpha beta",
+          "gamma delta"
+        ]
+      },
+      {
+        "input": [
+          "  padded  words  here  ",
+          12
+        ],
+        "expected": [
+          "padded words",
+          "here"
+        ]
+      },
+      {
+        "input": [
+          "toolongword short",
+          6
+        ],
+        "expected": [
+          "toolongword",
+          "short"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "wrap_text_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "wrap_text",
+    "skill": "text_layout",
+    "spec": "Wrap a line of text into fixed-width lines, the way a terminal report does.\n\nRules:\n- Words are the runs of non-space characters; runs of spaces separate them and\n  are otherwise discarded, so leading, trailing and repeated spaces never reach\n  the output.\n- Fill greedily: keep adding the next word to the current line while the result,\n  counting the single space that joins them, is at most `width`.\n- A word longer than `width` is never broken. It goes on a line of its own,\n  over-long, and wrapping continues after it.\n- Words on a line are joined by exactly one space, and no line has leading or\n  trailing spaces.\n- Text with no words gives no lines, and a width of zero or less gives no lines.",
+    "signature": "fn wrap_text(text: &str, width: i64) -> Vec<String> {",
+    "io": {
+      "args": [
+        "str",
+        "int"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "the quick brown fox",
+          10
+        ],
+        "expected": [
+          "the quick",
+          "brown fox"
+        ]
+      },
+      {
+        "input": [
+          "",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "   ",
+          10
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "supercalifragilistic",
+          5
+        ],
+        "expected": [
+          "supercalifragilistic"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          1
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "a b c",
+          3
+        ],
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          11
+        ],
+        "expected": [
+          "hello world"
+        ]
+      },
+      {
+        "input": [
+          "hello world",
+          10
+        ],
+        "expected": [
+          "hello",
+          "world"
+        ]
+      },
+      {
+        "input": [
+          "one  two",
+          10
+        ],
+        "expected": [
+          "one two"
+        ]
+      },
+      {
+        "input": [
+          "x",
+          0
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          "alpha beta gamma delta",
+          12
+        ],
+        "expected": [
+          "alpha beta",
+          "gamma delta"
+        ]
+      },
+      {
+        "input": [
+          "  padded  words  here  ",
+          12
+        ],
+        "expected": [
+          "padded words",
+          "here"
+        ]
+      },
+      {
+        "input": [
+          "toolongword short",
+          6
+        ],
+        "expected": [
+          "toolongword",
+          "short"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "topological_order_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "topological_order",
+    "skill": "graphs",
+    "spec": "Order a set of tasks so every dependency runs before the task that needs it \u2014\nthe order a deploy pipeline would execute its stages in.\n\n- `nodes` holds the task names, which are distinct but in no particular order.\n- `before` and `after` are parallel arrays describing edges: before[i] must come\n  out ahead of after[i].\n- Whenever more than one task is ready at the same time, take the\n  **alphabetically smallest** one, so the answer is unique.\n- An edge naming a task that is not in `nodes` is ignored. A repeated edge counts\n  once.\n- If the constraints cannot all be satisfied \u2014 any cycle, including a task that\n  depends on itself \u2014 return an empty list.\n- No tasks gives an empty list.",
+    "signature": "def topological_order(nodes: list[str], before: list[str], after: list[str]) -> list[str]:",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<str>",
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "c",
+            "b",
+            "a"
+          ],
+          [],
+          []
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [],
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a"
+          ],
+          [
+            "a"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "x",
+            "y",
+            "z"
+          ],
+          [
+            "x",
+            "x"
+          ],
+          [
+            "y",
+            "z"
+          ]
+        ],
+        "expected": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "z"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "build",
+            "test",
+            "deploy"
+          ],
+          [
+            "build",
+            "test"
+          ],
+          [
+            "test",
+            "deploy"
+          ]
+        ],
+        "expected": [
+          "build",
+          "test",
+          "deploy"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "b"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "topological_order_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "topological_order",
+    "skill": "graphs",
+    "spec": "Order a set of tasks so every dependency runs before the task that needs it \u2014\nthe order a deploy pipeline would execute its stages in.\n\n- `nodes` holds the task names, which are distinct but in no particular order.\n- `before` and `after` are parallel arrays describing edges: before[i] must come\n  out ahead of after[i].\n- Whenever more than one task is ready at the same time, take the\n  **alphabetically smallest** one, so the answer is unique.\n- An edge naming a task that is not in `nodes` is ignored. A repeated edge counts\n  once.\n- If the constraints cannot all be satisfied \u2014 any cycle, including a task that\n  depends on itself \u2014 return an empty list.\n- No tasks gives an empty list.",
+    "signature": "function topologicalOrder(nodes: string[], before: string[], after: string[]): string[] {",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<str>",
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "c",
+            "b",
+            "a"
+          ],
+          [],
+          []
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [],
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a"
+          ],
+          [
+            "a"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "x",
+            "y",
+            "z"
+          ],
+          [
+            "x",
+            "x"
+          ],
+          [
+            "y",
+            "z"
+          ]
+        ],
+        "expected": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "z"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "build",
+            "test",
+            "deploy"
+          ],
+          [
+            "build",
+            "test"
+          ],
+          [
+            "test",
+            "deploy"
+          ]
+        ],
+        "expected": [
+          "build",
+          "test",
+          "deploy"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "b"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "topological_order_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "topological_order",
+    "skill": "graphs",
+    "spec": "Order a set of tasks so every dependency runs before the task that needs it \u2014\nthe order a deploy pipeline would execute its stages in.\n\n- `nodes` holds the task names, which are distinct but in no particular order.\n- `before` and `after` are parallel arrays describing edges: before[i] must come\n  out ahead of after[i].\n- Whenever more than one task is ready at the same time, take the\n  **alphabetically smallest** one, so the answer is unique.\n- An edge naming a task that is not in `nodes` is ignored. A repeated edge counts\n  once.\n- If the constraints cannot all be satisfied \u2014 any cycle, including a task that\n  depends on itself \u2014 return an empty list.\n- No tasks gives an empty list.",
+    "signature": "func TopologicalOrder(nodes []string, before []string, after []string) []string {",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<str>",
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "c",
+            "b",
+            "a"
+          ],
+          [],
+          []
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [],
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a"
+          ],
+          [
+            "a"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "x",
+            "y",
+            "z"
+          ],
+          [
+            "x",
+            "x"
+          ],
+          [
+            "y",
+            "z"
+          ]
+        ],
+        "expected": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "z"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "build",
+            "test",
+            "deploy"
+          ],
+          [
+            "build",
+            "test"
+          ],
+          [
+            "test",
+            "deploy"
+          ]
+        ],
+        "expected": [
+          "build",
+          "test",
+          "deploy"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "b"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "topological_order_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "topological_order",
+    "skill": "graphs",
+    "spec": "Order a set of tasks so every dependency runs before the task that needs it \u2014\nthe order a deploy pipeline would execute its stages in.\n\n- `nodes` holds the task names, which are distinct but in no particular order.\n- `before` and `after` are parallel arrays describing edges: before[i] must come\n  out ahead of after[i].\n- Whenever more than one task is ready at the same time, take the\n  **alphabetically smallest** one, so the answer is unique.\n- An edge naming a task that is not in `nodes` is ignored. A repeated edge counts\n  once.\n- If the constraints cannot all be satisfied \u2014 any cycle, including a task that\n  depends on itself \u2014 return an empty list.\n- No tasks gives an empty list.",
+    "signature": "fn topological_order(nodes: &[&str], before: &[&str], after: &[&str]) -> Vec<String> {",
+    "io": {
+      "args": [
+        "list<str>",
+        "list<str>",
+        "list<str>"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [
+            "c",
+            "b",
+            "a"
+          ],
+          [],
+          []
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": [
+          [],
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a"
+          ],
+          [
+            "a"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "c"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "b",
+          "c",
+          "a"
+        ]
+      },
+      {
+        "input": [
+          [
+            "x",
+            "y",
+            "z"
+          ],
+          [
+            "x",
+            "x"
+          ],
+          [
+            "y",
+            "z"
+          ]
+        ],
+        "expected": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "z"
+          ],
+          [
+            "a"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "input": [
+          [
+            "build",
+            "test",
+            "deploy"
+          ],
+          [
+            "build",
+            "test"
+          ],
+          [
+            "test",
+            "deploy"
+          ]
+        ],
+        "expected": [
+          "build",
+          "test",
+          "deploy"
+        ]
+      },
+      {
+        "input": [
+          [
+            "a",
+            "b",
+            "c"
+          ],
+          [
+            "a",
+            "a"
+          ],
+          [
+            "b",
+            "b"
+          ]
+        ],
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "evaluate_expression_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "evaluate_expression",
+    "skill": "recursive_descent",
+    "spec": "Evaluate a small arithmetic expression and return the result rendered as a\ndecimal string.\n\nGrammar and rules:\n- Operands are runs of decimal digits, so every literal is zero or positive.\n  There is no unary minus; negative results only arise from subtraction.\n- The operators are `+`, `-`, `*` and `/`. Multiplication and division bind\n  tighter than addition and subtraction, and operators of equal precedence\n  associate to the left, so \"8-3-2\" is 3 and \"8/4*2\" is 4.\n- Parentheses group and may nest.\n- Spaces may appear anywhere between tokens and are ignored.\n- Division truncates **toward zero**, not downward, so \"(0-7)/2\" is -3 and not\n  -4.\n- Return the empty string for anything that is not a well-formed expression: an\n  unexpected or unknown character, unbalanced parentheses, a missing operand,\n  trailing tokens, division by zero, or empty input.",
+    "signature": "def evaluate_expression(text: str) -> str:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "1+2",
+        "expected": "3"
+      },
+      {
+        "input": "2+3*4",
+        "expected": "14"
+      },
+      {
+        "input": "(2+3)*4",
+        "expected": "20"
+      },
+      {
+        "input": "8-3-2",
+        "expected": "3"
+      },
+      {
+        "input": "8/4*2",
+        "expected": "4"
+      },
+      {
+        "input": "(0-7)/2",
+        "expected": "-3"
+      },
+      {
+        "input": "7/2",
+        "expected": "3"
+      },
+      {
+        "input": "10 / 3",
+        "expected": "3"
+      },
+      {
+        "input": "  1 +  2 ",
+        "expected": "3"
+      },
+      {
+        "input": "1/0",
+        "expected": ""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "(1+2",
+        "expected": ""
+      },
+      {
+        "input": "1+",
+        "expected": ""
+      },
+      {
+        "input": "1 2",
+        "expected": ""
+      },
+      {
+        "input": "a+1",
+        "expected": ""
+      },
+      {
+        "input": "((3))",
+        "expected": "3"
+      },
+      {
+        "input": "100*100",
+        "expected": "10000"
+      },
+      {
+        "input": "2*(3+4)-5",
+        "expected": "9"
+      },
+      {
+        "input": "0-10",
+        "expected": "-10"
+      }
+    ]
+  },
+  {
+    "id": "evaluate_expression_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "evaluate_expression",
+    "skill": "recursive_descent",
+    "spec": "Evaluate a small arithmetic expression and return the result rendered as a\ndecimal string.\n\nGrammar and rules:\n- Operands are runs of decimal digits, so every literal is zero or positive.\n  There is no unary minus; negative results only arise from subtraction.\n- The operators are `+`, `-`, `*` and `/`. Multiplication and division bind\n  tighter than addition and subtraction, and operators of equal precedence\n  associate to the left, so \"8-3-2\" is 3 and \"8/4*2\" is 4.\n- Parentheses group and may nest.\n- Spaces may appear anywhere between tokens and are ignored.\n- Division truncates **toward zero**, not downward, so \"(0-7)/2\" is -3 and not\n  -4.\n- Return the empty string for anything that is not a well-formed expression: an\n  unexpected or unknown character, unbalanced parentheses, a missing operand,\n  trailing tokens, division by zero, or empty input.",
+    "signature": "function evaluateExpression(text: string): string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "1+2",
+        "expected": "3"
+      },
+      {
+        "input": "2+3*4",
+        "expected": "14"
+      },
+      {
+        "input": "(2+3)*4",
+        "expected": "20"
+      },
+      {
+        "input": "8-3-2",
+        "expected": "3"
+      },
+      {
+        "input": "8/4*2",
+        "expected": "4"
+      },
+      {
+        "input": "(0-7)/2",
+        "expected": "-3"
+      },
+      {
+        "input": "7/2",
+        "expected": "3"
+      },
+      {
+        "input": "10 / 3",
+        "expected": "3"
+      },
+      {
+        "input": "  1 +  2 ",
+        "expected": "3"
+      },
+      {
+        "input": "1/0",
+        "expected": ""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "(1+2",
+        "expected": ""
+      },
+      {
+        "input": "1+",
+        "expected": ""
+      },
+      {
+        "input": "1 2",
+        "expected": ""
+      },
+      {
+        "input": "a+1",
+        "expected": ""
+      },
+      {
+        "input": "((3))",
+        "expected": "3"
+      },
+      {
+        "input": "100*100",
+        "expected": "10000"
+      },
+      {
+        "input": "2*(3+4)-5",
+        "expected": "9"
+      },
+      {
+        "input": "0-10",
+        "expected": "-10"
+      }
+    ]
+  },
+  {
+    "id": "evaluate_expression_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "evaluate_expression",
+    "skill": "recursive_descent",
+    "spec": "Evaluate a small arithmetic expression and return the result rendered as a\ndecimal string.\n\nGrammar and rules:\n- Operands are runs of decimal digits, so every literal is zero or positive.\n  There is no unary minus; negative results only arise from subtraction.\n- The operators are `+`, `-`, `*` and `/`. Multiplication and division bind\n  tighter than addition and subtraction, and operators of equal precedence\n  associate to the left, so \"8-3-2\" is 3 and \"8/4*2\" is 4.\n- Parentheses group and may nest.\n- Spaces may appear anywhere between tokens and are ignored.\n- Division truncates **toward zero**, not downward, so \"(0-7)/2\" is -3 and not\n  -4.\n- Return the empty string for anything that is not a well-formed expression: an\n  unexpected or unknown character, unbalanced parentheses, a missing operand,\n  trailing tokens, division by zero, or empty input.",
+    "signature": "func EvaluateExpression(text string) string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "1+2",
+        "expected": "3"
+      },
+      {
+        "input": "2+3*4",
+        "expected": "14"
+      },
+      {
+        "input": "(2+3)*4",
+        "expected": "20"
+      },
+      {
+        "input": "8-3-2",
+        "expected": "3"
+      },
+      {
+        "input": "8/4*2",
+        "expected": "4"
+      },
+      {
+        "input": "(0-7)/2",
+        "expected": "-3"
+      },
+      {
+        "input": "7/2",
+        "expected": "3"
+      },
+      {
+        "input": "10 / 3",
+        "expected": "3"
+      },
+      {
+        "input": "  1 +  2 ",
+        "expected": "3"
+      },
+      {
+        "input": "1/0",
+        "expected": ""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "(1+2",
+        "expected": ""
+      },
+      {
+        "input": "1+",
+        "expected": ""
+      },
+      {
+        "input": "1 2",
+        "expected": ""
+      },
+      {
+        "input": "a+1",
+        "expected": ""
+      },
+      {
+        "input": "((3))",
+        "expected": "3"
+      },
+      {
+        "input": "100*100",
+        "expected": "10000"
+      },
+      {
+        "input": "2*(3+4)-5",
+        "expected": "9"
+      },
+      {
+        "input": "0-10",
+        "expected": "-10"
+      }
+    ]
+  },
+  {
+    "id": "evaluate_expression_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "evaluate_expression",
+    "skill": "recursive_descent",
+    "spec": "Evaluate a small arithmetic expression and return the result rendered as a\ndecimal string.\n\nGrammar and rules:\n- Operands are runs of decimal digits, so every literal is zero or positive.\n  There is no unary minus; negative results only arise from subtraction.\n- The operators are `+`, `-`, `*` and `/`. Multiplication and division bind\n  tighter than addition and subtraction, and operators of equal precedence\n  associate to the left, so \"8-3-2\" is 3 and \"8/4*2\" is 4.\n- Parentheses group and may nest.\n- Spaces may appear anywhere between tokens and are ignored.\n- Division truncates **toward zero**, not downward, so \"(0-7)/2\" is -3 and not\n  -4.\n- Return the empty string for anything that is not a well-formed expression: an\n  unexpected or unknown character, unbalanced parentheses, a missing operand,\n  trailing tokens, division by zero, or empty input.",
+    "signature": "fn evaluate_expression(text: &str) -> String {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "1+2",
+        "expected": "3"
+      },
+      {
+        "input": "2+3*4",
+        "expected": "14"
+      },
+      {
+        "input": "(2+3)*4",
+        "expected": "20"
+      },
+      {
+        "input": "8-3-2",
+        "expected": "3"
+      },
+      {
+        "input": "8/4*2",
+        "expected": "4"
+      },
+      {
+        "input": "(0-7)/2",
+        "expected": "-3"
+      },
+      {
+        "input": "7/2",
+        "expected": "3"
+      },
+      {
+        "input": "10 / 3",
+        "expected": "3"
+      },
+      {
+        "input": "  1 +  2 ",
+        "expected": "3"
+      },
+      {
+        "input": "1/0",
+        "expected": ""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "(1+2",
+        "expected": ""
+      },
+      {
+        "input": "1+",
+        "expected": ""
+      },
+      {
+        "input": "1 2",
+        "expected": ""
+      },
+      {
+        "input": "a+1",
+        "expected": ""
+      },
+      {
+        "input": "((3))",
+        "expected": "3"
+      },
+      {
+        "input": "100*100",
+        "expected": "10000"
+      },
+      {
+        "input": "2*(3+4)-5",
+        "expected": "9"
+      },
+      {
+        "input": "0-10",
+        "expected": "-10"
+      }
+    ]
+  },
+  {
+    "id": "route_params_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "route_params",
+    "skill": "routing",
+    "spec": "Match a request path against a route pattern and report the captured\nparameters, the way an HTTP router does.\n\n- Both strings are split on \"/\" into segments, and the two must have the same\n  number of segments \u2014 no wildcards spanning several segments. That makes\n  leading and trailing slashes significant: \"/a\" is two segments, \"\" and \"a\".\n- A pattern segment starting with \":\" and at least one character long is a\n  parameter; it captures whatever segment sits in that position. Any other\n  pattern segment must equal the path segment exactly.\n- A parameter never captures an empty segment: that is not a match.\n- On a match, return the captures as \"name=value\" joined by \";\" in the order the\n  parameters appear in the pattern.\n- Return exactly \"no-params\" for a pattern that matches but captures nothing,\n  and exactly \"no-match\" when the path does not match.",
+    "signature": "def route_params(pattern: str, path: str) -> str:",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "/users/:id",
+          "/users/42"
+        ],
+        "expected": "id=42"
+      },
+      {
+        "input": [
+          "/users/:id/posts/:postId",
+          "/users/7/posts/9"
+        ],
+        "expected": "id=7;postId=9"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/42/extra"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/health",
+          "/health"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/health",
+          "/healthz"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/accounts/42"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/",
+          "/"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/c"
+        ],
+        "expected": "b=x"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/d"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          ":only",
+          "value"
+        ],
+        "expected": "only=value"
+      },
+      {
+        "input": [
+          "/files/:name",
+          "/files/report.pdf"
+        ],
+        "expected": "name=report.pdf"
+      }
+    ]
+  },
+  {
+    "id": "route_params_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "route_params",
+    "skill": "routing",
+    "spec": "Match a request path against a route pattern and report the captured\nparameters, the way an HTTP router does.\n\n- Both strings are split on \"/\" into segments, and the two must have the same\n  number of segments \u2014 no wildcards spanning several segments. That makes\n  leading and trailing slashes significant: \"/a\" is two segments, \"\" and \"a\".\n- A pattern segment starting with \":\" and at least one character long is a\n  parameter; it captures whatever segment sits in that position. Any other\n  pattern segment must equal the path segment exactly.\n- A parameter never captures an empty segment: that is not a match.\n- On a match, return the captures as \"name=value\" joined by \";\" in the order the\n  parameters appear in the pattern.\n- Return exactly \"no-params\" for a pattern that matches but captures nothing,\n  and exactly \"no-match\" when the path does not match.",
+    "signature": "function routeParams(pattern: string, path: string): string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "/users/:id",
+          "/users/42"
+        ],
+        "expected": "id=42"
+      },
+      {
+        "input": [
+          "/users/:id/posts/:postId",
+          "/users/7/posts/9"
+        ],
+        "expected": "id=7;postId=9"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/42/extra"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/health",
+          "/health"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/health",
+          "/healthz"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/accounts/42"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/",
+          "/"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/c"
+        ],
+        "expected": "b=x"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/d"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          ":only",
+          "value"
+        ],
+        "expected": "only=value"
+      },
+      {
+        "input": [
+          "/files/:name",
+          "/files/report.pdf"
+        ],
+        "expected": "name=report.pdf"
+      }
+    ]
+  },
+  {
+    "id": "route_params_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "route_params",
+    "skill": "routing",
+    "spec": "Match a request path against a route pattern and report the captured\nparameters, the way an HTTP router does.\n\n- Both strings are split on \"/\" into segments, and the two must have the same\n  number of segments \u2014 no wildcards spanning several segments. That makes\n  leading and trailing slashes significant: \"/a\" is two segments, \"\" and \"a\".\n- A pattern segment starting with \":\" and at least one character long is a\n  parameter; it captures whatever segment sits in that position. Any other\n  pattern segment must equal the path segment exactly.\n- A parameter never captures an empty segment: that is not a match.\n- On a match, return the captures as \"name=value\" joined by \";\" in the order the\n  parameters appear in the pattern.\n- Return exactly \"no-params\" for a pattern that matches but captures nothing,\n  and exactly \"no-match\" when the path does not match.",
+    "signature": "func RouteParams(pattern string, path string) string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "/users/:id",
+          "/users/42"
+        ],
+        "expected": "id=42"
+      },
+      {
+        "input": [
+          "/users/:id/posts/:postId",
+          "/users/7/posts/9"
+        ],
+        "expected": "id=7;postId=9"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/42/extra"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/health",
+          "/health"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/health",
+          "/healthz"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/accounts/42"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/",
+          "/"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/c"
+        ],
+        "expected": "b=x"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/d"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          ":only",
+          "value"
+        ],
+        "expected": "only=value"
+      },
+      {
+        "input": [
+          "/files/:name",
+          "/files/report.pdf"
+        ],
+        "expected": "name=report.pdf"
+      }
+    ]
+  },
+  {
+    "id": "route_params_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "route_params",
+    "skill": "routing",
+    "spec": "Match a request path against a route pattern and report the captured\nparameters, the way an HTTP router does.\n\n- Both strings are split on \"/\" into segments, and the two must have the same\n  number of segments \u2014 no wildcards spanning several segments. That makes\n  leading and trailing slashes significant: \"/a\" is two segments, \"\" and \"a\".\n- A pattern segment starting with \":\" and at least one character long is a\n  parameter; it captures whatever segment sits in that position. Any other\n  pattern segment must equal the path segment exactly.\n- A parameter never captures an empty segment: that is not a match.\n- On a match, return the captures as \"name=value\" joined by \";\" in the order the\n  parameters appear in the pattern.\n- Return exactly \"no-params\" for a pattern that matches but captures nothing,\n  and exactly \"no-match\" when the path does not match.",
+    "signature": "fn route_params(pattern: &str, path: &str) -> String {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "/users/:id",
+          "/users/42"
+        ],
+        "expected": "id=42"
+      },
+      {
+        "input": [
+          "/users/:id/posts/:postId",
+          "/users/7/posts/9"
+        ],
+        "expected": "id=7;postId=9"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/users/42/extra"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/health",
+          "/health"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/health",
+          "/healthz"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "/users/:id",
+          "/accounts/42"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          "",
+          ""
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/",
+          "/"
+        ],
+        "expected": "no-params"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/c"
+        ],
+        "expected": "b=x"
+      },
+      {
+        "input": [
+          "/a/:b/c",
+          "/a/x/d"
+        ],
+        "expected": "no-match"
+      },
+      {
+        "input": [
+          ":only",
+          "value"
+        ],
+        "expected": "only=value"
+      },
+      {
+        "input": [
+          "/files/:name",
+          "/files/report.pdf"
+        ],
+        "expected": "name=report.pdf"
+      }
+    ]
+  },
+  {
+    "id": "semver_satisfies_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "semver_satisfies",
+    "skill": "versioning",
+    "spec": "Decide whether a version satisfies a dependency constraint, using npm's rules.\n\nA version is exactly three runs of digits separated by dots. Versions compare\ncomponent by component, major first. There are no prerelease suffixes here.\n\nConstraints:\n- `*` \u2014 anything.\n- `1.2.3` \u2014 exactly that version.\n- `>=`, `>`, `<=`, `<` followed by a version \u2014 the obvious comparison.\n- `^V` \u2014 at least V, up to but excluding the next version that changes the\n  leftmost **non-zero** component. So `^1.2.3` allows up to but not including\n  2.0.0; `^0.2.3` allows up to but not including 0.3.0; and `^0.0.3` allows only\n  0.0.3 itself, since the next 0.0.4 is excluded.\n- `~V` \u2014 at least V, up to but excluding the next minor: `~1.2.3` allows up to\n  but not including 1.3.0, and `~0.2.3` up to but not including 0.3.0.\n\nReturn false when the version or the constraint's version is not three\ndot-separated runs of digits, and false for an unrecognised constraint.",
+    "signature": "def semver_satisfies(version: str, constraint: str) -> bool:",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "*"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.4",
+          "1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.2",
+          ">=1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.9.0",
+          "^1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "2.0.0",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.2",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "^0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.3.0",
+          "^0.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.0.3",
+          "^0.0.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.0.4",
+          "^0.0.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.9",
+          "~1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.3.0",
+          "~1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "~0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2",
+          "1.2.0"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "!1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0",
+          ">=9.0.0"
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "semver_satisfies_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "semver_satisfies",
+    "skill": "versioning",
+    "spec": "Decide whether a version satisfies a dependency constraint, using npm's rules.\n\nA version is exactly three runs of digits separated by dots. Versions compare\ncomponent by component, major first. There are no prerelease suffixes here.\n\nConstraints:\n- `*` \u2014 anything.\n- `1.2.3` \u2014 exactly that version.\n- `>=`, `>`, `<=`, `<` followed by a version \u2014 the obvious comparison.\n- `^V` \u2014 at least V, up to but excluding the next version that changes the\n  leftmost **non-zero** component. So `^1.2.3` allows up to but not including\n  2.0.0; `^0.2.3` allows up to but not including 0.3.0; and `^0.0.3` allows only\n  0.0.3 itself, since the next 0.0.4 is excluded.\n- `~V` \u2014 at least V, up to but excluding the next minor: `~1.2.3` allows up to\n  but not including 1.3.0, and `~0.2.3` up to but not including 0.3.0.\n\nReturn false when the version or the constraint's version is not three\ndot-separated runs of digits, and false for an unrecognised constraint.",
+    "signature": "function semverSatisfies(version: string, constraint: string): boolean {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "*"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.4",
+          "1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.2",
+          ">=1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.9.0",
+          "^1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "2.0.0",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.2",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "^0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.3.0",
+          "^0.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.0.3",
+          "^0.0.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.0.4",
+          "^0.0.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.9",
+          "~1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.3.0",
+          "~1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "~0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2",
+          "1.2.0"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "!1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0",
+          ">=9.0.0"
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "semver_satisfies_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "semver_satisfies",
+    "skill": "versioning",
+    "spec": "Decide whether a version satisfies a dependency constraint, using npm's rules.\n\nA version is exactly three runs of digits separated by dots. Versions compare\ncomponent by component, major first. There are no prerelease suffixes here.\n\nConstraints:\n- `*` \u2014 anything.\n- `1.2.3` \u2014 exactly that version.\n- `>=`, `>`, `<=`, `<` followed by a version \u2014 the obvious comparison.\n- `^V` \u2014 at least V, up to but excluding the next version that changes the\n  leftmost **non-zero** component. So `^1.2.3` allows up to but not including\n  2.0.0; `^0.2.3` allows up to but not including 0.3.0; and `^0.0.3` allows only\n  0.0.3 itself, since the next 0.0.4 is excluded.\n- `~V` \u2014 at least V, up to but excluding the next minor: `~1.2.3` allows up to\n  but not including 1.3.0, and `~0.2.3` up to but not including 0.3.0.\n\nReturn false when the version or the constraint's version is not three\ndot-separated runs of digits, and false for an unrecognised constraint.",
+    "signature": "func SemverSatisfies(version string, constraint string) bool {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "*"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.4",
+          "1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.2",
+          ">=1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.9.0",
+          "^1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "2.0.0",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.2",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "^0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.3.0",
+          "^0.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.0.3",
+          "^0.0.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.0.4",
+          "^0.0.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.9",
+          "~1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.3.0",
+          "~1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "~0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2",
+          "1.2.0"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "!1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0",
+          ">=9.0.0"
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "semver_satisfies_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "semver_satisfies",
+    "skill": "versioning",
+    "spec": "Decide whether a version satisfies a dependency constraint, using npm's rules.\n\nA version is exactly three runs of digits separated by dots. Versions compare\ncomponent by component, major first. There are no prerelease suffixes here.\n\nConstraints:\n- `*` \u2014 anything.\n- `1.2.3` \u2014 exactly that version.\n- `>=`, `>`, `<=`, `<` followed by a version \u2014 the obvious comparison.\n- `^V` \u2014 at least V, up to but excluding the next version that changes the\n  leftmost **non-zero** component. So `^1.2.3` allows up to but not including\n  2.0.0; `^0.2.3` allows up to but not including 0.3.0; and `^0.0.3` allows only\n  0.0.3 itself, since the next 0.0.4 is excluded.\n- `~V` \u2014 at least V, up to but excluding the next minor: `~1.2.3` allows up to\n  but not including 1.3.0, and `~0.2.3` up to but not including 0.3.0.\n\nReturn false when the version or the constraint's version is not three\ndot-separated runs of digits, and false for an unrecognised constraint.",
+    "signature": "fn semver_satisfies(version: &str, constraint: &str) -> bool {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "*"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.4",
+          "1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.2",
+          ">=1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          ">1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<=1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2.3",
+          "<1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.9.0",
+          "^1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "2.0.0",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.2",
+          "^1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "^0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.3.0",
+          "^0.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.0.3",
+          "^0.0.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "0.0.4",
+          "^0.0.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.9",
+          "~1.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.3.0",
+          "~1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "0.2.9",
+          "~0.2.3"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "1.2",
+          "1.2.0"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "1.2"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3",
+          "!1.2.3"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0",
+          ">=9.0.0"
+        ],
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "tokenize_command_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "tokenize_command",
+    "skill": "lexing",
+    "spec": "Split a command line into arguments the way a shell does, handling quotes and\nescapes.\n\nRules:\n- Runs of spaces separate arguments and are otherwise discarded.\n- A double quote toggles quoting. Inside quotes, spaces are ordinary characters.\n  The quote characters themselves never appear in the output, so `a\"b\"c` is the\n  single argument `abc`.\n- A backslash escapes the next character anywhere in the input, inside quotes or\n  out, and the backslash itself is dropped: `a\\ b` is one argument `a b`, and\n  `\\\"` is a literal quote.\n- An empty pair of quotes still produces an argument \u2014 the empty string \u2014 so `\"\"`\n  yields one empty argument, and `a\"\"b` yields `ab`.\n- Return an empty list for input that is only spaces or empty.\n- Return an empty list for malformed input: a quote that is never closed, or a\n  backslash at the very end with nothing to escape.",
+    "signature": "def tokenize_command(text: str) -> list[str]:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": "a b c",
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": "\"a b\" c",
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "   ",
+        "expected": []
+      },
+      {
+        "input": "a\\ b",
+        "expected": [
+          "a b"
+        ]
+      },
+      {
+        "input": "\"unterminated",
+        "expected": []
+      },
+      {
+        "input": "a\\",
+        "expected": []
+      },
+      {
+        "input": "\"\"",
+        "expected": [
+          ""
+        ]
+      },
+      {
+        "input": "a\"b\"c",
+        "expected": [
+          "abc"
+        ]
+      },
+      {
+        "input": "  spaced   out  ",
+        "expected": [
+          "spaced",
+          "out"
+        ]
+      },
+      {
+        "input": "say \\\"hi\\\"",
+        "expected": [
+          "say",
+          "\"hi\""
+        ]
+      },
+      {
+        "input": "a\"\"b",
+        "expected": [
+          "ab"
+        ]
+      },
+      {
+        "input": "echo \"hello world\" > out.txt",
+        "expected": [
+          "echo",
+          "hello world",
+          ">",
+          "out.txt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tokenize_command_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "tokenize_command",
+    "skill": "lexing",
+    "spec": "Split a command line into arguments the way a shell does, handling quotes and\nescapes.\n\nRules:\n- Runs of spaces separate arguments and are otherwise discarded.\n- A double quote toggles quoting. Inside quotes, spaces are ordinary characters.\n  The quote characters themselves never appear in the output, so `a\"b\"c` is the\n  single argument `abc`.\n- A backslash escapes the next character anywhere in the input, inside quotes or\n  out, and the backslash itself is dropped: `a\\ b` is one argument `a b`, and\n  `\\\"` is a literal quote.\n- An empty pair of quotes still produces an argument \u2014 the empty string \u2014 so `\"\"`\n  yields one empty argument, and `a\"\"b` yields `ab`.\n- Return an empty list for input that is only spaces or empty.\n- Return an empty list for malformed input: a quote that is never closed, or a\n  backslash at the very end with nothing to escape.",
+    "signature": "function tokenizeCommand(text: string): string[] {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": "a b c",
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": "\"a b\" c",
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "   ",
+        "expected": []
+      },
+      {
+        "input": "a\\ b",
+        "expected": [
+          "a b"
+        ]
+      },
+      {
+        "input": "\"unterminated",
+        "expected": []
+      },
+      {
+        "input": "a\\",
+        "expected": []
+      },
+      {
+        "input": "\"\"",
+        "expected": [
+          ""
+        ]
+      },
+      {
+        "input": "a\"b\"c",
+        "expected": [
+          "abc"
+        ]
+      },
+      {
+        "input": "  spaced   out  ",
+        "expected": [
+          "spaced",
+          "out"
+        ]
+      },
+      {
+        "input": "say \\\"hi\\\"",
+        "expected": [
+          "say",
+          "\"hi\""
+        ]
+      },
+      {
+        "input": "a\"\"b",
+        "expected": [
+          "ab"
+        ]
+      },
+      {
+        "input": "echo \"hello world\" > out.txt",
+        "expected": [
+          "echo",
+          "hello world",
+          ">",
+          "out.txt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tokenize_command_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "tokenize_command",
+    "skill": "lexing",
+    "spec": "Split a command line into arguments the way a shell does, handling quotes and\nescapes.\n\nRules:\n- Runs of spaces separate arguments and are otherwise discarded.\n- A double quote toggles quoting. Inside quotes, spaces are ordinary characters.\n  The quote characters themselves never appear in the output, so `a\"b\"c` is the\n  single argument `abc`.\n- A backslash escapes the next character anywhere in the input, inside quotes or\n  out, and the backslash itself is dropped: `a\\ b` is one argument `a b`, and\n  `\\\"` is a literal quote.\n- An empty pair of quotes still produces an argument \u2014 the empty string \u2014 so `\"\"`\n  yields one empty argument, and `a\"\"b` yields `ab`.\n- Return an empty list for input that is only spaces or empty.\n- Return an empty list for malformed input: a quote that is never closed, or a\n  backslash at the very end with nothing to escape.",
+    "signature": "func TokenizeCommand(text string) []string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": "a b c",
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": "\"a b\" c",
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "   ",
+        "expected": []
+      },
+      {
+        "input": "a\\ b",
+        "expected": [
+          "a b"
+        ]
+      },
+      {
+        "input": "\"unterminated",
+        "expected": []
+      },
+      {
+        "input": "a\\",
+        "expected": []
+      },
+      {
+        "input": "\"\"",
+        "expected": [
+          ""
+        ]
+      },
+      {
+        "input": "a\"b\"c",
+        "expected": [
+          "abc"
+        ]
+      },
+      {
+        "input": "  spaced   out  ",
+        "expected": [
+          "spaced",
+          "out"
+        ]
+      },
+      {
+        "input": "say \\\"hi\\\"",
+        "expected": [
+          "say",
+          "\"hi\""
+        ]
+      },
+      {
+        "input": "a\"\"b",
+        "expected": [
+          "ab"
+        ]
+      },
+      {
+        "input": "echo \"hello world\" > out.txt",
+        "expected": [
+          "echo",
+          "hello world",
+          ">",
+          "out.txt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tokenize_command_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "tokenize_command",
+    "skill": "lexing",
+    "spec": "Split a command line into arguments the way a shell does, handling quotes and\nescapes.\n\nRules:\n- Runs of spaces separate arguments and are otherwise discarded.\n- A double quote toggles quoting. Inside quotes, spaces are ordinary characters.\n  The quote characters themselves never appear in the output, so `a\"b\"c` is the\n  single argument `abc`.\n- A backslash escapes the next character anywhere in the input, inside quotes or\n  out, and the backslash itself is dropped: `a\\ b` is one argument `a b`, and\n  `\\\"` is a literal quote.\n- An empty pair of quotes still produces an argument \u2014 the empty string \u2014 so `\"\"`\n  yields one empty argument, and `a\"\"b` yields `ab`.\n- Return an empty list for input that is only spaces or empty.\n- Return an empty list for malformed input: a quote that is never closed, or a\n  backslash at the very end with nothing to escape.",
+    "signature": "fn tokenize_command(text: &str) -> Vec<String> {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "list<str>"
+    },
+    "test_cases": [
+      {
+        "input": "a b c",
+        "expected": [
+          "a",
+          "b",
+          "c"
+        ]
+      },
+      {
+        "input": "\"a b\" c",
+        "expected": [
+          "a b",
+          "c"
+        ]
+      },
+      {
+        "input": "",
+        "expected": []
+      },
+      {
+        "input": "   ",
+        "expected": []
+      },
+      {
+        "input": "a\\ b",
+        "expected": [
+          "a b"
+        ]
+      },
+      {
+        "input": "\"unterminated",
+        "expected": []
+      },
+      {
+        "input": "a\\",
+        "expected": []
+      },
+      {
+        "input": "\"\"",
+        "expected": [
+          ""
+        ]
+      },
+      {
+        "input": "a\"b\"c",
+        "expected": [
+          "abc"
+        ]
+      },
+      {
+        "input": "  spaced   out  ",
+        "expected": [
+          "spaced",
+          "out"
+        ]
+      },
+      {
+        "input": "say \\\"hi\\\"",
+        "expected": [
+          "say",
+          "\"hi\""
+        ]
+      },
+      {
+        "input": "a\"\"b",
+        "expected": [
+          "ab"
+        ]
+      },
+      {
+        "input": "echo \"hello world\" > out.txt",
+        "expected": [
+          "echo",
+          "hello world",
+          ">",
+          "out.txt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "percent_decode_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "percent_decode",
+    "skill": "encoding",
+    "spec": "Decode a percent-encoded query-string value.\n\nRules:\n- `+` becomes a space.\n- `%` followed by two hexadecimal digits (either case) becomes the character\n  with that code, but only when the code is a printable ASCII one, from 0x20\n  (space) through 0x7E (`~`).\n- A `%` that is not followed by two hex digits, or whose code is outside that\n  printable range, is **left exactly as it is** and decoding continues from the\n  next character. So \"100%\" stays \"100%\", \"%zz\" stays \"%zz\", and \"%09\" stays\n  \"%09\".\n- Decoding happens in one pass and the output is never decoded again: \"%25\" is\n  a single \"%\" and is not treated as the start of another escape, and \"a%2Bb\"\n  is \"a+b\" with a literal plus, not a space.\n- Every other character is copied through unchanged. The empty string decodes to\n  the empty string.",
+    "signature": "def percent_decode(text: str) -> str:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "a%20b",
+        "expected": "a b"
+      },
+      {
+        "input": "a+b",
+        "expected": "a b"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "100%",
+        "expected": "100%"
+      },
+      {
+        "input": "%2",
+        "expected": "%2"
+      },
+      {
+        "input": "%zz",
+        "expected": "%zz"
+      },
+      {
+        "input": "%41%42",
+        "expected": "AB"
+      },
+      {
+        "input": "%7e",
+        "expected": "~"
+      },
+      {
+        "input": "%09",
+        "expected": "%09"
+      },
+      {
+        "input": "a%2Bb",
+        "expected": "a+b"
+      },
+      {
+        "input": "no-escapes",
+        "expected": "no-escapes"
+      },
+      {
+        "input": "%25",
+        "expected": "%"
+      },
+      {
+        "input": "%2520",
+        "expected": "%20"
+      },
+      {
+        "input": "a%",
+        "expected": "a%"
+      },
+      {
+        "input": "%7F",
+        "expected": "%7F"
+      }
+    ]
+  },
+  {
+    "id": "percent_decode_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "percent_decode",
+    "skill": "encoding",
+    "spec": "Decode a percent-encoded query-string value.\n\nRules:\n- `+` becomes a space.\n- `%` followed by two hexadecimal digits (either case) becomes the character\n  with that code, but only when the code is a printable ASCII one, from 0x20\n  (space) through 0x7E (`~`).\n- A `%` that is not followed by two hex digits, or whose code is outside that\n  printable range, is **left exactly as it is** and decoding continues from the\n  next character. So \"100%\" stays \"100%\", \"%zz\" stays \"%zz\", and \"%09\" stays\n  \"%09\".\n- Decoding happens in one pass and the output is never decoded again: \"%25\" is\n  a single \"%\" and is not treated as the start of another escape, and \"a%2Bb\"\n  is \"a+b\" with a literal plus, not a space.\n- Every other character is copied through unchanged. The empty string decodes to\n  the empty string.",
+    "signature": "function percentDecode(text: string): string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "a%20b",
+        "expected": "a b"
+      },
+      {
+        "input": "a+b",
+        "expected": "a b"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "100%",
+        "expected": "100%"
+      },
+      {
+        "input": "%2",
+        "expected": "%2"
+      },
+      {
+        "input": "%zz",
+        "expected": "%zz"
+      },
+      {
+        "input": "%41%42",
+        "expected": "AB"
+      },
+      {
+        "input": "%7e",
+        "expected": "~"
+      },
+      {
+        "input": "%09",
+        "expected": "%09"
+      },
+      {
+        "input": "a%2Bb",
+        "expected": "a+b"
+      },
+      {
+        "input": "no-escapes",
+        "expected": "no-escapes"
+      },
+      {
+        "input": "%25",
+        "expected": "%"
+      },
+      {
+        "input": "%2520",
+        "expected": "%20"
+      },
+      {
+        "input": "a%",
+        "expected": "a%"
+      },
+      {
+        "input": "%7F",
+        "expected": "%7F"
+      }
+    ]
+  },
+  {
+    "id": "percent_decode_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "percent_decode",
+    "skill": "encoding",
+    "spec": "Decode a percent-encoded query-string value.\n\nRules:\n- `+` becomes a space.\n- `%` followed by two hexadecimal digits (either case) becomes the character\n  with that code, but only when the code is a printable ASCII one, from 0x20\n  (space) through 0x7E (`~`).\n- A `%` that is not followed by two hex digits, or whose code is outside that\n  printable range, is **left exactly as it is** and decoding continues from the\n  next character. So \"100%\" stays \"100%\", \"%zz\" stays \"%zz\", and \"%09\" stays\n  \"%09\".\n- Decoding happens in one pass and the output is never decoded again: \"%25\" is\n  a single \"%\" and is not treated as the start of another escape, and \"a%2Bb\"\n  is \"a+b\" with a literal plus, not a space.\n- Every other character is copied through unchanged. The empty string decodes to\n  the empty string.",
+    "signature": "func PercentDecode(text string) string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "a%20b",
+        "expected": "a b"
+      },
+      {
+        "input": "a+b",
+        "expected": "a b"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "100%",
+        "expected": "100%"
+      },
+      {
+        "input": "%2",
+        "expected": "%2"
+      },
+      {
+        "input": "%zz",
+        "expected": "%zz"
+      },
+      {
+        "input": "%41%42",
+        "expected": "AB"
+      },
+      {
+        "input": "%7e",
+        "expected": "~"
+      },
+      {
+        "input": "%09",
+        "expected": "%09"
+      },
+      {
+        "input": "a%2Bb",
+        "expected": "a+b"
+      },
+      {
+        "input": "no-escapes",
+        "expected": "no-escapes"
+      },
+      {
+        "input": "%25",
+        "expected": "%"
+      },
+      {
+        "input": "%2520",
+        "expected": "%20"
+      },
+      {
+        "input": "a%",
+        "expected": "a%"
+      },
+      {
+        "input": "%7F",
+        "expected": "%7F"
+      }
+    ]
+  },
+  {
+    "id": "percent_decode_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "percent_decode",
+    "skill": "encoding",
+    "spec": "Decode a percent-encoded query-string value.\n\nRules:\n- `+` becomes a space.\n- `%` followed by two hexadecimal digits (either case) becomes the character\n  with that code, but only when the code is a printable ASCII one, from 0x20\n  (space) through 0x7E (`~`).\n- A `%` that is not followed by two hex digits, or whose code is outside that\n  printable range, is **left exactly as it is** and decoding continues from the\n  next character. So \"100%\" stays \"100%\", \"%zz\" stays \"%zz\", and \"%09\" stays\n  \"%09\".\n- Decoding happens in one pass and the output is never decoded again: \"%25\" is\n  a single \"%\" and is not treated as the start of another escape, and \"a%2Bb\"\n  is \"a+b\" with a literal plus, not a space.\n- Every other character is copied through unchanged. The empty string decodes to\n  the empty string.",
+    "signature": "fn percent_decode(text: &str) -> String {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "test_cases": [
+      {
+        "input": "a%20b",
+        "expected": "a b"
+      },
+      {
+        "input": "a+b",
+        "expected": "a b"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "100%",
+        "expected": "100%"
+      },
+      {
+        "input": "%2",
+        "expected": "%2"
+      },
+      {
+        "input": "%zz",
+        "expected": "%zz"
+      },
+      {
+        "input": "%41%42",
+        "expected": "AB"
+      },
+      {
+        "input": "%7e",
+        "expected": "~"
+      },
+      {
+        "input": "%09",
+        "expected": "%09"
+      },
+      {
+        "input": "a%2Bb",
+        "expected": "a+b"
+      },
+      {
+        "input": "no-escapes",
+        "expected": "no-escapes"
+      },
+      {
+        "input": "%25",
+        "expected": "%"
+      },
+      {
+        "input": "%2520",
+        "expected": "%20"
+      },
+      {
+        "input": "a%",
+        "expected": "a%"
+      },
+      {
+        "input": "%7F",
+        "expected": "%7F"
+      }
+    ]
   }
 ]

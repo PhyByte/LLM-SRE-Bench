@@ -583,8 +583,12 @@ COMPONENTS = [TTL_CACHE, USER_LOOKUP, FETCH_RETRY]
 
 
 def build_cases() -> list[dict[str, Any]]:
+    # Imported here, not at module scope: review_advanced reuses this module's
+    # Defect and ReviewCase, so a top-level import would be circular.
+    from .review_advanced import ADVANCED_COMPONENTS
+
     cases = []
-    for component in COMPONENTS:
+    for component in [*COMPONENTS, *ADVANCED_COMPONENTS]:
         for language in LANGUAGES:
             cases.append(component[language].to_case())
     return cases

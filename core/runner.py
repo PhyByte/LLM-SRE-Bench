@@ -309,6 +309,7 @@ class BenchmarkRunner:
         "jsondecodeerror",
         "expecting value",
         "no json",
+        "unbalanced json",
     )
 
     @classmethod

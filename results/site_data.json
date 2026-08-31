@@ -1,8 +1,8 @@
 {
-  "generated": "2026-08-26 21:30:28 UTC",
+  "generated": "2026-08-31 10:44:51 UTC",
   "runs_per_test": 3,
-  "n_cases": 162,
-  "n_cases_total": 162,
+  "n_cases": 362,
+  "n_cases_total": 362,
   "price_blend": {
     "input": 0.9,
     "output": 0.1
@@ -524,6 +524,39 @@
           "language_scores": {}
         },
         {
+          "name": "gemma-4-26B-a4b",
+          "provider": "openai",
+          "reasoning_effort": null,
+          "global_score": 66.2,
+          "scores": {
+            "metrics_timeseries": 58.1,
+            "log_parsing": 88.7,
+            "anomaly_detection": 70.9,
+            "pattern_correlation": 73.3,
+            "root_cause": 45.3,
+            "multimodal_rca": 60.4,
+            "efficiency": 35.0
+          },
+          "price_input": null,
+          "price_output": null,
+          "price_blended": null,
+          "measured_cost_usd": null,
+          "total_runs": 246,
+          "repeats_per_case": 3.0,
+          "errors": 1,
+          "refused": 0,
+          "duration_s": 3925.2338353334926,
+          "avg_latency_s": 16.02,
+          "avg_tokens": 4429,
+          "score_stddev": 2.43,
+          "input_tokens": 481730,
+          "output_tokens": 603275,
+          "complete": true,
+          "categories_scored": 6,
+          "categories_total": 6,
+          "language_scores": {}
+        },
+        {
           "name": "gemini-3.6-flash",
           "provider": "google",
           "reasoning_effort": null,
@@ -551,39 +584,6 @@
           "score_stddev": 2.57,
           "input_tokens": 459707,
           "output_tokens": 33309,
-          "complete": true,
-          "categories_scored": 6,
-          "categories_total": 6,
-          "language_scores": {}
-        },
-        {
-          "name": "gemma-4-26B-a4b",
-          "provider": "openai",
-          "reasoning_effort": null,
-          "global_score": 65.8,
-          "scores": {
-            "metrics_timeseries": 56.0,
-            "log_parsing": 86.6,
-            "anomaly_detection": 70.9,
-            "pattern_correlation": 73.3,
-            "root_cause": 45.3,
-            "multimodal_rca": 60.4,
-            "efficiency": 36.9
-          },
-          "price_input": null,
-          "price_output": null,
-          "price_blended": null,
-          "measured_cost_usd": null,
-          "total_runs": 246,
-          "repeats_per_case": 3.0,
-          "errors": 5,
-          "refused": 0,
-          "duration_s": 3648.4927395409904,
-          "avg_latency_s": 15.14,
-          "avg_tokens": 4268,
-          "score_stddev": 2.36,
-          "input_tokens": 478798,
-          "output_tokens": 549751,
           "complete": true,
           "categories_scored": 6,
           "categories_total": 6,
@@ -893,8 +893,8 @@
       "label": "Developer",
       "tagline": "The keyboard half: write it, speed it up, fix it, review it.",
       "blurb": "Five kinds of coding work — writing a utility from a spec, making it fast enough on a large input, fixing a defect from a bug report, refactoring without breaking behaviour, and reviewing someone else's code — each in Python, TypeScript, Go and Rust, with every answer compiled and run in a sandbox.",
-      "n_cases": 80,
-      "n_cases_total": 80,
+      "n_cases": 280,
+      "n_cases_total": 280,
       "categories": {
         "code_generation": {
           "label": "Code Generation",
@@ -960,32 +960,32 @@
       "datasets": [
         {
           "category": "code_generation",
-          "cases": 32,
-          "scored": 32,
+          "cases": 72,
+          "scored": 72,
           "source": "8 task families x 4 languages, reference-verified"
         },
         {
           "category": "code_efficiency",
-          "cases": 12,
-          "scored": 12,
+          "cases": 52,
+          "scored": 52,
           "source": "3 families x 4 languages, each with a timed 200k-element workload"
         },
         {
           "category": "code_debugging",
-          "cases": 12,
-          "scored": 12,
+          "cases": 52,
+          "scored": 52,
           "source": "3 seeded bugs x 4 languages, shipped with the reported symptom"
         },
         {
           "category": "code_refactoring",
-          "cases": 12,
-          "scored": 12,
+          "cases": 52,
+          "scored": 52,
           "source": "3 messy-but-correct functions x 4 languages, with structural rules"
         },
         {
           "category": "code_review",
-          "cases": 12,
-          "scored": 12,
+          "cases": 52,
+          "scored": 52,
           "source": "3 components x 4 languages, 3 seeded defects each"
         }
       ],
@@ -995,14 +995,14 @@
           "label": "Python",
           "toolchain": "python3",
           "note": "Dynamically typed, so a wrong-shaped answer fails at the assertion rather than at compile time. The most forgiving of the four.",
-          "cases": 20,
-          "scored": 20,
+          "cases": 70,
+          "scored": 70,
           "per_category": {
-            "code_generation": 8,
-            "code_efficiency": 3,
-            "code_debugging": 3,
-            "code_refactoring": 3,
-            "code_review": 3
+            "code_generation": 18,
+            "code_efficiency": 13,
+            "code_debugging": 13,
+            "code_refactoring": 13,
+            "code_review": 13
           }
         },
         {
@@ -1010,14 +1010,14 @@
           "label": "TypeScript",
           "toolchain": "node + tsx",
           "note": "Type-checked at run time by tsx. Object key order and floating-point formatting are the usual sources of a near-miss.",
-          "cases": 20,
-          "scored": 20,
+          "cases": 70,
+          "scored": 70,
           "per_category": {
-            "code_generation": 8,
-            "code_efficiency": 3,
-            "code_debugging": 3,
-            "code_refactoring": 3,
-            "code_review": 3
+            "code_generation": 18,
+            "code_efficiency": 13,
+            "code_debugging": 13,
+            "code_refactoring": 13,
+            "code_review": 13
           }
         },
         {
@@ -1025,14 +1025,14 @@
           "label": "Go",
           "toolchain": "go run",
           "note": "Compiled and strict: an unused import or a signature that does not match the spec fails the whole file, so every test in that case is lost.",
-          "cases": 20,
-          "scored": 20,
+          "cases": 70,
+          "scored": 70,
           "per_category": {
-            "code_generation": 8,
-            "code_efficiency": 3,
-            "code_debugging": 3,
-            "code_refactoring": 3,
-            "code_review": 3
+            "code_generation": 18,
+            "code_efficiency": 13,
+            "code_debugging": 13,
+            "code_refactoring": 13,
+            "code_review": 13
           }
         },
         {
@@ -1040,145 +1040,145 @@
           "label": "Rust",
           "toolchain": "rustc (-O for timed cases)",
           "note": "Compiled, strict, and ownership-aware. Borrow-checker mistakes and String-vs-&str confusion are where most models lose points here.",
-          "cases": 20,
-          "scored": 20,
+          "cases": 70,
+          "scored": 70,
           "per_category": {
-            "code_generation": 8,
-            "code_efficiency": 3,
-            "code_debugging": 3,
-            "code_refactoring": 3,
-            "code_review": 3
+            "code_generation": 18,
+            "code_efficiency": 13,
+            "code_debugging": 13,
+            "code_refactoring": 13,
+            "code_review": 13
           }
         }
       ],
       "models": [
         {
-          "name": "grok-4.5-low",
-          "provider": "xai",
-          "reasoning_effort": "low",
-          "global_score": 93.0,
-          "scores": {
-            "code_generation": 86.5,
-            "code_efficiency": 100.0,
-            "code_debugging": 100.0,
-            "code_refactoring": 98.6,
-            "code_review": 93.7,
-            "code_python": 98.1,
-            "code_typescript": 97.5,
-            "code_go": 91.4,
-            "code_rust": 86.8,
-            "efficiency": 77.8
-          },
-          "price_input": 2.0,
-          "price_output": 6.0,
-          "price_blended": 2.4,
-          "measured_cost_usd": 0.7752,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 1553.4058694564737,
-          "avg_latency_s": 6.47,
-          "avg_tokens": 1110,
-          "score_stddev": 0.81,
-          "input_tokens": 205713,
-          "output_tokens": 60632,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 96.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 98.3
-            },
-            "typescript": {
-              "code_generation": 96.9,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 91.7
-            },
-            "go": {
-              "code_generation": 83.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 86.3
-            },
-            "rust": {
-              "code_generation": 69.6,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 94.4,
-              "code_review": 98.3
-            }
-          }
-        },
-        {
           "name": "opus-4.8",
           "provider": "anthropic",
           "reasoning_effort": null,
-          "global_score": 92.9,
+          "global_score": 94.4,
           "scores": {
-            "code_generation": 86.2,
-            "code_efficiency": 100.0,
-            "code_debugging": 100.0,
-            "code_refactoring": 100.0,
-            "code_review": 91.3,
-            "code_python": 97.4,
-            "code_typescript": 97.1,
-            "code_go": 93.4,
-            "code_rust": 84.8,
-            "efficiency": 81.4
+            "code_generation": 92.9,
+            "code_efficiency": 99.4,
+            "code_debugging": 99.4,
+            "code_refactoring": 98.9,
+            "code_review": 88.1,
+            "code_python": 97.2,
+            "code_typescript": 96.5,
+            "code_go": 95.5,
+            "code_rust": 93.1,
+            "efficiency": 79.8
           },
           "price_input": 5.0,
           "price_output": 25.0,
           "price_blended": 7.0,
-          "measured_cost_usd": 2.8735,
-          "total_runs": 240,
+          "measured_cost_usd": 11.0672,
+          "total_runs": 840,
           "repeats_per_case": 3.0,
           "errors": 0,
           "refused": 0,
-          "duration_s": 1264.8093189937063,
-          "avg_latency_s": 5.27,
-          "avg_tokens": 906,
-          "score_stddev": 1.1,
-          "input_tokens": 128010,
-          "output_tokens": 89338,
+          "duration_s": 4447.631828416139,
+          "avg_latency_s": 5.29,
+          "avg_tokens": 1008,
+          "score_stddev": 1.74,
+          "input_tokens": 504594,
+          "output_tokens": 341769,
           "complete": true,
           "categories_scored": 5,
           "categories_total": 5,
           "language_scores": {
             "python": {
-              "code_generation": 96.0,
-              "code_efficiency": 100.0,
+              "code_generation": 98.2,
+              "code_efficiency": 97.7,
               "code_debugging": 100.0,
               "code_refactoring": 100.0,
-              "code_review": 93.4
+              "code_review": 89.5
             },
             "typescript": {
+              "code_generation": 96.8,
+              "code_efficiency": 99.9,
+              "code_debugging": 97.4,
+              "code_refactoring": 99.6,
+              "code_review": 88.4
+            },
+            "go": {
+              "code_generation": 95.0,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 97.4,
+              "code_review": 85.2
+            },
+            "rust": {
+              "code_generation": 81.7,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.7,
+              "code_review": 89.4
+            }
+          }
+        },
+        {
+          "name": "grok-4.5-low",
+          "provider": "xai",
+          "reasoning_effort": "low",
+          "global_score": 92.5,
+          "scores": {
+            "code_generation": 90.4,
+            "code_efficiency": 99.6,
+            "code_debugging": 100.0,
+            "code_refactoring": 98.3,
+            "code_review": 83.5,
+            "code_python": 96.6,
+            "code_typescript": 96.3,
+            "code_go": 91.2,
+            "code_rust": 92.2,
+            "efficiency": 72.4
+          },
+          "price_input": 2.0,
+          "price_output": 6.0,
+          "price_blended": 2.4,
+          "measured_cost_usd": 2.9419,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 6935.672603325918,
+          "avg_latency_s": 8.26,
+          "avg_tokens": 1191,
+          "score_stddev": 1.81,
+          "input_tokens": 764652,
+          "output_tokens": 235439,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
               "code_generation": 96.9,
               "code_efficiency": 100.0,
               "code_debugging": 100.0,
               "code_refactoring": 100.0,
-              "code_review": 88.8
+              "code_review": 86.0
+            },
+            "typescript": {
+              "code_generation": 97.9,
+              "code_efficiency": 98.6,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 84.2
             },
             "go": {
-              "code_generation": 88.8,
+              "code_generation": 80.7,
               "code_efficiency": 100.0,
               "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 86.3
+              "code_refactoring": 96.9,
+              "code_review": 82.3
             },
             "rust": {
-              "code_generation": 63.2,
+              "code_generation": 86.0,
               "code_efficiency": 100.0,
               "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 96.5
+              "code_refactoring": 96.2,
+              "code_review": 81.4
             }
           }
         },
@@ -1186,1073 +1186,33 @@
           "name": "grok-4.5",
           "provider": "xai",
           "reasoning_effort": null,
-          "global_score": 92.8,
+          "global_score": 92.0,
           "scores": {
-            "code_generation": 88.2,
-            "code_efficiency": 100.0,
+            "code_generation": 91.9,
+            "code_efficiency": 98.8,
             "code_debugging": 100.0,
-            "code_refactoring": 99.5,
-            "code_review": 93.6,
-            "code_python": 97.6,
-            "code_typescript": 97.6,
-            "code_go": 94.4,
-            "code_rust": 87.4,
-            "efficiency": 58.3
-          },
-          "price_input": 2.0,
-          "price_output": 6.0,
-          "price_blended": 2.4,
-          "measured_cost_usd": 0.7626,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 3835.973026701249,
-          "avg_latency_s": 15.98,
-          "avg_tokens": 1101,
-          "score_stddev": 1.24,
-          "input_tokens": 205713,
-          "output_tokens": 58527,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 96.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 95.0
-            },
-            "typescript": {
-              "code_generation": 96.9,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 92.2
-            },
-            "go": {
-              "code_generation": 90.2,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 88.9
-            },
-            "rust": {
-              "code_generation": 69.9,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 98.1,
-              "code_review": 98.3
-            }
-          }
-        },
-        {
-          "name": "grok-4",
-          "provider": "xai",
-          "reasoning_effort": null,
-          "global_score": 92.6,
-          "scores": {
-            "code_generation": 88.8,
-            "code_efficiency": 100.0,
-            "code_debugging": 100.0,
-            "code_refactoring": 100.0,
+            "code_refactoring": 98.9,
             "code_review": 84.3,
-            "code_python": 96.7,
-            "code_typescript": 97.7,
-            "code_go": 93.1,
-            "code_rust": 85.3,
-            "efficiency": 77.0
-          },
-          "price_input": 3.0,
-          "price_output": 15.0,
-          "price_blended": 4.2,
-          "measured_cost_usd": 1.0486,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 1778.3638568283059,
-          "avg_latency_s": 7.41,
-          "avg_tokens": 726,
-          "score_stddev": 2.25,
-          "input_tokens": 130497,
-          "output_tokens": 43810,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.7,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 89.4
-            },
-            "typescript": {
-              "code_generation": 97.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 91.1
-            },
-            "go": {
-              "code_generation": 90.8,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 78.5
-            },
-            "rust": {
-              "code_generation": 71.3,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 78.2
-            }
-          }
-        },
-        {
-          "name": "grok-4.6-low",
-          "provider": "xai",
-          "reasoning_effort": "low",
-          "global_score": 91.7,
-          "scores": {
-            "code_generation": 84.1,
-            "code_efficiency": 100.0,
-            "code_debugging": 100.0,
-            "code_refactoring": 99.5,
-            "code_review": 91.5,
-            "code_python": 97.5,
-            "code_typescript": 97.1,
-            "code_go": 88.4,
-            "code_rust": 86.2,
-            "efficiency": 72.7
-          },
-          "price_input": 2.0,
-          "price_output": 6.0,
-          "price_blended": 2.4,
-          "measured_cost_usd": 0.8123,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 1772.6012788303196,
-          "avg_latency_s": 7.39,
-          "avg_tokens": 1230,
-          "score_stddev": 2.74,
-          "input_tokens": 239793,
-          "output_tokens": 55457,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 96.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 94.4
-            },
-            "typescript": {
-              "code_generation": 96.9,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 89.0
-            },
-            "go": {
-              "code_generation": 74.6,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 90.3
-            },
-            "rust": {
-              "code_generation": 69.1,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 98.1,
-              "code_review": 92.2
-            }
-          }
-        },
-        {
-          "name": "qwen3.8-27b",
-          "provider": "openai",
-          "reasoning_effort": "none",
-          "global_score": 91.3,
-          "scores": {
-            "code_generation": 89.7,
-            "code_efficiency": 87.5,
-            "code_debugging": 100.0,
-            "code_refactoring": 100.0,
-            "code_review": 81.6,
-            "code_python": 96.5,
-            "code_typescript": 98.9,
-            "code_go": 91.5,
-            "code_rust": 78.2,
-            "efficiency": 90.0
-          },
-          "price_input": null,
-          "price_output": null,
-          "price_blended": null,
-          "measured_cost_usd": null,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 3,
-          "refused": 0,
-          "duration_s": 606.786071779672,
-          "avg_latency_s": 2.53,
-          "avg_tokens": 652,
-          "score_stddev": 0.0,
-          "input_tokens": 95133,
-          "output_tokens": 61322,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.1,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 89.4
-            },
-            "typescript": {
-              "code_generation": 98.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 96.7
-            },
-            "go": {
-              "code_generation": 98.0,
-              "code_efficiency": 67.7,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 80.8
-            },
-            "rust": {
-              "code_generation": 67.3,
-              "code_efficiency": 82.2,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 59.4
-            }
-          }
-        },
-        {
-          "name": "gemma-4-31b",
-          "provider": "openai",
-          "reasoning_effort": null,
-          "global_score": 90.7,
-          "scores": {
-            "code_generation": 86.8,
-            "code_efficiency": 100.0,
-            "code_debugging": 100.0,
-            "code_refactoring": 100.0,
-            "code_review": 88.0,
-            "code_python": 95.8,
-            "code_typescript": 95.7,
-            "code_go": 97.2,
-            "code_rust": 83.0,
-            "efficiency": 42.6
-          },
-          "price_input": null,
-          "price_output": null,
-          "price_blended": null,
-          "measured_cost_usd": null,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 6660.659251414239,
-          "avg_latency_s": 27.75,
-          "avg_tokens": 2147,
-          "score_stddev": 1.06,
-          "input_tokens": 96759,
-          "output_tokens": 418560,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.8,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 83.1
-            },
-            "typescript": {
-              "code_generation": 93.7,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 87.9
-            },
-            "go": {
-              "code_generation": 96.7,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 90.0
-            },
-            "rust": {
-              "code_generation": 60.8,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 91.1
-            }
-          }
-        },
-        {
-          "name": "gemini-3.6-flash",
-          "provider": "google",
-          "reasoning_effort": null,
-          "global_score": 89.6,
-          "scores": {
-            "code_generation": 87.3,
-            "code_efficiency": 92.1,
-            "code_debugging": 97.5,
-            "code_refactoring": 99.1,
-            "code_review": 82.7,
-            "code_python": 96.8,
-            "code_typescript": 93.2,
-            "code_go": 91.6,
-            "code_rust": 80.9,
-            "efficiency": 66.8
-          },
-          "price_input": 1.5,
-          "price_output": 7.5,
-          "price_blended": 2.1,
-          "measured_cost_usd": 0.6099,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 2908.778814923018,
-          "avg_latency_s": 12.12,
-          "avg_tokens": 649,
-          "score_stddev": 3.39,
-          "input_tokens": 93207,
-          "output_tokens": 62672,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 96.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 89.5
-            },
-            "typescript": {
-              "code_generation": 92.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 74.3
-            },
-            "go": {
-              "code_generation": 96.8,
-              "code_efficiency": 78.9,
-              "code_debugging": 90.0,
-              "code_refactoring": 100.0,
-              "code_review": 83.9
-            },
-            "rust": {
-              "code_generation": 63.9,
-              "code_efficiency": 89.4,
-              "code_debugging": 100.0,
-              "code_refactoring": 96.3,
-              "code_review": 83.1
-            }
-          }
-        },
-        {
-          "name": "sonnet-5",
-          "provider": "anthropic",
-          "reasoning_effort": null,
-          "global_score": 89.1,
-          "scores": {
-            "code_generation": 79.8,
-            "code_efficiency": 89.4,
-            "code_debugging": 100.0,
-            "code_refactoring": 99.5,
-            "code_review": 94.8,
-            "code_python": 98.0,
-            "code_typescript": 98.1,
-            "code_go": 89.0,
-            "code_rust": 72.8,
-            "efficiency": 72.5
-          },
-          "price_input": 3.0,
-          "price_output": 15.0,
-          "price_blended": 4.2,
-          "measured_cost_usd": 2.7947,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 1639.2948857052252,
-          "avg_latency_s": 6.83,
-          "avg_tokens": 1203,
-          "score_stddev": 4.01,
-          "input_tokens": 128010,
-          "output_tokens": 160710,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.9,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 97.8
-            },
-            "typescript": {
-              "code_generation": 96.7,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 96.5
-            },
-            "go": {
-              "code_generation": 77.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 87.7
-            },
-            "rust": {
-              "code_generation": 49.6,
-              "code_efficiency": 57.8,
-              "code_debugging": 100.0,
-              "code_refactoring": 98.1,
-              "code_review": 97.4
-            }
-          }
-        },
-        {
-          "name": "grok-4.6",
-          "provider": "xai",
-          "reasoning_effort": null,
-          "global_score": 89.1,
-          "scores": {
-            "code_generation": 82.2,
-            "code_efficiency": 100.0,
-            "code_debugging": 100.0,
-            "code_refactoring": 99.1,
-            "code_review": 87.5,
-            "code_python": 96.6,
-            "code_typescript": 96.6,
-            "code_go": 85.2,
-            "code_rust": 85.1,
-            "efficiency": 47.0
-          },
-          "price_input": 2.0,
-          "price_output": 6.0,
-          "price_blended": 2.4,
-          "measured_cost_usd": 0.825,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 9085.64119067369,
-          "avg_latency_s": 37.86,
-          "avg_tokens": 1239,
-          "score_stddev": 3.1,
-          "input_tokens": 239793,
-          "output_tokens": 57571,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 96.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 87.9
-            },
-            "typescript": {
-              "code_generation": 96.8,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 85.7
-            },
-            "go": {
-              "code_generation": 68.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 85.4
-            },
-            "rust": {
-              "code_generation": 67.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 96.3,
-              "code_review": 90.8
-            }
-          }
-        },
-        {
-          "name": "gemma-4-26B-a4b",
-          "provider": "openai",
-          "reasoning_effort": null,
-          "global_score": 88.8,
-          "scores": {
-            "code_generation": 85.7,
-            "code_efficiency": 89.4,
-            "code_debugging": 100.0,
-            "code_refactoring": 100.0,
-            "code_review": 86.4,
-            "code_python": 93.4,
-            "code_typescript": 97.5,
-            "code_go": 89.2,
-            "code_rust": 82.6,
-            "efficiency": 49.2
-          },
-          "price_input": null,
-          "price_output": null,
-          "price_blended": null,
-          "measured_cost_usd": null,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 2988.810864663683,
-          "avg_latency_s": 12.45,
-          "avg_tokens": 3031,
-          "score_stddev": 2.6,
-          "input_tokens": 96759,
-          "output_tokens": 630690,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 89.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 85.5
-            },
-            "typescript": {
-              "code_generation": 96.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 92.4
-            },
-            "go": {
-              "code_generation": 90.5,
-              "code_efficiency": 68.3,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 84.6
-            },
-            "rust": {
-              "code_generation": 66.7,
-              "code_efficiency": 89.4,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 83.2
-            }
-          }
-        },
-        {
-          "name": "gpt-5.6-sol",
-          "provider": "openai",
-          "reasoning_effort": null,
-          "global_score": 87.6,
-          "scores": {
-            "code_generation": 77.0,
-            "code_efficiency": 100.0,
-            "code_debugging": 97.5,
-            "code_refactoring": 99.5,
-            "code_review": 84.4,
-            "code_python": 96.1,
-            "code_typescript": 96.1,
-            "code_go": 77.3,
-            "code_rust": 82.5,
-            "efficiency": 68.8
-          },
-          "price_input": 5.0,
-          "price_output": 30.0,
-          "price_blended": 7.5,
-          "measured_cost_usd": 4.1981,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 2137.6698886938393,
-          "avg_latency_s": 8.91,
-          "avg_tokens": 884,
-          "score_stddev": 5.62,
-          "input_tokens": 86724,
-          "output_tokens": 125483,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.8,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 85.5
-            },
-            "typescript": {
-              "code_generation": 96.6,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 82.8
-            },
-            "go": {
-              "code_generation": 52.8,
-              "code_efficiency": 100.0,
-              "code_debugging": 90.0,
-              "code_refactoring": 100.0,
-              "code_review": 84.4
-            },
-            "rust": {
-              "code_generation": 62.7,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 98.1,
-              "code_review": 84.9
-            }
-          }
-        },
-        {
-          "name": "qwen3.6-27b",
-          "provider": "openai",
-          "reasoning_effort": "none",
-          "global_score": 87.4,
-          "scores": {
-            "code_generation": 77.6,
-            "code_efficiency": 87.6,
-            "code_debugging": 100.0,
-            "code_refactoring": 99.0,
-            "code_review": 86.1,
-            "code_python": 95.9,
-            "code_typescript": 94.0,
-            "code_go": 75.4,
-            "code_rust": 82.4,
-            "efficiency": 86.7
-          },
-          "price_input": null,
-          "price_output": null,
-          "price_blended": null,
-          "measured_cost_usd": null,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 979.3217437071726,
-          "avg_latency_s": 4.08,
-          "avg_tokens": 691,
-          "score_stddev": 0.0,
-          "input_tokens": 95133,
-          "output_tokens": 70773,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 97.2,
-              "code_efficiency": 82.2,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 98.3
-            },
-            "typescript": {
-              "code_generation": 96.8,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 68.6
-            },
-            "go": {
-              "code_generation": 59.2,
-              "code_efficiency": 68.3,
-              "code_debugging": 100.0,
-              "code_refactoring": 95.8,
-              "code_review": 80.8
-            },
-            "rust": {
-              "code_generation": 57.4,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 96.7
-            }
-          }
-        },
-        {
-          "name": "gpt-5.6-luna",
-          "provider": "openai",
-          "reasoning_effort": null,
-          "global_score": 86.7,
-          "scores": {
-            "code_generation": 74.9,
-            "code_efficiency": 97.4,
-            "code_debugging": 100.0,
-            "code_refactoring": 96.1,
-            "code_review": 85.3,
-            "code_python": 95.6,
-            "code_typescript": 94.8,
-            "code_go": 72.9,
-            "code_rust": 83.8,
-            "efficiency": 73.1
-          },
-          "price_input": 1.0,
-          "price_output": 6.0,
-          "price_blended": 1.5,
-          "measured_cost_usd": 1.0242,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 1677.2477787849493,
-          "avg_latency_s": 6.99,
-          "avg_tokens": 1012,
-          "score_stddev": 4.41,
-          "input_tokens": 86724,
-          "output_tokens": 156253,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.9,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 95.0,
-              "code_review": 86.3
-            },
-            "typescript": {
-              "code_generation": 94.1,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 81.3
-            },
-            "go": {
-              "code_generation": 42.4,
-              "code_efficiency": 89.4,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 83.5
-            },
-            "rust": {
-              "code_generation": 67.3,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 89.4,
-              "code_review": 90.0
-            }
-          }
-        },
-        {
-          "name": "qwen3-coder-30b",
-          "provider": "openai",
-          "reasoning_effort": "none",
-          "global_score": 86.3,
-          "scores": {
-            "code_generation": 79.5,
-            "code_efficiency": 99.5,
-            "code_debugging": 98.8,
-            "code_refactoring": 86.9,
-            "code_review": 74.3,
-            "code_python": 95.8,
-            "code_typescript": 94.2,
-            "code_go": 80.3,
-            "code_rust": 72.7,
-            "efficiency": 91.0
-          },
-          "price_input": null,
-          "price_output": null,
-          "price_blended": null,
-          "measured_cost_usd": null,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 211.87068690359592,
-          "avg_latency_s": 0.88,
-          "avg_tokens": 625,
-          "score_stddev": 2.12,
-          "input_tokens": 89676,
-          "output_tokens": 60263,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.6,
-              "code_efficiency": 98.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 85.6
-            },
-            "typescript": {
-              "code_generation": 97.7,
-              "code_efficiency": 100.0,
-              "code_debugging": 95.1,
-              "code_refactoring": 100.0,
-              "code_review": 72.0
-            },
-            "go": {
-              "code_generation": 71.4,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 71.1,
-              "code_review": 73.6
-            },
-            "rust": {
-              "code_generation": 53.3,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 76.7,
-              "code_review": 66.1
-            }
-          }
-        },
-        {
-          "name": "gpt-5.6-terra",
-          "provider": "openai",
-          "reasoning_effort": null,
-          "global_score": 85.9,
-          "scores": {
-            "code_generation": 79.0,
-            "code_efficiency": 89.4,
-            "code_debugging": 95.0,
-            "code_refactoring": 93.1,
-            "code_review": 84.3,
-            "code_python": 95.4,
-            "code_typescript": 97.1,
-            "code_go": 68.9,
-            "code_rust": 82.1,
-            "efficiency": 79.4
-          },
-          "price_input": 2.5,
-          "price_output": 15.0,
-          "price_blended": 3.75,
-          "measured_cost_usd": 1.6081,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 1205.2817715010606,
-          "avg_latency_s": 5.02,
-          "avg_tokens": 748,
-          "score_stddev": 4.1,
-          "input_tokens": 86724,
-          "output_tokens": 92751,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 96.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 79.9
-            },
-            "typescript": {
-              "code_generation": 96.6,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 89.7
-            },
-            "go": {
-              "code_generation": 55.0,
-              "code_efficiency": 68.3,
-              "code_debugging": 80.0,
-              "code_refactoring": 77.8,
-              "code_review": 86.8
-            },
-            "rust": {
-              "code_generation": 68.6,
-              "code_efficiency": 89.4,
-              "code_debugging": 100.0,
-              "code_refactoring": 94.4,
-              "code_review": 80.6
-            }
-          }
-        },
-        {
-          "name": "haiku-4-5",
-          "provider": "anthropic",
-          "reasoning_effort": null,
-          "global_score": 84.6,
-          "scores": {
-            "code_generation": 72.3,
-            "code_efficiency": 79.4,
-            "code_debugging": 100.0,
-            "code_refactoring": 98.5,
-            "code_review": 91.0,
-            "code_python": 96.8,
+            "code_python": 97.2,
             "code_typescript": 96.9,
-            "code_go": 70.3,
-            "code_rust": 73.1,
-            "efficiency": 80.0
+            "code_go": 92.0,
+            "code_rust": 92.1,
+            "efficiency": 50.9
           },
-          "price_input": 1.0,
-          "price_output": 5.0,
-          "price_blended": 1.4,
-          "measured_cost_usd": 0.6387,
-          "total_runs": 240,
+          "price_input": 2.0,
+          "price_output": 6.0,
+          "price_blended": 2.4,
+          "measured_cost_usd": 2.8992,
+          "total_runs": 840,
           "repeats_per_case": 3.0,
-          "errors": 0,
+          "errors": 1,
           "refused": 0,
-          "duration_s": 778.8495831261389,
-          "avg_latency_s": 3.25,
-          "avg_tokens": 855,
-          "score_stddev": 5.91,
-          "input_tokens": 96834,
-          "output_tokens": 108365,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 95.6,
-              "code_efficiency": 94.1,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 96.5
-            },
-            "typescript": {
-              "code_generation": 96.6,
-              "code_efficiency": 97.8,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 90.3
-            },
-            "go": {
-              "code_generation": 48.4,
-              "code_efficiency": 57.8,
-              "code_debugging": 100.0,
-              "code_refactoring": 95.8,
-              "code_review": 85.6
-            },
-            "rust": {
-              "code_generation": 48.4,
-              "code_efficiency": 68.1,
-              "code_debugging": 100.0,
-              "code_refactoring": 98.1,
-              "code_review": 91.7
-            }
-          }
-        },
-        {
-          "name": "qwen3-32b",
-          "provider": "openai",
-          "reasoning_effort": "none",
-          "global_score": 82.7,
-          "scores": {
-            "code_generation": 80.3,
-            "code_efficiency": 71.0,
-            "code_debugging": 92.5,
-            "code_refactoring": 91.7,
-            "code_review": 79.8,
-            "code_python": 95.1,
-            "code_typescript": 86.8,
-            "code_go": 86.5,
-            "code_rust": 61.2,
-            "efficiency": 87.1
-          },
-          "price_input": null,
-          "price_output": null,
-          "price_blended": null,
-          "measured_cost_usd": null,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 880.983037956059,
-          "avg_latency_s": 3.67,
-          "avg_tokens": 621,
-          "score_stddev": 0.76,
-          "input_tokens": 90636,
-          "output_tokens": 58380,
-          "complete": true,
-          "categories_scored": 5,
-          "categories_total": 5,
-          "language_scores": {
-            "python": {
-              "code_generation": 99.3,
-              "code_efficiency": 85.2,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 83.9
-            },
-            "typescript": {
-              "code_generation": 87.5,
-              "code_efficiency": 100.0,
-              "code_debugging": 70.0,
-              "code_refactoring": 100.0,
-              "code_review": 75.3
-            },
-            "go": {
-              "code_generation": 86.4,
-              "code_efficiency": 68.1,
-              "code_debugging": 100.0,
-              "code_refactoring": 100.0,
-              "code_review": 77.8
-            },
-            "rust": {
-              "code_generation": 48.2,
-              "code_efficiency": 30.7,
-              "code_debugging": 100.0,
-              "code_refactoring": 66.7,
-              "code_review": 82.4
-            }
-          }
-        },
-        {
-          "name": "gpt-4o",
-          "provider": "openai",
-          "reasoning_effort": null,
-          "global_score": 81.3,
-          "scores": {
-            "code_generation": 70.7,
-            "code_efficiency": 89.1,
-            "code_debugging": 100.0,
-            "code_refactoring": 85.3,
-            "code_review": 73.4,
-            "code_python": 92.7,
-            "code_typescript": 93.8,
-            "code_go": 51.5,
-            "code_rust": 83.7,
-            "efficiency": 88.4
-          },
-          "price_input": 2.5,
-          "price_output": 10.0,
-          "price_blended": 3.25,
-          "measured_cost_usd": 0.7074,
-          "total_runs": 240,
-          "repeats_per_case": 3.0,
-          "errors": 0,
-          "refused": 0,
-          "duration_s": 725.3242726167664,
-          "avg_latency_s": 3.02,
-          "avg_tokens": 567,
-          "score_stddev": 1.12,
-          "input_tokens": 86964,
-          "output_tokens": 49001,
+          "duration_s": 15782.304921546485,
+          "avg_latency_s": 18.79,
+          "avg_tokens": 1182,
+          "score_stddev": 2.25,
+          "input_tokens": 764652,
+          "output_tokens": 228308,
           "complete": true,
           "categories_scored": 5,
           "categories_total": 5,
@@ -2261,29 +1221,1069 @@
               "code_generation": 97.4,
               "code_efficiency": 100.0,
               "code_debugging": 100.0,
-              "code_refactoring": 80.0,
-              "code_review": 78.3
+              "code_refactoring": 100.0,
+              "code_review": 88.5
             },
             "typescript": {
-              "code_generation": 96.2,
+              "code_generation": 98.6,
               "code_efficiency": 100.0,
               "code_debugging": 100.0,
               "code_refactoring": 100.0,
-              "code_review": 68.7
+              "code_review": 85.2
             },
             "go": {
-              "code_generation": 19.8,
-              "code_efficiency": 56.5,
-              "code_debugging": 100.0,
-              "code_refactoring": 66.7,
-              "code_review": 67.4
-            },
-            "rust": {
-              "code_generation": 69.3,
+              "code_generation": 85.2,
               "code_efficiency": 100.0,
               "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 77.6
+            },
+            "rust": {
+              "code_generation": 86.3,
+              "code_efficiency": 95.1,
+              "code_debugging": 100.0,
+              "code_refactoring": 95.7,
+              "code_review": 85.8
+            }
+          }
+        },
+        {
+          "name": "grok-4.6-low",
+          "provider": "xai",
+          "reasoning_effort": "low",
+          "global_score": 90.0,
+          "scores": {
+            "code_generation": 87.7,
+            "code_efficiency": 96.3,
+            "code_debugging": 100.0,
+            "code_refactoring": 99.1,
+            "code_review": 77.0,
+            "code_python": 95.5,
+            "code_typescript": 94.9,
+            "code_go": 86.0,
+            "code_rust": 90.4,
+            "efficiency": 68.9
+          },
+          "price_input": 2.0,
+          "price_output": 6.0,
+          "price_blended": 2.4,
+          "measured_cost_usd": 3.032,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 7614.099835409317,
+          "avg_latency_s": 9.06,
+          "avg_tokens": 1303,
+          "score_stddev": 2.7,
+          "input_tokens": 883932,
+          "output_tokens": 210694,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 98.2,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 78.1
+            },
+            "typescript": {
+              "code_generation": 98.6,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 99.1,
+              "code_review": 75.4
+            },
+            "go": {
+              "code_generation": 67.9,
+              "code_efficiency": 92.7,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.1,
+              "code_review": 78.2
+            },
+            "rust": {
+              "code_generation": 86.0,
+              "code_efficiency": 92.7,
+              "code_debugging": 100.0,
+              "code_refactoring": 99.1,
+              "code_review": 76.0
+            }
+          }
+        },
+        {
+          "name": "qwen3.8-27b",
+          "provider": "openai",
+          "reasoning_effort": "none",
+          "global_score": 89.9,
+          "scores": {
+            "code_generation": 89.9,
+            "code_efficiency": 83.9,
+            "code_debugging": 96.5,
+            "code_refactoring": 98.7,
+            "code_review": 80.9,
+            "code_python": 95.1,
+            "code_typescript": 94.6,
+            "code_go": 87.2,
+            "code_rust": 83.0,
+            "efficiency": 88.0
+          },
+          "price_input": null,
+          "price_output": null,
+          "price_blended": null,
+          "measured_cost_usd": null,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 3,
+          "refused": 0,
+          "duration_s": 2506.7115743672475,
+          "avg_latency_s": 2.99,
+          "avg_tokens": 744,
+          "score_stddev": 0.41,
+          "input_tokens": 378555,
+          "output_tokens": 246410,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 97.0,
+              "code_efficiency": 92.5,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 85.4
+            },
+            "typescript": {
+              "code_generation": 98.4,
+              "code_efficiency": 91.4,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.7,
+              "code_review": 83.1
+            },
+            "go": {
+              "code_generation": 88.4,
+              "code_efficiency": 72.9,
+              "code_debugging": 93.1,
+              "code_refactoring": 97.4,
+              "code_review": 83.8
+            },
+            "rust": {
+              "code_generation": 75.8,
+              "code_efficiency": 79.0,
+              "code_debugging": 93.1,
+              "code_refactoring": 98.7,
+              "code_review": 71.0
+            }
+          }
+        },
+        {
+          "name": "sonnet-5",
+          "provider": "anthropic",
+          "reasoning_effort": null,
+          "global_score": 88.7,
+          "scores": {
+            "code_generation": 80.0,
+            "code_efficiency": 94.1,
+            "code_debugging": 100.0,
+            "code_refactoring": 99.0,
+            "code_review": 88.3,
+            "code_python": 97.8,
+            "code_typescript": 97.3,
+            "code_go": 90.1,
+            "code_rust": 80.4,
+            "efficiency": 68.6
+          },
+          "price_input": 3.0,
+          "price_output": 15.0,
+          "price_blended": 4.2,
+          "measured_cost_usd": 11.7286,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 6716.516738539096,
+          "avg_latency_s": 8.0,
+          "avg_tokens": 1411,
+          "score_stddev": 4.02,
+          "input_tokens": 504594,
+          "output_tokens": 680991,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 97.9,
+              "code_efficiency": 98.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 92.3
+            },
+            "typescript": {
+              "code_generation": 98.3,
+              "code_efficiency": 99.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 87.9
+            },
+            "go": {
+              "code_generation": 74.0,
+              "code_efficiency": 99.8,
+              "code_debugging": 100.0,
+              "code_refactoring": 97.9,
+              "code_review": 85.2
+            },
+            "rust": {
+              "code_generation": 49.9,
+              "code_efficiency": 78.1,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.3,
+              "code_review": 87.6
+            }
+          }
+        },
+        {
+          "name": "gpt-5.6-sol",
+          "provider": "openai",
+          "reasoning_effort": null,
+          "global_score": 88.3,
+          "scores": {
+            "code_generation": 81.6,
+            "code_efficiency": 97.5,
+            "code_debugging": 97.7,
+            "code_refactoring": 98.3,
+            "code_review": 80.6,
+            "code_python": 96.4,
+            "code_typescript": 95.3,
+            "code_go": 83.6,
+            "code_rust": 86.4,
+            "efficiency": 72.0
+          },
+          "price_input": 5.0,
+          "price_output": 30.0,
+          "price_blended": 7.5,
+          "measured_cost_usd": 15.2017,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 1,
+          "refused": 0,
+          "duration_s": 6469.789366125595,
+          "avg_latency_s": 7.71,
+          "avg_tokens": 949,
+          "score_stddev": 4.57,
+          "input_tokens": 347035,
+          "output_tokens": 448883,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 97.9,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 83.8
+            },
+            "typescript": {
+              "code_generation": 98.3,
+              "code_efficiency": 99.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.7,
+              "code_review": 78.3
+            },
+            "go": {
+              "code_generation": 55.2,
+              "code_efficiency": 97.5,
+              "code_debugging": 97.7,
+              "code_refactoring": 97.4,
+              "code_review": 81.2
+            },
+            "rust": {
+              "code_generation": 74.9,
+              "code_efficiency": 92.6,
+              "code_debugging": 93.1,
+              "code_refactoring": 97.0,
+              "code_review": 79.0
+            }
+          }
+        },
+        {
+          "name": "gpt-5.6-terra",
+          "provider": "openai",
+          "reasoning_effort": null,
+          "global_score": 87.2,
+          "scores": {
+            "code_generation": 82.1,
+            "code_efficiency": 91.4,
+            "code_debugging": 98.3,
+            "code_refactoring": 96.5,
+            "code_review": 77.7,
+            "code_python": 95.1,
+            "code_typescript": 94.7,
+            "code_go": 76.7,
+            "code_rust": 88.3,
+            "efficiency": 78.3
+          },
+          "price_input": 2.5,
+          "price_output": 15.0,
+          "price_blended": 3.75,
+          "measured_cost_usd": 6.5249,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 4149.757324612699,
+          "avg_latency_s": 4.94,
+          "avg_tokens": 862,
+          "score_stddev": 4.43,
+          "input_tokens": 347379,
+          "output_tokens": 377100,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 97.9,
+              "code_efficiency": 97.7,
+              "code_debugging": 100.0,
+              "code_refactoring": 97.4,
+              "code_review": 81.3
+            },
+            "typescript": {
+              "code_generation": 98.1,
+              "code_efficiency": 99.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 99.6,
+              "code_review": 74.5
+            },
+            "go": {
+              "code_generation": 51.6,
+              "code_efficiency": 72.1,
+              "code_debugging": 93.1,
+              "code_refactoring": 94.3,
+              "code_review": 82.2
+            },
+            "rust": {
+              "code_generation": 80.8,
+              "code_efficiency": 95.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 94.9,
+              "code_review": 72.6
+            }
+          }
+        },
+        {
+          "name": "gpt-5.6-luna",
+          "provider": "openai",
+          "reasoning_effort": null,
+          "global_score": 86.2,
+          "scores": {
+            "code_generation": 76.2,
+            "code_efficiency": 97.1,
+            "code_debugging": 97.7,
+            "code_refactoring": 96.6,
+            "code_review": 81.4,
+            "code_python": 96.3,
+            "code_typescript": 95.0,
+            "code_go": 76.1,
+            "code_rust": 87.9,
+            "efficiency": 71.5
+          },
+          "price_input": 1.0,
+          "price_output": 6.0,
+          "price_blended": 1.5,
+          "measured_cost_usd": 3.7643,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 6306.851287109312,
+          "avg_latency_s": 7.51,
+          "avg_tokens": 1092,
+          "score_stddev": 4.39,
+          "input_tokens": 347379,
+          "output_tokens": 569490,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 98.1,
+              "code_efficiency": 98.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.8,
+              "code_review": 85.0
+            },
+            "typescript": {
+              "code_generation": 97.1,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.7,
+              "code_review": 78.6
+            },
+            "go": {
+              "code_generation": 35.8,
+              "code_efficiency": 90.3,
+              "code_debugging": 95.4,
+              "code_refactoring": 92.7,
+              "code_review": 82.1
+            },
+            "rust": {
+              "code_generation": 74.1,
+              "code_efficiency": 99.3,
+              "code_debugging": 95.4,
+              "code_refactoring": 96.3,
+              "code_review": 79.7
+            }
+          }
+        },
+        {
+          "name": "haiku-4-5",
+          "provider": "anthropic",
+          "reasoning_effort": null,
+          "global_score": 85.1,
+          "scores": {
+            "code_generation": 78.9,
+            "code_efficiency": 80.9,
+            "code_debugging": 100.0,
+            "code_refactoring": 95.7,
+            "code_review": 80.3,
+            "code_python": 94.1,
+            "code_typescript": 95.2,
+            "code_go": 76.5,
+            "code_rust": 80.5,
+            "efficiency": 78.8
+          },
+          "price_input": 1.0,
+          "price_output": 5.0,
+          "price_blended": 1.4,
+          "measured_cost_usd": 2.2209,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 3034.0912872189656,
+          "avg_latency_s": 3.61,
+          "avg_tokens": 898,
+          "score_stddev": 6.04,
+          "input_tokens": 387285,
+          "output_tokens": 366721,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 95.0,
+              "code_efficiency": 91.3,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 83.6
+            },
+            "typescript": {
+              "code_generation": 97.6,
+              "code_efficiency": 95.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 99.6,
+              "code_review": 82.0
+            },
+            "go": {
+              "code_generation": 55.5,
+              "code_efficiency": 60.1,
+              "code_debugging": 100.0,
+              "code_refactoring": 96.9,
+              "code_review": 77.8
+            },
+            "rust": {
+              "code_generation": 67.3,
+              "code_efficiency": 76.2,
+              "code_debugging": 100.0,
+              "code_refactoring": 86.3,
+              "code_review": 77.6
+            }
+          }
+        },
+        {
+          "name": "gemma-4-26B-a4b",
+          "provider": "openai",
+          "reasoning_effort": null,
+          "global_score": 84.7,
+          "scores": {
+            "code_generation": 83.0,
+            "code_efficiency": 91.6,
+            "code_debugging": 99.3,
+            "code_refactoring": 95.7,
+            "code_review": 72.2,
+            "code_python": 91.8,
+            "code_typescript": 92.2,
+            "code_go": 85.1,
+            "code_rust": 83.0,
+            "efficiency": 35.6
+          },
+          "price_input": null,
+          "price_output": null,
+          "price_blended": null,
+          "measured_cost_usd": null,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 4,
+          "refused": 0,
+          "duration_s": 14059.740864655003,
+          "avg_latency_s": 16.79,
+          "avg_tokens": 3644,
+          "score_stddev": 2.89,
+          "input_tokens": 384637,
+          "output_tokens": 2668603,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 88.5,
+              "code_efficiency": 97.6,
+              "code_debugging": 99.9,
+              "code_refactoring": 100.0,
+              "code_review": 74.1
+            },
+            "typescript": {
+              "code_generation": 90.2,
+              "code_efficiency": 99.7,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 71.8
+            },
+            "go": {
+              "code_generation": 80.6,
+              "code_efficiency": 78.1,
+              "code_debugging": 97.7,
+              "code_refactoring": 98.7,
+              "code_review": 71.9
+            },
+            "rust": {
+              "code_generation": 72.7,
+              "code_efficiency": 91.3,
+              "code_debugging": 99.7,
+              "code_refactoring": 84.0,
+              "code_review": 71.0
+            }
+          }
+        },
+        {
+          "name": "grok-4.6",
+          "provider": "xai",
+          "reasoning_effort": null,
+          "global_score": 83.2,
+          "scores": {
+            "code_generation": 87.2,
+            "code_efficiency": 95.5,
+            "code_debugging": 80.8,
+            "code_refactoring": 80.2,
+            "code_review": 78.9,
+            "code_python": 95.9,
+            "code_typescript": 63.5,
+            "code_go": 87.7,
+            "code_rust": 91.7,
+            "efficiency": 46.8
+          },
+          "price_input": 2.0,
+          "price_output": 6.0,
+          "price_blended": 2.4,
+          "measured_cost_usd": 3.0896,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 37895.53380650282,
+          "avg_latency_s": 45.11,
+          "avg_tokens": 1315,
+          "score_stddev": 2.81,
+          "input_tokens": 883932,
+          "output_tokens": 220293,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 98.1,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 80.3
+            },
+            "typescript": {
+              "code_generation": 98.5,
+              "code_efficiency": 82.1,
+              "code_debugging": 23.1,
+              "code_refactoring": 23.1,
+              "code_review": 77.5
+            },
+            "go": {
+              "code_generation": 66.7,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 79.8
+            },
+            "rust": {
+              "code_generation": 85.3,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 97.9,
+              "code_review": 77.8
+            }
+          }
+        },
+        {
+          "name": "gemma-4-31b",
+          "provider": "openai",
+          "reasoning_effort": null,
+          "global_score": 83.1,
+          "scores": {
+            "code_generation": 89.7,
+            "code_efficiency": 96.2,
+            "code_debugging": 79.0,
+            "code_refactoring": 79.2,
+            "code_review": 77.1,
+            "code_python": 95.6,
+            "code_typescript": 64.9,
+            "code_go": 90.5,
+            "code_rust": 87.5,
+            "efficiency": 39.9
+          },
+          "price_input": null,
+          "price_output": null,
+          "price_blended": null,
+          "measured_cost_usd": null,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 2,
+          "refused": 0,
+          "duration_s": 27524.696396956686,
+          "avg_latency_s": 32.8,
+          "avg_tokens": 2418,
+          "score_stddev": 1.68,
+          "input_tokens": 385002,
+          "output_tokens": 1645036,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 97.8,
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 79.4
+            },
+            "typescript": {
+              "code_generation": 97.0,
+              "code_efficiency": 92.2,
+              "code_debugging": 23.1,
+              "code_refactoring": 23.1,
+              "code_review": 77.0
+            },
+            "go": {
+              "code_generation": 87.9,
+              "code_efficiency": 92.7,
+              "code_debugging": 100.0,
+              "code_refactoring": 99.1,
+              "code_review": 73.9
+            },
+            "rust": {
+              "code_generation": 76.2,
+              "code_efficiency": 100.0,
+              "code_debugging": 93.1,
               "code_refactoring": 94.4,
-              "code_review": 79.2
+              "code_review": 78.3
+            }
+          }
+        },
+        {
+          "name": "gpt-4o",
+          "provider": "openai",
+          "reasoning_effort": null,
+          "global_score": 81.2,
+          "scores": {
+            "code_generation": 72.2,
+            "code_efficiency": 86.2,
+            "code_debugging": 97.7,
+            "code_refactoring": 92.4,
+            "code_review": 66.8,
+            "code_python": 91.3,
+            "code_typescript": 93.8,
+            "code_go": 60.1,
+            "code_rust": 83.9,
+            "efficiency": 88.3
+          },
+          "price_input": 2.5,
+          "price_output": 10.0,
+          "price_blended": 3.25,
+          "measured_cost_usd": 2.7283,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 3,
+          "refused": 0,
+          "duration_s": 1853.8882456570864,
+          "avg_latency_s": 2.21,
+          "avg_tokens": 636,
+          "score_stddev": 2.07,
+          "input_tokens": 348219,
+          "output_tokens": 185780,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 97.1,
+              "code_efficiency": 95.3,
+              "code_debugging": 100.0,
+              "code_refactoring": 95.4,
+              "code_review": 66.7
+            },
+            "typescript": {
+              "code_generation": 97.6,
+              "code_efficiency": 99.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 69.9
+            },
+            "go": {
+              "code_generation": 19.7,
+              "code_efficiency": 53.4,
+              "code_debugging": 95.4,
+              "code_refactoring": 85.8,
+              "code_review": 62.0
+            },
+            "rust": {
+              "code_generation": 74.5,
+              "code_efficiency": 96.2,
+              "code_debugging": 95.4,
+              "code_refactoring": 88.5,
+              "code_review": 68.5
+            }
+          }
+        },
+        {
+          "name": "grok-4",
+          "provider": "xai",
+          "reasoning_effort": null,
+          "global_score": 78.1,
+          "scores": {
+            "code_generation": 78.6,
+            "code_efficiency": 79.5,
+            "code_debugging": 79.0,
+            "code_refactoring": 80.2,
+            "code_review": 73.1,
+            "code_python": 95.2,
+            "code_typescript": 37.9,
+            "code_go": 90.8,
+            "code_rust": 88.6,
+            "efficiency": 75.5
+          },
+          "price_input": 3.0,
+          "price_output": 15.0,
+          "price_blended": 4.2,
+          "measured_cost_usd": 4.1273,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 6399.769160462078,
+          "avg_latency_s": 7.62,
+          "avg_tokens": 804,
+          "score_stddev": 2.71,
+          "input_tokens": 500562,
+          "output_tokens": 175041,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 97.5,
+              "code_efficiency": 99.9,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 77.5
+            },
+            "typescript": {
+              "code_generation": 43.3,
+              "code_efficiency": 23.1,
+              "code_debugging": 23.1,
+              "code_refactoring": 23.1,
+              "code_review": 74.6
+            },
+            "go": {
+              "code_generation": 86.8,
+              "code_efficiency": 97.6,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.6,
+              "code_review": 72.8
+            },
+            "rust": {
+              "code_generation": 86.8,
+              "code_efficiency": 97.6,
+              "code_debugging": 93.1,
+              "code_refactoring": 99.1,
+              "code_review": 67.4
+            }
+          }
+        },
+        {
+          "name": "gemini-3.6-flash",
+          "provider": "google",
+          "reasoning_effort": null,
+          "global_score": 77.4,
+          "scores": {
+            "code_generation": 78.8,
+            "code_efficiency": 78.3,
+            "code_debugging": 79.5,
+            "code_refactoring": 79.5,
+            "code_review": 73.1,
+            "code_python": 95.9,
+            "code_typescript": 36.8,
+            "code_go": 91.0,
+            "code_rust": 88.0,
+            "efficiency": 64.1
+          },
+          "price_input": 1.5,
+          "price_output": 7.5,
+          "price_blended": 2.1,
+          "measured_cost_usd": 2.2851,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 11428.056125501636,
+          "avg_latency_s": 13.6,
+          "avg_tokens": 717,
+          "score_stddev": 2.76,
+          "input_tokens": 372210,
+          "output_tokens": 230239,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 98.2,
+              "code_efficiency": 100.0,
+              "code_debugging": 99.8,
+              "code_refactoring": 100.0,
+              "code_review": 80.7
+            },
+            "typescript": {
+              "code_generation": 41.1,
+              "code_efficiency": 23.1,
+              "code_debugging": 23.1,
+              "code_refactoring": 23.1,
+              "code_review": 72.0
+            },
+            "go": {
+              "code_generation": 95.5,
+              "code_efficiency": 95.1,
+              "code_debugging": 95.4,
+              "code_refactoring": 97.9,
+              "code_review": 69.3
+            },
+            "rust": {
+              "code_generation": 80.6,
+              "code_efficiency": 95.1,
+              "code_debugging": 99.9,
+              "code_refactoring": 97.2,
+              "code_review": 70.3
+            }
+          }
+        },
+        {
+          "name": "qwen3-coder-30b",
+          "provider": "openai",
+          "reasoning_effort": "none",
+          "global_score": 73.1,
+          "scores": {
+            "code_generation": 70.6,
+            "code_efficiency": 72.8,
+            "code_debugging": 72.9,
+            "code_refactoring": 76.0,
+            "code_review": 70.8,
+            "code_python": 94.9,
+            "code_typescript": 36.5,
+            "code_go": 82.5,
+            "code_rust": 76.0,
+            "efficiency": 90.3
+          },
+          "price_input": null,
+          "price_output": null,
+          "price_blended": null,
+          "measured_cost_usd": null,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 3,
+          "refused": 0,
+          "duration_s": 916.7669900311157,
+          "avg_latency_s": 1.09,
+          "avg_tokens": 719,
+          "score_stddev": 1.74,
+          "input_tokens": 356607,
+          "output_tokens": 246380,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 96.6,
+              "code_efficiency": 99.5,
+              "code_debugging": 97.5,
+              "code_refactoring": 100.0,
+              "code_review": 80.2
+            },
+            "typescript": {
+              "code_generation": 43.4,
+              "code_efficiency": 23.1,
+              "code_debugging": 21.9,
+              "code_refactoring": 23.1,
+              "code_review": 68.4
+            },
+            "go": {
+              "code_generation": 76.7,
+              "code_efficiency": 90.4,
+              "code_debugging": 89.3,
+              "code_refactoring": 92.1,
+              "code_review": 66.5
+            },
+            "rust": {
+              "code_generation": 65.6,
+              "code_efficiency": 78.1,
+              "code_debugging": 83.1,
+              "code_refactoring": 89.0,
+              "code_review": 68.1
+            }
+          }
+        },
+        {
+          "name": "qwen3.6-27b",
+          "provider": "openai",
+          "reasoning_effort": "none",
+          "global_score": 72.6,
+          "scores": {
+            "code_generation": 67.0,
+            "code_efficiency": 64.4,
+            "code_debugging": 79.0,
+            "code_refactoring": 79.2,
+            "code_review": 76.9,
+            "code_python": 94.1,
+            "code_typescript": 36.9,
+            "code_go": 78.3,
+            "code_rust": 82.2,
+            "efficiency": 84.0
+          },
+          "price_input": null,
+          "price_output": null,
+          "price_blended": null,
+          "measured_cost_usd": null,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 3,
+          "refused": 0,
+          "duration_s": 4193.623456137255,
+          "avg_latency_s": 4.98,
+          "avg_tokens": 805,
+          "score_stddev": 0.0,
+          "input_tokens": 378555,
+          "output_tokens": 298650,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 96.4,
+              "code_efficiency": 92.3,
+              "code_debugging": 100.0,
+              "code_refactoring": 100.0,
+              "code_review": 80.9
+            },
+            "typescript": {
+              "code_generation": 43.0,
+              "code_efficiency": 23.1,
+              "code_debugging": 23.1,
+              "code_refactoring": 23.1,
+              "code_review": 70.0
+            },
+            "go": {
+              "code_generation": 62.7,
+              "code_efficiency": 62.6,
+              "code_debugging": 100.0,
+              "code_refactoring": 96.5,
+              "code_review": 75.8
+            },
+            "rust": {
+              "code_generation": 65.9,
+              "code_efficiency": 79.7,
+              "code_debugging": 93.1,
+              "code_refactoring": 97.4,
+              "code_review": 81.0
+            }
+          }
+        },
+        {
+          "name": "qwen3-32b",
+          "provider": "openai",
+          "reasoning_effort": "none",
+          "global_score": 65.5,
+          "scores": {
+            "code_generation": 59.7,
+            "code_efficiency": 57.1,
+            "code_debugging": 67.4,
+            "code_refactoring": 74.6,
+            "code_review": 70.3,
+            "code_python": 88.4,
+            "code_typescript": 33.7,
+            "code_go": 74.3,
+            "code_rust": 65.0,
+            "efficiency": 84.0
+          },
+          "price_input": null,
+          "price_output": null,
+          "price_blended": null,
+          "measured_cost_usd": null,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 4,
+          "refused": 0,
+          "duration_s": 3987.988263755571,
+          "avg_latency_s": 4.27,
+          "avg_tokens": 709,
+          "score_stddev": 1.76,
+          "input_tokens": 359967,
+          "output_tokens": 259607,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 89.1,
+              "code_efficiency": 94.8,
+              "code_debugging": 87.5,
+              "code_refactoring": 97.6,
+              "code_review": 72.7
+            },
+            "typescript": {
+              "code_generation": 38.9,
+              "code_efficiency": 23.1,
+              "code_debugging": 16.2,
+              "code_refactoring": 23.1,
+              "code_review": 65.4
+            },
+            "go": {
+              "code_generation": 66.8,
+              "code_efficiency": 61.4,
+              "code_debugging": 80.8,
+              "code_refactoring": 94.6,
+              "code_review": 71.0
+            },
+            "rust": {
+              "code_generation": 43.8,
+              "code_efficiency": 49.0,
+              "code_debugging": 85.0,
+              "code_refactoring": 83.3,
+              "code_review": 72.1
             }
           }
         },
@@ -2291,64 +2291,64 @@
           "name": "gemma-3-12B",
           "provider": "openai",
           "reasoning_effort": null,
-          "global_score": 70.4,
+          "global_score": 54.5,
           "scores": {
-            "code_generation": 63.4,
-            "code_efficiency": 81.2,
-            "code_debugging": 83.2,
-            "code_refactoring": 72.5,
-            "code_review": 54.8,
-            "code_python": 85.5,
-            "code_typescript": 87.4,
-            "code_go": 51.8,
-            "code_rust": 51.9,
-            "efficiency": 89.6
+            "code_generation": 44.9,
+            "code_efficiency": 55.9,
+            "code_debugging": 64.2,
+            "code_refactoring": 59.8,
+            "code_review": 49.2,
+            "code_python": 80.9,
+            "code_typescript": 31.5,
+            "code_go": 53.7,
+            "code_rust": 50.3,
+            "efficiency": 88.8
           },
           "price_input": null,
           "price_output": null,
           "price_blended": null,
           "measured_cost_usd": null,
-          "total_runs": 240,
+          "total_runs": 840,
           "repeats_per_case": 3.0,
-          "errors": 2,
+          "errors": 4,
           "refused": 0,
-          "duration_s": 531.7191475317813,
-          "avg_latency_s": 1.96,
-          "avg_tokens": 648,
-          "score_stddev": 1.32,
-          "input_tokens": 95127,
-          "output_tokens": 68040,
+          "duration_s": 1829.613647280261,
+          "avg_latency_s": 2.11,
+          "avg_tokens": 716,
+          "score_stddev": 1.35,
+          "input_tokens": 378930,
+          "output_tokens": 229405,
           "complete": true,
           "categories_scored": 5,
           "categories_total": 5,
           "language_scores": {
             "python": {
-              "code_generation": 88.6,
-              "code_efficiency": 100.0,
-              "code_debugging": 100.0,
-              "code_refactoring": 76.7,
-              "code_review": 56.7
+              "code_generation": 81.5,
+              "code_efficiency": 92.8,
+              "code_debugging": 85.2,
+              "code_refactoring": 94.6,
+              "code_review": 49.9
             },
             "typescript": {
-              "code_generation": 95.0,
-              "code_efficiency": 100.0,
-              "code_debugging": 93.0,
-              "code_refactoring": 75.0,
-              "code_review": 61.5
+              "code_generation": 42.2,
+              "code_efficiency": 23.1,
+              "code_debugging": 21.5,
+              "code_refactoring": 17.3,
+              "code_review": 49.2
             },
             "go": {
-              "code_generation": 34.0,
-              "code_efficiency": 56.5,
-              "code_debugging": 70.0,
-              "code_refactoring": 71.7,
-              "code_review": 56.7
+              "code_generation": 25.0,
+              "code_efficiency": 45.2,
+              "code_debugging": 80.7,
+              "code_refactoring": 77.6,
+              "code_review": 51.1
             },
             "rust": {
-              "code_generation": 36.2,
-              "code_efficiency": 68.3,
-              "code_debugging": 70.0,
-              "code_refactoring": 66.7,
-              "code_review": 44.4
+              "code_generation": 30.8,
+              "code_efficiency": 62.5,
+              "code_debugging": 69.5,
+              "code_refactoring": 49.7,
+              "code_review": 46.5
             }
           }
         },
@@ -2356,61 +2356,61 @@
           "name": "fable-5-low",
           "provider": "anthropic",
           "reasoning_effort": "low",
-          "global_score": 37.4,
+          "global_score": 36.6,
           "scores": {
-            "code_generation": 69.3,
-            "code_efficiency": 44.4,
-            "code_debugging": 0.0,
-            "code_refactoring": 16.7,
+            "code_generation": 70.2,
+            "code_efficiency": 46.8,
+            "code_debugging": 3.8,
+            "code_refactoring": 3.8,
             "code_review": 0.0,
-            "code_python": 38.4,
-            "code_typescript": 53.7,
-            "code_go": 34.6,
-            "code_rust": 20.8,
-            "efficiency": 80.6
+            "code_python": 30.5,
+            "code_typescript": 35.8,
+            "code_go": 25.3,
+            "code_rust": 21.1,
+            "efficiency": 78.0
           },
           "price_input": 10.0,
           "price_output": 50.0,
           "price_blended": 14.0,
-          "measured_cost_usd": 2.6168,
-          "total_runs": 240,
+          "measured_cost_usd": 7.0926,
+          "total_runs": 840,
           "repeats_per_case": 3.0,
           "errors": 0,
-          "refused": 138,
-          "duration_s": 644.9818834569305,
-          "avg_latency_s": 6.32,
-          "avg_tokens": 883,
-          "score_stddev": 0.08,
-          "input_tokens": 47119,
-          "output_tokens": 42913,
+          "refused": 585,
+          "duration_s": 1753.9046697537415,
+          "avg_latency_s": 6.88,
+          "avg_tokens": 947,
+          "score_stddev": 0.94,
+          "input_tokens": 124507,
+          "output_tokens": 116951,
           "complete": true,
           "categories_scored": 5,
           "categories_total": 5,
           "language_scores": {
             "python": {
-              "code_generation": 83.5,
-              "code_efficiency": 33.3,
-              "code_debugging": 0.0,
+              "code_generation": 77.8,
+              "code_efficiency": 48.7,
+              "code_debugging": 7.7,
               "code_refactoring": 0.0,
               "code_review": 0.0
             },
             "typescript": {
-              "code_generation": 84.3,
-              "code_efficiency": 66.7,
-              "code_debugging": 0.0,
-              "code_refactoring": 66.7,
+              "code_generation": 81.9,
+              "code_efficiency": 56.4,
+              "code_debugging": 7.7,
+              "code_refactoring": 15.4,
               "code_review": 0.0
             },
             "go": {
-              "code_generation": 74.0,
-              "code_efficiency": 33.3,
+              "code_generation": 68.8,
+              "code_efficiency": 41.0,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0
             },
             "rust": {
-              "code_generation": 35.3,
-              "code_efficiency": 44.4,
+              "code_generation": 52.2,
+              "code_efficiency": 41.0,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0
@@ -2421,61 +2421,61 @@
           "name": "fable-5",
           "provider": "anthropic",
           "reasoning_effort": null,
-          "global_score": 31.4,
+          "global_score": 33.3,
           "scores": {
-            "code_generation": 59.7,
-            "code_efficiency": 47.2,
-            "code_debugging": 0.0,
-            "code_refactoring": 2.8,
+            "code_generation": 65.3,
+            "code_efficiency": 45.6,
+            "code_debugging": 2.6,
+            "code_refactoring": 0.6,
             "code_review": 0.0,
-            "code_python": 38.4,
-            "code_typescript": 35.6,
-            "code_go": 33.8,
-            "code_rust": 17.8,
-            "efficiency": 59.8
+            "code_python": 29.5,
+            "code_typescript": 30.6,
+            "code_go": 23.4,
+            "code_rust": 20.0,
+            "efficiency": 61.4
           },
           "price_input": 10.0,
           "price_output": 50.0,
           "price_blended": 14.0,
-          "measured_cost_usd": 5.0822,
-          "total_runs": 240,
+          "measured_cost_usd": 13.0514,
+          "total_runs": 840,
           "repeats_per_case": 3.0,
           "errors": 0,
-          "refused": 138,
-          "duration_s": 1083.444965009112,
-          "avg_latency_s": 10.62,
-          "avg_tokens": 1354,
-          "score_stddev": 7.3,
-          "input_tokens": 45592,
-          "output_tokens": 92526,
+          "refused": 578,
+          "duration_s": 2885.015178750269,
+          "avg_latency_s": 11.01,
+          "avg_tokens": 1383,
+          "score_stddev": 5.14,
+          "input_tokens": 126540,
+          "output_tokens": 235720,
           "complete": true,
           "categories_scored": 5,
           "categories_total": 5,
           "language_scores": {
             "python": {
-              "code_generation": 83.5,
-              "code_efficiency": 33.3,
-              "code_debugging": 0.0,
+              "code_generation": 81.4,
+              "code_efficiency": 43.6,
+              "code_debugging": 2.6,
               "code_refactoring": 0.0,
               "code_review": 0.0
             },
             "typescript": {
-              "code_generation": 68.1,
-              "code_efficiency": 44.4,
-              "code_debugging": 0.0,
-              "code_refactoring": 11.1,
+              "code_generation": 78.3,
+              "code_efficiency": 46.2,
+              "code_debugging": 7.7,
+              "code_refactoring": 2.6,
               "code_review": 0.0
             },
             "go": {
-              "code_generation": 72.1,
-              "code_efficiency": 33.3,
+              "code_generation": 70.1,
+              "code_efficiency": 28.7,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0
             },
             "rust": {
-              "code_generation": 15.3,
-              "code_efficiency": 77.8,
+              "code_generation": 31.3,
+              "code_efficiency": 64.1,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0
@@ -2486,60 +2486,60 @@
           "name": "gemini-3.1-pro",
           "provider": "google",
           "reasoning_effort": null,
-          "global_score": 23.3,
+          "global_score": 15.4,
           "scores": {
-            "code_generation": 58.8,
+            "code_generation": 37.0,
             "code_efficiency": 0.0,
             "code_debugging": 0.0,
             "code_refactoring": 0.0,
             "code_review": 0.0,
-            "code_python": 28.4,
-            "code_typescript": 27.3,
-            "code_go": 22.9,
-            "code_rust": 15.5,
-            "efficiency": 53.8
+            "code_python": 12.9,
+            "code_typescript": 7.8,
+            "code_go": 9.9,
+            "code_rust": 7.5,
+            "efficiency": 49.7
           },
           "price_input": 2.0,
           "price_output": 12.0,
           "price_blended": 3.0,
-          "measured_cost_usd": 0.2652,
-          "total_runs": 240,
+          "measured_cost_usd": 0.4691,
+          "total_runs": 840,
           "repeats_per_case": 3.0,
-          "errors": 177,
+          "errors": 742,
           "refused": 0,
-          "duration_s": 2449.7682212064974,
-          "avg_latency_s": 29.49,
-          "avg_tokens": 540,
-          "score_stddev": 1.8,
-          "input_tokens": 20407,
-          "output_tokens": 18699,
+          "duration_s": 4535.008634120692,
+          "avg_latency_s": 35.72,
+          "avg_tokens": 606,
+          "score_stddev": 4.78,
+          "input_tokens": 33042,
+          "output_tokens": 33587,
           "complete": true,
           "categories_scored": 5,
           "categories_total": 5,
           "language_scores": {
             "python": {
-              "code_generation": 71.0,
+              "code_generation": 50.1,
               "code_efficiency": 0.0,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0
             },
             "typescript": {
-              "code_generation": 68.1,
+              "code_generation": 30.3,
               "code_efficiency": 0.0,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0
             },
             "go": {
-              "code_generation": 57.3,
+              "code_generation": 38.4,
               "code_efficiency": 0.0,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,
               "code_review": 0.0
             },
             "rust": {
-              "code_generation": 38.9,
+              "code_generation": 29.1,
               "code_efficiency": 0.0,
               "code_debugging": 0.0,
               "code_refactoring": 0.0,

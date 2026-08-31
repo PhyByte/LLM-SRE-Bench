@@ -306,6 +306,18 @@ def rust_arg_literal(type_str: str, value: Any, nested: bool = False) -> str:
     raise ValueError(f"unsupported io type for rust: {type_str!r}")
 
 
+def rust_already_imports(code: str, path: str, name: str) -> bool:
+    """Does ``code`` already bring ``path::name`` into scope?
+
+    Re-importing a name that is already in scope is a hard compile error in
+    Rust, and imports are routinely written grouped —
+    ``use std::collections::{HashMap, HashSet};`` — so a substring test for the
+    single-name form silently misses them and the harness emits a duplicate.
+    """
+    pattern = rf"use\s+{re.escape(path)}::(?:\{{[^}}]*\b{name}\b[^}}]*\}}|{name}\b)"
+    return re.search(pattern, code) is not None
+
+
 def rust_slice_element_type(type_str: str) -> str:
     """Element type of a slice *argument*: strings are borrowed, not owned.
 
@@ -674,15 +686,19 @@ print(json.dumps({{"passed": passed, "failed": failed, "errors": errors}}))
             call = f"{func_name}({', '.join(repr(a) for a in args)})"
             expected_lit = repr(test_case["expected"])
             check = "_close" if is_float else "_equal"
+            # The literal is bound to a name rather than spliced into the
+            # message f-string: an expected value containing a double quote
+            # would otherwise close that f-string and break the whole runner.
             blocks.append(f"""
 # Test case {i}
 try:
+    _expected = {expected_lit}
     result = {call}
-    if {check}(result, {expected_lit}):
+    if {check}(result, _expected):
         passed += 1
     else:
         failed += 1
-        errors.append(f"Test {i}: expected {expected_lit}, got {{result!r}}")
+        errors.append(f"Test {i}: expected {{_expected!r}}, got {{result!r}}")
 except Exception as e:
     failed += 1
     errors.append(f"Test {i}: {{type(e).__name__}}: {{e}}")
@@ -711,14 +727,15 @@ except Exception as e:
 # Test case {index} (workload)
 try:
 {setup_code}
+    _expected = {expected_lit}
     _start = time.perf_counter()
     result = {func_name}({call_args})
     elapsed_ms = (time.perf_counter() - _start) * 1000
-    if {check}(result, {expected_lit}):
+    if {check}(result, _expected):
         passed += 1
     else:
         failed += 1
-        errors.append(f"Workload: expected {expected_lit}, got {{result!r}}")
+        errors.append(f"Workload: expected {{_expected!r}}, got {{result!r}}")
 except Exception as e:
     failed += 1
     errors.append(f"Workload: {{type(e).__name__}}: {{e}}")
@@ -1740,7 +1757,8 @@ class RustExecutor(LanguageExecutor):
             return self._generate_typed_program(code, test_cases, harness, func_name)
 
         imports = []
-        if "HashMap" in code or func_name == "parse_log_line" or kind == "lru_cache":
+        needs_hashmap = "HashMap" in code or func_name == "parse_log_line" or kind == "lru_cache"
+        if needs_hashmap and not rust_already_imports(code, "std::collections", "HashMap"):
             imports.append("use std::collections::HashMap;")
         if func_name == "merge_config":
             # serde_json requires cargo; keep a note in imports for compile errors
@@ -2001,9 +2019,9 @@ fn main() {{
         # The model's own code may already import these; a second `use` of the
         # same name is a hard compile error in Rust, not a warning.
         needs_hashmap = any(_base_kind(t) == "map" for t in types) or "HashMap" in code
-        if needs_hashmap and "use std::collections::HashMap" not in code:
+        if needs_hashmap and not rust_already_imports(code, "std::collections", "HashMap"):
             imports.append("use std::collections::HashMap;")
-        if workload and "use std::time::Instant" not in code:
+        if workload and not rust_already_imports(code, "std::time", "Instant"):
             imports.append("use std::time::Instant;")
         generator = """
 fn gen_array(n: usize, seed: i64, m: i64, offset: i64) -> Vec<i64> {

@@ -10,6 +10,7 @@ scratch" and "find the two-line fix" both score, and a cosmetic edit does not.
 from __future__ import annotations
 
 from .common import Family, dedent_code
+from .debugging_advanced import ADVANCED_FAMILIES
 
 
 def median_of(values: list[int]) -> float:
@@ -561,4 +562,4 @@ NORMALIZE_PATH = Family(
 )
 
 
-FAMILIES = [MEDIAN, MERGE_SORTED, NORMALIZE_PATH]
+FAMILIES = [MEDIAN, MERGE_SORTED, NORMALIZE_PATH, *ADVANCED_FAMILIES]
