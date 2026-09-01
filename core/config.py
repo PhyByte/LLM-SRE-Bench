@@ -15,8 +15,8 @@ load_dotenv()
 
 Provider = Literal["openai", "xai", "anthropic", "google", "ollama", "mock"]
 
-# Category name -> weight in the global score. Must sum to 1.0.
-CATEGORY_WEIGHTS: dict[str, float] = {
+# SRE/observability track weights (original, must sum to 1.0)
+SRE_CATEGORY_WEIGHTS: dict[str, float] = {
     "log_parsing": 0.15,
     "anomaly_detection": 0.25,
     "pattern_correlation": 0.15,
@@ -26,8 +26,33 @@ CATEGORY_WEIGHTS: dict[str, float] = {
     "efficiency": 0.05,
 }
 
+# Developer track: five kinds of coding work (95% total) + efficiency (5%).
+# Every case in these categories exists in all four languages, so the same
+# weights also describe an even split across Python/TypeScript/Go/Rust.
+DEVELOPER_CATEGORY_WEIGHTS: dict[str, float] = {
+    "code_generation": 0.35,
+    "code_efficiency": 0.15,
+    "code_debugging": 0.15,
+    "code_refactoring": 0.15,
+    "code_review": 0.15,
+    "efficiency": 0.05,
+}
+
+# Per-language score buckets (code_python, code_go, ...) are derived from case
+# ids in reports/generator.py for the secondary by-language table. They are not
+# weighted directly — that would double-count the same runs.
+CODE_GEN_LANGUAGES = ("python", "typescript", "go", "rust")
+
+# Category weights used for scoring (defaults to SRE track)
+# Will be switched based on --suite CLI flag
+CATEGORY_WEIGHTS: dict[str, float] = SRE_CATEGORY_WEIGHTS.copy()
+
 # Categories backed by datasets (efficiency is derived from the other runs).
-TASK_CATEGORIES = [c for c in CATEGORY_WEIGHTS if c != "efficiency"]
+# This includes both SRE and developer categories
+SRE_CATEGORIES = [c for c in SRE_CATEGORY_WEIGHTS if c != "efficiency"]
+DEVELOPER_CATEGORIES = [c for c in DEVELOPER_CATEGORY_WEIGHTS if c != "efficiency"]
+TASK_CATEGORIES = SRE_CATEGORIES  # Default to SRE for backward compatibility
+ALL_CATEGORIES = list(set(SRE_CATEGORIES + DEVELOPER_CATEGORIES))
 
 _ENV_PATTERN = re.compile(r"\$\{([A-Za-z_][A-Za-z0-9_]*)\}")
 
@@ -60,10 +85,11 @@ class ModelConfig(BaseModel):
     # provider's default. Define two entries with the same model_id but different
     # names/efforts to A/B "with vs. without" heavy reasoning. Wiring per provider:
     #   - openai / xai: sent as `reasoning_effort` on /chat/completions
-    #     (OpenAI GPT-5/o-series, xAI Grok models that accept it).
+    #     (OpenAI GPT-5/o-series, xAI Grok models that accept it; LM Studio Qwen
+    #     accepts "none" to disable thinking and avoid empty finish_reason=length).
     #   - anthropic: sent as `output_config.effort` (Claude models — Fable 5,
     #     Opus 5/4.8, Sonnet 5, etc. — where thinking is always on and effort is
-    #     the depth control). "minimal" is not valid here; use "low".
+    #     the depth control). "minimal"/"none" are not valid here; use "low".
     #   - ollama: ignored.
     reasoning_effort: Optional[str] = None
     # Price in USD per 1,000,000 tokens, used to compute a total cost column in
@@ -78,9 +104,10 @@ class ModelConfig(BaseModel):
     def _check_effort(cls, value: Optional[str]) -> Optional[str]:
         if value is None:
             return None
-        # Union across providers: minimal (OpenAI) + low/medium/high (all) +
-        # xhigh/max (Anthropic, newer). Provider rejects anything it doesn't take.
-        allowed = {"minimal", "low", "medium", "high", "xhigh", "max"}
+        # Union across providers: none (LM Studio / Qwen — disable thinking) +
+        # minimal (OpenAI) + low/medium/high (all) + xhigh/max (Anthropic, newer).
+        # Provider rejects anything it doesn't take.
+        allowed = {"none", "minimal", "low", "medium", "high", "xhigh", "max"}
         if value not in allowed:
             raise ValueError(
                 f"reasoning_effort must be one of {sorted(allowed)} or null, got {value!r}"
@@ -124,3 +151,63 @@ class BenchmarkConfig(BaseModel):
             if m.name == name:
                 return m
         raise KeyError(f"unknown model '{name}'")
+
+
+def set_suite(suite: str) -> list[str]:
+    """Set the active suite and return the categories to run.
+
+    Args:
+        suite: One of 'sre', 'developer', or 'all'
+
+    Returns:
+        List of category names to run
+
+    Note:
+        Mutates ``CATEGORY_WEIGHTS`` and ``TASK_CATEGORIES`` in place so every
+        module that imported those names keeps seeing the active suite.
+    """
+    if suite == "sre":
+        CATEGORY_WEIGHTS.clear()
+        CATEGORY_WEIGHTS.update(SRE_CATEGORY_WEIGHTS)
+        TASK_CATEGORIES[:] = list(SRE_CATEGORIES)
+        return list(SRE_CATEGORIES)
+    if suite == "developer":
+        CATEGORY_WEIGHTS.clear()
+        CATEGORY_WEIGHTS.update(DEVELOPER_CATEGORY_WEIGHTS)
+        TASK_CATEGORIES[:] = list(DEVELOPER_CATEGORIES)
+        return list(DEVELOPER_CATEGORIES)
+    if suite == "all":
+        # Combine both suites with adjusted weights (60% SRE / 40% developer),
+        # keeping each track's internal proportions.
+        combined: dict[str, float] = {}
+        for cat, weight in SRE_CATEGORY_WEIGHTS.items():
+            if cat != "efficiency":
+                combined[cat] = weight * 0.60
+        developer_total = sum(
+            weight
+            for cat, weight in DEVELOPER_CATEGORY_WEIGHTS.items()
+            if cat != "efficiency"
+        )
+        for cat, weight in DEVELOPER_CATEGORY_WEIGHTS.items():
+            if cat != "efficiency":
+                combined[cat] = weight / developer_total * 0.95 * 0.40
+        combined["efficiency"] = 0.05
+        CATEGORY_WEIGHTS.clear()
+        CATEGORY_WEIGHTS.update(combined)
+        TASK_CATEGORIES[:] = list(SRE_CATEGORIES) + list(DEVELOPER_CATEGORIES)
+        return list(TASK_CATEGORIES)
+    raise ValueError(f"unknown suite '{suite}', must be 'sre', 'developer', or 'all'")
+
+
+def detect_suite(categories: set[str]) -> str:
+    """Infer which suite fits a set of category names from stored results.
+
+    Returns 'all' when both tracks appear, otherwise the single track that does.
+    """
+    has_sre = bool(categories & set(SRE_CATEGORIES))
+    has_dev = bool(categories & set(DEVELOPER_CATEGORIES))
+    if has_sre and has_dev:
+        return "all"
+    if has_dev:
+        return "developer"
+    return "sre"

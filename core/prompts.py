@@ -10,10 +10,33 @@ from __future__ import annotations
 
 from typing import Any
 
+# Categories whose answer is code the harness compiles and runs.
+CODE_WRITING_CATEGORIES = (
+    "code_generation",
+    "code_efficiency",
+    "code_debugging",
+    "code_refactoring",
+)
+
 SYSTEM_PROMPT = (
     "You are an expert SRE assistant specialized in log and metrics analysis. "
     "You always respond with a single valid JSON object and nothing else: "
     "no markdown fences, no explanations, no text before or after the JSON."
+)
+
+CODE_GENERATION_SYSTEM_PROMPT = (
+    "You are an expert software engineer. "
+    "You always respond with a single valid JSON object containing working code. "
+    "No markdown fences, no explanations, no text before or after the JSON. "
+    "The code must be correct, efficient, and handle all specified edge cases."
+)
+
+CODE_REVIEW_SYSTEM_PROMPT = (
+    "You are a senior engineer reviewing a pull request. "
+    "You always respond with a single valid JSON object and nothing else: "
+    "no markdown fences, no explanations, no text before or after the JSON. "
+    "You report real defects with their consequences, and you do not pad the "
+    "review with style opinions or speculative findings."
 )
 
 JUDGE_SYSTEM_PROMPT = (
@@ -196,6 +219,141 @@ return "unknown" for both, and use the summary to say what you observed and why
 it is not enough to localize the fault."""
 
 
+def _code_generation(case: dict[str, Any]) -> str:
+    language = case["language"]
+    spec = case["spec"]
+    signature = case.get("signature", "")
+    
+    return f"""Task: code_generation
+
+Language: {language}
+
+{spec}
+
+{"Required function signature:" if signature else ""}
+{signature}
+
+Return JSON exactly in this shape:
+{{"code": "<complete working implementation>"}}
+
+The code must:
+- Implement the specified functionality correctly
+- Handle all edge cases mentioned in the spec
+- Be syntactically correct and runnable
+- Follow best practices for {language}"""
+
+
+def _numbered_code(code: str) -> str:
+    """Code lines numbered from 1, so findings can be pinned to a line."""
+    return "\n".join(f"{i}: {line}" for i, line in enumerate(code.split("\n"), start=1))
+
+
+def _code_efficiency(case: dict[str, Any]) -> str:
+    language = case["language"]
+    budget = case.get("time_budget_ms")
+    return f"""Task: code_efficiency
+
+Language: {language}
+
+{case["spec"]}
+
+Required function signature:
+{case.get("signature", "")}
+
+Your solution is run once against an input of {case["workload"]["arrays"][0]["n"]:,}
+elements and must finish that call in under {budget} ms on the grading machine,
+so the algorithm matters more than the micro-optimizations. It also has to be
+correct on small inputs and edge cases.
+
+Return JSON exactly in this shape:
+{{"code": "<complete working implementation>"}}"""
+
+
+def _code_debugging(case: dict[str, Any]) -> str:
+    language = case["language"]
+    return f"""Task: code_debugging
+
+Language: {language}
+
+This implementation is in production and is wrong. Find the defect and return a
+corrected implementation.
+
+Reported symptom:
+{case["symptom"]}
+
+What the function is supposed to do:
+{case["spec"]}
+
+Current implementation:
+<code>
+{case["buggy_code"]}
+</code>
+
+Keep the signature exactly as it is:
+{case.get("signature", "")}
+
+Return the complete fixed implementation — not a diff, not an explanation.
+
+Return JSON exactly in this shape:
+{{"code": "<complete fixed implementation>"}}"""
+
+
+def _code_refactoring(case: dict[str, Any]) -> str:
+    language = case["language"]
+    return f"""Task: code_refactoring
+
+Language: {language}
+
+Refactor the code below. Its behavior is correct and must not change — it is
+covered by tests you cannot see, and any behavior change fails the task.
+
+Refactoring goal:
+{case["goal"]}
+
+What the function does (unchanged contract):
+{case["spec"]}
+
+Current implementation:
+<code>
+{case["original_code"]}
+</code>
+
+Keep the signature exactly as it is:
+{case.get("signature", "")}
+
+Return the complete refactored implementation — not a diff, not an explanation.
+
+Return JSON exactly in this shape:
+{{"code": "<complete refactored implementation>"}}"""
+
+
+def _code_review(case: dict[str, Any]) -> str:
+    language = case["language"]
+    return f"""Task: code_review
+
+Language: {language}
+
+Review the code below as if it were a pull request you can block. Report the
+defects that matter — correctness bugs, security holes, resource and
+concurrency problems, and things that fall over at production scale. Say what
+is wrong and why, not just which line looks suspicious. Do not report style,
+naming, or formatting preferences, and do not pad the list: findings that do
+not correspond to a real defect count against you.
+
+Context:
+{case["context"]}
+
+Code (line numbers on the left are not part of the file):
+<code>
+{_numbered_code(case["code"])}
+</code>
+
+Return JSON exactly in this shape:
+{{"findings": [{{"line": <int line number>, "severity": "<low|medium|high|critical>", "issue": "<what is wrong and why it matters>"}}, ...]}}
+
+If the code has no defects worth blocking on, return {{"findings": []}}."""
+
+
 def build_judge_prompt(case: dict[str, Any], candidate_root_cause: str, candidate_summary: str) -> str:
     return f"""Grade a candidate root-cause analysis against the reference answer.
 
@@ -222,4 +380,9 @@ _BUILDERS = {
     "metrics_timeseries": _metrics_timeseries,
     "root_cause": _root_cause,
     "multimodal_rca": _multimodal_rca,
+    "code_generation": _code_generation,
+    "code_efficiency": _code_efficiency,
+    "code_debugging": _code_debugging,
+    "code_refactoring": _code_refactoring,
+    "code_review": _code_review,
 }

@@ -121,6 +121,29 @@ def _openai_reasoning_model(model_id: str) -> bool:
     return mid.startswith("gpt-5")
 
 
+def _json_response_format(model: ModelConfig) -> dict:
+    """Build response_format for json_mode, accounting for server quirks.
+
+    LM Studio's OpenAI shim rejects ``json_object`` and only accepts
+    ``json_schema`` or ``text``. Cloud OpenAI-compatible APIs use json_object.
+    """
+    base = (model.base_url or "").lower()
+    cloud = (
+        base.startswith("https://api.openai.com")
+        or base.startswith("https://api.x.ai")
+        or "generativelanguage.googleapis.com" in base
+    )
+    if model.json_mode and not cloud:
+        return {
+            "type": "json_schema",
+            "json_schema": {
+                "name": "response",
+                "schema": {"type": "object"},
+            },
+        }
+    return {"type": "json_object"}
+
+
 class OpenAICompatibleClient(BaseClient):
     """OpenAI, xAI Grok, and any other /chat/completions-compatible endpoint."""
 
@@ -163,7 +186,7 @@ class OpenAICompatibleClient(BaseClient):
         if self.model.json_mode:
             # The system prompt already instructs "single valid JSON object",
             # which satisfies servers that require the word "json" for this mode.
-            payload["response_format"] = {"type": "json_object"}
+            payload["response_format"] = _json_response_format(self.model)
         if self.model.reasoning_effort:
             # OpenAI GPT-5/o-series and xAI Grok expose this knob; endpoints that
             # don't understand it will 400, which surfaces as a failed run for
@@ -182,18 +205,23 @@ class OpenAICompatibleClient(BaseClient):
             text = choice["message"]["content"] or ""
         except (KeyError, IndexError) as exc:
             raise ClientError(f"malformed completion response: {data}") from exc
-        if not text.strip():
-            # Reasoning models (o-series, GPT-5+) can spend the whole token
-            # budget on hidden reasoning and return empty content. Surface a
-            # clear, retryable error instead of a downstream "no JSON" failure.
-            finish = choice.get("finish_reason")
-            hint = (
-                " — raise this model's max_tokens (reasoning consumed the budget)"
-                if finish == "length"
-                else ""
-            )
-            raise ClientError(f"empty response (finish_reason={finish}){hint}")
         usage = data.get("usage") or {}
+        if not text.strip():
+            # Reasoning models (o-series, GPT-5+, Qwen-thinking via LM Studio)
+            # can spend the whole token budget on hidden reasoning and return
+            # empty content. Surface a clear error instead of a downstream
+            # "no JSON" failure. For local Qwen, prefer reasoning_effort=none.
+            finish = choice.get("finish_reason")
+            details = usage.get("completion_tokens_details") or {}
+            reasoning_tokens = details.get("reasoning_tokens")
+            hint = ""
+            if finish == "length":
+                hint = " — raise this model's max_tokens (reasoning consumed the budget)"
+                if reasoning_tokens:
+                    hint += f"; reasoning_tokens={reasoning_tokens}"
+                if self.model.reasoning_effort != "none":
+                    hint += " or set reasoning_effort=none"
+            raise ClientError(f"empty response (finish_reason={finish}){hint}")
         return LLMResponse(
             text=text,
             latency_s=latency,
@@ -391,8 +419,490 @@ class MockClient(BaseClient):
             }
         if category == "multimodal_rca":
             return self._multimodal_rca(user, heuristic)
+        if category in ("code_generation", "code_efficiency"):
+            return self._code_generation(user, heuristic)
+        if category in ("code_debugging", "code_refactoring"):
+            return self._code_rewrite(user, heuristic)
+        if category == "code_review":
+            return self._code_review(user, heuristic)
         # Judge prompts (no Task: tag) — return a neutral grade.
         return {"score": 5, "reasoning": "mock judge"}
+
+    _PROMPT_CODE = re.compile(r"<code>\n(.*?)\n</code>", re.DOTALL)
+
+    def _code_rewrite(self, user: str, heuristic: bool) -> dict:
+        """Baseline for the fix-it / refactor-it categories: hand the code back.
+
+        It is the honest floor for these tasks — behavior is preserved, so the
+        tests the original already passed still pass, and nothing else does.
+        The naive variant does not even manage that.
+        """
+        match = self._PROMPT_CODE.search(user)
+        if not heuristic or match is None:
+            language = self._language_of(user)
+            return self._naive_code(language)
+        return {"code": match.group(1)}
+
+    # Defect phrasings the rule-based reviewer knows to look for, keyed by a
+    # marker it can find in the code itself.
+    _REVIEW_RULES = (
+        ("unwrap()", "high", "unwrap() will panic instead of returning an error"),
+        ("SELECT", "high", "query built by string concatenation — SQL injection risk"),
+        ("log", "medium", "logging may include the authorization token, a leaked secret"),
+    )
+
+    def _code_review(self, user: str, heuristic: bool) -> dict:
+        match = self._PROMPT_CODE.search(user)
+        if not heuristic or match is None:
+            return {"findings": []}
+        findings = []
+        for number, line in enumerate(match.group(1).split("\n"), start=1):
+            text = line.split(": ", 1)[1] if ": " in line else line
+            for marker, severity, issue in self._REVIEW_RULES:
+                if marker in text:
+                    findings.append({"line": number, "severity": severity, "issue": issue})
+                    break
+        return {"findings": findings[:5]}
+
+    @staticmethod
+    def _language_of(user: str) -> str:
+        for language in ("typescript", "go", "rust"):
+            if f"Language: {language}" in user:
+                return language
+        return "python"
+
+    _METRICS = re.compile(r"<metrics>\n(.*?)\n</metrics>", re.DOTALL)
+    _CANDIDATES = re.compile(r"Candidate services \(the culprit is one of these.*?\):\n(.*?)\n", re.DOTALL)
+
+    def _code_generation(self, user: str, heuristic: bool) -> dict:
+        """Generate mock code based on the language and task family.
+
+        The heuristic version generates working code for simple cases.
+        The naive version generates syntactically valid but non-functional code.
+        """
+        # Extract language from prompt
+        language = "python"  # default
+        if "Language: typescript" in user:
+            language = "typescript"
+        elif "Language: go" in user:
+            language = "go"
+        elif "Language: rust" in user:
+            language = "rust"
+
+        # Extract task family from case ID or spec
+        if "slugify" in user.lower():
+            if not heuristic:
+                return self._naive_code(language)
+            return {"code": self._mock_slugify(language)}
+        elif "interval" in user.lower() and "merge" in user.lower():
+            if not heuristic:
+                return self._naive_code(language)
+            return {"code": self._mock_interval_merge(language)}
+        elif "rate" in user.lower() and "limit" in user.lower():
+            if not heuristic:
+                return self._naive_code(language)
+            return {"code": self._mock_rate_limiter(language)}
+        elif "config" in user.lower() and ("merge" in user.lower() or "overlay" in user.lower()):
+            if not heuristic:
+                return self._naive_code(language)
+            return {"code": self._mock_config_merge(language)}
+        elif "lru" in user.lower() or "cache" in user.lower():
+            if not heuristic:
+                return self._naive_code(language)
+            return {"code": self._mock_lru_cache(language)}
+        elif "log" in user.lower() and "parse" in user.lower():
+            if not heuristic:
+                return self._naive_code(language)
+            return {"code": self._mock_log_parser(language)}
+
+        return self._naive_code(language)
+
+    def _naive_code(self, language: str) -> dict:
+        """Return minimal syntactically valid code that does nothing useful."""
+        naive_impls = {
+            "python": "def placeholder(x):\n    return x",
+            "typescript": "function placeholder(x: any): any { return x; }",
+            "go": "func Placeholder(x interface{}) interface{} { return x }",
+            "rust": "fn placeholder(x: i32) -> i32 { x }",
+        }
+        return {"code": naive_impls.get(language, naive_impls["python"])}
+
+    def _mock_slugify(self, language: str) -> str:
+        """Generate working slugify implementation."""
+        impls = {
+            "python": '''def slugify(text: str) -> str:
+    import re
+    text = text.lower()
+    text = re.sub(r'[_\\s]+', '-', text)
+    text = re.sub(r'[^a-z0-9-]', '', text)
+    text = re.sub(r'-+', '-', text)
+    return text.strip('-')''',
+            "typescript": '''function slugify(text: string): string {
+    return text.toLowerCase()
+        .replace(/[_\\s]+/g, '-')
+        .replace(/[^a-z0-9-]/g, '')
+        .replace(/-+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}''',
+            "go": '''func Slugify(text string) string {
+    text = strings.ToLower(text)
+    text = regexp.MustCompile(`[_\\s]+`).ReplaceAllString(text, "-")
+    text = regexp.MustCompile(`[^a-z0-9-]`).ReplaceAllString(text, "")
+    text = regexp.MustCompile(`-+`).ReplaceAllString(text, "-")
+    return strings.Trim(text, "-")
+}''',
+            "rust": '''fn slugify(text: &str) -> String {
+    text.to_lowercase()
+        .chars()
+        .map(|c| match c {
+            '_' | ' ' => '-',
+            c if c.is_alphanumeric() || c == '-' => c,
+            _ => ' '
+        })
+        .collect::<String>()
+        .split_whitespace()
+        .collect::<Vec<_>>()
+        .join("")
+        .split('-')
+        .filter(|s| !s.is_empty())
+        .collect::<Vec<_>>()
+        .join("-")
+}''',
+        }
+        return impls.get(language, impls["python"])
+
+    def _mock_interval_merge(self, language: str) -> str:
+        """Generate working interval merge implementation."""
+        impls = {
+            "python": '''def merge_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]:
+    if not intervals:
+        return []
+    intervals = sorted(intervals)
+    merged = [intervals[0]]
+    for current in intervals[1:]:
+        last = merged[-1]
+        if current[0] <= last[1]:
+            merged[-1] = (last[0], max(last[1], current[1]))
+        else:
+            merged.append(current)
+    return merged''',
+            "typescript": '''function mergeIntervals(intervals: [number, number][]): [number, number][] {
+    if (intervals.length === 0) return [];
+    intervals.sort((a, b) => a[0] - b[0]);
+    const merged: [number, number][] = [intervals[0]];
+    for (let i = 1; i < intervals.length; i++) {
+        const last = merged[merged.length - 1];
+        const current = intervals[i];
+        if (current[0] <= last[1]) {
+            last[1] = Math.max(last[1], current[1]);
+        } else {
+            merged.push(current);
+        }
+    }
+    return merged;
+}''',
+            "go": '''func MergeIntervals(intervals [][2]int) [][2]int {
+    if len(intervals) == 0 {
+        return [][2]int{}
+    }
+    sort.Slice(intervals, func(i, j int) bool {
+        return intervals[i][0] < intervals[j][0]
+    })
+    merged := [][2]int{intervals[0]}
+    for i := 1; i < len(intervals); i++ {
+        last := &merged[len(merged)-1]
+        current := intervals[i]
+        if current[0] <= last[1] {
+            if current[1] > last[1] {
+                last[1] = current[1]
+            }
+        } else {
+            merged = append(merged, current)
+        }
+    }
+    return merged
+}''',
+            "rust": '''fn merge_intervals(mut intervals: Vec<(i32, i32)>) -> Vec<(i32, i32)> {
+    if intervals.is_empty() {
+        return vec![];
+    }
+    intervals.sort_by_key(|&(start, _)| start);
+    let mut merged = vec![intervals[0]];
+    for &current in intervals.iter().skip(1) {
+        let last = merged.last_mut().unwrap();
+        if current.0 <= last.1 {
+            last.1 = last.1.max(current.1);
+        } else {
+            merged.push(current);
+        }
+    }
+    merged
+}''',
+        }
+        return impls.get(language, impls["python"])
+
+    def _mock_rate_limiter(self, language: str) -> str:
+        """Generate basic rate limiter (may not pass all tests but syntactically correct)."""
+        impls = {
+            "python": '''class RateLimiter:
+    def __init__(self, max_requests: int, window_seconds: float):
+        self.max_requests = max_requests
+        self.window_seconds = window_seconds
+        self.requests = []
+    def allow(self, timestamp: float) -> bool:
+        self.requests = [t for t in self.requests if timestamp - t < self.window_seconds]
+        if len(self.requests) < self.max_requests:
+            self.requests.append(timestamp)
+            return True
+        return False''',
+            "typescript": '''class RateLimiter {
+    private maxRequests: number;
+    private windowSeconds: number;
+    private requests: number[] = [];
+    constructor(maxRequests: number, windowSeconds: number) {
+        this.maxRequests = maxRequests;
+        this.windowSeconds = windowSeconds;
+    }
+    allow(timestamp: number): boolean {
+        this.requests = this.requests.filter(t => timestamp - t < this.windowSeconds);
+        if (this.requests.length < this.maxRequests) {
+            this.requests.push(timestamp);
+            return true;
+        }
+        return false;
+    }
+}''',
+            "go": '''type RateLimiter struct {
+    maxRequests   int
+    windowSeconds float64
+    requests      []float64
+}
+func NewRateLimiter(maxRequests int, windowSeconds float64) *RateLimiter {
+    return &RateLimiter{maxRequests: maxRequests, windowSeconds: windowSeconds, requests: []float64{}}
+}
+func (rl *RateLimiter) Allow(timestamp float64) bool {
+    newRequests := []float64{}
+    for _, t := range rl.requests {
+        if timestamp-t < rl.windowSeconds {
+            newRequests = append(newRequests, t)
+        }
+    }
+    rl.requests = newRequests
+    if len(rl.requests) < rl.maxRequests {
+        rl.requests = append(rl.requests, timestamp)
+        return true
+    }
+    return false
+}''',
+            "rust": '''struct RateLimiter {
+    max_requests: usize,
+    window_seconds: f64,
+    requests: Vec<f64>,
+}
+impl RateLimiter {
+    fn new(max_requests: usize, window_seconds: f64) -> Self {
+        RateLimiter { max_requests, window_seconds, requests: Vec::new() }
+    }
+    fn allow(&mut self, timestamp: f64) -> bool {
+        self.requests.retain(|&t| timestamp - t < self.window_seconds);
+        if self.requests.len() < self.max_requests {
+            self.requests.push(timestamp);
+            true
+        } else {
+            false
+        }
+    }
+}''',
+        }
+        return impls.get(language, impls["python"])
+
+    def _mock_config_merge(self, language: str) -> str:
+        """Generate basic config merge (simplified)."""
+        impls = {
+            "python": '''def merge_config(base: dict, overlay: dict) -> dict:
+    result = base.copy()
+    for key, value in overlay.items():
+        if key in result and isinstance(result[key], dict) and isinstance(value, dict):
+            result[key] = merge_config(result[key], value)
+        else:
+            result[key] = value
+    return result''',
+            "typescript": '''function mergeConfig(base: any, overlay: any): any {
+    const result = {...base};
+    for (const key in overlay) {
+        if (typeof result[key] === 'object' && !Array.isArray(result[key]) && 
+            typeof overlay[key] === 'object' && !Array.isArray(overlay[key])) {
+            result[key] = mergeConfig(result[key], overlay[key]);
+        } else {
+            result[key] = overlay[key];
+        }
+    }
+    return result;
+}''',
+            "go": '''func MergeConfig(base, overlay map[string]interface{}) map[string]interface{} {
+    result := make(map[string]interface{})
+    for k, v := range base {
+        result[k] = v
+    }
+    for k, v := range overlay {
+        if baseMap, ok := result[k].(map[string]interface{}); ok {
+            if overlayMap, ok := v.(map[string]interface{}); ok {
+                result[k] = MergeConfig(baseMap, overlayMap)
+                continue
+            }
+        }
+        result[k] = v
+    }
+    return result
+}''',
+            "rust": '''fn merge_config(base: serde_json::Value, overlay: serde_json::Value) -> serde_json::Value {
+    use serde_json::{Value, Map};
+    match (base, overlay) {
+        (Value::Object(mut base_map), Value::Object(overlay_map)) => {
+            for (key, value) in overlay_map {
+                base_map.insert(key, value);
+            }
+            Value::Object(base_map)
+        },
+        (_, overlay) => overlay,
+    }
+}''',
+        }
+        return impls.get(language, impls["python"])
+
+    def _mock_lru_cache(self, language: str) -> str:
+        """Generate minimal LRU cache (won't pass all tests)."""
+        impls = {
+            "python": '''class LRUCache:
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = {}
+    def get(self, key: str) -> int | None:
+        return self.cache.get(key)
+    def put(self, key: str, value: int) -> None:
+        if len(self.cache) >= self.capacity and key not in self.cache:
+            self.cache.pop(next(iter(self.cache)))
+        self.cache[key] = value''',
+            "typescript": '''class LRUCache {
+    private capacity: number;
+    private cache: Map<string, number> = new Map();
+    constructor(capacity: number) {
+        this.capacity = capacity;
+    }
+    get(key: string): number | null {
+        return this.cache.get(key) ?? null;
+    }
+    put(key: string, value: number): void {
+        if (this.cache.size >= this.capacity && !this.cache.has(key)) {
+            const firstKey = this.cache.keys().next().value;
+            this.cache.delete(firstKey);
+        }
+        this.cache.set(key, value);
+    }
+}''',
+            "go": '''type LRUCache struct {
+    capacity int
+    cache    map[string]int
+}
+func NewLRUCache(capacity int) *LRUCache {
+    return &LRUCache{capacity: capacity, cache: make(map[string]int)}
+}
+func (c *LRUCache) Get(key string) (int, bool) {
+    val, ok := c.cache[key]
+    return val, ok
+}
+func (c *LRUCache) Put(key string, value int) {
+    c.cache[key] = value
+}''',
+            "rust": '''struct LRUCache {
+    capacity: usize,
+    cache: std::collections::HashMap<String, i32>,
+}
+impl LRUCache {
+    fn new(capacity: usize) -> Self {
+        LRUCache { capacity, cache: std::collections::HashMap::new() }
+    }
+    fn get(&mut self, key: &str) -> Option<i32> {
+        self.cache.get(key).copied()
+    }
+    fn put(&mut self, key: String, value: i32) {
+        self.cache.insert(key, value);
+    }
+}''',
+        }
+        return impls.get(language, impls["python"])
+
+    def _mock_log_parser(self, language: str) -> str:
+        """Generate basic log parser."""
+        impls = {
+            "python": '''def parse_log_line(line: str) -> dict:
+    import re
+    pattern = r'\\[(\\w+)\\]\\s+([\\d\\-T:]+)\\s+\\|\\s+([^|]+)\\s+\\|\\s+(.+)'
+    match = re.match(pattern, line)
+    if match and match.group(1) in ['ERROR', 'WARN', 'INFO', 'DEBUG']:
+        return {
+            "level": match.group(1),
+            "timestamp": match.group(2).strip(),
+            "service": match.group(3).strip(),
+            "message": match.group(4).strip()
+        }
+    return {"level": "UNKNOWN", "timestamp": "", "service": "", "message": line}''',
+            "typescript": '''function parseLogLine(line: string): {level: string, timestamp: string, service: string, message: string} {
+    const pattern = /\\[(\\w+)\\]\\s+([\\d\\-T:]+)\\s+\\|\\s+([^|]+)\\s+\\|\\s+(.+)/;
+    const match = line.match(pattern);
+    if (match && ['ERROR', 'WARN', 'INFO', 'DEBUG'].includes(match[1])) {
+        return {
+            level: match[1],
+            timestamp: match[2].trim(),
+            service: match[3].trim(),
+            message: match[4].trim()
+        };
+    }
+    return {level: "UNKNOWN", timestamp: "", service: "", message: line};
+}''',
+            "go": '''func ParseLogLine(line string) map[string]string {
+    pattern := regexp.MustCompile(`\\[(\\w+)\\]\\s+([\\d\\-T:]+)\\s+\\|\\s+([^|]+)\\s+\\|\\s+(.+)`)
+    match := pattern.FindStringSubmatch(line)
+    if len(match) > 0 {
+        level := match[1]
+        validLevels := map[string]bool{"ERROR": true, "WARN": true, "INFO": true, "DEBUG": true}
+        if validLevels[level] {
+            return map[string]string{
+                "level": level,
+                "timestamp": strings.TrimSpace(match[2]),
+                "service": strings.TrimSpace(match[3]),
+                "message": strings.TrimSpace(match[4]),
+            }
+        }
+    }
+    return map[string]string{"level": "UNKNOWN", "timestamp": "", "service": "", "message": line}
+}''',
+            "rust": '''fn parse_log_line(line: &str) -> std::collections::HashMap<String, String> {
+    use std::collections::HashMap;
+    let valid_levels = ["ERROR", "WARN", "INFO", "DEBUG"];
+    let parts: Vec<&str> = line.split('|').collect();
+    if parts.len() == 3 {
+        let level_part = parts[0].trim();
+        if let Some(level) = level_part.strip_prefix('[').and_then(|s| s.strip_suffix(']')) {
+            if valid_levels.contains(&level) {
+                let mut result = HashMap::new();
+                result.insert("level".to_string(), level.to_string());
+                result.insert("timestamp".to_string(), "".to_string());
+                result.insert("service".to_string(), parts[1].trim().to_string());
+                result.insert("message".to_string(), parts[2].trim().to_string());
+                return result;
+            }
+        }
+    }
+    let mut result = HashMap::new();
+    result.insert("level".to_string(), "UNKNOWN".to_string());
+    result.insert("timestamp".to_string(), "".to_string());
+    result.insert("service".to_string(), "".to_string());
+    result.insert("message".to_string(), line.to_string());
+    result
+}''',
+        }
+        return impls.get(language, impls["python"])
 
     _METRICS = re.compile(r"<metrics>\n(.*?)\n</metrics>", re.DOTALL)
     _CANDIDATES = re.compile(r"Candidate services \(the culprit is one of these.*?\):\n(.*?)\n", re.DOTALL)

@@ -14,7 +14,15 @@ from .cache import ResponseCache
 from .clients import BaseClient, LLMResponse, RefusalError, build_client
 from .config import BenchmarkConfig, ModelConfig
 from .lmstudio_host import LMStudioError, ensure_loaded
-from .prompts import JUDGE_SYSTEM_PROMPT, SYSTEM_PROMPT, build_judge_prompt, build_prompt
+from .prompts import (
+    CODE_GENERATION_SYSTEM_PROMPT,
+    CODE_REVIEW_SYSTEM_PROMPT,
+    CODE_WRITING_CATEGORIES,
+    JUDGE_SYSTEM_PROMPT,
+    SYSTEM_PROMPT,
+    build_judge_prompt,
+    build_prompt,
+)
 from .schemas import RESULT_SCHEMAS
 from .utils import extract_json
 
@@ -207,8 +215,14 @@ class BenchmarkRunner:
         response: Optional[LLMResponse] = None
         try:
             user_prompt = build_prompt(category, case)
+            if category in CODE_WRITING_CATEGORIES:
+                system_prompt = CODE_GENERATION_SYSTEM_PROMPT
+            elif category == "code_review":
+                system_prompt = CODE_REVIEW_SYSTEM_PROMPT
+            else:
+                system_prompt = SYSTEM_PROMPT
             response = self._call(
-                model, SYSTEM_PROMPT, user_prompt, run_index, bypass_cache=bypass_cache
+                model, system_prompt, user_prompt, run_index, bypass_cache=bypass_cache
             )
             record.latency_s = response.latency_s
             record.input_tokens = response.input_tokens
@@ -272,6 +286,7 @@ class BenchmarkRunner:
     # NOT retried — that would just burn calls against a dead model.
     _PERMANENT_ERROR_MARKERS = (
         "skipped:",
+        "http 400",
         "http 403",
         "http 404",
         "permission-denied",
@@ -294,6 +309,7 @@ class BenchmarkRunner:
         "jsondecodeerror",
         "expecting value",
         "no json",
+        "unbalanced json",
     )
 
     @classmethod

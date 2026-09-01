@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Literal
+from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
 
@@ -63,6 +63,27 @@ class JudgeResult(BaseModel):
     reasoning: str = ""
 
 
+class CodeGenerationResult(BaseModel):
+    code: str
+
+
+class ReviewFinding(BaseModel):
+    """One issue a reviewer would raise, tied to where they saw it.
+
+    ``line`` is optional because a real review sometimes points at a design
+    problem rather than a line; findings without one keep their recall credit
+    and only lose the localization component.
+    """
+
+    issue: str
+    severity: str = ""
+    line: Optional[int] = None
+
+
+class CodeReviewResult(BaseModel):
+    findings: list[ReviewFinding] = Field(default_factory=list)
+
+
 RESULT_SCHEMAS: dict[str, type[BaseModel]] = {
     "log_parsing": LogParsingResult,
     "anomaly_detection": AnomalyDetectionResult,
@@ -70,4 +91,11 @@ RESULT_SCHEMAS: dict[str, type[BaseModel]] = {
     "metrics_timeseries": TimeSeriesResult,
     "root_cause": RootCauseResult,
     "multimodal_rca": MultiModalRCAResult,
+    "code_generation": CodeGenerationResult,
+    # Every code-writing category answers with the same {"code": ...} shape;
+    # what differs is the prompt and how the answer is scored.
+    "code_efficiency": CodeGenerationResult,
+    "code_debugging": CodeGenerationResult,
+    "code_refactoring": CodeGenerationResult,
+    "code_review": CodeReviewResult,
 }

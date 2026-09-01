@@ -1,6 +1,6 @@
 {
   "model": "grok-4",
-  "global_score": 67.93,
+  "global_score": 77.92,
   "category_scores": {
     "log_parsing": 89.52,
     "anomaly_detection": 62.82,
@@ -8,19 +8,28 @@
     "metrics_timeseries": 68.7,
     "pattern_correlation": 72.0,
     "root_cause": 52.68,
-    "efficiency": 62.98
+    "code_generation": 78.59,
+    "code_efficiency": 79.52,
+    "code_debugging": 79.04,
+    "code_refactoring": 80.2,
+    "code_review": 73.1,
+    "code_python": 95.17,
+    "code_typescript": 37.85,
+    "code_go": 90.83,
+    "code_rust": 88.65,
+    "efficiency": 72.65
   },
   "efficiency_metrics": {
-    "avg_latency_s": 8.0925,
-    "avg_total_tokens": 1903.2195,
-    "score_stddev": 5.4664,
-    "latency_score": 0.5954,
-    "token_score": 0.5242,
-    "consistency_score": 0.7813
+    "avg_latency_s": 7.7261,
+    "avg_total_tokens": 1053.2182,
+    "score_stddev": 3.3346,
+    "latency_score": 0.6137,
+    "token_score": 0.7367,
+    "consistency_score": 0.8666
   },
   "error_count": 0,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 1990.75,
-  "last_run_wall_clock_s": 0.0
+  "total_runs": 1086,
+  "total_duration_s": 8390.52,
+  "last_run_wall_clock_s": 4742.45
 }

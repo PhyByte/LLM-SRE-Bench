@@ -1,0 +1,5406 @@
+[
+  {
+    "id": "median_of_python",
+    "language": "python",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "def median_of(values: list[int]) -> float:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "def median_of(values: list[int]) -> float:\n    if not values:\n        return -1.0\n    middle = len(values) // 2\n    return float(values[middle])",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "median_of_typescript",
+    "language": "typescript",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "function medianOf(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "function medianOf(values: number[]): number {\n    if (values.length === 0) {\n        return -1.0;\n    }\n    const middle = Math.floor(values.length / 2);\n    return values[middle];\n}",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "median_of_go",
+    "language": "go",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "func MedianOf(values []int) float64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "func MedianOf(values []int) float64 {\n    if len(values) == 0 {\n        return -1.0\n    }\n    middle := len(values) / 2\n    return float64(values[middle])\n}",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "median_of_rust",
+    "language": "rust",
+    "difficulty": "easy",
+    "task_family": "median_of",
+    "skill": "statistics",
+    "spec": "`median_of` should return the median of a sample of latencies:\n\n- Sort the values first; the caller passes them in arrival order.\n- For an odd count, the median is the middle value.\n- For an even count, it is the mean of the two middle values (so [1, 2, 3, 4]\n  has median 2.5, a value that is not in the sample).\n- An empty sample has no median: return -1.0.",
+    "signature": "fn median_of(values: &[i64]) -> f64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "float"
+    },
+    "symptom": "The p50 panel disagrees with the p50 our metrics backend reports. It is always a value that appears in the sample, even when the sample has an even number of points, and the number changes when the same points arrive in a different order.",
+    "buggy_code": "fn median_of(values: &[i64]) -> f64 {\n    if values.is_empty() {\n        return -1.0;\n    }\n    let middle = values.len() / 2;\n    values[middle] as f64\n}",
+    "test_cases": [
+      {
+        "input": [
+          1,
+          2,
+          3
+        ],
+        "expected": 2.0
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [
+          4,
+          1,
+          3,
+          2
+        ],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": -1.0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          5,
+          5,
+          5,
+          5
+        ],
+        "expected": 5.0
+      },
+      {
+        "input": [
+          10,
+          2
+        ],
+        "expected": 6.0
+      },
+      {
+        "input": [
+          9,
+          1,
+          8,
+          2,
+          7
+        ],
+        "expected": 7.0
+      },
+      {
+        "input": [
+          100,
+          1,
+          50,
+          2
+        ],
+        "expected": 26.0
+      }
+    ],
+    "regression_indices": [
+      1,
+      2,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "id": "merge_sorted_python",
+    "language": "python",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "def merge_sorted(a: list[int], b: list[int]) -> list[int]:",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "def merge_sorted(a: list[int], b: list[int]) -> list[int]:\n    out: list[int] = []\n    i = 0\n    j = 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            out.append(a[i])\n            i += 1\n        else:\n            out.append(b[j])\n            j += 1\n    while i < len(a):\n        out.append(a[i])\n        i += 1\n    return out",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "merge_sorted_typescript",
+    "language": "typescript",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "function mergeSorted(a: number[], b: number[]): number[] {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "function mergeSorted(a: number[], b: number[]): number[] {\n    const out: number[] = [];\n    let i = 0;\n    let j = 0;\n    while (i < a.length && j < b.length) {\n        if (a[i] <= b[j]) {\n            out.push(a[i]);\n            i++;\n        } else {\n            out.push(b[j]);\n            j++;\n        }\n    }\n    while (i < a.length) {\n        out.push(a[i]);\n        i++;\n    }\n    return out;\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "merge_sorted_go",
+    "language": "go",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "func MergeSorted(a []int, b []int) []int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "func MergeSorted(a []int, b []int) []int {\n    out := []int{}\n    i, j := 0, 0\n    for i < len(a) && j < len(b) {\n        if a[i] <= b[j] {\n            out = append(out, a[i])\n            i++\n        } else {\n            out = append(out, b[j])\n            j++\n        }\n    }\n    for i < len(a) {\n        out = append(out, a[i])\n        i++\n    }\n    return out\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "merge_sorted_rust",
+    "language": "rust",
+    "difficulty": "easy",
+    "task_family": "merge_sorted",
+    "skill": "merging",
+    "spec": "`merge_sorted` merges two already-sorted ascending lists into one sorted list.\n\n- Every element of both inputs appears in the output; duplicates are kept.\n- The output length is always len(a) + len(b).\n- Either input may be empty.\n- The inputs must not be modified.",
+    "signature": "fn merge_sorted(a: &[i64], b: &[i64]) -> Vec<i64> {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "list<int>"
+    },
+    "symptom": "Merged batches are short: the reader reports fewer records than the two input batches contain together, and the highest-keyed records are the ones missing. It only happens for some batch pairs.",
+    "buggy_code": "fn merge_sorted(a: &[i64], b: &[i64]) -> Vec<i64> {\n    let mut out = Vec::new();\n    let mut i = 0;\n    let mut j = 0;\n    while i < a.len() && j < b.len() {\n        if a[i] <= b[j] {\n            out.push(a[i]);\n            i += 1;\n        } else {\n            out.push(b[j]);\n            j += 1;\n        }\n    }\n    while i < a.len() {\n        out.push(a[i]);\n        i += 1;\n    }\n    out\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5
+          ],
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          []
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            5,
+            5
+          ],
+          [
+            5,
+            5
+          ]
+        ],
+        "expected": [
+          5,
+          5,
+          5,
+          5
+        ]
+      },
+      {
+        "input": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        "expected": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": [
+          [
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          9
+        ]
+      },
+      {
+        "input": [
+          [
+            1,
+            4,
+            7
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "expected": [
+          1,
+          2,
+          3,
+          4,
+          7
+        ]
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      3,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "normalize_path_python",
+    "language": "python",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "def normalize_path(path: str) -> str:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "def normalize_path(path: str) -> str:\n    stack: list[str] = []\n    for part in path.split(\"/\"):\n        if part == \"..\":\n            stack.pop()\n        elif part != \".\" and part != \"\":\n            stack.append(part)\n    return \"/\" + \"/\".join(stack)",
+    "symptom": "The config loader crashes on some requests instead of returning a path. The stack trace points at this function, and the paths that trigger it all contain more '..' segments than directories.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      1,
+      8
+    ]
+  },
+  {
+    "id": "normalize_path_typescript",
+    "language": "typescript",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "function normalizePath(path: string): string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "function normalizePath(path: string): string {\n    const stack: string[] = [];\n    for (const part of path.split(\"/\")) {\n        if (part === \"..\") {\n            stack.pop();\n        } else if (part !== \".\" && part !== \"\") {\n            stack.push(part);\n        }\n    }\n    return \"/\" + stack.join(\"/\") + (path.endsWith(\"/\") ? \"/\" : \"\");\n}",
+    "symptom": "The cache holds two entries for the same file whenever the caller passed a path with a trailing slash, and the root path comes back looking wrong entirely.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      2,
+      4
+    ]
+  },
+  {
+    "id": "normalize_path_go",
+    "language": "go",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "func NormalizePath(path string) string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "func NormalizePath(path string) string {\n    stack := []string{}\n    for _, part := range strings.Split(path, \"/\") {\n        if part == \"..\" {\n            stack = stack[:len(stack)-1]\n        } else if part != \".\" && part != \"\" {\n            stack = append(stack, part)\n        }\n    }\n    return \"/\" + strings.Join(stack, \"/\")\n}",
+    "symptom": "The config loader crashes on some requests instead of returning a path. The stack trace points at this function, and the paths that trigger it all contain more '..' segments than directories.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      1,
+      8
+    ]
+  },
+  {
+    "id": "normalize_path_rust",
+    "language": "rust",
+    "difficulty": "medium",
+    "task_family": "normalize_path",
+    "skill": "string_state",
+    "spec": "`normalize_path` canonicalizes an absolute filesystem path.\n\n- Collapse repeated slashes: \"//a//b\" becomes \"/a/b\".\n- Drop \".\" segments.\n- \"..\" removes the previous segment, and at the root it is a no-op: \"/../..\"\n  is \"/\", never an error and never a path above the root.\n- The result starts with \"/\" and has no trailing slash, except the root itself\n  which is exactly \"/\".",
+    "signature": "fn normalize_path(path: &str) -> String {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "buggy_code": "fn normalize_path(path: &str) -> String {\n    let mut stack: Vec<&str> = Vec::new();\n    for part in path.split('/') {\n        if part == \"..\" {\n            stack.pop().unwrap();\n        } else if part != \".\" && !part.is_empty() {\n            stack.push(part);\n        }\n    }\n    format!(\"/{}\", stack.join(\"/\"))\n}",
+    "symptom": "The config loader crashes on some requests instead of returning a path. The stack trace points at this function, and the paths that trigger it all contain more '..' segments than directories.",
+    "test_cases": [
+      {
+        "input": "/a/b/../c",
+        "expected": "/a/c"
+      },
+      {
+        "input": "/../..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/./b/",
+        "expected": "/a/b"
+      },
+      {
+        "input": "//a//b",
+        "expected": "/a/b"
+      },
+      {
+        "input": "/",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/c/../../d",
+        "expected": "/a/d"
+      },
+      {
+        "input": "/.",
+        "expected": "/"
+      },
+      {
+        "input": "/a/..",
+        "expected": "/"
+      },
+      {
+        "input": "/a/b/../../../c",
+        "expected": "/c"
+      },
+      {
+        "input": "/etc//conf.d/./nginx/../nginx.conf",
+        "expected": "/etc/conf.d/nginx.conf"
+      }
+    ],
+    "regression_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  {
+    "id": "lower_bound_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "lower_bound",
+    "skill": "binary_search",
+    "spec": "`lower_bound` finds where a value belongs in a sorted index.\n\n- `values` is sorted ascending and may contain duplicates.\n- Return the index of the *first* element greater than or equal to `target`.\n- If every element is smaller than `target`, return the length of the list, so\n  the result is always a valid insertion point.\n- An empty list returns 0.",
+    "signature": "def lower_bound(values: list[int], target: int) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Range scans over our sorted index drop rows. Asking for everything from a value that is present skips the first matching row, and if the value is present several times it skips all of them. Asking from a value that is not in the index returns the right rows.",
+    "buggy_code": "def lower_bound(values: list[int], target: int) -> int:\n    lo, hi = 0, len(values)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if values[mid] <= target:\n            lo = mid + 1\n        else:\n            hi = mid\n    return lo",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          7
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          4
+        ],
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "lower_bound_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "lower_bound",
+    "skill": "binary_search",
+    "spec": "`lower_bound` finds where a value belongs in a sorted index.\n\n- `values` is sorted ascending and may contain duplicates.\n- Return the index of the *first* element greater than or equal to `target`.\n- If every element is smaller than `target`, return the length of the list, so\n  the result is always a valid insertion point.\n- An empty list returns 0.",
+    "signature": "function lowerBound(values: number[], target: number): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Range scans over our sorted index drop rows. Asking for everything from a value that is present skips the first matching row, and if the value is present several times it skips all of them. Asking from a value that is not in the index returns the right rows.",
+    "buggy_code": "function lowerBound(values: number[], target: number): number {\n    let lo = 0;\n    let hi = values.length;\n    while (lo < hi) {\n        const mid = (lo + hi) >> 1;\n        if (values[mid] <= target) {\n            lo = mid + 1;\n        } else {\n            hi = mid;\n        }\n    }\n    return lo;\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          7
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          4
+        ],
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "lower_bound_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "lower_bound",
+    "skill": "binary_search",
+    "spec": "`lower_bound` finds where a value belongs in a sorted index.\n\n- `values` is sorted ascending and may contain duplicates.\n- Return the index of the *first* element greater than or equal to `target`.\n- If every element is smaller than `target`, return the length of the list, so\n  the result is always a valid insertion point.\n- An empty list returns 0.",
+    "signature": "func LowerBound(values []int, target int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Range scans over our sorted index drop rows. Asking for everything from a value that is present skips the first matching row, and if the value is present several times it skips all of them. Asking from a value that is not in the index returns the right rows.",
+    "buggy_code": "func LowerBound(values []int, target int) int {\n    lo, hi := 0, len(values)\n    for lo < hi {\n        mid := (lo + hi) / 2\n        if values[mid] <= target {\n            lo = mid + 1\n        } else {\n            hi = mid\n        }\n    }\n    return lo\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          7
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          4
+        ],
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "lower_bound_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "lower_bound",
+    "skill": "binary_search",
+    "spec": "`lower_bound` finds where a value belongs in a sorted index.\n\n- `values` is sorted ascending and may contain duplicates.\n- Return the index of the *first* element greater than or equal to `target`.\n- If every element is smaller than `target`, return the length of the list, so\n  the result is always a valid insertion point.\n- An empty list returns 0.",
+    "signature": "fn lower_bound(values: &[i64], target: i64) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Range scans over our sorted index drop rows. Asking for everything from a value that is present skips the first matching row, and if the value is present several times it skips all of them. Asking from a value that is not in the index returns the right rows.",
+    "buggy_code": "fn lower_bound(values: &[i64], target: i64) -> i64 {\n    let mut lo = 0usize;\n    let mut hi = values.len();\n    while lo < hi {\n        let mid = (lo + hi) / 2;\n        if values[mid] <= target {\n            lo = mid + 1;\n        } else {\n            hi = mid;\n        }\n    }\n    lo as i64\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          5
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            3,
+            5,
+            7
+          ],
+          4
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          1
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            2,
+            4,
+            6
+          ],
+          7
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            2,
+            2,
+            3
+          ],
+          2
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          4
+        ],
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      6,
+      7
+    ]
+  },
+  {
+    "id": "parse_duration_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "parse_duration",
+    "skill": "parsing",
+    "spec": "`parse_duration` turns a Go-style duration string into a whole number of\nseconds.\n\n- The input is a sequence of `<digits><unit>` pairs with no separators, where\n  the unit is `h`, `m`, or `s`: \"45s\", \"90m\", \"1h30m\", \"1h2m3s\".\n- Numbers may have more than one digit, and the same unit may appear more than\n  once; every pair contributes to the total.\n- The empty string is zero seconds.\n- Anything malformed returns -1: an unknown unit character, a unit with no\n  number in front of it, or trailing digits with no unit.",
+    "signature": "def parse_duration(text: str) -> int:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Timeouts configured as a single unit behave, but compound ones do not: a job configured with \"1h30m\" gives up after thirty minutes, and \"1m30s\" after thirty seconds. It looks like only the last part of the string is taken into account.",
+    "buggy_code": "def parse_duration(text: str) -> int:\n    total = 0\n    number = 0\n    seen_digit = False\n    for ch in text:\n        if \"0\" <= ch <= \"9\":\n            number = number * 10 + (ord(ch) - 48)\n            seen_digit = True\n        elif ch in (\"h\", \"m\", \"s\"):\n            if not seen_digit:\n                return -1\n            scale = 3600 if ch == \"h\" else (60 if ch == \"m\" else 1)\n            total = number * scale\n            number = 0\n            seen_digit = False\n        else:\n            return -1\n    return -1 if seen_digit else total",
+    "test_cases": [
+      {
+        "input": "1h30m",
+        "expected": 5400
+      },
+      {
+        "input": "45s",
+        "expected": 45
+      },
+      {
+        "input": "2h",
+        "expected": 7200
+      },
+      {
+        "input": "1h2m3s",
+        "expected": 3723
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "90m",
+        "expected": 5400
+      },
+      {
+        "input": "10h",
+        "expected": 36000
+      },
+      {
+        "input": "1m30s",
+        "expected": 90
+      },
+      {
+        "input": "5x",
+        "expected": -1
+      },
+      {
+        "input": "h",
+        "expected": -1
+      },
+      {
+        "input": "30",
+        "expected": -1
+      }
+    ],
+    "regression_indices": [
+      0,
+      3,
+      7
+    ]
+  },
+  {
+    "id": "parse_duration_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "parse_duration",
+    "skill": "parsing",
+    "spec": "`parse_duration` turns a Go-style duration string into a whole number of\nseconds.\n\n- The input is a sequence of `<digits><unit>` pairs with no separators, where\n  the unit is `h`, `m`, or `s`: \"45s\", \"90m\", \"1h30m\", \"1h2m3s\".\n- Numbers may have more than one digit, and the same unit may appear more than\n  once; every pair contributes to the total.\n- The empty string is zero seconds.\n- Anything malformed returns -1: an unknown unit character, a unit with no\n  number in front of it, or trailing digits with no unit.",
+    "signature": "function parseDuration(text: string): number {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Timeouts configured as a single unit behave, but compound ones do not: a job configured with \"1h30m\" gives up after thirty minutes, and \"1m30s\" after thirty seconds. It looks like only the last part of the string is taken into account.",
+    "buggy_code": "function parseDuration(text: string): number {\n    let total = 0;\n    let number = 0;\n    let seenDigit = false;\n    for (const ch of text) {\n        if (ch >= \"0\" && ch <= \"9\") {\n            number = number * 10 + (ch.charCodeAt(0) - 48);\n            seenDigit = true;\n        } else if (ch === \"h\" || ch === \"m\" || ch === \"s\") {\n            if (!seenDigit) return -1;\n            const scale = ch === \"h\" ? 3600 : ch === \"m\" ? 60 : 1;\n            total = number * scale;\n            number = 0;\n            seenDigit = false;\n        } else {\n            return -1;\n        }\n    }\n    return seenDigit ? -1 : total;\n}",
+    "test_cases": [
+      {
+        "input": "1h30m",
+        "expected": 5400
+      },
+      {
+        "input": "45s",
+        "expected": 45
+      },
+      {
+        "input": "2h",
+        "expected": 7200
+      },
+      {
+        "input": "1h2m3s",
+        "expected": 3723
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "90m",
+        "expected": 5400
+      },
+      {
+        "input": "10h",
+        "expected": 36000
+      },
+      {
+        "input": "1m30s",
+        "expected": 90
+      },
+      {
+        "input": "5x",
+        "expected": -1
+      },
+      {
+        "input": "h",
+        "expected": -1
+      },
+      {
+        "input": "30",
+        "expected": -1
+      }
+    ],
+    "regression_indices": [
+      0,
+      3,
+      7
+    ]
+  },
+  {
+    "id": "parse_duration_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "parse_duration",
+    "skill": "parsing",
+    "spec": "`parse_duration` turns a Go-style duration string into a whole number of\nseconds.\n\n- The input is a sequence of `<digits><unit>` pairs with no separators, where\n  the unit is `h`, `m`, or `s`: \"45s\", \"90m\", \"1h30m\", \"1h2m3s\".\n- Numbers may have more than one digit, and the same unit may appear more than\n  once; every pair contributes to the total.\n- The empty string is zero seconds.\n- Anything malformed returns -1: an unknown unit character, a unit with no\n  number in front of it, or trailing digits with no unit.",
+    "signature": "func ParseDuration(text string) int {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Timeouts configured as a single unit behave, but compound ones do not: a job configured with \"1h30m\" gives up after thirty minutes, and \"1m30s\" after thirty seconds. It looks like only the last part of the string is taken into account.",
+    "buggy_code": "func ParseDuration(text string) int {\n    total, number := 0, 0\n    seenDigit := false\n    for _, ch := range text {\n        if ch >= '0' && ch <= '9' {\n            number = number*10 + int(ch-'0')\n            seenDigit = true\n        } else if ch == 'h' || ch == 'm' || ch == 's' {\n            if !seenDigit {\n                return -1\n            }\n            scale := 1\n            if ch == 'h' {\n                scale = 3600\n            } else if ch == 'm' {\n                scale = 60\n            }\n            total = number * scale\n            number = 0\n            seenDigit = false\n        } else {\n            return -1\n        }\n    }\n    if seenDigit {\n        return -1\n    }\n    return total\n}",
+    "test_cases": [
+      {
+        "input": "1h30m",
+        "expected": 5400
+      },
+      {
+        "input": "45s",
+        "expected": 45
+      },
+      {
+        "input": "2h",
+        "expected": 7200
+      },
+      {
+        "input": "1h2m3s",
+        "expected": 3723
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "90m",
+        "expected": 5400
+      },
+      {
+        "input": "10h",
+        "expected": 36000
+      },
+      {
+        "input": "1m30s",
+        "expected": 90
+      },
+      {
+        "input": "5x",
+        "expected": -1
+      },
+      {
+        "input": "h",
+        "expected": -1
+      },
+      {
+        "input": "30",
+        "expected": -1
+      }
+    ],
+    "regression_indices": [
+      0,
+      3,
+      7
+    ]
+  },
+  {
+    "id": "parse_duration_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "parse_duration",
+    "skill": "parsing",
+    "spec": "`parse_duration` turns a Go-style duration string into a whole number of\nseconds.\n\n- The input is a sequence of `<digits><unit>` pairs with no separators, where\n  the unit is `h`, `m`, or `s`: \"45s\", \"90m\", \"1h30m\", \"1h2m3s\".\n- Numbers may have more than one digit, and the same unit may appear more than\n  once; every pair contributes to the total.\n- The empty string is zero seconds.\n- Anything malformed returns -1: an unknown unit character, a unit with no\n  number in front of it, or trailing digits with no unit.",
+    "signature": "fn parse_duration(text: &str) -> i64 {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Timeouts configured as a single unit behave, but compound ones do not: a job configured with \"1h30m\" gives up after thirty minutes, and \"1m30s\" after thirty seconds. It looks like only the last part of the string is taken into account.",
+    "buggy_code": "fn parse_duration(text: &str) -> i64 {\n    let mut total: i64 = 0;\n    let mut number: i64 = 0;\n    let mut seen_digit = false;\n    for ch in text.chars() {\n        if ch.is_ascii_digit() {\n            number = number * 10 + (ch as i64 - '0' as i64);\n            seen_digit = true;\n        } else if ch == 'h' || ch == 'm' || ch == 's' {\n            if !seen_digit {\n                return -1;\n            }\n            let scale = if ch == 'h' { 3600 } else if ch == 'm' { 60 } else { 1 };\n            total = number * scale;\n            number = 0;\n            seen_digit = false;\n        } else {\n            return -1;\n        }\n    }\n    if seen_digit { -1 } else { total }\n}",
+    "test_cases": [
+      {
+        "input": "1h30m",
+        "expected": 5400
+      },
+      {
+        "input": "45s",
+        "expected": 45
+      },
+      {
+        "input": "2h",
+        "expected": 7200
+      },
+      {
+        "input": "1h2m3s",
+        "expected": 3723
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "90m",
+        "expected": 5400
+      },
+      {
+        "input": "10h",
+        "expected": 36000
+      },
+      {
+        "input": "1m30s",
+        "expected": 90
+      },
+      {
+        "input": "5x",
+        "expected": -1
+      },
+      {
+        "input": "h",
+        "expected": -1
+      },
+      {
+        "input": "30",
+        "expected": -1
+      }
+    ],
+    "regression_indices": [
+      0,
+      3,
+      7
+    ]
+  },
+  {
+    "id": "covered_seconds_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "covered_seconds",
+    "skill": "intervals",
+    "spec": "`covered_seconds` measures how long a service was down, given overlapping\nincident windows from several alerting sources.\n\n- Incident i covers the half-open interval [starts[i], ends[i]); `starts` and\n  `ends` are parallel arrays of the same length.\n- Return the total length of the *union* of the intervals, counting overlapping\n  time once.\n- The incidents arrive in no particular order and may overlap, touch, or sit\n  entirely inside one another.\n- Intervals with ends[i] <= starts[i] cover nothing.\n- No incidents means 0.",
+    "signature": "def covered_seconds(starts: list[int], ends: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Our monthly downtime number came out lower than the longest single incident that month. It is only wrong when one alerting source opened a short window inside a longer one that another source had already opened; plain overlaps and back-to-back windows add up correctly.",
+    "buggy_code": "def covered_seconds(starts: list[int], ends: list[int]) -> int:\n    n = min(len(starts), len(ends))\n    spans = sorted((starts[i], ends[i]) for i in range(n) if ends[i] > starts[i])\n    total = 0\n    have = False\n    cur_start = 0\n    cur_end = 0\n    for start, end in spans:\n        if not have:\n            cur_start, cur_end = start, end\n            have = True\n        elif start <= cur_end:\n            cur_end = end\n        else:\n            total += cur_end - cur_start\n            cur_start, cur_end = start, end\n    if have:\n        total += cur_end - cur_start\n    return total",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5
+          ],
+          [
+            10,
+            15
+          ]
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            0,
+            2
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            20
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "expected": 20
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            5
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            3,
+            1
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            1
+          ],
+          [
+            100,
+            2
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            100
+          ],
+          [
+            200
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            10,
+            0
+          ],
+          [
+            20,
+            30
+          ]
+        ],
+        "expected": 30
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "covered_seconds_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "covered_seconds",
+    "skill": "intervals",
+    "spec": "`covered_seconds` measures how long a service was down, given overlapping\nincident windows from several alerting sources.\n\n- Incident i covers the half-open interval [starts[i], ends[i]); `starts` and\n  `ends` are parallel arrays of the same length.\n- Return the total length of the *union* of the intervals, counting overlapping\n  time once.\n- The incidents arrive in no particular order and may overlap, touch, or sit\n  entirely inside one another.\n- Intervals with ends[i] <= starts[i] cover nothing.\n- No incidents means 0.",
+    "signature": "function coveredSeconds(starts: number[], ends: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Our monthly downtime number came out lower than the longest single incident that month. It is only wrong when one alerting source opened a short window inside a longer one that another source had already opened; plain overlaps and back-to-back windows add up correctly.",
+    "buggy_code": "function coveredSeconds(starts: number[], ends: number[]): number {\n    const n = Math.min(starts.length, ends.length);\n    const spans: Array<[number, number]> = [];\n    for (let i = 0; i < n; i++) {\n        if (ends[i] > starts[i]) spans.push([starts[i], ends[i]]);\n    }\n    spans.sort((a, b) => a[0] - b[0] || a[1] - b[1]);\n    let total = 0;\n    let have = false;\n    let curStart = 0;\n    let curEnd = 0;\n    for (const [start, end] of spans) {\n        if (!have) {\n            curStart = start;\n            curEnd = end;\n            have = true;\n        } else if (start <= curEnd) {\n            curEnd = end;\n        } else {\n            total += curEnd - curStart;\n            curStart = start;\n            curEnd = end;\n        }\n    }\n    if (have) total += curEnd - curStart;\n    return total;\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5
+          ],
+          [
+            10,
+            15
+          ]
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            0,
+            2
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            20
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "expected": 20
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            5
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            3,
+            1
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            1
+          ],
+          [
+            100,
+            2
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            100
+          ],
+          [
+            200
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            10,
+            0
+          ],
+          [
+            20,
+            30
+          ]
+        ],
+        "expected": 30
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "covered_seconds_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "covered_seconds",
+    "skill": "intervals",
+    "spec": "`covered_seconds` measures how long a service was down, given overlapping\nincident windows from several alerting sources.\n\n- Incident i covers the half-open interval [starts[i], ends[i]); `starts` and\n  `ends` are parallel arrays of the same length.\n- Return the total length of the *union* of the intervals, counting overlapping\n  time once.\n- The incidents arrive in no particular order and may overlap, touch, or sit\n  entirely inside one another.\n- Intervals with ends[i] <= starts[i] cover nothing.\n- No incidents means 0.",
+    "signature": "func CoveredSeconds(starts []int, ends []int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Our monthly downtime number came out lower than the longest single incident that month. It is only wrong when one alerting source opened a short window inside a longer one that another source had already opened; plain overlaps and back-to-back windows add up correctly.",
+    "buggy_code": "import \"sort\"\n\nfunc CoveredSeconds(starts []int, ends []int) int {\n    n := len(starts)\n    if len(ends) < n {\n        n = len(ends)\n    }\n    type span struct{ start, end int }\n    spans := make([]span, 0, n)\n    for i := 0; i < n; i++ {\n        if ends[i] > starts[i] {\n            spans = append(spans, span{starts[i], ends[i]})\n        }\n    }\n    sort.Slice(spans, func(i, j int) bool {\n        if spans[i].start != spans[j].start {\n            return spans[i].start < spans[j].start\n        }\n        return spans[i].end < spans[j].end\n    })\n    total, curStart, curEnd := 0, 0, 0\n    have := false\n    for _, s := range spans {\n        if !have {\n            curStart, curEnd = s.start, s.end\n            have = true\n        } else if s.start <= curEnd {\n            curEnd = s.end\n        } else {\n            total += curEnd - curStart\n            curStart, curEnd = s.start, s.end\n        }\n    }\n    if have {\n        total += curEnd - curStart\n    }\n    return total\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5
+          ],
+          [
+            10,
+            15
+          ]
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            0,
+            2
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            20
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "expected": 20
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            5
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            3,
+            1
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            1
+          ],
+          [
+            100,
+            2
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            100
+          ],
+          [
+            200
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            10,
+            0
+          ],
+          [
+            20,
+            30
+          ]
+        ],
+        "expected": 30
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "covered_seconds_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "covered_seconds",
+    "skill": "intervals",
+    "spec": "`covered_seconds` measures how long a service was down, given overlapping\nincident windows from several alerting sources.\n\n- Incident i covers the half-open interval [starts[i], ends[i]); `starts` and\n  `ends` are parallel arrays of the same length.\n- Return the total length of the *union* of the intervals, counting overlapping\n  time once.\n- The incidents arrive in no particular order and may overlap, touch, or sit\n  entirely inside one another.\n- Intervals with ends[i] <= starts[i] cover nothing.\n- No incidents means 0.",
+    "signature": "fn covered_seconds(starts: &[i64], ends: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Our monthly downtime number came out lower than the longest single incident that month. It is only wrong when one alerting source opened a short window inside a longer one that another source had already opened; plain overlaps and back-to-back windows add up correctly.",
+    "buggy_code": "fn covered_seconds(starts: &[i64], ends: &[i64]) -> i64 {\n    let n = starts.len().min(ends.len());\n    let mut spans: Vec<(i64, i64)> = (0..n)\n        .filter(|&i| ends[i] > starts[i])\n        .map(|i| (starts[i], ends[i]))\n        .collect();\n    spans.sort_unstable();\n    let mut total: i64 = 0;\n    let mut have = false;\n    let mut cur_start: i64 = 0;\n    let mut cur_end: i64 = 0;\n    for (start, end) in spans {\n        if !have {\n            cur_start = start;\n            cur_end = end;\n            have = true;\n        } else if start <= cur_end {\n            cur_end = end;\n        } else {\n            total += cur_end - cur_start;\n            cur_start = start;\n            cur_end = end;\n        }\n    }\n    if have {\n        total += cur_end - cur_start;\n    }\n    total\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            5
+          ],
+          [
+            10,
+            15
+          ]
+        ],
+        "expected": 15
+      },
+      {
+        "input": [
+          [
+            0,
+            2
+          ],
+          [
+            10,
+            5
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            20
+          ],
+          [
+            10,
+            30
+          ]
+        ],
+        "expected": 20
+      },
+      {
+        "input": [
+          [],
+          []
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5
+          ],
+          [
+            5
+          ]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            10,
+            10,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            3,
+            1
+          ],
+          [
+            2,
+            5,
+            10
+          ]
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          [
+            0,
+            1
+          ],
+          [
+            100,
+            2
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            100
+          ],
+          [
+            200
+          ]
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          [
+            10,
+            0
+          ],
+          [
+            20,
+            30
+          ]
+        ],
+        "expected": 30
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "luhn_valid_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "luhn_valid",
+    "skill": "validation",
+    "spec": "`luhn_valid` checks a number against the Luhn checksum used by payment cards.\n\nThe algorithm works from the **rightmost** digit leftwards:\n\n- Leave the rightmost digit as it is, double the next one to its left, leave the\n  next, and so on \u2014 every second digit counting from the right is doubled.\n- A doubled digit greater than 9 has 9 subtracted from it (so 8 doubles to 16,\n  which counts as 7).\n- Sum every resulting digit; the number is valid when that sum is a multiple\n  of 10.\n\nReturn false for the empty string and for anything containing a non-digit.",
+    "signature": "def luhn_valid(digits: str) -> bool:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Card validation rejects real cards. Our 15-digit Amex test numbers validate fine, but every 16-digit Visa and Mastercard we try is rejected \u2014 and a couple of deliberately corrupted 16-digit numbers are accepted. It behaves as if the doubling starts from the wrong end for even-length numbers.",
+    "buggy_code": "def luhn_valid(digits: str) -> bool:\n    if not digits:\n        return False\n    for ch in digits:\n        if ch < \"0\" or ch > \"9\":\n            return False\n    total = 0\n    for index, ch in enumerate(digits):\n        value = ord(ch) - 48\n        if index % 2 == 1:\n            value *= 2\n            if value > 9:\n                value -= 9\n        total += value\n    return total % 10 == 0",
+    "test_cases": [
+      {
+        "input": "4539578763621486",
+        "expected": true
+      },
+      {
+        "input": "4539578763621487",
+        "expected": false
+      },
+      {
+        "input": "79927398713",
+        "expected": true
+      },
+      {
+        "input": "79927398710",
+        "expected": false
+      },
+      {
+        "input": "378282246310005",
+        "expected": true
+      },
+      {
+        "input": "0",
+        "expected": true
+      },
+      {
+        "input": "18",
+        "expected": true
+      },
+      {
+        "input": "",
+        "expected": false
+      },
+      {
+        "input": "12a4",
+        "expected": false
+      },
+      {
+        "input": "6011111111111117",
+        "expected": true
+      }
+    ],
+    "regression_indices": [
+      0,
+      6
+    ]
+  },
+  {
+    "id": "luhn_valid_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "luhn_valid",
+    "skill": "validation",
+    "spec": "`luhn_valid` checks a number against the Luhn checksum used by payment cards.\n\nThe algorithm works from the **rightmost** digit leftwards:\n\n- Leave the rightmost digit as it is, double the next one to its left, leave the\n  next, and so on \u2014 every second digit counting from the right is doubled.\n- A doubled digit greater than 9 has 9 subtracted from it (so 8 doubles to 16,\n  which counts as 7).\n- Sum every resulting digit; the number is valid when that sum is a multiple\n  of 10.\n\nReturn false for the empty string and for anything containing a non-digit.",
+    "signature": "function luhnValid(digits: string): boolean {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Card validation rejects real cards. Our 15-digit Amex test numbers validate fine, but every 16-digit Visa and Mastercard we try is rejected \u2014 and a couple of deliberately corrupted 16-digit numbers are accepted. It behaves as if the doubling starts from the wrong end for even-length numbers.",
+    "buggy_code": "function luhnValid(digits: string): boolean {\n    if (digits.length === 0) return false;\n    for (const ch of digits) {\n        if (ch < \"0\" || ch > \"9\") return false;\n    }\n    let total = 0;\n    for (let index = 0; index < digits.length; index++) {\n        let value = digits.charCodeAt(index) - 48;\n        if (index % 2 === 1) {\n            value *= 2;\n            if (value > 9) value -= 9;\n        }\n        total += value;\n    }\n    return total % 10 === 0;\n}",
+    "test_cases": [
+      {
+        "input": "4539578763621486",
+        "expected": true
+      },
+      {
+        "input": "4539578763621487",
+        "expected": false
+      },
+      {
+        "input": "79927398713",
+        "expected": true
+      },
+      {
+        "input": "79927398710",
+        "expected": false
+      },
+      {
+        "input": "378282246310005",
+        "expected": true
+      },
+      {
+        "input": "0",
+        "expected": true
+      },
+      {
+        "input": "18",
+        "expected": true
+      },
+      {
+        "input": "",
+        "expected": false
+      },
+      {
+        "input": "12a4",
+        "expected": false
+      },
+      {
+        "input": "6011111111111117",
+        "expected": true
+      }
+    ],
+    "regression_indices": [
+      0,
+      6
+    ]
+  },
+  {
+    "id": "luhn_valid_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "luhn_valid",
+    "skill": "validation",
+    "spec": "`luhn_valid` checks a number against the Luhn checksum used by payment cards.\n\nThe algorithm works from the **rightmost** digit leftwards:\n\n- Leave the rightmost digit as it is, double the next one to its left, leave the\n  next, and so on \u2014 every second digit counting from the right is doubled.\n- A doubled digit greater than 9 has 9 subtracted from it (so 8 doubles to 16,\n  which counts as 7).\n- Sum every resulting digit; the number is valid when that sum is a multiple\n  of 10.\n\nReturn false for the empty string and for anything containing a non-digit.",
+    "signature": "func LuhnValid(digits string) bool {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Card validation rejects real cards. Our 15-digit Amex test numbers validate fine, but every 16-digit Visa and Mastercard we try is rejected \u2014 and a couple of deliberately corrupted 16-digit numbers are accepted. It behaves as if the doubling starts from the wrong end for even-length numbers.",
+    "buggy_code": "func LuhnValid(digits string) bool {\n    if len(digits) == 0 {\n        return false\n    }\n    for _, ch := range digits {\n        if ch < '0' || ch > '9' {\n            return false\n        }\n    }\n    total := 0\n    for index := 0; index < len(digits); index++ {\n        value := int(digits[index] - '0')\n        if index%2 == 1 {\n            value *= 2\n            if value > 9 {\n                value -= 9\n            }\n        }\n        total += value\n    }\n    return total%10 == 0\n}",
+    "test_cases": [
+      {
+        "input": "4539578763621486",
+        "expected": true
+      },
+      {
+        "input": "4539578763621487",
+        "expected": false
+      },
+      {
+        "input": "79927398713",
+        "expected": true
+      },
+      {
+        "input": "79927398710",
+        "expected": false
+      },
+      {
+        "input": "378282246310005",
+        "expected": true
+      },
+      {
+        "input": "0",
+        "expected": true
+      },
+      {
+        "input": "18",
+        "expected": true
+      },
+      {
+        "input": "",
+        "expected": false
+      },
+      {
+        "input": "12a4",
+        "expected": false
+      },
+      {
+        "input": "6011111111111117",
+        "expected": true
+      }
+    ],
+    "regression_indices": [
+      0,
+      6
+    ]
+  },
+  {
+    "id": "luhn_valid_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "luhn_valid",
+    "skill": "validation",
+    "spec": "`luhn_valid` checks a number against the Luhn checksum used by payment cards.\n\nThe algorithm works from the **rightmost** digit leftwards:\n\n- Leave the rightmost digit as it is, double the next one to its left, leave the\n  next, and so on \u2014 every second digit counting from the right is doubled.\n- A doubled digit greater than 9 has 9 subtracted from it (so 8 doubles to 16,\n  which counts as 7).\n- Sum every resulting digit; the number is valid when that sum is a multiple\n  of 10.\n\nReturn false for the empty string and for anything containing a non-digit.",
+    "signature": "fn luhn_valid(digits: &str) -> bool {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Card validation rejects real cards. Our 15-digit Amex test numbers validate fine, but every 16-digit Visa and Mastercard we try is rejected \u2014 and a couple of deliberately corrupted 16-digit numbers are accepted. It behaves as if the doubling starts from the wrong end for even-length numbers.",
+    "buggy_code": "fn luhn_valid(digits: &str) -> bool {\n    if digits.is_empty() {\n        return false;\n    }\n    if !digits.chars().all(|c| c.is_ascii_digit()) {\n        return false;\n    }\n    let mut total: i64 = 0;\n    for (index, ch) in digits.chars().enumerate() {\n        let mut value = ch as i64 - '0' as i64;\n        if index % 2 == 1 {\n            value *= 2;\n            if value > 9 {\n                value -= 9;\n            }\n        }\n        total += value;\n    }\n    total % 10 == 0\n}",
+    "test_cases": [
+      {
+        "input": "4539578763621486",
+        "expected": true
+      },
+      {
+        "input": "4539578763621487",
+        "expected": false
+      },
+      {
+        "input": "79927398713",
+        "expected": true
+      },
+      {
+        "input": "79927398710",
+        "expected": false
+      },
+      {
+        "input": "378282246310005",
+        "expected": true
+      },
+      {
+        "input": "0",
+        "expected": true
+      },
+      {
+        "input": "18",
+        "expected": true
+      },
+      {
+        "input": "",
+        "expected": false
+      },
+      {
+        "input": "12a4",
+        "expected": false
+      },
+      {
+        "input": "6011111111111117",
+        "expected": true
+      }
+    ],
+    "regression_indices": [
+      0,
+      6
+    ]
+  },
+  {
+    "id": "ip_in_cidr_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "ip_in_cidr",
+    "skill": "networking",
+    "spec": "`ip_in_cidr` decides whether an IPv4 address falls inside a CIDR block.\n\n- `cidr` is \"A.B.C.D/prefix\" with a prefix between 0 and 32.\n- The address is inside the block when its first `prefix` **bits** match the\n  block's. A prefix is not always a whole number of octets: /12 and /23 are as\n  legal as /8 and /24.\n- /0 matches every address; /32 matches exactly one.\n- Return false for a malformed address or block: a missing \"/\", a prefix above\n  32 or made of non-digits, or an address that is not four decimal octets in\n  0-255.",
+    "signature": "def ip_in_cidr(ip: str, cidr: str) -> bool:",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Our allow-list lets through addresses it should not. The blocks we wrote as /8, /16, /24 and /32 behave exactly right, but a /12 block is matching addresses well outside its range \u2014 10.16.0.1 is accepted for 10.0.0.0/12. Malformed input is still rejected properly.",
+    "buggy_code": "def _ipv4(text: str):\n    parts = text.split(\".\")\n    if len(parts) != 4:\n        return None\n    total = 0\n    for part in parts:\n        if not part or len(part) > 3:\n            return None\n        for ch in part:\n            if ch < \"0\" or ch > \"9\":\n                return None\n        value = int(part)\n        if value > 255:\n            return None\n        total = total * 256 + value\n    return total\n\n\ndef ip_in_cidr(ip: str, cidr: str) -> bool:\n    base, sep, prefix_text = cidr.partition(\"/\")\n    if not sep or not prefix_text:\n        return False\n    for ch in prefix_text:\n        if ch < \"0\" or ch > \"9\":\n            return False\n    prefix = int(prefix_text)\n    if prefix > 32:\n        return False\n    if _ipv4(ip) is None or _ipv4(base) is None:\n        return False\n    whole_octets = prefix // 8\n    left = ip.split(\".\")\n    right = base.split(\".\")\n    for i in range(whole_octets):\n        if left[i] != right[i]:\n            return False\n    return True",
+    "test_cases": [
+      {
+        "input": [
+          "10.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "11.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.16.0.1",
+          "10.0.0.0/12"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.15.255.255",
+          "10.0.0.0/12"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.1.5",
+          "192.168.1.0/24"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.2.5",
+          "192.168.1.0/24"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "203.0.113.9",
+          "203.0.112.0/23"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "203.0.114.9",
+          "203.0.112.0/23"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3.4",
+          "0.0.0.0/0"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.1/32"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.2",
+          "10.0.0.1/32"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0/33"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.300",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0"
+        ],
+        "expected": false
+      }
+    ],
+    "regression_indices": [
+      2,
+      7
+    ]
+  },
+  {
+    "id": "ip_in_cidr_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "ip_in_cidr",
+    "skill": "networking",
+    "spec": "`ip_in_cidr` decides whether an IPv4 address falls inside a CIDR block.\n\n- `cidr` is \"A.B.C.D/prefix\" with a prefix between 0 and 32.\n- The address is inside the block when its first `prefix` **bits** match the\n  block's. A prefix is not always a whole number of octets: /12 and /23 are as\n  legal as /8 and /24.\n- /0 matches every address; /32 matches exactly one.\n- Return false for a malformed address or block: a missing \"/\", a prefix above\n  32 or made of non-digits, or an address that is not four decimal octets in\n  0-255.",
+    "signature": "function ipInCidr(ip: string, cidr: string): boolean {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Our allow-list lets through addresses it should not. The blocks we wrote as /8, /16, /24 and /32 behave exactly right, but a /12 block is matching addresses well outside its range \u2014 10.16.0.1 is accepted for 10.0.0.0/12. Malformed input is still rejected properly.",
+    "buggy_code": "function ipv4(text: string): number | null {\n    const parts = text.split(\".\");\n    if (parts.length !== 4) return null;\n    let total = 0;\n    for (const part of parts) {\n        if (part.length === 0 || part.length > 3) return null;\n        if (!/^[0-9]+$/.test(part)) return null;\n        const value = parseInt(part, 10);\n        if (value > 255) return null;\n        total = total * 256 + value;\n    }\n    return total;\n}\n\nfunction ipInCidr(ip: string, cidr: string): boolean {\n    const slash = cidr.indexOf(\"/\");\n    if (slash < 0) return false;\n    const base = cidr.slice(0, slash);\n    const prefixText = cidr.slice(slash + 1);\n    if (!/^[0-9]+$/.test(prefixText)) return false;\n    const prefix = parseInt(prefixText, 10);\n    if (prefix > 32) return false;\n    if (ipv4(ip) === null || ipv4(base) === null) return false;\n    const wholeOctets = Math.floor(prefix / 8);\n    const left = ip.split(\".\");\n    const right = base.split(\".\");\n    for (let i = 0; i < wholeOctets; i++) {\n        if (left[i] !== right[i]) return false;\n    }\n    return true;\n}",
+    "test_cases": [
+      {
+        "input": [
+          "10.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "11.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.16.0.1",
+          "10.0.0.0/12"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.15.255.255",
+          "10.0.0.0/12"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.1.5",
+          "192.168.1.0/24"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.2.5",
+          "192.168.1.0/24"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "203.0.113.9",
+          "203.0.112.0/23"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "203.0.114.9",
+          "203.0.112.0/23"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3.4",
+          "0.0.0.0/0"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.1/32"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.2",
+          "10.0.0.1/32"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0/33"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.300",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0"
+        ],
+        "expected": false
+      }
+    ],
+    "regression_indices": [
+      2,
+      7
+    ]
+  },
+  {
+    "id": "ip_in_cidr_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "ip_in_cidr",
+    "skill": "networking",
+    "spec": "`ip_in_cidr` decides whether an IPv4 address falls inside a CIDR block.\n\n- `cidr` is \"A.B.C.D/prefix\" with a prefix between 0 and 32.\n- The address is inside the block when its first `prefix` **bits** match the\n  block's. A prefix is not always a whole number of octets: /12 and /23 are as\n  legal as /8 and /24.\n- /0 matches every address; /32 matches exactly one.\n- Return false for a malformed address or block: a missing \"/\", a prefix above\n  32 or made of non-digits, or an address that is not four decimal octets in\n  0-255.",
+    "signature": "func IpInCidr(ip string, cidr string) bool {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Our allow-list lets through addresses it should not. The blocks we wrote as /8, /16, /24 and /32 behave exactly right, but a /12 block is matching addresses well outside its range \u2014 10.16.0.1 is accepted for 10.0.0.0/12. Malformed input is still rejected properly.",
+    "buggy_code": "import (\n    \"strconv\"\n    \"strings\"\n)\n\nfunc parseIPv4(text string) (uint32, bool) {\n    parts := strings.Split(text, \".\")\n    if len(parts) != 4 {\n        return 0, false\n    }\n    var total uint32\n    for _, part := range parts {\n        if len(part) == 0 || len(part) > 3 {\n            return 0, false\n        }\n        for _, ch := range part {\n            if ch < '0' || ch > '9' {\n                return 0, false\n            }\n        }\n        value, err := strconv.Atoi(part)\n        if err != nil || value > 255 {\n            return 0, false\n        }\n        total = total*256 + uint32(value)\n    }\n    return total, true\n}\n\nfunc IpInCidr(ip string, cidr string) bool {\n    slash := strings.Index(cidr, \"/\")\n    if slash < 0 {\n        return false\n    }\n    base := cidr[:slash]\n    prefixText := cidr[slash+1:]\n    if len(prefixText) == 0 {\n        return false\n    }\n    for _, ch := range prefixText {\n        if ch < '0' || ch > '9' {\n            return false\n        }\n    }\n    prefix, err := strconv.Atoi(prefixText)\n    if err != nil || prefix > 32 {\n        return false\n    }\n    if _, ok := parseIPv4(ip); !ok {\n        return false\n    }\n    if _, ok := parseIPv4(base); !ok {\n        return false\n    }\n    wholeOctets := prefix / 8\n    left := strings.Split(ip, \".\")\n    right := strings.Split(base, \".\")\n    for i := 0; i < wholeOctets; i++ {\n        if left[i] != right[i] {\n            return false\n        }\n    }\n    return true\n}",
+    "test_cases": [
+      {
+        "input": [
+          "10.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "11.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.16.0.1",
+          "10.0.0.0/12"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.15.255.255",
+          "10.0.0.0/12"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.1.5",
+          "192.168.1.0/24"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.2.5",
+          "192.168.1.0/24"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "203.0.113.9",
+          "203.0.112.0/23"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "203.0.114.9",
+          "203.0.112.0/23"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3.4",
+          "0.0.0.0/0"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.1/32"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.2",
+          "10.0.0.1/32"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0/33"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.300",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0"
+        ],
+        "expected": false
+      }
+    ],
+    "regression_indices": [
+      2,
+      7
+    ]
+  },
+  {
+    "id": "ip_in_cidr_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "ip_in_cidr",
+    "skill": "networking",
+    "spec": "`ip_in_cidr` decides whether an IPv4 address falls inside a CIDR block.\n\n- `cidr` is \"A.B.C.D/prefix\" with a prefix between 0 and 32.\n- The address is inside the block when its first `prefix` **bits** match the\n  block's. A prefix is not always a whole number of octets: /12 and /23 are as\n  legal as /8 and /24.\n- /0 matches every address; /32 matches exactly one.\n- Return false for a malformed address or block: a missing \"/\", a prefix above\n  32 or made of non-digits, or an address that is not four decimal octets in\n  0-255.",
+    "signature": "fn ip_in_cidr(ip: &str, cidr: &str) -> bool {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "bool"
+    },
+    "symptom": "Our allow-list lets through addresses it should not. The blocks we wrote as /8, /16, /24 and /32 behave exactly right, but a /12 block is matching addresses well outside its range \u2014 10.16.0.1 is accepted for 10.0.0.0/12. Malformed input is still rejected properly.",
+    "buggy_code": "fn parse_ipv4(text: &str) -> Option<u32> {\n    let parts: Vec<&str> = text.split('.').collect();\n    if parts.len() != 4 {\n        return None;\n    }\n    let mut total: u32 = 0;\n    for part in parts {\n        if part.is_empty() || part.len() > 3 {\n            return None;\n        }\n        if !part.chars().all(|c| c.is_ascii_digit()) {\n            return None;\n        }\n        let value: u32 = part.parse().ok()?;\n        if value > 255 {\n            return None;\n        }\n        total = total * 256 + value;\n    }\n    Some(total)\n}\n\nfn ip_in_cidr(ip: &str, cidr: &str) -> bool {\n    let (base, prefix_text) = match cidr.split_once('/') {\n        Some(pair) => pair,\n        None => return false,\n    };\n    if prefix_text.is_empty() || !prefix_text.chars().all(|c| c.is_ascii_digit()) {\n        return false;\n    }\n    let prefix: u32 = match prefix_text.parse() {\n        Ok(value) => value,\n        Err(_) => return false,\n    };\n    if prefix > 32 {\n        return false;\n    }\n    if parse_ipv4(ip).is_none() || parse_ipv4(base).is_none() {\n        return false;\n    }\n    let whole_octets = (prefix / 8) as usize;\n    let left: Vec<&str> = ip.split('.').collect();\n    let right: Vec<&str> = base.split('.').collect();\n    for i in 0..whole_octets {\n        if left[i] != right[i] {\n            return false;\n        }\n    }\n    true\n}",
+    "test_cases": [
+      {
+        "input": [
+          "10.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "11.1.2.3",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.16.0.1",
+          "10.0.0.0/12"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.15.255.255",
+          "10.0.0.0/12"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.1.5",
+          "192.168.1.0/24"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "192.168.2.5",
+          "192.168.1.0/24"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "203.0.113.9",
+          "203.0.112.0/23"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "203.0.114.9",
+          "203.0.112.0/23"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "1.2.3.4",
+          "0.0.0.0/0"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.1/32"
+        ],
+        "expected": true
+      },
+      {
+        "input": [
+          "10.0.0.2",
+          "10.0.0.1/32"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0/33"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.300",
+          "10.0.0.0/8"
+        ],
+        "expected": false
+      },
+      {
+        "input": [
+          "10.0.0.1",
+          "10.0.0.0"
+        ],
+        "expected": false
+      }
+    ],
+    "regression_indices": [
+      2,
+      7
+    ]
+  },
+  {
+    "id": "sliding_rate_limit_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "sliding_rate_limit",
+    "skill": "rate_limiting",
+    "spec": "`sliding_rate_limit` replays a request log through a sliding-window limiter and\nreports how many requests were let through.\n\n- `timestamps` are millisecond arrival times in non-decreasing order.\n- Process them in order, remembering the times of the requests you **allowed**.\n- A request at time t is allowed when fewer than `limit` previously allowed\n  requests fall inside the window, which is the half-open range\n  (t - window, t]. An allowed request at exactly t - window has expired and no\n  longer counts.\n- Return the number of allowed requests.\n- Return 0 if `window` or `limit` is not positive.",
+    "signature": "def sliding_rate_limit(timestamps: list[int], window: int, limit: int) -> int:",
+    "io": {
+      "args": [
+        "list<int>",
+        "int",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "A client pacing itself at exactly the configured rate still gets 429s. If it sends one request every 1000ms against a 1-per-1000ms limit, only the first is allowed. Pacing slightly slower works, and bursty traffic is throttled correctly.",
+    "buggy_code": "def sliding_rate_limit(timestamps: list[int], window: int, limit: int) -> int:\n    if window <= 0 or limit <= 0:\n        return 0\n    allowed = []\n    head = 0\n    count = 0\n    for stamp in timestamps:\n        while head < len(allowed) and allowed[head] < stamp - window:\n            head += 1\n        if len(allowed) - head < limit:\n            allowed.append(stamp)\n            count += 1\n    return count",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            1000,
+            2000
+          ],
+          1000,
+          1
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            500,
+            1000
+          ],
+          1000,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          10,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [],
+          100,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5,
+            5,
+            5
+          ],
+          10,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          0,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            100,
+            200,
+            300
+          ],
+          250,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            20,
+            30,
+            40,
+            50
+          ],
+          25,
+          3
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          1000,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            999,
+            1000,
+            1001
+          ],
+          1000,
+          1
+        ],
+        "expected": 2
+      }
+    ],
+    "regression_indices": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": "sliding_rate_limit_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "sliding_rate_limit",
+    "skill": "rate_limiting",
+    "spec": "`sliding_rate_limit` replays a request log through a sliding-window limiter and\nreports how many requests were let through.\n\n- `timestamps` are millisecond arrival times in non-decreasing order.\n- Process them in order, remembering the times of the requests you **allowed**.\n- A request at time t is allowed when fewer than `limit` previously allowed\n  requests fall inside the window, which is the half-open range\n  (t - window, t]. An allowed request at exactly t - window has expired and no\n  longer counts.\n- Return the number of allowed requests.\n- Return 0 if `window` or `limit` is not positive.",
+    "signature": "function slidingRateLimit(timestamps: number[], window: number, limit: number): number {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "A client pacing itself at exactly the configured rate still gets 429s. If it sends one request every 1000ms against a 1-per-1000ms limit, only the first is allowed. Pacing slightly slower works, and bursty traffic is throttled correctly.",
+    "buggy_code": "function slidingRateLimit(timestamps: number[], window: number, limit: number): number {\n    if (window <= 0 || limit <= 0) return 0;\n    const allowed: number[] = [];\n    let head = 0;\n    let count = 0;\n    for (const stamp of timestamps) {\n        while (head < allowed.length && allowed[head] < stamp - window) head++;\n        if (allowed.length - head < limit) {\n            allowed.push(stamp);\n            count++;\n        }\n    }\n    return count;\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            1000,
+            2000
+          ],
+          1000,
+          1
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            500,
+            1000
+          ],
+          1000,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          10,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [],
+          100,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5,
+            5,
+            5
+          ],
+          10,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          0,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            100,
+            200,
+            300
+          ],
+          250,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            20,
+            30,
+            40,
+            50
+          ],
+          25,
+          3
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          1000,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            999,
+            1000,
+            1001
+          ],
+          1000,
+          1
+        ],
+        "expected": 2
+      }
+    ],
+    "regression_indices": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": "sliding_rate_limit_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "sliding_rate_limit",
+    "skill": "rate_limiting",
+    "spec": "`sliding_rate_limit` replays a request log through a sliding-window limiter and\nreports how many requests were let through.\n\n- `timestamps` are millisecond arrival times in non-decreasing order.\n- Process them in order, remembering the times of the requests you **allowed**.\n- A request at time t is allowed when fewer than `limit` previously allowed\n  requests fall inside the window, which is the half-open range\n  (t - window, t]. An allowed request at exactly t - window has expired and no\n  longer counts.\n- Return the number of allowed requests.\n- Return 0 if `window` or `limit` is not positive.",
+    "signature": "func SlidingRateLimit(timestamps []int, window int, limit int) int {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "A client pacing itself at exactly the configured rate still gets 429s. If it sends one request every 1000ms against a 1-per-1000ms limit, only the first is allowed. Pacing slightly slower works, and bursty traffic is throttled correctly.",
+    "buggy_code": "func SlidingRateLimit(timestamps []int, window int, limit int) int {\n    if window <= 0 || limit <= 0 {\n        return 0\n    }\n    allowed := make([]int, 0, len(timestamps))\n    head, count := 0, 0\n    for _, stamp := range timestamps {\n        for head < len(allowed) && allowed[head] < stamp-window {\n            head++\n        }\n        if len(allowed)-head < limit {\n            allowed = append(allowed, stamp)\n            count++\n        }\n    }\n    return count\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            1000,
+            2000
+          ],
+          1000,
+          1
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            500,
+            1000
+          ],
+          1000,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          10,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [],
+          100,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5,
+            5,
+            5
+          ],
+          10,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          0,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            100,
+            200,
+            300
+          ],
+          250,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            20,
+            30,
+            40,
+            50
+          ],
+          25,
+          3
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          1000,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            999,
+            1000,
+            1001
+          ],
+          1000,
+          1
+        ],
+        "expected": 2
+      }
+    ],
+    "regression_indices": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": "sliding_rate_limit_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "sliding_rate_limit",
+    "skill": "rate_limiting",
+    "spec": "`sliding_rate_limit` replays a request log through a sliding-window limiter and\nreports how many requests were let through.\n\n- `timestamps` are millisecond arrival times in non-decreasing order.\n- Process them in order, remembering the times of the requests you **allowed**.\n- A request at time t is allowed when fewer than `limit` previously allowed\n  requests fall inside the window, which is the half-open range\n  (t - window, t]. An allowed request at exactly t - window has expired and no\n  longer counts.\n- Return the number of allowed requests.\n- Return 0 if `window` or `limit` is not positive.",
+    "signature": "fn sliding_rate_limit(timestamps: &[i64], window: i64, limit: i64) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>",
+        "int",
+        "int"
+      ],
+      "returns": "int"
+    },
+    "symptom": "A client pacing itself at exactly the configured rate still gets 429s. If it sends one request every 1000ms against a 1-per-1000ms limit, only the first is allowed. Pacing slightly slower works, and bursty traffic is throttled correctly.",
+    "buggy_code": "fn sliding_rate_limit(timestamps: &[i64], window: i64, limit: i64) -> i64 {\n    if window <= 0 || limit <= 0 {\n        return 0;\n    }\n    let mut allowed: Vec<i64> = Vec::new();\n    let mut head = 0usize;\n    let mut count: i64 = 0;\n    for &stamp in timestamps {\n        while head < allowed.len() && allowed[head] < stamp - window {\n            head += 1;\n        }\n        if ((allowed.len() - head) as i64) < limit {\n            allowed.push(stamp);\n            count += 1;\n        }\n    }\n    count\n}",
+    "test_cases": [
+      {
+        "input": [
+          [
+            0,
+            1000,
+            2000
+          ],
+          1000,
+          1
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            500,
+            1000
+          ],
+          1000,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          10,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [],
+          100,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            5,
+            5,
+            5
+          ],
+          10,
+          0
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            1,
+            2,
+            3
+          ],
+          0,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [
+            0,
+            100,
+            200,
+            300
+          ],
+          250,
+          2
+        ],
+        "expected": 3
+      },
+      {
+        "input": [
+          [
+            10,
+            20,
+            30,
+            40,
+            50
+          ],
+          25,
+          3
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          1000,
+          2
+        ],
+        "expected": 2
+      },
+      {
+        "input": [
+          [
+            0,
+            999,
+            1000,
+            1001
+          ],
+          1000,
+          1
+        ],
+        "expected": 2
+      }
+    ],
+    "regression_indices": [
+      0,
+      1
+    ]
+  },
+  {
+    "id": "counter_increase_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "counter_increase",
+    "skill": "metrics",
+    "spec": "`counter_increase` totals the real increase of a monotonic counter across a\nseries of scrapes, the way a metrics backend computes `increase()`.\n\n- `values` are successive readings, oldest first.\n- A counter only ever goes up while the process lives, so a reading that is\n  **strictly lower** than the one before it means the process restarted and the\n  counter reset to 0. In that case the whole new reading is fresh increase.\n- Two consecutive equal readings mean nothing happened between them: that is an\n  increase of 0, not a reset.\n- Fewer than two readings means 0.",
+    "signature": "def counter_increase(values: list[int]) -> int:",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Request-rate graphs spike on idle services. A service that served nothing for a few scrapes shows an enormous burst instead of a flat zero, and the size of the fake burst is exactly the counter's current value. Genuine restarts and steadily rising counters are reported correctly.",
+    "buggy_code": "def counter_increase(values: list[int]) -> int:\n    total = 0\n    for i in range(1, len(values)):\n        if values[i] > values[i - 1]:\n            total += values[i] - values[i - 1]\n        else:\n            total += values[i]\n    return total",
+    "test_cases": [
+      {
+        "input": [
+          0,
+          5,
+          10
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          10,
+          3,
+          8
+        ],
+        "expected": 8
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          100,
+          100,
+          200
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          3,
+          2,
+          2,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          50,
+          50,
+          40,
+          40,
+          45
+        ],
+        "expected": 45
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "counter_increase_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "counter_increase",
+    "skill": "metrics",
+    "spec": "`counter_increase` totals the real increase of a monotonic counter across a\nseries of scrapes, the way a metrics backend computes `increase()`.\n\n- `values` are successive readings, oldest first.\n- A counter only ever goes up while the process lives, so a reading that is\n  **strictly lower** than the one before it means the process restarted and the\n  counter reset to 0. In that case the whole new reading is fresh increase.\n- Two consecutive equal readings mean nothing happened between them: that is an\n  increase of 0, not a reset.\n- Fewer than two readings means 0.",
+    "signature": "function counterIncrease(values: number[]): number {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Request-rate graphs spike on idle services. A service that served nothing for a few scrapes shows an enormous burst instead of a flat zero, and the size of the fake burst is exactly the counter's current value. Genuine restarts and steadily rising counters are reported correctly.",
+    "buggy_code": "function counterIncrease(values: number[]): number {\n    let total = 0;\n    for (let i = 1; i < values.length; i++) {\n        if (values[i] > values[i - 1]) {\n            total += values[i] - values[i - 1];\n        } else {\n            total += values[i];\n        }\n    }\n    return total;\n}",
+    "test_cases": [
+      {
+        "input": [
+          0,
+          5,
+          10
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          10,
+          3,
+          8
+        ],
+        "expected": 8
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          100,
+          100,
+          200
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          3,
+          2,
+          2,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          50,
+          50,
+          40,
+          40,
+          45
+        ],
+        "expected": 45
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "counter_increase_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "counter_increase",
+    "skill": "metrics",
+    "spec": "`counter_increase` totals the real increase of a monotonic counter across a\nseries of scrapes, the way a metrics backend computes `increase()`.\n\n- `values` are successive readings, oldest first.\n- A counter only ever goes up while the process lives, so a reading that is\n  **strictly lower** than the one before it means the process restarted and the\n  counter reset to 0. In that case the whole new reading is fresh increase.\n- Two consecutive equal readings mean nothing happened between them: that is an\n  increase of 0, not a reset.\n- Fewer than two readings means 0.",
+    "signature": "func CounterIncrease(values []int) int {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Request-rate graphs spike on idle services. A service that served nothing for a few scrapes shows an enormous burst instead of a flat zero, and the size of the fake burst is exactly the counter's current value. Genuine restarts and steadily rising counters are reported correctly.",
+    "buggy_code": "func CounterIncrease(values []int) int {\n    total := 0\n    for i := 1; i < len(values); i++ {\n        if values[i] > values[i-1] {\n            total += values[i] - values[i-1]\n        } else {\n            total += values[i]\n        }\n    }\n    return total\n}",
+    "test_cases": [
+      {
+        "input": [
+          0,
+          5,
+          10
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          10,
+          3,
+          8
+        ],
+        "expected": 8
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          100,
+          100,
+          200
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          3,
+          2,
+          2,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          50,
+          50,
+          40,
+          40,
+          45
+        ],
+        "expected": 45
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "counter_increase_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "counter_increase",
+    "skill": "metrics",
+    "spec": "`counter_increase` totals the real increase of a monotonic counter across a\nseries of scrapes, the way a metrics backend computes `increase()`.\n\n- `values` are successive readings, oldest first.\n- A counter only ever goes up while the process lives, so a reading that is\n  **strictly lower** than the one before it means the process restarted and the\n  counter reset to 0. In that case the whole new reading is fresh increase.\n- Two consecutive equal readings mean nothing happened between them: that is an\n  increase of 0, not a reset.\n- Fewer than two readings means 0.",
+    "signature": "fn counter_increase(values: &[i64]) -> i64 {",
+    "io": {
+      "args": [
+        "list<int>"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Request-rate graphs spike on idle services. A service that served nothing for a few scrapes shows an enormous burst instead of a flat zero, and the size of the fake burst is exactly the counter's current value. Genuine restarts and steadily rising counters are reported correctly.",
+    "buggy_code": "fn counter_increase(values: &[i64]) -> i64 {\n    let mut total: i64 = 0;\n    for i in 1..values.len() {\n        if values[i] > values[i - 1] {\n            total += values[i] - values[i - 1];\n        } else {\n            total += values[i];\n        }\n    }\n    total\n}",
+    "test_cases": [
+      {
+        "input": [
+          0,
+          5,
+          10
+        ],
+        "expected": 10
+      },
+      {
+        "input": [
+          5,
+          5,
+          5
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          10,
+          3,
+          8
+        ],
+        "expected": 8
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          7
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "expected": 1
+      },
+      {
+        "input": [
+          100,
+          100,
+          200
+        ],
+        "expected": 100
+      },
+      {
+        "input": [
+          3,
+          2,
+          2,
+          4
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "expected": 4
+      },
+      {
+        "input": [
+          50,
+          50,
+          40,
+          40,
+          45
+        ],
+        "expected": 45
+      }
+    ],
+    "regression_indices": [
+      1,
+      6,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "version_bump_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "version_bump",
+    "skill": "versioning",
+    "spec": "`version_bump` raises one component of a `MAJOR.MINOR.PATCH` version.\n\n- `part` is \"major\", \"minor\", or \"patch\".\n- Raising a component **resets every component below it to zero**: bumping the\n  major of 1.2.3 gives 2.0.0, and bumping its minor gives 1.3.0.\n- Bumping the patch leaves major and minor alone.\n- Return the empty string for anything invalid: a version that is not exactly\n  three non-empty runs of digits, or an unknown `part`.",
+    "signature": "def version_bump(version: str, part: str) -> str:",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Release tags come out wrong, but only for releases cut from a version with patch releases behind it. Bumping the major of 1.2.0 correctly gives 2.0.0, while bumping the major of 1.2.3 gives 2.0.3 and the tag collides with an old build.",
+    "buggy_code": "def version_bump(version: str, part: str) -> str:\n    fields = version.split(\".\")\n    if len(fields) != 3:\n        return \"\"\n    numbers = []\n    for field in fields:\n        if not field:\n            return \"\"\n        for ch in field:\n            if ch < \"0\" or ch > \"9\":\n                return \"\"\n        numbers.append(int(field))\n    major, minor, patch = numbers\n    if part == \"major\":\n        return f\"{major + 1}.0.{patch}\"\n    if part == \"minor\":\n        return f\"{major}.{minor + 1}.{patch}\"\n    if part == \"patch\":\n        return f\"{major}.{minor}.{patch + 1}\"\n    return \"\"",
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.0",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "minor"
+        ],
+        "expected": "1.3.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "patch"
+        ],
+        "expected": "1.2.4"
+      },
+      {
+        "input": [
+          "0.0.0",
+          "major"
+        ],
+        "expected": "1.0.0"
+      },
+      {
+        "input": [
+          "1.2",
+          "patch"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "1.2.3",
+          "build"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "a.b.c",
+          "major"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "10.4.9",
+          "minor"
+        ],
+        "expected": "10.5.0"
+      },
+      {
+        "input": [
+          "1..3",
+          "patch"
+        ],
+        "expected": ""
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      8
+    ]
+  },
+  {
+    "id": "version_bump_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "version_bump",
+    "skill": "versioning",
+    "spec": "`version_bump` raises one component of a `MAJOR.MINOR.PATCH` version.\n\n- `part` is \"major\", \"minor\", or \"patch\".\n- Raising a component **resets every component below it to zero**: bumping the\n  major of 1.2.3 gives 2.0.0, and bumping its minor gives 1.3.0.\n- Bumping the patch leaves major and minor alone.\n- Return the empty string for anything invalid: a version that is not exactly\n  three non-empty runs of digits, or an unknown `part`.",
+    "signature": "function versionBump(version: string, part: string): string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Release tags come out wrong, but only for releases cut from a version with patch releases behind it. Bumping the major of 1.2.0 correctly gives 2.0.0, while bumping the major of 1.2.3 gives 2.0.3 and the tag collides with an old build.",
+    "buggy_code": "function versionBump(version: string, part: string): string {\n    const fields = version.split(\".\");\n    if (fields.length !== 3) return \"\";\n    const numbers: number[] = [];\n    for (const field of fields) {\n        if (field.length === 0 || !/^[0-9]+$/.test(field)) return \"\";\n        numbers.push(parseInt(field, 10));\n    }\n    const [major, minor, patch] = numbers;\n    if (part === \"major\") return `${major + 1}.0.${patch}`;\n    if (part === \"minor\") return `${major}.${minor + 1}.${patch}`;\n    if (part === \"patch\") return `${major}.${minor}.${patch + 1}`;\n    return \"\";\n}",
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.0",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "minor"
+        ],
+        "expected": "1.3.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "patch"
+        ],
+        "expected": "1.2.4"
+      },
+      {
+        "input": [
+          "0.0.0",
+          "major"
+        ],
+        "expected": "1.0.0"
+      },
+      {
+        "input": [
+          "1.2",
+          "patch"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "1.2.3",
+          "build"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "a.b.c",
+          "major"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "10.4.9",
+          "minor"
+        ],
+        "expected": "10.5.0"
+      },
+      {
+        "input": [
+          "1..3",
+          "patch"
+        ],
+        "expected": ""
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      8
+    ]
+  },
+  {
+    "id": "version_bump_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "version_bump",
+    "skill": "versioning",
+    "spec": "`version_bump` raises one component of a `MAJOR.MINOR.PATCH` version.\n\n- `part` is \"major\", \"minor\", or \"patch\".\n- Raising a component **resets every component below it to zero**: bumping the\n  major of 1.2.3 gives 2.0.0, and bumping its minor gives 1.3.0.\n- Bumping the patch leaves major and minor alone.\n- Return the empty string for anything invalid: a version that is not exactly\n  three non-empty runs of digits, or an unknown `part`.",
+    "signature": "func VersionBump(version string, part string) string {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Release tags come out wrong, but only for releases cut from a version with patch releases behind it. Bumping the major of 1.2.0 correctly gives 2.0.0, while bumping the major of 1.2.3 gives 2.0.3 and the tag collides with an old build.",
+    "buggy_code": "import (\n    \"fmt\"\n    \"strconv\"\n    \"strings\"\n)\n\nfunc VersionBump(version string, part string) string {\n    fields := strings.Split(version, \".\")\n    if len(fields) != 3 {\n        return \"\"\n    }\n    numbers := make([]int, 0, 3)\n    for _, field := range fields {\n        if len(field) == 0 {\n            return \"\"\n        }\n        for _, ch := range field {\n            if ch < '0' || ch > '9' {\n                return \"\"\n            }\n        }\n        value, err := strconv.Atoi(field)\n        if err != nil {\n            return \"\"\n        }\n        numbers = append(numbers, value)\n    }\n    major, minor, patch := numbers[0], numbers[1], numbers[2]\n    switch part {\n    case \"major\":\n        return fmt.Sprintf(\"%d.0.%d\", major+1, patch)\n    case \"minor\":\n        return fmt.Sprintf(\"%d.%d.%d\", major, minor+1, patch)\n    case \"patch\":\n        return fmt.Sprintf(\"%d.%d.%d\", major, minor, patch+1)\n    }\n    return \"\"\n}",
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.0",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "minor"
+        ],
+        "expected": "1.3.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "patch"
+        ],
+        "expected": "1.2.4"
+      },
+      {
+        "input": [
+          "0.0.0",
+          "major"
+        ],
+        "expected": "1.0.0"
+      },
+      {
+        "input": [
+          "1.2",
+          "patch"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "1.2.3",
+          "build"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "a.b.c",
+          "major"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "10.4.9",
+          "minor"
+        ],
+        "expected": "10.5.0"
+      },
+      {
+        "input": [
+          "1..3",
+          "patch"
+        ],
+        "expected": ""
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      8
+    ]
+  },
+  {
+    "id": "version_bump_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "version_bump",
+    "skill": "versioning",
+    "spec": "`version_bump` raises one component of a `MAJOR.MINOR.PATCH` version.\n\n- `part` is \"major\", \"minor\", or \"patch\".\n- Raising a component **resets every component below it to zero**: bumping the\n  major of 1.2.3 gives 2.0.0, and bumping its minor gives 1.3.0.\n- Bumping the patch leaves major and minor alone.\n- Return the empty string for anything invalid: a version that is not exactly\n  three non-empty runs of digits, or an unknown `part`.",
+    "signature": "fn version_bump(version: &str, part: &str) -> String {",
+    "io": {
+      "args": [
+        "str",
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Release tags come out wrong, but only for releases cut from a version with patch releases behind it. Bumping the major of 1.2.0 correctly gives 2.0.0, while bumping the major of 1.2.3 gives 2.0.3 and the tag collides with an old build.",
+    "buggy_code": "fn version_bump(version: &str, part: &str) -> String {\n    let fields: Vec<&str> = version.split('.').collect();\n    if fields.len() != 3 {\n        return String::new();\n    }\n    let mut numbers: Vec<i64> = Vec::with_capacity(3);\n    for field in fields {\n        if field.is_empty() || !field.chars().all(|c| c.is_ascii_digit()) {\n            return String::new();\n        }\n        match field.parse::<i64>() {\n            Ok(value) => numbers.push(value),\n            Err(_) => return String::new(),\n        }\n    }\n    let (major, minor, patch) = (numbers[0], numbers[1], numbers[2]);\n    match part {\n        \"major\" => format!(\"{}.0.{}\", major + 1, patch),\n        \"minor\" => format!(\"{}.{}.{}\", major, minor + 1, patch),\n        \"patch\" => format!(\"{}.{}.{}\", major, minor, patch + 1),\n        _ => String::new(),\n    }\n}",
+    "test_cases": [
+      {
+        "input": [
+          "1.2.3",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.0",
+          "major"
+        ],
+        "expected": "2.0.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "minor"
+        ],
+        "expected": "1.3.0"
+      },
+      {
+        "input": [
+          "1.2.3",
+          "patch"
+        ],
+        "expected": "1.2.4"
+      },
+      {
+        "input": [
+          "0.0.0",
+          "major"
+        ],
+        "expected": "1.0.0"
+      },
+      {
+        "input": [
+          "1.2",
+          "patch"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "1.2.3",
+          "build"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "a.b.c",
+          "major"
+        ],
+        "expected": ""
+      },
+      {
+        "input": [
+          "10.4.9",
+          "minor"
+        ],
+        "expected": "10.5.0"
+      },
+      {
+        "input": [
+          "1..3",
+          "patch"
+        ],
+        "expected": ""
+      }
+    ],
+    "regression_indices": [
+      0,
+      2,
+      8
+    ]
+  },
+  {
+    "id": "csv_field_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "csv_field",
+    "skill": "escaping",
+    "spec": "`csv_field` renders one value as an RFC 4180 CSV field.\n\n- A field containing a comma, a double quote, or a newline must be wrapped in\n  double quotes.\n- Inside a quoted field, every double quote in the value is written **twice**,\n  so the three-character value  a\"b  is rendered as the five-character field\n  \"a\"\"b\" \u2014 an opening quote, `a`, the inner quote written twice, `b`, and a\n  closing quote.\n- A field with none of those characters is returned unchanged, without quotes.\n- The empty string is returned unchanged.",
+    "signature": "def csv_field(text: str) -> str:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Downstream parsers choke on our exports, but only on rows where a field contains a double quote \u2014 a product name like 24\" Monitor shifts every following column by one. Fields with commas or newlines round-trip fine.",
+    "buggy_code": "def csv_field(text: str) -> str:\n    if \",\" in text or '\"' in text or \"\\n\" in text:\n        return '\"' + text + '\"'\n    return text",
+    "test_cases": [
+      {
+        "input": "plain",
+        "expected": "plain"
+      },
+      {
+        "input": "a,b",
+        "expected": "\"a,b\""
+      },
+      {
+        "input": "say \"hi\"",
+        "expected": "\"say \"\"hi\"\"\""
+      },
+      {
+        "input": "\"",
+        "expected": "\"\"\"\""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "line\nbreak",
+        "expected": "\"line\nbreak\""
+      },
+      {
+        "input": "tab\there",
+        "expected": "tab\there"
+      },
+      {
+        "input": "x\"y,z",
+        "expected": "\"x\"\"y,z\""
+      },
+      {
+        "input": "trailing,",
+        "expected": "\"trailing,\""
+      },
+      {
+        "input": "only\"quote",
+        "expected": "\"only\"\"quote\""
+      }
+    ],
+    "regression_indices": [
+      2,
+      3,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "csv_field_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "csv_field",
+    "skill": "escaping",
+    "spec": "`csv_field` renders one value as an RFC 4180 CSV field.\n\n- A field containing a comma, a double quote, or a newline must be wrapped in\n  double quotes.\n- Inside a quoted field, every double quote in the value is written **twice**,\n  so the three-character value  a\"b  is rendered as the five-character field\n  \"a\"\"b\" \u2014 an opening quote, `a`, the inner quote written twice, `b`, and a\n  closing quote.\n- A field with none of those characters is returned unchanged, without quotes.\n- The empty string is returned unchanged.",
+    "signature": "function csvField(text: string): string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Downstream parsers choke on our exports, but only on rows where a field contains a double quote \u2014 a product name like 24\" Monitor shifts every following column by one. Fields with commas or newlines round-trip fine.",
+    "buggy_code": "function csvField(text: string): string {\n    if (text.includes(\",\") || text.includes('\"') || text.includes(\"\\n\")) {\n        return '\"' + text + '\"';\n    }\n    return text;\n}",
+    "test_cases": [
+      {
+        "input": "plain",
+        "expected": "plain"
+      },
+      {
+        "input": "a,b",
+        "expected": "\"a,b\""
+      },
+      {
+        "input": "say \"hi\"",
+        "expected": "\"say \"\"hi\"\"\""
+      },
+      {
+        "input": "\"",
+        "expected": "\"\"\"\""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "line\nbreak",
+        "expected": "\"line\nbreak\""
+      },
+      {
+        "input": "tab\there",
+        "expected": "tab\there"
+      },
+      {
+        "input": "x\"y,z",
+        "expected": "\"x\"\"y,z\""
+      },
+      {
+        "input": "trailing,",
+        "expected": "\"trailing,\""
+      },
+      {
+        "input": "only\"quote",
+        "expected": "\"only\"\"quote\""
+      }
+    ],
+    "regression_indices": [
+      2,
+      3,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "csv_field_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "csv_field",
+    "skill": "escaping",
+    "spec": "`csv_field` renders one value as an RFC 4180 CSV field.\n\n- A field containing a comma, a double quote, or a newline must be wrapped in\n  double quotes.\n- Inside a quoted field, every double quote in the value is written **twice**,\n  so the three-character value  a\"b  is rendered as the five-character field\n  \"a\"\"b\" \u2014 an opening quote, `a`, the inner quote written twice, `b`, and a\n  closing quote.\n- A field with none of those characters is returned unchanged, without quotes.\n- The empty string is returned unchanged.",
+    "signature": "func CsvField(text string) string {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Downstream parsers choke on our exports, but only on rows where a field contains a double quote \u2014 a product name like 24\" Monitor shifts every following column by one. Fields with commas or newlines round-trip fine.",
+    "buggy_code": "import \"strings\"\n\nfunc CsvField(text string) string {\n    if strings.ContainsAny(text, \",\\\"\\n\") {\n        return \"\\\"\" + text + \"\\\"\"\n    }\n    return text\n}",
+    "test_cases": [
+      {
+        "input": "plain",
+        "expected": "plain"
+      },
+      {
+        "input": "a,b",
+        "expected": "\"a,b\""
+      },
+      {
+        "input": "say \"hi\"",
+        "expected": "\"say \"\"hi\"\"\""
+      },
+      {
+        "input": "\"",
+        "expected": "\"\"\"\""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "line\nbreak",
+        "expected": "\"line\nbreak\""
+      },
+      {
+        "input": "tab\there",
+        "expected": "tab\there"
+      },
+      {
+        "input": "x\"y,z",
+        "expected": "\"x\"\"y,z\""
+      },
+      {
+        "input": "trailing,",
+        "expected": "\"trailing,\""
+      },
+      {
+        "input": "only\"quote",
+        "expected": "\"only\"\"quote\""
+      }
+    ],
+    "regression_indices": [
+      2,
+      3,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "csv_field_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "csv_field",
+    "skill": "escaping",
+    "spec": "`csv_field` renders one value as an RFC 4180 CSV field.\n\n- A field containing a comma, a double quote, or a newline must be wrapped in\n  double quotes.\n- Inside a quoted field, every double quote in the value is written **twice**,\n  so the three-character value  a\"b  is rendered as the five-character field\n  \"a\"\"b\" \u2014 an opening quote, `a`, the inner quote written twice, `b`, and a\n  closing quote.\n- A field with none of those characters is returned unchanged, without quotes.\n- The empty string is returned unchanged.",
+    "signature": "fn csv_field(text: &str) -> String {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "str"
+    },
+    "symptom": "Downstream parsers choke on our exports, but only on rows where a field contains a double quote \u2014 a product name like 24\" Monitor shifts every following column by one. Fields with commas or newlines round-trip fine.",
+    "buggy_code": "fn csv_field(text: &str) -> String {\n    if text.contains(',') || text.contains('\"') || text.contains('\\n') {\n        return format!(\"\\\"{}\\\"\", text);\n    }\n    text.to_string()\n}",
+    "test_cases": [
+      {
+        "input": "plain",
+        "expected": "plain"
+      },
+      {
+        "input": "a,b",
+        "expected": "\"a,b\""
+      },
+      {
+        "input": "say \"hi\"",
+        "expected": "\"say \"\"hi\"\"\""
+      },
+      {
+        "input": "\"",
+        "expected": "\"\"\"\""
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "line\nbreak",
+        "expected": "\"line\nbreak\""
+      },
+      {
+        "input": "tab\there",
+        "expected": "tab\there"
+      },
+      {
+        "input": "x\"y,z",
+        "expected": "\"x\"\"y,z\""
+      },
+      {
+        "input": "trailing,",
+        "expected": "\"trailing,\""
+      },
+      {
+        "input": "only\"quote",
+        "expected": "\"only\"\"quote\""
+      }
+    ],
+    "regression_indices": [
+      2,
+      3,
+      7,
+      9
+    ]
+  },
+  {
+    "id": "parse_size_python",
+    "language": "python",
+    "difficulty": "hard",
+    "task_family": "parse_size",
+    "skill": "units",
+    "spec": "`parse_size` reads a Kubernetes-style resource quantity and returns the number\nof bytes.\n\n- The value is a run of digits followed by an optional suffix.\n- Suffixes without an `i` are **decimal** powers of 1000: K = 1000,\n  M = 1000000, G = 1000000000.\n- Suffixes ending in `i` are **binary** powers of 1024: Ki = 1024,\n  Mi = 1048576, Gi = 1073741824.\n- No suffix means plain bytes.\n- Return -1 for anything else: an empty string, a value with no leading digits,\n  or an unrecognised suffix.",
+    "signature": "def parse_size(text: str) -> int:",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Memory limits are provisioned slightly too high and the cluster autoscaler over-allocates. A limit written as 512Mi comes out exactly right, but the same limit written as 512M comes out about 5% larger than the number of bytes it should mean.",
+    "buggy_code": "_UNITS = {\n    \"\": 1,\n    \"K\": 1024,\n    \"Ki\": 1024,\n    \"M\": 1048576,\n    \"Mi\": 1048576,\n    \"G\": 1073741824,\n    \"Gi\": 1073741824,\n}\n\n\ndef parse_size(text: str) -> int:\n    end = 0\n    while end < len(text) and \"0\" <= text[end] <= \"9\":\n        end += 1\n    if end == 0:\n        return -1\n    suffix = text[end:]\n    if suffix not in _UNITS:\n        return -1\n    return int(text[:end]) * _UNITS[suffix]",
+    "test_cases": [
+      {
+        "input": "10",
+        "expected": 10
+      },
+      {
+        "input": "5Ki",
+        "expected": 5120
+      },
+      {
+        "input": "5K",
+        "expected": 5000
+      },
+      {
+        "input": "2Mi",
+        "expected": 2097152
+      },
+      {
+        "input": "2M",
+        "expected": 2000000
+      },
+      {
+        "input": "1Gi",
+        "expected": 1073741824
+      },
+      {
+        "input": "7G",
+        "expected": 7000000000
+      },
+      {
+        "input": "",
+        "expected": -1
+      },
+      {
+        "input": "3T",
+        "expected": -1
+      },
+      {
+        "input": "abc",
+        "expected": -1
+      },
+      {
+        "input": "512",
+        "expected": 512
+      },
+      {
+        "input": "0K",
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      2,
+      4,
+      6
+    ]
+  },
+  {
+    "id": "parse_size_typescript",
+    "language": "typescript",
+    "difficulty": "hard",
+    "task_family": "parse_size",
+    "skill": "units",
+    "spec": "`parse_size` reads a Kubernetes-style resource quantity and returns the number\nof bytes.\n\n- The value is a run of digits followed by an optional suffix.\n- Suffixes without an `i` are **decimal** powers of 1000: K = 1000,\n  M = 1000000, G = 1000000000.\n- Suffixes ending in `i` are **binary** powers of 1024: Ki = 1024,\n  Mi = 1048576, Gi = 1073741824.\n- No suffix means plain bytes.\n- Return -1 for anything else: an empty string, a value with no leading digits,\n  or an unrecognised suffix.",
+    "signature": "function parseSize(text: string): number {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Memory limits are provisioned slightly too high and the cluster autoscaler over-allocates. A limit written as 512Mi comes out exactly right, but the same limit written as 512M comes out about 5% larger than the number of bytes it should mean.",
+    "buggy_code": "const UNITS: Record<string, number> = {\n    \"\": 1,\n    K: 1024,\n    Ki: 1024,\n    M: 1048576,\n    Mi: 1048576,\n    G: 1073741824,\n    Gi: 1073741824,\n};\n\nfunction parseSize(text: string): number {\n    let end = 0;\n    while (end < text.length && text[end] >= \"0\" && text[end] <= \"9\") end++;\n    if (end === 0) return -1;\n    const suffix = text.slice(end);\n    if (!Object.prototype.hasOwnProperty.call(UNITS, suffix)) return -1;\n    return parseInt(text.slice(0, end), 10) * UNITS[suffix];\n}",
+    "test_cases": [
+      {
+        "input": "10",
+        "expected": 10
+      },
+      {
+        "input": "5Ki",
+        "expected": 5120
+      },
+      {
+        "input": "5K",
+        "expected": 5000
+      },
+      {
+        "input": "2Mi",
+        "expected": 2097152
+      },
+      {
+        "input": "2M",
+        "expected": 2000000
+      },
+      {
+        "input": "1Gi",
+        "expected": 1073741824
+      },
+      {
+        "input": "7G",
+        "expected": 7000000000
+      },
+      {
+        "input": "",
+        "expected": -1
+      },
+      {
+        "input": "3T",
+        "expected": -1
+      },
+      {
+        "input": "abc",
+        "expected": -1
+      },
+      {
+        "input": "512",
+        "expected": 512
+      },
+      {
+        "input": "0K",
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      2,
+      4,
+      6
+    ]
+  },
+  {
+    "id": "parse_size_go",
+    "language": "go",
+    "difficulty": "hard",
+    "task_family": "parse_size",
+    "skill": "units",
+    "spec": "`parse_size` reads a Kubernetes-style resource quantity and returns the number\nof bytes.\n\n- The value is a run of digits followed by an optional suffix.\n- Suffixes without an `i` are **decimal** powers of 1000: K = 1000,\n  M = 1000000, G = 1000000000.\n- Suffixes ending in `i` are **binary** powers of 1024: Ki = 1024,\n  Mi = 1048576, Gi = 1073741824.\n- No suffix means plain bytes.\n- Return -1 for anything else: an empty string, a value with no leading digits,\n  or an unrecognised suffix.",
+    "signature": "func ParseSize(text string) int {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Memory limits are provisioned slightly too high and the cluster autoscaler over-allocates. A limit written as 512Mi comes out exactly right, but the same limit written as 512M comes out about 5% larger than the number of bytes it should mean.",
+    "buggy_code": "import \"strconv\"\n\nfunc ParseSize(text string) int {\n    units := map[string]int{\n        \"\":   1,\n        \"K\":  1024,\n        \"Ki\": 1024,\n        \"M\":  1048576,\n        \"Mi\": 1048576,\n        \"G\":  1073741824,\n        \"Gi\": 1073741824,\n    }\n    end := 0\n    for end < len(text) && text[end] >= '0' && text[end] <= '9' {\n        end++\n    }\n    if end == 0 {\n        return -1\n    }\n    scale, ok := units[text[end:]]\n    if !ok {\n        return -1\n    }\n    value, err := strconv.Atoi(text[:end])\n    if err != nil {\n        return -1\n    }\n    return value * scale\n}",
+    "test_cases": [
+      {
+        "input": "10",
+        "expected": 10
+      },
+      {
+        "input": "5Ki",
+        "expected": 5120
+      },
+      {
+        "input": "5K",
+        "expected": 5000
+      },
+      {
+        "input": "2Mi",
+        "expected": 2097152
+      },
+      {
+        "input": "2M",
+        "expected": 2000000
+      },
+      {
+        "input": "1Gi",
+        "expected": 1073741824
+      },
+      {
+        "input": "7G",
+        "expected": 7000000000
+      },
+      {
+        "input": "",
+        "expected": -1
+      },
+      {
+        "input": "3T",
+        "expected": -1
+      },
+      {
+        "input": "abc",
+        "expected": -1
+      },
+      {
+        "input": "512",
+        "expected": 512
+      },
+      {
+        "input": "0K",
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      2,
+      4,
+      6
+    ]
+  },
+  {
+    "id": "parse_size_rust",
+    "language": "rust",
+    "difficulty": "hard",
+    "task_family": "parse_size",
+    "skill": "units",
+    "spec": "`parse_size` reads a Kubernetes-style resource quantity and returns the number\nof bytes.\n\n- The value is a run of digits followed by an optional suffix.\n- Suffixes without an `i` are **decimal** powers of 1000: K = 1000,\n  M = 1000000, G = 1000000000.\n- Suffixes ending in `i` are **binary** powers of 1024: Ki = 1024,\n  Mi = 1048576, Gi = 1073741824.\n- No suffix means plain bytes.\n- Return -1 for anything else: an empty string, a value with no leading digits,\n  or an unrecognised suffix.",
+    "signature": "fn parse_size(text: &str) -> i64 {",
+    "io": {
+      "args": [
+        "str"
+      ],
+      "returns": "int"
+    },
+    "symptom": "Memory limits are provisioned slightly too high and the cluster autoscaler over-allocates. A limit written as 512Mi comes out exactly right, but the same limit written as 512M comes out about 5% larger than the number of bytes it should mean.",
+    "buggy_code": "fn parse_size(text: &str) -> i64 {\n    let bytes = text.as_bytes();\n    let mut end = 0usize;\n    while end < bytes.len() && bytes[end].is_ascii_digit() {\n        end += 1;\n    }\n    if end == 0 {\n        return -1;\n    }\n    let scale: i64 = match &text[end..] {\n        \"\" => 1,\n        \"K\" => 1024,\n        \"Ki\" => 1024,\n        \"M\" => 1048576,\n        \"Mi\" => 1048576,\n        \"G\" => 1073741824,\n        \"Gi\" => 1073741824,\n        _ => return -1,\n    };\n    match text[..end].parse::<i64>() {\n        Ok(value) => value * scale,\n        Err(_) => -1,\n    }\n}",
+    "test_cases": [
+      {
+        "input": "10",
+        "expected": 10
+      },
+      {
+        "input": "5Ki",
+        "expected": 5120
+      },
+      {
+        "input": "5K",
+        "expected": 5000
+      },
+      {
+        "input": "2Mi",
+        "expected": 2097152
+      },
+      {
+        "input": "2M",
+        "expected": 2000000
+      },
+      {
+        "input": "1Gi",
+        "expected": 1073741824
+      },
+      {
+        "input": "7G",
+        "expected": 7000000000
+      },
+      {
+        "input": "",
+        "expected": -1
+      },
+      {
+        "input": "3T",
+        "expected": -1
+      },
+      {
+        "input": "abc",
+        "expected": -1
+      },
+      {
+        "input": "512",
+        "expected": 512
+      },
+      {
+        "input": "0K",
+        "expected": 0
+      }
+    ],
+    "regression_indices": [
+      2,
+      4,
+      6
+    ]
+  }
+]

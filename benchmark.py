@@ -12,7 +12,6 @@ Usage (recommended workflow for running models one at a time):
 
 Other examples:
     python benchmark.py run --category anomaly_detection
-    python benchmark.py run --config models.mock.json   # offline smoke test
     python benchmark.py list-categories
     python benchmark.py list-models
     python benchmark.py clear-cache -m grok-4
@@ -35,7 +34,15 @@ from rich.progress import (
 )
 from rich.table import Table
 
-from core.config import CATEGORY_WEIGHTS, TASK_CATEGORIES, BenchmarkConfig
+from core.config import (
+    ALL_CATEGORIES,
+    CATEGORY_WEIGHTS,
+    DEVELOPER_CATEGORIES,
+    SRE_CATEGORIES,
+    TASK_CATEGORIES,
+    BenchmarkConfig,
+    set_suite,
+)
 from core.runner import BenchmarkRunner, RunRecord
 from datasets.loaders import load_datasets
 from reports.generator import (
@@ -73,7 +80,7 @@ def _write_site_data(output_dir: Path) -> None:
     console.print(f"  - {out}")
     for row in pending_rows(payload):
         console.print(
-            f"[yellow]  ! {row['category']}: {row['cases'] - row['scored']} of "
+            f"[yellow]  ! {row['track']}/{row['category']}: {row['cases'] - row['scored']} of "
             f"{row['cases']} cases are not covered by every ranked model, so the site "
             "will show them as pending[/yellow]"
         )
@@ -82,6 +89,11 @@ def _write_site_data(output_dir: Path) -> None:
 @app.command()
 def run(
     config_path: Path = typer.Option("models.json", "--config", help="Config file (models.json)."),
+    suite: str = typer.Option(
+        "sre",
+        "--suite",
+        help="Test suite to run: 'sre' (observability), 'developer' (code generation), or 'all'.",
+    ),
     categories: Optional[list[str]] = typer.Option(
         None, "--category", "-c", help="Run only these categories (repeatable)."
     ),
@@ -101,9 +113,10 @@ def run(
     replace: bool = typer.Option(
         False,
         "--replace",
-        help="Re-run every selected slot and overwrite stored results. By default a "
+        help="Re-run every selected slot and overwrite its stored result. By default a "
         "run skips slots already scored in results/<model>/ and only calls "
-        "failures or never-run cases.",
+        "failures or never-run cases. Only the selected slots are replaced — "
+        "results for categories this run did not touch are left alone.",
     ),
     declined: bool = typer.Option(
         False,
@@ -122,10 +135,20 @@ def run(
     if runs is not None:
         config.runs_per_test = runs
 
-    selected_categories = categories or TASK_CATEGORIES
-    invalid = [c for c in selected_categories if c not in TASK_CATEGORIES]
+    # Set the active suite (affects CATEGORY_WEIGHTS and TASK_CATEGORIES)
+    try:
+        suite_categories = set_suite(suite)
+    except ValueError as e:
+        console.print(f"[red]{e}[/red]")
+        raise typer.Exit(code=1)
+
+    # Allow categories flag to override/filter the suite's categories
+    selected_categories = categories or suite_categories
+    invalid = [c for c in selected_categories if c not in ALL_CATEGORIES]
     if invalid:
-        console.print(f"[red]Unknown categories: {invalid}. Valid: {TASK_CATEGORIES}[/red]")
+        console.print(
+            f"[red]Unknown categories: {invalid}. Valid: {ALL_CATEGORIES}[/red]"
+        )
         raise typer.Exit(code=1)
 
     if models:
@@ -258,12 +281,19 @@ def run(
         def on_model_complete(
             model_name: str, model_recs: list[RunRecord], duration: float
         ) -> None:
+            # Always merge. --replace means "re-run the slots I selected and
+            # overwrite those results", and the merge already does exactly that:
+            # a new record replaces the stored one for the same (category,
+            # case_id, run_index). Writing the folder from scratch instead threw
+            # away every category the current run did not touch, so a
+            # `--suite developer --replace` pass silently deleted all the stored
+            # SRE results for each model it ran.
             save_model_results(
                 output_dir,
                 model_name,
                 model_recs,
                 total_duration_s=duration,
-                merge=not replace,
+                merge=True,
             )
 
         def on_status(message: str) -> None:
@@ -284,7 +314,6 @@ def run(
     # (merges newly run models with any previously saved ones)
     all_records = load_all_model_records(output_dir) or records
     pricing = build_pricing(config.models)
-    summaries = aggregate(all_records, pricing)
 
     # Use the actual number of distinct models we have data for
     actual_models = len({r.model for r in all_records})
@@ -293,12 +322,30 @@ def run(
 
     output = write_aggregated_reports(output_dir, pricing=pricing)
 
+    # Console summary uses the active suite from the run; for dual-track data the
+    # SRE table stays the primary printed ranking.
+    sre_recs = [r for r in all_records if r.category in SRE_CATEGORIES]
+    if sre_recs:
+        set_suite("sre")
+        summaries = aggregate(sre_recs, pricing)
+    else:
+        summaries = aggregate(all_records, pricing)
+
     _print_summary_table(summaries)
     _print_coverage_resume(all_records)
     console.print(f"\nPer-model results saved under [bold]{output}/<model>/[/bold]")
     console.print(f"Aggregated reports written to [bold]{output}/[/bold]:")
-    for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
-        console.print(f"  - {output / name}")
+    report_names = [
+        "comparison_table.md",
+        "comparison_table_developer.md",
+        "detailed_results.csv",
+        "summary_report.md",
+        "results.json",
+    ]
+    for name in report_names:
+        path = output / name
+        if path.exists():
+            console.print(f"  - {path}")
     _write_site_data(output)
 
 
@@ -307,7 +354,10 @@ def aggregate_cmd(
     config_path: Path = typer.Option("models.json", "--config", help="Config file (for model pricing)."),
     output_dir: Path = typer.Option("results", "--output-dir", "-o", help="Results directory containing per-model folders."),
 ) -> None:
-    """Rebuild comparison_table.md, summary_report.md, etc. from all per-model result folders.
+    """Rebuild comparison tables and reports from all per-model result folders.
+
+    Writes ``comparison_table.md`` (SRE) and, when code-generation results exist,
+    ``comparison_table_developer.md``.
 
     Use this after running models individually, e.g.:
         python benchmark.py run -m grok-4
@@ -323,20 +373,30 @@ def aggregate_cmd(
     if config_path.exists():
         pricing = build_pricing(BenchmarkConfig.load(config_path).models)
 
-    summaries = aggregate(all_records, pricing)
-
-    n_models = len({r.model for r in all_records})
-    n_cases = len({(r.category, r.case_id) for r in all_records})
-
-    run_info = make_run_info(3, n_models, n_cases)
     output = write_aggregated_reports(output_dir, pricing=pricing)
 
+    sre_recs = [r for r in all_records if r.category in SRE_CATEGORIES]
+    if sre_recs:
+        set_suite("sre")
+        summaries = aggregate(sre_recs, pricing)
+    else:
+        summaries = aggregate(all_records, pricing)
+
+    n_models = len({r.model for r in all_records})
     _print_summary_table(summaries)
     _print_coverage_resume(all_records)
 
     console.print(f"\nRebuilt aggregated reports from {n_models} model(s) in [bold]{output}/[/bold]")
-    for name in ("comparison_table.md", "detailed_results.csv", "summary_report.md", "results.json"):
-        console.print(f"  - {output / name}")
+    for name in (
+        "comparison_table.md",
+        "comparison_table_developer.md",
+        "detailed_results.csv",
+        "summary_report.md",
+        "results.json",
+    ):
+        path = output / name
+        if path.exists():
+            console.print(f"  - {path}")
     _write_site_data(output)
 
 
@@ -425,14 +485,41 @@ def _print_coverage_resume(records: list[RunRecord]) -> None:
 @app.command("list-categories")
 def list_categories() -> None:
     """Show test categories and their weights in the global score."""
+    # Show all available categories with their suite association
     table = Table(title="Test Categories")
     table.add_column("Category")
-    table.add_column("Weight", justify="right")
+    table.add_column("Suite", justify="center")
+    table.add_column("SRE Weight", justify="right")
+    table.add_column("Developer Weight", justify="right")
     table.add_column("Kind")
-    for category, weight in CATEGORY_WEIGHTS.items():
+
+    from core.config import DEVELOPER_CATEGORY_WEIGHTS, SRE_CATEGORY_WEIGHTS
+
+    all_cats = set(SRE_CATEGORIES + DEVELOPER_CATEGORIES + ["efficiency"])
+    for category in sorted(all_cats):
+        if category in SRE_CATEGORIES:
+            suite = "SRE"
+        elif category in DEVELOPER_CATEGORIES:
+            suite = "Developer"
+        else:
+            suite = "Both"
+
+        sre_weight = SRE_CATEGORY_WEIGHTS.get(category, 0)
+        dev_weight = DEVELOPER_CATEGORY_WEIGHTS.get(category, 0)
         kind = "derived from other runs" if category == "efficiency" else "dataset-backed"
-        table.add_row(category, f"{weight:.0%}", kind)
+
+        table.add_row(
+            category,
+            suite,
+            f"{sre_weight:.0%}" if sre_weight > 0 else "—",
+            f"{dev_weight:.0%}" if dev_weight > 0 else "—",
+            kind,
+        )
+
     console.print(table)
+    console.print(
+        "\n[dim]Use --suite sre|developer|all to select which categories to run.[/dim]"
+    )
 
 
 @app.command("list-models")

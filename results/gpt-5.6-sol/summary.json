@@ -1,26 +1,35 @@
 {
   "model": "gpt-5.6-sol",
-  "global_score": 67.3,
+  "global_score": 88.23,
   "category_scores": {
+    "code_generation": 81.56,
+    "code_efficiency": 97.52,
+    "code_debugging": 97.69,
+    "code_refactoring": 98.29,
+    "code_review": 80.58,
     "log_parsing": 91.73,
     "anomaly_detection": 61.07,
     "multimodal_rca": 56.22,
     "metrics_timeseries": 73.69,
     "pattern_correlation": 75.33,
     "root_cause": 49.19,
-    "efficiency": 68.92
+    "code_python": 96.44,
+    "code_typescript": 95.3,
+    "code_go": 83.62,
+    "code_rust": 86.44,
+    "efficiency": 71.29
   },
   "efficiency_metrics": {
-    "avg_latency_s": 6.5302,
-    "avg_total_tokens": 1957.1911,
-    "score_stddev": 2.7809,
-    "latency_score": 0.6735,
-    "token_score": 0.5107,
-    "consistency_score": 0.8888
+    "avg_latency_s": 7.4435,
+    "avg_total_tokens": 1177.3152,
+    "score_stddev": 4.1618,
+    "latency_score": 0.6278,
+    "token_score": 0.7057,
+    "consistency_score": 0.8335
   },
-  "error_count": 0,
+  "error_count": 1,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 1606.44,
-  "last_run_wall_clock_s": 0.0
+  "total_runs": 1086,
+  "total_duration_s": 8076.23,
+  "last_run_wall_clock_s": 4696.54
 }

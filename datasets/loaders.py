@@ -24,6 +24,31 @@ own directory with the same file names). Expected shapes:
                                              "informative_modalities": [...],
                                              "decoy_modalities": [...],
                                              "evidence_keywords": [...]}}
+
+The developer track's five files share a base shape — {"id", "language",
+"task_family", "skill", "difficulty", "spec", "signature", "io", "test_cases"}
+— and add what their category needs. ("io" is absent on the six original
+code_generation families, which predate it and are driven by per-family
+harnesses in evaluators/code_exec.py instead.) Do not hand-edit them: they are generated
+by scripts/build_code_challenges.py, which computes every expected value from a
+reference implementation and can re-verify the whole set against the real
+compilers (``--check``).
+
+  code_generation.json     base shape only
+  code_efficiency.json     + "workload" (in-language generated input and its
+                             answer) and "time_budget_ms" (per language)
+  code_debugging.json      + "buggy_code", "symptom", and "regression_indices"
+                             (which tests the buggy version fails, measured
+                             per language when the dataset is built)
+  code_refactoring.json    + "original_code", "goal" and "structure" (the
+                             regex rules the refactor must satisfy)
+  code_review.json         {"id", "language", "component", "context", "code",
+                            "defects": [{"id", "line", "severity",
+                                         "keywords_any": [...]}]} — no
+                            execution, so no io/test_cases
+
+``io`` declares the argument and return types the harness renders literals
+from: int, float, str, bool, list<T>, pair<T,T>, map<str,T>.
 """
 
 from __future__ import annotations

@@ -1,26 +1,35 @@
 {
   "model": "gemini-3.6-flash",
-  "global_score": 66.05,
+  "global_score": 77.2,
   "category_scores": {
+    "code_generation": 78.84,
+    "code_efficiency": 78.33,
+    "code_debugging": 79.52,
+    "code_refactoring": 79.54,
+    "code_review": 73.08,
     "log_parsing": 89.66,
     "anomaly_detection": 64.76,
     "pattern_correlation": 72.0,
     "metrics_timeseries": 71.58,
     "root_cause": 51.34,
-    "multimodal_rca": 54.54,
-    "efficiency": 48.2
+    "multimodal_rca": 54.17,
+    "code_python": 95.91,
+    "code_typescript": 36.8,
+    "code_go": 90.99,
+    "code_rust": 88.03,
+    "efficiency": 60.67
   },
   "efficiency_metrics": {
-    "avg_latency_s": 16.5557,
-    "avg_total_tokens": 2085.5,
-    "score_stddev": 2.5373,
-    "latency_score": 0.1722,
-    "token_score": 0.4786,
-    "consistency_score": 0.8985
+    "avg_latency_s": 14.2427,
+    "avg_total_tokens": 1010.5766,
+    "score_stddev": 2.719,
+    "latency_score": 0.2879,
+    "token_score": 0.7474,
+    "consistency_score": 0.8912
   },
-  "error_count": 0,
+  "error_count": 2,
   "refused_count": 0,
-  "total_runs": 246,
-  "total_duration_s": 4072.71,
-  "last_run_wall_clock_s": 62.77
+  "total_runs": 1086,
+  "total_duration_s": 15439.05,
+  "last_run_wall_clock_s": 7422.82
 }
