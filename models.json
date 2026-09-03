@@ -80,6 +80,25 @@
       "price_output": 50.0
     },
     {
+      "name": "fable-5.1",
+      "provider": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model_id": "claude-fable-5-1",
+      "max_tokens": 16000,
+      "price_input": 10.0,
+      "price_output": 50.0
+    },
+    {
+      "name": "fable-5.1-low",
+      "provider": "anthropic",
+      "api_key": "${ANTHROPIC_API_KEY}",
+      "model_id": "claude-fable-5-1",
+      "reasoning_effort": "low",
+      "max_tokens": 16000,
+      "price_input": 10.0,
+      "price_output": 50.0
+    },
+    {
       "name": "sonnet-5",
       "provider": "anthropic",
       "api_key": "${ANTHROPIC_API_KEY}",

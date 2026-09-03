@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31 16:32:19 UTC",
+  "generated": "2026-09-03 22:57:45 UTC",
   "runs_per_test": 3,
   "n_cases": 362,
   "n_cases_total": 362,
@@ -128,6 +128,39 @@
       "languages": [],
       "models": [
         {
+          "name": "fable-5.1-low",
+          "provider": "anthropic",
+          "reasoning_effort": "low",
+          "global_score": 73.8,
+          "scores": {
+            "log_parsing": 91.6,
+            "anomaly_detection": 64.8,
+            "pattern_correlation": 92.0,
+            "metrics_timeseries": 80.6,
+            "root_cause": 55.8,
+            "multimodal_rca": 65.8,
+            "efficiency": 64.7
+          },
+          "price_input": 10.0,
+          "price_output": 50.0,
+          "price_blended": 14.0,
+          "measured_cost_usd": 9.2803,
+          "total_runs": 246,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 1801.1047751750375,
+          "avg_latency_s": 7.32,
+          "avg_tokens": 2450,
+          "score_stddev": 1.88,
+          "input_tokens": 521319,
+          "output_tokens": 81342,
+          "complete": true,
+          "categories_scored": 6,
+          "categories_total": 6,
+          "language_scores": {}
+        },
+        {
           "name": "opus-4.8",
           "provider": "anthropic",
           "reasoning_effort": null,
@@ -188,6 +221,39 @@
           "score_stddev": 2.04,
           "input_tokens": 458043,
           "output_tokens": 30095,
+          "complete": true,
+          "categories_scored": 6,
+          "categories_total": 6,
+          "language_scores": {}
+        },
+        {
+          "name": "fable-5.1",
+          "provider": "anthropic",
+          "reasoning_effort": null,
+          "global_score": 72.5,
+          "scores": {
+            "log_parsing": 91.1,
+            "anomaly_detection": 69.2,
+            "pattern_correlation": 90.7,
+            "metrics_timeseries": 76.5,
+            "root_cause": 54.9,
+            "multimodal_rca": 59.8,
+            "efficiency": 56.4
+          },
+          "price_input": 10.0,
+          "price_output": 50.0,
+          "price_blended": 14.0,
+          "measured_cost_usd": 12.3043,
+          "total_runs": 246,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 0,
+          "duration_s": 2572.2655370359935,
+          "avg_latency_s": 10.46,
+          "avg_tokens": 2696,
+          "score_stddev": 2.07,
+          "input_tokens": 521319,
+          "output_tokens": 141823,
           "complete": true,
           "categories_scored": 6,
           "categories_total": 6,
@@ -1081,6 +1147,71 @@
               "code_debugging": 100.0,
               "code_refactoring": 98.7,
               "code_review": 89.4
+            }
+          }
+        },
+        {
+          "name": "fable-5.1",
+          "provider": "anthropic",
+          "reasoning_effort": null,
+          "global_score": 92.5,
+          "scores": {
+            "code_efficiency": 88.4,
+            "code_debugging": 98.1,
+            "code_refactoring": 98.6,
+            "code_review": 88.6,
+            "code_generation": 95.2,
+            "code_python": 96.1,
+            "code_typescript": 97.0,
+            "code_go": 92.0,
+            "code_rust": 90.5,
+            "efficiency": 63.4
+          },
+          "price_input": 10.0,
+          "price_output": 50.0,
+          "price_blended": 14.0,
+          "measured_cost_usd": 34.1432,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 0,
+          "refused": 3,
+          "duration_s": 9879.147476437065,
+          "avg_latency_s": 11.8,
+          "avg_tokens": 1298,
+          "score_stddev": 2.75,
+          "input_tokens": 504684,
+          "output_tokens": 581928,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_efficiency": 100.0,
+              "code_debugging": 92.3,
+              "code_refactoring": 100.0,
+              "code_review": 89.5,
+              "code_generation": 98.0
+            },
+            "typescript": {
+              "code_efficiency": 100.0,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.7,
+              "code_review": 88.7,
+              "code_generation": 97.2
+            },
+            "go": {
+              "code_efficiency": 73.2,
+              "code_debugging": 100.0,
+              "code_refactoring": 98.3,
+              "code_review": 88.4,
+              "code_generation": 97.8
+            },
+            "rust": {
+              "code_efficiency": 80.5,
+              "code_debugging": 100.0,
+              "code_refactoring": 97.4,
+              "code_review": 87.8,
+              "code_generation": 87.8
             }
           }
         },
@@ -2251,6 +2382,71 @@
               "code_debugging": 85.0,
               "code_refactoring": 83.3,
               "code_review": 72.1
+            }
+          }
+        },
+        {
+          "name": "fable-5.1-low",
+          "provider": "anthropic",
+          "reasoning_effort": "low",
+          "global_score": 61.7,
+          "scores": {
+            "code_generation": 35.6,
+            "code_efficiency": 69.5,
+            "code_debugging": 73.1,
+            "code_refactoring": 71.3,
+            "code_review": 90.0,
+            "code_python": 96.8,
+            "code_typescript": 16.9,
+            "code_go": 75.6,
+            "code_rust": 73.1,
+            "efficiency": 72.1
+          },
+          "price_input": 10.0,
+          "price_output": 50.0,
+          "price_blended": 14.0,
+          "measured_cost_usd": 23.8497,
+          "total_runs": 840,
+          "repeats_per_case": 3.0,
+          "errors": 3,
+          "refused": 3,
+          "duration_s": 6951.680052192052,
+          "avg_latency_s": 8.31,
+          "avg_tokens": 1053,
+          "score_stddev": 2.83,
+          "input_tokens": 504684,
+          "output_tokens": 376057,
+          "complete": true,
+          "categories_scored": 5,
+          "categories_total": 5,
+          "language_scores": {
+            "python": {
+              "code_generation": 98.2,
+              "code_efficiency": 100.0,
+              "code_debugging": 92.3,
+              "code_refactoring": 100.0,
+              "code_review": 92.9
+            },
+            "typescript": {
+              "code_generation": 0.0,
+              "code_efficiency": 0.0,
+              "code_debugging": 0.0,
+              "code_refactoring": 0.0,
+              "code_review": 91.0
+            },
+            "go": {
+              "code_generation": 25.7,
+              "code_efficiency": 87.8,
+              "code_debugging": 100.0,
+              "code_refactoring": 95.3,
+              "code_review": 88.5
+            },
+            "rust": {
+              "code_generation": 18.6,
+              "code_efficiency": 90.3,
+              "code_debugging": 100.0,
+              "code_refactoring": 90.0,
+              "code_review": 87.6
             }
           }
         },

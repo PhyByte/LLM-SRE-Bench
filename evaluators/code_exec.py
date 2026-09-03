@@ -96,6 +96,32 @@ def _ensure_ts_exports(code: str) -> str:
     return code
 
 
+def _neutralize_go_main(code: str) -> str:
+    """Rename a package-level ``func main`` so it doesn't clash with harness ``main.go``.
+
+    Frontier models often ship a short demo ``main`` beside the required
+    function. The Go executor writes solution code and the test runner as two
+    files in the same ``package main``, so a second ``main`` is a hard compile
+    error. Renaming (instead of deleting) keeps any imports the demo used
+    referenced, which avoids a follow-on unused-import failure.
+    """
+    return re.sub(r"(?m)^func\s+main\s*\(", "func __modelDemoMain(", code)
+
+
+def _neutralize_rust_main(code: str) -> str:
+    """Rename a crate-level ``fn main`` so it doesn't clash with the harness main.
+
+    The Rust executor concatenates the model solution and a generated ``fn main``
+    test runner into one crate. A demo ``main`` from the model then fails with
+    ``the name main is defined multiple times``.
+    """
+    return re.sub(
+        r"(?m)^(?:pub\s+)?fn\s+main\s*\(",
+        "fn __model_demo_main(",
+        code,
+    )
+
+
 def _ensure_go_wrapper(code: str) -> str:
     """Ensure package main + imports for common stdlib symbols models use."""
     stripped = code.strip()
@@ -103,7 +129,7 @@ def _ensure_go_wrapper(code: str) -> str:
     if body.startswith("package "):
         # Keep existing package / imports if present.
         if "\nimport " in body or body.startswith("import ") or "\nimport(" in body:
-            return body
+            return _neutralize_go_main(body)
         rest = body.split("\n", 1)[1] if "\n" in body else ""
     else:
         rest = body
@@ -129,7 +155,7 @@ def _ensure_go_wrapper(code: str) -> str:
         parts.append(")")
         parts.append("")
     parts.append(rest)
-    return "\n".join(parts)
+    return _neutralize_go_main("\n".join(parts))
 
 
 def _task_kind(signature: str, func_name: str) -> str:
@@ -1661,7 +1687,9 @@ class RustExecutor(LanguageExecutor):
             code_file = Path(tmpdir) / "main.rs"
 
             # Generate full Rust program with tests
-            rust_program = self._generate_rust_program(code, test_cases, harness)
+            rust_program = self._generate_rust_program(
+                _neutralize_rust_main(code), test_cases, harness
+            )
             code_file.write_text(rust_program, encoding="utf-8")
 
             try:
